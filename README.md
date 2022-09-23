@@ -7,42 +7,23 @@ Popularly defined by Jeanette Wing in 2006, computational thinking is a way of s
 Gerald Sussman offered a strong analogy in 2010’s Report of a Workshop on the Scope and Nature of Computational Thinking, saying, “Scientific thinking is about apples and oranges and how they may be different or the same. Mathematical thinking is about [apples and oranges as] spheres and where they have areas and volume and the fact that they may involve a particularly high number of dimensions. Computational thinking is about how a group of people can cut and share an apple so that each person feels he or she got a fair share of the apple.”
 
 Computational thinking skills include:
-```python
-    Algorithmic thinking – using a well-defined series of steps to achieve a desired outcome
-    Decomposition – tackling a complicated problem by breaking it down into its components and working on pieces one at a time
-    Abstraction – stripping away the specifics of a set of problems to find the generic solution that can be used for them all, 
+
+**Algorithmic thinking** – using a well-defined series of steps to achieve a desired outcome
+**Decomposition** – tackling a complicated problem by breaking it down into its components and working on pieces one at a time
+**Abstraction** – stripping away the specifics of a set of problems to find the generic solution that can be used for them all, 
     or representing a complicated system with a simple model or visualization
-    Pattern recognition – analyzing trends in data and leveraging that information to inform solutions
-```
+**Pattern recognition** – analyzing trends in data and leveraging that information to inform solutions
+
 Solving problems as a computational thinker also requires some specific attitudes towards problem solving in general. We strive to empower our students with the confidence needed to tackle ambiguous problems, the tenacity to persist through challenges requiring iteration and experimentation, strong communication skills to facilitate collaboration and presentation, and a general curiosity across all disciplines that leads them to asking and answering big, scary questions.
 
 https://ctlessons.org/
 
 [Turtle Graphics](https://docs.python.org/3/library/turtle.html)
 
-<p align="center">*** This course is designed to prepare students to take the <b>AP Computer Science A </b>Exam *** </br>
+<p align="center">*** This course is designed to prepare students to take the <b>AP Computer Science Principles </b>Exam *** </br>
 *** Excerpts from the course overview was taken from AP CollegeBoard ***</p>
 
-# AP Computer Science A Course Overview 
 
-AP Computer Science A introduces students to computer science through programming. Fundamental topics in this course include the design of solutions to problems, the use of data structures to organize large sets of data, the development and implementation of algorithms to process data and discover new information, the analysis of potential solutions, and the ethical and social implications of computing systems. The course emphasizes object-oriented programming and design using the Java programming language.
-
-The following big ideas serve as the foundation of the course, enabling students to create meaningful connections among concepts:</br>
-<b>Modularity</b>: Modularity in object-oriented programming allows usto use abstraction to break complex programs down intoindividual classes and methods.</br>
-<b>Variables</b>: Variables create data abstractions, as they canrepresent a set of possible values or a group of related values.</br>
-<b>Control</b>: Doing things in order, making decisions, and doing thesame process multiple times are represented in code by usingcontrol structures.</br>
-<b>Impact of Computing</b>: Computers and computing haverevolutionized our lives. To use computing safely and responsibly,we need to be aware of privacy, security, and ethical issues.</br>
-
-The following computational thinking practices describe what skills students should develop during the course:</br></br>
-<b>Program Design and Algorithm Development</b>: Determinerequired code segments to produce a given output.</br>
-<b>Code Logic</b>: Determine the output, value, or result of givenprogram code given initial values.</br>
-<b>Code Implementation</b>: Write and implement program code.</br>
-<b>Code Testing</b>: Analyze program code for correctness, equivalence,and errors.</br>
-<b>Documentation</b>: Describe the behavior and conditions thatproduce identified results in a program.</br>
-
-For this course we will be using various Integrated Development Environment (IDE) software to help you manage your programs, data files, & images.  
-Coding Rooms will be our primary online IDE for this course.  For your personal development and collaboration, you may want to use an online IDE 
-that will allow you to collaborate with peers.  If you are using a personal laptop, a good desktop IDE to install is VS Code.  
 
 ## TABLE OF CONTENTS
 <details><summary>Click Here</summary>
