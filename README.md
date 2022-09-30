@@ -1,5 +1,6 @@
 # Computer Science Principles
 
+
 ## What is computational thinking?
 
 Popularly defined by Jeanette Wing in 2006, computational thinking is a way of solving problems, designing systems and understanding human behavior by drawing on the concepts of computer science. It is the thought processes involved in formulating problems and their solutions so that the solutions are represented in a form that can be effectively carried out by an information-processing agent.
