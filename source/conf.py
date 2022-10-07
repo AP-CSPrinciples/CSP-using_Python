@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'AP CS Principles'
-copyright = '2022, Jonathan Virak'
-author = 'Jonathan Virak'
+copyright = '2022, Mr. V'
+author = 'Mr. V'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1'
