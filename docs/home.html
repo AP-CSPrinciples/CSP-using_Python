@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="README" href="AP%20Resources/README.html" /><link rel="prev" title="Welcome to AP Computer Science Principles!" href="index.html" />
 
-    <meta name="generator" content="sphinx-5.2.3, furo 2022.09.29"/>
+    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>Computer Science Principles - AP CS Principles</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
@@ -1172,12 +1172,114 @@ This is a reminder that each student is responsible for their own work.  Assignm
  </p>
  </details>
 </section>
-<section id="java-style-guidelines">
-<h2>Java Style Guidelines<a class="headerlink" href="#java-style-guidelines" title="Permalink to this heading">#</a></h2>
+<section id="python-style-guidelines">
+<h2>Python Style Guidelines<a class="headerlink" href="#python-style-guidelines" title="Permalink to this heading">#</a></h2>
 <details><summary>Click Here</summary>
  <p></br>
- Please review the Java Style Guidelines
-<p><a class="reference external" href="http://cit.evc.edu/comsc075/java_style_guide.html">Java Style Guidelines</a></p>
+<p><strong>Guidelines for good code design</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Use good modular design. Think carefully about the functions and data structures that you are creating before you start writing code.
+    The main function should not contain low-level details. It should be a high-level overview of your solution (remember top-down design).
+
+    As a general guide, no function should be longer than a page long. Of course there are exceptions, but these should truly be the exception. 
+
+Use good error detection and handling. Always check return values from functions, and handle errors appropriately.
+
+Use descriptive names for variables, functions, classes. You don&#39;t want to make function and variable names too long, but they should be descriptive (e.g. use &quot;getRadius&quot; or &quot;get_radius&quot; rather than &quot;foo&quot; for a function that returns the value of the radius of a circle). Also, stick with Python-style naming conventions (e.g. i and j for loop counter variables).
+
+Pick a capitalization style for function names, local variable names, global variable names, and stick with it. For example, for function name style you could do something like &quot;square_the_biggest&quot; or &quot;squareTheBiggest&quot; or &quot;SquareTheBiggest&quot;. By convention, variable names start with a lower case character.
+
+Line Length: your source code should not contain lines that are longer than 80 characters long. If you have a line that is longer than 80 character, break it up into multiple lines. Use the &#39;\&#39; character at the end of a line to tell the Python interpreter that the statment continues on the next line: Here is an example of how to break up a long boolean expression into three lines:
+
+  if ( ((blah &lt; 0 ) and (grr &gt; 234)) \ 
+       or ((foo == 3456) and (grr &lt;= 4444)) \
+       or ((blah &gt; 10) and (grr == 3333))  \
+      ): 
+    print &quot;this crazy condition is true&quot;    	
+    print &quot;and my code is really easy to read because&quot;
+    print &quot;I didn&#39;t wrap lines!&quot;
+
+  else:
+    print &quot;this crazy condition is false&quot;    	
+
+Here is an example of breaking up a long comment into multiple lines:
+
+  x = foo(x);  # compute the value of the next prime number
+               # that is larger than x  (foo is a really bad 
+               # choice for this function&#39;s name) 
+
+Here are two ways to break up a long string:
+
+  # (1) use two print statements and &#39;,&#39; after the first print
+  #     statement so that it does not print out a carriage return:
+
+  print &quot;here is a really long string with an int value, %d,&quot; %(x),
+  print &quot; that I want to print to stdout&quot;
+
+  # (2) use one print statment and the stmt continuation char &#39;\&#39; 
+  #     and string concatenation (+) to break into 2 lines
+
+  print &quot;here is a really long string with an int value, %d,&quot; \
+         + &quot; that I want to print to stdout&quot; %(x)
+
+The easiest way to make sure you are not adding lines longer than 80 characters wide is to always work inside a window that is exactly 80 characters wide. If your line starts wrapping around to the next line, its too long.
+
+Comment your code!
+
+File Comments: Every .py file should have a high-level comment at the top describing the file&#39;s contents, and should include your name(s) and the date.
+
+Function Comments: Every function should have a comment describing:
+    what function does;
+    what its parameter values are
+    what value(s) it returns (if a function returns one type of value usually, and another value to indicate an error, your comment should describe both of these types of return values). 
+If a function has some tricky code, then use in-line comments to explain what it is doing.
+
+My advice on writing function comments: write the function&#39;s comment first, then write the function code. For complicated functions, having a comment that lists the steps of the algorithm, will help you
+
+When commenting stick to a particular style. For example:
+
+def approx_pi(n):
+
+&quot;&quot;&quot;
+  Function:  approx_pi 
+  --------------------
+  computes an approximation of pi using:
+     pi/6 = 1/2 + (1/2 x 3/4) 1/5 (1/2)^3  + (1/2 x 3/4 x 5/6) 1/7 (1/2)^5 +
+ 
+    n: number of terms in the series to sum
+ 
+   returns: the approximate value of pi obtained by suming the first n terms
+            in the above series
+            returns zero on error (if n is non-positive)
+&quot;&quot;&quot; 
+
+   # note: approx_pi is likely complicated enough to have in-line comments
+   #       describing parts of the code
+
+
+
+def square_the_biggest(n1, n2):
+
+&quot;&quot;&quot;
+  Function: square_the_biggest
+  ----------------------------
+    Returns the square of the largest of its two input values
+ 
+    n1: one real value 
+    n2: the other real value
+ 
+    returns: the square of the larger of n1 and n2 
+&quot;&quot;&quot; 
+
+In-line Comments: Any complicated, tricky, or ugly code sequences in the function body should contain in-line comments describing what it does (here is where using good function and variable names can save you from having to add comments).
+
+Inline comments are important around complicated parts of your code, but it is important to not go nuts here; over-commenting your code can be as bad as under-commenting it. Avoid commenting the obvious. Your choice of good function and variable names should make much of your code readable. For example, a comment like the following is unnecessary as it adds no information that is not already obvious from the C code itself, and it can obscure the truley important comments in your code:
+
+  # this is a bad in-line comment:
+  x = x + 1   # increment the value of x 
+
+Class Comments: Every Class should have a high-level comment describing what it does, and each of its method functions should have a comments similar to those of regular functions. 
+</pre></div>
+</div>
  </p>
  </details>
 </section>
@@ -1251,7 +1353,7 @@ This is a reminder that each student is responsible for their own work.  Assignm
 </ul>
 </li>
 <li><a class="reference internal" href="#academic-integrity">Academic Integrity</a></li>
-<li><a class="reference internal" href="#java-style-guidelines">Java Style Guidelines</a></li>
+<li><a class="reference internal" href="#python-style-guidelines">Python Style Guidelines</a></li>
 </ul>
 </li>
 </ul>
