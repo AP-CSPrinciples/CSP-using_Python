@@ -2,7 +2,6 @@
 
 | Dec | Char | Dec | Char | Dec | Char | Dec | Char |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
-
  | 0 | NUL (null) |                       32 | SPACE  |   64 | @   |      96  | ` |
  | 1 | SOH (start of heading) |           33 |!       |   65 | A   |     97   | a |
  | 2 | STX (start of text)   |            34 | \"     |   66 | B   |       98 | b |
