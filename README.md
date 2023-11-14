@@ -17,6 +17,10 @@ Computational thinking skills include:
 
 Solving problems as a computational thinker also requires some specific attitudes towards problem solving in general. We strive to empower our students with the confidence needed to tackle ambiguous problems, the tenacity to persist through challenges requiring iteration and experimentation, strong communication skills to facilitate collaboration and presentation, and a general curiosity across all disciplines that leads them to asking and answering big, scary questions.
 
+
+![RubberDuckProtocol](https://github.com/AP-CSPrinciples/CSP-using_Python/assets/12989939/c3326002-3b3a-486b-9134-ca521cc57507)
+
+
 https://ctlessons.org/
 
 [Turtle Graphics](https://docs.python.org/3/library/turtle.html)
