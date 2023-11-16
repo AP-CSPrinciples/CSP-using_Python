@@ -1,6 +1,7 @@
+```python
 # Create a square
 
-size = int(input("Enter the size of the square: ")
+size = int(input("Enter the size of the square: "))
 
 for i in range(size):
   for j in range(size):
@@ -9,3 +10,23 @@ for i in range(size):
     else:
       print(" ", end=" ")
   print("\r")
+
+```
+
+
+Sample Output
+
+```python
+Enter the size of the square: 10
+
+* * * * * * * * * * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+* * * * * * * * * * 
+```
