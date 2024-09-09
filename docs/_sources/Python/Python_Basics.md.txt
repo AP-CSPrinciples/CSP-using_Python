@@ -1,4 +1,4 @@
-*Python Loops
+# Python Loops
 
 ```python
 # CODE 1
