@@ -400,6 +400,35 @@
 </tbody>
 </table>
 </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a square</span>
+
+<span class="n">size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the size of the square: &quot;</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">==</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>Sample Output</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">square</span><span class="p">:</span> <span class="mi">10</span>
+
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span>                 <span class="o">*</span> 
+<span class="o">*</span>                 <span class="o">*</span> 
+<span class="o">*</span>                 <span class="o">*</span> 
+<span class="o">*</span>                 <span class="o">*</span> 
+<span class="o">*</span>                 <span class="o">*</span> 
+<span class="o">*</span>                 <span class="o">*</span> 
+<span class="o">*</span>                 <span class="o">*</span> 
+<span class="o">*</span>                 <span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+</pre></div>
+</div>
 
         </article>
       </div>

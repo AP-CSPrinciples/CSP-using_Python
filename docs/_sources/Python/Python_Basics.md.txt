@@ -116,3 +116,39 @@ for x in range (1, 6):
 | Tuple | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> |
 | Set |  <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> |
 | Dictionary |  <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> |
+
+
+
+```python
+# Create a square
+
+size = int(input("Enter the size of the square: "))
+
+for i in range(size):
+  for j in range(size):
+    if i == 0 or i == size-1 or j == 0 or j == size-1:
+      print("*", end=" ")
+    else:
+      print(" ", end=" ")
+  print("\r")
+
+```
+
+
+Sample Output
+
+```python
+Enter the size of the square: 10
+
+* * * * * * * * * * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+* * * * * * * * * * 
+```
+
