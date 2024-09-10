@@ -1,7 +1,7 @@
 Welcome to AP Computer Science Principles!
 ==========================================
 
-Table of Contents:
+Contents:
 ##################
 
 .. toctree::
