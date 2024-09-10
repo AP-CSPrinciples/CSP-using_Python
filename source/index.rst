@@ -9,7 +9,6 @@ Table of Contents:
    :caption: Contents:
 
    Home <../home.md>
-   AP Resources <./AP Resources/README.md>
    Python <./Python/README.md>
 
 .. toctree:: 
