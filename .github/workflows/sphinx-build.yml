@@ -5,9 +5,9 @@ name: Sphinx build and deploy
 
 on:
   push:
-    branches: [ "main", "Pages" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "main", "Pages" ]
+    branches: [ "main" ]
 
 jobs:
   build:
