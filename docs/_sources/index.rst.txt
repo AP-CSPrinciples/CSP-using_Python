@@ -9,7 +9,14 @@ Contents:
    :caption: Contents:
 
    Home <../home.md>
+
+
+.. toctree:: 
+   :maxdepth: 2
+   :caption: Python:
+
    Python <./Python/README.md>
+
 
 .. toctree:: 
    :maxdepth: 2
