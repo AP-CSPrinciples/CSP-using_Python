@@ -1,4 +1,7 @@
-# Binary/ ASCII/ and other fun things
+# Data
+
+
+## Binary/ ASCII/ and other fun things
 
 | Dec | Char | Dec | Char | Dec | Char | Dec | Char |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
