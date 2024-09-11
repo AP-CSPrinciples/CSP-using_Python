@@ -1,4 +1,7 @@
-# Python Loops
+# Python Basics
+
+
+## Python Loops
 
 ```python
 # CODE 1
