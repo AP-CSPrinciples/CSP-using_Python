@@ -22,33 +22,33 @@ Contents:
    :maxdepth: 2
    :caption: Unit 1:
 
-   README <./Unit 1/Creative_Development.md>
+   Creative_Development <./Unit 1/Creative_Development.md>
    
 
 .. toctree:: 
    :maxdepth: 2
    :caption: Unit 2:
 
-   README <./Unit 2/data.md>
+   Data <./Unit 2/data.md>
    
 
 .. toctree:: 
    :maxdepth: 2
    :caption: Unit 3:
 
-   README <./Unit 3/Algorithms-and-Programming.md>
+   Algorithms-and-Programming <./Unit 3/Algorithms-and-Programming.md>
 
 .. toctree:: 
    :maxdepth: 2
    :caption: Unit 4:
 
-   README <./Unit 4/Computing-and-Network-Systems.md>
+   Computing-and-Network-Systems <./Unit 4/Computing-and-Network-Systems.md>
 
 
 .. toctree:: 
    :maxdepth: 2
    :caption: Unit 5:
 
-   README <./Unit 5/Impact-of-Computing.md>
+   Impact-of-Computing <./Unit 5/Impact-of-Computing.md>
 
 * :ref:`search`
