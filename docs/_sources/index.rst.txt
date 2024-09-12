@@ -13,6 +13,13 @@ Contents:
 
 .. toctree:: 
    :maxdepth: 2
+   :caption: Resources:
+
+   Resources <./Resources/student_resources.md>
+
+
+.. toctree:: 
+   :maxdepth: 2
    :caption: Python:
 
    Python <./Python/Python_Basics.md>
