@@ -1,21 +1,20 @@
 # Computer Science Principles
 
 
-**What is computational thinking?**
 
-Popularly defined by Jeanette Wing in 2006, computational thinking is a way of solving problems, designing systems and understanding human behavior by drawing on the concepts of computer science. It is the thought processes involved in formulating problems and their solutions so that the solutions are represented in a form that can be effectively carried out by an information-processing agent.
+Computer science involves problem-solving, hardware, and algorithms that help people utilize computers and incorporate multiple perspectives
+to address real-world problems in contemporary life. As the application of computer science is integrated into more aspects of our lives, it is important to understand the impact of computer science and how to maintain privacy, safety, and security not only when using computers but also while being the innovators of new computing applications. The course strives to engage all students, including those who have traditionally been underrepresented in computer science—such as female students, students of color, students with disabilities, and rural students—by allowing them to discover the power of computer science through rewarding yet challenging concepts.
 
-Gerald Sussman offered a strong analogy in 2010’s Report of a Workshop on the Scope and Nature of Computational Thinking, saying, “Scientific thinking is about apples and oranges and how they may be different or the same. Mathematical thinking is about [apples and oranges as] spheres and where they have areas and volume and the fact that they may involve a particularly high number of dimensions. Computational thinking is about how a group of people can cut and share an apple so that each person feels he or she got a fair share of the apple.”
+AP Computer Science Principles introduces students to the breadth of the field of computer science. In this course, students will learn to design and evaluate solutions and to apply computer science to solve problems through the development of algorithms and programs.  They will incorporate abstraction into programs and use data to discover new knowledge.  Students will also explain how computing innovations and computing systems, including the Internet, work, explore their potential impacts, and contribute to a computing culture that is collaborative and ethical. It is important to note that the AP Computer Science Principles course does not have a designated programminglanguage.  Teachers have the flexibility to choose a programming language(s) that is most appropriate for their students to use in
+the classroom
 
-Computational thinking skills include:
-
-**Algorithmic thinking** – using a well-defined series of steps to achieve a desired outcome
-**Decomposition** – tackling a complicated problem by breaking it down into its components and working on pieces one at a time
-**Abstraction** – stripping away the specifics of a set of problems to find the generic solution that can be used for them all, 
-    or representing a complicated system with a simple model or visualization
-**Pattern recognition** – analyzing trends in data and leveraging that information to inform solutions
-
-Solving problems as a computational thinker also requires some specific attitudes towards problem solving in general. We strive to empower our students with the confidence needed to tackle ambiguous problems, the tenacity to persist through challenges requiring iteration and experimentation, strong communication skills to facilitate collaboration and presentation, and a general curiosity across all disciplines that leads them to asking and answering big, scary questions.
+The main goals of an introductory college-level computer science course:
+- Computational Solution Design—Design and evaluate computational solutions for a purpose.
+- Algorithms and Program Development—Develop and implement algorithms.
+- Abstraction in Program Development—Develop programs that incorporate abstractions.
+- Code Analysis—Evaluateandtestalgorithmsand programs.
+- Computing Innovations—Investigatecomputing innovations.
+- Responsible Computing—Contributetoan inclusive, safe, collaborative, and ethical computing
 
 
 ![RubberDuckProtocol](https://github.com/AP-CSPrinciples/CSP-using_Python/assets/12989939/c3326002-3b3a-486b-9134-ca521cc57507)
@@ -30,46 +29,19 @@ https://ctlessons.org/
 
 
 
-## TABLE OF CONTENTS
+## Table of Contents
 <details><summary>Click Here</summary>
  <p>
 
-The course content is organized into ten commonly taught units:</br>
-</br>
-| Chapter 1: Java Code Fundamentals | Chapter 2: Iteration and Classes | Chapter 3: Arrays | Chapter 4: Inheritance and Recursion |
-| :---: | :---: |:---: | :---: |
-| **Unit 1 - Primitive Types** | **Unit 4 - Iteration** | **Unit 6 - Arrays** | **Unit 9 - Inheritance** |
-| [Why Programming? Why Java?](https://ap-csa-java.github.io/CSA_JAVA-Course/Chapter_1/Unit1.html#why-programming-why-java) | While Loops | Array Creation and Access | Creating Superclasses and Subclasses |
-| [Variables and Data Types](https://ap-csa-java.github.io/CSA_JAVA-Course/Chapter_1/Unit1.html#variables-and-data-types) | For Loops | Traversing Arrays | Writing constructors for Subclasses |
-| [Expressions and Assignment Statements](hhttps://ap-csa-java.github.io/CSA_JAVA-Course/Chapter_1/Unit1.html#expressions-and-assignment-statements) | Developing Algorithms Using Strings | Enhanced Loops for Arrays | Overriding Methods |
-| [Compound Assignment Operators](https://ap-csa-java.github.io/CSA_JAVA-Course/Chapter_1/Unit1.html#compound-assignment-operators) | Nested Iterations | Developing Algorithms Using Arrays | Super Keyword |
-| [Casting and Range Variables](https://ap-csa-java.github.io/CSA_JAVA-Course/Chapter_1/Unit1.html#casting-and-range-of-variables) | Informal Code Analysis | Project: Memory Game | Creating References Using Inheritance Hierachies |
-| [Project: Numbers Riddle](https://ap-csa-java.github.io/CSA_JAVA-Course/Chapter_1/Unit1.html#numbers-riddle-project) | Project: Consumer Review Lab |  | Polymorphism |
-|  |  |  | Object Superclass |
-|  |  |  | Project: Celebrity Lab |
-| **Unit 2 - Using Objects** | **Unit 5 - Writing Classes** | **Unit 7 - ArrayList** |  |
-| Objects: Instances of Classes  | Anatomy of a Class | Introduction to ArrayList |  |
-| Creating and Storing Objects | Constructors | ArrayList Methods |  |
-| Calling a Void Method | Documentation with Commands | Traversing ArrayLists |  |
-| Calling a Void Method with Parameters | Accessor Methods | Developing Algorithms Using ArrayLists |  |
-| Calling a Non-Void Method | Mutator Methods | Searching |  |
-| String Objects: Concatenation, Literals, and More | Writing Methods | Sorting |  |
-| String Methods | Static Variables and Methods | Project: Data Lab |  |
-| Wrapper Classes: Integer and Doubles | Scope and Access |  |  |
-| Using a Math Class | `this` Keyword |  |  |
-| Project: Mad Libs | Ethical and social Implications of Computing |  |  |
-|  | Project: Game of Nim |  |  |
-|  | Project - Sell my Pet Food |  |  |
-| **Unit 3 - Boolean Expressions and if Statements** |  | **Unit 8 - 2D Arrays** | **Unit 10 - Recursion** |
-| Boolean Expression |  | 2D Arrays | Recursion |
-| If Statements and Control Flow |  | Traversing 2D Arrays | Recursive Searching and Sorting |
-| if/ else Statements |  | Project: Stenography Lab | Project: TBD |
-| else if Statements |  | **Problem:** Data Lab | **Problem:** Almost Anything! |
-| Compound Boolean Expressions |  |  |
-| Equivalent Boolean Expressions |  |  |
-| Comparing Objects |  |  |
-| Project: Choose Your Path |  |  |
-| **Problem:** Escape Room |  |  |
+| Computational Solution Design | Algorithms and Program Development | Abstraction in Program Development | Code Analysis | Computing Innovations | Responsible Computing |
+| :---: | :---: |:---: | :---: | :---: | :---: |
+| **Practice 1** | **Practice 2** | **Practice 3** | **Practice 4** | **Practice 5** | **Practice 6** |
+| Investigate the situation, context, or task | Represent algorithmic processes without using a programming language | Generalize data sources through variables | Explain how a code segment or program functions | Explain how computing systems work | Collaborate in the development of solutions |
+|Determine and design an appropriate method or approach to achieve the purpose | Implement and apply an algorithm | Use abstraction to manage complexity in a program | Determine the result of code segments | Explain how knowledge can be generated from data | Use safe and secure methods when using computing devices |
+| Explain how collaboration affects the development of a solution | | Explain hoe abstraction manages complexity | Identify and correct errors in algorithms and programs including error discovery through testing | Describe the impact of a computing innovation | Acknowledge the intellectual property of others |
+| Evaluate solution options | |  |  | Describe the impact of gathering data |  |
+|  |  |  |  | Evaluate the use of computing based on legal and ethical factors |  |
+
 
  </p></details>
 
