@@ -129,6 +129,10 @@ for x in range (1, 6):
 ```
 
 
+## Lists
+
+For this class, we will not be using tuples, but you should be familiar with how they are used and the difference of a list.
+
 |      | Indexing | Ordered | Mutable | Duplicate |
 |------------|---------------|----------------|------------------------------------|----------------|
 | List | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> |
