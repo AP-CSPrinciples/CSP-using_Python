@@ -271,6 +271,16 @@
         <article role="main" id="furo-main-content">
           <section id="python-basics">
 <h1>Python Basics<a class="headerlink" href="#python-basics" title="Link to this heading">¶</a></h1>
+<p>We will be looking at syntax and structures of Python. We will use an Integrated Development Environment to develop our code in this course.</p>
+<section id="print-statements">
+<h2>Print Statements<a class="headerlink" href="#print-statements" title="Link to this heading">¶</a></h2>
+</section>
+<section id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Link to this heading">¶</a></h2>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Link to this heading">¶</a></h2>
+</section>
 <section id="order-of-operation">
 <h2>Order of Operation<a class="headerlink" href="#order-of-operation" title="Link to this heading">¶</a></h2>
 <p>Arithmetic operators take precedence over logical operators. Python will always evaluate the arithmetic operators first (** is highest, then multiplication/division, then addition/subtraction). Next comes the relational operators. Finally, the logical operators are done last. This means that the expression x<em>5 &gt;= 10 and y-6 &lt;= 20 will be evaluated so as to first perform the arithmetic and then check the relationships. The and will be done last. Many programmers might place parentheses around the two relational expressions, (x</em>5 &gt;= 10) and (y-6 &lt;= 20). It is not necessary to do so, but causes no harm and may make it easier for people to read and understand the code.
@@ -426,7 +436,37 @@ The following table summarizes the operator precedence from highest to lowest. A
 
 </pre></div>
 </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a square</span>
+
+<span class="n">size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the size of the square: &quot;</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">==</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>Sample Output</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">square</span><span class="p">:</span> <span class="mi">10</span>
+
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span>                 <span class="o">*</span> 
+<span class="o">*</span>                 <span class="o">*</span> 
+<span class="o">*</span>                 <span class="o">*</span> 
+<span class="o">*</span>                 <span class="o">*</span> 
+<span class="o">*</span>                 <span class="o">*</span> 
+<span class="o">*</span>                 <span class="o">*</span> 
+<span class="o">*</span>                 <span class="o">*</span> 
+<span class="o">*</span>                 <span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+</pre></div>
+</div>
 </section>
+<hr class="docutils" />
 <section id="lists">
 <h2>Lists<a class="headerlink" href="#lists" title="Link to this heading">¶</a></h2>
 <p>For this class, we will not be using tuples, but you should be familiar with how they are used and the difference of a list.</p>
@@ -467,38 +507,6 @@ The following table summarizes the operator precedence from highest to lowest. A
 </tr>
 </tbody>
 </table>
-</div>
-</section>
-<section id="nested-loops">
-<h2>Nested Loops<a class="headerlink" href="#nested-loops" title="Link to this heading">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a square</span>
-
-<span class="n">size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the size of the square: &quot;</span><span class="p">))</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
-  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">==</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">)</span>
-
-</pre></div>
-</div>
-<p>Sample Output</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">square</span><span class="p">:</span> <span class="mi">10</span>
-
-<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
-<span class="o">*</span>                 <span class="o">*</span> 
-<span class="o">*</span>                 <span class="o">*</span> 
-<span class="o">*</span>                 <span class="o">*</span> 
-<span class="o">*</span>                 <span class="o">*</span> 
-<span class="o">*</span>                 <span class="o">*</span> 
-<span class="o">*</span>                 <span class="o">*</span> 
-<span class="o">*</span>                 <span class="o">*</span> 
-<span class="o">*</span>                 <span class="o">*</span> 
-<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
-</pre></div>
 </div>
 </section>
 </section>
@@ -559,10 +567,12 @@ The following table summarizes the operator precedence from highest to lowest. A
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Python Basics</a><ul>
+<li><a class="reference internal" href="#print-statements">Print Statements</a></li>
+<li><a class="reference internal" href="#comments">Comments</a></li>
+<li><a class="reference internal" href="#variables">Variables</a></li>
 <li><a class="reference internal" href="#order-of-operation">Order of Operation</a></li>
 <li><a class="reference internal" href="#python-loops">Python Loops</a></li>
 <li><a class="reference internal" href="#lists">Lists</a></li>
-<li><a class="reference internal" href="#nested-loops">Nested Loops</a></li>
 </ul>
 </li>
 </ul>
