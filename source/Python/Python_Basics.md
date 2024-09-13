@@ -185,10 +185,11 @@ For this class, we will not be using tuples, but you should be familiar with how
 | Dictionary |  <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> |
 
 ```
-|  P  |  O  |  T  |  A  |  T  |  O  |
+_______________________________________________
+string1 = |  P  |  O  |  T  |  A  |  T  |  O  |
 
-0     1     2     3     4     5     6
-
+index #   0     1     2     3     4     5     6
+_______________________________________________
 ```
 
 
