@@ -1,5 +1,15 @@
 # Python Basics
 
+We will be looking at syntax and structures of Python. We will use an Integrated Development Environment to develop our code in this course.  
+
+## Print Statements
+
+
+## Comments
+
+
+## Variables
+
 
 ## Order of Operation
 
@@ -128,20 +138,6 @@ for x in range (1, 6):
 
 ```
 
-
-## Lists
-
-For this class, we will not be using tuples, but you should be familiar with how they are used and the difference of a list.
-
-|      | Indexing | Ordered | Mutable | Duplicate |
-|------------|---------------|----------------|------------------------------------|----------------|
-| List | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> |
-| Tuple | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> |
-| Set |  <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> |
-| Dictionary |  <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> |
-
-
-## Nested Loops
 ```python
 # Create a square
 
@@ -174,5 +170,22 @@ Enter the size of the square: 10
 *                 * 
 * * * * * * * * * * 
 ```
+
+-------------------------------------------------------------------------------------------------
+
+## Lists
+
+For this class, we will not be using tuples, but you should be familiar with how they are used and the difference of a list.
+
+|      | Indexing | Ordered | Mutable | Duplicate |
+|------------|---------------|----------------|------------------------------------|----------------|
+| List | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> |
+| Tuple | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> |
+| Set |  <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> |
+| Dictionary |  <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> |
+
+
+
+
 
 
