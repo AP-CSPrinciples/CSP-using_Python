@@ -271,6 +271,51 @@
         <article role="main" id="furo-main-content">
           <section id="python-basics">
 <h1>Python Basics<a class="headerlink" href="#python-basics" title="Link to this heading">¶</a></h1>
+<p>Arithmetic operators take precedence over logical operators. Python will always evaluate the arithmetic operators first (** is highest, then multiplication/division, then addition/subtraction). Next comes the relational operators. Finally, the logical operators are done last. This means that the expression x<em>5 &gt;= 10 and y-6 &lt;= 20 will be evaluated so as to first perform the arithmetic and then check the relationships. The and will be done last. Many programmers might place parentheses around the two relational expressions, (x</em>5 &gt;= 10) and (y-6 &lt;= 20). It is not necessary to do so, but causes no harm and may make it easier for people to read and understand the code.
+The following table summarizes the operator precedence from highest to lowest. A complete table for the entire language can be found in the Python Documentation.  http://docs.python.org/py3k/reference/expressions.html#expression-lists</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Level</p></th>
+<th class="head text-center"><p>Category</p></th>
+<th class="head text-center"><p>Operators</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>7 <em>(high)</em></p></td>
+<td class="text-center"><p>exponent</p></td>
+<td class="text-center"><p>**</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>6</p></td>
+<td class="text-center"><p>multiplication</p></td>
+<td class="text-center"><p>*,/,//,%</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>5</p></td>
+<td class="text-center"><p>addition</p></td>
+<td class="text-center"><p>+,-</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p>relational</p></td>
+<td class="text-center"><p>==,!=,&lt;=,&gt;=,&gt;,&lt;</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>logical</p></td>
+<td class="text-center"><p>not</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p>logical</p></td>
+<td class="text-center"><p>and</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>1 <em>(low)</em></p></td>
+<td class="text-center"><p>logical</p></td>
+<td class="text-center"><p>or</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="order-of-operation">
+<h2>Order of Operation<a class="headerlink" href="#order-of-operation" title="Link to this heading">¶</a></h2>
+</section>
 <section id="python-loops">
 <h2>Python Loops<a class="headerlink" href="#python-loops" title="Link to this heading">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># CODE 1</span>
@@ -510,6 +555,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Python Basics</a><ul>
+<li><a class="reference internal" href="#order-of-operation">Order of Operation</a></li>
 <li><a class="reference internal" href="#python-loops">Python Loops</a></li>
 <li><a class="reference internal" href="#nested-loops">Nested Loops</a></li>
 </ul>
