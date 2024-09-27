@@ -240,6 +240,10 @@ In computer programming, the terms **function**, **method**, and **procedure** h
 
 Understanding these distinctions can help in writing clearer, more organized code and communicating effectively with other developers.
 
+
+## Python Turtle Methods
+
+
 ## Object-Oriented Programming
 
 
