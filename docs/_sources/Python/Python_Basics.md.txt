@@ -2,6 +2,10 @@
 
 We will be looking at syntax and structures of Python. We will use an Integrated Development Environment to develop our code in this course.  
 
+
+## Python Style Guidelines
+
+
 ## Print Statements
 
 
