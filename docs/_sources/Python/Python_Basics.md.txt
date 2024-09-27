@@ -192,6 +192,50 @@ index #   0     1     2     3     4     5     6
 _______________________________________________
 ```
 
+## Functions/ Methods/ Parameters
+In computer programming, the terms **function**, **method**, and **procedure** have distinct meanings, though they are often used interchangeably in casual conversation. Here’s a breakdown of each:
+
+### Function
+- **Definition**: A function is a block of code that takes inputs (arguments), performs a specific task, and returns a value. Functions are designed to compute a value and can be used across different parts of a program.
+- **Example**: In Python, a simple function might look like this:
+  ```python
+  def add(a, b):
+      return a + b
+  ```
+
+### Method
+- **Definition**: A method is similar to a function but is associated with an object or a class in object-oriented programming (OOP). Methods operate on data contained within the object and can modify the object's state.
+- **Example**: In Java, a method in a class might look like this:
+  ```java
+  public class Calculator {
+      public int add(int a, int b) {
+          return a + b;
+      }
+  }
+  ```
+
+### Procedure
+- **Definition**: A procedure is a block of code that performs a task but does not necessarily return a value. Procedures are often used for executing a sequence of statements and might be called for their side effects rather than for a result.
+- **Example**: In Pascal, a procedure might look like this:
+  ```pascal
+  procedure DisplayMessage;
+  begin
+      writeln('Hello, World!');
+  end;
+  ```
+
+### Summary of Differences
+- **Return Value**:
+  - **Function**: Returns a value.
+  - **Method**: Can return a value (if designed to do so) and is associated with an object.
+  - **Procedure**: Typically does not return a value.
+
+- **Context**:
+  - **Function**: Used in various programming paradigms (procedural, functional).
+  - **Method**: Specific to object-oriented programming.
+  - **Procedure**: Often used in procedural programming languages.
+
+Understanding these distinctions can help in writing clearer, more organized code and communicating effectively with other developers.
 
 
 
