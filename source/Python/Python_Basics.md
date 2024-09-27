@@ -5,13 +5,12 @@ We will be looking at syntax and structures of Python. We will use an Integrated
 ## Print Statements
 
 
-## Comments
+## Modules and Packages
 
 
-## Variables
+## Variables and Data Types
 
-
-## Order of Operation
+### Order of Operation
 
 Arithmetic operators take precedence over logical operators. Python will always evaluate the arithmetic operators first (** is highest, then multiplication/division, then addition/subtraction). Next comes the relational operators. Finally, the logical operators are done last. This means that the expression x*5 >= 10 and y-6 <= 20 will be evaluated so as to first perform the arithmetic and then check the relationships. The and will be done last. Many programmers might place parentheses around the two relational expressions, (x*5 >= 10) and (y-6 <= 20). It is not necessary to do so, but causes no harm and may make it easier for people to read and understand the code.
 The following table summarizes the operator precedence from highest to lowest. A complete table for the entire language can be found in the Python Documentation.  http://docs.python.org/py3k/reference/expressions.html#expression-lists
@@ -27,7 +26,11 @@ The following table summarizes the operator precedence from highest to lowest. A
 | 1 *(low)*	|logical |	or |
 
 
-## Python Loops
+
+## Control Flow and Conditional Statements
+
+
+## Loops
 
 ```python
 # CODE 1
@@ -173,7 +176,7 @@ Enter the size of the square: 10
 
 -------------------------------------------------------------------------------------------------
 
-## Lists
+## Lists and List Manipulation
 
 For this class, we will not be using tuples, but you should be familiar with how they are used and the difference of a list.
 
@@ -237,5 +240,13 @@ In computer programming, the terms **function**, **method**, and **procedure** h
 
 Understanding these distinctions can help in writing clearer, more organized code and communicating effectively with other developers.
 
+## Object-Oriented Programming
 
 
+## Exception Handling
+
+
+## File Handling
+
+
+## Lambda Functions
