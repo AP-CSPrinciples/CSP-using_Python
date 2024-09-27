@@ -275,14 +275,13 @@
 <section id="print-statements">
 <h2>Print Statements<a class="headerlink" href="#print-statements" title="Link to this heading">¶</a></h2>
 </section>
-<section id="comments">
-<h2>Comments<a class="headerlink" href="#comments" title="Link to this heading">¶</a></h2>
+<section id="modules-and-packages">
+<h2>Modules and Packages<a class="headerlink" href="#modules-and-packages" title="Link to this heading">¶</a></h2>
 </section>
-<section id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Link to this heading">¶</a></h2>
-</section>
+<section id="variables-and-data-types">
+<h2>Variables and Data Types<a class="headerlink" href="#variables-and-data-types" title="Link to this heading">¶</a></h2>
 <section id="order-of-operation">
-<h2>Order of Operation<a class="headerlink" href="#order-of-operation" title="Link to this heading">¶</a></h2>
+<h3>Order of Operation<a class="headerlink" href="#order-of-operation" title="Link to this heading">¶</a></h3>
 <p>Arithmetic operators take precedence over logical operators. Python will always evaluate the arithmetic operators first (** is highest, then multiplication/division, then addition/subtraction). Next comes the relational operators. Finally, the logical operators are done last. This means that the expression x<em>5 &gt;= 10 and y-6 &lt;= 20 will be evaluated so as to first perform the arithmetic and then check the relationships. The and will be done last. Many programmers might place parentheses around the two relational expressions, (x</em>5 &gt;= 10) and (y-6 &lt;= 20). It is not necessary to do so, but causes no harm and may make it easier for people to read and understand the code.
 The following table summarizes the operator precedence from highest to lowest. A complete table for the entire language can be found in the Python Documentation.  http://docs.python.org/py3k/reference/expressions.html#expression-lists</p>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -326,8 +325,12 @@ The following table summarizes the operator precedence from highest to lowest. A
 </table>
 </div>
 </section>
-<section id="python-loops">
-<h2>Python Loops<a class="headerlink" href="#python-loops" title="Link to this heading">¶</a></h2>
+</section>
+<section id="control-flow-and-conditional-statements">
+<h2>Control Flow and Conditional Statements<a class="headerlink" href="#control-flow-and-conditional-statements" title="Link to this heading">¶</a></h2>
+</section>
+<section id="loops">
+<h2>Loops<a class="headerlink" href="#loops" title="Link to this heading">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># CODE 1</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
   <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
@@ -467,8 +470,8 @@ The following table summarizes the operator precedence from highest to lowest. A
 </div>
 </section>
 <hr class="docutils" />
-<section id="lists">
-<h2>Lists<a class="headerlink" href="#lists" title="Link to this heading">¶</a></h2>
+<section id="lists-and-list-manipulation">
+<h2>Lists and List Manipulation<a class="headerlink" href="#lists-and-list-manipulation" title="Link to this heading">¶</a></h2>
 <p>For this class, we will not be using tuples, but you should be familiar with how they are used and the difference of a list.</p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
@@ -581,6 +584,18 @@ The following table summarizes the operator precedence from highest to lowest. A
 <p>Understanding these distinctions can help in writing clearer, more organized code and communicating effectively with other developers.</p>
 </section>
 </section>
+<section id="object-oriented-programming">
+<h2>Object-Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Link to this heading">¶</a></h2>
+</section>
+<section id="exception-handling">
+<h2>Exception Handling<a class="headerlink" href="#exception-handling" title="Link to this heading">¶</a></h2>
+</section>
+<section id="file-handling">
+<h2>File Handling<a class="headerlink" href="#file-handling" title="Link to this heading">¶</a></h2>
+</section>
+<section id="lambda-functions">
+<h2>Lambda Functions<a class="headerlink" href="#lambda-functions" title="Link to this heading">¶</a></h2>
+</section>
 </section>
 
         </article>
@@ -640,11 +655,14 @@ The following table summarizes the operator precedence from highest to lowest. A
             <ul>
 <li><a class="reference internal" href="#">Python Basics</a><ul>
 <li><a class="reference internal" href="#print-statements">Print Statements</a></li>
-<li><a class="reference internal" href="#comments">Comments</a></li>
-<li><a class="reference internal" href="#variables">Variables</a></li>
+<li><a class="reference internal" href="#modules-and-packages">Modules and Packages</a></li>
+<li><a class="reference internal" href="#variables-and-data-types">Variables and Data Types</a><ul>
 <li><a class="reference internal" href="#order-of-operation">Order of Operation</a></li>
-<li><a class="reference internal" href="#python-loops">Python Loops</a></li>
-<li><a class="reference internal" href="#lists">Lists</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#control-flow-and-conditional-statements">Control Flow and Conditional Statements</a></li>
+<li><a class="reference internal" href="#loops">Loops</a></li>
+<li><a class="reference internal" href="#lists-and-list-manipulation">Lists and List Manipulation</a></li>
 <li><a class="reference internal" href="#functions-methods-parameters">Functions/ Methods/ Parameters</a><ul>
 <li><a class="reference internal" href="#function">Function</a></li>
 <li><a class="reference internal" href="#method">Method</a></li>
@@ -652,6 +670,10 @@ The following table summarizes the operator precedence from highest to lowest. A
 <li><a class="reference internal" href="#summary-of-differences">Summary of Differences</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#object-oriented-programming">Object-Oriented Programming</a></li>
+<li><a class="reference internal" href="#exception-handling">Exception Handling</a></li>
+<li><a class="reference internal" href="#file-handling">File Handling</a></li>
+<li><a class="reference internal" href="#lambda-functions">Lambda Functions</a></li>
 </ul>
 </li>
 </ul>
