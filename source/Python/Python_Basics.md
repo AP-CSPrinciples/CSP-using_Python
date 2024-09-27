@@ -244,13 +244,13 @@ Understanding these distinctions can help in writing clearer, more organized cod
 ## Python Turtle Methods
 
 
+## File Handling
+
+
 ## Object-Oriented Programming
 
 
 ## Exception Handling
-
-
-## File Handling
 
 
 ## Lambda Functions
