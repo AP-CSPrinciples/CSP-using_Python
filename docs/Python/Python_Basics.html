@@ -271,12 +271,13 @@
         <article role="main" id="furo-main-content">
           <section id="python-basics">
 <h1>Python Basics<a class="headerlink" href="#python-basics" title="Link to this heading">¶</a></h1>
+<p>Python is an open-source programming language that is one of the easiest programs that a person can learn for their first programming language.  Python is a versatile programming language that can be used in many areas such as data analysis, science, web development, AI, and IoT.  As of 2024, it is one of the most in demand programming languages in the market place.  Python is a high-level programming language that offers simplicity, readability, and versatility.  Python supports multiple programming paradigms and has an extensive library that simplifies coding tasks. Python has a robust community and documentation support that enables beginners to excel quickly in this language.</p>
 <p>We will be looking at syntax and structures of Python. We will use an Integrated Development Environment to develop our code in this course.</p>
+<section id="python-style-guidelines">
+<h2>Python Style Guidelines<a class="headerlink" href="#python-style-guidelines" title="Link to this heading">¶</a></h2>
+</section>
 <section id="print-statements">
 <h2>Print Statements<a class="headerlink" href="#print-statements" title="Link to this heading">¶</a></h2>
-</section>
-<section id="modules-and-packages">
-<h2>Modules and Packages<a class="headerlink" href="#modules-and-packages" title="Link to this heading">¶</a></h2>
 </section>
 <section id="variables-and-data-types">
 <h2>Variables and Data Types<a class="headerlink" href="#variables-and-data-types" title="Link to this heading">¶</a></h2>
@@ -325,6 +326,9 @@ The following table summarizes the operator precedence from highest to lowest. A
 </table>
 </div>
 </section>
+</section>
+<section id="modules-and-packages">
+<h2>Modules and Packages<a class="headerlink" href="#modules-and-packages" title="Link to this heading">¶</a></h2>
 </section>
 <section id="control-flow-and-conditional-statements">
 <h2>Control Flow and Conditional Statements<a class="headerlink" href="#control-flow-and-conditional-statements" title="Link to this heading">¶</a></h2>
@@ -470,55 +474,6 @@ The following table summarizes the operator precedence from highest to lowest. A
 </div>
 </section>
 <hr class="docutils" />
-<section id="lists-and-list-manipulation">
-<h2>Lists and List Manipulation<a class="headerlink" href="#lists-and-list-manipulation" title="Link to this heading">¶</a></h2>
-<p>For this class, we will not be using tuples, but you should be familiar with how they are used and the difference of a list.</p>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Indexing</p></th>
-<th class="head"><p>Ordered</p></th>
-<th class="head"><p>Mutable</p></th>
-<th class="head"><p>Duplicate</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>List</p></td>
-<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
-<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
-<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
-<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
-</tr>
-<tr class="row-odd"><td><p>Tuple</p></td>
-<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
-<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
-<td><p><ul><li>[ ] Yes</li><li>[X] No</li></ul></p></td>
-<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
-</tr>
-<tr class="row-even"><td><p>Set</p></td>
-<td><p><ul><li>[ ] Yes</li><li>[X] No</li></ul></p></td>
-<td><p><ul><li>[ ] Yes</li><li>[X] No</li></ul></p></td>
-<td><p><ul><li>[ ] Yes</li><li>[X] No</li></ul></p></td>
-<td><p><ul><li>[ ] Yes</li><li>[X] No</li></ul></p></td>
-</tr>
-<tr class="row-odd"><td><p>Dictionary</p></td>
-<td><p><ul><li>[ ] Yes</li><li>[X] No</li></ul></p></td>
-<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
-<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
-<td><p><ul><li>[ ] Yes</li><li>[X] No</li></ul></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_______________________________________________</span>
-<span class="n">string1</span> <span class="o">=</span> <span class="o">|</span>  <span class="n">P</span>  <span class="o">|</span>  <span class="n">O</span>  <span class="o">|</span>  <span class="n">T</span>  <span class="o">|</span>  <span class="n">A</span>  <span class="o">|</span>  <span class="n">T</span>  <span class="o">|</span>  <span class="n">O</span>  <span class="o">|</span>
-
-<span class="n">index</span> <span class="c1">#   0     1     2     3     4     5     6</span>
-<span class="n">_______________________________________________</span>
-</pre></div>
-</div>
-</section>
 <section id="functions-methods-parameters">
 <h2>Functions/ Methods/ Parameters<a class="headerlink" href="#functions-methods-parameters" title="Link to this heading">¶</a></h2>
 <p>In computer programming, the terms <strong>function</strong>, <strong>method</strong>, and <strong>procedure</strong> have distinct meanings, though they are often used interchangeably in casual conversation. Here’s a breakdown of each:</p>
@@ -584,6 +539,55 @@ The following table summarizes the operator precedence from highest to lowest. A
 <p>Understanding these distinctions can help in writing clearer, more organized code and communicating effectively with other developers.</p>
 </section>
 </section>
+<section id="lists-and-list-manipulation">
+<h2>Lists and List Manipulation<a class="headerlink" href="#lists-and-list-manipulation" title="Link to this heading">¶</a></h2>
+<p>For this class, we will not be using tuples, but you should be familiar with how they are used and the difference of a list.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Indexing</p></th>
+<th class="head"><p>Ordered</p></th>
+<th class="head"><p>Mutable</p></th>
+<th class="head"><p>Duplicate</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>List</p></td>
+<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
+<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
+<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
+<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p>Tuple</p></td>
+<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
+<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
+<td><p><ul><li>[ ] Yes</li><li>[X] No</li></ul></p></td>
+<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
+</tr>
+<tr class="row-even"><td><p>Set</p></td>
+<td><p><ul><li>[ ] Yes</li><li>[X] No</li></ul></p></td>
+<td><p><ul><li>[ ] Yes</li><li>[X] No</li></ul></p></td>
+<td><p><ul><li>[ ] Yes</li><li>[X] No</li></ul></p></td>
+<td><p><ul><li>[ ] Yes</li><li>[X] No</li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p>Dictionary</p></td>
+<td><p><ul><li>[ ] Yes</li><li>[X] No</li></ul></p></td>
+<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
+<td><p><ul><li>[X] Yes</li><li>[ ] No</li></ul></p></td>
+<td><p><ul><li>[ ] Yes</li><li>[X] No</li></ul></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_______________________________________________</span>
+<span class="n">string1</span> <span class="o">=</span> <span class="o">|</span>  <span class="n">P</span>  <span class="o">|</span>  <span class="n">O</span>  <span class="o">|</span>  <span class="n">T</span>  <span class="o">|</span>  <span class="n">A</span>  <span class="o">|</span>  <span class="n">T</span>  <span class="o">|</span>  <span class="n">O</span>  <span class="o">|</span>
+
+<span class="n">index</span> <span class="c1">#   0     1     2     3     4     5     6</span>
+<span class="n">_______________________________________________</span>
+</pre></div>
+</div>
+</section>
 <section id="python-turtle-methods">
 <h2>Python Turtle Methods<a class="headerlink" href="#python-turtle-methods" title="Link to this heading">¶</a></h2>
 </section>
@@ -598,6 +602,12 @@ The following table summarizes the operator precedence from highest to lowest. A
 </section>
 <section id="lambda-functions">
 <h2>Lambda Functions<a class="headerlink" href="#lambda-functions" title="Link to this heading">¶</a></h2>
+</section>
+<section id="pygame">
+<h2>PyGame<a class="headerlink" href="#pygame" title="Link to this heading">¶</a></h2>
+</section>
+<section id="data-structures">
+<h2>Data Structures<a class="headerlink" href="#data-structures" title="Link to this heading">¶</a></h2>
 </section>
 </section>
 
@@ -657,15 +667,15 @@ The following table summarizes the operator precedence from highest to lowest. A
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Python Basics</a><ul>
+<li><a class="reference internal" href="#python-style-guidelines">Python Style Guidelines</a></li>
 <li><a class="reference internal" href="#print-statements">Print Statements</a></li>
-<li><a class="reference internal" href="#modules-and-packages">Modules and Packages</a></li>
 <li><a class="reference internal" href="#variables-and-data-types">Variables and Data Types</a><ul>
 <li><a class="reference internal" href="#order-of-operation">Order of Operation</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#modules-and-packages">Modules and Packages</a></li>
 <li><a class="reference internal" href="#control-flow-and-conditional-statements">Control Flow and Conditional Statements</a></li>
 <li><a class="reference internal" href="#loops">Loops</a></li>
-<li><a class="reference internal" href="#lists-and-list-manipulation">Lists and List Manipulation</a></li>
 <li><a class="reference internal" href="#functions-methods-parameters">Functions/ Methods/ Parameters</a><ul>
 <li><a class="reference internal" href="#function">Function</a></li>
 <li><a class="reference internal" href="#method">Method</a></li>
@@ -673,11 +683,14 @@ The following table summarizes the operator precedence from highest to lowest. A
 <li><a class="reference internal" href="#summary-of-differences">Summary of Differences</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#lists-and-list-manipulation">Lists and List Manipulation</a></li>
 <li><a class="reference internal" href="#python-turtle-methods">Python Turtle Methods</a></li>
 <li><a class="reference internal" href="#file-handling">File Handling</a></li>
 <li><a class="reference internal" href="#object-oriented-programming">Object-Oriented Programming</a></li>
 <li><a class="reference internal" href="#exception-handling">Exception Handling</a></li>
 <li><a class="reference internal" href="#lambda-functions">Lambda Functions</a></li>
+<li><a class="reference internal" href="#pygame">PyGame</a></li>
+<li><a class="reference internal" href="#data-structures">Data Structures</a></li>
 </ul>
 </li>
 </ul>

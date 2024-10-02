@@ -1,14 +1,18 @@
 # Python Basics
 
+Python is an open-source programming language that is one of the easiest programs that a person can learn for their first programming language.  Python is a versatile programming language that can be used in many areas such as data analysis, science, web development, AI, and IoT.  As of 2024, it is one of the most in demand programming languages in the market place.  Python is a high-level programming language that offers simplicity, readability, and versatility.  Python supports multiple programming paradigms and has an extensive library that simplifies coding tasks. Python has a robust community and documentation support that enables beginners to excel quickly in this language.   
+
 We will be looking at syntax and structures of Python. We will use an Integrated Development Environment to develop our code in this course.  
+
+
+## Python Style Guidelines
+
 
 ## Print Statements
 
 
-## Modules and Packages
-
-
 ## Variables and Data Types
+
 
 ### Order of Operation
 
@@ -24,6 +28,9 @@ The following table summarizes the operator precedence from highest to lowest. A
 | 3	| logical	| not |
 | 2	| logical	| and |
 | 1 *(low)*	|logical |	or |
+
+
+## Modules and Packages
 
 
 
@@ -176,24 +183,6 @@ Enter the size of the square: 10
 
 -------------------------------------------------------------------------------------------------
 
-## Lists and List Manipulation
-
-For this class, we will not be using tuples, but you should be familiar with how they are used and the difference of a list.
-
-|      | Indexing | Ordered | Mutable | Duplicate |
-|------------|---------------|----------------|------------------------------------|----------------|
-| List | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> |
-| Tuple | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> |
-| Set |  <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> |
-| Dictionary |  <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> |
-
-```
-_______________________________________________
-string1 = |  P  |  O  |  T  |  A  |  T  |  O  |
-
-index #   0     1     2     3     4     5     6
-_______________________________________________
-```
 
 ## Functions/ Methods/ Parameters
 In computer programming, the terms **function**, **method**, and **procedure** have distinct meanings, though they are often used interchangeably in casual conversation. Here’s a breakdown of each:
@@ -241,6 +230,27 @@ In computer programming, the terms **function**, **method**, and **procedure** h
 Understanding these distinctions can help in writing clearer, more organized code and communicating effectively with other developers.
 
 
+## Lists and List Manipulation
+
+For this class, we will not be using tuples, but you should be familiar with how they are used and the difference of a list.
+
+|      | Indexing | Ordered | Mutable | Duplicate |
+|------------|---------------|----------------|------------------------------------|----------------|
+| List | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> |
+| Tuple | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> |
+| Set |  <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> |
+| Dictionary |  <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> |
+
+```
+_______________________________________________
+string1 = |  P  |  O  |  T  |  A  |  T  |  O  |
+
+index #   0     1     2     3     4     5     6
+_______________________________________________
+```
+
+
+
 ## Python Turtle Methods
 
 
@@ -254,3 +264,9 @@ Understanding these distinctions can help in writing clearer, more organized cod
 
 
 ## Lambda Functions
+
+
+## PyGame
+
+
+## Data Structures
