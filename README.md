@@ -45,42 +45,42 @@ https://ctlessons.org/
 
  </p></details>
 
-## AP Computer Science A Vocabulary
+## AP Computer Science Principles Vocabulary & Exam References
 
 <details><summary>Click Here</summary>
  <p></br>
 
-**Below is a comprehensive list of vocabulary words every AP Computer Science A student should be familiar with.**
+**Below is a comprehensive list of vocabulary words every AP Computer Science Principles student should be familiar with.**
 ***Did I miss a word? Please let me know...***
 
 | Term  | Definition |
 | :---: | :--- |
-| !	| A logical operator that reverses the state of a boolean value |
-| &&	| A logical operator that evaluates to true only if both sides are true| 
-| ==	| An operator to compare two pieces of primitive data or two addresses| 
-| ![2bars](https://user-images.githubusercontent.com/12989939/164557376-cd1f0068-ad3d-4115-81e9-75726b8c64e9.PNG)	| A logical operator that evaluates to true if either side is true | 
-|abstract	 | A class that is never meant to be instantiated except through a concrete subclass | 
-|accessor	 | A method that returns the value of a private instance variable (aka getter) | 
-|add	 | The method for putting a new item in a list | 
-|addresses	 | The location in memory at which an object is stored | 
-|Aggregation	 | Has - A Object relation | 
-|algorithm	 | A step by step process for solving a problem | 
-|AND	 | Only true if both inputs are true
-| arithmetic operators	 | +, -, *, /, % | 
- | array	 | A collection of pieces of data stored as indexed items under one name | 
- | ArrayIndexOutOfBoundsException	 | An error that happens when you refer to an element number larger than your array | 
- | ArrayList	 | A template class for keeping track of collections of data with a changing size | 
- | assembler	 | The part of the IDE that turns your code into assembly code | 
- | assembly language	 | The instruction set used by the CPU (aka machine code) | 
- | assign	 | Set a variable to a value | 
- | attribute	 | A variable property of an object (aka field) | 
- | autoboxing	 | A feature of Java that converts primitive types to their class counterpart | 
- | base 2 logarithm	 | A mathematical operation that returns what power of 2 a number is | 
- | base case	 | A condition that triggers a recursive process to end | 
- | base class	 | A class that another class inherits from (aka superclass) | 
- | behavior	 | An ability of an object (aka method) | 
- | Binary Search	 | A search technique on ordered data that cuts the list in half on each check | 
- | bit	 | A binary digit | 
+| a ← expression	| Evaluates expression and then assigns a copy of the result to the variable a. |
+| DISPLAY(expression)	| Displays the value of expression, followed by a space. |
+| INPUT() | Accepts a value from the user and returns the input value. |
+| a + b, a - b, a * b, a / b	| The arithmetic operators +, -, *, and / are used to perform arithmetic on a and b. For example, 17 / 5 evaluates to 3.4. The order of operations used in mathematics applies when evaluating expressions.  | 
+| a MOD b | Evaluates to the remainder when a is divided by b. Assume that a is an integer greater than or equal to 0 and b is an integergreater than 0. For example, 17 MOD 5 evaluates to 2. The MOD operator has the same precedence as the * and / operators. | 
+| RANDOM(a, b)	 | Generates and returns a random integer from a to b, including a and b. Each result is equally likely to occur. For example, RANDOM(1, 3) could return 1, 2, or 3. | 
+|a = b, a ≠ b, a > b, a < b, a ≥ b, a ≤ b	 | The relational operators =, ≠, >, <, ≥, and ≤ are used to test the relationship between two variables, expressions, or values. A comparison using relational operators evaluates to a Boolean value. For example, a = b evaluates to true if a and b are equal; otherwise it evaluates to false.| 
+|NOT condition	| Evaluates to true if condition is false; otherwise evaluates to false. | 
+|condition1 AND condition2	 | Evaluates to true if both condition1 and condition2 are true; otherwise evaluates to false. | 
+|condition1 OR condition2 | Evaluates to true if condition1 is true or if condition2 is true or if both condition1 and condition2 are true; otherwise evaluates to false. | 
+|aList ← [value1, value2, value3, ...]	 | Creates a new list that contains the values value1, value2,value3, and ... at indices 1, 2, 3, and ... respectively and assigns it to aList. |
+| aList ← []	| Creates an empty list and assigns it to aList. | 
+ | aList ← bList	 |Assigns a copy of the list bList to the list aList. For example, if bList contains [20, 40, 60], then aList will also contain [20, 40, 60] after the assignment. | 
+ | aList[i]	 | Accesses the element of aList at index i. The first element of aList is at index 1 and is accessed using the notation aList[1]. | 
+ | x ← aList[i]	 | Assigns the value of aList[i] to the variable x.  | 
+ | aList[i] ← x	 | Assigns the value of x to aList[i]. | 
+ | aList[i] ← aList[j]	 | Assigns the value of aList[j] to aList[i]. | 
+ | INSERT(aList, i, value)	 | Any values in aList at indices greater than or equal to i are shifted one position to the right. The length of the list is increased by 1, and value is placed at index i in aList.  | 
+ | APPEND(aList, value)	 | The length of aList is increased by 1, and value is placed at the end of aList.  | 
+ | REMOVE(aList, i)	 | Removes the item at index i in aList and shifts to the left any values at indices greater than i. The length of aList is decreased by 1. | 
+ | LENGTH(aList)	 | Evaluates to the number of elements in aList. | 
+ | RETURN(expression)	 | Returns the flow of control to the point where the procedure was called and returns the value of expression. | 
+ | MOVE_FORWARD()	 | The robot moves one square forward in the direction it is facing. | 
+ | ROTATE_LEFT()	 | The robot rotates in place 90 degrees counterclockwise (i.e., makes an in-place left turn). | 
+ | ROTATE_RIGHT()	 | The robot rotates in place 90 degrees clockwise (i.e., makes an inplace right turn). | 
+ | CAN_MOVE(direction)	 | Evaluates to true if there is an open square one square in the direction relative to where the robot is facing; otherwise evaluates to false. The value of direction can be left, right, forward, or backward. | 
  | block	 | A piece of code that is separated from the code around it | 
  | body	 | The code inside of a method | 
  | boolean	 | A type of variable or operation that evaluates to true or false | 
