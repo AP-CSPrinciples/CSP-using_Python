@@ -266,7 +266,93 @@ _______________________________________________
 ## Lambda Functions
 
 
-## PyGame
+## Pygame
+Pygame is a free and open-source Python library used for creating 2D video games. It provides modules to handle graphics, sound, user input, and more.
 
+### Why Pygame instead of Turtle?
+
+Pygame is commonly used to create AP CSP performance tasks. Pygame allows you to add features like images, sound, and animations, making your project more interactive and polished. By using Pygame, your project will have better graphics and functionality, allowing you to showcase your creativity to your potential.
+
+## Pygame Installation
+Official Pygame Installation Guide:
+[https://www.pygame.org/wiki/GettingStarted]
+
+- If theres any trouble, there are many youtube tutorials on Pygame Installation.
+- If theres still trouble, consider asking ChatGPT or Mr.Virak for help. 
+
+## Pygame Basics
+
+### Before you Start
+
+This command must be called whenever you want to put something on the screen.
+
+```python
+
+window.blit(bg, (0,0))
+
+#window is the main Pygame Window 
+#bg is an object to be rendered
+# (0,0) are the (x,y) coordinates
+
+```
+
+ However, in order to actually render the object on the screen:
+
+```python
+
+pygame.display.update()
+
+```
+**Tip**: This command should always be present in the end of the Pygame Main Loop
+
+## Pygame Window
+
+Pygame has the ability to create a window. This window will contain all the visual graphics of your game.
+
+```python
+
+height = 500
+length = 500
+
+window = pygame.display.set_mode((length, height))
+pygame.display.set_caption("Example Game")
+
+```
+
+This Code will create a window 500 pixel by 500 pixel black screen with the title of "Example Game".
+
+#### Pygame Window Customization
+
+You may also set the background to a certain image or color. 
+
+```python
+
+bg = pygame.transform.smoothscale(pygame.image.load("bg.jpeg"), (length, height))
+
+#pygame.transform.smoothscale() will scale any image to any size
+#pygame.image.load("bg.jpeg") will load the bg.jpeg
+#(length, height) will the the target size of the image
+
+```
+**Tip**: Pygame can load many image types. However, jpeg and png work the best.
+
+**Debugging**: Make sure that the image you're trying to load is in the same folder as the code. 
+**Debugging**: Don't forget to blit the object!
+
+Pygame uses a large while True loop in order to keep the game running. Below is an example of such loop:
+
+```python
+# PyGame Main Loop
+
+keepGameRunning = True
+
+while keepGameRunning:
+  for event in pygame.event.get():
+      if event.type == pygame.QUIT:
+          state.keepGameRunning = False
+
+      pygame.display.update()
+```
+pygame has many prebuilt events, (such as button pressing) and this loop, in order to not be an infinite loop, checks if the user has clicked on the red X on the top left of the Pygame Window.
 
 ## Data Structures
