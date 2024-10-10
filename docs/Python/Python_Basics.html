@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Creative Development" href="../Unit%201/Creative_Development.html" /><link rel="prev" title="Student Resources" href="../Resources/student_resources.html" />
 
-    <!-- Generated with Sphinx 8.0.2 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.1.0 and Furo 2024.08.06 -->
         <title>Python Basics - AP CS Principles</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
@@ -622,10 +622,14 @@ The following table summarizes the operator precedence from highest to lowest. A
 </section>
 <section id="pygame-basics">
 <h2>Pygame Basics<a class="headerlink" href="#pygame-basics" title="Link to this heading">¶</a></h2>
+<p>This section will teach you some important parts of Pygame. It will also teach you how to create a basic moving game with points called “Apple Collect”.</p>
 <section id="before-you-start">
 <h3>Before you Start<a class="headerlink" href="#before-you-start" title="Link to this heading">¶</a></h3>
 <p>This command must be called whenever you want to put something on the screen.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="c1">#initializes the Pygame library</span>
+
 <span class="n">window</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">bg</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
 
 <span class="c1">#window is the main Pygame Window </span>
@@ -634,6 +638,7 @@ The following table summarizes the operator precedence from highest to lowest. A
 
 </pre></div>
 </div>
+<p><strong>Important</strong>: The order how you blit each imagine matters. (blitting x before y will be different from blitting y before x)</p>
 <p>However, in order to actually render the object on the screen:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
@@ -679,12 +684,62 @@ The following table summarizes the operator precedence from highest to lowest. A
 <span class="k">while</span> <span class="n">keepGameRunning</span><span class="p">:</span>
   <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
       <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
-          <span class="n">state</span><span class="o">.</span><span class="n">keepGameRunning</span> <span class="o">=</span> <span class="kc">False</span>
+          <span class="n">keepGameRunning</span> <span class="o">=</span> <span class="kc">False</span>
 
       <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>pygame has many prebuilt events, (such as button pressing) and this loop, in order to not be an infinite loop, checks if the user has clicked on the red X on the top left of the Pygame Window.</p>
+<p>Pygame has many prebuilt events, (such as button pressing) and this loop, in order to not be an infinite loop, checks if the user has clicked on the red X on the top left of the Pygame Window.</p>
+</section>
+<section id="apple-collect">
+<h3>Apple Collect<a class="headerlink" href="#apple-collect" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span> <span class="nn">pygame</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">height</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">length</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="n">window</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">length</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Apple Collect&quot;</span><span class="p">)</span>
+
+<span class="n">bg</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">smoothscale</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;bg.jpeg&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
+
+<span class="n">keepGameRunning</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">while</span> <span class="n">keepGameRunning</span><span class="p">:</span>
+
+    <span class="n">window</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">bg</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+      <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+          <span class="n">keepGameRunning</span> <span class="o">=</span> <span class="kc">False</span>
+
+      <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+</pre></div>
+</div>
+</section>
+<section id="pygame-sprites">
+<h3>Pygame Sprites<a class="headerlink" href="#pygame-sprites" title="Link to this heading">¶</a></h3>
+<p>Using similar logic as creating the background, we can create a custom image on top the the background:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">player</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">smoothscale</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;player.png&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+
+<span class="c1">#scales and image called &quot;player.png&quot; to 100 by 100 pixels </span>
+</pre></div>
+</div>
+<p><strong>Tip</strong>: Make sure to blit the player AFTER the background!</p>
+<section id="moving-the-sprite">
+<h4>Moving the sprite<a class="headerlink" href="#moving-the-sprite" title="Link to this heading">¶</a></h4>
+<p>Pygame can track user’s input. For example, pygame can identify when the user is pressing the up arrow on they keyboard. We can use this functionality in order to create some basic movement for the sprite.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">keys</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">get_pressed</span><span class="p">()</span>
+<span class="c1">#Creates a variable &quot;keys&quot; that will check what button the player is pressing</span>
+
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 <section id="data-structures">
@@ -781,6 +836,11 @@ The following table summarizes the operator precedence from highest to lowest. A
 </li>
 <li><a class="reference internal" href="#pygame-window">Pygame Window</a><ul>
 <li><a class="reference internal" href="#pygame-window-customization">Pygame Window Customization</a></li>
+<li><a class="reference internal" href="#apple-collect">Apple Collect</a></li>
+<li><a class="reference internal" href="#pygame-sprites">Pygame Sprites</a><ul>
+<li><a class="reference internal" href="#moving-the-sprite">Moving the sprite</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#data-structures">Data Structures</a></li>
@@ -796,7 +856,7 @@ The following table summarizes the operator precedence from highest to lowest. A
     </aside>
   </div>
 </div><script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
     </body>
