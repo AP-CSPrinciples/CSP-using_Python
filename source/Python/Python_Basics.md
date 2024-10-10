@@ -282,11 +282,16 @@ Official Pygame Installation Guide:
 
 ## Pygame Basics
 
+This section will teach you some important parts of Pygame. It will also teach you how to create a basic moving game with points called "Apple Collect".
+
 ### Before you Start
 
 This command must be called whenever you want to put something on the screen.
 
 ```python
+
+pygame.init()
+#initializes the Pygame library
 
 window.blit(bg, (0,0))
 
@@ -295,6 +300,7 @@ window.blit(bg, (0,0))
 # (0,0) are the (x,y) coordinates
 
 ```
+**Important**: The order how you blit each imagine matters. (blitting x before y will be different from blitting y before x)
 
  However, in order to actually render the object on the screen:
 
@@ -349,10 +355,63 @@ keepGameRunning = True
 while keepGameRunning:
   for event in pygame.event.get():
       if event.type == pygame.QUIT:
-          state.keepGameRunning = False
+          keepGameRunning = False
 
       pygame.display.update()
 ```
-pygame has many prebuilt events, (such as button pressing) and this loop, in order to not be an infinite loop, checks if the user has clicked on the red X on the top left of the Pygame Window.
+Pygame has many prebuilt events, (such as button pressing) and this loop, in order to not be an infinite loop, checks if the user has clicked on the red X on the top left of the Pygame Window.
+
+
+### Apple Collect 
+
+```python
+
+import pygame
+
+pygame.init()
+
+height = 500
+length = 500
+
+window = pygame.display.set_mode((length, height))
+pygame.display.set_caption("Apple Collect")
+
+bg = pygame.transform.smoothscale(pygame.image.load("bg.jpeg"), (length, height))
+
+keepGameRunning = True
+
+while keepGameRunning:
+
+    window.blit(bg, (0, 0))
+    for event in pygame.event.get():
+      if event.type == pygame.QUIT:
+          keepGameRunning = False
+
+      pygame.display.update()
+
+```
+
+### Pygame Sprites 
+
+Using similar logic as creating the background, we can create a custom image on top the the background:
+
+```python
+
+player = pygame.transform.smoothscale(pygame.image.load("player.png"), (100, 100))
+
+#scales and image called "player.png" to 100 by 100 pixels 
+```
+**Tip**: Make sure to blit the player AFTER the background!
+
+#### Moving the sprite
+
+Pygame can track user's input. For example, pygame can identify when the user is pressing the up arrow on they keyboard. We can use this functionality in order to create some basic movement for the sprite. 
+
+```python
+
+keys = pygame.key.get_pressed()
+#Creates a variable "keys" that will check what button the player is pressing
+
+```
 
 ## Data Structures
