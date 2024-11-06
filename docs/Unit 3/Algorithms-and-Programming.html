@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Computing and Network Systems" href="../Unit%204/Computing-and-Network-Systems.html" /><link rel="prev" title="Data" href="../Unit%202/data.html" />
 
-    <!-- Generated with Sphinx 8.1.0 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Algorithms &amp; Programming - AP CS Principles</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
@@ -178,7 +178,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -263,7 +263,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -271,6 +271,1209 @@
         <article role="main" id="furo-main-content">
           <section id="algorithms-programming">
 <h1>Algorithms &amp; Programming<a class="headerlink" href="#algorithms-programming" title="Link to this heading">¶</a></h1>
+<section id="keywords-in-python">
+<h2>Keywords in Python<a class="headerlink" href="#keywords-in-python" title="Link to this heading">¶</a></h2>
+<section id="explanation-of-keywords-usage">
+<h3>Explanation of Keywords Usage<a class="headerlink" href="#explanation-of-keywords-usage" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Class and Function Definitions</strong>: <code class="docutils literal notranslate"><span class="pre">class</span></code>, <code class="docutils literal notranslate"><span class="pre">def</span></code></p></li>
+<li><p><strong>Conditional and Looping Statements</strong>: <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code>, <code class="docutils literal notranslate"><span class="pre">break</span></code></p></li>
+<li><p><strong>Error Handling</strong>: <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code>, <code class="docutils literal notranslate"><span class="pre">finally</span></code>, <code class="docutils literal notranslate"><span class="pre">raise</span></code>, <code class="docutils literal notranslate"><span class="pre">assert</span></code></p></li>
+<li><p><strong>Logical Operators</strong>: <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">is</span></code></p></li>
+<li><p><strong>Special Assignments</strong>: <code class="docutils literal notranslate"><span class="pre">global</span></code>, <code class="docutils literal notranslate"><span class="pre">nonlocal</span></code>, <code class="docutils literal notranslate"><span class="pre">del</span></code></p></li>
+<li><p><strong>Miscellaneous</strong>: <code class="docutils literal notranslate"><span class="pre">yield</span></code>, <code class="docutils literal notranslate"><span class="pre">with</span></code>, <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, <code class="docutils literal notranslate"><span class="pre">return</span></code>, <code class="docutils literal notranslate"><span class="pre">pass</span></code>, <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+</ul>
+<p>Here’s a Python program that includes all the specified keywords in a simple example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a class with some functionality</span>
+<span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
+
+    <span class="c1"># Method to perform basic checks and operations</span>
+    <span class="k">def</span> <span class="nf">check_and_increment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">increment</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">increment</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">+=</span> <span class="n">increment</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Value is None&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+    <span class="c1"># Generator that yields numbers up to a limit</span>
+    <span class="k">def</span> <span class="nf">count_up_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
+            <span class="k">yield</span> <span class="n">i</span>
+
+    <span class="c1"># Example method using lambda, try/except, and assertions</span>
+    <span class="k">def</span> <span class="nf">safe_divide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">divisor</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">divisor</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Divisor must not be zero&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">/</span> <span class="n">divisor</span>
+        <span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Exception caught: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Division attempted&quot;</span><span class="p">)</span>
+
+<span class="c1"># Using various keywords in functions and control structures</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Create an instance of the class</span>
+    <span class="n">ex</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+    
+    <span class="c1"># Use &#39;with&#39; to handle a file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Using with statement to handle file safely.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Basic loop with break and continue</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Odd number below 6: </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Using lambda, or, not, is, and nonlocal</span>
+    <span class="k">def</span> <span class="nf">incrementer</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
+            <span class="k">nonlocal</span> <span class="n">n</span>
+            <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="n">n</span>
+        <span class="k">return</span> <span class="n">inner</span>
+
+    <span class="n">increment</span> <span class="o">=</span> <span class="n">incrementer</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Incremented value: </span><span class="si">{</span><span class="n">increment</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Output: 6</span>
+
+    <span class="c1"># Use of global variable</span>
+    <span class="k">global</span> <span class="n">result</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">safe_divide</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">if</span> <span class="n">ex</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">False</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Global result: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Check conditions with True, False, and None</span>
+    <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result is valid&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result is False&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result is None&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Using &#39;while&#39; loop</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Continue (yes/no)? &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">response</span> <span class="o">==</span> <span class="s2">&quot;no&quot;</span><span class="p">:</span>
+            <span class="k">break</span>
+
+<span class="c1"># Run the main function</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="functions-methods-procedures">
+<h2>Functions/ Methods/ Procedures<a class="headerlink" href="#functions-methods-procedures" title="Link to this heading">¶</a></h2>
+<p>In computer programming, the terms <strong>function</strong>, <strong>method</strong>, and <strong>procedure</strong> have distinct meanings, though they are often used interchangeably in casual conversation. Here’s a breakdown of each:</p>
+<section id="function">
+<h3>Function<a class="headerlink" href="#function" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Definition</strong>: A function is a block of code that takes inputs (arguments), performs a specific task, and returns a value. Functions are designed to compute a value and can be used across different parts of a program.</p></li>
+<li><p><strong>Example</strong>: In Python, a simple function might look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="method">
+<h3>Method<a class="headerlink" href="#method" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Definition</strong>: A method is similar to a function but is associated with an object or a class in object-oriented programming (OOP). Methods operate on data contained within the object and can modify the object’s state.</p></li>
+<li><p><strong>Example</strong>: In Java, a method in a class might look like this:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Calculator</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="procedure">
+<h3>Procedure<a class="headerlink" href="#procedure" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Definition</strong>: A procedure is a block of code that performs a task but does not necessarily return a value. Procedures are often used for executing a sequence of statements and might be called for their side effects rather than for a result.</p></li>
+<li><p><strong>Example</strong>: In Pascal, a procedure might look like this:</p>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nf">DisplayMessage</span><span class="o">;</span>
+<span class="k">begin</span>
+<span class="w">    </span><span class="nb">writeln</span><span class="p">(</span><span class="s">&#39;Hello, World!&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="k">end</span><span class="o">;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="summary-of-differences">
+<h3>Summary of Differences<a class="headerlink" href="#summary-of-differences" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Return Value</strong>:</p>
+<ul>
+<li><p><strong>Function</strong>: Returns a value.</p></li>
+<li><p><strong>Method</strong>: Can return a value (if designed to do so) and is associated with an object.</p></li>
+<li><p><strong>Procedure</strong>: Typically does not return a value.</p></li>
+</ul>
+</li>
+<li><p><strong>Context</strong>:</p>
+<ul>
+<li><p><strong>Function</strong>: Used in various programming paradigms (procedural, functional).</p></li>
+<li><p><strong>Method</strong>: Specific to object-oriented programming.</p></li>
+<li><p><strong>Procedure</strong>: Often used in procedural programming languages.</p></li>
+</ul>
+</li>
+</ul>
+<p>Understanding these distinctions can help in writing clearer, more organized code and communicating effectively with other developers.</p>
+</section>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">¶</a></h2>
+<p>In Python, <strong>methods</strong> are functions that belong to objects and are used to operate on those objects. They are similar to functions but have a special relationship with the object they belong to, known as the <strong>instance</strong>.</p>
+<p>Let’s break down the key concepts:</p>
+<section id="method-vs-function">
+<h3>1. <strong>Method vs. Function</strong><a class="headerlink" href="#method-vs-function" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>A <strong>function</strong> is a block of code that performs a specific task and can exist independently of any object. For example, <code class="docutils literal notranslate"><span class="pre">print()</span></code> and <code class="docutils literal notranslate"><span class="pre">len()</span></code> are functions.</p></li>
+<li><p>A <strong>method</strong>, on the other hand, is a function that is associated with an object. It is called on an object and can access the object’s internal data. For instance, <code class="docutils literal notranslate"><span class="pre">str.upper()</span></code> is a method called on a string object to return an uppercase version of that string.</p></li>
+</ul>
+</section>
+<section id="instance-methods">
+<h3>2. <strong>Instance Methods</strong><a class="headerlink" href="#instance-methods" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Most methods are called <strong>instance methods</strong> because they operate on an instance of a class (an object created from a class).</p></li>
+<li><p>When an instance method is defined, the first parameter is usually <code class="docutils literal notranslate"><span class="pre">self</span></code>, which represents the instance of the class on which the method is called. This <code class="docutils literal notranslate"><span class="pre">self</span></code> parameter allows the method to access other attributes and methods of the same object.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    
+    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>   <span class="c1"># Instance method</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> says Woof!&quot;</span><span class="p">)</span>
+
+<span class="n">my_dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Buddy&quot;</span><span class="p">)</span>
+<span class="n">my_dog</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>  <span class="c1"># Output: &quot;Buddy says Woof!&quot;</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">bark()</span></code> is an instance method that uses <code class="docutils literal notranslate"><span class="pre">self</span></code> to access the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">my_dog</span></code> instance.</p>
+</section>
+<section id="class-methods">
+<h3>3. <strong>Class Methods</strong><a class="headerlink" href="#class-methods" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Class methods</strong> are methods that operate on the class itself rather than on individual instances. They are marked with the <code class="docutils literal notranslate"><span class="pre">&#64;classmethod</span></code> decorator.</p></li>
+<li><p>Instead of <code class="docutils literal notranslate"><span class="pre">self</span></code>, they take <code class="docutils literal notranslate"><span class="pre">cls</span></code> as their first parameter, which refers to the class itself, not an instance.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="n">species</span> <span class="o">=</span> <span class="s2">&quot;Canis familiaris&quot;</span>
+    
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_species</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">species</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Dog</span><span class="o">.</span><span class="n">get_species</span><span class="p">())</span>  <span class="c1"># Output: &quot;Canis familiaris&quot;</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">get_species()</span></code> is a class method that accesses the <code class="docutils literal notranslate"><span class="pre">species</span></code> attribute defined on the class itself.</p>
+</section>
+<section id="static-methods">
+<h3>4. <strong>Static Methods</strong><a class="headerlink" href="#static-methods" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Static methods</strong> are methods that don’t operate on an instance or class. They behave like normal functions but reside within a class for organizational purposes.</p></li>
+<li><p>Static methods are marked with the <code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code> decorator and don’t require <code class="docutils literal notranslate"><span class="pre">self</span></code> or <code class="docutils literal notranslate"><span class="pre">cls</span></code> parameters.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MathHelper</span><span class="p">:</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">MathHelper</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>  <span class="c1"># Output: 12</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">add()</span></code> is a static method and does not rely on any data from an instance or the class. It simply performs a task.</p>
+</section>
+<section id="special-methods-magic-methods">
+<h3>5. <strong>Special Methods (Magic Methods)</strong><a class="headerlink" href="#special-methods-magic-methods" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Special methods, also known as <strong>magic methods</strong> or <strong>dunder methods</strong> (short for “double underscore”), allow instances of classes to interact with built-in Python operations in unique ways.</p></li>
+<li><p>These methods have names starting and ending with double underscores (e.g., <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, <code class="docutils literal notranslate"><span class="pre">__str__</span></code>, <code class="docutils literal notranslate"><span class="pre">__len__</span></code>).</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Book</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">author</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="n">author</span>
+    
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2"> by </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">author</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">my_book</span> <span class="o">=</span> <span class="n">Book</span><span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="s2">&quot;George Orwell&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_book</span><span class="p">)</span>  <span class="c1"># Output: &quot;1984 by George Orwell&quot;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> method is a magic method that defines how an object should be represented as a string.</p>
+</section>
+<section id="method-chaining">
+<h3>6. <strong>Method Chaining</strong><a class="headerlink" href="#method-chaining" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Method chaining</strong> allows you to call multiple methods on the same object in a single statement. To enable this, each method must return the object itself.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextEditor</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+    
+    <span class="k">def</span> <span class="nf">add_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">+=</span> <span class="n">text</span>
+        <span class="k">return</span> <span class="bp">self</span>
+    
+    <span class="k">def</span> <span class="nf">make_uppercase</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+<span class="n">editor</span> <span class="o">=</span> <span class="n">TextEditor</span><span class="p">()</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Hello &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;World!&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">make_uppercase</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">editor</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>  <span class="c1"># Output: &quot;HELLO WORLD!&quot;</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">add_text</span></code> and <code class="docutils literal notranslate"><span class="pre">make_uppercase</span></code> return <code class="docutils literal notranslate"><span class="pre">self</span></code>, so you can chain the methods together.</p>
+</section>
+<section id="key-points-to-remember">
+<h3>Key Points to Remember<a class="headerlink" href="#key-points-to-remember" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Instance Methods</strong>: Operate on individual objects and use <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p></li>
+<li><p><strong>Class Methods</strong>: Operate on the class itself and use <code class="docutils literal notranslate"><span class="pre">cls</span></code>.</p></li>
+<li><p><strong>Static Methods</strong>: Do not operate on instances or the class; they’re independent but grouped within the class.</p></li>
+<li><p><strong>Special Methods</strong>: Have specific purposes within Python’s syntax (e.g., <code class="docutils literal notranslate"><span class="pre">__init__</span></code> for initialization, <code class="docutils literal notranslate"><span class="pre">__str__</span></code> for string representation).</p></li>
+</ul>
+<p>Methods make object-oriented programming in Python powerful, allowing objects to encapsulate both data and functionality.</p>
+</section>
+</section>
+<section id="pythod-turtle-graphic-methods">
+<h2>Pythod Turtle Graphic Methods<a class="headerlink" href="#pythod-turtle-graphic-methods" title="Link to this heading">¶</a></h2>
+<p>Here’s a comprehensive list of Python’s Turtle Graphics module methods, divided into categories for easier reference. These methods are often used to control the turtle’s movements, set its appearance, draw shapes, and control the window. This list includes methods available up to Python 3.10.</p>
+<section id="turtle-motion-and-positioning">
+<h3>1. <strong>Turtle Motion and Positioning</strong><a class="headerlink" href="#turtle-motion-and-positioning" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">forward(distance)</span></code> or <code class="docutils literal notranslate"><span class="pre">fd(distance)</span></code></p></td>
+<td><p>Move the turtle forward by the specified distance.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">backward(distance)</span></code> or <code class="docutils literal notranslate"><span class="pre">bk(distance)</span></code> or <code class="docutils literal notranslate"><span class="pre">back(distance)</span></code></p></td>
+<td><p>Move the turtle backward by the specified distance.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">right(angle)</span></code> or <code class="docutils literal notranslate"><span class="pre">rt(angle)</span></code></p></td>
+<td><p>Turn the turtle clockwise by the specified angle.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">left(angle)</span></code> or <code class="docutils literal notranslate"><span class="pre">lt(angle)</span></code></p></td>
+<td><p>Turn the turtle counterclockwise by the specified angle.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">goto(x,</span> <span class="pre">y)</span></code> or <code class="docutils literal notranslate"><span class="pre">setpos(x,</span> <span class="pre">y)</span></code> or <code class="docutils literal notranslate"><span class="pre">setposition(x,</span> <span class="pre">y)</span></code></p></td>
+<td><p>Move the turtle to the specified coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">setx(x)</span></code></p></td>
+<td><p>Set the turtle’s x-coordinate.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sety(y)</span></code></p></td>
+<td><p>Set the turtle’s y-coordinate.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">setheading(angle)</span></code> or <code class="docutils literal notranslate"><span class="pre">seth(angle)</span></code></p></td>
+<td><p>Set the turtle’s heading to the specified angle.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">home()</span></code></p></td>
+<td><p>Move the turtle to the origin (0, 0) and set its heading to 0 degrees.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">circle(radius,</span> <span class="pre">extent=None,</span> <span class="pre">steps=None)</span></code></p></td>
+<td><p>Draw a circle with the specified radius. Optional extent to draw only part of the circle, and steps for polygon approximation.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dot(size=None,</span> <span class="pre">color=None)</span></code></p></td>
+<td><p>Draw a dot with the specified size and color.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">stamp()</span></code></p></td>
+<td><p>Stamp a copy of the turtle shape onto the canvas and return its stamp ID.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">clearstamp(stampid)</span></code></p></td>
+<td><p>Delete a specific stamp by its ID.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">clearstamps(n=None)</span></code></p></td>
+<td><p>Delete all stamps or the last <code class="docutils literal notranslate"><span class="pre">n</span></code> stamps if <code class="docutils literal notranslate"><span class="pre">n</span></code> is provided.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">undo()</span></code></p></td>
+<td><p>Undo the last turtle action.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">speed(speed)</span></code></p></td>
+<td><p>Set the turtle’s speed. <code class="docutils literal notranslate"><span class="pre">0</span></code> means no animation, <code class="docutils literal notranslate"><span class="pre">1</span></code> is slow, <code class="docutils literal notranslate"><span class="pre">10</span></code> is fast.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="turtle-state-and-status">
+<h3>2. <strong>Turtle State and Status</strong><a class="headerlink" href="#turtle-state-and-status" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">position()</span></code> or <code class="docutils literal notranslate"><span class="pre">pos()</span></code></p></td>
+<td><p>Return the current position as a tuple <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">towards(x,</span> <span class="pre">y)</span></code></p></td>
+<td><p>Return the angle towards the specified point.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">xcor()</span></code></p></td>
+<td><p>Return the turtle’s x-coordinate.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ycor()</span></code></p></td>
+<td><p>Return the turtle’s y-coordinate.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">heading()</span></code></p></td>
+<td><p>Return the turtle’s current heading angle.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">distance(x,</span> <span class="pre">y)</span></code></p></td>
+<td><p>Return the distance from the turtle’s position to the specified point.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">isdown()</span></code></p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the pen is down, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">isvisible()</span></code></p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the turtle is visible, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="turtle-pen-control">
+<h3>3. <strong>Turtle Pen Control</strong><a class="headerlink" href="#turtle-pen-control" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pendown()</span></code> or <code class="docutils literal notranslate"><span class="pre">pd()</span></code> or <code class="docutils literal notranslate"><span class="pre">down()</span></code></p></td>
+<td><p>Lower the pen to draw when the turtle moves.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">penup()</span></code> or <code class="docutils literal notranslate"><span class="pre">pu()</span></code> or <code class="docutils literal notranslate"><span class="pre">up()</span></code></p></td>
+<td><p>Raise the pen to prevent drawing when the turtle moves.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pensize(width)</span></code> or <code class="docutils literal notranslate"><span class="pre">width(width)</span></code></p></td>
+<td><p>Set the width of the pen.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pen(pen=None,</span> <span class="pre">**pendict)</span></code></p></td>
+<td><p>Return or set the pen’s attributes (color, width, etc.).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pen(pencolor,</span> <span class="pre">fillcolor)</span></code></p></td>
+<td><p>Set both pen color and fill color.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pencolor(color)</span></code></p></td>
+<td><p>Set the pen color.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fillcolor(color)</span></code></p></td>
+<td><p>Set the fill color.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">begin_fill()</span></code></p></td>
+<td><p>Start filling a shape.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">end_fill()</span></code></p></td>
+<td><p>Fill the shape drawn after <code class="docutils literal notranslate"><span class="pre">begin_fill()</span></code> is called.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">color(pencolor,</span> <span class="pre">fillcolor)</span></code></p></td>
+<td><p>Set both the pen and fill color.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">reset()</span></code></p></td>
+<td><p>Reset the turtle’s state, clearing the drawing and resetting attributes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">clear()</span></code></p></td>
+<td><p>Clear the drawing without changing the turtle’s position.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">write(arg,</span> <span class="pre">move=False,</span> <span class="pre">align='left',</span> <span class="pre">font=('Arial',</span> <span class="pre">8,</span> <span class="pre">'normal'))</span></code></p></td>
+<td><p>Write text at the turtle’s current position.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="turtle-appearance">
+<h3>4. <strong>Turtle Appearance</strong><a class="headerlink" href="#turtle-appearance" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">shape(name)</span></code></p></td>
+<td><p>Set the turtle’s shape (<code class="docutils literal notranslate"><span class="pre">'arrow'</span></code>, <code class="docutils literal notranslate"><span class="pre">'turtle'</span></code>, <code class="docutils literal notranslate"><span class="pre">'circle'</span></code>, <code class="docutils literal notranslate"><span class="pre">'square'</span></code>, <code class="docutils literal notranslate"><span class="pre">'triangle'</span></code>, <code class="docutils literal notranslate"><span class="pre">'classic'</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">shapesize(stretch_wid=None,</span> <span class="pre">stretch_len=None,</span> <span class="pre">outline=None)</span></code> or <code class="docutils literal notranslate"><span class="pre">turtlesize(...)</span></code></p></td>
+<td><p>Stretch the turtle’s shape.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">shearfactor(factor)</span></code></p></td>
+<td><p>Set or get the shear factor for the turtle’s shape.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tilt(angle)</span></code></p></td>
+<td><p>Tilt the turtle shape by the specified angle.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tiltangle(angle=None)</span></code></p></td>
+<td><p>Set or get the tilt angle of the turtle shape.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">get_shapepoly()</span></code></p></td>
+<td><p>Return the current shape as a polygon.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">showturtle()</span></code> or <code class="docutils literal notranslate"><span class="pre">st()</span></code></p></td>
+<td><p>Make the turtle visible.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">hideturtle()</span></code> or <code class="docutils literal notranslate"><span class="pre">ht()</span></code></p></td>
+<td><p>Make the turtle invisible.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">resizemode(rmode)</span></code></p></td>
+<td><p>Set the resize mode (<code class="docutils literal notranslate"><span class="pre">'auto'</span></code>, <code class="docutils literal notranslate"><span class="pre">'user'</span></code>, <code class="docutils literal notranslate"><span class="pre">'noresize'</span></code>).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="screen-control-and-events">
+<h3>5. <strong>Screen Control and Events</strong><a class="headerlink" href="#screen-control-and-events" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Screen()</span></code></p></td>
+<td><p>Return the Screen object used for window control.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bye()</span></code></p></td>
+<td><p>Close the Turtle Graphics window.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bgcolor(color)</span></code></p></td>
+<td><p>Set or get the background color.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bgpic(picname)</span></code></p></td>
+<td><p>Set or get the background image.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">title(title)</span></code></p></td>
+<td><p>Set the title of the window.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">clearscreen()</span></code></p></td>
+<td><p>Clear the screen.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">onclick(fun,</span> <span class="pre">btn=1,</span> <span class="pre">add=None)</span></code></p></td>
+<td><p>Bind a function to a mouse click.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">onkey(fun,</span> <span class="pre">key)</span></code></p></td>
+<td><p>Bind a function to a key press.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">listen()</span></code></p></td>
+<td><p>Set focus on the screen to capture key presses.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mainloop()</span></code></p></td>
+<td><p>Start the main event loop.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tracer(n=None,</span> <span class="pre">delay=None)</span></code></p></td>
+<td><p>Set the screen update delay to control animation speed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">update()</span></code></p></td>
+<td><p>Force an update of the screen.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="miscellaneous">
+<h3>6. <strong>Miscellaneous</strong><a class="headerlink" href="#miscellaneous" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">begin_poly()</span></code></p></td>
+<td><p>Start recording the vertices of a polygon.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">end_poly()</span></code></p></td>
+<td><p>Stop recording and store the polygon shape.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">get_poly()</span></code></p></td>
+<td><p>Return the recorded polygon.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">delay(delay=None)</span></code></p></td>
+<td><p>Set the delay value for screen updates.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">window_width()</span></code></p></td>
+<td><p>Return the width of the turtle window.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">window_height()</span></code></p></td>
+<td><p>Return the height of the turtle window.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">getcanvas()</span></code></p></td>
+<td><p>Return the Canvas object of the turtle window.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">getscreen()</span></code></p></td>
+<td><p>Return the TurtleScreen object.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="additional-notes">
+<h3>Additional Notes<a class="headerlink" href="#additional-notes" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Screen()</span></code> Object Methods</strong>: The <code class="docutils literal notranslate"><span class="pre">Screen</span></code> object returned by <code class="docutils literal notranslate"><span class="pre">turtle.Screen()</span></code> has many methods for window and event control, such as <code class="docutils literal notranslate"><span class="pre">bgcolor</span></code>, <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">onkey</span></code>, <code class="docutils literal notranslate"><span class="pre">onscreenclick</span></code>, and <code class="docutils literal notranslate"><span class="pre">listen</span></code>.</p></li>
+<li><p><strong>Aliases</strong>: Many methods have shorthand aliases (e.g., <code class="docutils literal notranslate"><span class="pre">fd</span></code> for <code class="docutils literal notranslate"><span class="pre">forward</span></code>, <code class="docutils literal notranslate"><span class="pre">bk</span></code> for <code class="docutils literal notranslate"><span class="pre">backward</span></code>).</p></li>
+</ul>
+<p>This list provides a solid foundation for creating various Turtle Graphics applications in Python.</p>
+</section>
+</section>
+<section id="compound-boolean-expressions">
+<h2>Compound Boolean Expressions<a class="headerlink" href="#compound-boolean-expressions" title="Link to this heading">¶</a></h2>
+<p>Certainly! Here are some examples of compound Boolean expressions along with explanations for each:</p>
+<section id="using-and-or-and-in-python">
+<h3>1. Using <strong>AND</strong> (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">and</span></code> in Python)<a class="headerlink" href="#using-and-or-and-in-python" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">has_license</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">is_eligible</span> <span class="o">=</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="ow">and</span> <span class="n">has_license</span>
+</pre></div>
+</div>
+<p><strong>Explanation</strong>: Here, <code class="docutils literal notranslate"><span class="pre">is_eligible</span></code> will be <code class="docutils literal notranslate"><span class="pre">True</span></code> only if both conditions are <code class="docutils literal notranslate"><span class="pre">True</span></code>. In this case, <code class="docutils literal notranslate"><span class="pre">age</span> <span class="pre">&gt;=</span> <span class="pre">18</span></code> and <code class="docutils literal notranslate"><span class="pre">has_license</span></code> both need to be <code class="docutils literal notranslate"><span class="pre">True</span></code> for <code class="docutils literal notranslate"><span class="pre">is_eligible</span></code> to be <code class="docutils literal notranslate"><span class="pre">True</span></code>. If <code class="docutils literal notranslate"><span class="pre">age</span></code> is less than 18 or <code class="docutils literal notranslate"><span class="pre">has_license</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">is_eligible</span></code> will be <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</section>
+<section id="using-or-or-or-in-python">
+<h3>2. Using <strong>OR</strong> (<code class="docutils literal notranslate"><span class="pre">||</span></code> or <code class="docutils literal notranslate"><span class="pre">or</span></code> in Python)<a class="headerlink" href="#using-or-or-or-in-python" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="n">raining</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">go_for_walk</span> <span class="o">=</span> <span class="n">temperature</span> <span class="o">&gt;=</span> <span class="mi">20</span> <span class="ow">or</span> <span class="n">raining</span>
+</pre></div>
+</div>
+<p><strong>Explanation</strong>: The variable <code class="docutils literal notranslate"><span class="pre">go_for_walk</span></code> will be <code class="docutils literal notranslate"><span class="pre">True</span></code> if either <code class="docutils literal notranslate"><span class="pre">temperature</span> <span class="pre">&gt;=</span> <span class="pre">20</span></code> or <code class="docutils literal notranslate"><span class="pre">raining</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>. With <code class="docutils literal notranslate"><span class="pre">OR</span></code>, only one of the conditions needs to be <code class="docutils literal notranslate"><span class="pre">True</span></code> for the overall expression to evaluate as <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</section>
+<section id="combining-and-and-or">
+<h3>3. Combining <strong>AND</strong> and <strong>OR</strong><a class="headerlink" href="#combining-and-and-or" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_weekend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">has_free_time</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">is_tired</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">can_go_hiking</span> <span class="o">=</span> <span class="n">is_weekend</span> <span class="ow">and</span> <span class="p">(</span><span class="n">has_free_time</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">is_tired</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Explanation</strong>: In this case, <code class="docutils literal notranslate"><span class="pre">can_go_hiking</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if it is the weekend (<code class="docutils literal notranslate"><span class="pre">is_weekend</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>) <strong>and</strong> either there is free time (<code class="docutils literal notranslate"><span class="pre">has_free_time</span></code>) <strong>or</strong> the person is not tired (<code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">is_tired</span></code>). This example shows how parentheses can group parts of a compound Boolean expression to control evaluation order.</p>
+</section>
+<section id="using-not-or-not-in-python">
+<h3>4. Using <strong>NOT</strong> (<code class="docutils literal notranslate"><span class="pre">!</span></code> or <code class="docutils literal notranslate"><span class="pre">not</span></code> in Python)<a class="headerlink" href="#using-not-or-not-in-python" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_student</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">has_discount</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">is_student</span>
+</pre></div>
+</div>
+<p><strong>Explanation</strong>: The expression <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">is_student</span></code> reverses the Boolean value of <code class="docutils literal notranslate"><span class="pre">is_student</span></code>. If <code class="docutils literal notranslate"><span class="pre">is_student</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">has_discount</span></code> will be <code class="docutils literal notranslate"><span class="pre">True</span></code>. The <strong>NOT</strong> operator is useful for negating a condition.</p>
+</section>
+<section id="complex-condition-with-multiple-and-or-not">
+<h3>5. Complex Condition with <strong>Multiple AND/OR/NOT</strong><a class="headerlink" href="#complex-condition-with-multiple-and-or-not" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">is_member</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">has_discount_coupon</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">gets_discount</span> <span class="o">=</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;</span> <span class="mi">25</span> <span class="ow">or</span> <span class="n">is_member</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">has_discount_coupon</span>
+</pre></div>
+</div>
+<p><strong>Explanation</strong>: This expression checks if someone can get a discount. They qualify if they are older than 25 or are a member, but they should not have a discount coupon already. The expression <code class="docutils literal notranslate"><span class="pre">(age</span> <span class="pre">&gt;</span> <span class="pre">25</span> <span class="pre">or</span> <span class="pre">is_member)</span></code> will evaluate first, and then <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">has_discount_coupon</span></code> will apply, which must be <code class="docutils literal notranslate"><span class="pre">True</span></code> for <code class="docutils literal notranslate"><span class="pre">gets_discount</span></code> to be <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</section>
+<section id="nested-compound-boolean-expression">
+<h3>6. Nested Compound Boolean Expression<a class="headerlink" href="#nested-compound-boolean-expression" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="n">attendance</span> <span class="o">=</span> <span class="mi">90</span>
+<span class="n">has_passed</span> <span class="o">=</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">70</span> <span class="ow">and</span> <span class="n">attendance</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span> <span class="ow">and</span> <span class="n">attendance</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Explanation</strong>: Here, <code class="docutils literal notranslate"><span class="pre">has_passed</span></code> will be <code class="docutils literal notranslate"><span class="pre">True</span></code> if either of these conditions is met:</p>
+<ul class="simple">
+<li><p>The score is at least 70 and attendance is at least 80.</p></li>
+<li><p>The score is at least 60 and attendance is at least 90.</p></li>
+</ul>
+<p>This kind of expression is useful when there are multiple pathways to meet a requirement.</p>
+</section>
+</section>
+<section id="dictionary">
+<h2>Dictionary<a class="headerlink" href="#dictionary" title="Link to this heading">¶</a></h2>
+<p>Here’s a Python program that demonstrates how to create, use, add, remove, and modify items in a dictionary. It also explains the differences and similarities between dictionaries and sets.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Python program demonstrating dictionary operations</span>
+
+<span class="c1"># Creating a dictionary with 15 items</span>
+<span class="n">student_scores</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Alice&quot;</span><span class="p">:</span> <span class="mi">85</span><span class="p">,</span>
+    <span class="s2">&quot;Bob&quot;</span><span class="p">:</span> <span class="mi">78</span><span class="p">,</span>
+    <span class="s2">&quot;Catherine&quot;</span><span class="p">:</span> <span class="mi">92</span><span class="p">,</span>
+    <span class="s2">&quot;David&quot;</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span>
+    <span class="s2">&quot;Eva&quot;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+    <span class="s2">&quot;Frank&quot;</span><span class="p">:</span> <span class="mi">76</span><span class="p">,</span>
+    <span class="s2">&quot;Grace&quot;</span><span class="p">:</span> <span class="mi">89</span><span class="p">,</span>
+    <span class="s2">&quot;Hank&quot;</span><span class="p">:</span> <span class="mi">93</span><span class="p">,</span>
+    <span class="s2">&quot;Ivy&quot;</span><span class="p">:</span> <span class="mi">82</span><span class="p">,</span>
+    <span class="s2">&quot;John&quot;</span><span class="p">:</span> <span class="mi">79</span><span class="p">,</span>
+    <span class="s2">&quot;Kara&quot;</span><span class="p">:</span> <span class="mi">95</span><span class="p">,</span>
+    <span class="s2">&quot;Liam&quot;</span><span class="p">:</span> <span class="mi">91</span><span class="p">,</span>
+    <span class="s2">&quot;Mona&quot;</span><span class="p">:</span> <span class="mi">87</span><span class="p">,</span>
+    <span class="s2">&quot;Nathan&quot;</span><span class="p">:</span> <span class="mi">84</span><span class="p">,</span>
+    <span class="s2">&quot;Olivia&quot;</span><span class="p">:</span> <span class="mi">94</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initial Dictionary:&quot;</span><span class="p">,</span> <span class="n">student_scores</span><span class="p">)</span>
+
+<span class="c1"># Accessing values in a dictionary</span>
+<span class="c1"># Accessing the score of &#39;Alice&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Alice&#39;s score:&quot;</span><span class="p">,</span> <span class="n">student_scores</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">])</span>
+
+<span class="c1"># Adding an item to the dictionary</span>
+<span class="n">student_scores</span><span class="p">[</span><span class="s2">&quot;Paul&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">88</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">After Adding Paul&#39;s score:&quot;</span><span class="p">,</span> <span class="n">student_scores</span><span class="p">)</span>
+
+<span class="c1"># Modifying an item in the dictionary</span>
+<span class="n">student_scores</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">90</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">After Modifying Alice&#39;s score:&quot;</span><span class="p">,</span> <span class="n">student_scores</span><span class="p">)</span>
+
+<span class="c1"># Removing an item from the dictionary</span>
+<span class="k">del</span> <span class="n">student_scores</span><span class="p">[</span><span class="s2">&quot;Frank&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">After Removing Frank&#39;s score:&quot;</span><span class="p">,</span> <span class="n">student_scores</span><span class="p">)</span>
+
+<span class="c1"># Checking if a key exists in the dictionary</span>
+<span class="k">if</span> <span class="s2">&quot;Eva&quot;</span> <span class="ow">in</span> <span class="n">student_scores</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Eva&#39;s score exists in the dictionary.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Looping through dictionary items</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Listing all students and their scores:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">student</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">student_scores</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">student</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Dictionary methods</span>
+<span class="c1"># Getting a list of keys</span>
+<span class="n">keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">student_scores</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">All Student Names:&quot;</span><span class="p">,</span> <span class="n">keys</span><span class="p">)</span>
+
+<span class="c1"># Getting a list of values</span>
+<span class="n">values</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">student_scores</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All Scores:&quot;</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+
+<span class="c1"># Using the get() method with a default value</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">student_scores</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Zara&quot;</span><span class="p">,</span> <span class="s2">&quot;Score not found&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Score for Zara (not in dictionary):&quot;</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+
+<span class="c1"># Clearing the dictionary</span>
+<span class="n">student_scores</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Dictionary after clearing all items:&quot;</span><span class="p">,</span> <span class="n">student_scores</span><span class="p">)</span>
+
+<span class="c1"># Differences and Similarities Between Dictionary and Set</span>
+
+<span class="c1"># Dictionary - Stores key-value pairs</span>
+<span class="c1"># Set - Stores unique values, no key-value pairs</span>
+
+<span class="c1"># Example of a set</span>
+<span class="n">unique_scores</span> <span class="o">=</span> <span class="p">{</span><span class="mi">85</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">94</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Example Set of Unique Scores:&quot;</span><span class="p">,</span> <span class="n">unique_scores</span><span class="p">)</span>
+
+<span class="c1"># Similarity: Both dictionaries and sets are mutable</span>
+<span class="c1"># Difference: A set only stores unique values, whereas a dictionary has key-value pairs</span>
+
+<span class="c1"># Attempting to add duplicate items in a set (will have no effect)</span>
+<span class="n">unique_scores</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">85</span><span class="p">)</span>  <span class="c1"># Already in the set</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">After Attempting to Add Duplicate in Set:&quot;</span><span class="p">,</span> <span class="n">unique_scores</span><span class="p">)</span>
+
+<span class="c1"># Summary of Differences:</span>
+<span class="c1"># 1. Dictionaries have key-value pairs; sets contain only unique values.</span>
+<span class="c1"># 2. Dictionaries allow lookup by key; sets do not have keys.</span>
+<span class="c1"># 3. Sets automatically ignore duplicates; dictionaries handle duplicates by updating the value for a given key.</span>
+</pre></div>
+</div>
+<section id="explanation">
+<h3>Explanation<a class="headerlink" href="#explanation" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Creating the Dictionary</strong>: The <code class="docutils literal notranslate"><span class="pre">student_scores</span></code> dictionary has 15 items, where each student’s name is the key, and their score is the value.</p></li>
+<li><p><strong>Accessing Values</strong>: We can access values using a key. For instance, <code class="docutils literal notranslate"><span class="pre">student_scores[&quot;Alice&quot;]</span></code> retrieves Alice’s score.</p></li>
+<li><p><strong>Adding an Item</strong>: You can add a new key-value pair by assigning a value to a new key, as shown with <code class="docutils literal notranslate"><span class="pre">&quot;Paul&quot;:</span> <span class="pre">88</span></code>.</p></li>
+<li><p><strong>Modifying an Item</strong>: Modify the value for an existing key, as shown with <code class="docutils literal notranslate"><span class="pre">&quot;Alice&quot;:</span> <span class="pre">90</span></code>.</p></li>
+<li><p><strong>Removing an Item</strong>: Use the <code class="docutils literal notranslate"><span class="pre">del</span></code> statement to remove a key-value pair, as shown with <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">student_scores[&quot;Frank&quot;]</span></code>.</p></li>
+<li><p><strong>Checking if a Key Exists</strong>: The <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword checks if a key is in the dictionary.</p></li>
+<li><p><strong>Looping Through Items</strong>: Use <code class="docutils literal notranslate"><span class="pre">.items()</span></code> to loop through keys and values.</p></li>
+<li><p><strong>Dictionary Methods</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.keys()</span></code> to get all keys.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.values()</span></code> to get all values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.get()</span></code> for safe value retrieval with a default fallback.</p></li>
+</ul>
+</li>
+<li><p><strong>Clearing the Dictionary</strong>: <code class="docutils literal notranslate"><span class="pre">.clear()</span></code> removes all items from the dictionary.</p></li>
+</ol>
+</section>
+<section id="dictionary-vs-set">
+<h3>Dictionary vs. Set<a class="headerlink" href="#dictionary-vs-set" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Dictionary</strong>: Stores key-value pairs, allows retrieval by key, and handles duplicates by overwriting values for duplicate keys.</p></li>
+<li><p><strong>Set</strong>: Stores only unique values, ignores duplicates, and doesn’t use key-value pairs.</p></li>
+</ul>
+<p>This code provides a complete introduction to dictionaries with additional details on how dictionaries differ from sets.</p>
+<p>Sure! Below is a Python 3 program that demonstrates the use of objects, classes, and constructors, along with explanations for each part.</p>
+</section>
+<section id="program-a-simple-bank-account-system">
+<h3>Program: A Simple Bank Account System<a class="headerlink" href="#program-a-simple-bank-account-system" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class representing a bank account.&quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">account_holder</span><span class="p">,</span> <span class="n">balance</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructor to initialize the account holder&#39;s name and balance.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            account_holder (str): The name of the account holder.</span>
+<span class="sd">            balance (float): The initial balance of the account (default is 0).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">account_holder</span> <span class="o">=</span> <span class="n">account_holder</span>  <span class="c1"># Instance variable for account holder&#39;s name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="n">balance</span>  <span class="c1"># Instance variable for account balance</span>
+
+    <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Deposit money into the bank account.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            amount (float): The amount to be deposited.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">amount</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">+=</span> <span class="n">amount</span>  <span class="c1"># Increase balance by the deposit amount</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Deposited $</span><span class="si">{</span><span class="n">amount</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">. New balance: $</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Deposit amount must be positive!&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">withdraw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Withdraw money from the bank account.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            amount (float): The amount to be withdrawn.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">amount</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">-=</span> <span class="n">amount</span>  <span class="c1"># Decrease balance by the withdrawal amount</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Withdrew $</span><span class="si">{</span><span class="n">amount</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">. New balance: $</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid withdrawal amount!&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the current balance of the account.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span>
+
+    <span class="k">def</span> <span class="nf">display_account_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Display the account holder&#39;s information and current balance.&quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Account Holder: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">account_holder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current Balance: $</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Main program</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># Create an instance of BankAccount</span>
+    <span class="n">account1</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="s2">&quot;Alice Smith&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+    <span class="c1"># Display account information</span>
+    <span class="n">account1</span><span class="o">.</span><span class="n">display_account_info</span><span class="p">()</span>
+
+    <span class="c1"># Perform some transactions</span>
+    <span class="n">account1</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+    <span class="n">account1</span><span class="o">.</span><span class="n">withdraw</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">account1</span><span class="o">.</span><span class="n">withdraw</span><span class="p">(</span><span class="mi">1500</span><span class="p">)</span>  <span class="c1"># This should fail</span>
+    <span class="n">account1</span><span class="o">.</span><span class="n">display_account_info</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>Explanation<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Class</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">BankAccount:</span></code> defines a class named <code class="docutils literal notranslate"><span class="pre">BankAccount</span></code>. A class is a blueprint for creating objects, encapsulating data and methods that operate on that data.</p></li>
+</ul>
+</li>
+<li><p><strong>Constructor</strong>:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method is a special method called the constructor. It is invoked when an object of the class is created. In this example, it initializes the account holder’s name and balance:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">account_holder</span></code>: A string representing the name of the account holder.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">balance</span></code>: A float representing the initial balance of the account (default is 0).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Instance Variables</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self.account_holder</span></code> and <code class="docutils literal notranslate"><span class="pre">self.balance</span></code> are instance variables that store the account holder’s name and balance for each instance of the <code class="docutils literal notranslate"><span class="pre">BankAccount</span></code> class.</p></li>
+</ul>
+</li>
+<li><p><strong>Methods</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">deposit(amount)</span></code>: This method adds a specified amount to the account balance, ensuring the amount is positive.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">withdraw(amount)</span></code>: This method subtracts a specified amount from the balance, ensuring the withdrawal does not exceed the current balance.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_balance()</span></code>: Returns the current balance of the account.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">display_account_info()</span></code>: Displays the account holder’s information and current balance.</p></li>
+</ul>
+</li>
+<li><p><strong>Objects</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">account1</span> <span class="pre">=</span> <span class="pre">BankAccount(&quot;Alice</span> <span class="pre">Smith&quot;,</span> <span class="pre">1000)</span></code>: This line creates an instance (object) of the <code class="docutils literal notranslate"><span class="pre">BankAccount</span></code> class with “Alice Smith” as the account holder and an initial balance of $1000.</p></li>
+</ul>
+</li>
+<li><p><strong>Main Program</strong>:</p>
+<ul class="simple">
+<li><p>The main program creates an account, displays account information, performs deposits and withdrawals, and handles invalid transactions gracefully.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="running-the-program">
+<h3>Running the Program<a class="headerlink" href="#running-the-program" title="Link to this heading">¶</a></h3>
+<p>You can copy and paste this code into a Python environment. It will create a bank account for “Alice Smith,” allowing you to see how deposits and withdrawals affect the balance.</p>
+</section>
+</section>
+<section id="nested-conditionals-using-functions-with-parameters">
+<h2>Nested Conditionals using Functions with parameters<a class="headerlink" href="#nested-conditionals-using-functions-with-parameters" title="Link to this heading">¶</a></h2>
+<p>Sure! Below is a Python 3 program that demonstrates nested conditionals using functions with arguments. The program will classify a given number based on its value and check if it’s even or odd, using nested conditionals within functions.</p>
+<section id="program-number-classification">
+<h3>Program: Number Classification<a class="headerlink" href="#program-number-classification" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">classify_number</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Classify the number as positive, negative, or zero.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">classification</span> <span class="o">=</span> <span class="s2">&quot;positive&quot;</span>
+    <span class="k">elif</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">classification</span> <span class="o">=</span> <span class="s2">&quot;negative&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">classification</span> <span class="o">=</span> <span class="s2">&quot;zero&quot;</span>
+    
+    <span class="k">return</span> <span class="n">classification</span>
+
+<span class="k">def</span> <span class="nf">is_even_or_odd</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Determine if the number is even or odd.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;even&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;odd&quot;</span>
+
+<span class="k">def</span> <span class="nf">analyze_number</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Analyze the number and print its classification and parity.&quot;&quot;&quot;</span>
+    <span class="n">classification</span> <span class="o">=</span> <span class="n">classify_number</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">classification</span> <span class="o">==</span> <span class="s2">&quot;positive&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">classification</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">is_even_or_odd</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">classification</span> <span class="o">==</span> <span class="s2">&quot;negative&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">classification</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">is_even_or_odd</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>  <span class="c1"># classification == &quot;zero&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">classification</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Main program</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">user_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">))</span>
+        <span class="n">analyze_number</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please enter a valid integer.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3>Explanation<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Functions</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">classify_number(num)</span></code>: Classifies the number as positive, negative, or zero.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_even_or_odd(num)</span></code>: Determines if the number is even or odd.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">analyze_number(num)</span></code>: Calls the classification and parity functions, and prints the results.</p></li>
+</ul>
+</li>
+<li><p><strong>Nested Conditionals</strong>:</p>
+<ul class="simple">
+<li><p>Inside <code class="docutils literal notranslate"><span class="pre">analyze_number</span></code>, we use nested conditionals to determine how to print the result based on the classification of the number.</p></li>
+</ul>
+</li>
+<li><p><strong>Main Program</strong>:</p>
+<ul class="simple">
+<li><p>Prompts the user for input, converts it to an integer, and analyzes the number. It also handles invalid input gracefully.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id3">
+<h3>Running the Program<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<p>To run the program, just copy and paste the code into a Python environment, and it will prompt you to enter a number for analysis.</p>
+</section>
+</section>
+<section id="conditions-with-nested-iteration-and-loops">
+<h2>Conditions with nested iteration and loops<a class="headerlink" href="#conditions-with-nested-iteration-and-loops" title="Link to this heading">¶</a></h2>
+<p>Certainly! In Python, conditional statements can take various forms, often used with loops, nested iterations, and more.
+Below are examples of different variations of using conditional statements along with input, nested iterations, and
+nested-nested iterations.</p>
+<section id="basic-conditional-statements">
+<h3>Basic Conditional Statements<a class="headerlink" href="#basic-conditional-statements" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basic conditional example</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number is positive.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number is negative.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number is zero.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="conditional-statements-with-loops">
+<h3>Conditional Statements with Loops<a class="headerlink" href="#conditional-statements-with-loops" title="Link to this heading">¶</a></h3>
+<section id="simple-loop-with-conditional">
+<h4>Simple Loop with Conditional<a class="headerlink" href="#simple-loop-with-conditional" title="Link to this heading">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using a loop with conditional</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2"> is positive.&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2"> is negative.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2"> is zero.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="nested-loop-with-conditional">
+<h4>Nested Loop with Conditional<a class="headerlink" href="#nested-loop-with-conditional" title="Link to this heading">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nested iteration with conditional</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">matrix</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> is positive.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> is negative.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> is zero.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="nested-nested-iterations-with-conditionals">
+<h3>Nested-Nested Iterations with Conditionals<a class="headerlink" href="#nested-nested-iterations-with-conditionals" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nested-nested iteration with conditionals</span>
+<span class="n">nested_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="p">],</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">nested_list</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> is positive.&quot;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> is negative.&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> is zero.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="conditional-statements-with-input-inside-loops">
+<h3>Conditional Statements with Input Inside Loops<a class="headerlink" href="#conditional-statements-with-input-inside-loops" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Input inside a loop with conditionals</span>
+<span class="n">num_count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many numbers do you want to check? &quot;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_count</span><span class="p">):</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> is even.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> is odd.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="combining-conditionals-with-list-comprehensions">
+<h3>Combining Conditionals with List Comprehensions<a class="headerlink" href="#combining-conditionals-with-list-comprehensions" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using conditionals in a list comprehension</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">classification</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;positive&quot;</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;negative&quot;</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;zero&quot;</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">classification</span><span class="p">)</span>  <span class="c1"># Output: [&#39;positive&#39;, &#39;positive&#39;, &#39;positive&#39;, &#39;negative&#39;, &#39;negative&#39;, &#39;zero&#39;]</span>
+</pre></div>
+</div>
+</section>
+<section id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Basic Conditional Statements</strong>: Use <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code> to handle multiple conditions.</p></li>
+<li><p><strong>Loops with Conditionals</strong>: Iterate over collections and apply conditionals to each item.</p></li>
+<li><p><strong>Nested Iterations</strong>: Implement loops within loops for multi-dimensional data.</p></li>
+<li><p><strong>Nested-Nested Iterations</strong>: Further nest loops for deeper structures, applying conditionals accordingly.</p></li>
+<li><p><strong>Input Inside Loops</strong>: Collect user input repeatedly and use conditionals to process each entry.</p></li>
+<li><p><strong>List Comprehensions</strong>: Efficiently apply conditionals within a single line to transform data.</p></li>
+</ul>
+<p>These examples illustrate how to leverage conditionals effectively in Python programming, especially when dealing
+with various data structures and iterations.</p>
+</section>
+</section>
+<section id="objects-classes">
+<h2>Objects/ Classes<a class="headerlink" href="#objects-classes" title="Link to this heading">¶</a></h2>
+<p>Sure, here’s a Python program that demonstrates the use of objects and classes to represent dogs. It includes constructors with no arguments, one argument, and two arguments.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">breed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">breed</span> <span class="o">=</span> <span class="n">breed</span>
+
+    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Woof!&quot;</span>
+
+    <span class="k">def</span> <span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">breed</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;This is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, a </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">breed</span><span class="si">}</span><span class="s2"> dog.&quot;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;This is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">breed</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;This is a </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">breed</span><span class="si">}</span><span class="s2"> dog.&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;This is a dog.&quot;</span>
+
+
+<span class="c1"># Creating an instance of Dog with no arguments</span>
+<span class="n">dog1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dog1</span><span class="o">.</span><span class="n">display_info</span><span class="p">())</span>  <span class="c1"># Output: This is a dog.</span>
+
+<span class="c1"># Creating an instance of Dog with one argument</span>
+<span class="n">dog2</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Buddy&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dog2</span><span class="o">.</span><span class="n">display_info</span><span class="p">())</span>  <span class="c1"># Output: This is Buddy.</span>
+
+<span class="c1"># Creating an instance of Dog with two arguments</span>
+<span class="n">dog3</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="s2">&quot;Labrador&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dog3</span><span class="o">.</span><span class="n">display_info</span><span class="p">())</span>  <span class="c1"># Output: This is Max, a Labrador dog.</span>
+
+<span class="c1"># Accessing methods of the Dog class</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dog3</span><span class="o">.</span><span class="n">bark</span><span class="p">())</span>  <span class="c1"># Output: Woof!</span>
+</pre></div>
+</div>
+<p>Explanation:</p>
+<ul class="simple">
+<li><p>We define a class <code class="docutils literal notranslate"><span class="pre">Dog</span></code> with a constructor <code class="docutils literal notranslate"><span class="pre">__init__</span></code> which initializes the attributes <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">breed</span></code>. The constructor can take 0, 1, or 2 arguments.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">bark</span></code> method returns a string representing the sound a dog makes.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">display_info</span></code> method displays information about the dog based on its attributes.</p></li>
+<li><p>We create instances of the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class with different combinations of arguments to demonstrate the constructors with no arguments, one argument, and two arguments.</p></li>
+<li><p>Finally, we access methods of the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class using the created instances.</p></li>
+</ul>
+</section>
+<section id="activity-x-x">
+<h2>Activity X.X<a class="headerlink" href="#activity-x-x" title="Link to this heading">¶</a></h2>
+</section>
+<section id="coding-exercise">
+<h2>Coding Exercise<a class="headerlink" href="#coding-exercise" title="Link to this heading">¶</a></h2>
+<p>You will create a rock, paper, scissors, lizard, Spock game to play against a computer using static methods.
+First, you’ll ask the user to pick rock, paper, scissors lizard or Spock.
+You will have the computer randomly choose one of the options.
+You will use the Randomizer class to help the computer make a choice.
+Print the winner of each round and increment the wins, losses, and ties as you play the game.<br />
+You may either choose a specific number of rounds to play or keep playing the game until the user enters quit.</p>
+<section id="randomizer-class">
+<h3>Randomizer Class<a class="headerlink" href="#randomizer-class" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">static</span> <span class="pre">int</span> <span class="pre">nextInt()</span></code>: returns a random integer from 1-10</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">static</span> <span class="pre">int</span> <span class="pre">nextInt(int</span> <span class="pre">min,</span> <span class="pre">int</span> <span class="pre">max)</span></code>: returns a random integer from min-max</p></li>
+<li><p>HINT: Remember that we can get random integers using the formula <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">randInteger</span> <span class="pre">=</span> <span class="pre">(int)(Math.random()</span> <span class="pre">*</span> <span class="pre">(range</span> <span class="pre">+</span> <span class="pre">1)</span> <span class="pre">+</span> <span class="pre">startingNum)</span></code>.</p></li>
+</ul>
+</section>
+<section id="rps-class">
+<h3>RPS Class<a class="headerlink" href="#rps-class" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>create static variables <code class="docutils literal notranslate"><span class="pre">userWins,</span> <span class="pre">compWins,</span></code> and <code class="docutils literal notranslate"><span class="pre">ties</span></code></p></li>
+<li><p>create static method <code class="docutils literal notranslate"><span class="pre">getWinner(String</span> <span class="pre">user,</span> <span class="pre">String</span> <span class="pre">computer)</span></code> that determines whether the user or computer won the game, and return the correct winner! Should also update the win totals.</p></li>
+<li><p>create static getters</p></li>
+</ul>
+</section>
+<section id="main-class">
+<h3>Main Class<a class="headerlink" href="#main-class" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>create a static method <code class="docutils literal notranslate"><span class="pre">getCompChoice()</span></code> that returns the computer’s choice depending upon a random integer.</p></li>
+<li><p>ask user to make a choice. have computer get a choice. print the choices and results. repeat until user quits.</p></li>
+</ul>
+</section>
+</section>
+<section id="sample-output">
+<h2>Sample Output<a class="headerlink" href="#sample-output" title="Link to this heading">¶</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">rounds</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">would</span><span class="w"> </span><span class="n">like</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">play</span><span class="p">:</span><span class="w"> </span>
+<span class="mi">7</span>
+<span class="n">Enter</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="nf">choice</span><span class="w"> </span><span class="p">(</span><span class="n">rock</span><span class="p">,</span><span class="w"> </span><span class="n">paper</span><span class="p">,</span><span class="w">  </span><span class="n">scissors</span><span class="p">,</span><span class="w"> </span><span class="n">lizard</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">Spock</span><span class="p">):</span>
+<span class="n">rock</span>
+<span class="nl">User</span><span class="p">:</span><span class="w"> </span><span class="n">rock</span>
+<span class="nl">Computer</span><span class="p">:</span><span class="w"> </span><span class="n">scissors</span>
+<span class="n">User</span><span class="w"> </span><span class="n">wins</span><span class="o">!</span>
+<span class="n">Record</span><span class="w"> </span><span class="n">User</span><span class="o">-</span><span class="n">Comp</span><span class="o">-</span><span class="n">Tie</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span>
+
+<span class="n">Enter</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="nf">choice</span><span class="w"> </span><span class="p">(</span><span class="n">rock</span><span class="p">,</span><span class="w"> </span><span class="n">paper</span><span class="p">,</span><span class="w">  </span><span class="n">scissors</span><span class="p">,</span><span class="w"> </span><span class="n">lizard</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">Spock</span><span class="p">):</span>
+<span class="n">paper</span>
+<span class="nl">User</span><span class="p">:</span><span class="w"> </span><span class="n">paper</span>
+<span class="nl">Computer</span><span class="p">:</span><span class="w"> </span><span class="n">paper</span>
+<span class="n">Tie</span>
+<span class="n">Record</span><span class="w"> </span><span class="n">User</span><span class="o">-</span><span class="n">Comp</span><span class="o">-</span><span class="n">Tie</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="mi">1</span>
+
+<span class="n">Enter</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="nf">choice</span><span class="w"> </span><span class="p">(</span><span class="n">rock</span><span class="p">,</span><span class="w"> </span><span class="n">paper</span><span class="p">,</span><span class="w">  </span><span class="n">scissors</span><span class="p">,</span><span class="w"> </span><span class="n">lizard</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">Spock</span><span class="p">):</span>
+<span class="n">scissors</span>
+<span class="nl">User</span><span class="p">:</span><span class="w"> </span><span class="n">scissors</span>
+<span class="nl">Computer</span><span class="p">:</span><span class="w"> </span><span class="n">scissors</span>
+<span class="n">Tie</span>
+<span class="n">Record</span><span class="w"> </span><span class="n">User</span><span class="o">-</span><span class="n">Comp</span><span class="o">-</span><span class="n">Tie</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="mi">2</span>
+
+<span class="n">Enter</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="nf">choice</span><span class="w"> </span><span class="p">(</span><span class="n">rock</span><span class="p">,</span><span class="w"> </span><span class="n">paper</span><span class="p">,</span><span class="w">  </span><span class="n">scissors</span><span class="p">,</span><span class="w"> </span><span class="n">lizard</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">Spock</span><span class="p">):</span>
+<span class="n">paper</span>
+<span class="nl">User</span><span class="p">:</span><span class="w"> </span><span class="n">paper</span>
+<span class="nl">Computer</span><span class="p">:</span><span class="w"> </span><span class="n">rock</span>
+<span class="n">User</span><span class="w"> </span><span class="n">wins</span><span class="o">!</span>
+<span class="n">Record</span><span class="w"> </span><span class="n">User</span><span class="o">-</span><span class="n">Comp</span><span class="o">-</span><span class="n">Tie</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="mi">2</span>
+
+<span class="n">Enter</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="nf">choice</span><span class="w"> </span><span class="p">(</span><span class="n">rock</span><span class="p">,</span><span class="w"> </span><span class="n">paper</span><span class="p">,</span><span class="w">  </span><span class="n">scissors</span><span class="p">,</span><span class="w"> </span><span class="n">lizard</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">Spock</span><span class="p">):</span>
+<span class="n">rock</span>
+<span class="nl">User</span><span class="p">:</span><span class="w"> </span><span class="n">rock</span>
+<span class="nl">Computer</span><span class="p">:</span><span class="w"> </span><span class="n">paper</span>
+<span class="n">Computer</span><span class="w"> </span><span class="n">wins</span><span class="o">!</span>
+<span class="n">Record</span><span class="w"> </span><span class="n">User</span><span class="o">-</span><span class="n">Comp</span><span class="o">-</span><span class="n">Tie</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span>
+
+<span class="n">Enter</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="nf">choice</span><span class="w"> </span><span class="p">(</span><span class="n">rock</span><span class="p">,</span><span class="w"> </span><span class="n">paper</span><span class="p">,</span><span class="w">  </span><span class="n">scissors</span><span class="p">,</span><span class="w"> </span><span class="n">lizard</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">Spock</span><span class="p">):</span>
+<span class="n">rock</span>
+<span class="nl">User</span><span class="p">:</span><span class="w"> </span><span class="n">rock</span>
+<span class="nl">Computer</span><span class="p">:</span><span class="w"> </span><span class="n">paper</span>
+<span class="n">Computer</span><span class="w"> </span><span class="n">wins</span><span class="o">!</span>
+<span class="n">Record</span><span class="w"> </span><span class="n">User</span><span class="o">-</span><span class="n">Comp</span><span class="o">-</span><span class="n">Tie</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span>
+
+<span class="n">Enter</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="nf">choice</span><span class="w"> </span><span class="p">(</span><span class="n">rock</span><span class="p">,</span><span class="w"> </span><span class="n">paper</span><span class="p">,</span><span class="w">  </span><span class="n">scissors</span><span class="p">,</span><span class="w"> </span><span class="n">lizard</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">Spock</span><span class="p">):</span>
+<span class="n">rock</span>
+<span class="nl">User</span><span class="p">:</span><span class="w"> </span><span class="n">rock</span>
+<span class="nl">Computer</span><span class="p">:</span><span class="w"> </span><span class="n">paper</span>
+<span class="n">Computer</span><span class="w"> </span><span class="n">wins</span><span class="o">!</span>
+<span class="n">Record</span><span class="w"> </span><span class="n">User</span><span class="o">-</span><span class="n">Comp</span><span class="o">-</span><span class="n">Tie</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">2</span>
+
+<span class="n">Computer</span><span class="w"> </span><span class="n">wins</span><span class="p">,</span><span class="w"> </span><span class="n">Thanks</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">playing</span><span class="o">!</span>
+</pre></div>
+</div>
+</section>
 </section>
 
         </article>
@@ -316,8 +1519,102 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Algorithms &amp; Programming</a><ul>
+<li><a class="reference internal" href="#keywords-in-python">Keywords in Python</a><ul>
+<li><a class="reference internal" href="#explanation-of-keywords-usage">Explanation of Keywords Usage</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#functions-methods-procedures">Functions/ Methods/ Procedures</a><ul>
+<li><a class="reference internal" href="#function">Function</a></li>
+<li><a class="reference internal" href="#method">Method</a></li>
+<li><a class="reference internal" href="#procedure">Procedure</a></li>
+<li><a class="reference internal" href="#summary-of-differences">Summary of Differences</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#methods">Methods</a><ul>
+<li><a class="reference internal" href="#method-vs-function">1. <strong>Method vs. Function</strong></a></li>
+<li><a class="reference internal" href="#instance-methods">2. <strong>Instance Methods</strong></a></li>
+<li><a class="reference internal" href="#class-methods">3. <strong>Class Methods</strong></a></li>
+<li><a class="reference internal" href="#static-methods">4. <strong>Static Methods</strong></a></li>
+<li><a class="reference internal" href="#special-methods-magic-methods">5. <strong>Special Methods (Magic Methods)</strong></a></li>
+<li><a class="reference internal" href="#method-chaining">6. <strong>Method Chaining</strong></a></li>
+<li><a class="reference internal" href="#key-points-to-remember">Key Points to Remember</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pythod-turtle-graphic-methods">Pythod Turtle Graphic Methods</a><ul>
+<li><a class="reference internal" href="#turtle-motion-and-positioning">1. <strong>Turtle Motion and Positioning</strong></a></li>
+<li><a class="reference internal" href="#turtle-state-and-status">2. <strong>Turtle State and Status</strong></a></li>
+<li><a class="reference internal" href="#turtle-pen-control">3. <strong>Turtle Pen Control</strong></a></li>
+<li><a class="reference internal" href="#turtle-appearance">4. <strong>Turtle Appearance</strong></a></li>
+<li><a class="reference internal" href="#screen-control-and-events">5. <strong>Screen Control and Events</strong></a></li>
+<li><a class="reference internal" href="#miscellaneous">6. <strong>Miscellaneous</strong></a></li>
+<li><a class="reference internal" href="#additional-notes">Additional Notes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#compound-boolean-expressions">Compound Boolean Expressions</a><ul>
+<li><a class="reference internal" href="#using-and-or-and-in-python">1. Using <strong>AND</strong> (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">and</span></code> in Python)</a></li>
+<li><a class="reference internal" href="#using-or-or-or-in-python">2. Using <strong>OR</strong> (<code class="docutils literal notranslate"><span class="pre">||</span></code> or <code class="docutils literal notranslate"><span class="pre">or</span></code> in Python)</a></li>
+<li><a class="reference internal" href="#combining-and-and-or">3. Combining <strong>AND</strong> and <strong>OR</strong></a></li>
+<li><a class="reference internal" href="#using-not-or-not-in-python">4. Using <strong>NOT</strong> (<code class="docutils literal notranslate"><span class="pre">!</span></code> or <code class="docutils literal notranslate"><span class="pre">not</span></code> in Python)</a></li>
+<li><a class="reference internal" href="#complex-condition-with-multiple-and-or-not">5. Complex Condition with <strong>Multiple AND/OR/NOT</strong></a></li>
+<li><a class="reference internal" href="#nested-compound-boolean-expression">6. Nested Compound Boolean Expression</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dictionary">Dictionary</a><ul>
+<li><a class="reference internal" href="#explanation">Explanation</a></li>
+<li><a class="reference internal" href="#dictionary-vs-set">Dictionary vs. Set</a></li>
+<li><a class="reference internal" href="#program-a-simple-bank-account-system">Program: A Simple Bank Account System</a></li>
+<li><a class="reference internal" href="#id1">Explanation</a></li>
+<li><a class="reference internal" href="#running-the-program">Running the Program</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nested-conditionals-using-functions-with-parameters">Nested Conditionals using Functions with parameters</a><ul>
+<li><a class="reference internal" href="#program-number-classification">Program: Number Classification</a></li>
+<li><a class="reference internal" href="#id2">Explanation</a></li>
+<li><a class="reference internal" href="#id3">Running the Program</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#conditions-with-nested-iteration-and-loops">Conditions with nested iteration and loops</a><ul>
+<li><a class="reference internal" href="#basic-conditional-statements">Basic Conditional Statements</a></li>
+<li><a class="reference internal" href="#conditional-statements-with-loops">Conditional Statements with Loops</a><ul>
+<li><a class="reference internal" href="#simple-loop-with-conditional">Simple Loop with Conditional</a></li>
+<li><a class="reference internal" href="#nested-loop-with-conditional">Nested Loop with Conditional</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nested-nested-iterations-with-conditionals">Nested-Nested Iterations with Conditionals</a></li>
+<li><a class="reference internal" href="#conditional-statements-with-input-inside-loops">Conditional Statements with Input Inside Loops</a></li>
+<li><a class="reference internal" href="#combining-conditionals-with-list-comprehensions">Combining Conditionals with List Comprehensions</a></li>
+<li><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#objects-classes">Objects/ Classes</a></li>
+<li><a class="reference internal" href="#activity-x-x">Activity X.X</a></li>
+<li><a class="reference internal" href="#coding-exercise">Coding Exercise</a><ul>
+<li><a class="reference internal" href="#randomizer-class">Randomizer Class</a></li>
+<li><a class="reference internal" href="#rps-class">RPS Class</a></li>
+<li><a class="reference internal" href="#main-class">Main Class</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sample-output">Sample Output</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
