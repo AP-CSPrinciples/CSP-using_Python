@@ -271,103 +271,6 @@
         <article role="main" id="furo-main-content">
           <section id="algorithms-programming">
 <h1>Algorithms &amp; Programming<a class="headerlink" href="#algorithms-programming" title="Link to this heading">¶</a></h1>
-<section id="keywords-in-python">
-<h2>Keywords in Python<a class="headerlink" href="#keywords-in-python" title="Link to this heading">¶</a></h2>
-<section id="explanation-of-keywords-usage">
-<h3>Explanation of Keywords Usage<a class="headerlink" href="#explanation-of-keywords-usage" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p><strong>Class and Function Definitions</strong>: <code class="docutils literal notranslate"><span class="pre">class</span></code>, <code class="docutils literal notranslate"><span class="pre">def</span></code></p></li>
-<li><p><strong>Conditional and Looping Statements</strong>: <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code>, <code class="docutils literal notranslate"><span class="pre">break</span></code></p></li>
-<li><p><strong>Error Handling</strong>: <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code>, <code class="docutils literal notranslate"><span class="pre">finally</span></code>, <code class="docutils literal notranslate"><span class="pre">raise</span></code>, <code class="docutils literal notranslate"><span class="pre">assert</span></code></p></li>
-<li><p><strong>Logical Operators</strong>: <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">is</span></code></p></li>
-<li><p><strong>Special Assignments</strong>: <code class="docutils literal notranslate"><span class="pre">global</span></code>, <code class="docutils literal notranslate"><span class="pre">nonlocal</span></code>, <code class="docutils literal notranslate"><span class="pre">del</span></code></p></li>
-<li><p><strong>Miscellaneous</strong>: <code class="docutils literal notranslate"><span class="pre">yield</span></code>, <code class="docutils literal notranslate"><span class="pre">with</span></code>, <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, <code class="docutils literal notranslate"><span class="pre">return</span></code>, <code class="docutils literal notranslate"><span class="pre">pass</span></code>, <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
-</ul>
-<p>Here’s a Python program that includes all the specified keywords in a simple example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a class with some functionality</span>
-<span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
-
-    <span class="c1"># Method to perform basic checks and operations</span>
-    <span class="k">def</span> <span class="nf">check_and_increment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">increment</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">increment</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">+=</span> <span class="n">increment</span>
-        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Value is None&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">pass</span>
-
-    <span class="c1"># Generator that yields numbers up to a limit</span>
-    <span class="k">def</span> <span class="nf">count_up_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
-            <span class="k">yield</span> <span class="n">i</span>
-
-    <span class="c1"># Example method using lambda, try/except, and assertions</span>
-    <span class="k">def</span> <span class="nf">safe_divide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">divisor</span><span class="p">):</span>
-        <span class="k">assert</span> <span class="n">divisor</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Divisor must not be zero&quot;</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">/</span> <span class="n">divisor</span>
-        <span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Exception caught: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="kc">None</span>
-        <span class="k">finally</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Division attempted&quot;</span><span class="p">)</span>
-
-<span class="c1"># Using various keywords in functions and control structures</span>
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="c1"># Create an instance of the class</span>
-    <span class="n">ex</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
-    
-    <span class="c1"># Use &#39;with&#39; to handle a file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Using with statement to handle file safely.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Basic loop with break and continue</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">continue</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-            <span class="k">break</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Odd number below 6: </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Using lambda, or, not, is, and nonlocal</span>
-    <span class="k">def</span> <span class="nf">incrementer</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
-            <span class="k">nonlocal</span> <span class="n">n</span>
-            <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">return</span> <span class="n">n</span>
-        <span class="k">return</span> <span class="n">inner</span>
-
-    <span class="n">increment</span> <span class="o">=</span> <span class="n">incrementer</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Incremented value: </span><span class="si">{</span><span class="n">increment</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Output: 6</span>
-
-    <span class="c1"># Use of global variable</span>
-    <span class="k">global</span> <span class="n">result</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">safe_divide</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">if</span> <span class="n">ex</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">False</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Global result: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Check conditions with True, False, and None</span>
-    <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result is valid&quot;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result is False&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result is None&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Using &#39;while&#39; loop</span>
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Continue (yes/no)? &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">response</span> <span class="o">==</span> <span class="s2">&quot;no&quot;</span><span class="p">:</span>
-            <span class="k">break</span>
-
-<span class="c1"># Run the main function</span>
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-</section>
 <section id="functions-methods-procedures">
 <h2>Functions/ Methods/ Procedures<a class="headerlink" href="#functions-methods-procedures" title="Link to this heading">¶</a></h2>
 <p>In computer programming, the terms <strong>function</strong>, <strong>method</strong>, and <strong>procedure</strong> have distinct meanings, though they are often used interchangeably in casual conversation. Here’s a breakdown of each:</p>
@@ -1532,10 +1435,6 @@ You may either choose a specific number of rounds to play or keep playing the ga
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Algorithms &amp; Programming</a><ul>
-<li><a class="reference internal" href="#keywords-in-python">Keywords in Python</a><ul>
-<li><a class="reference internal" href="#explanation-of-keywords-usage">Explanation of Keywords Usage</a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#functions-methods-procedures">Functions/ Methods/ Procedures</a><ul>
 <li><a class="reference internal" href="#function">Function</a></li>
 <li><a class="reference internal" href="#method">Method</a></li>
