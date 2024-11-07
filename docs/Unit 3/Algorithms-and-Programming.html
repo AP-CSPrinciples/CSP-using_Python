@@ -385,17 +385,10 @@
 </section>
 <section id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">¶</a></h2>
-<p>In Python, <strong>methods</strong> are functions that belong to objects and are used to operate on those objects. They are similar to functions but have a special relationship with the object they belong to, known as the <strong>instance</strong>.</p>
+<p>As was stated before, <strong>methods</strong> are functions that belong to <code class="docutils literal notranslate"><span class="pre">objects</span></code> and are used to operate on those objects. They are similar to functions but have a special relationship with the object they belong to, known as the <strong>instance</strong>.</p>
 <p>Let’s break down the key concepts:</p>
-<section id="method-vs-function">
-<h3>1. <strong>Method vs. Function</strong><a class="headerlink" href="#method-vs-function" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>A <strong>function</strong> is a block of code that performs a specific task and can exist independently of any object. For example, <code class="docutils literal notranslate"><span class="pre">print()</span></code> and <code class="docutils literal notranslate"><span class="pre">len()</span></code> are functions.</p></li>
-<li><p>A <strong>method</strong>, on the other hand, is a function that is associated with an object. It is called on an object and can access the object’s internal data. For instance, <code class="docutils literal notranslate"><span class="pre">str.upper()</span></code> is a method called on a string object to return an uppercase version of that string.</p></li>
-</ul>
-</section>
 <section id="instance-methods">
-<h3>2. <strong>Instance Methods</strong><a class="headerlink" href="#instance-methods" title="Link to this heading">¶</a></h3>
+<h3>1. <strong>Instance Methods</strong><a class="headerlink" href="#instance-methods" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Most methods are called <strong>instance methods</strong> because they operate on an instance of a class (an object created from a class).</p></li>
 <li><p>When an instance method is defined, the first parameter is usually <code class="docutils literal notranslate"><span class="pre">self</span></code>, which represents the instance of the class on which the method is called. This <code class="docutils literal notranslate"><span class="pre">self</span></code> parameter allows the method to access other attributes and methods of the same object.</p></li>
@@ -414,7 +407,7 @@
 <p>In this example, <code class="docutils literal notranslate"><span class="pre">bark()</span></code> is an instance method that uses <code class="docutils literal notranslate"><span class="pre">self</span></code> to access the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">my_dog</span></code> instance.</p>
 </section>
 <section id="class-methods">
-<h3>3. <strong>Class Methods</strong><a class="headerlink" href="#class-methods" title="Link to this heading">¶</a></h3>
+<h3>2. <strong>Class Methods</strong><a class="headerlink" href="#class-methods" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Class methods</strong> are methods that operate on the class itself rather than on individual instances. They are marked with the <code class="docutils literal notranslate"><span class="pre">&#64;classmethod</span></code> decorator.</p></li>
 <li><p>Instead of <code class="docutils literal notranslate"><span class="pre">self</span></code>, they take <code class="docutils literal notranslate"><span class="pre">cls</span></code> as their first parameter, which refers to the class itself, not an instance.</p></li>
@@ -432,7 +425,7 @@
 <p>Here, <code class="docutils literal notranslate"><span class="pre">get_species()</span></code> is a class method that accesses the <code class="docutils literal notranslate"><span class="pre">species</span></code> attribute defined on the class itself.</p>
 </section>
 <section id="static-methods">
-<h3>4. <strong>Static Methods</strong><a class="headerlink" href="#static-methods" title="Link to this heading">¶</a></h3>
+<h3>3. <strong>Static Methods</strong><a class="headerlink" href="#static-methods" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Static methods</strong> are methods that don’t operate on an instance or class. They behave like normal functions but reside within a class for organizational purposes.</p></li>
 <li><p>Static methods are marked with the <code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code> decorator and don’t require <code class="docutils literal notranslate"><span class="pre">self</span></code> or <code class="docutils literal notranslate"><span class="pre">cls</span></code> parameters.</p></li>
@@ -448,7 +441,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">add()</span></code> is a static method and does not rely on any data from an instance or the class. It simply performs a task.</p>
 </section>
 <section id="special-methods-magic-methods">
-<h3>5. <strong>Special Methods (Magic Methods)</strong><a class="headerlink" href="#special-methods-magic-methods" title="Link to this heading">¶</a></h3>
+<h3>4. <strong>Special Methods (Magic Methods)</strong><a class="headerlink" href="#special-methods-magic-methods" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Special methods, also known as <strong>magic methods</strong> or <strong>dunder methods</strong> (short for “double underscore”), allow instances of classes to interact with built-in Python operations in unique ways.</p></li>
 <li><p>These methods have names starting and ending with double underscores (e.g., <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, <code class="docutils literal notranslate"><span class="pre">__str__</span></code>, <code class="docutils literal notranslate"><span class="pre">__len__</span></code>).</p></li>
@@ -468,7 +461,7 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> method is a magic method that defines how an object should be represented as a string.</p>
 </section>
 <section id="method-chaining">
-<h3>6. <strong>Method Chaining</strong><a class="headerlink" href="#method-chaining" title="Link to this heading">¶</a></h3>
+<h3>5. <strong>Method Chaining</strong><a class="headerlink" href="#method-chaining" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Method chaining</strong> allows you to call multiple methods on the same object in a single statement. To enable this, each method must return the object itself.</p></li>
 </ul>
@@ -857,6 +850,73 @@
 <li><p>The score is at least 60 and attendance is at least 90.</p></li>
 </ul>
 <p>This kind of expression is useful when there are multiple pathways to meet a requirement.</p>
+</section>
+</section>
+<section id="lists">
+<h2>Lists<a class="headerlink" href="#lists" title="Link to this heading">¶</a></h2>
+<p>In this program, we use the most common methods that is able to manipulate a list:  <code class="docutils literal notranslate"><span class="pre">append</span></code>, <code class="docutils literal notranslate"><span class="pre">insert</span></code>, <code class="docutils literal notranslate"><span class="pre">remove</span></code>, <code class="docutils literal notranslate"><span class="pre">pop</span></code>, <code class="docutils literal notranslate"><span class="pre">sort</span></code>, <code class="docutils literal notranslate"><span class="pre">reverse</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code>, <code class="docutils literal notranslate"><span class="pre">index</span></code>, <code class="docutils literal notranslate"><span class="pre">extend</span></code>, and <code class="docutils literal notranslate"><span class="pre">clear</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initializing a list</span>
+<span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initial list:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
+
+<span class="c1"># 1. append() - Adds an element at the end of the list</span>
+<span class="n">fruits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After append:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
+
+<span class="c1"># 2. insert() - Adds an element at the specified position</span>
+<span class="n">fruits</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;blueberry&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After insert at index 1:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
+
+<span class="c1"># 3. remove() - Removes the first item with the specified value</span>
+<span class="n">fruits</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;banana&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After remove &#39;banana&#39;:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
+
+<span class="c1"># 4. pop() - Removes the element at the specified position (default is the last element)</span>
+<span class="n">popped_item</span> <span class="o">=</span> <span class="n">fruits</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After pop:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Popped item:&quot;</span><span class="p">,</span> <span class="n">popped_item</span><span class="p">)</span>
+
+<span class="c1"># 5. index() - Returns the index of the first element with the specified value</span>
+<span class="n">index_of_cherry</span> <span class="o">=</span> <span class="n">fruits</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;cherry&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Index of &#39;cherry&#39;:&quot;</span><span class="p">,</span> <span class="n">index_of_cherry</span><span class="p">)</span>
+
+<span class="c1"># 6. count() - Returns the number of elements with the specified value</span>
+<span class="n">fruits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="p">)</span>
+<span class="n">apple_count</span> <span class="o">=</span> <span class="n">fruits</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Count of &#39;apple&#39;:&quot;</span><span class="p">,</span> <span class="n">apple_count</span><span class="p">)</span>
+
+<span class="c1"># 7. sort() - Sorts the list in ascending order</span>
+<span class="n">fruits</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After sort:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
+
+<span class="c1"># 8. reverse() - Reverses the order of the list</span>
+<span class="n">fruits</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After reverse:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
+
+<span class="c1"># 9. extend() - Adds all elements of a list to another list</span>
+<span class="n">more_fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;mango&quot;</span><span class="p">,</span> <span class="s2">&quot;pineapple&quot;</span><span class="p">,</span> <span class="s2">&quot;kiwi&quot;</span><span class="p">]</span>
+<span class="n">fruits</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">more_fruits</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After extend with more_fruits:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
+
+<span class="c1"># 10. clear() - Removes all elements from the list</span>
+<span class="n">fruits</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After clear:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="explanation-of-the-methods">
+<h3>Explanation of the methods:<a class="headerlink" href="#explanation-of-the-methods" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">append()</span></code></strong>: Adds an item to the end of the list.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">insert(index,</span> <span class="pre">item)</span></code></strong>: Inserts an item at the specified index.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">remove(item)</span></code></strong>: Removes the first occurrence of an item from the list.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">pop(index)</span></code></strong>: Removes and returns the item at the given index; default is the last item.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">index(item)</span></code></strong>: Finds the index of the first occurrence of the specified item.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">count(item)</span></code></strong>: Counts how many times an item appears in the list.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">sort()</span></code></strong>: Sorts the list in ascending order (in-place).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">reverse()</span></code></strong>: Reverses the list (in-place).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">extend(list)</span></code></strong>: Extends the list by appending elements from another list.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">clear()</span></code></strong>: Removes all elements from the list.</p></li>
+</ol>
 </section>
 </section>
 <section id="dictionary">
@@ -1444,12 +1504,11 @@ You may either choose a specific number of rounds to play or keep playing the ga
 </li>
 <li><a class="reference internal" href="#objects-classes">Objects/ Classes</a></li>
 <li><a class="reference internal" href="#methods">Methods</a><ul>
-<li><a class="reference internal" href="#method-vs-function">1. <strong>Method vs. Function</strong></a></li>
-<li><a class="reference internal" href="#instance-methods">2. <strong>Instance Methods</strong></a></li>
-<li><a class="reference internal" href="#class-methods">3. <strong>Class Methods</strong></a></li>
-<li><a class="reference internal" href="#static-methods">4. <strong>Static Methods</strong></a></li>
-<li><a class="reference internal" href="#special-methods-magic-methods">5. <strong>Special Methods (Magic Methods)</strong></a></li>
-<li><a class="reference internal" href="#method-chaining">6. <strong>Method Chaining</strong></a></li>
+<li><a class="reference internal" href="#instance-methods">1. <strong>Instance Methods</strong></a></li>
+<li><a class="reference internal" href="#class-methods">2. <strong>Class Methods</strong></a></li>
+<li><a class="reference internal" href="#static-methods">3. <strong>Static Methods</strong></a></li>
+<li><a class="reference internal" href="#special-methods-magic-methods">4. <strong>Special Methods (Magic Methods)</strong></a></li>
+<li><a class="reference internal" href="#method-chaining">5. <strong>Method Chaining</strong></a></li>
 <li><a class="reference internal" href="#key-points-to-remember">Key Points to Remember</a></li>
 </ul>
 </li>
@@ -1470,6 +1529,10 @@ You may either choose a specific number of rounds to play or keep playing the ga
 <li><a class="reference internal" href="#using-not-or-not-in-python">4. Using <strong>NOT</strong> (<code class="docutils literal notranslate"><span class="pre">!</span></code> or <code class="docutils literal notranslate"><span class="pre">not</span></code> in Python)</a></li>
 <li><a class="reference internal" href="#complex-condition-with-multiple-and-or-not">5. Complex Condition with <strong>Multiple AND/OR/NOT</strong></a></li>
 <li><a class="reference internal" href="#nested-compound-boolean-expression">6. Nested Compound Boolean Expression</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lists">Lists</a><ul>
+<li><a class="reference internal" href="#explanation-of-the-methods">Explanation of the methods:</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dictionary">Dictionary</a><ul>

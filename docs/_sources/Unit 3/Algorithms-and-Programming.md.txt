@@ -6,14 +6,17 @@ In computer programming, the terms **function**, **method**, and **procedure** h
 
 ### Function
 - **Definition**: A function is a block of code that takes inputs (arguments), performs a specific task, and returns a value. Functions are designed to compute a value and can be used across different parts of a program.
+
 - **Example**: In Python, a simple function might look like this:
   ```python
   def add(a, b):
       return a + b
   ```
 
+
 ### Method
 - **Definition**: A method is similar to a function but is associated with an object or a class in object-oriented programming (OOP). Methods operate on data contained within the object and can modify the object's state.
+
 - **Example**: In Java, a method in a class might look like this:
   ```java
   public class Calculator {
@@ -22,6 +25,7 @@ In computer programming, the terms **function**, **method**, and **procedure** h
       }
   }
   ```
+
 
 ### Procedure
 - **Definition**: A procedure is a block of code that performs a task but does not necessarily return a value. Procedures are often used for executing a sequence of statements and might be called for their side effects rather than for a result.
@@ -32,6 +36,7 @@ In computer programming, the terms **function**, **method**, and **procedure** h
       writeln('Hello, World!');
   end;
   ```
+
 
 ### Summary of Differences
 - **Return Value**:
@@ -45,6 +50,7 @@ In computer programming, the terms **function**, **method**, and **procedure** h
   - **Procedure**: Often used in procedural programming languages.
 
 Understanding these distinctions can help in writing clearer, more organized code and communicating effectively with other developers.
+
 
 
 ## Objects/ Classes
@@ -99,15 +105,11 @@ Explanation:
 
 ## Methods
 
-In Python, **methods** are functions that belong to objects and are used to operate on those objects. They are similar to functions but have a special relationship with the object they belong to, known as the **instance**.
+As was stated before, **methods** are functions that belong to `objects` and are used to operate on those objects. They are similar to functions but have a special relationship with the object they belong to, known as the **instance**.
 
 Let's break down the key concepts:
 
-### 1. **Method vs. Function**
-   - A **function** is a block of code that performs a specific task and can exist independently of any object. For example, `print()` and `len()` are functions.
-   - A **method**, on the other hand, is a function that is associated with an object. It is called on an object and can access the object’s internal data. For instance, `str.upper()` is a method called on a string object to return an uppercase version of that string.
-
-### 2. **Instance Methods**
+### 1. **Instance Methods**
    - Most methods are called **instance methods** because they operate on an instance of a class (an object created from a class).
    - When an instance method is defined, the first parameter is usually `self`, which represents the instance of the class on which the method is called. This `self` parameter allows the method to access other attributes and methods of the same object.
    
@@ -124,7 +126,7 @@ Let's break down the key concepts:
    ```
    In this example, `bark()` is an instance method that uses `self` to access the `name` attribute of the `my_dog` instance.
 
-### 3. **Class Methods**
+### 2. **Class Methods**
    - **Class methods** are methods that operate on the class itself rather than on individual instances. They are marked with the `@classmethod` decorator.
    - Instead of `self`, they take `cls` as their first parameter, which refers to the class itself, not an instance.
    
@@ -140,7 +142,7 @@ Let's break down the key concepts:
    ```
    Here, `get_species()` is a class method that accesses the `species` attribute defined on the class itself.
 
-### 4. **Static Methods**
+### 3. **Static Methods**
    - **Static methods** are methods that don’t operate on an instance or class. They behave like normal functions but reside within a class for organizational purposes.
    - Static methods are marked with the `@staticmethod` decorator and don’t require `self` or `cls` parameters.
    
@@ -154,7 +156,7 @@ Let's break down the key concepts:
    ```
    `add()` is a static method and does not rely on any data from an instance or the class. It simply performs a task.
 
-### 5. **Special Methods (Magic Methods)**
+### 4. **Special Methods (Magic Methods)**
    - Special methods, also known as **magic methods** or **dunder methods** (short for "double underscore"), allow instances of classes to interact with built-in Python operations in unique ways.
    - These methods have names starting and ending with double underscores (e.g., `__init__`, `__str__`, `__len__`).
    
@@ -172,7 +174,7 @@ Let's break down the key concepts:
    ```
    The `__str__()` method is a magic method that defines how an object should be represented as a string.
 
-### 6. **Method Chaining**
+### 5. **Method Chaining**
    - **Method chaining** allows you to call multiple methods on the same object in a single statement. To enable this, each method must return the object itself.
    
    ```python
@@ -368,6 +370,75 @@ Certainly! Here are some examples of compound Boolean expressions along with exp
    - The score is at least 60 and attendance is at least 90.
    
    This kind of expression is useful when there are multiple pathways to meet a requirement.
+
+
+## Lists
+
+
+In this program, we use the most common methods that is able to manipulate a list:  `append`, `insert`, `remove`, `pop`, `sort`, `reverse`, `count`, `index`, `extend`, and `clear`.
+
+```python
+# Initializing a list
+fruits = ["apple", "banana", "cherry"]
+print("Initial list:", fruits)
+
+# 1. append() - Adds an element at the end of the list
+fruits.append("orange")
+print("After append:", fruits)
+
+# 2. insert() - Adds an element at the specified position
+fruits.insert(1, "blueberry")
+print("After insert at index 1:", fruits)
+
+# 3. remove() - Removes the first item with the specified value
+fruits.remove("banana")
+print("After remove 'banana':", fruits)
+
+# 4. pop() - Removes the element at the specified position (default is the last element)
+popped_item = fruits.pop()
+print("After pop:", fruits)
+print("Popped item:", popped_item)
+
+# 5. index() - Returns the index of the first element with the specified value
+index_of_cherry = fruits.index("cherry")
+print("Index of 'cherry':", index_of_cherry)
+
+# 6. count() - Returns the number of elements with the specified value
+fruits.append("apple")
+apple_count = fruits.count("apple")
+print("Count of 'apple':", apple_count)
+
+# 7. sort() - Sorts the list in ascending order
+fruits.sort()
+print("After sort:", fruits)
+
+# 8. reverse() - Reverses the order of the list
+fruits.reverse()
+print("After reverse:", fruits)
+
+# 9. extend() - Adds all elements of a list to another list
+more_fruits = ["mango", "pineapple", "kiwi"]
+fruits.extend(more_fruits)
+print("After extend with more_fruits:", fruits)
+
+# 10. clear() - Removes all elements from the list
+fruits.clear()
+print("After clear:", fruits)
+```
+
+### Explanation of the methods:
+
+1. **`append()`**: Adds an item to the end of the list.
+2. **`insert(index, item)`**: Inserts an item at the specified index.
+3. **`remove(item)`**: Removes the first occurrence of an item from the list.
+4. **`pop(index)`**: Removes and returns the item at the given index; default is the last item.
+5. **`index(item)`**: Finds the index of the first occurrence of the specified item.
+6. **`count(item)`**: Counts how many times an item appears in the list.
+7. **`sort()`**: Sorts the list in ascending order (in-place).
+8. **`reverse()`**: Reverses the list (in-place).
+9. **`extend(list)`**: Extends the list by appending elements from another list.
+10. **`clear()`**: Removes all elements from the list.
+
 
 
 ## Dictionary
