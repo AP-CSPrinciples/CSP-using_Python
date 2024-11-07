@@ -336,6 +336,53 @@
 <p>Understanding these distinctions can help in writing clearer, more organized code and communicating effectively with other developers.</p>
 </section>
 </section>
+<section id="objects-classes">
+<h2>Objects/ Classes<a class="headerlink" href="#objects-classes" title="Link to this heading">¶</a></h2>
+<p>Here is a program that demonstrates the use of objects and classes to represent dogs. It includes constructors with no arguments, one argument, and two arguments.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">breed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">breed</span> <span class="o">=</span> <span class="n">breed</span>
+
+    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Woof!&quot;</span>
+
+    <span class="k">def</span> <span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">breed</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;This is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, a </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">breed</span><span class="si">}</span><span class="s2"> dog.&quot;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;This is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">breed</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;This is a </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">breed</span><span class="si">}</span><span class="s2"> dog.&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;This is a dog.&quot;</span>
+
+
+<span class="c1"># Creating an instance of Dog with no arguments</span>
+<span class="n">dog1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dog1</span><span class="o">.</span><span class="n">display_info</span><span class="p">())</span>  <span class="c1"># Output: This is a dog.</span>
+
+<span class="c1"># Creating an instance of Dog with one argument</span>
+<span class="n">dog2</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Buddy&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dog2</span><span class="o">.</span><span class="n">display_info</span><span class="p">())</span>  <span class="c1"># Output: This is Buddy.</span>
+
+<span class="c1"># Creating an instance of Dog with two arguments</span>
+<span class="n">dog3</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="s2">&quot;Labrador&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dog3</span><span class="o">.</span><span class="n">display_info</span><span class="p">())</span>  <span class="c1"># Output: This is Max, a Labrador dog.</span>
+
+<span class="c1"># Accessing methods of the Dog class</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dog3</span><span class="o">.</span><span class="n">bark</span><span class="p">())</span>  <span class="c1"># Output: Woof!</span>
+</pre></div>
+</div>
+<p>Explanation:</p>
+<ul class="simple">
+<li><p>We define a class <code class="docutils literal notranslate"><span class="pre">Dog</span></code> with a constructor <code class="docutils literal notranslate"><span class="pre">__init__</span></code> which initializes the attributes <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">breed</span></code>. The constructor can take 0, 1, or 2 arguments.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">bark</span></code> method returns a string representing the sound a dog makes.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">display_info</span></code> method displays information about the dog based on its attributes.</p></li>
+<li><p>We create instances of the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class with different combinations of arguments to demonstrate the constructors with no arguments, one argument, and two arguments.</p></li>
+<li><p>Finally, we access methods of the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class using the created instances.</p></li>
+</ul>
+</section>
 <section id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">¶</a></h2>
 <p>In Python, <strong>methods</strong> are functions that belong to objects and are used to operate on those objects. They are similar to functions but have a special relationship with the object they belong to, known as the <strong>instance</strong>.</p>
@@ -1238,53 +1285,6 @@ nested-nested iterations.</p>
 with various data structures and iterations.</p>
 </section>
 </section>
-<section id="objects-classes">
-<h2>Objects/ Classes<a class="headerlink" href="#objects-classes" title="Link to this heading">¶</a></h2>
-<p>Sure, here’s a Python program that demonstrates the use of objects and classes to represent dogs. It includes constructors with no arguments, one argument, and two arguments.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">breed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">breed</span> <span class="o">=</span> <span class="n">breed</span>
-
-    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;Woof!&quot;</span>
-
-    <span class="k">def</span> <span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">breed</span><span class="p">:</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;This is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, a </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">breed</span><span class="si">}</span><span class="s2"> dog.&quot;</span>
-        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;This is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span>
-        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">breed</span><span class="p">:</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;This is a </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">breed</span><span class="si">}</span><span class="s2"> dog.&quot;</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s2">&quot;This is a dog.&quot;</span>
-
-
-<span class="c1"># Creating an instance of Dog with no arguments</span>
-<span class="n">dog1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dog1</span><span class="o">.</span><span class="n">display_info</span><span class="p">())</span>  <span class="c1"># Output: This is a dog.</span>
-
-<span class="c1"># Creating an instance of Dog with one argument</span>
-<span class="n">dog2</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Buddy&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dog2</span><span class="o">.</span><span class="n">display_info</span><span class="p">())</span>  <span class="c1"># Output: This is Buddy.</span>
-
-<span class="c1"># Creating an instance of Dog with two arguments</span>
-<span class="n">dog3</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="s2">&quot;Labrador&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dog3</span><span class="o">.</span><span class="n">display_info</span><span class="p">())</span>  <span class="c1"># Output: This is Max, a Labrador dog.</span>
-
-<span class="c1"># Accessing methods of the Dog class</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dog3</span><span class="o">.</span><span class="n">bark</span><span class="p">())</span>  <span class="c1"># Output: Woof!</span>
-</pre></div>
-</div>
-<p>Explanation:</p>
-<ul class="simple">
-<li><p>We define a class <code class="docutils literal notranslate"><span class="pre">Dog</span></code> with a constructor <code class="docutils literal notranslate"><span class="pre">__init__</span></code> which initializes the attributes <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">breed</span></code>. The constructor can take 0, 1, or 2 arguments.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">bark</span></code> method returns a string representing the sound a dog makes.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">display_info</span></code> method displays information about the dog based on its attributes.</p></li>
-<li><p>We create instances of the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class with different combinations of arguments to demonstrate the constructors with no arguments, one argument, and two arguments.</p></li>
-<li><p>Finally, we access methods of the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class using the created instances.</p></li>
-</ul>
-</section>
 <section id="activity-x-x">
 <h2>Activity X.X<a class="headerlink" href="#activity-x-x" title="Link to this heading">¶</a></h2>
 </section>
@@ -1442,6 +1442,7 @@ You may either choose a specific number of rounds to play or keep playing the ga
 <li><a class="reference internal" href="#summary-of-differences">Summary of Differences</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#objects-classes">Objects/ Classes</a></li>
 <li><a class="reference internal" href="#methods">Methods</a><ul>
 <li><a class="reference internal" href="#method-vs-function">1. <strong>Method vs. Function</strong></a></li>
 <li><a class="reference internal" href="#instance-methods">2. <strong>Instance Methods</strong></a></li>
@@ -1498,7 +1499,6 @@ You may either choose a specific number of rounds to play or keep playing the ga
 <li><a class="reference internal" href="#summary">Summary</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#objects-classes">Objects/ Classes</a></li>
 <li><a class="reference internal" href="#activity-x-x">Activity X.X</a></li>
 <li><a class="reference internal" href="#coding-exercise">Coding Exercise</a><ul>
 <li><a class="reference internal" href="#randomizer-class">Randomizer Class</a></li>
