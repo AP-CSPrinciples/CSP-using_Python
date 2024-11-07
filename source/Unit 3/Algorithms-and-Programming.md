@@ -45,6 +45,58 @@ In computer programming, the terms **function**, **method**, and **procedure** h
   - **Procedure**: Often used in procedural programming languages.
 
 Understanding these distinctions can help in writing clearer, more organized code and communicating effectively with other developers.
+
+
+## Objects/ Classes
+
+Here is a program that demonstrates the use of objects and classes to represent dogs. It includes constructors with no arguments, one argument, and two arguments.
+
+```python
+class Dog:
+    def __init__(self, name=None, breed=None):
+        self.name = name
+        self.breed = breed
+
+    def bark(self):
+        return "Woof!"
+
+    def display_info(self):
+        if self.name and self.breed:
+            return f"This is {self.name}, a {self.breed} dog."
+        elif self.name:
+            return f"This is {self.name}."
+        elif self.breed:
+            return f"This is a {self.breed} dog."
+        else:
+            return "This is a dog."
+
+
+# Creating an instance of Dog with no arguments
+dog1 = Dog()
+print(dog1.display_info())  # Output: This is a dog.
+
+# Creating an instance of Dog with one argument
+dog2 = Dog("Buddy")
+print(dog2.display_info())  # Output: This is Buddy.
+
+# Creating an instance of Dog with two arguments
+dog3 = Dog("Max", "Labrador")
+print(dog3.display_info())  # Output: This is Max, a Labrador dog.
+
+# Accessing methods of the Dog class
+print(dog3.bark())  # Output: Woof!
+```
+
+Explanation:
+
+- We define a class `Dog` with a constructor `__init__` which initializes the attributes `name` and `breed`. The constructor can take 0, 1, or 2 arguments.
+- The `bark` method returns a string representing the sound a dog makes.
+- The `display_info` method displays information about the dog based on its attributes.
+- We create instances of the `Dog` class with different combinations of arguments to demonstrate the constructors with no arguments, one argument, and two arguments.
+- Finally, we access methods of the `Dog` class using the created instances.
+
+
+
 ## Methods
 
 In Python, **methods** are functions that belong to objects and are used to operate on those objects. They are similar to functions but have a special relationship with the object they belong to, known as the **instance**.
@@ -721,53 +773,6 @@ print(classification)  # Output: ['positive', 'positive', 'positive', 'negative'
 These examples illustrate how to leverage conditionals effectively in Python programming, especially when dealing 
 with various data structures and iterations.
 
-## Objects/ Classes
-
-Sure, here's a Python program that demonstrates the use of objects and classes to represent dogs. It includes constructors with no arguments, one argument, and two arguments.
-
-```python
-class Dog:
-    def __init__(self, name=None, breed=None):
-        self.name = name
-        self.breed = breed
-
-    def bark(self):
-        return "Woof!"
-
-    def display_info(self):
-        if self.name and self.breed:
-            return f"This is {self.name}, a {self.breed} dog."
-        elif self.name:
-            return f"This is {self.name}."
-        elif self.breed:
-            return f"This is a {self.breed} dog."
-        else:
-            return "This is a dog."
-
-
-# Creating an instance of Dog with no arguments
-dog1 = Dog()
-print(dog1.display_info())  # Output: This is a dog.
-
-# Creating an instance of Dog with one argument
-dog2 = Dog("Buddy")
-print(dog2.display_info())  # Output: This is Buddy.
-
-# Creating an instance of Dog with two arguments
-dog3 = Dog("Max", "Labrador")
-print(dog3.display_info())  # Output: This is Max, a Labrador dog.
-
-# Accessing methods of the Dog class
-print(dog3.bark())  # Output: Woof!
-```
-
-Explanation:
-
-- We define a class `Dog` with a constructor `__init__` which initializes the attributes `name` and `breed`. The constructor can take 0, 1, or 2 arguments.
-- The `bark` method returns a string representing the sound a dog makes.
-- The `display_info` method displays information about the dog based on its attributes.
-- We create instances of the `Dog` class with different combinations of arguments to demonstrate the constructors with no arguments, one argument, and two arguments.
-- Finally, we access methods of the `Dog` class using the created instances.
 
 ## Activity X.X
 
