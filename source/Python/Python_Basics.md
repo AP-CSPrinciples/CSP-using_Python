@@ -1125,10 +1125,10 @@ For this class, we will not be using tuples, but you should be familiar with how
 
 |      | Indexing | Ordered | Mutable | Duplicate |
 |------------|---------------|----------------|------------------------------------|----------------|
-| List | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> |
-| Tuple | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> |
+| List | <ul><li><mark>[X] Yes</mark></li><li>[ ] No</li></ul> | <ul><li><mark>[X] Yes</mark></li><li>[ ] No</li></ul> | <ul><li><mark>[X] Yes</mark></li><li>[ ] No</li></ul> | <ul><li><mark>[X] Yes</mark></li><li>[ ] No</li></ul> |
+| Tuple | <ul><li><mark>[X] Yes</mark></li><li>[ ] No</li></ul> | <ul><li><mark>[X] Yes</mark></li><li>[ ] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li><mark>[X] Yes</mark></li><li>[ ] No</li></ul> |
 | Set |  <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> |
-| Dictionary |  <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[X] Yes</li><li>[ ] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> |
+| Dictionary |  <ul><li>[ ] Yes</li><li>[X] No</li></ul> | <ul><li><mark>[X] Yes</mark></li><li>[ ] No</li></ul> | <ul><li><mark>[X] Yes</mark></li><li>[ ] No</li></ul> | <ul><li>[ ] Yes</li><li>[X] No</li></ul> |
 
 
 In Python, lists are **indexed** collections, meaning each item in a list has a specific position. Python uses **zero-based indexing**, which means the first element is accessed with index `0`, the second with `1`, and so on. Python also supports **negative indexing**, where `-1` refers to the last item, `-2` to the second-to-last, and so forth.
