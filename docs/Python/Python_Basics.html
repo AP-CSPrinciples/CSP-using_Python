@@ -1567,15 +1567,339 @@ Here are the basic data types in Python, along with examples for each.</p>
 </section>
 <section id="file-handling">
 <h2>File Handling<a class="headerlink" href="#file-handling" title="Link to this heading">¶</a></h2>
+<p>File handling in Python allows you to work with files on your computer: reading data from files, writing data to files, and appending data. Python provides built-in functions and modules to make this straightforward. Here’s a guide to the basics of file handling in Python 3.x, with examples.</p>
+<p><strong>1. Opening and Closing Files</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">open()</span></code> function is used to open a file. It takes two main parameters:</p>
+<ul class="simple">
+<li><p><strong>Filename</strong>: the name of the file you want to work with.</p></li>
+<li><p><strong>Mode</strong>: how you want to open the file, such as for reading or writing.</p></li>
+</ul>
+<p>Here are the common modes:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">'r'</span></code></strong> - Read (default mode). Opens a file for reading. Raises an error if the file doesn’t exist.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">'w'</span></code></strong> - Write. Opens a file for writing. Creates a new file if it doesn’t exist or truncates the file if it exists.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">'a'</span></code></strong> - Append. Opens a file for appending. Creates a new file if it doesn’t exist.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">'r+'</span></code></strong> - Read and write. Opens a file for both reading and writing.</p></li>
+</ul>
+<p>It’s a good practice to close a file after you’re done working with it to free up system resources. You can do this with the <code class="docutils literal notranslate"><span class="pre">close()</span></code> method or by using a <code class="docutils literal notranslate"><span class="pre">with</span></code> statement (recommended), which automatically closes the file for you.</p>
+<p><strong>Example of Opening and Closing a File</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Opening a file for reading</span>
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># Closing the file</span>
+</pre></div>
+</div>
+<p>Using a <code class="docutils literal notranslate"><span class="pre">with</span></code> statement:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<span class="c1"># No need to close the file, it’s automatically handled</span>
+</pre></div>
+</div>
+<p><strong>2. Reading Files</strong></p>
+<p>There are several methods to read from a file:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">read()</span></code></strong>: Reads the entire file as a string.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">readline()</span></code></strong>: Reads a single line at a time.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">readlines()</span></code></strong>: Reads all lines and returns them as a list of strings.</p></li>
+</ul>
+<p><strong>Example of Reading a File</strong></p>
+<p>Assuming <code class="docutils literal notranslate"><span class="pre">example.txt</span></code> contains:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hello, World!
+This is a text file.
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reading the entire file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+
+<span class="c1"># Reading line by line</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+<span class="c1"># Reading all lines as a list</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>3. Writing to Files</strong></p>
+<p>To write data to a file, you can use:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">write()</span></code></strong>: Writes a string to the file.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">writelines()</span></code></strong>: Writes a list of strings to the file.</p></li>
+</ul>
+<p><strong>Example of Writing to a File</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Writing to a file (overwrites if the file already exists)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;This is a new line.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Writing to the file.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Writing multiple lines at once</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Line 1</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Line 2</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Line 3</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">]</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>4. Appending to Files</strong></p>
+<p>To add data to the end of an existing file, use the <code class="docutils literal notranslate"><span class="pre">'a'</span></code> mode.</p>
+<p><strong>Example of Appending to a File</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Appending this line to the file.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>5. Working with Binary Files</strong></p>
+<p>Binary files (like images or executable files) require using the <code class="docutils literal notranslate"><span class="pre">'b'</span></code> mode (e.g., <code class="docutils literal notranslate"><span class="pre">'rb'</span></code> for reading, <code class="docutils literal notranslate"><span class="pre">'wb'</span></code> for writing).</p>
+<p><strong>Example of Working with Binary Files</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reading a binary file (e.g., an image)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;image.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Writing to a binary file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;copy_image.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>6. Using <code class="docutils literal notranslate"><span class="pre">seek()</span></code> and <code class="docutils literal notranslate"><span class="pre">tell()</span></code> for File Positioning</strong></p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">seek(offset,</span> <span class="pre">from_what)</span></code></strong>: Moves the file pointer to a specific position.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">tell()</span></code></strong>: Returns the current position of the file pointer.</p></li>
+</ul>
+<p><strong>Example of Using <code class="docutils literal notranslate"><span class="pre">seek()</span></code> and <code class="docutils literal notranslate"><span class="pre">tell()</span></code></strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>    <span class="c1"># Read first 5 characters</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>      <span class="c1"># Output current file position</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>            <span class="c1"># Go back to the beginning</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>     <span class="c1"># Read first 5 characters again</span>
+</pre></div>
+</div>
+<p><strong>Summary</strong></p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">open()</span></code> with the appropriate mode for your needs.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open()</span></code> to ensure files are properly closed.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">read()</span></code>, <code class="docutils literal notranslate"><span class="pre">readline()</span></code>, or <code class="docutils literal notranslate"><span class="pre">readlines()</span></code> for reading files.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">write()</span></code> or <code class="docutils literal notranslate"><span class="pre">writelines()</span></code> for writing to files.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">seek()</span></code> and <code class="docutils literal notranslate"><span class="pre">tell()</span></code> to navigate through files.</p></li>
+</ul>
+<p>This covers the basics of file handling in Python!</p>
 </section>
 <section id="object-oriented-programming">
 <h2>Object-Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Link to this heading">¶</a></h2>
 </section>
 <section id="exception-handling">
 <h2>Exception Handling<a class="headerlink" href="#exception-handling" title="Link to this heading">¶</a></h2>
+<p>Exception handling in Python allows you to manage errors that arise during program execution, helping the program to continue running or provide a more user-friendly message instead of crashing. Python uses <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, and <code class="docutils literal notranslate"><span class="pre">finally</span></code> blocks for this purpose.</p>
+<p><strong>Basic Syntax of Exception Handling</strong>
+The basic syntax for handling exceptions in Python looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Code that may raise an exception</span>
+<span class="k">except</span> <span class="n">SomeException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="c1"># Code that runs if the specified exception occurs</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Code that runs if no exceptions occur</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="c1"># Code that always runs, regardless of whether an exception occurred</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>try</strong>: Wraps code that may raise an exception.</p></li>
+<li><p><strong>except</strong>: Catches and handles specific exceptions.</p></li>
+<li><p><strong>else</strong>: Executes code if no exception occurred.</p></li>
+<li><p><strong>finally</strong>: Executes code regardless of whether an exception occurred, often used for cleanup actions.</p></li>
+</ul>
+<p><strong>Example 1: Basic Exception Handling</strong>
+Here’s a basic example of handling a <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You can&#39;t divide by zero!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Division successful:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End of operation.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Example 2: Handling Multiple Exceptions</strong>
+You can handle multiple exceptions by specifying them in separate <code class="docutils literal notranslate"><span class="pre">except</span></code> blocks or by combining them.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">user_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">))</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">user_input</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input! Please enter an integer.&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Division by zero is not allowed.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Execution completed.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Real-World Examples of Exception Handling</strong></p>
+<p><strong>1. File Handling with Exceptions</strong>
+When working with files, it’s common to check if a file exists before attempting to read or write to it. Using exception handling here ensures that the program doesn’t crash if the file is missing.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The file &#39;data.txt&#39; does not exist.&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An error occurred while reading the file.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>2. Database Connection Handling</strong>
+In applications that connect to a database, it’s essential to handle exceptions in case the connection fails due to network issues, wrong credentials, etc.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">connection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;my_database.db&#39;</span><span class="p">)</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM users&quot;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">DatabaseError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Database error:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">connection</span><span class="p">:</span>
+        <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>3. User Input Validation</strong>
+In scenarios where user input is required, validation and exception handling ensure that unexpected input doesn’t crash the program.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your age: &quot;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Age cannot be negative.&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Your age is </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>4. Network Request Handling</strong>
+When making network requests (e.g., API requests), it’s good practice to handle exceptions, especially for connectivity issues, timeouts, or HTTP errors.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://api.example.com/data&quot;</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>  <span class="c1"># Raises an HTTPError for bad responses (4xx or 5xx)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to connect to the server.&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">Timeout</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The request timed out.&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">HTTPError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HTTP error:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An error occurred:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Summary</strong>
+Exception handling helps manage different types of errors gracefully, enabling applications to run smoothly without abrupt failures. In real-world applications, exception handling is vital for improving reliability, especially in operations involving file access, user input, database connections, or network requests.</p>
 </section>
 <section id="lambda-functions">
 <h2>Lambda Functions<a class="headerlink" href="#lambda-functions" title="Link to this heading">¶</a></h2>
+<p>In Python, a <strong>lambda function</strong> is a small, anonymous function that is defined using the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> keyword. Unlike regular functions created with <code class="docutils literal notranslate"><span class="pre">def</span></code>, lambda functions are written in a single line and are often used for short, simple operations that are not reused elsewhere.</p>
+<section id="basic-syntax-of-lambda-functions">
+<h3>Basic Syntax of Lambda Functions<a class="headerlink" href="#basic-syntax-of-lambda-functions" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">arguments</span><span class="p">:</span> <span class="n">expression</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>arguments</strong>: The input(s) to the function.</p></li>
+<li><p><strong>expression</strong>: The operation or calculation that returns a result.</p></li>
+</ul>
+<p>Lambda functions can take any number of arguments, but they are limited to a single expression. They are useful when you need a simple function for a short period and don’t want to formally define it with <code class="docutils literal notranslate"><span class="pre">def</span></code>.</p>
+<p><strong>1. Basic Example of a Lambda Function</strong>
+A simple example of a lambda function that adds 10 to a given number:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add_10</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">add_10</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># Output: 15</span>
+</pre></div>
+</div>
+<p><strong>2. Lambda Function with Multiple Arguments</strong>
+Lambda functions can accept multiple arguments, which is useful for quick calculations.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">multiply</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">multiply</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># Output: 20</span>
+</pre></div>
+</div>
+<p><strong>3. Using Lambda Functions with <code class="docutils literal notranslate"><span class="pre">map()</span></code></strong>
+<code class="docutils literal notranslate"><span class="pre">map()</span></code> applies a function to each item in an iterable (like a list). Lambda functions are frequently used with <code class="docutils literal notranslate"><span class="pre">map()</span></code> to simplify operations.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">squared</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">squared</span><span class="p">)</span>  <span class="c1"># Output: [1, 4, 9, 16, 25]</span>
+</pre></div>
+</div>
+<p><strong>4. Using Lambda Functions with <code class="docutils literal notranslate"><span class="pre">filter()</span></code></strong>
+<code class="docutils literal notranslate"><span class="pre">filter()</span></code> applies a function to each item in an iterable and returns only those items for which the function returns <code class="docutils literal notranslate"><span class="pre">True</span></code>. Lambda functions are handy for creating quick filters.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">even_numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">even_numbers</span><span class="p">)</span>  <span class="c1"># Output: [2, 4, 6, 8]</span>
+</pre></div>
+</div>
+<p><strong>5. Using Lambda Functions with <code class="docutils literal notranslate"><span class="pre">sorted()</span></code></strong>
+You can use lambda functions as the <code class="docutils literal notranslate"><span class="pre">key</span></code> argument in <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> to define custom sorting logic.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Paul&quot;</span><span class="p">,</span> <span class="s2">&quot;George&quot;</span><span class="p">,</span> <span class="s2">&quot;Ringo&quot;</span><span class="p">]</span>
+<span class="n">sorted_names</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_names</span><span class="p">)</span>  <span class="c1"># Output: [&#39;Paul&#39;, &#39;John&#39;, &#39;Ringo&#39;, &#39;George&#39;]</span>
+</pre></div>
+</div>
+<p><strong>6. Lambda Function in a Dictionary</strong>
+Lambda functions are sometimes used in dictionaries to create simple mathematical operations or other functions based on keys.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">calculator</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;add&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span>
+    <span class="s1">&#39;subtract&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">,</span>
+    <span class="s1">&#39;multiply&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span>
+    <span class="s1">&#39;divide&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span> <span class="k">if</span> <span class="n">y</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;Division by zero&#39;</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">calculator</span><span class="p">[</span><span class="s1">&#39;add&#39;</span><span class="p">](</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>         <span class="c1"># Output: 15</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">calculator</span><span class="p">[</span><span class="s1">&#39;divide&#39;</span><span class="p">](</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>      <span class="c1"># Output: 5.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">calculator</span><span class="p">[</span><span class="s1">&#39;divide&#39;</span><span class="p">](</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>      <span class="c1"># Output: Division by zero</span>
+</pre></div>
+</div>
+<p><strong>7. Using Lambda with Conditional Expressions</strong>
+Lambda functions can contain conditional expressions to add logic in a concise format.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">max_value</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="k">else</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">max_value</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>  <span class="c1"># Output: 20</span>
+</pre></div>
+</div>
+<p><strong>8. Lambda in List Comprehension</strong>
+Lambdas can be used within list comprehensions for quick transformations.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">doubled_numbers</span> <span class="o">=</span> <span class="p">[(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">doubled_numbers</span><span class="p">)</span>  <span class="c1"># Output: [2, 4, 6, 8, 10]</span>
+</pre></div>
+</div>
+<p><strong>9. Using Lambda Functions in Higher-Order Functions</strong>
+Lambda functions are often used in higher-order functions (functions that take other functions as arguments). For instance, they can be used to apply custom logic in a function parameter.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">apply_operation</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">apply_operation</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># Output: 50</span>
+</pre></div>
+</div>
+<p><strong>10. Lambda Functions for Data Manipulation in Pandas</strong>
+In data science, lambda functions are commonly used with libraries like <code class="docutils literal notranslate"><span class="pre">pandas</span></code> for quick data transformations.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Charlie&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;AgeGroup&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;Young&#39;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">25</span> <span class="k">else</span> <span class="s1">&#39;Adult&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Summary</strong>
+Lambda functions in Python provide a concise way to define simple functions without the need for formal <code class="docutils literal notranslate"><span class="pre">def</span></code> syntax. They are useful in scenarios where small, throwaway functions are needed, like with <code class="docutils literal notranslate"><span class="pre">map()</span></code>, <code class="docutils literal notranslate"><span class="pre">filter()</span></code>, and data processing tasks. However, lambda functions are limited to single expressions, so they’re best for straightforward operations rather than complex logic.</p>
+</section>
 </section>
 <section id="data-structures">
 <h2>Data Structures<a class="headerlink" href="#data-structures" title="Link to this heading">¶</a></h2>
@@ -1664,7 +1988,10 @@ Here are the basic data types in Python, along with examples for each.</p>
 <li><a class="reference internal" href="#file-handling">File Handling</a></li>
 <li><a class="reference internal" href="#object-oriented-programming">Object-Oriented Programming</a></li>
 <li><a class="reference internal" href="#exception-handling">Exception Handling</a></li>
-<li><a class="reference internal" href="#lambda-functions">Lambda Functions</a></li>
+<li><a class="reference internal" href="#lambda-functions">Lambda Functions</a><ul>
+<li><a class="reference internal" href="#basic-syntax-of-lambda-functions">Basic Syntax of Lambda Functions</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#data-structures">Data Structures</a></li>
 </ul>
 </li>

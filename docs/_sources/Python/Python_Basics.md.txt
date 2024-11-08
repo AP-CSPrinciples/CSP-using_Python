@@ -1206,13 +1206,394 @@ print("After clear:", fruits)
 ## File Handling
 
 
+File handling in Python allows you to work with files on your computer: reading data from files, writing data to files, and appending data. Python provides built-in functions and modules to make this straightforward. Here's a guide to the basics of file handling in Python 3.x, with examples.
+
+**1. Opening and Closing Files**
+
+The `open()` function is used to open a file. It takes two main parameters:
+- **Filename**: the name of the file you want to work with.
+- **Mode**: how you want to open the file, such as for reading or writing.
+
+Here are the common modes:
+- **`'r'`** - Read (default mode). Opens a file for reading. Raises an error if the file doesn’t exist.
+- **`'w'`** - Write. Opens a file for writing. Creates a new file if it doesn’t exist or truncates the file if it exists.
+- **`'a'`** - Append. Opens a file for appending. Creates a new file if it doesn’t exist.
+- **`'r+'`** - Read and write. Opens a file for both reading and writing.
+
+It’s a good practice to close a file after you’re done working with it to free up system resources. You can do this with the `close()` method or by using a `with` statement (recommended), which automatically closes the file for you.
+
+**Example of Opening and Closing a File**
+
+```python
+# Opening a file for reading
+file = open("example.txt", "r")
+content = file.read()
+print(content)
+file.close()  # Closing the file
+```
+
+Using a `with` statement:
+
+```python
+with open("example.txt", "r") as file:
+    content = file.read()
+    print(content)
+# No need to close the file, it’s automatically handled
+```
+
+**2. Reading Files**
+
+There are several methods to read from a file:
+- **`read()`**: Reads the entire file as a string.
+- **`readline()`**: Reads a single line at a time.
+- **`readlines()`**: Reads all lines and returns them as a list of strings.
+
+**Example of Reading a File**
+
+Assuming `example.txt` contains:
+```
+Hello, World!
+This is a text file.
+```
+
+```python
+# Reading the entire file
+with open("example.txt", "r") as file:
+    content = file.read()
+    print(content)
+
+# Reading line by line
+with open("example.txt", "r") as file:
+    for line in file:
+        print(line.strip())
+
+# Reading all lines as a list
+with open("example.txt", "r") as file:
+    lines = file.readlines()
+    print(lines)
+```
+
+**3. Writing to Files**
+
+To write data to a file, you can use:
+- **`write()`**: Writes a string to the file.
+- **`writelines()`**: Writes a list of strings to the file.
+
+**Example of Writing to a File**
+
+```python
+# Writing to a file (overwrites if the file already exists)
+with open("example.txt", "w") as file:
+    file.write("This is a new line.\n")
+    file.write("Writing to the file.")
+
+# Writing multiple lines at once
+with open("example.txt", "w") as file:
+    lines = ["Line 1\n", "Line 2\n", "Line 3\n"]
+    file.writelines(lines)
+```
+
+**4. Appending to Files**
+
+To add data to the end of an existing file, use the `'a'` mode.
+
+**Example of Appending to a File**
+
+```python
+with open("example.txt", "a") as file:
+    file.write("\nAppending this line to the file.")
+```
+
+**5. Working with Binary Files**
+
+Binary files (like images or executable files) require using the `'b'` mode (e.g., `'rb'` for reading, `'wb'` for writing).
+
+**Example of Working with Binary Files**
+
+```python
+# Reading a binary file (e.g., an image)
+with open("image.jpg", "rb") as file:
+    data = file.read()
+    print(data)
+
+# Writing to a binary file
+with open("copy_image.jpg", "wb") as file:
+    file.write(data)
+```
+
+**6. Using `seek()` and `tell()` for File Positioning**
+
+- **`seek(offset, from_what)`**: Moves the file pointer to a specific position.
+- **`tell()`**: Returns the current position of the file pointer.
+
+**Example of Using `seek()` and `tell()`**
+
+```python
+with open("example.txt", "r") as file:
+    print(file.read(5))    # Read first 5 characters
+    print(file.tell())      # Output current file position
+    file.seek(0)            # Go back to the beginning
+    print(file.read(5))     # Read first 5 characters again
+```
+
+**Summary**
+
+- Use `open()` with the appropriate mode for your needs.
+- Use `with open()` to ensure files are properly closed.
+- Use `read()`, `readline()`, or `readlines()` for reading files.
+- Use `write()` or `writelines()` for writing to files.
+- Use `seek()` and `tell()` to navigate through files. 
+
+This covers the basics of file handling in Python!
+
+
 ## Object-Oriented Programming
 
 
 ## Exception Handling
 
 
+Exception handling in Python allows you to manage errors that arise during program execution, helping the program to continue running or provide a more user-friendly message instead of crashing. Python uses `try`, `except`, `else`, and `finally` blocks for this purpose.
+
+**Basic Syntax of Exception Handling**
+The basic syntax for handling exceptions in Python looks like this:
+
+```python
+try:
+    # Code that may raise an exception
+except SomeException as e:
+    # Code that runs if the specified exception occurs
+else:
+    # Code that runs if no exceptions occur
+finally:
+    # Code that always runs, regardless of whether an exception occurred
+```
+
+- **try**: Wraps code that may raise an exception.
+- **except**: Catches and handles specific exceptions.
+- **else**: Executes code if no exception occurred.
+- **finally**: Executes code regardless of whether an exception occurred, often used for cleanup actions.
+
+**Example 1: Basic Exception Handling**
+Here’s a basic example of handling a `ZeroDivisionError`:
+
+```python
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("You can't divide by zero!")
+else:
+    print("Division successful:", result)
+finally:
+    print("End of operation.")
+```
+
+**Example 2: Handling Multiple Exceptions**
+You can handle multiple exceptions by specifying them in separate `except` blocks or by combining them.
+
+```python
+try:
+    user_input = int(input("Enter a number: "))
+    result = 100 / user_input
+except ValueError:
+    print("Invalid input! Please enter an integer.")
+except ZeroDivisionError:
+    print("Division by zero is not allowed.")
+else:
+    print("Result:", result)
+finally:
+    print("Execution completed.")
+```
+
+**Real-World Examples of Exception Handling**
+
+**1. File Handling with Exceptions**
+When working with files, it’s common to check if a file exists before attempting to read or write to it. Using exception handling here ensures that the program doesn’t crash if the file is missing.
+
+```python
+try:
+    with open("data.txt", "r") as file:
+        content = file.read()
+        print(content)
+except FileNotFoundError:
+    print("The file 'data.txt' does not exist.")
+except IOError:
+    print("An error occurred while reading the file.")
+```
+
+**2. Database Connection Handling**
+In applications that connect to a database, it’s essential to handle exceptions in case the connection fails due to network issues, wrong credentials, etc.
+
+```python
+import sqlite3
+
+try:
+    connection = sqlite3.connect('my_database.db')
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM users")
+    data = cursor.fetchall()
+    print(data)
+except sqlite3.DatabaseError as e:
+    print("Database error:", e)
+finally:
+    if connection:
+        connection.close()
+```
+
+**3. User Input Validation**
+In scenarios where user input is required, validation and exception handling ensure that unexpected input doesn’t crash the program.
+
+```python
+try:
+    age = int(input("Enter your age: "))
+    if age < 0:
+        raise ValueError("Age cannot be negative.")
+except ValueError as e:
+    print("Invalid input:", e)
+else:
+    print(f"Your age is {age}")
+```
+
+**4. Network Request Handling**
+When making network requests (e.g., API requests), it’s good practice to handle exceptions, especially for connectivity issues, timeouts, or HTTP errors.
+
+```python
+import requests
+
+try:
+    response = requests.get("https://api.example.com/data")
+    response.raise_for_status()  # Raises an HTTPError for bad responses (4xx or 5xx)
+    data = response.json()
+    print(data)
+except requests.ConnectionError:
+    print("Failed to connect to the server.")
+except requests.Timeout:
+    print("The request timed out.")
+except requests.HTTPError as e:
+    print("HTTP error:", e)
+except requests.RequestException as e:
+    print("An error occurred:", e)
+```
+
+**Summary**
+Exception handling helps manage different types of errors gracefully, enabling applications to run smoothly without abrupt failures. In real-world applications, exception handling is vital for improving reliability, especially in operations involving file access, user input, database connections, or network requests.
+
 ## Lambda Functions
 
 
+In Python, a **lambda function** is a small, anonymous function that is defined using the `lambda` keyword. Unlike regular functions created with `def`, lambda functions are written in a single line and are often used for short, simple operations that are not reused elsewhere. 
+
+### Basic Syntax of Lambda Functions
+```python
+lambda arguments: expression
+```
+- **arguments**: The input(s) to the function.
+- **expression**: The operation or calculation that returns a result.
+
+Lambda functions can take any number of arguments, but they are limited to a single expression. They are useful when you need a simple function for a short period and don’t want to formally define it with `def`.
+
+**1. Basic Example of a Lambda Function**
+A simple example of a lambda function that adds 10 to a given number:
+
+```python
+add_10 = lambda x: x + 10
+print(add_10(5))  # Output: 15
+```
+
+**2. Lambda Function with Multiple Arguments**
+Lambda functions can accept multiple arguments, which is useful for quick calculations.
+
+```python
+multiply = lambda x, y: x * y
+print(multiply(4, 5))  # Output: 20
+```
+
+**3. Using Lambda Functions with `map()`**
+`map()` applies a function to each item in an iterable (like a list). Lambda functions are frequently used with `map()` to simplify operations.
+
+```python
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, numbers))
+print(squared)  # Output: [1, 4, 9, 16, 25]
+```
+
+**4. Using Lambda Functions with `filter()`**
+`filter()` applies a function to each item in an iterable and returns only those items for which the function returns `True`. Lambda functions are handy for creating quick filters.
+
+```python
+numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(even_numbers)  # Output: [2, 4, 6, 8]
+```
+
+**5. Using Lambda Functions with `sorted()`**
+You can use lambda functions as the `key` argument in `sorted()` to define custom sorting logic.
+
+```python
+names = ["John", "Paul", "George", "Ringo"]
+sorted_names = sorted(names, key=lambda x: len(x))
+print(sorted_names)  # Output: ['Paul', 'John', 'Ringo', 'George']
+```
+
+**6. Lambda Function in a Dictionary**
+Lambda functions are sometimes used in dictionaries to create simple mathematical operations or other functions based on keys.
+
+```python
+calculator = {
+    'add': lambda x, y: x + y,
+    'subtract': lambda x, y: x - y,
+    'multiply': lambda x, y: x * y,
+    'divide': lambda x, y: x / y if y != 0 else 'Division by zero'
+}
+
+print(calculator['add'](10, 5))         # Output: 15
+print(calculator['divide'](10, 2))      # Output: 5.0
+print(calculator['divide'](10, 0))      # Output: Division by zero
+```
+
+**7. Using Lambda with Conditional Expressions**
+Lambda functions can contain conditional expressions to add logic in a concise format.
+
+```python
+max_value = lambda x, y: x if x > y else y
+print(max_value(10, 20))  # Output: 20
+```
+
+**8. Lambda in List Comprehension**
+Lambdas can be used within list comprehensions for quick transformations.
+
+```python
+numbers = [1, 2, 3, 4, 5]
+doubled_numbers = [(lambda x: x * 2)(x) for x in numbers]
+print(doubled_numbers)  # Output: [2, 4, 6, 8, 10]
+```
+
+**9. Using Lambda Functions in Higher-Order Functions**
+Lambda functions are often used in higher-order functions (functions that take other functions as arguments). For instance, they can be used to apply custom logic in a function parameter.
+
+```python
+def apply_operation(func, x, y):
+    return func(x, y)
+
+result = apply_operation(lambda x, y: x * y, 10, 5)
+print(result)  # Output: 50
+```
+
+**10. Lambda Functions for Data Manipulation in Pandas**
+In data science, lambda functions are commonly used with libraries like `pandas` for quick data transformations.
+
+```python
+import pandas as pd
+
+data = pd.DataFrame({
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [24, 27, 22]
+})
+
+data['AgeGroup'] = data['Age'].apply(lambda x: 'Young' if x < 25 else 'Adult')
+print(data)
+```
+
+**Summary**
+Lambda functions in Python provide a concise way to define simple functions without the need for formal `def` syntax. They are useful in scenarios where small, throwaway functions are needed, like with `map()`, `filter()`, and data processing tasks. However, lambda functions are limited to single expressions, so they're best for straightforward operations rather than complex logic.
 ## Data Structures
