@@ -19,7 +19,7 @@ Contents:
 
 
 .. toctree:: 
-   :maxdepth: 4
+   :maxdepth: 2
    :caption: Python:
 
    Python <./Python_Basics.md>
