@@ -22,9 +22,9 @@ Contents:
    :maxdepth: 2
    :caption: Python:
 
-   Python <./Python_Basics.md>
-   Python <./PyGame.md>
-   Python <./Python_Turtle.md>
+   Python_Basics <./Python/Python_Basics.md>
+   PyGame <./Python/PyGame.md>
+   Python_Turtle <./Python/Python_Turtle.md>
 
 
 .. toctree:: 
