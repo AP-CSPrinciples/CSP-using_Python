@@ -277,14 +277,10 @@
 <p>We will be looking at syntax and structures of Python. We will use an Integrated Development Environment to develop our code in this course.</p>
 <section id="python-style-guidelines">
 <h2>Python Style Guidelines<a class="headerlink" href="#python-style-guidelines" title="Link to this heading">¶</a></h2>
-<p>Here are some key Python style guidelines, along with examples and rationales, to help you write clean, readable, and maintainable code:</p>
+<p><strong>PEP 8 Guidelines</strong>
+<em>PEP 8</em> is the official style guide for Python code and covers naming conventions, code layout, and indentation.  These style guidelines, along with the examples and rationales, will help you write clean, readable, and maintainable code.</p>
 <hr class="docutils" />
-<p><strong>1. PEP 8 Guidelines</strong></p>
-<ul class="simple">
-<li><p><strong>PEP 8</strong> is the official style guide for Python code and covers naming conventions, code layout, and indentation.</p></li>
-</ul>
-<hr class="docutils" />
-<p><strong>2. Use Descriptive Variable and Function Names</strong></p>
+<p><strong>1. Use Descriptive Variable and Function Names</strong></p>
 <ul>
 <li><p><strong>Guideline</strong>: Use descriptive names that make the purpose of the variable or function clear.</p></li>
 <li><p><strong>Example</strong>:</p>
@@ -299,7 +295,7 @@
 <li><p><strong>Rationale</strong>: Code is more readable when variable names clearly indicate their purpose, making it easier to understand and maintain.</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>3. Use Consistent Indentation (4 Spaces)</strong></p>
+<p><strong>2. Use Consistent Indentation (4 Spaces)</strong></p>
 <ul>
 <li><p><strong>Guideline</strong>: Use four spaces per indentation level; do not use tabs.</p></li>
 <li><p><strong>Example</strong>:</p>
@@ -311,7 +307,7 @@
 <li><p><strong>Rationale</strong>: Consistent indentation is essential for readability and prevents syntax errors.</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>4. Limit Line Length to 79 Characters</strong></p>
+<p><strong>3. Limit Line Length to 79 Characters</strong></p>
 <ul>
 <li><p><strong>Guideline</strong>: Limit all lines to a maximum of 79 characters.</p></li>
 <li><p><strong>Example</strong>:</p>
@@ -327,7 +323,7 @@
 <li><p><strong>Rationale</strong>: This improves readability and ensures the code displays well on all devices, including smaller screens.</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>5. Use Blank Lines to Separate Code Sections</strong></p>
+<p><strong>4. Use Blank Lines to Separate Code Sections</strong></p>
 <ul>
 <li><p><strong>Guideline</strong>: Use two blank lines to separate top-level functions and class definitions, and one blank line to separate methods within a class.</p></li>
 <li><p><strong>Example</strong>:</p>
@@ -346,7 +342,7 @@
 <li><p><strong>Rationale</strong>: Blank lines help visually separate sections of code, improving readability.</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>6. Use Docstrings to Document Functions, Classes, and Modules</strong></p>
+<p><strong>5. Use Docstrings to Document Functions, Classes, and Modules</strong></p>
 <ul>
 <li><p><strong>Guideline</strong>: Use triple-quoted strings (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>) for all public modules, functions, classes, and methods.</p></li>
 <li><p><strong>Example</strong>:</p>
@@ -359,7 +355,7 @@
 <li><p><strong>Rationale</strong>: Docstrings provide useful explanations of code functionality, which helps future readers and collaborators.</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>7. Use Spaces Around Operators</strong></p>
+<p><strong>6. Use Spaces Around Operators</strong></p>
 <ul>
 <li><p><strong>Guideline</strong>: Use spaces around operators and after commas, but not directly inside parentheses.</p></li>
 <li><p><strong>Example</strong>:</p>
@@ -374,7 +370,7 @@
 <li><p><strong>Rationale</strong>: Spacing around operators makes expressions easier to read.</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>8. Avoid Excessive Nesting</strong></p>
+<p><strong>7. Avoid Excessive Nesting</strong></p>
 <ul>
 <li><p><strong>Guideline</strong>: Break down complex logic with multiple levels of nesting into smaller functions.</p></li>
 <li><p><strong>Example</strong>:</p>
@@ -397,7 +393,7 @@
 <li><p><strong>Rationale</strong>: Deeply nested code is harder to read and debug. Breaking code into smaller functions improves readability and reusability.</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>9. Use List Comprehensions for Simple Operations</strong></p>
+<p><strong>8. Use List Comprehensions for Simple Operations</strong></p>
 <ul>
 <li><p><strong>Guideline</strong>: Use list comprehensions for simple operations but avoid them for complex nested operations.</p></li>
 <li><p><strong>Example</strong>:</p>
@@ -414,7 +410,7 @@
 <li><p><strong>Rationale</strong>: List comprehensions are concise and often faster than equivalent for-loops for simple operations.</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>10. Handle Exceptions Properly</strong></p>
+<p><strong>9. Handle Exceptions Properly</strong></p>
 <ul>
 <li><p><strong>Guideline</strong>: Use specific exceptions rather than catching all exceptions with <code class="docutils literal notranslate"><span class="pre">except</span></code> alone.</p></li>
 <li><p><strong>Example</strong>:</p>
@@ -435,7 +431,7 @@
 <li><p><strong>Rationale</strong>: Catching specific exceptions allows you to handle errors appropriately, making debugging easier.</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>11. Use Meaningful Constants Instead of Magic Numbers</strong></p>
+<p><strong>10. Use Meaningful Constants Instead of Magic Numbers</strong></p>
 <ul>
 <li><p><strong>Guideline</strong>: Define constants with descriptive names for “magic numbers” (unexplained numerical values).</p></li>
 <li><p><strong>Example</strong>:</p>
@@ -451,7 +447,7 @@
 <li><p><strong>Rationale</strong>: Constants with meaningful names improve readability and make the code easier to modify and maintain.</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>12. Avoid Global Variables</strong></p>
+<p><strong>11. Avoid Global Variables</strong></p>
 <ul>
 <li><p><strong>Guideline</strong>: Avoid using global variables; instead, use function parameters or class attributes.</p></li>
 <li><p><strong>Example</strong>:</p>
@@ -469,7 +465,7 @@
 <li><p><strong>Rationale</strong>: Global variables can lead to hard-to-track bugs and make code harder to reuse and maintain.</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>13. Use <code class="docutils literal notranslate"><span class="pre">is</span></code> for Comparison to <code class="docutils literal notranslate"><span class="pre">None</span></code></strong></p>
+<p><strong>12. Use <code class="docutils literal notranslate"><span class="pre">is</span></code> for Comparison to <code class="docutils literal notranslate"><span class="pre">None</span></code></strong></p>
 <ul>
 <li><p><strong>Guideline</strong>: Use <code class="docutils literal notranslate"><span class="pre">is</span></code> or <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code> when comparing to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 <li><p><strong>Example</strong>:</p>
@@ -486,7 +482,7 @@
 <li><p><strong>Rationale</strong>: <code class="docutils literal notranslate"><span class="pre">is</span></code> is more efficient and explicitly intended for this type of comparison, improving clarity and performance.</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>14. Organize Imports Properly</strong></p>
+<p><strong>13. Organize Imports Properly</strong></p>
 <ul>
 <li><p><strong>Guideline</strong>: Group imports into three sections in this order: standard library imports, related third-party imports, and local application-specific imports. Separate each group with a blank line.</p></li>
 <li><p><strong>Example</strong>:</p>
@@ -504,7 +500,7 @@
 <li><p><strong>Rationale</strong>: This structure improves readability and avoids clutter.</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>15. Use Type Annotations (Python 3.5+)</strong></p>
+<p><strong>14. Use Type Annotations (Python 3.5+)</strong></p>
 <ul>
 <li><p><strong>Guideline</strong>: Use type annotations to specify expected data types for function arguments and return values.</p></li>
 <li><p><strong>Example</strong>:</p>
