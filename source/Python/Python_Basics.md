@@ -7,16 +7,12 @@ We will be looking at syntax and structures of Python. We will use an Integrated
 
 ## Python Style Guidelines
 
-Here are some key Python style guidelines, along with examples and rationales, to help you write clean, readable, and maintainable code:
+**PEP 8 Guidelines**
+*PEP 8* is the official style guide for Python code and covers naming conventions, code layout, and indentation.  These style guidelines, along with the examples and rationales, will help you write clean, readable, and maintainable code.
 
 -------------------------------------------------------------------------
 
-**1. PEP 8 Guidelines**
-   - **PEP 8** is the official style guide for Python code and covers naming conventions, code layout, and indentation.
-
--------------------------------------------------------------------------
-
-**2. Use Descriptive Variable and Function Names**
+**1. Use Descriptive Variable and Function Names**
    - **Guideline**: Use descriptive names that make the purpose of the variable or function clear.
    - **Example**:
      ```python
@@ -30,7 +26,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-**3. Use Consistent Indentation (4 Spaces)**
+**2. Use Consistent Indentation (4 Spaces)**
    - **Guideline**: Use four spaces per indentation level; do not use tabs.
    - **Example**:
      ```python
@@ -41,7 +37,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-**4. Limit Line Length to 79 Characters**
+**3. Limit Line Length to 79 Characters**
    - **Guideline**: Limit all lines to a maximum of 79 characters.
    - **Example**:
      ```python
@@ -56,7 +52,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-**5. Use Blank Lines to Separate Code Sections**
+**4. Use Blank Lines to Separate Code Sections**
    - **Guideline**: Use two blank lines to separate top-level functions and class definitions, and one blank line to separate methods within a class.
    - **Example**:
      ```python
@@ -74,7 +70,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-**6. Use Docstrings to Document Functions, Classes, and Modules**
+**5. Use Docstrings to Document Functions, Classes, and Modules**
    - **Guideline**: Use triple-quoted strings (`"""`) for all public modules, functions, classes, and methods.
    - **Example**:
      ```python
@@ -86,7 +82,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-**7. Use Spaces Around Operators**
+**6. Use Spaces Around Operators**
    - **Guideline**: Use spaces around operators and after commas, but not directly inside parentheses.
    - **Example**:
      ```python
@@ -100,7 +96,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-**8. Avoid Excessive Nesting**
+**7. Avoid Excessive Nesting**
    - **Guideline**: Break down complex logic with multiple levels of nesting into smaller functions.
    - **Example**:
      ```python
@@ -122,7 +118,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-**9. Use List Comprehensions for Simple Operations**
+**8. Use List Comprehensions for Simple Operations**
    - **Guideline**: Use list comprehensions for simple operations but avoid them for complex nested operations.
    - **Example**:
      ```python
@@ -138,7 +134,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-**10. Handle Exceptions Properly**
+**9. Handle Exceptions Properly**
    - **Guideline**: Use specific exceptions rather than catching all exceptions with `except` alone.
    - **Example**:
      ```python
@@ -158,7 +154,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-**11. Use Meaningful Constants Instead of Magic Numbers**
+**10. Use Meaningful Constants Instead of Magic Numbers**
    - **Guideline**: Define constants with descriptive names for “magic numbers” (unexplained numerical values).
    - **Example**:
      ```python
@@ -173,7 +169,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-**12. Avoid Global Variables**
+**11. Avoid Global Variables**
    - **Guideline**: Avoid using global variables; instead, use function parameters or class attributes.
    - **Example**:
      ```python
@@ -190,7 +186,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-**13. Use `is` for Comparison to `None`**
+**12. Use `is` for Comparison to `None`**
    - **Guideline**: Use `is` or `is not` when comparing to `None`.
    - **Example**:
      ```python
@@ -206,7 +202,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-**14. Organize Imports Properly**
+**13. Organize Imports Properly**
    - **Guideline**: Group imports into three sections in this order: standard library imports, related third-party imports, and local application-specific imports. Separate each group with a blank line.
    - **Example**:
      ```python
@@ -223,7 +219,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-**15. Use Type Annotations (Python 3.5+)**
+**14. Use Type Annotations (Python 3.5+)**
    - **Guideline**: Use type annotations to specify expected data types for function arguments and return values.
    - **Example**:
      ```python
