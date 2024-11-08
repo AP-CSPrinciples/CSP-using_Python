@@ -492,7 +492,7 @@ The arithmetic operators follow **PEMDAS**:
 **Example**:
 ```python
 result = 5 + 2 * (3 ** 2 - 4) / 2
-print(result)  # Output: 8.0
+print(result)  # Output: 10.0
 ```
 
 **Step-by-Step Evaluation**
@@ -511,19 +511,15 @@ print(result)  # Output: 8.0
 
 **Final result**: `10.0`.
 
-------------------------------------------------------------
 
-**NOTE: Why Division Returns a Float**
-
-In Python 3, the `/` operator always returns a float, even if both operands are integers. This is to provide accurate results without unexpected truncation. For integer-only results, Python offers the `//` operator (floor division).
+**NOTE: Why Division Returns a Float:** In Python 3, the `/` operator always returns a float, even if both operands are integers. This is to provide accurate results without unexpected truncation. For integer-only results, Python offers the `//` operator (floor division).
+**NOTE:** The `/` operator preserves fractional results, which is especially helpful in complex calculations, while `//` discards the decimal part.
 
 **Example**:
 ```python
 result = 7 / 2  # Output: 3.5 (float)
 result = 7 // 2  # Output: 3 (integer)
 ```
-
-The `/` operator preserves fractional results, which is especially helpful in complex calculations, while `//` discards the decimal part.
 
 ------------------------------------------------------------
 

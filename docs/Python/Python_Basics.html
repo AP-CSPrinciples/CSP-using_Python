@@ -808,7 +808,7 @@ Here are the basic data types in Python, along with examples for each.</p>
 </ul>
 <p><strong>Example</strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># Output: 8.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># Output: 10.0</span>
 </pre></div>
 </div>
 <p><strong>Step-by-Step Evaluation</strong></p>
@@ -834,15 +834,13 @@ Here are the basic data types in Python, along with examples for each.</p>
 </li>
 </ol>
 <p><strong>Final result</strong>: <code class="docutils literal notranslate"><span class="pre">10.0</span></code>.</p>
-<hr class="docutils" />
-<p><strong>NOTE: Why Division Returns a Float</strong></p>
-<p>In Python 3, the <code class="docutils literal notranslate"><span class="pre">/</span></code> operator always returns a float, even if both operands are integers. This is to provide accurate results without unexpected truncation. For integer-only results, Python offers the <code class="docutils literal notranslate"><span class="pre">//</span></code> operator (floor division).</p>
+<p><strong>NOTE: Why Division Returns a Float:</strong> In Python 3, the <code class="docutils literal notranslate"><span class="pre">/</span></code> operator always returns a float, even if both operands are integers. This is to provide accurate results without unexpected truncation. For integer-only results, Python offers the <code class="docutils literal notranslate"><span class="pre">//</span></code> operator (floor division).
+<strong>NOTE:</strong> The <code class="docutils literal notranslate"><span class="pre">/</span></code> operator preserves fractional results, which is especially helpful in complex calculations, while <code class="docutils literal notranslate"><span class="pre">//</span></code> discards the decimal part.</p>
 <p><strong>Example</strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># Output: 3.5 (float)</span>
 <span class="n">result</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># Output: 3 (integer)</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">/</span></code> operator preserves fractional results, which is especially helpful in complex calculations, while <code class="docutils literal notranslate"><span class="pre">//</span></code> discards the decimal part.</p>
 <hr class="docutils" />
 <p><strong>2. Relational (Comparison) Operators</strong></p>
 <p>Relational operators compare values and have <strong>lower precedence</strong> than arithmetic operators but <strong>higher precedence</strong> than logical operators. These include:</p>
