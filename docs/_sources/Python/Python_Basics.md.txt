@@ -1210,9 +1210,10 @@ TOP using reverse indexing: TOP
 ```
 
 Explanation:
-- `word[-4]` accesses the last letter, "T".
-- `word[-5]` accesses the third-to-last letter, "O".
-- `word[-6]` accesses the sixth-to-last letter, "P".
+- `word[-3]` starts at end of index negative three but does not include the item within -3.
+- `word[-4]` accesses the negative fourth letter in the index, "T".
+- `word[-5]` accesses the negative fifth letter in the index, "O".
+- `word[-6]` accesses the negative sixth letter in the index, "P".
 
 <mark>NEED COMMENT ON PROGRAM INDEXs ABOVE</mark>
 
