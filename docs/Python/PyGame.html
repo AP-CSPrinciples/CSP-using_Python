@@ -295,6 +295,13 @@
 <p>This section will teach you some important parts of Pygame. It will also teach you how to create a basic moving game with points called “Apple Collect”.</p>
 <section id="before-you-start">
 <h3>Before you Start<a class="headerlink" href="#before-you-start" title="Link to this heading">¶</a></h3>
+<p><strong>Important</strong>: Please install the following files for “Apple Collect!”</p>
+<p>Apple Image: https://drive.google.com/file/d/12FsDmDwt-cEES5PriKQmdxH0TvCJNY-8/view?usp=sharing</p>
+<p>Background Image: https://drive.google.com/file/d/1tMdfDkbBsqeNGA6w4uuKVGisIhMUgp86/view?usp=sharing</p>
+<p>Player Image: https://drive.google.com/file/d/1L_Erw05imMxhvs0M5pgFL5fUJjZiOaZh/view?usp=sharing</p>
+</section>
+<section id="important-command">
+<h3>Important Command<a class="headerlink" href="#important-command" title="Link to this heading">¶</a></h3>
 <p>This command must be called whenever you want to put something on the screen.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
@@ -363,23 +370,19 @@
 </section>
 <section id="apple-collect">
 <h3>Apple Collect<a class="headerlink" href="#apple-collect" title="Link to this heading">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">pygame</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
 
 <span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Apple Collect&quot;</span><span class="p">)</span>
 
 <span class="n">height</span> <span class="o">=</span> <span class="mi">500</span>
 <span class="n">length</span> <span class="o">=</span> <span class="mi">500</span>
 
 <span class="n">window</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">length</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
-<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Apple Collect&quot;</span><span class="p">)</span>
-
-<span class="n">bg</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">smoothscale</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;bg.jpeg&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
-
+<span class="n">bg</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">smoothscale</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;bg.jpg&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
 <span class="n">keepGameRunning</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="k">while</span> <span class="n">keepGameRunning</span><span class="p">:</span>
-
     <span class="n">window</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">bg</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
       <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
@@ -403,12 +406,22 @@
 <section id="moving-the-sprite">
 <h4>Moving the sprite<a class="headerlink" href="#moving-the-sprite" title="Link to this heading">¶</a></h4>
 <p>Pygame can track user’s input. For example, pygame can identify when the user is pressing the up arrow on they keyboard. We can use this functionality in order to create some basic movement for the sprite.</p>
+<p><strong>Let’s make a seperate function to track this input!</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="n">keys</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">get_pressed</span><span class="p">()</span>
-<span class="c1">#Creates a variable &quot;keys&quot; that will check what button the player is pressing</span>
+<span class="k">def</span> <span class="nf">movement</span><span class="p">():</span>
+    <span class="n">keys</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">get_pressed</span><span class="p">()</span>
+<span class="c1">#Creates a variable &quot;keys&quot; in teh &quot;movement&quot; function that will check what button the user is pressing</span>
 
 </pre></div>
 </div>
+<p>Since we will be changing the players coordinates by moving, let’s make a variable to represent the x and y coordinate of the player</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">player_x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">player_y</span> <span class="o">=</span> <span class="mi">0</span>
+
+</pre></div>
+</div>
+<p>Now, we can manipulate those coordinates in order to make the player move.</p>
 </section>
 </section>
 </section>
@@ -477,6 +490,7 @@
 <li><a class="reference internal" href="#pygame-installation">Pygame Installation</a></li>
 <li><a class="reference internal" href="#id1">Pygame Basics</a><ul>
 <li><a class="reference internal" href="#before-you-start">Before you Start</a></li>
+<li><a class="reference internal" href="#important-command">Important Command</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#pygame-window">Pygame Window</a><ul>

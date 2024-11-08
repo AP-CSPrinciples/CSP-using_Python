@@ -19,6 +19,15 @@ Official Pygame Installation Guide:
 This section will teach you some important parts of Pygame. It will also teach you how to create a basic moving game with points called "Apple Collect".
 
 ### Before you Start
+**Important**: Please install the following files for "Apple Collect!" 
+
+Apple Image: https://drive.google.com/file/d/12FsDmDwt-cEES5PriKQmdxH0TvCJNY-8/view?usp=sharing
+
+Background Image: https://drive.google.com/file/d/1tMdfDkbBsqeNGA6w4uuKVGisIhMUgp86/view?usp=sharing
+
+Player Image: https://drive.google.com/file/d/1L_Erw05imMxhvs0M5pgFL5fUJjZiOaZh/view?usp=sharing
+
+### Important Command 
 
 This command must be called whenever you want to put something on the screen.
 
@@ -99,23 +108,19 @@ Pygame has many prebuilt events, (such as button pressing) and this loop, in ord
 ### Apple Collect 
 
 ```python
-
 import pygame
 
 pygame.init()
+pygame.display.set_caption("Apple Collect")
 
 height = 500
 length = 500
 
 window = pygame.display.set_mode((length, height))
-pygame.display.set_caption("Apple Collect")
-
-bg = pygame.transform.smoothscale(pygame.image.load("bg.jpeg"), (length, height))
-
+bg = pygame.transform.smoothscale(pygame.image.load("bg.jpg"), (length, height))
 keepGameRunning = True
 
 while keepGameRunning:
-
     window.blit(bg, (0, 0))
     for event in pygame.event.get():
       if event.type == pygame.QUIT:
@@ -141,10 +146,22 @@ player = pygame.transform.smoothscale(pygame.image.load("player.png"), (100, 100
 
 Pygame can track user's input. For example, pygame can identify when the user is pressing the up arrow on they keyboard. We can use this functionality in order to create some basic movement for the sprite. 
 
+**Let's make a seperate function to track this input!**
+
 ```python
 
-keys = pygame.key.get_pressed()
-#Creates a variable "keys" that will check what button the player is pressing
+def movement():
+    keys = pygame.key.get_pressed()
+#Creates a variable "keys" in teh "movement" function that will check what button the user is pressing
 
 ```
 
+Since we will be changing the players coordinates by moving, let's make a variable to represent the x and y coordinate of the player
+
+```python
+
+player_x = 0
+player_y = 0
+
+```
+Now, we can manipulate those coordinates in order to make the player move. 
