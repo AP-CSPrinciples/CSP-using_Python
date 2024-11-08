@@ -448,7 +448,7 @@ Each variable in this example demonstrates a different data type. Using the `typ
 
 
 
-### Order of Operation
+## Order of Operation
 
 In Python, expressions are evaluated based on a well-defined **order of operations**, also known as **operator precedence**. This hierarchy determines the sequence in which operations (arithmetic, logical, relational, etc.) are performed. Here, we will cover:
 
