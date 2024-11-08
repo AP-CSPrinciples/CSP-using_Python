@@ -450,7 +450,185 @@ Each variable in this example demonstrates a different data type. Using the `typ
 
 ## Order of Operation
 
-Arithmetic operators take precedence over logical operators. Python will always evaluate the arithmetic operators first (** is highest, then multiplication/division, then addition/subtraction). Next comes the relational operators. Finally, the logical operators are done last. This means that the expression x*5 >= 10 and y-6 <= 20 will be evaluated so as to first perform the arithmetic and then check the relationships. The and will be done last. Many programmers might place parentheses around the two relational expressions, (x*5 >= 10) and (y-6 <= 20). It is not necessary to do so, but causes no harm and may make it easier for people to read and understand the code.
+In Python, expressions are evaluated based on a well-defined **order of operations**, also known as **operator precedence**. This hierarchy determines the sequence in which operations (arithmetic, logical, relational, etc.) are performed. Here, we will cover:
+
+1. **Arithmetic Operators** (PEMDAS rules)
+2. **Relational Operators**
+3. **Logical Operators**
+
+We'll also explain why division returns a float.
+
+------------------------------------------------------------
+
+### Operator Precedence in Python
+
+Python’s precedence rules are designed to make expressions behave intuitively. Here’s the order of precedence, from highest to lowest:
+
+1. **Parentheses** (`()`)
+2. **Exponentiation** (`**`)
+3. **Arithmetic Operators**: Multiplication (`*`), Division (`/` and `//`), and Modulus (`%`)  
+4. **Arithmetic Operators**: Addition (`+`) and Subtraction (`-`)
+5. **Relational Operators**: `<`, `<=`, `>`, `>=`, `==`, `!=`
+6. **Logical Operators**: `not`, `and`, `or`
+
+In general:
+- Operations with higher precedence are evaluated first.
+- Operators with the same precedence level are evaluated **left to right**, except for exponentiation, which is **right to left**.
+
+------------------------------------------------------------
+
+### 1. Arithmetic Operators and PEMDAS
+
+The arithmetic operators follow **PEMDAS**:
+- **Parentheses**: Highest precedence, used to group expressions.
+- **Exponents**: Calculated next, evaluated from right to left.
+- **Multiplication, Division, and Modulus**: Evaluated left to right.
+- **Addition and Subtraction**: Evaluated left to right.
+
+**Example**:
+```python
+result = 5 + 2 * (3 ** 2 - 4) / 2
+print(result)  # Output: 8.0
+```
+
+#### Step-by-Step Evaluation
+1. **Parentheses** (`3 ** 2 - 4`)
+   - `3 ** 2` is calculated first, giving `9`.
+   - Then, `9 - 4` gives `5`.
+   - Expression becomes `5 + 2 * 5 / 2`.
+
+2. **Multiplication and Division** (`*` and `/` left to right):
+   - `2 * 5` is `10`, so the expression is `5 + 10 / 2`.
+   - `10 / 2` results in `5.0` (division returns a float).
+   - Now we have `5 + 5.0`.
+
+3. **Addition**:
+   - `5 + 5.0` results in `10.0`.
+
+**Final result**: `10.0`.
+
+------------------------------------------------------------
+
+### Why Division Returns a Float
+
+In Python 3, the `/` operator always returns a float, even if both operands are integers. This is to provide accurate results without unexpected truncation. For integer-only results, Python offers the `//` operator (floor division).
+
+**Example**:
+```python
+result = 7 / 2  # Output: 3.5 (float)
+result = 7 // 2  # Output: 3 (integer)
+```
+
+The `/` operator preserves fractional results, which is especially helpful in complex calculations, while `//` discards the decimal part.
+
+------------------------------------------------------------
+
+### 2. Relational (Comparison) Operators
+
+Relational operators compare values and have **lower precedence** than arithmetic operators but **higher precedence** than logical operators. These include:
+- `==` (equal to)
+- `!=` (not equal to)
+- `<`, `<=`, `>`, `>=` (less than, greater than, and their variants)
+
+**Example**:
+```python
+result = 5 + 3 > 2 * 3
+print(result)  # Output: True
+```
+
+#### Step-by-Step Evaluation
+1. **Arithmetic Operators**:
+   - `5 + 3` results in `8`.
+   - `2 * 3` results in `6`.
+   
+2. **Relational Operator**:
+   - The comparison `8 > 6` is evaluated, resulting in `True`.
+
+**Final result**: `True`.
+
+------------------------------------------------------------
+
+### 3. Logical Operators
+
+Logical operators (`not`, `and`, `or`) combine boolean expressions. They have the lowest precedence, so they are evaluated after arithmetic and relational operators.
+
+**Order of Precedence for Logical Operators**:
+1. **not**: Highest among logical operators.
+2. **and**: Middle precedence.
+3. **or**: Lowest precedence.
+
+**Example**:
+```python
+result = 3 > 2 and 5 == 5 or not (4 + 1 < 6)
+print(result)  # Output: True
+```
+
+#### Step-by-Step Evaluation
+1. **Parentheses** (`4 + 1 < 6`):
+   - `4 + 1` results in `5`.
+   - The comparison `5 < 6` results in `True`.
+   - `not (True)` then results in `False`.
+
+2. **Relational Operators**:
+   - `3 > 2` evaluates to `True`.
+   - `5 == 5` evaluates to `True`.
+
+3. **Logical Operators**:
+   - `True and True` is `True`.
+   - Finally, `True or False` evaluates to `True`.
+
+**Final result**: `True`.
+
+------------------------------------------------------------
+
+### Combined Example with All Operators
+
+Let’s consider an example combining arithmetic, relational, and logical operators.
+
+```python
+result = (2 + 3 * 2) >= 7 and 4 / 2 < 3 or not (5 == 4)
+print(result)  # Output: True
+```
+
+#### Step-by-Step Evaluation
+
+1. **Parentheses** (`2 + 3 * 2` and `5 == 4`):
+   - For `2 + 3 * 2`, `3 * 2` is evaluated first, giving `6`.
+   - Then, `2 + 6` results in `8`.
+   - So `(2 + 3 * 2)` becomes `8`.
+   - `(5 == 4)` results in `False`.
+
+2. **Arithmetic and Relational Operators**:
+   - The comparison `(2 + 3 * 2) >= 7` evaluates as `8 >= 7`, which is `True`.
+   - `4 / 2` results in `2.0`, so `2.0 < 3` evaluates as `True`.
+
+3. **Logical Operators**:
+   - `True and True` results in `True`.
+   - `not (False)` results in `True`.
+   - Finally, `True or True` results in `True`.
+
+**Final result**: `True`.
+
+------------------------------------------------------------
+
+### Summary of Python’s Operator Precedence
+
+Here’s a quick summary of operator precedence from highest to lowest:
+
+1. **Parentheses** `()`
+2. **Exponents** `**`
+3. **Arithmetic Operators** `*`, `/`, `//`, `%`
+4. **Arithmetic Operators** `+`, `-`
+5. **Relational Operators** `<`, `<=`, `>`, `>=`, `==`, `!=`
+6. **Logical `not`**
+7. **Logical `and`**
+8. **Logical `or`**
+
+------------------------------------------------------------
+
+Understanding this precedence order and the left-to-right evaluation rule allows for correctly interpreting complex expressions in Python. Following these rules helps ensure that Python evaluates each part of an expression as intended, providing accurate and predictable results.
+
+
 The following table summarizes the operator precedence from highest to lowest. A complete table for the entire language can be found in the Python Documentation.  http://docs.python.org/py3k/reference/expressions.html#expression-lists
 
 | Level	| Category	| Operators |
