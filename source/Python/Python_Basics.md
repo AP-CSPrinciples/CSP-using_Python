@@ -9,7 +9,9 @@ We will be looking at syntax and structures of Python. We will use an Integrated
 
 <details><summary>Click Here</summary>
 
-   
+
+
+
 [**PEP 8 Guidelines**](https://peps.python.org/pep-0008/) is the official style guide for Python code and covers naming conventions, code layout, and indentation.  These style guidelines, along with the examples and rationales, will help you write clean, readable, and maintainable code. 
 
 -------------------------------------------------------------------------
