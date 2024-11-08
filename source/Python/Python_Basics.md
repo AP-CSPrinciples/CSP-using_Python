@@ -467,7 +467,7 @@ Python’s precedence rules are designed to make expressions behave intuitively.
 
 Understanding this precedence order and the **left-to-right** evaluation rule allows for correctly interpreting complex expressions in Python. Following these rules helps ensure that Python evaluates each part of an expression as intended, providing accurate and predictable results.
 
-The following table summarizes the **operator precedence** from *highest to lowest*. A complete table for the entire language can be found in the Python Documentation.  http://docs.python.org/py3k/reference/expressions.html#expression-lists
+The following table summarizes the [**operator precedence**](http://docs.python.org/py3k/reference/expressions.html#expression-lists) from *highest to lowest*. A complete table for the entire language can be found in the Python Documentation.  
 
 | Level	| Category	| Operators |
 | :--: | :--: | :--: |
