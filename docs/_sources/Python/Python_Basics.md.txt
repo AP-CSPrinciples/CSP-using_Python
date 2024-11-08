@@ -11,12 +11,12 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-### 1. **PEP 8 Guidelines**
+**1. PEP 8 Guidelines**
    - **PEP 8** is the official style guide for Python code and covers naming conventions, code layout, and indentation.
 
 -------------------------------------------------------------------------
 
-### 2. **Use Descriptive Variable and Function Names**
+**2. Use Descriptive Variable and Function Names**
    - **Guideline**: Use descriptive names that make the purpose of the variable or function clear.
    - **Example**:
      ```python
@@ -30,7 +30,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-### 3. **Use Consistent Indentation (4 Spaces)**
+**3. Use Consistent Indentation (4 Spaces)**
    - **Guideline**: Use four spaces per indentation level; do not use tabs.
    - **Example**:
      ```python
@@ -41,7 +41,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-### 4. **Limit Line Length to 79 Characters**
+**4. Limit Line Length to 79 Characters**
    - **Guideline**: Limit all lines to a maximum of 79 characters.
    - **Example**:
      ```python
@@ -56,7 +56,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-### 5. **Use Blank Lines to Separate Code Sections**
+**5. Use Blank Lines to Separate Code Sections**
    - **Guideline**: Use two blank lines to separate top-level functions and class definitions, and one blank line to separate methods within a class.
    - **Example**:
      ```python
@@ -74,7 +74,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-### 6. **Use Docstrings to Document Functions, Classes, and Modules**
+**6. Use Docstrings to Document Functions, Classes, and Modules**
    - **Guideline**: Use triple-quoted strings (`"""`) for all public modules, functions, classes, and methods.
    - **Example**:
      ```python
@@ -86,7 +86,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-### 7. **Use Spaces Around Operators**
+**7. Use Spaces Around Operators**
    - **Guideline**: Use spaces around operators and after commas, but not directly inside parentheses.
    - **Example**:
      ```python
@@ -100,7 +100,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-### 8. **Avoid Excessive Nesting**
+**8. Avoid Excessive Nesting**
    - **Guideline**: Break down complex logic with multiple levels of nesting into smaller functions.
    - **Example**:
      ```python
@@ -122,7 +122,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-### 9. **Use List Comprehensions for Simple Operations**
+**9. Use List Comprehensions for Simple Operations**
    - **Guideline**: Use list comprehensions for simple operations but avoid them for complex nested operations.
    - **Example**:
      ```python
@@ -138,7 +138,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-### 10. **Handle Exceptions Properly**
+**10. Handle Exceptions Properly**
    - **Guideline**: Use specific exceptions rather than catching all exceptions with `except` alone.
    - **Example**:
      ```python
@@ -158,7 +158,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-### 11. **Use Meaningful Constants Instead of Magic Numbers**
+**11. Use Meaningful Constants Instead of Magic Numbers**
    - **Guideline**: Define constants with descriptive names for “magic numbers” (unexplained numerical values).
    - **Example**:
      ```python
@@ -173,7 +173,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-### 12. **Avoid Global Variables**
+**12. Avoid Global Variables**
    - **Guideline**: Avoid using global variables; instead, use function parameters or class attributes.
    - **Example**:
      ```python
@@ -190,7 +190,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-### 13. **Use `is` for Comparison to `None`**
+**13. Use `is` for Comparison to `None`**
    - **Guideline**: Use `is` or `is not` when comparing to `None`.
    - **Example**:
      ```python
@@ -206,7 +206,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-### 14. **Organize Imports Properly**
+**14. Organize Imports Properly**
    - **Guideline**: Group imports into three sections in this order: standard library imports, related third-party imports, and local application-specific imports. Separate each group with a blank line.
    - **Example**:
      ```python
@@ -223,7 +223,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
 
 -------------------------------------------------------------------------
 
-### 15. **Use Type Annotations (Python 3.5+)**
+**15. Use Type Annotations (Python 3.5+)**
    - **Guideline**: Use type annotations to specify expected data types for function arguments and return values.
    - **Example**:
      ```python
@@ -280,7 +280,7 @@ print("Name:\t", name)   # tab
 print("Age:\t", age)     # tab
 ```
 
-### Explanation of Each Method
+**Explanation of Each Method**
 
 1. **Basic `print` statement**: Just prints the text directly.
   
@@ -301,7 +301,7 @@ These different print methods offer flexibility in formatting and display for di
 
 In Python, **variables** are used to store data, which can be used and manipulated throughout a program. **Data types** specify the kind of value a variable holds, determining what operations can be performed on it. Python automatically assigns a data type based on the value assigned to a variable.
 
-### Python Variables
+**Python Variables**
 A **variable** is essentially a name given to a memory location where data is stored. In Python, you don’t need to declare the data type of a variable; you just assign a value to it, and Python infers the type.
 
 **Syntax**:
@@ -317,7 +317,7 @@ price = 9.99        # price is a floating-point number
 is_student = True   # is_student is a boolean
 ```
 
-### Python Data Types
+**Python Data Types**
 Here are the basic data types in Python, along with examples for each.
 
 1. **Integer (`int`)**
@@ -404,7 +404,7 @@ Here are the basic data types in Python, along with examples for each.
      print(type(result))  # Output: <class 'NoneType'>
      ```
 
-### Example Program Demonstrating Python Data Types
+**Example Program Demonstrating Python Data Types**
 
 ```python
 # Integer
@@ -448,7 +448,7 @@ Each variable in this example demonstrates a different data type. Using the `typ
 
 
 
-## Order of Operation
+### Order of Operation
 
 In Python, expressions are evaluated based on a well-defined **order of operations**, also known as **operator precedence**. This hierarchy determines the sequence in which operations (arithmetic, logical, relational, etc.) are performed. Here, we will cover:
 
@@ -456,11 +456,10 @@ In Python, expressions are evaluated based on a well-defined **order of operatio
 2. **Relational Operators**
 3. **Logical Operators**
 
-We'll also explain why division returns a float.
 
 ------------------------------------------------------------
 
-### Operator Precedence in Python
+**Operator Precedence in Python**
 
 Python’s precedence rules are designed to make expressions behave intuitively. Here’s the order of precedence, from highest to lowest:
 
@@ -477,7 +476,7 @@ In general:
 
 ------------------------------------------------------------
 
-### 1. Arithmetic Operators and PEMDAS
+**1. Arithmetic Operators and PEMDAS**
 
 The arithmetic operators follow **PEMDAS**:
 - **Parentheses**: Highest precedence, used to group expressions.
@@ -491,7 +490,7 @@ result = 5 + 2 * (3 ** 2 - 4) / 2
 print(result)  # Output: 8.0
 ```
 
-#### Step-by-Step Evaluation
+**Step-by-Step Evaluation**
 1. **Parentheses** (`3 ** 2 - 4`)
    - `3 ** 2` is calculated first, giving `9`.
    - Then, `9 - 4` gives `5`.
@@ -509,7 +508,7 @@ print(result)  # Output: 8.0
 
 ------------------------------------------------------------
 
-### Why Division Returns a Float
+**NOTE: Why Division Returns a Float**
 
 In Python 3, the `/` operator always returns a float, even if both operands are integers. This is to provide accurate results without unexpected truncation. For integer-only results, Python offers the `//` operator (floor division).
 
@@ -523,7 +522,7 @@ The `/` operator preserves fractional results, which is especially helpful in co
 
 ------------------------------------------------------------
 
-### 2. Relational (Comparison) Operators
+**2. Relational (Comparison) Operators**
 
 Relational operators compare values and have **lower precedence** than arithmetic operators but **higher precedence** than logical operators. These include:
 - `==` (equal to)
@@ -536,7 +535,7 @@ result = 5 + 3 > 2 * 3
 print(result)  # Output: True
 ```
 
-#### Step-by-Step Evaluation
+**Step-by-Step Evaluation**
 1. **Arithmetic Operators**:
    - `5 + 3` results in `8`.
    - `2 * 3` results in `6`.
@@ -548,7 +547,7 @@ print(result)  # Output: True
 
 ------------------------------------------------------------
 
-### 3. Logical Operators
+**3. Logical Operators**
 
 Logical operators (`not`, `and`, `or`) combine boolean expressions. They have the lowest precedence, so they are evaluated after arithmetic and relational operators.
 
@@ -563,7 +562,7 @@ result = 3 > 2 and 5 == 5 or not (4 + 1 < 6)
 print(result)  # Output: True
 ```
 
-#### Step-by-Step Evaluation
+**Step-by-Step Evaluation**
 1. **Parentheses** (`4 + 1 < 6`):
    - `4 + 1` results in `5`.
    - The comparison `5 < 6` results in `True`.
@@ -581,7 +580,7 @@ print(result)  # Output: True
 
 ------------------------------------------------------------
 
-### Combined Example with All Operators
+**Combined Example with All Operators**
 
 Let’s consider an example combining arithmetic, relational, and logical operators.
 
@@ -590,7 +589,7 @@ result = (2 + 3 * 2) >= 7 and 4 / 2 < 3 or not (5 == 4)
 print(result)  # Output: True
 ```
 
-#### Step-by-Step Evaluation
+**Step-by-Step Evaluation**
 
 1. **Parentheses** (`2 + 3 * 2` and `5 == 4`):
    - For `2 + 3 * 2`, `3 * 2` is evaluated first, giving `6`.
@@ -611,7 +610,7 @@ print(result)  # Output: True
 
 ------------------------------------------------------------
 
-### Summary of Python’s Operator Precedence
+**Summary of Python’s Operator Precedence**
 
 Here’s a quick summary of operator precedence from highest to lowest:
 
