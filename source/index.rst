@@ -19,10 +19,12 @@ Contents:
 
 
 .. toctree:: 
-   :maxdepth: 2
+   :maxdepth: 4
    :caption: Python:
 
    Python <./Python/Python_Basics.md>
+   Python <./Python/PyGame.md>
+   Python <./Python/Python_Turtle.md>
 
 
 .. toctree:: 
