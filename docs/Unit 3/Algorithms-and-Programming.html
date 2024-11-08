@@ -560,73 +560,6 @@
 <p>This kind of expression is useful when there are multiple pathways to meet a requirement.</p>
 </section>
 </section>
-<section id="lists">
-<h2>Lists<a class="headerlink" href="#lists" title="Link to this heading">¶</a></h2>
-<p>In this program, we use the most common methods that is able to manipulate a list:  <code class="docutils literal notranslate"><span class="pre">append</span></code>, <code class="docutils literal notranslate"><span class="pre">insert</span></code>, <code class="docutils literal notranslate"><span class="pre">remove</span></code>, <code class="docutils literal notranslate"><span class="pre">pop</span></code>, <code class="docutils literal notranslate"><span class="pre">sort</span></code>, <code class="docutils literal notranslate"><span class="pre">reverse</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code>, <code class="docutils literal notranslate"><span class="pre">index</span></code>, <code class="docutils literal notranslate"><span class="pre">extend</span></code>, and <code class="docutils literal notranslate"><span class="pre">clear</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initializing a list</span>
-<span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initial list:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
-
-<span class="c1"># 1. append() - Adds an element at the end of the list</span>
-<span class="n">fruits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After append:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
-
-<span class="c1"># 2. insert() - Adds an element at the specified position</span>
-<span class="n">fruits</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;blueberry&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After insert at index 1:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
-
-<span class="c1"># 3. remove() - Removes the first item with the specified value</span>
-<span class="n">fruits</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;banana&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After remove &#39;banana&#39;:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
-
-<span class="c1"># 4. pop() - Removes the element at the specified position (default is the last element)</span>
-<span class="n">popped_item</span> <span class="o">=</span> <span class="n">fruits</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After pop:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Popped item:&quot;</span><span class="p">,</span> <span class="n">popped_item</span><span class="p">)</span>
-
-<span class="c1"># 5. index() - Returns the index of the first element with the specified value</span>
-<span class="n">index_of_cherry</span> <span class="o">=</span> <span class="n">fruits</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;cherry&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Index of &#39;cherry&#39;:&quot;</span><span class="p">,</span> <span class="n">index_of_cherry</span><span class="p">)</span>
-
-<span class="c1"># 6. count() - Returns the number of elements with the specified value</span>
-<span class="n">fruits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="p">)</span>
-<span class="n">apple_count</span> <span class="o">=</span> <span class="n">fruits</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Count of &#39;apple&#39;:&quot;</span><span class="p">,</span> <span class="n">apple_count</span><span class="p">)</span>
-
-<span class="c1"># 7. sort() - Sorts the list in ascending order</span>
-<span class="n">fruits</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After sort:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
-
-<span class="c1"># 8. reverse() - Reverses the order of the list</span>
-<span class="n">fruits</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After reverse:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
-
-<span class="c1"># 9. extend() - Adds all elements of a list to another list</span>
-<span class="n">more_fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;mango&quot;</span><span class="p">,</span> <span class="s2">&quot;pineapple&quot;</span><span class="p">,</span> <span class="s2">&quot;kiwi&quot;</span><span class="p">]</span>
-<span class="n">fruits</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">more_fruits</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After extend with more_fruits:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
-
-<span class="c1"># 10. clear() - Removes all elements from the list</span>
-<span class="n">fruits</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After clear:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">)</span>
-</pre></div>
-</div>
-<section id="explanation-of-the-methods">
-<h3>Explanation of the methods:<a class="headerlink" href="#explanation-of-the-methods" title="Link to this heading">¶</a></h3>
-<ol class="arabic simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">append()</span></code></strong>: Adds an item to the end of the list.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">insert(index,</span> <span class="pre">item)</span></code></strong>: Inserts an item at the specified index.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">remove(item)</span></code></strong>: Removes the first occurrence of an item from the list.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">pop(index)</span></code></strong>: Removes and returns the item at the given index; default is the last item.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">index(item)</span></code></strong>: Finds the index of the first occurrence of the specified item.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">count(item)</span></code></strong>: Counts how many times an item appears in the list.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">sort()</span></code></strong>: Sorts the list in ascending order (in-place).</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">reverse()</span></code></strong>: Reverses the list (in-place).</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">extend(list)</span></code></strong>: Extends the list by appending elements from another list.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">clear()</span></code></strong>: Removes all elements from the list.</p></li>
-</ol>
-</section>
-</section>
 <section id="dictionary">
 <h2>Dictionary<a class="headerlink" href="#dictionary" title="Link to this heading">¶</a></h2>
 <p>Here’s a Python program that demonstrates how to create, use, add, remove, and modify items in a dictionary. It also explains the differences and similarities between dictionaries and sets.</p>
@@ -1227,10 +1160,6 @@ You may either choose a specific number of rounds to play or keep playing the ga
 <li><a class="reference internal" href="#using-not-or-not-in-python">4. Using <strong>NOT</strong> (<code class="docutils literal notranslate"><span class="pre">!</span></code> or <code class="docutils literal notranslate"><span class="pre">not</span></code> in Python)</a></li>
 <li><a class="reference internal" href="#complex-condition-with-multiple-and-or-not">5. Complex Condition with <strong>Multiple AND/OR/NOT</strong></a></li>
 <li><a class="reference internal" href="#nested-compound-boolean-expression">6. Nested Compound Boolean Expression</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#lists">Lists</a><ul>
-<li><a class="reference internal" href="#explanation-of-the-methods">Explanation of the methods:</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dictionary">Dictionary</a><ul>
