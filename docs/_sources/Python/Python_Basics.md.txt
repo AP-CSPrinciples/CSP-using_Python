@@ -993,7 +993,7 @@ In computer programming, the terms **function**, **method**, and **procedure** h
   ```
 
 
-## Methods
+#### More Methods
 
 As was stated before, **methods** are functions that belong to `objects` and are used to operate on those objects. They are similar to functions but have a special relationship with the object they belong to, known as the **instance**.
 
