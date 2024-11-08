@@ -1144,6 +1144,77 @@ _______________________________________________
 ```
 
 
+Take a look at the program snippets below:
+
+
+**1. Program to Print the Index of the First Occurrence of the Letter 'T' in "POTATO"**
+
+This program finds the index of the first occurrence of 'T' in the word "POTATO."
+
+```python
+word = "POTATO"
+index_of_T = word.index("T")  # Finds the first occurrence of 'T'
+print("Index of first 'T' in POTATO:", index_of_T)
+```
+
+**Output**:
+```
+Index of first 'T' in POTATO: 2
+```
+
+**2. Program to Print All Instances (Indices) of 'T' in "POTATO"**
+
+This program will find and print the index of each occurrence of 'T' in the word "POTATO."
+
+```python
+word = "POTATO"
+indices_of_T = [index for index, letter in enumerate(word) if letter == "T"]
+
+print("All indices of 'T' in POTATO:", indices_of_T)
+```
+
+**Output**:
+```
+All indices of 'T' in POTATO: [2, 4]
+```
+
+**3. Program to Print the First 3 Letters of the Word "POTATO"**
+
+This program extracts and prints the first 3 letters of the word "POTATO" using slicing.
+
+```python
+word = "POTATO"
+first_three_letters = word[:3]  # Slicing to get the first three letters
+print("First 3 letters of POTATO:", first_three_letters)
+```
+
+**Output**:
+```
+First 3 letters of POTATO: POT
+```
+
+**4. Program to Print "TOP" Using Reverse Indexing**
+
+Using reverse indexing, this program prints the letters "T," "O," and "P" in reverse order to form "TOP."
+
+```python
+word = "POTATO"
+reverse_top = word[-4] + word[-5] + word[-6]  # Reverse indexing to get 'T', 'O', 'P'
+print("TOP using reverse indexing:", reverse_top)
+```
+
+**Output**:
+```
+TOP using reverse indexing: TOP
+```
+
+Explanation:
+- `word[-4]` accesses the last letter, "T".
+- `word[-5]` accesses the third-to-last letter, "O".
+- `word[-6]` accesses the sixth-to-last letter, "P".
+
+<mark>NEED COMMENT ON PROGRAM INDEXs ABOVE</mark>
+
 **Accessing List Elements with Indexing**
 
 Given a list:
