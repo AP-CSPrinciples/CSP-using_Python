@@ -277,6 +277,276 @@
 <p>We will be looking at syntax and structures of Python. We will use an Integrated Development Environment to develop our code in this course.</p>
 <section id="python-style-guidelines">
 <h2>Python Style Guidelines<a class="headerlink" href="#python-style-guidelines" title="Link to this heading">¶</a></h2>
+<p>Here are some key Python style guidelines, along with examples and rationales, to help you write clean, readable, and maintainable code:</p>
+<hr class="docutils" />
+<section id="follow-pep-8-guidelines">
+<h3>1. <strong>Follow PEP 8 Guidelines</strong><a class="headerlink" href="#follow-pep-8-guidelines" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>PEP 8</strong> is the official style guide for Python code and covers naming conventions, code layout, and indentation.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="use-descriptive-variable-and-function-names">
+<h3>2. <strong>Use Descriptive Variable and Function Names</strong><a class="headerlink" href="#use-descriptive-variable-and-function-names" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Guideline</strong>: Use descriptive names that make the purpose of the variable or function clear.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="n">total_cost</span> <span class="o">=</span> <span class="n">price</span> <span class="o">*</span> <span class="n">quantity</span>
+
+<span class="c1"># Bad</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">q</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Rationale</strong>: Code is more readable when variable names clearly indicate their purpose, making it easier to understand and maintain.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="use-consistent-indentation-4-spaces">
+<h3>3. <strong>Use Consistent Indentation (4 Spaces)</strong><a class="headerlink" href="#use-consistent-indentation-4-spaces" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Guideline</strong>: Use four spaces per indentation level; do not use tabs.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Rationale</strong>: Consistent indentation is essential for readability and prevents syntax errors.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="limit-line-length-to-79-characters">
+<h3>4. <strong>Limit Line Length to 79 Characters</strong><a class="headerlink" href="#limit-line-length-to-79-characters" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Guideline</strong>: Limit all lines to a maximum of 79 characters.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="k">def</span> <span class="nf">display_message</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Message: </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+<span class="c1"># Bad (line too long)</span>
+<span class="k">def</span> <span class="nf">display_message</span><span class="p">(</span><span class="n">message</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Message: </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Rationale</strong>: This improves readability and ensures the code displays well on all devices, including smaller screens.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="use-blank-lines-to-separate-code-sections">
+<h3>5. <strong>Use Blank Lines to Separate Code Sections</strong><a class="headerlink" href="#use-blank-lines-to-separate-code-sections" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Guideline</strong>: Use two blank lines to separate top-level functions and class definitions, and one blank line to separate methods within a class.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Woof!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Rationale</strong>: Blank lines help visually separate sections of code, improving readability.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="use-docstrings-to-document-functions-classes-and-modules">
+<h3>6. <strong>Use Docstrings to Document Functions, Classes, and Modules</strong><a class="headerlink" href="#use-docstrings-to-document-functions-classes-and-modules" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Guideline</strong>: Use triple-quoted strings (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>) for all public modules, functions, classes, and methods.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the area of a circle given its radius.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Rationale</strong>: Docstrings provide useful explanations of code functionality, which helps future readers and collaborators.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="use-spaces-around-operators">
+<h3>7. <strong>Use Spaces Around Operators</strong><a class="headerlink" href="#use-spaces-around-operators" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Guideline</strong>: Use spaces around operators and after commas, but not directly inside parentheses.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">c</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span>
+
+<span class="c1"># Bad</span>
+<span class="n">result</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">c</span><span class="o">-</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Rationale</strong>: Spacing around operators makes expressions easier to read.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="avoid-excessive-nesting">
+<h3>8. <strong>Avoid Excessive Nesting</strong><a class="headerlink" href="#avoid-excessive-nesting" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Guideline</strong>: Break down complex logic with multiple levels of nesting into smaller functions.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="k">def</span> <span class="nf">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">cleaned_data</span> <span class="o">=</span> <span class="n">clean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">analyze</span><span class="p">(</span><span class="n">cleaned_data</span><span class="p">)</span>
+
+<span class="c1"># Bad</span>
+<span class="k">def</span> <span class="nf">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">cleaned_data</span> <span class="o">=</span> <span class="n">clean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">cleaned_data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">analyze</span><span class="p">(</span><span class="n">cleaned_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Rationale</strong>: Deeply nested code is harder to read and debug. Breaking code into smaller functions improves readability and reusability.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="use-list-comprehensions-for-simple-operations">
+<h3>9. <strong>Use List Comprehensions for Simple Operations</strong><a class="headerlink" href="#use-list-comprehensions-for-simple-operations" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Guideline</strong>: Use list comprehensions for simple operations but avoid them for complex nested operations.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+
+<span class="c1"># Bad</span>
+<span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Rationale</strong>: List comprehensions are concise and often faster than equivalent for-loops for simple operations.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="handle-exceptions-properly">
+<h3>10. <strong>Handle Exceptions Properly</strong><a class="headerlink" href="#handle-exceptions-properly" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Guideline</strong>: Use specific exceptions rather than catching all exceptions with <code class="docutils literal notranslate"><span class="pre">except</span></code> alone.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="n">divisor</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cannot divide by zero.&quot;</span><span class="p">)</span>
+    
+<span class="c1"># Bad</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="n">divisor</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An error occurred.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Rationale</strong>: Catching specific exceptions allows you to handle errors appropriately, making debugging easier.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="use-meaningful-constants-instead-of-magic-numbers">
+<h3>11. <strong>Use Meaningful Constants Instead of Magic Numbers</strong><a class="headerlink" href="#use-meaningful-constants-instead-of-magic-numbers" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Guideline</strong>: Define constants with descriptive names for “magic numbers” (unexplained numerical values).</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="n">TAX_RATE</span> <span class="o">=</span> <span class="mf">0.15</span>
+<span class="n">total_cost</span> <span class="o">=</span> <span class="n">price</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">TAX_RATE</span><span class="p">)</span>
+
+<span class="c1"># Bad</span>
+<span class="n">total_cost</span> <span class="o">=</span> <span class="n">price</span> <span class="o">*</span> <span class="mf">1.15</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Rationale</strong>: Constants with meaningful names improve readability and make the code easier to modify and maintain.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="avoid-global-variables">
+<h3>12. <strong>Avoid Global Variables</strong><a class="headerlink" href="#avoid-global-variables" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Guideline</strong>: Avoid using global variables; instead, use function parameters or class attributes.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="k">def</span> <span class="nf">calculate_total</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span> <span class="n">tax_rate</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">cost</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">tax_rate</span><span class="p">)</span>
+
+<span class="c1"># Bad</span>
+<span class="n">TAX_RATE</span> <span class="o">=</span> <span class="mf">0.15</span>
+<span class="k">def</span> <span class="nf">calculate_total</span><span class="p">(</span><span class="n">cost</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">cost</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">TAX_RATE</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Rationale</strong>: Global variables can lead to hard-to-track bugs and make code harder to reuse and maintain.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="use-is-for-comparison-to-none">
+<h3>13. <strong>Use <code class="docutils literal notranslate"><span class="pre">is</span></code> for Comparison to <code class="docutils literal notranslate"><span class="pre">None</span></code></strong><a class="headerlink" href="#use-is-for-comparison-to-none" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Guideline</strong>: Use <code class="docutils literal notranslate"><span class="pre">is</span></code> or <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code> when comparing to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No value&quot;</span><span class="p">)</span>
+
+<span class="c1"># Bad</span>
+<span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No value&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Rationale</strong>: <code class="docutils literal notranslate"><span class="pre">is</span></code> is more efficient and explicitly intended for this type of comparison, improving clarity and performance.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="organize-imports-properly">
+<h3>14. <strong>Organize Imports Properly</strong><a class="headerlink" href="#organize-imports-properly" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Guideline</strong>: Group imports into three sections in this order: standard library imports, related third-party imports, and local application-specific imports. Separate each group with a blank line.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">my_app.utilities</span> <span class="kn">import</span> <span class="n">helper_function</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Rationale</strong>: This structure improves readability and avoids clutter.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="use-type-annotations-python-3-5">
+<h3>15. <strong>Use Type Annotations (Python 3.5+)</strong><a class="headerlink" href="#use-type-annotations-python-3-5" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Guideline</strong>: Use type annotations to specify expected data types for function arguments and return values.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_total</span><span class="p">(</span><span class="n">cost</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">tax_rate</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">cost</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">tax_rate</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Rationale</strong>: Type annotations make it clear what types are expected, which can help prevent bugs and improve readability.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Following these guidelines helps ensure code that is easy to read, maintain, and understand across teams.</p>
+</section>
 </section>
 <section id="print-statements">
 <h2>Print Statements<a class="headerlink" href="#print-statements" title="Link to this heading">¶</a></h2>
@@ -888,7 +1158,24 @@ The following table summarizes the operator precedence from highest to lowest. A
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Python Basics</a><ul>
-<li><a class="reference internal" href="#python-style-guidelines">Python Style Guidelines</a></li>
+<li><a class="reference internal" href="#python-style-guidelines">Python Style Guidelines</a><ul>
+<li><a class="reference internal" href="#follow-pep-8-guidelines">1. <strong>Follow PEP 8 Guidelines</strong></a></li>
+<li><a class="reference internal" href="#use-descriptive-variable-and-function-names">2. <strong>Use Descriptive Variable and Function Names</strong></a></li>
+<li><a class="reference internal" href="#use-consistent-indentation-4-spaces">3. <strong>Use Consistent Indentation (4 Spaces)</strong></a></li>
+<li><a class="reference internal" href="#limit-line-length-to-79-characters">4. <strong>Limit Line Length to 79 Characters</strong></a></li>
+<li><a class="reference internal" href="#use-blank-lines-to-separate-code-sections">5. <strong>Use Blank Lines to Separate Code Sections</strong></a></li>
+<li><a class="reference internal" href="#use-docstrings-to-document-functions-classes-and-modules">6. <strong>Use Docstrings to Document Functions, Classes, and Modules</strong></a></li>
+<li><a class="reference internal" href="#use-spaces-around-operators">7. <strong>Use Spaces Around Operators</strong></a></li>
+<li><a class="reference internal" href="#avoid-excessive-nesting">8. <strong>Avoid Excessive Nesting</strong></a></li>
+<li><a class="reference internal" href="#use-list-comprehensions-for-simple-operations">9. <strong>Use List Comprehensions for Simple Operations</strong></a></li>
+<li><a class="reference internal" href="#handle-exceptions-properly">10. <strong>Handle Exceptions Properly</strong></a></li>
+<li><a class="reference internal" href="#use-meaningful-constants-instead-of-magic-numbers">11. <strong>Use Meaningful Constants Instead of Magic Numbers</strong></a></li>
+<li><a class="reference internal" href="#avoid-global-variables">12. <strong>Avoid Global Variables</strong></a></li>
+<li><a class="reference internal" href="#use-is-for-comparison-to-none">13. <strong>Use <code class="docutils literal notranslate"><span class="pre">is</span></code> for Comparison to <code class="docutils literal notranslate"><span class="pre">None</span></code></strong></a></li>
+<li><a class="reference internal" href="#organize-imports-properly">14. <strong>Organize Imports Properly</strong></a></li>
+<li><a class="reference internal" href="#use-type-annotations-python-3-5">15. <strong>Use Type Annotations (Python 3.5+)</strong></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#print-statements">Print Statements</a><ul>
 <li><a class="reference internal" href="#explanation-of-each-method">Explanation of Each Method</a></li>
 </ul>
