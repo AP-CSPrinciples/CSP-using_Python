@@ -70,8 +70,156 @@ These different print methods offer flexibility in formatting and display for di
 
 ## Variables and Data Types
 
+In Python, **variables** are used to store data, which can be used and manipulated throughout a program. **Data types** specify the kind of value a variable holds, determining what operations can be performed on it. Python automatically assigns a data type based on the value assigned to a variable.
 
-### Order of Operation
+### Python Variables
+A **variable** is essentially a name given to a memory location where data is stored. In Python, you don’t need to declare the data type of a variable; you just assign a value to it, and Python infers the type.
+
+**Syntax**:
+```python
+variable_name = value
+```
+
+**Example**:
+```python
+age = 25            # age is an integer
+name = "Alice"      # name is a string
+price = 9.99        # price is a floating-point number
+is_student = True   # is_student is a boolean
+```
+
+### Python Data Types
+Here are the basic data types in Python, along with examples for each.
+
+1. **Integer (`int`)**
+   - Whole numbers, positive or negative, without a decimal point.
+   - **Example**:
+     ```python
+     age = 25
+     count = -10
+     print(type(age))  # Output: <class 'int'>
+     ```
+
+2. **Floating-point number (`float`)**
+   - Numbers with a decimal point, used for more precise calculations.
+   - **Example**:
+     ```python
+     price = 19.99
+     temperature = -5.5
+     print(type(price))  # Output: <class 'float'>
+     ```
+
+3. **String (`str`)**
+   - A sequence of characters, enclosed in single or double quotes.
+   - **Example**:
+     ```python
+     name = "Alice"
+     greeting = 'Hello, World!'
+     print(type(name))  # Output: <class 'str'>
+     ```
+
+4. **Boolean (`bool`)**
+   - Represents one of two values: `True` or `False`.
+   - **Example**:
+     ```python
+     is_open = True
+     is_available = False
+     print(type(is_open))  # Output: <class 'bool'>
+     ```
+
+5. **List (`list`)**
+   - An ordered collection of items, which can be of different data types. Lists are mutable, meaning items can be changed.
+   - **Example**:
+     ```python
+     fruits = ["apple", "banana", "cherry"]
+     numbers = [1, 2, 3, 4, 5]
+     mixed_list = [1, "Hello", 3.5, True]
+     print(type(fruits))  # Output: <class 'list'>
+     ```
+
+6. **Tuple (`tuple`)**
+   - Similar to a list, but immutable, meaning items cannot be changed once set.
+   - **Example**:
+     ```python
+     coordinates = (10, 20)
+     dimensions = (1920, 1080)
+     print(type(coordinates))  # Output: <class 'tuple'>
+     ```
+
+7. **Dictionary (`dict`)**
+   - A collection of key-value pairs, where each key is unique. Dictionaries are mutable.
+   - **Example**:
+     ```python
+     student = {
+         "name": "Alice",
+         "age": 20,
+         "is_student": True
+     }
+     print(type(student))  # Output: <class 'dict'>
+     ```
+
+8. **Set (`set`)**
+   - An unordered collection of unique items. Sets are mutable but don’t allow duplicate elements.
+   - **Example**:
+     ```python
+     colors = {"red", "green", "blue"}
+     numbers_set = {1, 2, 3, 4, 5}
+     print(type(colors))  # Output: <class 'set'>
+     ```
+
+9. **None Type (`NoneType`)**
+   - Represents the absence of a value or a null value.
+   - **Example**:
+     ```python
+     result = None
+     print(type(result))  # Output: <class 'NoneType'>
+     ```
+
+### Example Program Demonstrating Python Data Types
+
+```python
+# Integer
+age = 30
+print("Age:", age, "| Data type:", type(age))
+
+# Float
+height = 5.9
+print("Height:", height, "| Data type:", type(height))
+
+# String
+name = "John"
+print("Name:", name, "| Data type:", type(name))
+
+# Boolean
+is_active = True
+print("Is Active:", is_active, "| Data type:", type(is_active))
+
+# List
+colors = ["red", "blue", "green"]
+print("Colors:", colors, "| Data type:", type(colors))
+
+# Tuple
+dimensions = (1920, 1080)
+print("Dimensions:", dimensions, "| Data type:", type(dimensions))
+
+# Dictionary
+person = {"name": "Alice", "age": 25}
+print("Person:", person, "| Data type:", type(person))
+
+# Set
+unique_numbers = {1, 2, 3, 4, 5}
+print("Unique Numbers:", unique_numbers, "| Data type:", type(unique_numbers))
+
+# NoneType
+result = None
+print("Result:", result, "| Data type:", type(result))
+```
+
+Each variable in this example demonstrates a different data type. Using the `type()` function, we can easily check the data type of each variable.
+
+
+
+## Order of Operation
 
 Arithmetic operators take precedence over logical operators. Python will always evaluate the arithmetic operators first (** is highest, then multiplication/division, then addition/subtraction). Next comes the relational operators. Finally, the logical operators are done last. This means that the expression x*5 >= 10 and y-6 <= 20 will be evaluated so as to first perform the arithmetic and then check the relationships. The and will be done last. Many programmers might place parentheses around the two relational expressions, (x*5 >= 10) and (y-6 <= 20). It is not necessary to do so, but causes no harm and may make it easier for people to read and understand the code.
 The following table summarizes the operator precedence from highest to lowest. A complete table for the entire language can be found in the Python Documentation.  http://docs.python.org/py3k/reference/expressions.html#expression-lists
