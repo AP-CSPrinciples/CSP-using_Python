@@ -1519,11 +1519,12 @@ Here are the basic data types in Python, along with examples for each.</p>
 </div>
 <p>In Python, lists are <strong>indexed</strong> collections, meaning each item in a list has a specific position. Python uses <strong>zero-based indexing</strong>, which means the first element is accessed with index <code class="docutils literal notranslate"><span class="pre">0</span></code>, the second with <code class="docutils literal notranslate"><span class="pre">1</span></code>, and so on. Python also supports <strong>negative indexing</strong>, where <code class="docutils literal notranslate"><span class="pre">-1</span></code> refers to the last item, <code class="docutils literal notranslate"><span class="pre">-2</span></code> to the second-to-last, and so forth.</p>
 <p><strong>Example of indexing POTATO</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_______________________________________________</span>
-<span class="n">string1</span> <span class="o">=</span> <span class="o">|</span>  <span class="n">P</span>  <span class="o">|</span>  <span class="n">O</span>  <span class="o">|</span>  <span class="n">T</span>  <span class="o">|</span>  <span class="n">A</span>  <span class="o">|</span>  <span class="n">T</span>  <span class="o">|</span>  <span class="n">O</span>  <span class="o">|</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">__________________________________________________</span>
+<span class="n">string1</span> <span class="o">=</span>    <span class="o">|</span>  <span class="n">P</span>  <span class="o">|</span>  <span class="n">O</span>  <span class="o">|</span>  <span class="n">T</span>  <span class="o">|</span>  <span class="n">A</span>  <span class="o">|</span>  <span class="n">T</span>  <span class="o">|</span>  <span class="n">O</span>  <span class="o">|</span>
 
-<span class="n">index</span> <span class="c1">#   0     1     2     3     4     5     6</span>
-<span class="n">_______________________________________________</span>
+<span class="n">pos_index</span> <span class="c1">#  0     1     2     3     4     5     6</span>
+<span class="n">neg_index</span> <span class="c1"># -7    -6    -5    -4    -3    -2    -1</span>
+<span class="n">__________________________________________________</span>
 </pre></div>
 </div>
 <p>Take a look at the program snippets below:</p>
@@ -1564,7 +1565,7 @@ Here are the basic data types in Python, along with examples for each.</p>
 <p><strong>4. Program to Print “TOP” Using Reverse Indexing</strong></p>
 <p>Using reverse indexing, this program prints the letters “T,” “O,” and “P” in reverse order to form “TOP.”</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;POTATO&quot;</span>
-<span class="n">reverse_top</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span>  <span class="c1"># Reverse indexing to get &#39;T&#39;, &#39;O&#39;, &#39;P&#39;</span>
+<span class="n">reverse_top</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># Reverse indexing to get &#39;T&#39;, &#39;O&#39;, &#39;P&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TOP using reverse indexing:&quot;</span><span class="p">,</span> <span class="n">reverse_top</span><span class="p">)</span>
 </pre></div>
 </div>

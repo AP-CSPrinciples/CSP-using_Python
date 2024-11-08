@@ -1136,11 +1136,12 @@ In Python, lists are **indexed** collections, meaning each item in a list has a 
 **Example of indexing POTATO**
 
 ```
-_______________________________________________
-string1 = |  P  |  O  |  T  |  A  |  T  |  O  |
+__________________________________________________
+string1 =    |  P  |  O  |  T  |  A  |  T  |  O  |
 
-index #   0     1     2     3     4     5     6
-_______________________________________________
+pos_index #  0     1     2     3     4     5     6
+neg_index # -7    -6    -5    -4    -3    -2    -1
+__________________________________________________
 ```
 
 
@@ -1199,7 +1200,7 @@ Using reverse indexing, this program prints the letters "T," "O," and "P" in rev
 
 ```python
 word = "POTATO"
-reverse_top = word[-4] + word[-5] + word[-6]  # Reverse indexing to get 'T', 'O', 'P'
+reverse_top = word[-6:-3] # Reverse indexing to get 'T', 'O', 'P'
 print("TOP using reverse indexing:", reverse_top)
 ```
 
