@@ -1690,9 +1690,188 @@ This is a text file.
 <section id="object-oriented-programming">
 <h2>Object-Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Link to this heading">¶</a></h2>
 </section>
-<section id="objects-classes">
-<h2>Objects/ Classes<a class="headerlink" href="#objects-classes" title="Link to this heading">¶</a></h2>
-<p>Here is a program that demonstrates the use of objects and classes to represent dogs. It includes constructors with no arguments, one argument, and two arguments.</p>
+<section id="classes-objects">
+<h2>Classes/ Objects<a class="headerlink" href="#classes-objects" title="Link to this heading">¶</a></h2>
+<p>In Python, <strong>classes</strong> are blueprints for creating objects, which are instances of classes. Classes contain <strong>attributes</strong> (variables) and <strong>methods</strong> (functions) that define the behavior and state of the objects created from them.</p>
+<p>Essential concepts:</p>
+<p><strong>1. Classes and Objects</strong>
+A <strong>class</strong> is defined using the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword, followed by the class name. An <strong>object</strong> is an instance of a class, created by calling the class like a function.</p>
+<p><strong>2. Constructors (<code class="docutils literal notranslate"><span class="pre">__init__</span></code> method)</strong>
+The <strong>constructor</strong> is a special method named <code class="docutils literal notranslate"><span class="pre">__init__</span></code> in Python. It initializes the object when it is created, setting up initial values for the object’s attributes.</p>
+<p><strong>3. Instance Variables</strong>
+<strong>Instance variables</strong> are variables that are unique to each instance (object) of a class. They are usually set in the constructor.</p>
+<p><strong>4. Methods</strong>
+<strong>Methods</strong> are functions defined inside a class that perform operations using the instance variables of the object.</p>
+<p><strong>Structure of a Class</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the class</span>
+<span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+    <span class="c1"># Constructor (initialize instance variables)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>        <span class="c1"># Instance variable for car make</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>      <span class="c1"># Instance variable for car model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>        <span class="c1"># Instance variable for car year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">odometer</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c1"># Default odometer reading (initially zero)</span>
+
+    <span class="c1"># Method to drive the car and increase odometer</span>
+    <span class="k">def</span> <span class="nf">drive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">miles</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">miles</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">odometer</span> <span class="o">+=</span> <span class="n">miles</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drove </span><span class="si">{</span><span class="n">miles</span><span class="si">}</span><span class="s2"> miles. New odometer: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">odometer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Miles must be positive.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Method to display car information</span>
+    <span class="k">def</span> <span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">make</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2"> - Odometer: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">odometer</span><span class="si">}</span><span class="s2"> miles&quot;</span><span class="p">)</span>
+
+<span class="c1"># Creating objects (instances) of the Car class</span>
+<span class="n">car1</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="s2">&quot;Corolla&quot;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">)</span>
+<span class="n">car2</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s2">&quot;Honda&quot;</span><span class="p">,</span> <span class="s2">&quot;Civic&quot;</span><span class="p">,</span> <span class="mi">2019</span><span class="p">)</span>
+
+<span class="c1"># Accessing instance variables and calling methods</span>
+<span class="n">car1</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>  <span class="c1"># Output: 2020 Toyota Corolla - Odometer: 0 miles</span>
+<span class="n">car1</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>      <span class="c1"># Output: Drove 150 miles. New odometer: 150</span>
+<span class="n">car1</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>  <span class="c1"># Output: 2020 Toyota Corolla - Odometer: 150 miles</span>
+
+<span class="n">car2</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>  <span class="c1"># Output: 2019 Honda Civic - Odometer: 0 miles</span>
+<span class="n">car2</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>      <span class="c1"># Output: Drove 200 miles. New odometer: 200</span>
+</pre></div>
+</div>
+<p><strong>Explanation of the Code</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Class Definition</strong>: <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Car</span></code> defines a new class named <code class="docutils literal notranslate"><span class="pre">Car</span></code>.</p></li>
+<li><p><strong>Constructor</strong>: The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method is a constructor that initializes the instance variables <code class="docutils literal notranslate"><span class="pre">make</span></code>, <code class="docutils literal notranslate"><span class="pre">model</span></code>, <code class="docutils literal notranslate"><span class="pre">year</span></code>, and <code class="docutils literal notranslate"><span class="pre">odometer</span></code> (which defaults to 0).</p></li>
+<li><p><strong>Instance Variables</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span></code>, <code class="docutils literal notranslate"><span class="pre">model</span></code>, and <code class="docutils literal notranslate"><span class="pre">year</span></code> are parameters passed during object creation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odometer</span></code> is set to 0 by default.</p></li>
+</ul>
+</li>
+<li><p><strong>Methods</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">drive</span></code>: Takes <code class="docutils literal notranslate"><span class="pre">miles</span></code> as an argument, checks if it’s positive, and adds it to the <code class="docutils literal notranslate"><span class="pre">odometer</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">display_info</span></code>: Prints the car’s details.</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Using the Class</strong></p>
+<ul class="simple">
+<li><p><strong>Creating Objects</strong>: <code class="docutils literal notranslate"><span class="pre">car1</span> <span class="pre">=</span> <span class="pre">Car(&quot;Toyota&quot;,</span> <span class="pre">&quot;Corolla&quot;,</span> <span class="pre">2020)</span></code> creates an instance of the <code class="docutils literal notranslate"><span class="pre">Car</span></code> class.</p></li>
+<li><p><strong>Calling Methods</strong>: <code class="docutils literal notranslate"><span class="pre">car1.drive(150)</span></code> drives the car and updates the <code class="docutils literal notranslate"><span class="pre">odometer</span></code>.</p></li>
+<li><p><strong>Accessing Instance Variables</strong>: <code class="docutils literal notranslate"><span class="pre">car1.odometer</span></code> directly accesses the <code class="docutils literal notranslate"><span class="pre">odometer</span></code> value for the specific object <code class="docutils literal notranslate"><span class="pre">car1</span></code>.</p></li>
+</ul>
+<p><strong>Summary</strong>
+This structure demonstrates how classes, objects, constructors, instance variables, and methods work together to create and manipulate objects in Python. Each instance (object) of the <code class="docutils literal notranslate"><span class="pre">Car</span></code> class has its own set of data, allowing operations specific to that instance.</p>
+<p>Another example and explanation of a program that demonstrates the use of classes, objects, and constructors.</p>
+<p>*<strong>A Simple Bank Account System</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class representing a bank account.&quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">account_holder</span><span class="p">,</span> <span class="n">balance</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructor to initialize the account holder&#39;s name and balance.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            account_holder (str): The name of the account holder.</span>
+<span class="sd">            balance (float): The initial balance of the account (default is 0).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">account_holder</span> <span class="o">=</span> <span class="n">account_holder</span>  <span class="c1"># Instance variable for account holder&#39;s name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="n">balance</span>  <span class="c1"># Instance variable for account balance</span>
+
+    <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Deposit money into the bank account.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            amount (float): The amount to be deposited.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">amount</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">+=</span> <span class="n">amount</span>  <span class="c1"># Increase balance by the deposit amount</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Deposited $</span><span class="si">{</span><span class="n">amount</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">. New balance: $</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Deposit amount must be positive!&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">withdraw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Withdraw money from the bank account.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            amount (float): The amount to be withdrawn.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">amount</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">-=</span> <span class="n">amount</span>  <span class="c1"># Decrease balance by the withdrawal amount</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Withdrew $</span><span class="si">{</span><span class="n">amount</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">. New balance: $</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid withdrawal amount!&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the current balance of the account.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span>
+
+    <span class="k">def</span> <span class="nf">display_account_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Display the account holder&#39;s information and current balance.&quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Account Holder: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">account_holder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current Balance: $</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Main program</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># Create an instance of BankAccount</span>
+    <span class="n">account1</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="s2">&quot;Alice Smith&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+    <span class="c1"># Display account information</span>
+    <span class="n">account1</span><span class="o">.</span><span class="n">display_account_info</span><span class="p">()</span>
+
+    <span class="c1"># Perform some transactions</span>
+    <span class="n">account1</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+    <span class="n">account1</span><span class="o">.</span><span class="n">withdraw</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">account1</span><span class="o">.</span><span class="n">withdraw</span><span class="p">(</span><span class="mi">1500</span><span class="p">)</span>  <span class="c1"># This should fail</span>
+    <span class="n">account1</span><span class="o">.</span><span class="n">display_account_info</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Explanation</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Class</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">BankAccount:</span></code> defines a class named <code class="docutils literal notranslate"><span class="pre">BankAccount</span></code>. A class is a blueprint for creating objects, encapsulating data and methods that operate on that data.</p></li>
+</ul>
+</li>
+<li><p><strong>Constructor</strong>:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method is a special method called the constructor. It is invoked when an object of the class is created. In this example, it initializes the account holder’s name and balance:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">account_holder</span></code>: A string representing the name of the account holder.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">balance</span></code>: A float representing the initial balance of the account (default is 0).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Instance Variables</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self.account_holder</span></code> and <code class="docutils literal notranslate"><span class="pre">self.balance</span></code> are instance variables that store the account holder’s name and balance for each instance of the <code class="docutils literal notranslate"><span class="pre">BankAccount</span></code> class.</p></li>
+</ul>
+</li>
+<li><p><strong>Methods</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">deposit(amount)</span></code>: This method adds a specified amount to the account balance, ensuring the amount is positive.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">withdraw(amount)</span></code>: This method subtracts a specified amount from the balance, ensuring the withdrawal does not exceed the current balance.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_balance()</span></code>: Returns the current balance of the account.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">display_account_info()</span></code>: Displays the account holder’s information and current balance.</p></li>
+</ul>
+</li>
+<li><p><strong>Objects</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">account1</span> <span class="pre">=</span> <span class="pre">BankAccount(&quot;Alice</span> <span class="pre">Smith&quot;,</span> <span class="pre">1000)</span></code>: This line creates an instance (object) of the <code class="docutils literal notranslate"><span class="pre">BankAccount</span></code> class with “Alice Smith” as the account holder and an initial balance of $1000.</p></li>
+</ul>
+</li>
+<li><p><strong>Main Program</strong>:</p>
+<ul class="simple">
+<li><p>The main program creates an account, displays account information, performs deposits and withdrawals, and handles invalid transactions gracefully.</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Running the Program</strong>
+You can copy and paste this code into a Python environment. It will create a bank account for “Alice Smith,” allowing you to see how deposits and withdrawals affect the balance.</p>
+<p>Below is a program that demonstrates the use of objects and classes to represent dogs. It includes constructors with no arguments, one argument, and two arguments.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">breed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
@@ -1741,8 +1920,8 @@ This is a text file.
 <h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">¶</a></h2>
 <p>As was stated before, <strong>methods</strong> are functions that belong to <code class="docutils literal notranslate"><span class="pre">objects</span></code> and are used to operate on those objects. They are similar to functions but have a special relationship with the object they belong to, known as the <strong>instance</strong>.</p>
 <p>Let’s break down the key concepts:</p>
-<section id="instance-methods">
-<h3>1. <strong>Instance Methods</strong><a class="headerlink" href="#instance-methods" title="Link to this heading">¶</a></h3>
+<ol class="arabic">
+<li><p><strong>Instance Methods</strong></p>
 <ul class="simple">
 <li><p>Most methods are called <strong>instance methods</strong> because they operate on an instance of a class (an object created from a class).</p></li>
 <li><p>When an instance method is defined, the first parameter is usually <code class="docutils literal notranslate"><span class="pre">self</span></code>, which represents the instance of the class on which the method is called. This <code class="docutils literal notranslate"><span class="pre">self</span></code> parameter allows the method to access other attributes and methods of the same object.</p></li>
@@ -1759,9 +1938,8 @@ This is a text file.
 </pre></div>
 </div>
 <p>In this example, <code class="docutils literal notranslate"><span class="pre">bark()</span></code> is an instance method that uses <code class="docutils literal notranslate"><span class="pre">self</span></code> to access the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">my_dog</span></code> instance.</p>
-</section>
-<section id="class-methods">
-<h3>2. <strong>Class Methods</strong><a class="headerlink" href="#class-methods" title="Link to this heading">¶</a></h3>
+</li>
+<li><p><strong>Class Methods</strong></p>
 <ul class="simple">
 <li><p><strong>Class methods</strong> are methods that operate on the class itself rather than on individual instances. They are marked with the <code class="docutils literal notranslate"><span class="pre">&#64;classmethod</span></code> decorator.</p></li>
 <li><p>Instead of <code class="docutils literal notranslate"><span class="pre">self</span></code>, they take <code class="docutils literal notranslate"><span class="pre">cls</span></code> as their first parameter, which refers to the class itself, not an instance.</p></li>
@@ -1777,9 +1955,8 @@ This is a text file.
 </pre></div>
 </div>
 <p>Here, <code class="docutils literal notranslate"><span class="pre">get_species()</span></code> is a class method that accesses the <code class="docutils literal notranslate"><span class="pre">species</span></code> attribute defined on the class itself.</p>
-</section>
-<section id="static-methods">
-<h3>3. <strong>Static Methods</strong><a class="headerlink" href="#static-methods" title="Link to this heading">¶</a></h3>
+</li>
+<li><p><strong>Static Methods</strong></p>
 <ul class="simple">
 <li><p><strong>Static methods</strong> are methods that don’t operate on an instance or class. They behave like normal functions but reside within a class for organizational purposes.</p></li>
 <li><p>Static methods are marked with the <code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code> decorator and don’t require <code class="docutils literal notranslate"><span class="pre">self</span></code> or <code class="docutils literal notranslate"><span class="pre">cls</span></code> parameters.</p></li>
@@ -1793,9 +1970,8 @@ This is a text file.
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">add()</span></code> is a static method and does not rely on any data from an instance or the class. It simply performs a task.</p>
-</section>
-<section id="special-methods-magic-methods">
-<h3>4. <strong>Special Methods (Magic Methods)</strong><a class="headerlink" href="#special-methods-magic-methods" title="Link to this heading">¶</a></h3>
+</li>
+<li><p><strong>Special Methods (Magic Methods)</strong></p>
 <ul class="simple">
 <li><p>Special methods, also known as <strong>magic methods</strong> or <strong>dunder methods</strong> (short for “double underscore”), allow instances of classes to interact with built-in Python operations in unique ways.</p></li>
 <li><p>These methods have names starting and ending with double underscores (e.g., <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, <code class="docutils literal notranslate"><span class="pre">__str__</span></code>, <code class="docutils literal notranslate"><span class="pre">__len__</span></code>).</p></li>
@@ -1813,9 +1989,8 @@ This is a text file.
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> method is a magic method that defines how an object should be represented as a string.</p>
-</section>
-<section id="method-chaining">
-<h3>5. <strong>Method Chaining</strong><a class="headerlink" href="#method-chaining" title="Link to this heading">¶</a></h3>
+</li>
+<li><p><strong>Method Chaining</strong></p>
 <ul class="simple">
 <li><p><strong>Method chaining</strong> allows you to call multiple methods on the same object in a single statement. To enable this, each method must return the object itself.</p></li>
 </ul>
@@ -1836,17 +2011,16 @@ This is a text file.
 </pre></div>
 </div>
 <p>Here, <code class="docutils literal notranslate"><span class="pre">add_text</span></code> and <code class="docutils literal notranslate"><span class="pre">make_uppercase</span></code> return <code class="docutils literal notranslate"><span class="pre">self</span></code>, so you can chain the methods together.</p>
-</section>
-<section id="key-points-to-remember">
-<h3>Key Points to Remember<a class="headerlink" href="#key-points-to-remember" title="Link to this heading">¶</a></h3>
+</li>
+</ol>
+<p><strong>Key Points to Remember</strong></p>
 <ul class="simple">
-<li><p><strong>Instance Methods</strong>: Operate on individual objects and use <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p></li>
-<li><p><strong>Class Methods</strong>: Operate on the class itself and use <code class="docutils literal notranslate"><span class="pre">cls</span></code>.</p></li>
-<li><p><strong>Static Methods</strong>: Do not operate on instances or the class; they’re independent but grouped within the class.</p></li>
-<li><p><strong>Special Methods</strong>: Have specific purposes within Python’s syntax (e.g., <code class="docutils literal notranslate"><span class="pre">__init__</span></code> for initialization, <code class="docutils literal notranslate"><span class="pre">__str__</span></code> for string representation).</p></li>
+<li><p><em>Instance Methods</em>: Operate on individual objects and use <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p></li>
+<li><p><em>Class Methods</em>: Operate on the class itself and use <code class="docutils literal notranslate"><span class="pre">cls</span></code>.</p></li>
+<li><p><em>Static Methods</em>: Do not operate on instances or the class; they’re independent but grouped within the class.</p></li>
+<li><p><em>Special Methods</em>: Have specific purposes within Python’s syntax (e.g., <code class="docutils literal notranslate"><span class="pre">__init__</span></code> for initialization, <code class="docutils literal notranslate"><span class="pre">__str__</span></code> for string representation).</p></li>
 </ul>
 <p>Methods make object-oriented programming in Python powerful, allowing objects to encapsulate both data and functionality.</p>
-</section>
 </section>
 <section id="exception-handling">
 <h2>Exception Handling<a class="headerlink" href="#exception-handling" title="Link to this heading">¶</a></h2>
@@ -2337,16 +2511,8 @@ In emergency dispatch, a priority queue (heap) could prioritize patients by the 
 </li>
 <li><a class="reference internal" href="#file-handling">File Handling</a></li>
 <li><a class="reference internal" href="#object-oriented-programming">Object-Oriented Programming</a></li>
-<li><a class="reference internal" href="#objects-classes">Objects/ Classes</a></li>
-<li><a class="reference internal" href="#methods">Methods</a><ul>
-<li><a class="reference internal" href="#instance-methods">1. <strong>Instance Methods</strong></a></li>
-<li><a class="reference internal" href="#class-methods">2. <strong>Class Methods</strong></a></li>
-<li><a class="reference internal" href="#static-methods">3. <strong>Static Methods</strong></a></li>
-<li><a class="reference internal" href="#special-methods-magic-methods">4. <strong>Special Methods (Magic Methods)</strong></a></li>
-<li><a class="reference internal" href="#method-chaining">5. <strong>Method Chaining</strong></a></li>
-<li><a class="reference internal" href="#key-points-to-remember">Key Points to Remember</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#classes-objects">Classes/ Objects</a></li>
+<li><a class="reference internal" href="#methods">Methods</a></li>
 <li><a class="reference internal" href="#exception-handling">Exception Handling</a></li>
 <li><a class="reference internal" href="#lambda-functions">Lambda Functions</a><ul>
 <li><a class="reference internal" href="#basic-syntax-of-lambda-functions">Basic Syntax of Lambda Functions</a></li>
