@@ -280,6 +280,57 @@
 </section>
 <section id="print-statements">
 <h2>Print Statements<a class="headerlink" href="#print-statements" title="Link to this heading">¶</a></h2>
+<p>In Python, there are several ways to format and print strings. Each method offers a different approach to injecting variables or formatting output. Here are some popular variations:</p>
+<ol class="arabic simple">
+<li><p><strong>Basic <code class="docutils literal notranslate"><span class="pre">print</span></code> statement</strong></p></li>
+<li><p><strong>Using <code class="docutils literal notranslate"><span class="pre">print</span></code> with variables</strong></p></li>
+<li><p><strong>Using concatenation (<code class="docutils literal notranslate"><span class="pre">+</span></code> operator)</strong></p></li>
+<li><p><strong>Using <code class="docutils literal notranslate"><span class="pre">format()</span></code> method</strong></p></li>
+<li><p><strong>Using f-strings (formatted string literals)</strong></p></li>
+<li><p><strong>Using special characters for formatting</strong></p></li>
+</ol>
+<p>Here’s a Python program illustrating each of these methods:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Basic print statement</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2. Using print with variables</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Name:&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Age:&quot;</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+
+<span class="c1"># 3. Using concatenation (with `+` operator)</span>
+<span class="n">city</span> <span class="o">=</span> <span class="s2">&quot;New York&quot;</span>
+<span class="n">country</span> <span class="o">=</span> <span class="s2">&quot;USA&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Location: &quot;</span> <span class="o">+</span> <span class="n">city</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">country</span><span class="p">)</span>
+
+<span class="c1"># 4. Using format() method</span>
+<span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Message: </span><span class="si">{}</span><span class="s2">! My name is </span><span class="si">{}</span><span class="s2"> and I am </span><span class="si">{}</span><span class="s2"> years old.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">))</span>
+
+<span class="c1"># 5. Using f-strings (formatted string literals)</span>
+<span class="c1"># Introduced in Python 3.6, this is one of the most concise and popular methods for formatting.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting</span><span class="si">}</span><span class="s2">! My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> and I am </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old.&quot;</span><span class="p">)</span>
+
+<span class="c1"># 6. Using special characters for formatting (e.g., newline `\n`, tab `\t`)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello</span><span class="se">\n</span><span class="s2">World!&quot;</span><span class="p">)</span>  <span class="c1"># newline</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello</span><span class="se">\t</span><span class="s2">World!&quot;</span><span class="p">)</span>  <span class="c1"># tab</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Name:</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>   <span class="c1"># tab</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Age:</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>     <span class="c1"># tab</span>
+</pre></div>
+</div>
+<section id="explanation-of-each-method">
+<h3>Explanation of Each Method<a class="headerlink" href="#explanation-of-each-method" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Basic <code class="docutils literal notranslate"><span class="pre">print</span></code> statement</strong>: Just prints the text directly.</p></li>
+<li><p><strong>Using <code class="docutils literal notranslate"><span class="pre">print</span></code> with variables</strong>: Allows direct printing of variables by separating values with commas. This adds a space automatically.</p></li>
+<li><p><strong>Using concatenation</strong>: The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator combines strings. However, this method works only if all parts are strings, so numbers must be converted (using <code class="docutils literal notranslate"><span class="pre">str()</span></code>).</p></li>
+<li><p><strong>Using <code class="docutils literal notranslate"><span class="pre">format()</span></code> method</strong>: This method replaces <code class="docutils literal notranslate"><span class="pre">{}</span></code> placeholders in the string with values provided to <code class="docutils literal notranslate"><span class="pre">format()</span></code>. It’s flexible for various formatting needs.</p></li>
+<li><p><strong>Using f-strings</strong>: These formatted string literals are enclosed with an <code class="docutils literal notranslate"><span class="pre">f</span></code> prefix. Variables can be embedded directly within <code class="docutils literal notranslate"><span class="pre">{}</span></code> braces, making it compact and readable.</p></li>
+<li><p><strong>Using special characters</strong>: Special characters like <code class="docutils literal notranslate"><span class="pre">\n</span></code> (newline) and <code class="docutils literal notranslate"><span class="pre">\t</span></code> (tab) can be used to format output, particularly for line breaks and indentation.</p></li>
+</ol>
+<p>These different print methods offer flexibility in formatting and display for different contexts.</p>
+</section>
 </section>
 <section id="variables-and-data-types">
 <h2>Variables and Data Types<a class="headerlink" href="#variables-and-data-types" title="Link to this heading">¶</a></h2>
@@ -664,7 +715,10 @@ The following table summarizes the operator precedence from highest to lowest. A
             <ul>
 <li><a class="reference internal" href="#">Python Basics</a><ul>
 <li><a class="reference internal" href="#python-style-guidelines">Python Style Guidelines</a></li>
-<li><a class="reference internal" href="#print-statements">Print Statements</a></li>
+<li><a class="reference internal" href="#print-statements">Print Statements</a><ul>
+<li><a class="reference internal" href="#explanation-of-each-method">Explanation of Each Method</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#variables-and-data-types">Variables and Data Types</a><ul>
 <li><a class="reference internal" href="#order-of-operation">Order of Operation</a></li>
 </ul>
