@@ -9,12 +9,12 @@ We will be looking at syntax and structures of Python. We will use an Integrated
 
 Here are some key Python style guidelines, along with examples and rationales, to help you write clean, readable, and maintainable code:
 
----
+-------------------------------------------------------------------------
 
-### 1. **Follow PEP 8 Guidelines**
+### 1. **PEP 8 Guidelines**
    - **PEP 8** is the official style guide for Python code and covers naming conventions, code layout, and indentation.
 
----
+-------------------------------------------------------------------------
 
 ### 2. **Use Descriptive Variable and Function Names**
    - **Guideline**: Use descriptive names that make the purpose of the variable or function clear.
@@ -28,7 +28,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
      ```
    - **Rationale**: Code is more readable when variable names clearly indicate their purpose, making it easier to understand and maintain.
 
----
+-------------------------------------------------------------------------
 
 ### 3. **Use Consistent Indentation (4 Spaces)**
    - **Guideline**: Use four spaces per indentation level; do not use tabs.
@@ -39,7 +39,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
      ```
    - **Rationale**: Consistent indentation is essential for readability and prevents syntax errors.
 
----
+-------------------------------------------------------------------------
 
 ### 4. **Limit Line Length to 79 Characters**
    - **Guideline**: Limit all lines to a maximum of 79 characters.
@@ -54,7 +54,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
      ```
    - **Rationale**: This improves readability and ensures the code displays well on all devices, including smaller screens.
 
----
+-------------------------------------------------------------------------
 
 ### 5. **Use Blank Lines to Separate Code Sections**
    - **Guideline**: Use two blank lines to separate top-level functions and class definitions, and one blank line to separate methods within a class.
@@ -72,7 +72,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
      ```
    - **Rationale**: Blank lines help visually separate sections of code, improving readability.
 
----
+-------------------------------------------------------------------------
 
 ### 6. **Use Docstrings to Document Functions, Classes, and Modules**
    - **Guideline**: Use triple-quoted strings (`"""`) for all public modules, functions, classes, and methods.
@@ -84,7 +84,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
      ```
    - **Rationale**: Docstrings provide useful explanations of code functionality, which helps future readers and collaborators.
 
----
+-------------------------------------------------------------------------
 
 ### 7. **Use Spaces Around Operators**
    - **Guideline**: Use spaces around operators and after commas, but not directly inside parentheses.
@@ -98,7 +98,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
      ```
    - **Rationale**: Spacing around operators makes expressions easier to read.
 
----
+-------------------------------------------------------------------------
 
 ### 8. **Avoid Excessive Nesting**
    - **Guideline**: Break down complex logic with multiple levels of nesting into smaller functions.
@@ -120,7 +120,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
      ```
    - **Rationale**: Deeply nested code is harder to read and debug. Breaking code into smaller functions improves readability and reusability.
 
----
+-------------------------------------------------------------------------
 
 ### 9. **Use List Comprehensions for Simple Operations**
    - **Guideline**: Use list comprehensions for simple operations but avoid them for complex nested operations.
@@ -136,7 +136,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
      ```
    - **Rationale**: List comprehensions are concise and often faster than equivalent for-loops for simple operations.
 
----
+-------------------------------------------------------------------------
 
 ### 10. **Handle Exceptions Properly**
    - **Guideline**: Use specific exceptions rather than catching all exceptions with `except` alone.
@@ -156,7 +156,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
      ```
    - **Rationale**: Catching specific exceptions allows you to handle errors appropriately, making debugging easier.
 
----
+-------------------------------------------------------------------------
 
 ### 11. **Use Meaningful Constants Instead of Magic Numbers**
    - **Guideline**: Define constants with descriptive names for “magic numbers” (unexplained numerical values).
@@ -171,7 +171,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
      ```
    - **Rationale**: Constants with meaningful names improve readability and make the code easier to modify and maintain.
 
----
+-------------------------------------------------------------------------
 
 ### 12. **Avoid Global Variables**
    - **Guideline**: Avoid using global variables; instead, use function parameters or class attributes.
@@ -188,7 +188,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
      ```
    - **Rationale**: Global variables can lead to hard-to-track bugs and make code harder to reuse and maintain.
 
----
+-------------------------------------------------------------------------
 
 ### 13. **Use `is` for Comparison to `None`**
    - **Guideline**: Use `is` or `is not` when comparing to `None`.
@@ -204,7 +204,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
      ```
    - **Rationale**: `is` is more efficient and explicitly intended for this type of comparison, improving clarity and performance.
 
----
+-------------------------------------------------------------------------
 
 ### 14. **Organize Imports Properly**
    - **Guideline**: Group imports into three sections in this order: standard library imports, related third-party imports, and local application-specific imports. Separate each group with a blank line.
@@ -221,7 +221,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
      ```
    - **Rationale**: This structure improves readability and avoids clutter.
 
----
+-------------------------------------------------------------------------
 
 ### 15. **Use Type Annotations (Python 3.5+)**
    - **Guideline**: Use type annotations to specify expected data types for function arguments and return values.
@@ -232,7 +232,7 @@ Here are some key Python style guidelines, along with examples and rationales, t
      ```
    - **Rationale**: Type annotations make it clear what types are expected, which can help prevent bugs and improve readability. 
 
---- 
+------------------------------------------------------------------------- 
 
 Following these guidelines helps ensure code that is easy to read, maintain, and understand across teams.
 
