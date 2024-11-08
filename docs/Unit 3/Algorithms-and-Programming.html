@@ -455,121 +455,6 @@
 <li><p><strong>Set</strong>: Stores only unique values, ignores duplicates, and doesn’t use key-value pairs.</p></li>
 </ul>
 <p>This code provides a complete introduction to dictionaries with additional details on how dictionaries differ from sets.</p>
-<p>Sure! Below is a Python 3 program that demonstrates the use of objects, classes, and constructors, along with explanations for each part.</p>
-</section>
-<section id="program-a-simple-bank-account-system">
-<h3>Program: A Simple Bank Account System<a class="headerlink" href="#program-a-simple-bank-account-system" title="Link to this heading">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class representing a bank account.&quot;&quot;&quot;</span>
-    
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">account_holder</span><span class="p">,</span> <span class="n">balance</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Constructor to initialize the account holder&#39;s name and balance.</span>
-<span class="sd">        </span>
-<span class="sd">        Args:</span>
-<span class="sd">            account_holder (str): The name of the account holder.</span>
-<span class="sd">            balance (float): The initial balance of the account (default is 0).</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">account_holder</span> <span class="o">=</span> <span class="n">account_holder</span>  <span class="c1"># Instance variable for account holder&#39;s name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="n">balance</span>  <span class="c1"># Instance variable for account balance</span>
-
-    <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Deposit money into the bank account.</span>
-<span class="sd">        </span>
-<span class="sd">        Args:</span>
-<span class="sd">            amount (float): The amount to be deposited.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">amount</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">+=</span> <span class="n">amount</span>  <span class="c1"># Increase balance by the deposit amount</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Deposited $</span><span class="si">{</span><span class="n">amount</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">. New balance: $</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Deposit amount must be positive!&quot;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">withdraw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Withdraw money from the bank account.</span>
-<span class="sd">        </span>
-<span class="sd">        Args:</span>
-<span class="sd">            amount (float): The amount to be withdrawn.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">amount</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">-=</span> <span class="n">amount</span>  <span class="c1"># Decrease balance by the withdrawal amount</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Withdrew $</span><span class="si">{</span><span class="n">amount</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">. New balance: $</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid withdrawal amount!&quot;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">get_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the current balance of the account.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span>
-
-    <span class="k">def</span> <span class="nf">display_account_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Display the account holder&#39;s information and current balance.&quot;&quot;&quot;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Account Holder: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">account_holder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current Balance: $</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Main program</span>
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="c1"># Create an instance of BankAccount</span>
-    <span class="n">account1</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="s2">&quot;Alice Smith&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-
-    <span class="c1"># Display account information</span>
-    <span class="n">account1</span><span class="o">.</span><span class="n">display_account_info</span><span class="p">()</span>
-
-    <span class="c1"># Perform some transactions</span>
-    <span class="n">account1</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
-    <span class="n">account1</span><span class="o">.</span><span class="n">withdraw</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-    <span class="n">account1</span><span class="o">.</span><span class="n">withdraw</span><span class="p">(</span><span class="mi">1500</span><span class="p">)</span>  <span class="c1"># This should fail</span>
-    <span class="n">account1</span><span class="o">.</span><span class="n">display_account_info</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-<section id="id1">
-<h3>Explanation<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
-<ol class="arabic simple">
-<li><p><strong>Class</strong>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">BankAccount:</span></code> defines a class named <code class="docutils literal notranslate"><span class="pre">BankAccount</span></code>. A class is a blueprint for creating objects, encapsulating data and methods that operate on that data.</p></li>
-</ul>
-</li>
-<li><p><strong>Constructor</strong>:</p>
-<ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method is a special method called the constructor. It is invoked when an object of the class is created. In this example, it initializes the account holder’s name and balance:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">account_holder</span></code>: A string representing the name of the account holder.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">balance</span></code>: A float representing the initial balance of the account (default is 0).</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>Instance Variables</strong>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">self.account_holder</span></code> and <code class="docutils literal notranslate"><span class="pre">self.balance</span></code> are instance variables that store the account holder’s name and balance for each instance of the <code class="docutils literal notranslate"><span class="pre">BankAccount</span></code> class.</p></li>
-</ul>
-</li>
-<li><p><strong>Methods</strong>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">deposit(amount)</span></code>: This method adds a specified amount to the account balance, ensuring the amount is positive.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">withdraw(amount)</span></code>: This method subtracts a specified amount from the balance, ensuring the withdrawal does not exceed the current balance.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">get_balance()</span></code>: Returns the current balance of the account.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">display_account_info()</span></code>: Displays the account holder’s information and current balance.</p></li>
-</ul>
-</li>
-<li><p><strong>Objects</strong>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">account1</span> <span class="pre">=</span> <span class="pre">BankAccount(&quot;Alice</span> <span class="pre">Smith&quot;,</span> <span class="pre">1000)</span></code>: This line creates an instance (object) of the <code class="docutils literal notranslate"><span class="pre">BankAccount</span></code> class with “Alice Smith” as the account holder and an initial balance of $1000.</p></li>
-</ul>
-</li>
-<li><p><strong>Main Program</strong>:</p>
-<ul class="simple">
-<li><p>The main program creates an account, displays account information, performs deposits and withdrawals, and handles invalid transactions gracefully.</p></li>
-</ul>
-</li>
-</ol>
-</section>
-<section id="running-the-program">
-<h3>Running the Program<a class="headerlink" href="#running-the-program" title="Link to this heading">¶</a></h3>
-<p>You can copy and paste this code into a Python environment. It will create a bank account for “Alice Smith,” allowing you to see how deposits and withdrawals affect the balance.</p>
 </section>
 </section>
 <section id="nested-conditionals-using-functions-with-parameters">
@@ -616,8 +501,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id2">
-<h3>Explanation<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<section id="id1">
+<h3>Explanation<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p><strong>Functions</strong>:</p>
 <ul class="simple">
@@ -638,8 +523,8 @@
 </li>
 </ol>
 </section>
-<section id="id3">
-<h3>Running the Program<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<section id="running-the-program">
+<h3>Running the Program<a class="headerlink" href="#running-the-program" title="Link to this heading">¶</a></h3>
 <p>To run the program, just copy and paste the code into a Python environment, and it will prompt you to enter a number for analysis.</p>
 </section>
 </section>
@@ -925,15 +810,12 @@ You may either choose a specific number of rounds to play or keep playing the ga
 <li><a class="reference internal" href="#dictionary">Dictionary</a><ul>
 <li><a class="reference internal" href="#explanation">Explanation</a></li>
 <li><a class="reference internal" href="#dictionary-vs-set">Dictionary vs. Set</a></li>
-<li><a class="reference internal" href="#program-a-simple-bank-account-system">Program: A Simple Bank Account System</a></li>
-<li><a class="reference internal" href="#id1">Explanation</a></li>
-<li><a class="reference internal" href="#running-the-program">Running the Program</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#nested-conditionals-using-functions-with-parameters">Nested Conditionals using Functions with parameters</a><ul>
 <li><a class="reference internal" href="#program-number-classification">Program: Number Classification</a></li>
-<li><a class="reference internal" href="#id2">Explanation</a></li>
-<li><a class="reference internal" href="#id3">Running the Program</a></li>
+<li><a class="reference internal" href="#id1">Explanation</a></li>
+<li><a class="reference internal" href="#running-the-program">Running the Program</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#conditions-with-nested-iteration-and-loops">Conditions with nested iteration and loops</a><ul>
