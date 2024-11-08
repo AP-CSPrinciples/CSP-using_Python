@@ -1001,6 +1001,109 @@ In computer programming, the terms **function**, **method**, and **procedure** h
   }
   ```
 
+
+## Methods
+
+As was stated before, **methods** are functions that belong to `objects` and are used to operate on those objects. They are similar to functions but have a special relationship with the object they belong to, known as the **instance**.
+
+Let's break down the key concepts:
+
+1. **Instance Methods**
+   - Most methods are called **instance methods** because they operate on an instance of a class (an object created from a class).
+   - When an instance method is defined, the first parameter is usually `self`, which represents the instance of the class on which the method is called. This `self` parameter allows the method to access other attributes and methods of the same object.
+   
+   ```python
+   class Dog:
+       def __init__(self, name):
+           self.name = name
+       
+       def bark(self):   # Instance method
+           print(f"{self.name} says Woof!")
+   
+   my_dog = Dog("Buddy")
+   my_dog.bark()  # Output: "Buddy says Woof!"
+   ```
+   In this example, `bark()` is an instance method that uses `self` to access the `name` attribute of the `my_dog` instance.
+
+2. **Class Methods**
+   - **Class methods** are methods that operate on the class itself rather than on individual instances. They are marked with the `@classmethod` decorator.
+   - Instead of `self`, they take `cls` as their first parameter, which refers to the class itself, not an instance.
+   
+   ```python
+   class Dog:
+       species = "Canis familiaris"
+       
+       @classmethod
+       def get_species(cls):
+           return cls.species
+   
+   print(Dog.get_species())  # Output: "Canis familiaris"
+   ```
+   Here, `get_species()` is a class method that accesses the `species` attribute defined on the class itself.
+
+3. **Static Methods**
+   - **Static methods** are methods that don’t operate on an instance or class. They behave like normal functions but reside within a class for organizational purposes.
+   - Static methods are marked with the `@staticmethod` decorator and don’t require `self` or `cls` parameters.
+   
+   ```python
+   class MathHelper:
+       @staticmethod
+       def add(a, b):
+           return a + b
+   
+   print(MathHelper.add(5, 7))  # Output: 12
+   ```
+   `add()` is a static method and does not rely on any data from an instance or the class. It simply performs a task.
+
+4. **Special Methods (Magic Methods)**
+   - Special methods, also known as **magic methods** or **dunder methods** (short for "double underscore"), allow instances of classes to interact with built-in Python operations in unique ways.
+   - These methods have names starting and ending with double underscores (e.g., `__init__`, `__str__`, `__len__`).
+   
+   ```python
+   class Book:
+       def __init__(self, title, author):
+           self.title = title
+           self.author = author
+       
+       def __str__(self):
+           return f"{self.title} by {self.author}"
+   
+   my_book = Book("1984", "George Orwell")
+   print(my_book)  # Output: "1984 by George Orwell"
+   ```
+   The `__str__()` method is a magic method that defines how an object should be represented as a string.
+
+5. **Method Chaining**
+   - **Method chaining** allows you to call multiple methods on the same object in a single statement. To enable this, each method must return the object itself.
+   
+   ```python
+   class TextEditor:
+       def __init__(self, text=""):
+           self.text = text
+       
+       def add_text(self, text):
+           self.text += text
+           return self
+       
+       def make_uppercase(self):
+           self.text = self.text.upper()
+           return self
+   
+   editor = TextEditor().add_text("Hello ").add_text("World!").make_uppercase()
+   print(editor.text)  # Output: "HELLO WORLD!"
+   ```
+   Here, `add_text` and `make_uppercase` return `self`, so you can chain the methods together.
+
+**Key Points to Remember**
+- *Instance Methods*: Operate on individual objects and use `self`.
+- *Class Methods*: Operate on the class itself and use `cls`.
+- *Static Methods*: Do not operate on instances or the class; they're independent but grouped within the class.
+- *Special Methods*: Have specific purposes within Python's syntax (e.g., `__init__` for initialization, `__str__` for string representation).
+
+Methods make object-oriented programming in Python powerful, allowing objects to encapsulate both data and functionality.
+
+
+
 ### Procedure
 - **Definition**: A procedure is a block of code that performs a task but does not necessarily return a value. Procedures are often used for executing a sequence of statements and might be called for their side effects rather than for a result.
 - **Example**: In Pascal, a procedure might look like this:
@@ -1433,6 +1536,21 @@ Another example and explanation of a program that demonstrates the use of classe
 ***A Simple Bank Account System**
 
 ```python
+# Main program
+if __name__ == "__main__":
+    # Create an instance of BankAccount
+    account1 = BankAccount("Alice Smith", 1000)
+
+    # Display account information
+    account1.display_account_info()
+
+    # Perform some transactions
+    account1.deposit(500)
+    account1.withdraw(200)
+    account1.withdraw(1500)  # This should fail
+    account1.display_account_info()
+
+""" -------------------------** Module ** ------------------------- """
 class BankAccount:
     """A class representing a bank account."""
     
@@ -1482,48 +1600,35 @@ class BankAccount:
         print(f"Account Holder: {self.account_holder}")
         print(f"Current Balance: ${self.balance:.2f}")
 
-# Main program
-if __name__ == "__main__":
-    # Create an instance of BankAccount
-    account1 = BankAccount("Alice Smith", 1000)
-
-    # Display account information
-    account1.display_account_info()
-
-    # Perform some transactions
-    account1.deposit(500)
-    account1.withdraw(200)
-    account1.withdraw(1500)  # This should fail
-    account1.display_account_info()
 ```
 
 **Explanation**
 
-1. **Class**:
+1. **Main Program**:
+   - The main program creates an account, displays account information, performs deposits and withdrawals, and handles invalid transactions gracefully.
+
+2. **Class**:
    - `class BankAccount:` defines a class named `BankAccount`. A class is a blueprint for creating objects, encapsulating data and methods that operate on that data.
 
-2. **Constructor**:
+3. **Constructor**:
    - The `__init__` method is a special method called the constructor. It is invoked when an object of the class is created. In this example, it initializes the account holder's name and balance:
      - `account_holder`: A string representing the name of the account holder.
      - `balance`: A float representing the initial balance of the account (default is 0).
 
-3. **Instance Variables**:
+4. **Instance Variables**:
    - `self.account_holder` and `self.balance` are instance variables that store the account holder's name and balance for each instance of the `BankAccount` class.
 
-4. **Methods**:
+5. **Methods**:
    - `deposit(amount)`: This method adds a specified amount to the account balance, ensuring the amount is positive.
    - `withdraw(amount)`: This method subtracts a specified amount from the balance, ensuring the withdrawal does not exceed the current balance.
    - `get_balance()`: Returns the current balance of the account.
    - `display_account_info()`: Displays the account holder's information and current balance.
 
-5. **Objects**:
+6. **Objects**:
    - `account1 = BankAccount("Alice Smith", 1000)`: This line creates an instance (object) of the `BankAccount` class with "Alice Smith" as the account holder and an initial balance of $1000.
 
-6. **Main Program**:
-   - The main program creates an account, displays account information, performs deposits and withdrawals, and handles invalid transactions gracefully.
 
-**Running the Program**
-You can copy and paste this code into a Python environment. It will create a bank account for "Alice Smith," allowing you to see how deposits and withdrawals affect the balance.
+Copy and paste this code into a Python environment. It will create a bank account for "Alice Smith," allowing you to see how deposits and withdrawals affect the balance.
 
 
 Below is a program that demonstrates the use of objects and classes to represent dogs. It includes constructors with no arguments, one argument, and two arguments.
@@ -1571,108 +1676,6 @@ Explanation:
 - The `display_info` method displays information about the dog based on its attributes.
 - We create instances of the `Dog` class with different combinations of arguments to demonstrate the constructors with no arguments, one argument, and two arguments.
 - Finally, we access methods of the `Dog` class using the created instances.
-
-
-
-## Methods
-
-As was stated before, **methods** are functions that belong to `objects` and are used to operate on those objects. They are similar to functions but have a special relationship with the object they belong to, known as the **instance**.
-
-Let's break down the key concepts:
-
-1. **Instance Methods**
-   - Most methods are called **instance methods** because they operate on an instance of a class (an object created from a class).
-   - When an instance method is defined, the first parameter is usually `self`, which represents the instance of the class on which the method is called. This `self` parameter allows the method to access other attributes and methods of the same object.
-   
-   ```python
-   class Dog:
-       def __init__(self, name):
-           self.name = name
-       
-       def bark(self):   # Instance method
-           print(f"{self.name} says Woof!")
-   
-   my_dog = Dog("Buddy")
-   my_dog.bark()  # Output: "Buddy says Woof!"
-   ```
-   In this example, `bark()` is an instance method that uses `self` to access the `name` attribute of the `my_dog` instance.
-
-2. **Class Methods**
-   - **Class methods** are methods that operate on the class itself rather than on individual instances. They are marked with the `@classmethod` decorator.
-   - Instead of `self`, they take `cls` as their first parameter, which refers to the class itself, not an instance.
-   
-   ```python
-   class Dog:
-       species = "Canis familiaris"
-       
-       @classmethod
-       def get_species(cls):
-           return cls.species
-   
-   print(Dog.get_species())  # Output: "Canis familiaris"
-   ```
-   Here, `get_species()` is a class method that accesses the `species` attribute defined on the class itself.
-
-3. **Static Methods**
-   - **Static methods** are methods that don’t operate on an instance or class. They behave like normal functions but reside within a class for organizational purposes.
-   - Static methods are marked with the `@staticmethod` decorator and don’t require `self` or `cls` parameters.
-   
-   ```python
-   class MathHelper:
-       @staticmethod
-       def add(a, b):
-           return a + b
-   
-   print(MathHelper.add(5, 7))  # Output: 12
-   ```
-   `add()` is a static method and does not rely on any data from an instance or the class. It simply performs a task.
-
-4. **Special Methods (Magic Methods)**
-   - Special methods, also known as **magic methods** or **dunder methods** (short for "double underscore"), allow instances of classes to interact with built-in Python operations in unique ways.
-   - These methods have names starting and ending with double underscores (e.g., `__init__`, `__str__`, `__len__`).
-   
-   ```python
-   class Book:
-       def __init__(self, title, author):
-           self.title = title
-           self.author = author
-       
-       def __str__(self):
-           return f"{self.title} by {self.author}"
-   
-   my_book = Book("1984", "George Orwell")
-   print(my_book)  # Output: "1984 by George Orwell"
-   ```
-   The `__str__()` method is a magic method that defines how an object should be represented as a string.
-
-5. **Method Chaining**
-   - **Method chaining** allows you to call multiple methods on the same object in a single statement. To enable this, each method must return the object itself.
-   
-   ```python
-   class TextEditor:
-       def __init__(self, text=""):
-           self.text = text
-       
-       def add_text(self, text):
-           self.text += text
-           return self
-       
-       def make_uppercase(self):
-           self.text = self.text.upper()
-           return self
-   
-   editor = TextEditor().add_text("Hello ").add_text("World!").make_uppercase()
-   print(editor.text)  # Output: "HELLO WORLD!"
-   ```
-   Here, `add_text` and `make_uppercase` return `self`, so you can chain the methods together.
-
-**Key Points to Remember**
-- *Instance Methods*: Operate on individual objects and use `self`.
-- *Class Methods*: Operate on the class itself and use `cls`.
-- *Static Methods*: Do not operate on instances or the class; they're independent but grouped within the class.
-- *Special Methods*: Have specific purposes within Python's syntax (e.g., `__init__` for initialization, `__str__` for string representation).
-
-Methods make object-oriented programming in Python powerful, allowing objects to encapsulate both data and functionality.
 
 
 ## Exception Handling
