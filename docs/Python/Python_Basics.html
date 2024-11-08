@@ -962,6 +962,211 @@ Here are the basic data types in Python, along with examples for each.</p>
 <hr class="docutils" />
 <section id="modules-and-packages">
 <h2>Modules and Packages<a class="headerlink" href="#modules-and-packages" title="Link to this heading">¶</a></h2>
+<p>In Python, <strong>modules</strong> and <strong>packages</strong> are essential organizational tools that help in managing, organizing, and reusing code. They make code more modular and allow developers to structure their projects efficiently.</p>
+<section id="modules-in-python">
+<h3>Modules in Python<a class="headerlink" href="#modules-in-python" title="Link to this heading">¶</a></h3>
+<p>A <strong>module</strong> in Python is simply a file with a <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension that contains Python code—variables, functions, classes, or runnable code. Each module serves as a standalone file that you can import and use in other Python programs. Modules allow for logical organization, reduce redundancy, and make code easier to maintain and debug.</p>
+<p><strong>Why Modules are Used</strong>:</p>
+<ul class="simple">
+<li><p><strong>Code Reusability</strong>: Once written, a module can be reused in different programs.</p></li>
+<li><p><strong>Organization</strong>: Modules keep related code together, making it more manageable and readable.</p></li>
+<li><p><strong>Namespace Management</strong>: Using modules prevents naming conflicts, as each module has its own namespace.</p></li>
+</ul>
+<p><strong>Creating and Using a Module</strong></p>
+<p>Let’s create a module named <code class="docutils literal notranslate"><span class="pre">math_utils.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># math_utils.py</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>To use this module, save it in your project directory and import it into your main script:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># main.py</span>
+<span class="kn">import</span> <span class="nn">math_utils</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">math_utils</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># Output: 8</span>
+</pre></div>
+</div>
+<p>Or, you could import only specific functions from the module:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math_utils</span> <span class="kn">import</span> <span class="n">add</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># Output: 8</span>
+</pre></div>
+</div>
+</section>
+<section id="packages-in-python">
+<h3>Packages in Python<a class="headerlink" href="#packages-in-python" title="Link to this heading">¶</a></h3>
+<p>A <strong>package</strong> is a collection of related modules organized in a directory hierarchy. Packages allow for structuring your project logically, especially as it grows larger with multiple modules. A package is essentially a directory that contains multiple modules and an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file, which signifies to Python that the directory should be treated as a package.</p>
+<p><strong>Why Packages are Used</strong>:</p>
+<ul class="simple">
+<li><p><strong>Organization of Large Codebases</strong>: Packages help in grouping related modules, which makes larger projects more manageable.</p></li>
+<li><p><strong>Namespace Management</strong>: Packages can have sub-packages, which help in avoiding naming conflicts and managing large amounts of code.</p></li>
+<li><p><strong>Ease of Distribution</strong>: Packages can be distributed and installed using package managers like <code class="docutils literal notranslate"><span class="pre">pip</span></code>, making it easier to share and use code libraries.</p></li>
+</ul>
+<p><strong>Creating and Using a Package</strong></p>
+<p>Suppose we have a package directory structure as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_package</span><span class="o">/</span>
+    <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+    <span class="n">arithmetic</span><span class="o">.</span><span class="n">py</span>
+    <span class="n">geometry</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>: This can be an empty file or contain initialization code for the package.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arithmetic.py</span></code> and <code class="docutils literal notranslate"><span class="pre">geometry.py</span></code>: These are modules inside the <code class="docutils literal notranslate"><span class="pre">my_package</span></code> package.</p></li>
+</ul>
+<p>Let’s define functions in <code class="docutils literal notranslate"><span class="pre">arithmetic.py</span></code> and <code class="docutils literal notranslate"><span class="pre">geometry.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># arithmetic.py</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># geometry.py</span>
+<span class="k">def</span> <span class="nf">area_circle</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">area_square</span><span class="p">(</span><span class="n">side</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">side</span> <span class="o">*</span> <span class="n">side</span>
+</pre></div>
+</div>
+<p>To use this package in your script, you can import it like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># main.py</span>
+<span class="kn">from</span> <span class="nn">my_package</span> <span class="kn">import</span> <span class="n">arithmetic</span><span class="p">,</span> <span class="n">geometry</span>
+
+<span class="c1"># Using functions from the package</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arithmetic</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># Output: 15</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">geometry</span><span class="o">.</span><span class="n">area_circle</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>  <span class="c1"># Output: 28.27 (approx)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Common Python Modules and Packages</strong></p>
+<p>Python has a rich standard library with many commonly used modules and packages that are built into Python. Some of these are:</p>
+<ol class="arabic">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">math</span></code> Module</strong>: Provides mathematical functions.</p>
+<ul>
+<li><p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>  <span class="c1"># Output: 4.0</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">datetime</span></code> Module</strong>: Handles date and time manipulations.</p>
+<ul>
+<li><p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>  <span class="c1"># Output: Current date and time</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">random</span></code> Module</strong>: Used for generating random numbers.</p>
+<ul>
+<li><p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>  <span class="c1"># Output: Random integer between 1 and 10</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">os</span></code> Module</strong>: Provides functions to interact with the operating system.</p>
+<ul>
+<li><p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>  <span class="c1"># Output: Current working directory</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">sys</span></code> Module</strong>: Provides access to system-specific parameters and functions.</p>
+<ul>
+<li><p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>  <span class="c1"># Output: Python version</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">re</span></code> Module</strong>: Used for working with regular expressions.</p>
+<ul>
+<li><p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;\bword\b&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Find the word in this sentence.&quot;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>  <span class="c1"># Output: &#39;word&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">json</span></code> Module</strong>: Used for parsing JSON data.</p>
+<ul>
+<li><p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;{&quot;name&quot;: &quot;John&quot;, &quot;age&quot;: 30}&#39;</span>
+<span class="n">parsed_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">parsed_data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>  <span class="c1"># Output: John</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">collections</span></code> Module</strong>: Provides specialized container data types, like <code class="docutils literal notranslate"><span class="pre">Counter</span></code>, <code class="docutils literal notranslate"><span class="pre">defaultdict</span></code>, and <code class="docutils literal notranslate"><span class="pre">namedtuple</span></code>.</p>
+<ul>
+<li><p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>  <span class="c1"># Output: Counter({&#39;apple&#39;: 3, &#39;banana&#39;: 2, &#39;orange&#39;: 1})</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">numpy</span></code> Package</strong> (external): Used for numerical computations, especially for array operations.</p>
+<ul>
+<li><p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">array</span><span class="p">))</span>  <span class="c1"># Output: 2.0</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">pandas</span></code> Package</strong> (external): Used for data analysis and manipulation.</p>
+<ul>
+<li><p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">28</span><span class="p">,</span> <span class="mi">24</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>Summary</strong></p>
+<ul class="simple">
+<li><p><strong>Modules</strong> are single files with Python code, useful for organizing and reusing functions, classes, or variables.</p></li>
+<li><p><strong>Packages</strong> are directories containing multiple related modules and an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file, which make large projects more manageable and prevent naming conflicts.</p></li>
+</ul>
+<p>Using modules and packages keeps Python code modular, readable, and reusable, making it easier to structure and manage projects.</p>
+</section>
 </section>
 <section id="control-flow-and-conditional-statements">
 <h2>Control Flow and Conditional Statements<a class="headerlink" href="#control-flow-and-conditional-statements" title="Link to this heading">¶</a></h2>
@@ -1298,7 +1503,11 @@ Here are the basic data types in Python, along with examples for each.</p>
 <li><a class="reference internal" href="#print-statements">Print Statements</a></li>
 <li><a class="reference internal" href="#variables-and-data-types">Variables and Data Types</a></li>
 <li><a class="reference internal" href="#order-of-operation">Order of Operation</a></li>
-<li><a class="reference internal" href="#modules-and-packages">Modules and Packages</a></li>
+<li><a class="reference internal" href="#modules-and-packages">Modules and Packages</a><ul>
+<li><a class="reference internal" href="#modules-in-python">Modules in Python</a></li>
+<li><a class="reference internal" href="#packages-in-python">Packages in Python</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#control-flow-and-conditional-statements">Control Flow and Conditional Statements</a></li>
 <li><a class="reference internal" href="#loops">Loops</a></li>
 <li><a class="reference internal" href="#functions-methods-parameters">Functions/ Methods/ Parameters</a><ul>
