@@ -1526,6 +1526,59 @@ Here are the basic data types in Python, along with examples for each.</p>
 <span class="n">_______________________________________________</span>
 </pre></div>
 </div>
+<p>Take a look at the program snippets below:</p>
+<p><strong>1. Program to Print the Index of the First Occurrence of the Letter ‘T’ in “POTATO”</strong></p>
+<p>This program finds the index of the first occurrence of ‘T’ in the word “POTATO.”</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;POTATO&quot;</span>
+<span class="n">index_of_T</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">)</span>  <span class="c1"># Finds the first occurrence of &#39;T&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Index of first &#39;T&#39; in POTATO:&quot;</span><span class="p">,</span> <span class="n">index_of_T</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Output</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Index</span> <span class="n">of</span> <span class="n">first</span> <span class="s1">&#39;T&#39;</span> <span class="ow">in</span> <span class="n">POTATO</span><span class="p">:</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p><strong>2. Program to Print All Instances (Indices) of ‘T’ in “POTATO”</strong></p>
+<p>This program will find and print the index of each occurrence of ‘T’ in the word “POTATO.”</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;POTATO&quot;</span>
+<span class="n">indices_of_T</span> <span class="o">=</span> <span class="p">[</span><span class="n">index</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">if</span> <span class="n">letter</span> <span class="o">==</span> <span class="s2">&quot;T&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All indices of &#39;T&#39; in POTATO:&quot;</span><span class="p">,</span> <span class="n">indices_of_T</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Output</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">All</span> <span class="n">indices</span> <span class="n">of</span> <span class="s1">&#39;T&#39;</span> <span class="ow">in</span> <span class="n">POTATO</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>3. Program to Print the First 3 Letters of the Word “POTATO”</strong></p>
+<p>This program extracts and prints the first 3 letters of the word “POTATO” using slicing.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;POTATO&quot;</span>
+<span class="n">first_three_letters</span> <span class="o">=</span> <span class="n">word</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># Slicing to get the first three letters</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First 3 letters of POTATO:&quot;</span><span class="p">,</span> <span class="n">first_three_letters</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Output</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">First</span> <span class="mi">3</span> <span class="n">letters</span> <span class="n">of</span> <span class="n">POTATO</span><span class="p">:</span> <span class="n">POT</span>
+</pre></div>
+</div>
+<p><strong>4. Program to Print “TOP” Using Reverse Indexing</strong></p>
+<p>Using reverse indexing, this program prints the letters “T,” “O,” and “P” in reverse order to form “TOP.”</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;POTATO&quot;</span>
+<span class="n">reverse_top</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span>  <span class="c1"># Reverse indexing to get &#39;T&#39;, &#39;O&#39;, &#39;P&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TOP using reverse indexing:&quot;</span><span class="p">,</span> <span class="n">reverse_top</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Output</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TOP</span> <span class="n">using</span> <span class="n">reverse</span> <span class="n">indexing</span><span class="p">:</span> <span class="n">TOP</span>
+</pre></div>
+</div>
+<p>Explanation:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">word[-4]</span></code> accesses the last letter, “T”.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">word[-5]</span></code> accesses the third-to-last letter, “O”.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">word[-6]</span></code> accesses the sixth-to-last letter, “P”.</p></li>
+</ul>
+<p><mark>NEED COMMENT ON PROGRAM INDEXs ABOVE</mark></p>
 <p><strong>Accessing List Elements with Indexing</strong></p>
 <p>Given a list:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;elderberry&quot;</span><span class="p">]</span>
