@@ -334,8 +334,183 @@
 </section>
 <section id="variables-and-data-types">
 <h2>Variables and Data Types<a class="headerlink" href="#variables-and-data-types" title="Link to this heading">¶</a></h2>
+<p>In Python, <strong>variables</strong> are used to store data, which can be used and manipulated throughout a program. <strong>Data types</strong> specify the kind of value a variable holds, determining what operations can be performed on it. Python automatically assigns a data type based on the value assigned to a variable.</p>
+<section id="python-variables">
+<h3>Python Variables<a class="headerlink" href="#python-variables" title="Link to this heading">¶</a></h3>
+<p>A <strong>variable</strong> is essentially a name given to a memory location where data is stored. In Python, you don’t need to declare the data type of a variable; you just assign a value to it, and Python infers the type.</p>
+<p><strong>Syntax</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variable_name</span> <span class="o">=</span> <span class="n">value</span>
+</pre></div>
+</div>
+<p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>            <span class="c1"># age is an integer</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>      <span class="c1"># name is a string</span>
+<span class="n">price</span> <span class="o">=</span> <span class="mf">9.99</span>        <span class="c1"># price is a floating-point number</span>
+<span class="n">is_student</span> <span class="o">=</span> <span class="kc">True</span>   <span class="c1"># is_student is a boolean</span>
+</pre></div>
+</div>
+</section>
+<section id="python-data-types">
+<h3>Python Data Types<a class="headerlink" href="#python-data-types" title="Link to this heading">¶</a></h3>
+<p>Here are the basic data types in Python, along with examples for each.</p>
+<ol class="arabic">
+<li><p><strong>Integer (<code class="docutils literal notranslate"><span class="pre">int</span></code>)</strong></p>
+<ul>
+<li><p>Whole numbers, positive or negative, without a decimal point.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">count</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">age</span><span class="p">))</span>  <span class="c1"># Output: &lt;class &#39;int&#39;&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Floating-point number (<code class="docutils literal notranslate"><span class="pre">float</span></code>)</strong></p>
+<ul>
+<li><p>Numbers with a decimal point, used for more precise calculations.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">price</span> <span class="o">=</span> <span class="mf">19.99</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="o">-</span><span class="mf">5.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">price</span><span class="p">))</span>  <span class="c1"># Output: &lt;class &#39;float&#39;&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>String (<code class="docutils literal notranslate"><span class="pre">str</span></code>)</strong></p>
+<ul>
+<li><p>A sequence of characters, enclosed in single or double quotes.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">greeting</span> <span class="o">=</span> <span class="s1">&#39;Hello, World!&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>  <span class="c1"># Output: &lt;class &#39;str&#39;&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Boolean (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)</strong></p>
+<ul>
+<li><p>Represents one of two values: <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_open</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">is_available</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">is_open</span><span class="p">))</span>  <span class="c1"># Output: &lt;class &#39;bool&#39;&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>List (<code class="docutils literal notranslate"><span class="pre">list</span></code>)</strong></p>
+<ul>
+<li><p>An ordered collection of items, which can be of different data types. Lists are mutable, meaning items can be changed.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">]</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">mixed_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">fruits</span><span class="p">))</span>  <span class="c1"># Output: &lt;class &#39;list&#39;&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Tuple (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>)</strong></p>
+<ul>
+<li><p>Similar to a list, but immutable, meaning items cannot be changed once set.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1920</span><span class="p">,</span> <span class="mi">1080</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">coordinates</span><span class="p">))</span>  <span class="c1"># Output: &lt;class &#39;tuple&#39;&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Dictionary (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</strong></p>
+<ul>
+<li><p>A collection of key-value pairs, where each key is unique. Dictionaries are mutable.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">student</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s2">&quot;is_student&quot;</span><span class="p">:</span> <span class="kc">True</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">student</span><span class="p">))</span>  <span class="c1"># Output: &lt;class &#39;dict&#39;&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Set (<code class="docutils literal notranslate"><span class="pre">set</span></code>)</strong></p>
+<ul>
+<li><p>An unordered collection of unique items. Sets are mutable but don’t allow duplicate elements.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">}</span>
+<span class="n">numbers_set</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">colors</span><span class="p">))</span>  <span class="c1"># Output: &lt;class &#39;set&#39;&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>None Type (<code class="docutils literal notranslate"><span class="pre">NoneType</span></code>)</strong></p>
+<ul>
+<li><p>Represents the absence of a value or a null value.</p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>  <span class="c1"># Output: &lt;class &#39;NoneType&#39;&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="example-program-demonstrating-python-data-types">
+<h3>Example Program Demonstrating Python Data Types<a class="headerlink" href="#example-program-demonstrating-python-data-types" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Integer</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Age:&quot;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s2">&quot;| Data type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">age</span><span class="p">))</span>
+
+<span class="c1"># Float</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mf">5.9</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Height:&quot;</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="s2">&quot;| Data type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">height</span><span class="p">))</span>
+
+<span class="c1"># String</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Name:&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;| Data type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+<span class="c1"># Boolean</span>
+<span class="n">is_active</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Is Active:&quot;</span><span class="p">,</span> <span class="n">is_active</span><span class="p">,</span> <span class="s2">&quot;| Data type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">is_active</span><span class="p">))</span>
+
+<span class="c1"># List</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Colors:&quot;</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="s2">&quot;| Data type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">colors</span><span class="p">))</span>
+
+<span class="c1"># Tuple</span>
+<span class="n">dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1920</span><span class="p">,</span> <span class="mi">1080</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dimensions:&quot;</span><span class="p">,</span> <span class="n">dimensions</span><span class="p">,</span> <span class="s2">&quot;| Data type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">dimensions</span><span class="p">))</span>
+
+<span class="c1"># Dictionary</span>
+<span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Person:&quot;</span><span class="p">,</span> <span class="n">person</span><span class="p">,</span> <span class="s2">&quot;| Data type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">person</span><span class="p">))</span>
+
+<span class="c1"># Set</span>
+<span class="n">unique_numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unique Numbers:&quot;</span><span class="p">,</span> <span class="n">unique_numbers</span><span class="p">,</span> <span class="s2">&quot;| Data type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">unique_numbers</span><span class="p">))</span>
+
+<span class="c1"># NoneType</span>
+<span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="s2">&quot;| Data type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Each variable in this example demonstrates a different data type. Using the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function, we can easily check the data type of each variable.</p>
+</section>
+</section>
 <section id="order-of-operation">
-<h3>Order of Operation<a class="headerlink" href="#order-of-operation" title="Link to this heading">¶</a></h3>
+<h2>Order of Operation<a class="headerlink" href="#order-of-operation" title="Link to this heading">¶</a></h2>
 <p>Arithmetic operators take precedence over logical operators. Python will always evaluate the arithmetic operators first (** is highest, then multiplication/division, then addition/subtraction). Next comes the relational operators. Finally, the logical operators are done last. This means that the expression x<em>5 &gt;= 10 and y-6 &lt;= 20 will be evaluated so as to first perform the arithmetic and then check the relationships. The and will be done last. Many programmers might place parentheses around the two relational expressions, (x</em>5 &gt;= 10) and (y-6 &lt;= 20). It is not necessary to do so, but causes no harm and may make it easier for people to read and understand the code.
 The following table summarizes the operator precedence from highest to lowest. A complete table for the entire language can be found in the Python Documentation.  http://docs.python.org/py3k/reference/expressions.html#expression-lists</p>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -378,7 +553,6 @@ The following table summarizes the operator precedence from highest to lowest. A
 </tbody>
 </table>
 </div>
-</section>
 </section>
 <section id="modules-and-packages">
 <h2>Modules and Packages<a class="headerlink" href="#modules-and-packages" title="Link to this heading">¶</a></h2>
@@ -720,9 +894,12 @@ The following table summarizes the operator precedence from highest to lowest. A
 </ul>
 </li>
 <li><a class="reference internal" href="#variables-and-data-types">Variables and Data Types</a><ul>
-<li><a class="reference internal" href="#order-of-operation">Order of Operation</a></li>
+<li><a class="reference internal" href="#python-variables">Python Variables</a></li>
+<li><a class="reference internal" href="#python-data-types">Python Data Types</a></li>
+<li><a class="reference internal" href="#example-program-demonstrating-python-data-types">Example Program Demonstrating Python Data Types</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#order-of-operation">Order of Operation</a></li>
 <li><a class="reference internal" href="#modules-and-packages">Modules and Packages</a></li>
 <li><a class="reference internal" href="#control-flow-and-conditional-statements">Control Flow and Conditional Statements</a></li>
 <li><a class="reference internal" href="#loops">Loops</a></li>
