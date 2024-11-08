@@ -470,9 +470,19 @@ Python’s precedence rules are designed to make expressions behave intuitively.
 5. **Relational Operators**: `<`, `<=`, `>`, `>=`, `==`, `!=`
 6. **Logical Operators**: `not`, `and`, `or`
 
-In general:
-- Operations with higher precedence are evaluated first.
-- Operators with the same precedence level are evaluated **left to right**, except for exponentiation, which is **right to left**.
+Understanding this precedence order and the **left-to-right** evaluation rule allows for correctly interpreting complex expressions in Python. Following these rules helps ensure that Python evaluates each part of an expression as intended, providing accurate and predictable results.
+
+The following table summarizes the **operator precedence** from *highest to lowest*. A complete table for the entire language can be found in the Python Documentation.  http://docs.python.org/py3k/reference/expressions.html#expression-lists
+
+| Level	| Category	| Operators |
+| :--: | :--: | :--: |
+| 7 *(high)*	| exponent	| ** |
+| 6	| multiplication |	*,/,//,% |
+| 5	| addition	| +,- |
+| 4	| relational	| ==,!=,<=,>=,>,< |
+| 3	| logical	| not |
+| 2	| logical	| and |
+| 1 *(low)*	|logical |	or |
 
 ------------------------------------------------------------
 
@@ -625,20 +635,6 @@ Here’s a quick summary of operator precedence from highest to lowest:
 
 ------------------------------------------------------------
 
-Understanding this precedence order and the left-to-right evaluation rule allows for correctly interpreting complex expressions in Python. Following these rules helps ensure that Python evaluates each part of an expression as intended, providing accurate and predictable results.
-
-
-The following table summarizes the operator precedence from highest to lowest. A complete table for the entire language can be found in the Python Documentation.  http://docs.python.org/py3k/reference/expressions.html#expression-lists
-
-| Level	| Category	| Operators |
-| :--: | :--: | :--: |
-| 7 *(high)*	| exponent	| ** |
-| 6	| multiplication |	*,/,//,% |
-| 5	| addition	| +,- |
-| 4	| relational	| ==,!=,<=,>=,>,< |
-| 3	| logical	| not |
-| 2	| logical	| and |
-| 1 *(low)*	|logical |	or |
 
 
 ## Modules and Packages

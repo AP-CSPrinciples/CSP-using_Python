@@ -759,11 +759,48 @@ Here are the basic data types in Python, along with examples for each.</p>
 <li><p><strong>Relational Operators</strong>: <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code></p></li>
 <li><p><strong>Logical Operators</strong>: <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code></p></li>
 </ol>
-<p>In general:</p>
-<ul class="simple">
-<li><p>Operations with higher precedence are evaluated first.</p></li>
-<li><p>Operators with the same precedence level are evaluated <strong>left to right</strong>, except for exponentiation, which is <strong>right to left</strong>.</p></li>
-</ul>
+<p>Understanding this precedence order and the <strong>left-to-right</strong> evaluation rule allows for correctly interpreting complex expressions in Python. Following these rules helps ensure that Python evaluates each part of an expression as intended, providing accurate and predictable results.</p>
+<p>The following table summarizes the <strong>operator precedence</strong> from <em>highest to lowest</em>. A complete table for the entire language can be found in the Python Documentation.  http://docs.python.org/py3k/reference/expressions.html#expression-lists</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Level</p></th>
+<th class="head text-center"><p>Category</p></th>
+<th class="head text-center"><p>Operators</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>7 <em>(high)</em></p></td>
+<td class="text-center"><p>exponent</p></td>
+<td class="text-center"><p>**</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>6</p></td>
+<td class="text-center"><p>multiplication</p></td>
+<td class="text-center"><p>*,/,//,%</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>5</p></td>
+<td class="text-center"><p>addition</p></td>
+<td class="text-center"><p>+,-</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p>relational</p></td>
+<td class="text-center"><p>==,!=,&lt;=,&gt;=,&gt;,&lt;</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>logical</p></td>
+<td class="text-center"><p>not</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p>logical</p></td>
+<td class="text-center"><p>and</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>1 <em>(low)</em></p></td>
+<td class="text-center"><p>logical</p></td>
+<td class="text-center"><p>or</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr class="docutils" />
 <p><strong>1. Arithmetic Operators and PEMDAS</strong></p>
 <p>The arithmetic operators follow <strong>PEMDAS</strong>:</p>
@@ -920,51 +957,9 @@ Here are the basic data types in Python, along with examples for each.</p>
 <li><p><strong>Logical <code class="docutils literal notranslate"><span class="pre">and</span></code></strong></p></li>
 <li><p><strong>Logical <code class="docutils literal notranslate"><span class="pre">or</span></code></strong></p></li>
 </ol>
+</section>
+</section>
 <hr class="docutils" />
-<p>Understanding this precedence order and the left-to-right evaluation rule allows for correctly interpreting complex expressions in Python. Following these rules helps ensure that Python evaluates each part of an expression as intended, providing accurate and predictable results.</p>
-<p>The following table summarizes the operator precedence from highest to lowest. A complete table for the entire language can be found in the Python Documentation.  http://docs.python.org/py3k/reference/expressions.html#expression-lists</p>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head text-center"><p>Level</p></th>
-<th class="head text-center"><p>Category</p></th>
-<th class="head text-center"><p>Operators</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p>7 <em>(high)</em></p></td>
-<td class="text-center"><p>exponent</p></td>
-<td class="text-center"><p>**</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>6</p></td>
-<td class="text-center"><p>multiplication</p></td>
-<td class="text-center"><p>*,/,//,%</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>5</p></td>
-<td class="text-center"><p>addition</p></td>
-<td class="text-center"><p>+,-</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>4</p></td>
-<td class="text-center"><p>relational</p></td>
-<td class="text-center"><p>==,!=,&lt;=,&gt;=,&gt;,&lt;</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>3</p></td>
-<td class="text-center"><p>logical</p></td>
-<td class="text-center"><p>not</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>2</p></td>
-<td class="text-center"><p>logical</p></td>
-<td class="text-center"><p>and</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>1 <em>(low)</em></p></td>
-<td class="text-center"><p>logical</p></td>
-<td class="text-center"><p>or</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-</section>
 <section id="modules-and-packages">
 <h2>Modules and Packages<a class="headerlink" href="#modules-and-packages" title="Link to this heading">¶</a></h2>
 </section>
