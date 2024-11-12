@@ -580,7 +580,7 @@ print(result)  # Output: True
 
 Compound Boolean expressions are used when you need to make a decision that depends on multiple conditions being true or false. They’re particularly useful in programming and data queries to add complex logic to condition-checking statements. 
 
-1. Using **AND** (`&&` or `and` in Python)
+1. Using **AND**
    ```python
    age = 25
    has_license = True
@@ -588,7 +588,7 @@ Compound Boolean expressions are used when you need to make a decision that depe
    ```
    **Explanation**: Here, `is_eligible` will be `True` only if both conditions are `True`. In this case, `age >= 18` and `has_license` both need to be `True` for `is_eligible` to be `True`. If `age` is less than 18 or `has_license` is `False`, `is_eligible` will be `False`.
 
-2. Using **OR** (`||` or `or` in Python)
+2. Using **OR**
    ```python
    temperature = 35
    raining = False
@@ -605,7 +605,7 @@ Compound Boolean expressions are used when you need to make a decision that depe
    ```
    **Explanation**: In this case, `can_go_hiking` is `True` if it is the weekend (`is_weekend` is `True`) **and** either there is free time (`has_free_time`) **or** the person is not tired (`not is_tired`). This example shows how parentheses can group parts of a compound Boolean expression to control evaluation order.
 
-4. Using **NOT** (`!` or `not` in Python)
+4. Using **NOT**
    ```python
    is_student = False
    has_discount = not is_student

@@ -889,7 +889,7 @@ Here are the basic data types in Python, along with examples for each.</p>
 <p><strong>Compound Boolean Expressions</strong></p>
 <p>Compound Boolean expressions are used when you need to make a decision that depends on multiple conditions being true or false. They’re particularly useful in programming and data queries to add complex logic to condition-checking statements.</p>
 <ol class="arabic">
-<li><p>Using <strong>AND</strong> (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">and</span></code> in Python)</p>
+<li><p>Using <strong>AND</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">has_license</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">is_eligible</span> <span class="o">=</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="ow">and</span> <span class="n">has_license</span>
@@ -897,7 +897,7 @@ Here are the basic data types in Python, along with examples for each.</p>
 </div>
 <p><strong>Explanation</strong>: Here, <code class="docutils literal notranslate"><span class="pre">is_eligible</span></code> will be <code class="docutils literal notranslate"><span class="pre">True</span></code> only if both conditions are <code class="docutils literal notranslate"><span class="pre">True</span></code>. In this case, <code class="docutils literal notranslate"><span class="pre">age</span> <span class="pre">&gt;=</span> <span class="pre">18</span></code> and <code class="docutils literal notranslate"><span class="pre">has_license</span></code> both need to be <code class="docutils literal notranslate"><span class="pre">True</span></code> for <code class="docutils literal notranslate"><span class="pre">is_eligible</span></code> to be <code class="docutils literal notranslate"><span class="pre">True</span></code>. If <code class="docutils literal notranslate"><span class="pre">age</span></code> is less than 18 or <code class="docutils literal notranslate"><span class="pre">has_license</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">is_eligible</span></code> will be <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </li>
-<li><p>Using <strong>OR</strong> (<code class="docutils literal notranslate"><span class="pre">||</span></code> or <code class="docutils literal notranslate"><span class="pre">or</span></code> in Python)</p>
+<li><p>Using <strong>OR</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="mi">35</span>
 <span class="n">raining</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">go_for_walk</span> <span class="o">=</span> <span class="n">temperature</span> <span class="o">&gt;=</span> <span class="mi">20</span> <span class="ow">or</span> <span class="n">raining</span>
@@ -914,7 +914,7 @@ Here are the basic data types in Python, along with examples for each.</p>
 </div>
 <p><strong>Explanation</strong>: In this case, <code class="docutils literal notranslate"><span class="pre">can_go_hiking</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if it is the weekend (<code class="docutils literal notranslate"><span class="pre">is_weekend</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>) <strong>and</strong> either there is free time (<code class="docutils literal notranslate"><span class="pre">has_free_time</span></code>) <strong>or</strong> the person is not tired (<code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">is_tired</span></code>). This example shows how parentheses can group parts of a compound Boolean expression to control evaluation order.</p>
 </li>
-<li><p>Using <strong>NOT</strong> (<code class="docutils literal notranslate"><span class="pre">!</span></code> or <code class="docutils literal notranslate"><span class="pre">not</span></code> in Python)</p>
+<li><p>Using <strong>NOT</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_student</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">has_discount</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">is_student</span>
 </pre></div>
