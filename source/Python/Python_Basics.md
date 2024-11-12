@@ -520,10 +520,10 @@ print(result)  # Output: 10.0
 **Final result**: `10.0`.
 
 
-> [!NOTE]
-> *Why Division Returns a Float*: In Python 3, the `/` operator always returns a float, even if both operands are integers. This is to provide accurate results without unexpected truncation. For integer-only results, Python offers the `//` operator (floor division).
 
 > [!NOTE]
+> **Why Division Returns a Float**: In Python 3, the `/` operator always returns a float, even if both operands are integers. This is to provide accurate results without unexpected truncation. For integer-only results, Python offers the `//` operator (floor division).
+> 
 > The `/` operator preserves fractional results, which is especially helpful in complex calculations, while `//` discards the decimal part.
 
 **Example**:
