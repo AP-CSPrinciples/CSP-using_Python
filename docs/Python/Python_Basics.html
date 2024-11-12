@@ -836,10 +836,12 @@ Here are the basic data types in Python, along with examples for each.</p>
 </li>
 </ol>
 <p><strong>Final result</strong>: <code class="docutils literal notranslate"><span class="pre">10.0</span></code>.</p>
-<p>[!NOTE]
-Why Division Returns a Float:** In Python 3, the <code class="docutils literal notranslate"><span class="pre">/</span></code> operator always returns a float, even if both operands are integers. This is to provide accurate results without unexpected truncation. For integer-only results, Python offers the <code class="docutils literal notranslate"><span class="pre">//</span></code> operator (floor division).</p>
-<p>[!NOTE]
-The <code class="docutils literal notranslate"><span class="pre">/</span></code> operator preserves fractional results, which is especially helpful in complex calculations, while <code class="docutils literal notranslate"><span class="pre">//</span></code> discards the decimal part.</p>
+<blockquote>
+<div><p>[!NOTE] Why Division Returns a Float:** In Python 3, the <code class="docutils literal notranslate"><span class="pre">/</span></code> operator always returns a float, even if both operands are integers. This is to provide accurate results without unexpected truncation. For integer-only results, Python offers the <code class="docutils literal notranslate"><span class="pre">//</span></code> operator (floor division).</p>
+</div></blockquote>
+<blockquote>
+<div><p>[!NOTE] The <code class="docutils literal notranslate"><span class="pre">/</span></code> operator preserves fractional results, which is especially helpful in complex calculations, while <code class="docutils literal notranslate"><span class="pre">//</span></code> discards the decimal part.</p>
+</div></blockquote>
 <p><strong>Example</strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># Output: 3.5 (float)</span>
 <span class="n">result</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># Output: 3 (integer)</span>
