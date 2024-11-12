@@ -574,6 +574,8 @@ print(result)  # Output: True
 
 
 <details><summary>Compound Boolean Expressions</summary> 
+
+
 **Compound Boolean Expressions**
 
 Compound Boolean expressions are used when you need to make a decision that depends on multiple conditions being true or false. They’re particularly useful in programming and data queries to add complex logic to condition-checking statements. 
@@ -632,6 +634,8 @@ Compound Boolean expressions are used when you need to make a decision that depe
    This kind of expression is useful when there are multiple pathways to meet a requirement.
 
 </details>
+
+----------------------------------------------------------------------
 
 
 
