@@ -885,6 +885,66 @@ Here are the basic data types in Python, along with examples for each.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># Output: True</span>
 </pre></div>
 </div>
+<details><summary>Compound Boolean Expressions</summary> 
+**Compound Boolean Expressions**
+<p>Compound Boolean expressions are used when you need to make a decision that depends on multiple conditions being true or false. They’re particularly useful in programming and data queries to add complex logic to condition-checking statements.</p>
+<ol class="arabic">
+<li><p>Using <strong>AND</strong> (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">and</span></code> in Python)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">has_license</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">is_eligible</span> <span class="o">=</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="ow">and</span> <span class="n">has_license</span>
+</pre></div>
+</div>
+<p><strong>Explanation</strong>: Here, <code class="docutils literal notranslate"><span class="pre">is_eligible</span></code> will be <code class="docutils literal notranslate"><span class="pre">True</span></code> only if both conditions are <code class="docutils literal notranslate"><span class="pre">True</span></code>. In this case, <code class="docutils literal notranslate"><span class="pre">age</span> <span class="pre">&gt;=</span> <span class="pre">18</span></code> and <code class="docutils literal notranslate"><span class="pre">has_license</span></code> both need to be <code class="docutils literal notranslate"><span class="pre">True</span></code> for <code class="docutils literal notranslate"><span class="pre">is_eligible</span></code> to be <code class="docutils literal notranslate"><span class="pre">True</span></code>. If <code class="docutils literal notranslate"><span class="pre">age</span></code> is less than 18 or <code class="docutils literal notranslate"><span class="pre">has_license</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">is_eligible</span></code> will be <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</li>
+<li><p>Using <strong>OR</strong> (<code class="docutils literal notranslate"><span class="pre">||</span></code> or <code class="docutils literal notranslate"><span class="pre">or</span></code> in Python)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="n">raining</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">go_for_walk</span> <span class="o">=</span> <span class="n">temperature</span> <span class="o">&gt;=</span> <span class="mi">20</span> <span class="ow">or</span> <span class="n">raining</span>
+</pre></div>
+</div>
+<p><strong>Explanation</strong>: The variable <code class="docutils literal notranslate"><span class="pre">go_for_walk</span></code> will be <code class="docutils literal notranslate"><span class="pre">True</span></code> if either <code class="docutils literal notranslate"><span class="pre">temperature</span> <span class="pre">&gt;=</span> <span class="pre">20</span></code> or <code class="docutils literal notranslate"><span class="pre">raining</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>. With <code class="docutils literal notranslate"><span class="pre">OR</span></code>, only one of the conditions needs to be <code class="docutils literal notranslate"><span class="pre">True</span></code> for the overall expression to evaluate as <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</li>
+<li><p>Combining <strong>AND</strong> and <strong>OR</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_weekend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">has_free_time</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">is_tired</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">can_go_hiking</span> <span class="o">=</span> <span class="n">is_weekend</span> <span class="ow">and</span> <span class="p">(</span><span class="n">has_free_time</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">is_tired</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Explanation</strong>: In this case, <code class="docutils literal notranslate"><span class="pre">can_go_hiking</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if it is the weekend (<code class="docutils literal notranslate"><span class="pre">is_weekend</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>) <strong>and</strong> either there is free time (<code class="docutils literal notranslate"><span class="pre">has_free_time</span></code>) <strong>or</strong> the person is not tired (<code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">is_tired</span></code>). This example shows how parentheses can group parts of a compound Boolean expression to control evaluation order.</p>
+</li>
+<li><p>Using <strong>NOT</strong> (<code class="docutils literal notranslate"><span class="pre">!</span></code> or <code class="docutils literal notranslate"><span class="pre">not</span></code> in Python)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_student</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">has_discount</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">is_student</span>
+</pre></div>
+</div>
+<p><strong>Explanation</strong>: The expression <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">is_student</span></code> reverses the Boolean value of <code class="docutils literal notranslate"><span class="pre">is_student</span></code>. If <code class="docutils literal notranslate"><span class="pre">is_student</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">has_discount</span></code> will be <code class="docutils literal notranslate"><span class="pre">True</span></code>. The <strong>NOT</strong> operator is useful for negating a condition.</p>
+</li>
+<li><p>Complex Condition with Multiple <strong>AND/OR/NOT</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">is_member</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">has_discount_coupon</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">gets_discount</span> <span class="o">=</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;</span> <span class="mi">25</span> <span class="ow">or</span> <span class="n">is_member</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">has_discount_coupon</span>
+</pre></div>
+</div>
+<p><strong>Explanation</strong>: This expression checks if someone can get a discount. They qualify if they are older than 25 or are a member, but they should not have a discount coupon already. The expression <code class="docutils literal notranslate"><span class="pre">(age</span> <span class="pre">&gt;</span> <span class="pre">25</span> <span class="pre">or</span> <span class="pre">is_member)</span></code> will evaluate first, and then <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">has_discount_coupon</span></code> will apply, which must be <code class="docutils literal notranslate"><span class="pre">True</span></code> for <code class="docutils literal notranslate"><span class="pre">gets_discount</span></code> to be <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</li>
+<li><p>Nested Compound Boolean Expression</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="n">attendance</span> <span class="o">=</span> <span class="mi">90</span>
+<span class="n">has_passed</span> <span class="o">=</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">70</span> <span class="ow">and</span> <span class="n">attendance</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span> <span class="ow">and</span> <span class="n">attendance</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Explanation</strong>: Here, <code class="docutils literal notranslate"><span class="pre">has_passed</span></code> will be <code class="docutils literal notranslate"><span class="pre">True</span></code> if either of these conditions is met:</p>
+<ul class="simple">
+<li><p>The score is at least 70 and attendance is at least 80.</p></li>
+<li><p>The score is at least 60 and attendance is at least 90.</p></li>
+</ul>
+<p>This kind of expression is useful when there are multiple pathways to meet a requirement.</p>
+</li>
+</ol>
+</details>
 <p><strong>Step-by-Step Evaluation</strong></p>
 <ol class="arabic simple">
 <li><p><strong>Parentheses</strong> (<code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">&lt;</span> <span class="pre">6</span></code>):</p>

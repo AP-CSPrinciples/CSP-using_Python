@@ -571,6 +571,70 @@ result = 3 > 2 and 5 == 5 or not (4 + 1 < 6)
 print(result)  # Output: True
 ```
 
+
+
+<details><summary>Compound Boolean Expressions</summary> 
+**Compound Boolean Expressions**
+
+Compound Boolean expressions are used when you need to make a decision that depends on multiple conditions being true or false. They’re particularly useful in programming and data queries to add complex logic to condition-checking statements. 
+
+1. Using **AND** (`&&` or `and` in Python)
+   ```python
+   age = 25
+   has_license = True
+   is_eligible = age >= 18 and has_license
+   ```
+   **Explanation**: Here, `is_eligible` will be `True` only if both conditions are `True`. In this case, `age >= 18` and `has_license` both need to be `True` for `is_eligible` to be `True`. If `age` is less than 18 or `has_license` is `False`, `is_eligible` will be `False`.
+
+2. Using **OR** (`||` or `or` in Python)
+   ```python
+   temperature = 35
+   raining = False
+   go_for_walk = temperature >= 20 or raining
+   ```
+   **Explanation**: The variable `go_for_walk` will be `True` if either `temperature >= 20` or `raining` is `True`. With `OR`, only one of the conditions needs to be `True` for the overall expression to evaluate as `True`.
+
+3. Combining **AND** and **OR**
+   ```python
+   is_weekend = True
+   has_free_time = False
+   is_tired = False
+   can_go_hiking = is_weekend and (has_free_time or not is_tired)
+   ```
+   **Explanation**: In this case, `can_go_hiking` is `True` if it is the weekend (`is_weekend` is `True`) **and** either there is free time (`has_free_time`) **or** the person is not tired (`not is_tired`). This example shows how parentheses can group parts of a compound Boolean expression to control evaluation order.
+
+4. Using **NOT** (`!` or `not` in Python)
+   ```python
+   is_student = False
+   has_discount = not is_student
+   ```
+   **Explanation**: The expression `not is_student` reverses the Boolean value of `is_student`. If `is_student` is `False`, `has_discount` will be `True`. The **NOT** operator is useful for negating a condition.
+
+5. Complex Condition with Multiple **AND/OR/NOT**
+   ```python
+   age = 30
+   is_member = True
+   has_discount_coupon = False
+   gets_discount = (age > 25 or is_member) and not has_discount_coupon
+   ```
+   **Explanation**: This expression checks if someone can get a discount. They qualify if they are older than 25 or are a member, but they should not have a discount coupon already. The expression `(age > 25 or is_member)` will evaluate first, and then `not has_discount_coupon` will apply, which must be `True` for `gets_discount` to be `True`.
+
+6. Nested Compound Boolean Expression
+   ```python
+   score = 80
+   attendance = 90
+   has_passed = (score >= 70 and attendance >= 80) or (score >= 60 and attendance >= 90)
+   ```
+   **Explanation**: Here, `has_passed` will be `True` if either of these conditions is met:
+   - The score is at least 70 and attendance is at least 80.
+   - The score is at least 60 and attendance is at least 90.
+   
+   This kind of expression is useful when there are multiple pathways to meet a requirement.
+
+</details>
+
+
+
 **Step-by-Step Evaluation**
 1. **Parentheses** (`4 + 1 < 6`):
    - `4 + 1` results in `5`.
