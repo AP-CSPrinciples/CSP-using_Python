@@ -839,12 +839,9 @@ Here are the basic data types in Python, along with examples for each.</p>
 <blockquote>
 <div><p><mark>NOTE:</mark> <strong>Why Division Returns a Float</strong>: In Python 3, the <code class="docutils literal notranslate"><span class="pre">/</span></code> operator always returns a float, even if both operands are integers. This is to provide accurate results without unexpected truncation. For integer-only results, Python offers the <code class="docutils literal notranslate"><span class="pre">//</span></code> operator (floor division).</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">/</span></code> operator preserves fractional results, which is especially helpful in complex calculations, while <code class="docutils literal notranslate"><span class="pre">//</span></code> discards the decimal part.</p>
+<p><strong>Example</strong>:
+<code class="docutils literal notranslate"><span class="pre">python</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">result</span> <span class="pre">=</span> <span class="pre">7</span> <span class="pre">/</span> <span class="pre">2</span>&#160; <span class="pre">#</span> <span class="pre">Output:</span> <span class="pre">3.5</span> <span class="pre">(float)</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">result</span> <span class="pre">=</span> <span class="pre">7</span> <span class="pre">//</span> <span class="pre">2</span>&#160; <span class="pre">#</span> <span class="pre">Output:</span> <span class="pre">3</span> <span class="pre">(integer)</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code></p>
 </div></blockquote>
-<p><strong>Example</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># Output: 3.5 (float)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># Output: 3 (integer)</span>
-</pre></div>
-</div>
 <hr class="docutils" />
 <p><strong>2. Relational (Comparison) Operators</strong></p>
 <p>Relational operators compare values and have <strong>lower precedence</strong> than arithmetic operators but <strong>higher precedence</strong> than logical operators. These include:</p>
