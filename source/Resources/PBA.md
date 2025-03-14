@@ -1,0 +1,10 @@
+### 4-Point Performance-Based Assessment Rubric
+
+| **Criteria**               | **4 - Exemplary**                            | **3 - Proficient**                             | **2 - Basic**                                  | **1 - Needs Improvement**                      |
+|----------------------------|---------------------------------------------|----------------------------------------------|-----------------------------------------------|------------------------------------------------|
+| **Task Completion**         | Completes the task with exceptional skill and attention to detail; exceeds expectations. | Completes the task with few errors; meets expectations. | Completes the task with some errors or omissions; partially meets expectations. | Does not complete the task or completes it with significant errors or omissions. |
+| **Quality of Work**         | Work is of the highest quality, demonstrating mastery and deep understanding. | Work is of good quality, demonstrating solid understanding and competence. | Work is of acceptable quality, demonstrating basic understanding but lacks depth. | Work is of poor quality, demonstrating a lack of understanding or effort. |
+| **Creativity & Innovation** | Demonstrates exceptional creativity and originality in approach or solution. | Demonstrates creativity and originality, though somewhat predictable. | Demonstrates limited creativity or originality; solution is basic or repetitive. | Lacks creativity or originality; approach or solution is overly simplistic. |
+| **Communication & Presentation** | Communicates ideas clearly and effectively with well-organized, professional presentation. | Communicates ideas clearly, with an organized and mostly professional presentation. | Communicates ideas with some clarity, but the presentation may be unorganized or unclear. | Struggles to communicate ideas clearly; presentation is disorganized or hard to follow. |
+
+This rubric focuses on assessing both the process (how the task is done) and the product (the outcome or final work). Feel free to adjust it based on the specific skills or objectives you are evaluating!
