@@ -15,9 +15,9 @@ Contents:
    :maxdepth: 2
    :caption: Resources:
 
-   Resources <./Resources/student_resources.md>
-   Resources <./Resources/PBA.md>
-   Resources <./Resources/Performance_Task.md>
+   Student_Resources <./Resources/student_resources.md>
+   PBA <./Resources/PBA.md>
+   Performance_Task <./Resources/Performance_Task.md>
 
 
 .. toctree:: 
