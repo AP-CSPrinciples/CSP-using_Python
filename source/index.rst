@@ -16,6 +16,8 @@ Contents:
    :caption: Resources:
 
    Resources <./Resources/student_resources.md>
+   Resources <./Resources/PBA.md>
+   Resources <./Resources/Performance_Task.md>
 
 
 .. toctree:: 
