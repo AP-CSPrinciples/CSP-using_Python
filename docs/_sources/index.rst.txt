@@ -34,7 +34,10 @@ Contents:
    :caption: Unit 1:
 
    Creative_Development <./Unit 1/Creative_Development.md>
-   
+   PT_Project 1 <./Unit 1/PT_Project 1.md>
+   PT_Project 2 <./Unit 1/PT_Project 2.md>
+   PT_Project 3 <./Unit 1/PT_Project 3.md>
+   PT_Project 4 <./Unit 1/PT_Project 4.md>
 
 .. toctree:: 
    :maxdepth: 2
