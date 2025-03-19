@@ -4,7 +4,7 @@ Here’s a 10-day calendar and checklist to help students successfully complete 
 
 ---
 
-### **10-Day Calendar & Checklist for Performance Task Development**
+**10-Day Calendar & Checklist for Performance Task Development**
 
 **Objective:** Develop a program based on your chosen language or block-based coding (e.g., Scratch, Blockly). This could be a game, tool, application, or any project that aligns with the course objectives.
 
@@ -216,7 +216,7 @@ Here’s a 10-day calendar and checklist to help students successfully complete 
 
 ---
 
-### **Performance Task Requirements Update:**
+#### Performance Task Requirements Update:
 
 - **Performance Criteria:**
   - The program must have at least three main features.
