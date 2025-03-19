@@ -1,4 +1,6 @@
-**Performance Task: Develop a Snake Game using Pygame (AP CSP)**
+# Performance Task - Project 4
+
+### Performance Task: Develop a Snake Game using Pygame
 
 ### Objective:
 The goal of this performance task is for students to design and implement a fully functional Snake game using Python and Pygame. Students are expected to use key programming concepts such as lists, conditionals, iteration, keyboard inputs, and collision detection in their code.
