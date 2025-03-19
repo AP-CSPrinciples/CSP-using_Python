@@ -1,3 +1,5 @@
+# Performance Task 
+
 Here’s a 10-day calendar and checklist to help students successfully complete their performance task. This calendar outlines the process from initial planning to final testing and submission, encouraging a consistent, structured approach. I’ve also included updates to the requirements and a daily log format for students to document their progress.
 
 ---
