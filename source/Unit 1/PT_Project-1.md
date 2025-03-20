@@ -39,12 +39,12 @@ Example:
 ```python
 Student Management System
 Choose one of the following: 
-The user can choose 1. **Add a Student**.
-The user can choose 2. **Display All Students**.
-The user can choose 3. **Find a Student by ID**.
-The user can choose 4. **Remove a Student by ID**.
-The user can choose 5. **Update Student Grade**.
-The user can choose 6. **Exit**.
+The user can choose -> 1. Add a Student
+The user can choose -> 2. Display All Students
+The user can choose -> 3. Find a Student by ID
+The user can choose -> 4. Remove a Student by ID
+The user can choose -> 5. Update Student Grade
+The user can choose -> 6. Exit
 ```
 
 
