@@ -8,7 +8,7 @@ Create a console-based program to manage student data, such as names, grades, an
 1. Create a Student class with attributes:
    - `String name`
    - `int studentID`
-   - `double grade`
+   - `float grade`
 
    Include methods to:
    - Get and set values for each attribute.
@@ -16,7 +16,7 @@ Create a console-based program to manage student data, such as names, grades, an
 
 2. Create a StudentManager class with a List to store the `Student` objects.
    - Allow the user to:
-     - Add a new student to the ArrayList.
+     - Add a new student to the List.
      - View all students in the list.
      - Find a student by their ID.
      - Remove a student by their ID.
