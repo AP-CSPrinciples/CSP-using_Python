@@ -323,96 +323,111 @@
 <li><p><strong>Remove Student</strong>: Remove a student based on their ID.</p></li>
 </ul>
 <p>Example:</p>
-<p>Student Management System
-Choose one of the following:
-The user can choose 1. <strong>Add a Student</strong>.
-The user can choose 2. <strong>Display All Students</strong>.
-The user can choose 3. <strong>Find a Student by ID</strong>.
-The user can choose 4. <strong>Remove a Student by ID</strong>.
-The user can choose 5. <strong>Update Student Grade</strong>.
-The user can choose 6. <strong>Exit</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Student</span> <span class="n">Management</span> <span class="n">System</span>
+<span class="n">Choose</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span> 
+<span class="n">The</span> <span class="n">user</span> <span class="n">can</span> <span class="n">choose</span> <span class="mf">1.</span> <span class="o">**</span><span class="n">Add</span> <span class="n">a</span> <span class="n">Student</span><span class="o">**.</span>
+<span class="n">The</span> <span class="n">user</span> <span class="n">can</span> <span class="n">choose</span> <span class="mf">2.</span> <span class="o">**</span><span class="n">Display</span> <span class="n">All</span> <span class="n">Students</span><span class="o">**.</span>
+<span class="n">The</span> <span class="n">user</span> <span class="n">can</span> <span class="n">choose</span> <span class="mf">3.</span> <span class="o">**</span><span class="n">Find</span> <span class="n">a</span> <span class="n">Student</span> <span class="n">by</span> <span class="n">ID</span><span class="o">**.</span>
+<span class="n">The</span> <span class="n">user</span> <span class="n">can</span> <span class="n">choose</span> <span class="mf">4.</span> <span class="o">**</span><span class="n">Remove</span> <span class="n">a</span> <span class="n">Student</span> <span class="n">by</span> <span class="n">ID</span><span class="o">**.</span>
+<span class="n">The</span> <span class="n">user</span> <span class="n">can</span> <span class="n">choose</span> <span class="mf">5.</span> <span class="o">**</span><span class="n">Update</span> <span class="n">Student</span> <span class="n">Grade</span><span class="o">**.</span>
+<span class="n">The</span> <span class="n">user</span> <span class="n">can</span> <span class="n">choose</span> <span class="mf">6.</span> <span class="o">**</span><span class="n">Exit</span><span class="o">**.</span>
+</pre></div>
+</div>
 <p>Example User Input &amp; Output:</p>
-<p>#1. Add Student</p>
-<p>Student Management System
-Choose one of the following:</p>
-<ol class="arabic simple">
-<li><p>Add Student</p></li>
-<li><p>Display All Students</p></li>
-<li><p>Find Student by ID</p></li>
-<li><p>Remove Student by ID</p></li>
-<li><p>Update Student Grade</p></li>
-<li><p>Exit</p></li>
-</ol>
-<p>Choose an option: 1
-Enter student name: John Doe
-Enter student ID: 101
-Enter student grade: 85.5</p>
-<p>#2. Display All Students/</p>
-<p>Student Management System
-Choose one of the following:</p>
-<ol class="arabic simple">
-<li><p>Add Student</p></li>
-<li><p>Display All Students</p></li>
-<li><p>Find Student by ID</p></li>
-<li><p>Remove Student by ID</p></li>
-<li><p>Update Student Grade</p></li>
-<li><p>Exit</p></li>
-</ol>
-<p>Choose an option: 2
-ID: 101, Name: John Doe, Grade: 85.5</p>
-<p>#3. Find Student by ID</p>
-<p>Student Management System
-Choose one of the following:</p>
-<ol class="arabic simple">
-<li><p>Add Student</p></li>
-<li><p>Display All Students</p></li>
-<li><p>Find Student by ID</p></li>
-<li><p>Remove Student by ID</p></li>
-<li><p>Update Student Grade</p></li>
-<li><p>Exit</p></li>
-</ol>
-<p>Choose an option: 3
-Enter student ID to find: 101
-ID: 101, Name: John Doe, Grade: 85.5</p>
-<p>#4. Remove Student by ID</p>
-<p>Student Management System
-Choose one of the following:</p>
-<ol class="arabic simple">
-<li><p>Add Student</p></li>
-<li><p>Display All Students</p></li>
-<li><p>Find Student by ID</p></li>
-<li><p>Remove Student by ID</p></li>
-<li><p>Update Student Grade</p></li>
-<li><p>Exit</p></li>
-</ol>
-<p>Choose an option: 4
-Enter student ID to remove: 101</p>
-<p>#5. Update Student Grade</p>
-<p>Student Management System
-Choose one of the following:</p>
-<ol class="arabic simple">
-<li><p>Add Student</p></li>
-<li><p>Display All Students</p></li>
-<li><p>Find Student by ID</p></li>
-<li><p>Remove Student by ID</p></li>
-<li><p>Update Student Grade</p></li>
-<li><p>Exit</p></li>
-</ol>
-<p>Choose an option: 5
-Enter student ID to update grade: 101
-Student not found.</p>
-<p>#6. Exit</p>
-<p>Student Management System
-Choose one of the following:</p>
-<ol class="arabic simple">
-<li><p>Add Student</p></li>
-<li><p>Display All Students</p></li>
-<li><p>Find Student by ID</p></li>
-<li><p>Remove Student by ID</p></li>
-<li><p>Update Student Grade</p></li>
-<li><p>Exit</p></li>
-</ol>
-<p>Choose an option: 6</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#1. Add Student</span>
+
+<span class="n">Student</span> <span class="n">Management</span> <span class="n">System</span>
+<span class="n">Choose</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span> 
+<span class="mf">1.</span> <span class="n">Add</span> <span class="n">Student</span>
+<span class="mf">2.</span> <span class="n">Display</span> <span class="n">All</span> <span class="n">Students</span>
+<span class="mf">3.</span> <span class="n">Find</span> <span class="n">Student</span> <span class="n">by</span> <span class="n">ID</span>
+<span class="mf">4.</span> <span class="n">Remove</span> <span class="n">Student</span> <span class="n">by</span> <span class="n">ID</span>
+<span class="mf">5.</span> <span class="n">Update</span> <span class="n">Student</span> <span class="n">Grade</span>
+<span class="mf">6.</span> <span class="n">Exit</span>
+
+<span class="n">Choose</span> <span class="n">an</span> <span class="n">option</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Enter</span> <span class="n">student</span> <span class="n">name</span><span class="p">:</span> <span class="n">John</span> <span class="n">Doe</span>
+<span class="n">Enter</span> <span class="n">student</span> <span class="n">ID</span><span class="p">:</span> <span class="mi">101</span>
+<span class="n">Enter</span> <span class="n">student</span> <span class="n">grade</span><span class="p">:</span> <span class="mf">85.5</span>
+
+
+<span class="c1">#2. Display All Students/</span>
+
+<span class="n">Student</span> <span class="n">Management</span> <span class="n">System</span>
+<span class="n">Choose</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span> 
+<span class="mf">1.</span> <span class="n">Add</span> <span class="n">Student</span>
+<span class="mf">2.</span> <span class="n">Display</span> <span class="n">All</span> <span class="n">Students</span>
+<span class="mf">3.</span> <span class="n">Find</span> <span class="n">Student</span> <span class="n">by</span> <span class="n">ID</span>
+<span class="mf">4.</span> <span class="n">Remove</span> <span class="n">Student</span> <span class="n">by</span> <span class="n">ID</span>
+<span class="mf">5.</span> <span class="n">Update</span> <span class="n">Student</span> <span class="n">Grade</span>
+<span class="mf">6.</span> <span class="n">Exit</span>
+
+<span class="n">Choose</span> <span class="n">an</span> <span class="n">option</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">ID</span><span class="p">:</span> <span class="mi">101</span><span class="p">,</span> <span class="n">Name</span><span class="p">:</span> <span class="n">John</span> <span class="n">Doe</span><span class="p">,</span> <span class="n">Grade</span><span class="p">:</span> <span class="mf">85.5</span>
+
+
+<span class="c1">#3. Find Student by ID</span>
+
+<span class="n">Student</span> <span class="n">Management</span> <span class="n">System</span>
+<span class="n">Choose</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span> 
+<span class="mf">1.</span> <span class="n">Add</span> <span class="n">Student</span>
+<span class="mf">2.</span> <span class="n">Display</span> <span class="n">All</span> <span class="n">Students</span>
+<span class="mf">3.</span> <span class="n">Find</span> <span class="n">Student</span> <span class="n">by</span> <span class="n">ID</span>
+<span class="mf">4.</span> <span class="n">Remove</span> <span class="n">Student</span> <span class="n">by</span> <span class="n">ID</span>
+<span class="mf">5.</span> <span class="n">Update</span> <span class="n">Student</span> <span class="n">Grade</span>
+<span class="mf">6.</span> <span class="n">Exit</span>
+
+<span class="n">Choose</span> <span class="n">an</span> <span class="n">option</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Enter</span> <span class="n">student</span> <span class="n">ID</span> <span class="n">to</span> <span class="n">find</span><span class="p">:</span> <span class="mi">101</span>
+<span class="n">ID</span><span class="p">:</span> <span class="mi">101</span><span class="p">,</span> <span class="n">Name</span><span class="p">:</span> <span class="n">John</span> <span class="n">Doe</span><span class="p">,</span> <span class="n">Grade</span><span class="p">:</span> <span class="mf">85.5</span>
+
+
+<span class="c1">#4. Remove Student by ID</span>
+
+<span class="n">Student</span> <span class="n">Management</span> <span class="n">System</span>
+<span class="n">Choose</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span> 
+<span class="mf">1.</span> <span class="n">Add</span> <span class="n">Student</span>
+<span class="mf">2.</span> <span class="n">Display</span> <span class="n">All</span> <span class="n">Students</span>
+<span class="mf">3.</span> <span class="n">Find</span> <span class="n">Student</span> <span class="n">by</span> <span class="n">ID</span>
+<span class="mf">4.</span> <span class="n">Remove</span> <span class="n">Student</span> <span class="n">by</span> <span class="n">ID</span>
+<span class="mf">5.</span> <span class="n">Update</span> <span class="n">Student</span> <span class="n">Grade</span>
+<span class="mf">6.</span> <span class="n">Exit</span>
+
+<span class="n">Choose</span> <span class="n">an</span> <span class="n">option</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">Enter</span> <span class="n">student</span> <span class="n">ID</span> <span class="n">to</span> <span class="n">remove</span><span class="p">:</span> <span class="mi">101</span>
+
+
+<span class="c1">#5. Update Student Grade</span>
+
+<span class="n">Student</span> <span class="n">Management</span> <span class="n">System</span>
+<span class="n">Choose</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span> 
+<span class="mf">1.</span> <span class="n">Add</span> <span class="n">Student</span>
+<span class="mf">2.</span> <span class="n">Display</span> <span class="n">All</span> <span class="n">Students</span>
+<span class="mf">3.</span> <span class="n">Find</span> <span class="n">Student</span> <span class="n">by</span> <span class="n">ID</span>
+<span class="mf">4.</span> <span class="n">Remove</span> <span class="n">Student</span> <span class="n">by</span> <span class="n">ID</span>
+<span class="mf">5.</span> <span class="n">Update</span> <span class="n">Student</span> <span class="n">Grade</span>
+<span class="mf">6.</span> <span class="n">Exit</span>
+
+<span class="n">Choose</span> <span class="n">an</span> <span class="n">option</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">Enter</span> <span class="n">student</span> <span class="n">ID</span> <span class="n">to</span> <span class="n">update</span> <span class="n">grade</span><span class="p">:</span> <span class="mi">101</span>
+<span class="n">Student</span> <span class="ow">not</span> <span class="n">found</span><span class="o">.</span>
+
+
+<span class="c1">#6. Exit</span>
+
+<span class="n">Student</span> <span class="n">Management</span> <span class="n">System</span>
+<span class="n">Choose</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span> 
+<span class="mf">1.</span> <span class="n">Add</span> <span class="n">Student</span>
+<span class="mf">2.</span> <span class="n">Display</span> <span class="n">All</span> <span class="n">Students</span>
+<span class="mf">3.</span> <span class="n">Find</span> <span class="n">Student</span> <span class="n">by</span> <span class="n">ID</span>
+<span class="mf">4.</span> <span class="n">Remove</span> <span class="n">Student</span> <span class="n">by</span> <span class="n">ID</span>
+<span class="mf">5.</span> <span class="n">Update</span> <span class="n">Student</span> <span class="n">Grade</span>
+<span class="mf">6.</span> <span class="n">Exit</span>
+
+<span class="n">Choose</span> <span class="n">an</span> <span class="n">option</span><span class="p">:</span> <span class="mi">6</span>
+
+</pre></div>
+</div>
 <p>Submit your program files (.py) include appropriate comments within your program.  Include Test Cases that demonstrate the program works as intended.</p>
 </section>
 
