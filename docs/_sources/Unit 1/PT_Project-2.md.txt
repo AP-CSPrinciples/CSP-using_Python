@@ -1,6 +1,6 @@
 # Performance Task - Project 2
 
-Create a console-based program to manage student data, such as names, grades, and student IDs. The program will store this data in a List of lists of custom `Student` objects.  Use functions with parameters to call specific actions within the student management system.  Appropriately comment throughout your program and provide test cases to verify that your program works as intended. 
+Create a console-based program to manage student data, such as names, grades, and student IDs. You will create a custom `Student` class with appropriately named attributes.  You will store instances of these custom student objects inside a list.  Use functions with parameters to call specific actions within the student management system.  Appropriately comment throughout your program and provide test cases to verify that your program works as intended. 
 
  
 
