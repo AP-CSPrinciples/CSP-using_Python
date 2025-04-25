@@ -1,8 +1,6 @@
 # Performance Task - Project 3
 
 
-Here's a cleaner, more readable version of your Python Charts & Graphs Project guide. I’ve organized sections with clearer headers, removed redundancy, and tightened the language for better clarity and flow:
-
 ---
 
 ## 📊 Python Charts & Graphs Project Guide
