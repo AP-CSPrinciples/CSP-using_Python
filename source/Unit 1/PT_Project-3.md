@@ -18,7 +18,7 @@ Project Tasks:
 
 ### ✅ Project Requirements
 
-Your final Jupyter Notebook should include:
+Your final Notebook (Jupyter, CoLab, other) should include:
 - Clear explanation of your **topic and purpose**
 - **Clean, labeled data** (no missing values)
 - **Three+ chart types** (bar, line, scatter, pie, etc.)
