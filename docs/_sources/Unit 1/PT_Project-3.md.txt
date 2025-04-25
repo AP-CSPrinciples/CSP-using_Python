@@ -157,13 +157,6 @@ plt.show()
 
 ---
 
-📥 Google Colab Notebook Template
-
-For easy access and sharing, here’s the Google Colab-compatible file:  
-👉 [Student_Chart_Project_Colab.ipynb](sandbox:/mnt/data/Student_Chart_Project_Colab.ipynb)
-
----
-
 💻 Jupyter vs Google Colab
 
 | Feature         | **Jupyter Notebook**                 | **Google Colab**                          |
