@@ -16,11 +16,19 @@ The **Creative Development** section of the AP Computer Science Principles (CSP)
 ### What You Will Do:
 1. **Create a Digital Artifact**: Students will work on a substantial project that demonstrates their ability to apply programming concepts creatively. This could be anything from a game, animation, app, or simulation to a website, depending on the project requirements they choose.
 
-2. **Use a Programming Language**: They will implement their projects using a programming language such as Python, JavaScript, or others, depending on the project type and the tools they are working with.
+2. **Use a Programming Language**: They will implement their projects using a programming language such as Python, JavaScript, or others, depending on the project type and the tools they are working with.  Students develop computational thinking practices through a combination of problem-solving strategies, exposure to coding, and hands-on practice. Here are a few key ways that this happens:
 
-3. **Collaborate and Share Ideas**: Often, students will have opportunities to share their progress and ideas with peers, providing feedback and learning from each other’s approaches.
+   - **Decomposition**: Students break down complex problems into smaller, manageable parts. For example, in coding, they might start by breaking down a project into smaller tasks before tackling the entire problem. This helps them understand the structure of a problem and simplifies finding a solution.
 
-4. **Document the Development Process**: Students will keep track of their progress through documentation, explaining their design choices, challenges faced, and how they overcame them.
+   - **Pattern Recognition**: As students work with code or mathematical models, they begin to recognize recurring patterns. This might involve identifying repetitive structures in loops or recognizing common strategies in algorithms. Identifying patterns makes it easier to solve similar problems in the future.
+   - **Abstraction**: Students learn to focus on the important aspects of a problem, ignoring unnecessary details. In coding, this could involve defining functions to generalize common tasks and avoid redundancy, or thinking about the general logic of a problem rather than the specifics.
+   - **Algorithmic Thinking**: Students develop the ability to create step-by-step instructions (algorithms) to solve problems. This can include writing code to implement these instructions or outlining a process to follow for problem-solving.
+   - **Iterative Design and Testing**: Students learn to test and refine their solutions. In computational thinking, it's common to iterate through code, testing different approaches to refine and improve their solutions. This approach teaches resilience and an understanding of failure as part of the learning process.
+   - **Collaboration and Communication**: Computational thinking also involves working with others, sharing ideas, and communicating solutions clearly. For example, students may collaborate on coding projects or discuss strategies for solving problems in groups, building both technical and interpersonal skills.
+
+4. **Collaborate and Share Ideas**: Often, students will have opportunities to share their progress and ideas with peers, providing feedback and learning from each other’s approaches.
+
+5. **Document the Development Process**: Students will keep track of their progress through documentation, explaining their design choices, challenges faced, and how they overcame them.
 
 ### How You Will Show What You Have Learned:
 1. **Performance Tasks**: The Creative Development section includes a performance task that is submitted to the College Board. Students need to provide:
