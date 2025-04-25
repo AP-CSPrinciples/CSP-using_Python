@@ -178,7 +178,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -271,7 +271,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -279,6 +279,267 @@
         <article role="main" id="furo-main-content">
           <section id="performance-task-project-3">
 <h1>Performance Task - Project 3<a class="headerlink" href="#performance-task-project-3" title="Link to this heading">¶</a></h1>
+<p>Here’s a cleaner, more readable version of your Python Charts &amp; Graphs Project guide. I’ve organized sections with clearer headers, removed redundancy, and tightened the language for better clarity and flow:</p>
+<hr class="docutils" />
+<section id="python-charts-graphs-project-guide">
+<h2>📊 Python Charts &amp; Graphs Project Guide<a class="headerlink" href="#python-charts-graphs-project-guide" title="Link to this heading">¶</a></h2>
+<p>🧠 Project Overview<br />
+In this project, teams of <strong>2–3 students</strong> will explore real-world data and create <strong>Python visualizations</strong> using libraries like Matplotlib, Pandas, and Seaborn. You’ll pick a topic, analyze a dataset, and create charts to communicate insights visually.</p>
+<p>Project Tasks:</p>
+<ul class="simple">
+<li><p>Select a topic and explain <strong>why</strong> it interests you</p></li>
+<li><p>Load, clean, and analyze your dataset</p></li>
+<li><p>Create <strong>at least 3 types of charts</strong></p></li>
+<li><p>Write a summary of your insights and how the visuals helped you understand the data</p></li>
+</ul>
+<hr class="docutils" />
+<section id="project-requirements">
+<h3>✅ Project Requirements<a class="headerlink" href="#project-requirements" title="Link to this heading">¶</a></h3>
+<p>Your final Jupyter Notebook should include:</p>
+<ul class="simple">
+<li><p>Clear explanation of your <strong>topic and purpose</strong></p></li>
+<li><p><strong>Clean, labeled data</strong> (no missing values)</p></li>
+<li><p><strong>Three+ chart types</strong> (bar, line, scatter, pie, etc.)</p></li>
+<li><p>Labeled axes, meaningful titles, and legible visuals</p></li>
+<li><p>A <strong>summary of your findings</strong></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="why-use-charts-and-graphs">
+<h3>📚 Why Use Charts and Graphs?<a class="headerlink" href="#why-use-charts-and-graphs" title="Link to this heading">¶</a></h3>
+<p>Charts turn complex numbers into simple visuals. They help you:</p>
+<ol class="arabic simple">
+<li><p><strong>Understand Data Faster</strong> – See trends or comparisons instantly</p></li>
+<li><p><strong>Spot Patterns</strong> – Detect increases, decreases, or outliers</p></li>
+<li><p><strong>Compare Categories</strong> – Visually contrast different values</p></li>
+<li><p><strong>Communicate Clearly</strong> – Make reports and presentations more engaging</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="introduction-to-python-charts">
+<h3>🔍 Introduction to Python Charts<a class="headerlink" href="#introduction-to-python-charts" title="Link to this heading">¶</a></h3>
+<p>Python is ideal for data visualization. Libraries you’ll use:</p>
+<ul class="simple">
+<li><p><strong>Matplotlib</strong> – Basic charting</p></li>
+<li><p><strong>Pandas</strong> – Built-in plotting support</p></li>
+<li><p><strong>Seaborn</strong> – Advanced, stylish visuals</p></li>
+</ul>
+<p>Just a few lines of code can turn a spreadsheet into an insightful chart.</p>
+</section>
+<hr class="docutils" />
+<section id="types-of-charts-when-to-use-them">
+<h3>📊 Types of Charts &amp; When to Use Them<a class="headerlink" href="#types-of-charts-when-to-use-them" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Chart Type</p></th>
+<th class="head"><p>Use Case</p></th>
+<th class="head"><p>Python Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Bar Chart</strong></p></td>
+<td><p>Compare quantities across categories</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data['col'].value_counts().plot(kind='bar')</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Pie Chart</strong></p></td>
+<td><p>Show proportions or percentages</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data['col'].value_counts().plot(kind='pie')</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Line Chart</strong></p></td>
+<td><p>Show trends over time</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data.plot(x='Date',</span> <span class="pre">y='Value',</span> <span class="pre">kind='line')</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Histogram</strong></p></td>
+<td><p>Show distribution of one variable</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data['col'].plot(kind='hist')</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Scatter Plot</strong></p></td>
+<td><p>Show relationship between two variables</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data.plot(kind='scatter',</span> <span class="pre">x='X',</span> <span class="pre">y='Y')</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Box Plot</strong></p></td>
+<td><p>Show data spread and detect outliers</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data.boxplot(column='Value',</span> <span class="pre">by='Group')</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Heatmap (Seaborn)</strong></p></td>
+<td><p>Show correlation or intensity</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sns.heatmap(data.corr(),</span> <span class="pre">annot=True)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="suggested-dataset-topics">
+<h3>📚 Suggested Dataset Topics<a class="headerlink" href="#suggested-dataset-topics" title="Link to this heading">¶</a></h3>
+<p>Your dataset should have:</p>
+<ul class="simple">
+<li><p><strong>200+ rows</strong></p></li>
+<li><p><strong>At least 4 columns</strong> (e.g., category, value, date, region)</p></li>
+</ul>
+<p>🎓 Education</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.kaggle.com/datasets/spscientist/students-performance-in-exams">Student Performance (Kaggle)</a></p></li>
+</ul>
+<p>🌍 Demographics &amp; Income</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://archive.ics.uci.edu/ml/datasets/adult">U.S. Census Income Data (UCI)</a></p></li>
+</ul>
+<p>🏀 Sports</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.basketball-reference.com/leagues/">NBA Player Stats (Basketball Reference)</a></p></li>
+</ul>
+<p>🍟 Health &amp; Nutrition</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.kaggle.com/datasets/brandenciranni/fast-food-nutrition">Fast Food Nutrition (Kaggle)</a></p></li>
+</ul>
+<p>🎬 Pop Culture</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.kaggle.com/datasets/iamsouravbanerjee/top-1000-imdb-movies">IMDb Top 1000 Movies (Kaggle)</a></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="jupyter-notebook-starter-template">
+<h3>📘 Jupyter Notebook Starter Template<a class="headerlink" href="#jupyter-notebook-starter-template" title="Link to this heading">¶</a></h3>
+<p>Step 1: Import Libraries</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+</pre></div>
+</div>
+<p>Step 2: Load Your Dataset</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;your_dataset.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Step 3: Explore the Data</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Step 4: Create Charts</p>
+<p><strong>Bar Chart</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Category Distribution&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Category&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Line Chart</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+<span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)[</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Time Trend&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Value&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Scatter Plot</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;X_Column&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Y_Column&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;X vs Y Relationship&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Heatmap</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Correlation Matrix&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="project-ideas">
+<h3>💡 Project Ideas<a class="headerlink" href="#project-ideas" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Trend Analysis</strong> – Use line charts to show changes over time</p></li>
+<li><p><strong>Category Comparison</strong> – Use bar/pie charts to compare groups</p></li>
+<li><p><strong>Correlation Study</strong> – Use scatter plots for relationships</p></li>
+<li><p><strong>Distribution Analysis</strong> – Use histograms/box plots to explore a variable</p></li>
+<li><p><strong>Geographic Comparison</strong> – Use heatmaps if you have location data</p></li>
+</ul>
+<hr class="docutils" />
+<p>📥 Google Colab Notebook Template</p>
+<p>For easy access and sharing, here’s the Google Colab-compatible file:<br />
+👉 <a class="reference internal" href="#sandbox:/mnt/data/Student_Chart_Project_Colab.ipynb"><span class="xref myst">Student_Chart_Project_Colab.ipynb</span></a></p>
+<hr class="docutils" />
+<p>💻 Jupyter vs Google Colab</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p><strong>Jupyter Notebook</strong></p></th>
+<th class="head"><p><strong>Google Colab</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Setup</p></td>
+<td><p>Installed locally</p></td>
+<td><p>Runs in browser</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sharing</p></td>
+<td><p>Manual (file-based)</p></td>
+<td><p>Google Drive integration</p></td>
+</tr>
+<tr class="row-even"><td><p>Installation</p></td>
+<td><p>Required</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Speed</p></td>
+<td><p>Depends on your computer</p></td>
+<td><p>Uses Google’s servers</p></td>
+</tr>
+<tr class="row-even"><td><p>Best For</p></td>
+<td><p>Offline work, full control</p></td>
+<td><p>Beginners, Chromebooks, quick setup</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Recommendation</strong>: Start with <strong>Google Colab</strong>—no install, easy to use, and perfect for teams!</p>
+<hr class="docutils" />
+<section id="grading-rubric-20-points">
+<h4>🎯 Grading Rubric (20 Points)<a class="headerlink" href="#grading-rubric-20-points" title="Link to this heading">¶</a></h4>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Category</p></th>
+<th class="head"><p>Points</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Topic &amp; Purpose</p></td>
+<td><p>4</p></td>
+<td><p>Clear, thoughtful topic explanation</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Use &amp; Cleaning</p></td>
+<td><p>4</p></td>
+<td><p>Relevant dataset, cleaned and prepared</p></td>
+</tr>
+<tr class="row-even"><td><p>Chart Variety &amp; Accuracy</p></td>
+<td><p>6</p></td>
+<td><p>At least 3 clear, well-labeled chart types</p></td>
+</tr>
+<tr class="row-odd"><td><p>Insight &amp; Interpretation</p></td>
+<td><p>4</p></td>
+<td><p>Analysis clearly explained and interpreted</p></td>
+</tr>
+<tr class="row-even"><td><p>Collaboration &amp; Presentation</p></td>
+<td><p>2</p></td>
+<td><p>Teamwork, clear formatting, easy to follow</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+</section>
+</section>
+</section>
 </section>
 
         </article>
@@ -324,8 +585,39 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Performance Task - Project 3</a><ul>
+<li><a class="reference internal" href="#python-charts-graphs-project-guide">📊 Python Charts &amp; Graphs Project Guide</a><ul>
+<li><a class="reference internal" href="#project-requirements">✅ Project Requirements</a></li>
+<li><a class="reference internal" href="#why-use-charts-and-graphs">📚 Why Use Charts and Graphs?</a></li>
+<li><a class="reference internal" href="#introduction-to-python-charts">🔍 Introduction to Python Charts</a></li>
+<li><a class="reference internal" href="#types-of-charts-when-to-use-them">📊 Types of Charts &amp; When to Use Them</a></li>
+<li><a class="reference internal" href="#suggested-dataset-topics">📚 Suggested Dataset Topics</a></li>
+<li><a class="reference internal" href="#jupyter-notebook-starter-template">📘 Jupyter Notebook Starter Template</a></li>
+<li><a class="reference internal" href="#project-ideas">💡 Project Ideas</a><ul>
+<li><a class="reference internal" href="#grading-rubric-20-points">🎯 Grading Rubric (20 Points)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
