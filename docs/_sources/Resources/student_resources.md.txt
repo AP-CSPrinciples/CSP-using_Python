@@ -34,7 +34,33 @@ Proper project management includes discussions and documentation of lessons lear
 
 In the end, it all boils down to this: Documentation builds empathy for future efforts. It is selfish and irresponsible to only think in the here-and-now and not consider new members who will take over the work or who need to translate it to the bottom line. By creating concise, meaningful documentation, future team members can be more productive and free to innovate. Be smart about it.
 
+---
+
 ## SCRUM
+
+Students should learn SCRUM because it equips them with essential **collaboration, communication, and project management skills** that are highly valued in both academic and professional settings. SCRUM is a framework used in Agile development that emphasizes **teamwork, adaptability, and iterative progress**, making it ideal for preparing students to work effectively in real-world, team-based environments.
+
+**Key Reasons Why Students Should Learn SCRUM**:
+
+1. **Real-World Relevance**
+   SCRUM is widely used in the tech industry and beyond. Learning it helps students understand how real software development teams plan, track, and deliver work.
+
+2. **Team Collaboration**
+   SCRUM teaches students how to work in teams, take on specific roles (like Scrum Master or Product Owner), and share responsibility for outcomes—a crucial skill in any profession.
+
+3. **Time and Task Management**
+   Through sprints and daily stand-ups, students learn how to break down big tasks, prioritize them, and stay on track—skills that also improve personal productivity.
+
+4. **Adaptability and Continuous Improvement**
+   SCRUM encourages reflecting on what went well and what didn’t through retrospectives. This instills a growth mindset and improves learning from both success and failure.
+
+5. **Clear Communication**
+   Regular meetings and sprint reviews foster clarity, accountability, and structured feedback—all valuable in academics and careers.
+
+6. **Ownership and Engagement**
+   SCRUM empowers students to take ownership of their work, make decisions collaboratively, and stay engaged by seeing steady progress.
+
+--- 
 
 SCRUM is an Agile framework used to manage complex product development. It emphasizes iterative progress, collaboration, and adaptability. Here's a breakdown of the SCRUM phases, along with documentation that should be created or maintained during each phase:
 
