@@ -1,5 +1,95 @@
 # Data
 
+Absolutely! Here's a **hands-on project** that aligns with **Big Idea 2: Data** from AP Computer Science Principles. It focuses on data collection, transformation, analysis, and visualization—key concepts in this area.
+
+---
+
+## 🧠 **Project: "Data Detectives – Investigating Real-World Trends"**
+
+🎯 **Objective**
+
+Students will investigate a real-world issue using data. They'll collect or access a dataset, clean and organize the data, analyze it, and present their findings with visualizations and a written explanation.
+
+---
+
+🧩 **Big Idea 2 Concepts**
+
+* **Data Acquisition**: Students obtain or access a dataset (e.g., from open data portals or surveys).
+* **Data Representation**: Students convert raw data into usable formats.
+* **Data Analysis**: Students filter, sort, and compute statistics to identify patterns or trends.
+* **Visualization**: Students create graphs or infographics to communicate insights clearly.
+
+---
+
+📋 **Project Steps**
+
+1. **Pick a Topic (in pairs or solo)**
+
+Students choose a topic of interest such as:
+
+* Climate change
+* COVID-19 statistics
+* Music or movie popularity
+* Social media usage
+* Sports performance
+
+2. **Find or Collect Data**
+
+Sources can include:
+
+* [Kaggle](https://www.kaggle.com/datasets)
+* [Google Trends](https://trends.google.com/)
+* [Data.gov](https://www.data.gov/)
+* Survey data from peers (e.g., favorite apps, screen time, etc.)
+
+3. **Prepare the Data**
+
+* Convert data to CSV or use Google Sheets
+* Remove duplicates, deal with missing data
+* Reformat columns if needed (e.g., converting strings to numbers)
+
+4. **Analyze the Data**
+
+* Identify interesting questions like:
+
+  * What trend is increasing the fastest?
+  * Is there a correlation between two variables?
+* Use basic stats: mean, median, mode, max, min, percentages
+
+5. **Create Visualizations**
+
+Use tools like:
+
+* Google Sheets
+* Python (pandas + matplotlib or seaborn)
+* Tableau Public
+* Canva or Infogram (for infographics)
+
+6. **Present Your Findings**
+
+Deliverables:
+
+* A chart or graph (at least one)
+* A technical written explanation interpreting the data
+* A short presentation or recorded video
+
+---
+
+📝 **Rubric (suggested categories)**
+
+| Category                                  | Points     |
+| ----------------------------------------- | ---------- |
+| Relevant topic and data source            | 10         |
+| Clean and organized data                  | 10         |
+| Meaningful analysis (insights/statistics) | 15         |
+| Visualization quality and clarity         | 15         |
+| Written explanation                       | 10         |
+| Creativity and effort                     | 10         |
+| **Total**                                 | **70 pts** |
+
+---
+
+Would you like a sample version of this project for students or a Google Docs template?
 
 ## Binary/ ASCII/ and other fun things
 
