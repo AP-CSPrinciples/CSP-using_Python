@@ -279,10 +279,284 @@
         <article role="main" id="furo-main-content">
           <section id="data">
 <h1>Data<a class="headerlink" href="#data" title="Link to this heading">¶</a></h1>
-<p>Absolutely! Here’s a <strong>hands-on project</strong> that aligns with <strong>Big Idea 2: Data</strong> from AP Computer Science Principles. It focuses on data collection, transformation, analysis, and visualization—key concepts in this area.</p>
 <hr class="docutils" />
-<section id="project-data-detectives-investigating-real-world-trends">
-<h2>🧠 <strong>Project: “Data Detectives – Investigating Real-World Trends”</strong><a class="headerlink" href="#project-data-detectives-investigating-real-world-trends" title="Link to this heading">¶</a></h2>
+<section id="unit-2-vocabulary">
+<h2>Unit 2 Vocabulary<a class="headerlink" href="#unit-2-vocabulary" title="Link to this heading">¶</a></h2>
+<p><strong>1. Data Representation</strong></p>
+<ul class="simple">
+<li><p><strong>Bit</strong>: The smallest unit of data in a computer, represented as either 0 or 1.</p></li>
+<li><p><strong>Byte</strong>: A group of 8 bits. It is the basic unit of storage.</p></li>
+<li><p><strong>Binary</strong>: A number system using only two digits: 0 and 1. It’s used to represent data in computers.</p></li>
+<li><p><strong>Hexadecimal</strong>: A base-16 number system often used to represent binary data in a more human-readable form (using digits 0-9 and letters A-F).</p></li>
+<li><p><strong>Character Encoding</strong>: A system for representing characters (letters, digits, symbols) as binary data. Examples include <strong>ASCII</strong> and <strong>Unicode</strong>.</p></li>
+</ul>
+<p><strong>2. Encoding and Decoding</strong></p>
+<ul class="simple">
+<li><p><strong>ASCII (American Standard Code for Information Interchange)</strong>: A character encoding standard that represents text in computers using 7 or 8 bits. It covers characters like letters, digits, punctuation, and control characters.</p></li>
+<li><p><strong>Unicode</strong>: A character encoding standard that represents a wider range of characters, including non-English letters, symbols, and emoji. It’s commonly used in modern programming languages.</p></li>
+<li><p><strong>Encoding</strong>: The process of converting data from a human-readable format into a machine-readable format (e.g., converting text into binary).</p></li>
+<li><p><strong>Decoding</strong>: The process of converting machine-readable data (binary) back into a human-readable format (e.g., converting binary back into text).</p></li>
+</ul>
+<p><strong>3. Compression and Efficiency</strong></p>
+<ul class="simple">
+<li><p><strong>Data Compression</strong>: The process of reducing the size of data in order to save storage space or transmission time. There are two types:</p>
+<ul>
+<li><p><strong>Lossless Compression</strong>: Data is compressed without losing any information (e.g., ZIP files, Huffman coding).</p></li>
+<li><p><strong>Lossy Compression</strong>: Some data is lost in the compression process, but the file size is significantly reduced (e.g., JPEG images, MP3 audio).</p></li>
+</ul>
+</li>
+<li><p><strong>Huffman Coding</strong>: A lossless data compression algorithm that assigns shorter binary codes to more frequent characters and longer codes to less frequent characters. It’s often used in file formats like PNG and ZIP.</p></li>
+</ul>
+<p><strong>4. Data Processing and Transformation</strong></p>
+<ul class="simple">
+<li><p><strong>Data Abstraction</strong>: Simplifying complex data by providing only the essential details. For example, representing a large text file as a string of characters or reducing data to a set of important metrics.</p></li>
+<li><p><strong>Data Visualization</strong>: The graphical representation of data, such as charts, graphs, or maps, to help make the information easier to understand.</p></li>
+<li><p><strong>Data Transformation</strong>: The process of changing data from one format to another. For example, converting CSV data into JSON format for easier processing in a web application.</p></li>
+</ul>
+<p><strong>5. File Formats and Storage</strong></p>
+<ul class="simple">
+<li><p><strong>File Format</strong>: A specification that defines how data is encoded and stored in a file. Common formats include CSV (Comma-Separated Values), JSON (JavaScript Object Notation), XML (Extensible Markup Language), and binary formats.</p></li>
+<li><p><strong>CSV (Comma-Separated Values)</strong>: A simple text-based file format for storing tabular data, where each line represents a row, and each value is separated by a comma.</p></li>
+<li><p><strong>JSON (JavaScript Object Notation)</strong>: A lightweight, text-based format for storing and exchanging data, commonly used in web development.</p></li>
+<li><p><strong>XML (Extensible Markup Language)</strong>: A markup language used for encoding documents in a format that is both human-readable and machine-readable.</p></li>
+</ul>
+<p><strong>6. Algorithms and Problem-Solving</strong></p>
+<ul class="simple">
+<li><p><strong>Algorithm</strong>: A step-by-step procedure or formula for solving a problem or completing a task, especially when processing data.</p></li>
+<li><p><strong>Efficiency</strong>: How well an algorithm performs, often measured in terms of time (how quickly it runs) and space (how much memory it uses). Students should understand concepts like <strong>big-O notation</strong> to describe algorithm efficiency, especially in terms of time complexity (e.g., O(n), O(log n)).</p></li>
+<li><p><strong>Data Structures</strong>: The organization and storage of data for efficient access and modification. Common structures include arrays, lists, stacks, queues, and trees.</p></li>
+</ul>
+<p><strong>7. Security and Privacy</strong></p>
+<ul class="simple">
+<li><p><strong>Encryption</strong>: The process of encoding data to protect it from unauthorized access. Data is converted into an unreadable format, and only someone with the correct key can decrypt it.</p></li>
+<li><p><strong>Decryption</strong>: The process of converting encrypted data back into its original, readable format.</p></li>
+<li><p><strong>Hashing</strong>: The process of converting data into a fixed-size value (a hash). Hashes are commonly used for verifying data integrity (e.g., checking if a file has been tampered with).</p></li>
+</ul>
+<p><strong>8. Data Representation in Networks</strong></p>
+<ul class="simple">
+<li><p><strong>Packet</strong>: A small chunk of data sent over a network, which may be part of a larger message.</p></li>
+<li><p><strong>IP Address</strong>: A unique identifier assigned to each device on a network. It’s used for routing packets of data to the correct destination.</p></li>
+<li><p><strong>Protocol</strong>: A set of rules governing how data is transmitted over a network. Examples include <strong>HTTP</strong> (HyperText Transfer Protocol), <strong>FTP</strong> (File Transfer Protocol), and <strong>TCP/IP</strong> (Transmission Control Protocol/Internet Protocol).</p></li>
+</ul>
+<p><strong>9. Big Data Concepts</strong></p>
+<ul class="simple">
+<li><p><strong>Big Data</strong>: Large and complex data sets that traditional data processing software can’t handle efficiently. Often involves analyzing data from various sources like sensors, social media, and logs.</p></li>
+<li><p><strong>Cloud Computing</strong>: The delivery of computing services (storage, processing power, etc.) over the internet, often used for managing big data.</p></li>
+</ul>
+<p><strong>10. Data Ethics</strong></p>
+<ul class="simple">
+<li><p><strong>Bias in Data</strong>: When data collection or processing methods lead to unfair or skewed results. For example, biased data could lead to discriminatory algorithms.</p></li>
+<li><p><strong>Privacy</strong>: The protection of individuals’ personal information. Ethical data use includes ensuring that data is collected and shared responsibly, with attention to privacy laws (like GDPR).</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="data-project-1-data-communication-and-compression">
+<h2>Data Project 1 - Data Communication and Compression:<a class="headerlink" href="#data-project-1-data-communication-and-compression" title="Link to this heading">¶</a></h2>
+<p>The project will simulate a “Data Communication and Compression” system where you process, compress, and extract information from a text-based dataset. The project will be divided into sections based on the core topics and you will build a program in Python to demonstrate these concepts.</p>
+<hr class="docutils" />
+<p><strong>1. Binary Representation of Data</strong></p>
+<p><strong>Objective:</strong> Convert text into binary format (ASCII encoding).</p>
+<ul class="simple">
+<li><p><strong>Concepts Covered:</strong> Binary, ASCII, Data Representation.</p></li>
+</ul>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>Write a function that converts a given string of text into binary representation using the ASCII encoding system.</p></li>
+<li><p>Each character in the text will be converted into its ASCII value, and then the ASCII value will be converted into binary.</p></li>
+</ul>
+<p><strong>Python Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">text_to_binary</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">binary_data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="n">binary_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">format</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">),</span> <span class="s1">&#39;08b&#39;</span><span class="p">))</span>  <span class="c1"># Convert char to 8-bit binary</span>
+    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">binary_data</span><span class="p">)</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
+<span class="n">binary_representation</span> <span class="o">=</span> <span class="n">text_to_binary</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Binary Representation: </span><span class="si">{</span><span class="n">binary_representation</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Expected Output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Binary</span> <span class="n">Representation</span><span class="p">:</span> <span class="mi">01001000</span> <span class="mi">01100101</span> <span class="mi">01101100</span> <span class="mi">01101100</span> <span class="mi">01101111</span> <span class="mi">00101100</span> <span class="mi">00100000</span> <span class="mi">01010111</span> <span class="mi">01101111</span> <span class="mi">01110010</span> <span class="mi">01101100</span> <span class="mi">01100100</span> <span class="mi">00100001</span>
+</pre></div>
+</div>
+<p><strong>2. ASCII Encoding and Decoding</strong></p>
+<p><strong>Objective:</strong> Convert binary back to ASCII text.</p>
+<ul class="simple">
+<li><p><strong>Concepts Covered:</strong> ASCII, Data Decoding, Data Extraction.</p></li>
+</ul>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>Write a function that takes a string of binary numbers (representing ASCII values) and converts it back into readable text.</p></li>
+</ul>
+<p><strong>Python Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">binary_to_text</span><span class="p">(</span><span class="n">binary</span><span class="p">):</span>
+    <span class="n">binary_values</span> <span class="o">=</span> <span class="n">binary</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>  <span class="c1"># Split the binary input into separate characters</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">bv</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="k">for</span> <span class="n">bv</span> <span class="ow">in</span> <span class="n">binary_values</span><span class="p">])</span>  <span class="c1"># Convert binary to decimal, then to char</span>
+    <span class="k">return</span> <span class="n">text</span>
+
+<span class="n">binary_data</span> <span class="o">=</span> <span class="s1">&#39;01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001&#39;</span>
+<span class="n">decoded_text</span> <span class="o">=</span> <span class="n">binary_to_text</span><span class="p">(</span><span class="n">binary_data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Decoded Text: </span><span class="si">{</span><span class="n">decoded_text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Expected Output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Decoded Text: Hello, World!
+</pre></div>
+</div>
+<p><strong>3. Data Compression using Huffman Encoding</strong></p>
+<p><strong>Objective:</strong> Implement basic data compression using Huffman encoding.</p>
+<ul class="simple">
+<li><p><strong>Concepts Covered:</strong> Data Compression, Encoding, Efficiency.</p></li>
+</ul>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>Implement Huffman coding, a common algorithm for lossless data compression. In this part, you’ll write a program to:</p>
+<ol class="arabic simple">
+<li><p>Calculate the frequency of each character in a string.</p></li>
+<li><p>Build a Huffman tree.</p></li>
+<li><p>Generate the Huffman codes for each character.</p></li>
+<li><p>Compress the text using the generated Huffman codes.</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>Python Example (simplified version):</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">heapq</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">char</span><span class="p">,</span> <span class="n">freq</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">char</span> <span class="o">=</span> <span class="n">char</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">freq</span> <span class="o">=</span> <span class="n">freq</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="kc">None</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">freq</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">freq</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">build_huffman_tree</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">frequency</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="n">frequency</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="n">priority_queue</span> <span class="o">=</span> <span class="p">[</span><span class="n">Node</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">freq</span><span class="p">)</span> <span class="k">for</span> <span class="n">char</span><span class="p">,</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">frequency</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+    <span class="n">heapq</span><span class="o">.</span><span class="n">heapify</span><span class="p">(</span><span class="n">priority_queue</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">priority_queue</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">priority_queue</span><span class="p">)</span>
+        <span class="n">right</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">priority_queue</span><span class="p">)</span>
+
+        <span class="n">merged</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">freq</span> <span class="o">+</span> <span class="n">right</span><span class="o">.</span><span class="n">freq</span><span class="p">)</span>
+        <span class="n">merged</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
+        <span class="n">merged</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
+
+        <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">priority_queue</span><span class="p">,</span> <span class="n">merged</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">priority_queue</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_codes</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">codebook</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">codebook</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">codebook</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="k">if</span> <span class="n">node</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">char</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">codebook</span><span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="n">prefix</span>
+        <span class="n">generate_codes</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">prefix</span> <span class="o">+</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="n">codebook</span><span class="p">)</span>
+        <span class="n">generate_codes</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">prefix</span> <span class="o">+</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">codebook</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">codebook</span>
+
+<span class="c1"># Example usage</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;this is an example for huffman encoding&quot;</span>
+<span class="n">huffman_tree</span> <span class="o">=</span> <span class="n">build_huffman_tree</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">huffman_codes</span> <span class="o">=</span> <span class="n">generate_codes</span><span class="p">(</span><span class="n">huffman_tree</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Huffman Codes:&quot;</span><span class="p">,</span> <span class="n">huffman_codes</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Expected Output:</strong></p>
+<p>The Huffman codes for the characters will be printed, which will be shorter for frequently occurring characters and longer for less frequent ones.</p>
+<hr class="docutils" />
+<p><strong>4. Extracting Information from Data</strong></p>
+<p><strong>Objective:</strong> Extract meaningful data from a large dataset (e.g., a file).</p>
+<ul class="simple">
+<li><p><strong>Concepts Covered:</strong> Data Extraction, File Processing.</p></li>
+</ul>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>Write a program to read a text file, extract specific information (e.g., most frequent words, character count), and print the result.</p></li>
+<li><p>Example: Given a large text file, identify the most common word and character.</p></li>
+</ul>
+<p><strong>Python Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">extract_information_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>  <span class="c1"># Read and convert to lowercase</span>
+    
+    <span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">word_count</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>  <span class="c1"># Count frequency of each word</span>
+    <span class="n">most_common_word</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span> <span class="n">word_count</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="n">char_count</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>  <span class="c1"># Count frequency of each character</span>
+    <span class="n">most_common_char</span> <span class="o">=</span> <span class="n">char_count</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Most common word: </span><span class="si">{</span><span class="n">most_common_word</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> occurrences)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Most common character: </span><span class="si">{</span><span class="n">most_common_char</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">most_common_char</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> occurrences)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Example usage (use an actual text file)</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;sample_text.txt&#39;</span>
+<span class="n">extract_information_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Expected Output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Most</span> <span class="n">common</span> <span class="n">word</span><span class="p">:</span> <span class="n">the</span> <span class="p">(</span><span class="mi">34</span> <span class="n">occurrences</span><span class="p">)</span>
+<span class="n">Most</span> <span class="n">common</span> <span class="n">character</span><span class="p">:</span> <span class="n">e</span> <span class="p">(</span><span class="mi">112</span> <span class="n">occurrences</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>5. Putting it All Together: A Simple File Communication System</strong></p>
+<p><strong>Objective:</strong> Create a small system that combines all of the previous concepts to compress and decompress a file.</p>
+<ul class="simple">
+<li><p><strong>Concepts Covered:</strong> Binary Data, ASCII, Data Compression, Extraction.</p></li>
+</ul>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>Implement a program that:</p>
+<ol class="arabic simple">
+<li><p>Reads a text file and converts it to binary (ASCII).</p></li>
+<li><p>Compresses the data using Huffman encoding.</p></li>
+<li><p>Writes the compressed data to a new file.</p></li>
+<li><p>Decompresses the file and converts it back to text.</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>Deliverables:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Code</strong> for all the above tasks, including:</p>
+<ul class="simple">
+<li><p>Functions for binary conversion, text encoding/decoding.</p></li>
+<li><p>Huffman compression/decompression implementation.</p></li>
+<li><p>A program that processes a file to extract information.</p></li>
+</ul>
+</li>
+<li><p><strong>Documentation:</strong></p>
+<ul class="simple">
+<li><p>An explanation of how the code works.</p></li>
+<li><p>A brief explanation of the theory behind binary, ASCII, Huffman encoding, and data extraction.</p></li>
+<li><p>Sample input/output for each part of the project.</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Evaluation Criteria Rubric:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Functionality:</strong> The program works as expected for each part of the task.</p></li>
+<li><p><strong>Clarity:</strong> Code is well-commented and easy to follow.</p></li>
+<li><p><strong>Creativity:</strong> The project demonstrates an understanding of data representation and compression, and possibly extends the basic implementation.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="data-project-1-data-detectives-investigating-real-world-trends">
+<h2>🧠 <strong>Data Project 1: “Data Detectives – Investigating Real-World Trends”</strong><a class="headerlink" href="#data-project-1-data-detectives-investigating-real-world-trends" title="Link to this heading">¶</a></h2>
 <p>🎯 <strong>Objective</strong></p>
 <p>Students will investigate a real-world issue using data. They’ll collect or access a dataset, clean and organize the data, analyze it, and present their findings with visualizations and a written explanation.</p>
 <hr class="docutils" />
@@ -758,7 +1032,9 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Data</a><ul>
-<li><a class="reference internal" href="#project-data-detectives-investigating-real-world-trends">🧠 <strong>Project: “Data Detectives – Investigating Real-World Trends”</strong></a></li>
+<li><a class="reference internal" href="#unit-2-vocabulary">Unit 2 Vocabulary</a></li>
+<li><a class="reference internal" href="#data-project-1-data-communication-and-compression">Data Project 1 - Data Communication and Compression:</a></li>
+<li><a class="reference internal" href="#data-project-1-data-detectives-investigating-real-world-trends">🧠 <strong>Data Project 1: “Data Detectives – Investigating Real-World Trends”</strong></a></li>
 <li><a class="reference internal" href="#binary-ascii-and-other-fun-things">Binary/ ASCII/ and other fun things</a></li>
 </ul>
 </li>

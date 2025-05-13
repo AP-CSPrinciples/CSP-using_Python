@@ -1,10 +1,302 @@
 # Data
 
-Absolutely! Here's a **hands-on project** that aligns with **Big Idea 2: Data** from AP Computer Science Principles. It focuses on data collection, transformation, analysis, and visualization—key concepts in this area.
+---
+### Unit 2 Vocabulary
+
+**1. Data Representation**
+
+* **Bit**: The smallest unit of data in a computer, represented as either 0 or 1.
+* **Byte**: A group of 8 bits. It is the basic unit of storage.
+* **Binary**: A number system using only two digits: 0 and 1. It's used to represent data in computers.
+* **Hexadecimal**: A base-16 number system often used to represent binary data in a more human-readable form (using digits 0-9 and letters A-F).
+* **Character Encoding**: A system for representing characters (letters, digits, symbols) as binary data. Examples include **ASCII** and **Unicode**.
+
+**2. Encoding and Decoding**
+
+* **ASCII (American Standard Code for Information Interchange)**: A character encoding standard that represents text in computers using 7 or 8 bits. It covers characters like letters, digits, punctuation, and control characters.
+* **Unicode**: A character encoding standard that represents a wider range of characters, including non-English letters, symbols, and emoji. It's commonly used in modern programming languages.
+* **Encoding**: The process of converting data from a human-readable format into a machine-readable format (e.g., converting text into binary).
+* **Decoding**: The process of converting machine-readable data (binary) back into a human-readable format (e.g., converting binary back into text).
+
+**3. Compression and Efficiency**
+
+* **Data Compression**: The process of reducing the size of data in order to save storage space or transmission time. There are two types:
+
+  * **Lossless Compression**: Data is compressed without losing any information (e.g., ZIP files, Huffman coding).
+  * **Lossy Compression**: Some data is lost in the compression process, but the file size is significantly reduced (e.g., JPEG images, MP3 audio).
+* **Huffman Coding**: A lossless data compression algorithm that assigns shorter binary codes to more frequent characters and longer codes to less frequent characters. It's often used in file formats like PNG and ZIP.
+
+**4. Data Processing and Transformation**
+
+* **Data Abstraction**: Simplifying complex data by providing only the essential details. For example, representing a large text file as a string of characters or reducing data to a set of important metrics.
+* **Data Visualization**: The graphical representation of data, such as charts, graphs, or maps, to help make the information easier to understand.
+* **Data Transformation**: The process of changing data from one format to another. For example, converting CSV data into JSON format for easier processing in a web application.
+
+**5. File Formats and Storage**
+
+* **File Format**: A specification that defines how data is encoded and stored in a file. Common formats include CSV (Comma-Separated Values), JSON (JavaScript Object Notation), XML (Extensible Markup Language), and binary formats.
+* **CSV (Comma-Separated Values)**: A simple text-based file format for storing tabular data, where each line represents a row, and each value is separated by a comma.
+* **JSON (JavaScript Object Notation)**: A lightweight, text-based format for storing and exchanging data, commonly used in web development.
+* **XML (Extensible Markup Language)**: A markup language used for encoding documents in a format that is both human-readable and machine-readable.
+
+**6. Algorithms and Problem-Solving**
+
+* **Algorithm**: A step-by-step procedure or formula for solving a problem or completing a task, especially when processing data.
+* **Efficiency**: How well an algorithm performs, often measured in terms of time (how quickly it runs) and space (how much memory it uses). Students should understand concepts like **big-O notation** to describe algorithm efficiency, especially in terms of time complexity (e.g., O(n), O(log n)).
+* **Data Structures**: The organization and storage of data for efficient access and modification. Common structures include arrays, lists, stacks, queues, and trees.
+
+**7. Security and Privacy**
+
+* **Encryption**: The process of encoding data to protect it from unauthorized access. Data is converted into an unreadable format, and only someone with the correct key can decrypt it.
+* **Decryption**: The process of converting encrypted data back into its original, readable format.
+* **Hashing**: The process of converting data into a fixed-size value (a hash). Hashes are commonly used for verifying data integrity (e.g., checking if a file has been tampered with).
+
+**8. Data Representation in Networks**
+
+* **Packet**: A small chunk of data sent over a network, which may be part of a larger message.
+* **IP Address**: A unique identifier assigned to each device on a network. It's used for routing packets of data to the correct destination.
+* **Protocol**: A set of rules governing how data is transmitted over a network. Examples include **HTTP** (HyperText Transfer Protocol), **FTP** (File Transfer Protocol), and **TCP/IP** (Transmission Control Protocol/Internet Protocol).
+
+**9. Big Data Concepts**
+
+* **Big Data**: Large and complex data sets that traditional data processing software can't handle efficiently. Often involves analyzing data from various sources like sensors, social media, and logs.
+* **Cloud Computing**: The delivery of computing services (storage, processing power, etc.) over the internet, often used for managing big data.
+
+**10. Data Ethics**
+
+* **Bias in Data**: When data collection or processing methods lead to unfair or skewed results. For example, biased data could lead to discriminatory algorithms.
+* **Privacy**: The protection of individuals' personal information. Ethical data use includes ensuring that data is collected and shared responsibly, with attention to privacy laws (like GDPR).
 
 ---
 
-## 🧠 **Project: "Data Detectives – Investigating Real-World Trends"**
+### Data Project 1 - Data Communication and Compression:
+
+The project will simulate a "Data Communication and Compression" system where you process, compress, and extract information from a text-based dataset. The project will be divided into sections based on the core topics and you will build a program in Python to demonstrate these concepts.
+
+---
+
+**1. Binary Representation of Data**
+
+**Objective:** Convert text into binary format (ASCII encoding).
+
+* **Concepts Covered:** Binary, ASCII, Data Representation.
+
+**Task:**
+
+* Write a function that converts a given string of text into binary representation using the ASCII encoding system.
+* Each character in the text will be converted into its ASCII value, and then the ASCII value will be converted into binary.
+
+**Python Example:**
+
+```python
+def text_to_binary(text):
+    binary_data = []
+    for char in text:
+        binary_data.append(format(ord(char), '08b'))  # Convert char to 8-bit binary
+    return ' '.join(binary_data)
+
+text = "Hello, World!"
+binary_representation = text_to_binary(text)
+print(f"Binary Representation: {binary_representation}")
+```
+
+**Expected Output:**
+
+```
+Binary Representation: 01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
+```
+
+
+
+**2. ASCII Encoding and Decoding**
+
+**Objective:** Convert binary back to ASCII text.
+
+* **Concepts Covered:** ASCII, Data Decoding, Data Extraction.
+
+**Task:**
+
+* Write a function that takes a string of binary numbers (representing ASCII values) and converts it back into readable text.
+
+**Python Example:**
+
+```python
+def binary_to_text(binary):
+    binary_values = binary.split(' ')  # Split the binary input into separate characters
+    text = ''.join([chr(int(bv, 2)) for bv in binary_values])  # Convert binary to decimal, then to char
+    return text
+
+binary_data = '01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001'
+decoded_text = binary_to_text(binary_data)
+print(f"Decoded Text: {decoded_text}")
+```
+
+**Expected Output:**
+
+```
+Decoded Text: Hello, World!
+```
+
+
+
+**3. Data Compression using Huffman Encoding**
+
+**Objective:** Implement basic data compression using Huffman encoding.
+
+* **Concepts Covered:** Data Compression, Encoding, Efficiency.
+
+**Task:**
+
+* Implement Huffman coding, a common algorithm for lossless data compression. In this part, you’ll write a program to:
+
+  1. Calculate the frequency of each character in a string.
+  2. Build a Huffman tree.
+  3. Generate the Huffman codes for each character.
+  4. Compress the text using the generated Huffman codes.
+
+**Python Example (simplified version):**
+
+```python
+import heapq
+from collections import defaultdict
+
+class Node:
+    def __init__(self, char, freq):
+        self.char = char
+        self.freq = freq
+        self.left = None
+        self.right = None
+    
+    def __lt__(self, other):
+        return self.freq < other.freq
+
+def build_huffman_tree(text):
+    frequency = defaultdict(int)
+    for char in text:
+        frequency[char] += 1
+    
+    priority_queue = [Node(char, freq) for char, freq in frequency.items()]
+    heapq.heapify(priority_queue)
+
+    while len(priority_queue) > 1:
+        left = heapq.heappop(priority_queue)
+        right = heapq.heappop(priority_queue)
+
+        merged = Node(None, left.freq + right.freq)
+        merged.left = left
+        merged.right = right
+
+        heapq.heappush(priority_queue, merged)
+
+    return priority_queue[0]
+
+def generate_codes(node, prefix="", codebook=None):
+    if codebook is None:
+        codebook = {}
+    
+    if node:
+        if node.char is not None:
+            codebook[node.char] = prefix
+        generate_codes(node.left, prefix + "0", codebook)
+        generate_codes(node.right, prefix + "1", codebook)
+    
+    return codebook
+
+# Example usage
+text = "this is an example for huffman encoding"
+huffman_tree = build_huffman_tree(text)
+huffman_codes = generate_codes(huffman_tree)
+
+print("Huffman Codes:", huffman_codes)
+```
+
+**Expected Output:**
+
+The Huffman codes for the characters will be printed, which will be shorter for frequently occurring characters and longer for less frequent ones.
+
+---
+
+**4. Extracting Information from Data**
+
+**Objective:** Extract meaningful data from a large dataset (e.g., a file).
+
+* **Concepts Covered:** Data Extraction, File Processing.
+
+**Task:**
+
+* Write a program to read a text file, extract specific information (e.g., most frequent words, character count), and print the result.
+* Example: Given a large text file, identify the most common word and character.
+
+**Python Example:**
+
+```python
+from collections import Counter
+
+def extract_information_from_file(file_path):
+    with open(file_path, 'r') as file:
+        text = file.read().lower()  # Read and convert to lowercase
+    
+    words = text.split()
+    word_count = Counter(words)  # Count frequency of each word
+    most_common_word, count = word_count.most_common(1)[0]
+    
+    char_count = Counter(text)  # Count frequency of each character
+    most_common_char = char_count.most_common(1)[0]
+    
+    print(f"Most common word: {most_common_word} ({count} occurrences)")
+    print(f"Most common character: {most_common_char[0]} ({most_common_char[1]} occurrences)")
+
+# Example usage (use an actual text file)
+file_path = 'sample_text.txt'
+extract_information_from_file(file_path)
+```
+
+**Expected Output:**
+
+```
+Most common word: the (34 occurrences)
+Most common character: e (112 occurrences)
+```
+
+
+**5. Putting it All Together: A Simple File Communication System**
+
+**Objective:** Create a small system that combines all of the previous concepts to compress and decompress a file.
+
+* **Concepts Covered:** Binary Data, ASCII, Data Compression, Extraction.
+
+**Task:**
+
+* Implement a program that:
+
+  1. Reads a text file and converts it to binary (ASCII).
+  2. Compresses the data using Huffman encoding.
+  3. Writes the compressed data to a new file.
+  4. Decompresses the file and converts it back to text.
+
+**Deliverables:**
+1. **Code** for all the above tasks, including:
+
+   * Functions for binary conversion, text encoding/decoding.
+   * Huffman compression/decompression implementation.
+   * A program that processes a file to extract information.
+2. **Documentation:**
+
+   * An explanation of how the code works.
+   * A brief explanation of the theory behind binary, ASCII, Huffman encoding, and data extraction.
+   * Sample input/output for each part of the project.
+
+
+**Evaluation Criteria Rubric:**
+
+1. **Functionality:** The program works as expected for each part of the task.
+2. **Clarity:** Code is well-commented and easy to follow.
+3. **Creativity:** The project demonstrates an understanding of data representation and compression, and possibly extends the basic implementation.
+
+---
+
+
+## 🧠 **Data Project 1: "Data Detectives – Investigating Real-World Trends"**
 
 🎯 **Objective**
 
