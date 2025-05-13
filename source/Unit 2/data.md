@@ -69,20 +69,20 @@
 
 ---
 
+---
+
+
 ### Data Project 1 - Data Communication and Compression:
 
 The project will simulate a "Data Communication and Compression" system where you process, compress, and extract information from a text-based dataset. The project will be divided into sections based on the core topics and you will build a program in Python to demonstrate these concepts.
 
----
 
 **1. Binary Representation of Data**
 
 **Objective:** Convert text into binary format (ASCII encoding).
-
 * **Concepts Covered:** Binary, ASCII, Data Representation.
 
 **Task:**
-
 * Write a function that converts a given string of text into binary representation using the ASCII encoding system.
 * Each character in the text will be converted into its ASCII value, and then the ASCII value will be converted into binary.
 
@@ -101,7 +101,6 @@ print(f"Binary Representation: {binary_representation}")
 ```
 
 **Expected Output:**
-
 ```
 Binary Representation: 01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
 ```
@@ -111,11 +110,9 @@ Binary Representation: 01001000 01100101 01101100 01101100 01101111 00101100 001
 **2. ASCII Encoding and Decoding**
 
 **Objective:** Convert binary back to ASCII text.
-
 * **Concepts Covered:** ASCII, Data Decoding, Data Extraction.
 
 **Task:**
-
 * Write a function that takes a string of binary numbers (representing ASCII values) and converts it back into readable text.
 
 **Python Example:**
@@ -132,7 +129,6 @@ print(f"Decoded Text: {decoded_text}")
 ```
 
 **Expected Output:**
-
 ```
 Decoded Text: Hello, World!
 ```
@@ -142,11 +138,9 @@ Decoded Text: Hello, World!
 **3. Data Compression using Huffman Encoding**
 
 **Objective:** Implement basic data compression using Huffman encoding.
-
 * **Concepts Covered:** Data Compression, Encoding, Efficiency.
 
 **Task:**
-
 * Implement Huffman coding, a common algorithm for lossless data compression. In this part, you’ll write a program to:
 
   1. Calculate the frequency of each character in a string.
@@ -211,7 +205,6 @@ print("Huffman Codes:", huffman_codes)
 ```
 
 **Expected Output:**
-
 The Huffman codes for the characters will be printed, which will be shorter for frequently occurring characters and longer for less frequent ones.
 
 ---
@@ -219,11 +212,9 @@ The Huffman codes for the characters will be printed, which will be shorter for 
 **4. Extracting Information from Data**
 
 **Objective:** Extract meaningful data from a large dataset (e.g., a file).
-
 * **Concepts Covered:** Data Extraction, File Processing.
 
 **Task:**
-
 * Write a program to read a text file, extract specific information (e.g., most frequent words, character count), and print the result.
 * Example: Given a large text file, identify the most common word and character.
 
@@ -262,11 +253,9 @@ Most common character: e (112 occurrences)
 **5. Putting it All Together: A Simple File Communication System**
 
 **Objective:** Create a small system that combines all of the previous concepts to compress and decompress a file.
-
 * **Concepts Covered:** Binary Data, ASCII, Data Compression, Extraction.
 
 **Task:**
-
 * Implement a program that:
 
   1. Reads a text file and converts it to binary (ASCII).
@@ -276,12 +265,11 @@ Most common character: e (112 occurrences)
 
 **Deliverables:**
 1. **Code** for all the above tasks, including:
-
    * Functions for binary conversion, text encoding/decoding.
    * Huffman compression/decompression implementation.
    * A program that processes a file to extract information.
-2. **Documentation:**
 
+2. **Documentation:**
    * An explanation of how the code works.
    * A brief explanation of the theory behind binary, ASCII, Huffman encoding, and data extraction.
    * Sample input/output for each part of the project.
