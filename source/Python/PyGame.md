@@ -18,14 +18,16 @@
   - PyGame is regularly tested against these versions.
 
 
-✅ **Use PyGame when...** 
+✅ **Use PyGame when you want...** 
 
-— You want:
   - smoother animation
   - images
   - sound
   - interactivity
 
+---
+
+---
 
 
 **🛠 Installation**
