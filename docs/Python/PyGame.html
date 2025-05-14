@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="🐢 Python Turtle Graphics — Comprehensive Guide" href="Python_Turtle.html" /><link rel="prev" title="Python Basics" href="Python_Basics.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
-        <title>PyGame Basics - AP CS Principles</title>
+        <title>🎮 PyGame: An Introduction - AP CS Principles</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
@@ -277,159 +277,211 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="pygame-basics">
-<h1>PyGame Basics<a class="headerlink" href="#pygame-basics" title="Link to this heading">¶</a></h1>
-<section id="pygame">
-<h2>Pygame<a class="headerlink" href="#pygame" title="Link to this heading">¶</a></h2>
-<p>Pygame is a free and open-source Python library used for creating 2D video games. It provides modules to handle graphics, sound, user input, and more.</p>
-<section id="why-pygame-instead-of-turtle">
-<h3>Why Pygame instead of Turtle?<a class="headerlink" href="#why-pygame-instead-of-turtle" title="Link to this heading">¶</a></h3>
-<p>Pygame is commonly used to create AP CSP performance tasks. Pygame allows you to add features like images, sound, and animations, making your project more interactive and polished. By using Pygame, your project will have better graphics and functionality, allowing you to showcase your creativity to your potential.</p>
-</section>
-</section>
-<section id="pygame-installation">
-<h2>Pygame Installation<a class="headerlink" href="#pygame-installation" title="Link to this heading">¶</a></h2>
-<p>Official Pygame Installation Guide:
-[https://www.pygame.org/wiki/GettingStarted]</p>
+          <section id="pygame-an-introduction">
+<h1>🎮 PyGame: An Introduction<a class="headerlink" href="#pygame-an-introduction" title="Link to this heading">¶</a></h1>
+<p><strong>🔹 What is PyGame?</strong></p>
+<p><strong>PyGame</strong> is a free, open-source library for Python that helps you build <strong>2D games and multimedia applications</strong>. It includes powerful tools to handle:</p>
 <ul class="simple">
-<li><p>If theres any trouble, there are many youtube tutorials on Pygame Installation.</p></li>
-<li><p>If theres still trouble, consider asking ChatGPT or Mr.Virak for help.</p></li>
+<li><p>Graphics and animation</p></li>
+<li><p>Sounds and music</p></li>
+<li><p>User input (keyboard, mouse)</p></li>
+<li><p>Sprites and collisions</p></li>
+<li><p>Game loops and timers</p></li>
 </ul>
-</section>
-<section id="id1">
-<h2>Pygame Basics<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
-<p>This section will teach you some important parts of Pygame. It will also teach you how to create a basic moving game with points called “Apple Collect”.</p>
-<section id="before-you-start">
-<h3>Before you Start<a class="headerlink" href="#before-you-start" title="Link to this heading">¶</a></h3>
-<p><strong>Important</strong>: Please install the following files for “Apple Collect!”</p>
-<p>Apple Image: https://drive.google.com/file/d/12FsDmDwt-cEES5PriKQmdxH0TvCJNY-8/view?usp=sharing</p>
-<p>Background Image: https://drive.google.com/file/d/1tMdfDkbBsqeNGA6w4uuKVGisIhMUgp86/view?usp=sharing</p>
-<p>Player Image: https://drive.google.com/file/d/1L_Erw05imMxhvs0M5pgFL5fUJjZiOaZh/view?usp=sharing</p>
-</section>
-<section id="important-command">
-<h3>Important Command<a class="headerlink" href="#important-command" title="Link to this heading">¶</a></h3>
-<p>This command must be called whenever you want to put something on the screen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="c1">#initializes the Pygame library</span>
-
-<span class="n">window</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">bg</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
-
-<span class="c1">#window is the main Pygame Window </span>
-<span class="c1">#bg is an object to be rendered</span>
-<span class="c1"># (0,0) are the (x,y) coordinates</span>
-
+<p>✅ Recommended Python Versions for PyGame
+* Python 3.7 to 3.11 → ✅ Fully supported and stable
+* These are the most commonly used versions with PyGame.
+* PyGame is regularly tested against these versions.</p>
+<p>✅ <strong>Use PyGame when Turtle isn’t enough</strong> — if you want smoother animation, images, sound, or interactivity, PyGame is a better fit.</p>
+<hr class="docutils" />
+<p><strong>🛠 Installation</strong></p>
+<p>Install with pip:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pygame
 </pre></div>
 </div>
-<p><strong>Important</strong>: The order how you blit each imagine matters. (blitting x before y will be different from blitting y before x)</p>
-<p>However, in order to actually render the object on the screen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-
+<p>If you’re using a specific Python version:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3.11<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pygame
 </pre></div>
 </div>
-<p><strong>Tip</strong>: This command should always be present in the end of the Pygame Main Loop</p>
-</section>
-</section>
-<section id="pygame-window">
-<h2>Pygame Window<a class="headerlink" href="#pygame-window" title="Link to this heading">¶</a></h2>
-<p>Pygame has the ability to create a window. This window will contain all the visual graphics of your game.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="n">height</span> <span class="o">=</span> <span class="mi">500</span>
-<span class="n">length</span> <span class="o">=</span> <span class="mi">500</span>
-
-<span class="n">window</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">length</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
-<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Example Game&quot;</span><span class="p">)</span>
-
-</pre></div>
-</div>
-<p>This Code will create a window 500 pixel by 500 pixel black screen with the title of “Example Game”.</p>
-<section id="pygame-window-customization">
-<h3>Pygame Window Customization<a class="headerlink" href="#pygame-window-customization" title="Link to this heading">¶</a></h3>
-<p>You may also set the background to a certain image or color.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="n">bg</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">smoothscale</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;bg.jpeg&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
-
-<span class="c1">#pygame.transform.smoothscale() will scale any image to any size</span>
-<span class="c1">#pygame.image.load(&quot;bg.jpeg&quot;) will load the bg.jpeg</span>
-<span class="c1">#(length, height) will the the target size of the image</span>
-
-</pre></div>
-</div>
-<p><strong>Tip</strong>: Pygame can load many image types. However, jpeg and png work the best.</p>
-<p><strong>Debugging</strong>: Make sure that the image you’re trying to load is in the same folder as the code.
-<strong>Debugging</strong>: Don’t forget to blit the object!</p>
-<p>Pygame uses a large while True loop in order to keep the game running. Below is an example of such loop:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># PyGame Main Loop</span>
-
-<span class="n">keepGameRunning</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="k">while</span> <span class="n">keepGameRunning</span><span class="p">:</span>
-  <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
-      <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
-          <span class="n">keepGameRunning</span> <span class="o">=</span> <span class="kc">False</span>
-
-      <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Pygame has many prebuilt events, (such as button pressing) and this loop, in order to not be an infinite loop, checks if the user has clicked on the red X on the top left of the Pygame Window.</p>
-</section>
-<section id="apple-collect">
-<h3>Apple Collect<a class="headerlink" href="#apple-collect" title="Link to this heading">¶</a></h3>
+<p><strong>🔍 Check Compatibility with Your Python Version</strong></p>
+<p>Run this in your terminal or Python shell:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
-
+<span class="nb">print</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">ver</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">get_sdl_version</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>🔗 <a class="reference external" href="https://www.pygame.org/wiki/GettingStarted">Official Guide</a></p>
+<p><strong>🧱 PyGame Basics</strong></p>
+<p><strong>Initial Setup</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
 <span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Create a Window</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;My First Game&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Main Game Loop</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+            <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>🖼 Drawing &amp; Displaying Graphics</strong></p>
+<p><strong>Background Images</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bg</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">smoothscale</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;bg.jpg&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
+<span class="n">window</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">bg</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>  <span class="c1"># Draw background at (0,0)</span>
+</pre></div>
+</div>
+<p><strong>Display Update</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>  <span class="c1"># Refreshes screen</span>
+</pre></div>
+</div>
+<p>⛔ Forgetting to call <code class="docutils literal notranslate"><span class="pre">blit()</span></code> or <code class="docutils literal notranslate"><span class="pre">update()</span></code> will result in no visible changes!</p>
+<hr class="docutils" />
+<p><strong>🧍 Working with Sprites (Player, Objects)</strong></p>
+<p><strong>Load and Resize</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">player</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">smoothscale</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;player.png&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Draw (Blit) to Screen</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">window</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="p">(</span><span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span><span class="p">))</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Blit your background <strong>before</strong> your player or the player will disappear!</p>
+</div></blockquote>
+<p><strong>🕹 Keyboard Input &amp; Movement</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">movement</span><span class="p">():</span>
+    <span class="n">keys</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">get_pressed</span><span class="p">()</span>
+    <span class="k">global</span> <span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span>
+    <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">]:</span>
+        <span class="n">player_x</span> <span class="o">-=</span> <span class="mi">5</span>
+    <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">]:</span>
+        <span class="n">player_x</span> <span class="o">+=</span> <span class="mi">5</span>
+    <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_UP</span><span class="p">]:</span>
+        <span class="n">player_y</span> <span class="o">-=</span> <span class="mi">5</span>
+    <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_DOWN</span><span class="p">]:</span>
+        <span class="n">player_y</span> <span class="o">+=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>Inside your main loop, call <code class="docutils literal notranslate"><span class="pre">movement()</span></code> before updating the display.</p>
+<p><strong>🍎 Project: Apple Collect Starter</strong></p>
+<p>You can use the code below to create an interactive game:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
 <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Apple Collect&quot;</span><span class="p">)</span>
 
-<span class="n">height</span> <span class="o">=</span> <span class="mi">500</span>
-<span class="n">length</span> <span class="o">=</span> <span class="mi">500</span>
-
-<span class="n">window</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">length</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
-<span class="n">bg</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">smoothscale</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;bg.jpg&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
-<span class="n">keepGameRunning</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="k">while</span> <span class="n">keepGameRunning</span><span class="p">:</span>
-    <span class="n">window</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">bg</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
-      <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
-          <span class="n">keepGameRunning</span> <span class="o">=</span> <span class="kc">False</span>
-
-      <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-
-</pre></div>
-</div>
-</section>
-<section id="pygame-sprites">
-<h3>Pygame Sprites<a class="headerlink" href="#pygame-sprites" title="Link to this heading">¶</a></h3>
-<p>Using similar logic as creating the background, we can create a custom image on top the the background:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">bg</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">smoothscale</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;bg.jpg&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
 <span class="n">player</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">smoothscale</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;player.png&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="n">apple</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">smoothscale</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;apple.png&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
 
-<span class="c1">#scales and image called &quot;player.png&quot; to 100 by 100 pixels </span>
-</pre></div>
-</div>
-<p><strong>Tip</strong>: Make sure to blit the player AFTER the background!</p>
-<section id="moving-the-sprite">
-<h4>Moving the sprite<a class="headerlink" href="#moving-the-sprite" title="Link to this heading">¶</a></h4>
-<p>Pygame can track user’s input. For example, pygame can identify when the user is pressing the up arrow on they keyboard. We can use this functionality in order to create some basic movement for the sprite.</p>
-<p><strong>Let’s make a seperate function to track this input!</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span>
+
 <span class="k">def</span><span class="w"> </span><span class="nf">movement</span><span class="p">():</span>
     <span class="n">keys</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">get_pressed</span><span class="p">()</span>
-<span class="c1">#Creates a variable &quot;keys&quot; in teh &quot;movement&quot; function that will check what button the user is pressing</span>
+    <span class="k">global</span> <span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span>
+    <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">]:</span>
+        <span class="n">player_x</span> <span class="o">-=</span> <span class="mi">5</span>
+    <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">]:</span>
+        <span class="n">player_x</span> <span class="o">+=</span> <span class="mi">5</span>
+    <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_UP</span><span class="p">]:</span>
+        <span class="n">player_y</span> <span class="o">-=</span> <span class="mi">5</span>
+    <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_DOWN</span><span class="p">]:</span>
+        <span class="n">player_y</span> <span class="o">+=</span> <span class="mi">5</span>
 
+<span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">bg</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">movement</span><span class="p">()</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="p">(</span><span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span><span class="p">))</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">apple</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+            <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
 </pre></div>
 </div>
-<p>Since we will be changing the players coordinates by moving, let’s make a variable to represent the x and y coordinate of the player</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="n">player_x</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">player_y</span> <span class="o">=</span> <span class="mi">0</span>
+<p><strong>🧠 Intermediate Topics</strong></p>
+<p><strong>🎯 Collision Detection</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">player_rect</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">apple_rect</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 
+<span class="k">if</span> <span class="n">player_rect</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">apple_rect</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Apple Collected!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Now, we can manipulate those coordinates in order to make the player move.</p>
-</section>
-</section>
+<p><strong>📦 Using Classes for Sprites</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Player</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">sprite</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;player.png&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">topleft</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">5</span>
+        <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">5</span>
+        <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_UP</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">y</span> <span class="o">-=</span> <span class="mi">5</span>
+        <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_DOWN</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<section id="advanced-topics">
+<h2>🔥 Advanced Topics<a class="headerlink" href="#advanced-topics" title="Link to this heading">¶</a></h2>
+<p><strong>🎵 Adding Sound</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">collect_sound</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">Sound</span><span class="p">(</span><span class="s2">&quot;collect.wav&quot;</span><span class="p">)</span>
+<span class="n">collect_sound</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>🎲 Random Placement</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="n">apple_x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">450</span><span class="p">)</span>
+<span class="n">apple_y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">450</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>⏱ Frame Rate Control</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+<span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>  <span class="c1"># Limit to 60 frames per second</span>
+</pre></div>
+</div>
+<p><strong>📚 Organizing Code into Modules</strong></p>
+<p>Split code into:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">main.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">player.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">utils.py</span></code></p></li>
+</ul>
+<p><strong>🧪 Leveling Up Projects</strong></p>
+<p>Encourage students to:</p>
+<ul class="simple">
+<li><p>Add timers or scores</p></li>
+<li><p>Create multiple levels</p></li>
+<li><p>Add enemies</p></li>
+<li><p>Track high scores with file I/O</p></li>
+</ul>
+<p><strong>🧰 Final Tips for Teaching</strong></p>
+<ul class="simple">
+<li><p>Use visuals for explaining coordinates and layering.</p></li>
+<li><p>Show examples of sprite sheets or sprite animations.</p></li>
+<li><p>Let students modify assets to personalize their games.</p></li>
+<li><p>Use pre-built templates and have them “remix” the code.</p></li>
+</ul>
 </section>
 </section>
 
@@ -488,26 +540,8 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">PyGame Basics</a><ul>
-<li><a class="reference internal" href="#pygame">Pygame</a><ul>
-<li><a class="reference internal" href="#why-pygame-instead-of-turtle">Why Pygame instead of Turtle?</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#pygame-installation">Pygame Installation</a></li>
-<li><a class="reference internal" href="#id1">Pygame Basics</a><ul>
-<li><a class="reference internal" href="#before-you-start">Before you Start</a></li>
-<li><a class="reference internal" href="#important-command">Important Command</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#pygame-window">Pygame Window</a><ul>
-<li><a class="reference internal" href="#pygame-window-customization">Pygame Window Customization</a></li>
-<li><a class="reference internal" href="#apple-collect">Apple Collect</a></li>
-<li><a class="reference internal" href="#pygame-sprites">Pygame Sprites</a><ul>
-<li><a class="reference internal" href="#moving-the-sprite">Moving the sprite</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">🎮 PyGame: An Introduction</a><ul>
+<li><a class="reference internal" href="#advanced-topics">🔥 Advanced Topics</a></li>
 </ul>
 </li>
 </ul>
