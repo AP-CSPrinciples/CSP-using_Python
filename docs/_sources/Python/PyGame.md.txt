@@ -19,11 +19,12 @@
 
 
 ✅ **Use PyGame when...** 
-— if you want:
+
+— You want:
   - smoother animation
-  -  images
-  -  sound
-  -  interactivity
+  - images
+  - sound
+  - interactivity
 
 
 
