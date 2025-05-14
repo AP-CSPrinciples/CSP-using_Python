@@ -13,13 +13,14 @@
 
 ✅ Recommended Python Versions for PyGame
 
-    * Python 3.7 to 3.11 → ✅ Fully supported and stable
-        * These are the most commonly used versions with PyGame.
-        * PyGame is regularly tested against these versions.
-        
+- Python 3.7 to 3.11 → ✅ Fully supported and stable
+  - These are the most commonly used versions with PyGame.
+  - PyGame is regularly tested against these versions.
+
+
 ✅ **Use PyGame when Turtle isn’t enough** — if you want smoother animation, images, sound, or interactivity, PyGame is a better fit.
 
----
+
 
 **🛠 Installation**
 
