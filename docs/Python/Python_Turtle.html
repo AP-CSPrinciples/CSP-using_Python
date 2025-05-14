@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Creative Development" href="../Unit%201/Creative_Development.html" /><link rel="prev" title="PyGame Basics" href="PyGame.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
-        <title>Python Turtle Basics - AP CS Principles</title>
+        <title>🐢 Python Turtle Graphics — Comprehensive Guide - AP CS Principles</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
@@ -277,13 +277,36 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="python-turtle-basics">
-<h1>Python Turtle Basics<a class="headerlink" href="#python-turtle-basics" title="Link to this heading">¶</a></h1>
-<section id="pythod-turtle-graphic-methods">
-<h2>Pythod Turtle Graphic Methods<a class="headerlink" href="#pythod-turtle-graphic-methods" title="Link to this heading">¶</a></h2>
-<p>Here’s a comprehensive list of Python’s Turtle Graphics module methods, divided into categories for easier reference. These methods are often used to control the turtle’s movements, set its appearance, draw shapes, and control the window. This list includes methods available up to Python 3.10.</p>
-<section id="turtle-motion-and-positioning">
-<h3>1. <strong>Turtle Motion and Positioning</strong><a class="headerlink" href="#turtle-motion-and-positioning" title="Link to this heading">¶</a></h3>
+          <section id="python-turtle-graphics-comprehensive-guide">
+<h1>🐢 Python Turtle Graphics — Comprehensive Guide<a class="headerlink" href="#python-turtle-graphics-comprehensive-guide" title="Link to this heading">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">turtle</span></code> module in Python is a <strong>built-in library</strong> that makes it easy to introduce programming to beginners. You control a <strong>“turtle” that moves and draws</strong> on the screen.  It is perfect for learning loops, functions, geometry, and logic through visual feedback.</p>
+<p><strong>🔹 Getting Started</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>  <span class="c1"># Create a turtle object</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>        <span class="c1"># Keep the window open at the end</span>
+</pre></div>
+</div>
+<p><strong>🧠 What Is the “Turtle”?</strong></p>
+<p>The turtle is a cursor (triangle by default) that moves around the screen.</p>
+<ul class="simple">
+<li><p>It can go forward or backward</p></li>
+<li><p>Turn right or left</p></li>
+<li><p>Draw lines as it moves</p></li>
+<li><p>Change shape, color, and size</p></li>
+</ul>
+<p>You control the turtle with <strong>methods</strong>.</p>
+<p><strong>🔑 Common Mistake: <code class="docutils literal notranslate"><span class="pre">self.forward(100)</span></code> ❌</strong></p>
+<p>That only works inside a class. For Turtle, you must use:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># ✅</span>
+</pre></div>
+</div>
+<section id="core-turtle-methods-by-category">
+<h2>🔧 Core Turtle Methods by Category<a class="headerlink" href="#core-turtle-methods-by-category" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>🧭 <strong>Turtle Motion &amp; Positioning</strong></p></li>
+</ol>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -292,60 +315,57 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">forward(distance)</span></code> or <code class="docutils literal notranslate"><span class="pre">fd(distance)</span></code></p></td>
-<td><p>Move the turtle forward by the specified distance.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">forward(distance)</span></code> or <code class="docutils literal notranslate"><span class="pre">fd()</span></code></p></td>
+<td><p>Move forward</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">backward(distance)</span></code> or <code class="docutils literal notranslate"><span class="pre">bk(distance)</span></code> or <code class="docutils literal notranslate"><span class="pre">back(distance)</span></code></p></td>
-<td><p>Move the turtle backward by the specified distance.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">backward(distance)</span></code> or <code class="docutils literal notranslate"><span class="pre">bk()</span></code></p></td>
+<td><p>Move backward</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">right(angle)</span></code> or <code class="docutils literal notranslate"><span class="pre">rt(angle)</span></code></p></td>
-<td><p>Turn the turtle clockwise by the specified angle.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">right(angle)</span></code> or <code class="docutils literal notranslate"><span class="pre">rt()</span></code></p></td>
+<td><p>Turn right (clockwise)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">left(angle)</span></code> or <code class="docutils literal notranslate"><span class="pre">lt(angle)</span></code></p></td>
-<td><p>Turn the turtle counterclockwise by the specified angle.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">left(angle)</span></code> or <code class="docutils literal notranslate"><span class="pre">lt()</span></code></p></td>
+<td><p>Turn left (counterclockwise)</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">goto(x,</span> <span class="pre">y)</span></code> or <code class="docutils literal notranslate"><span class="pre">setpos(x,</span> <span class="pre">y)</span></code> or <code class="docutils literal notranslate"><span class="pre">setposition(x,</span> <span class="pre">y)</span></code></p></td>
-<td><p>Move the turtle to the specified coordinates.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">goto(x,</span> <span class="pre">y)</span></code> or <code class="docutils literal notranslate"><span class="pre">setpos()</span></code></p></td>
+<td><p>Move to absolute position</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">setx(x)</span></code></p></td>
-<td><p>Set the turtle’s x-coordinate.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">setx(x)</span></code> / <code class="docutils literal notranslate"><span class="pre">sety(y)</span></code></p></td>
+<td><p>Set x or y coordinate</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sety(y)</span></code></p></td>
-<td><p>Set the turtle’s y-coordinate.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">setheading(angle)</span></code> or <code class="docutils literal notranslate"><span class="pre">seth()</span></code></p></td>
+<td><p>Face a specific direction in degrees</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">setheading(angle)</span></code> or <code class="docutils literal notranslate"><span class="pre">seth(angle)</span></code></p></td>
-<td><p>Set the turtle’s heading to the specified angle.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">home()</span></code></p></td>
+<td><p>Go to (0, 0) and face right</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">home()</span></code></p></td>
-<td><p>Move the turtle to the origin (0, 0) and set its heading to 0 degrees.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">circle(radius,</span> <span class="pre">extent,</span> <span class="pre">steps)</span></code></p></td>
+<td><p>Draw a circle or arc</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">circle(radius,</span> <span class="pre">extent=None,</span> <span class="pre">steps=None)</span></code></p></td>
-<td><p>Draw a circle with the specified radius. Optional extent to draw only part of the circle, and steps for polygon approximation.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dot(size,</span> <span class="pre">color)</span></code></p></td>
+<td><p>Draw a dot</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dot(size=None,</span> <span class="pre">color=None)</span></code></p></td>
-<td><p>Draw a dot with the specified size and color.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">stamp()</span></code></p></td>
+<td><p>Stamp turtle shape at current location</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">stamp()</span></code></p></td>
-<td><p>Stamp a copy of the turtle shape onto the canvas and return its stamp ID.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">clearstamp(stampid)</span></code></p></td>
+<td><p>Remove a specific stamp</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">clearstamp(stampid)</span></code></p></td>
-<td><p>Delete a specific stamp by its ID.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">clearstamps(n)</span></code></p></td>
+<td><p>Clear all or last <code class="docutils literal notranslate"><span class="pre">n</span></code> stamps</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">clearstamps(n=None)</span></code></p></td>
-<td><p>Delete all stamps or the last <code class="docutils literal notranslate"><span class="pre">n</span></code> stamps if <code class="docutils literal notranslate"><span class="pre">n</span></code> is provided.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">undo()</span></code></p></td>
+<td><p>Undo last action</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">undo()</span></code></p></td>
-<td><p>Undo the last turtle action.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">speed(speed)</span></code></p></td>
-<td><p>Set the turtle’s speed. <code class="docutils literal notranslate"><span class="pre">0</span></code> means no animation, <code class="docutils literal notranslate"><span class="pre">1</span></code> is slow, <code class="docutils literal notranslate"><span class="pre">10</span></code> is fast.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">speed(0-10)</span></code></p></td>
+<td><p>Set turtle animation speed</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
-<section id="turtle-state-and-status">
-<h3>2. <strong>Turtle State and Status</strong><a class="headerlink" href="#turtle-state-and-status" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple" start="2">
+<li><p>🧠 <strong>Turtle State &amp; Status</strong></p></li>
+</ol>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -355,35 +375,32 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">position()</span></code> or <code class="docutils literal notranslate"><span class="pre">pos()</span></code></p></td>
-<td><p>Return the current position as a tuple <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code>.</p></td>
+<td><p>Current (x, y) position</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">towards(x,</span> <span class="pre">y)</span></code></p></td>
-<td><p>Return the angle towards the specified point.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">xcor()</span></code></p></td>
-<td><p>Return the turtle’s x-coordinate.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ycor()</span></code></p></td>
-<td><p>Return the turtle’s y-coordinate.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">xcor()</span></code> / <code class="docutils literal notranslate"><span class="pre">ycor()</span></code></p></td>
+<td><p>Get x or y coordinate</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">heading()</span></code></p></td>
-<td><p>Return the turtle’s current heading angle.</p></td>
+<td><p>Get current angle turtle is facing</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">distance(x,</span> <span class="pre">y)</span></code></p></td>
-<td><p>Return the distance from the turtle’s position to the specified point.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">towards(x,</span> <span class="pre">y)</span></code></p></td>
+<td><p>Angle from current position to (x, y)</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">isdown()</span></code></p></td>
-<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the pen is down, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">distance(x,</span> <span class="pre">y)</span></code></p></td>
+<td><p>Distance to point</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">isvisible()</span></code></p></td>
-<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the turtle is visible, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">isdown()</span></code></p></td>
+<td><p>Whether pen is down (drawing)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">isvisible()</span></code></p></td>
+<td><p>Whether the turtle is visible</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
-<section id="turtle-pen-control">
-<h3>3. <strong>Turtle Pen Control</strong><a class="headerlink" href="#turtle-pen-control" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple" start="3">
+<li><p>✍️ <strong>Pen Control (Drawing Tools)</strong></p></li>
+</ol>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -392,51 +409,42 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pendown()</span></code> or <code class="docutils literal notranslate"><span class="pre">pd()</span></code> or <code class="docutils literal notranslate"><span class="pre">down()</span></code></p></td>
-<td><p>Lower the pen to draw when the turtle moves.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">penup()</span></code> or <code class="docutils literal notranslate"><span class="pre">pu()</span></code></p></td>
+<td><p>Lift the pen (stop drawing)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">penup()</span></code> or <code class="docutils literal notranslate"><span class="pre">pu()</span></code> or <code class="docutils literal notranslate"><span class="pre">up()</span></code></p></td>
-<td><p>Raise the pen to prevent drawing when the turtle moves.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pendown()</span></code> or <code class="docutils literal notranslate"><span class="pre">pd()</span></code></p></td>
+<td><p>Lower the pen (start drawing)</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pensize(width)</span></code> or <code class="docutils literal notranslate"><span class="pre">width(width)</span></code></p></td>
-<td><p>Set the width of the pen.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pen(pen=None,</span> <span class="pre">**pendict)</span></code></p></td>
-<td><p>Return or set the pen’s attributes (color, width, etc.).</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pen(pencolor,</span> <span class="pre">fillcolor)</span></code></p></td>
-<td><p>Set both pen color and fill color.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pensize(width)</span></code> / <code class="docutils literal notranslate"><span class="pre">width()</span></code></p></td>
+<td><p>Set pen thickness</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pencolor(color)</span></code></p></td>
-<td><p>Set the pen color.</p></td>
+<td><p>Set pen (line) color</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fillcolor(color)</span></code></p></td>
-<td><p>Set the fill color.</p></td>
+<td><p>Set fill color</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">begin_fill()</span></code></p></td>
-<td><p>Start filling a shape.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">begin_fill()</span></code> / <code class="docutils literal notranslate"><span class="pre">end_fill()</span></code></p></td>
+<td><p>Fill shape drawn between these calls</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">end_fill()</span></code></p></td>
-<td><p>Fill the shape drawn after <code class="docutils literal notranslate"><span class="pre">begin_fill()</span></code> is called.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">color(pencolor,</span> <span class="pre">fillcolor)</span></code></p></td>
-<td><p>Set both the pen and fill color.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">reset()</span></code></p></td>
-<td><p>Reset the turtle’s state, clearing the drawing and resetting attributes.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">color(pen,</span> <span class="pre">fill)</span></code></p></td>
+<td><p>Set pen and fill color together</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">clear()</span></code></p></td>
-<td><p>Clear the drawing without changing the turtle’s position.</p></td>
+<td><p>Clear drawing but keep turtle position</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">write(arg,</span> <span class="pre">move=False,</span> <span class="pre">align='left',</span> <span class="pre">font=('Arial',</span> <span class="pre">8,</span> <span class="pre">'normal'))</span></code></p></td>
-<td><p>Write text at the turtle’s current position.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">reset()</span></code></p></td>
+<td><p>Clear everything and reset turtle state</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">write(text,</span> <span class="pre">move=False,</span> <span class="pre">align=...)</span></code></p></td>
+<td><p>Write text on screen</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
-<section id="turtle-appearance">
-<h3>4. <strong>Turtle Appearance</strong><a class="headerlink" href="#turtle-appearance" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple" start="4">
+<li><p>🐢 <strong>Turtle Appearance</strong></p></li>
+</ol>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -446,38 +454,35 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">shape(name)</span></code></p></td>
-<td><p>Set the turtle’s shape (<code class="docutils literal notranslate"><span class="pre">'arrow'</span></code>, <code class="docutils literal notranslate"><span class="pre">'turtle'</span></code>, <code class="docutils literal notranslate"><span class="pre">'circle'</span></code>, <code class="docutils literal notranslate"><span class="pre">'square'</span></code>, <code class="docutils literal notranslate"><span class="pre">'triangle'</span></code>, <code class="docutils literal notranslate"><span class="pre">'classic'</span></code>).</p></td>
+<td><p>Set turtle shape (e.g., <code class="docutils literal notranslate"><span class="pre">'turtle'</span></code>, <code class="docutils literal notranslate"><span class="pre">'circle'</span></code>)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">shapesize(stretch_wid=None,</span> <span class="pre">stretch_len=None,</span> <span class="pre">outline=None)</span></code> or <code class="docutils literal notranslate"><span class="pre">turtlesize(...)</span></code></p></td>
-<td><p>Stretch the turtle’s shape.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">shapesize(wid,</span> <span class="pre">len,</span> <span class="pre">outline)</span></code></p></td>
+<td><p>Stretch turtle’s size</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">shearfactor(factor)</span></code></p></td>
-<td><p>Set or get the shear factor for the turtle’s shape.</p></td>
+<td><p>Tilt shape diagonally</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tilt(angle)</span></code></p></td>
-<td><p>Tilt the turtle shape by the specified angle.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tiltangle(angle=None)</span></code></p></td>
-<td><p>Set or get the tilt angle of the turtle shape.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">get_shapepoly()</span></code></p></td>
-<td><p>Return the current shape as a polygon.</p></td>
+<td><p>Tilt shape clockwise</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">showturtle()</span></code> or <code class="docutils literal notranslate"><span class="pre">st()</span></code></p></td>
-<td><p>Make the turtle visible.</p></td>
+<td><p>Make turtle visible</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">hideturtle()</span></code> or <code class="docutils literal notranslate"><span class="pre">ht()</span></code></p></td>
-<td><p>Make the turtle invisible.</p></td>
+<td><p>Hide the turtle</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">resizemode(rmode)</span></code></p></td>
-<td><p>Set the resize mode (<code class="docutils literal notranslate"><span class="pre">'auto'</span></code>, <code class="docutils literal notranslate"><span class="pre">'user'</span></code>, <code class="docutils literal notranslate"><span class="pre">'noresize'</span></code>).</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">resizemode('auto'/'user')</span></code></p></td>
+<td><p>Control size behavior</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">get_shapepoly()</span></code></p></td>
+<td><p>Get shape as polygon points</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
-<section id="screen-control-and-events">
-<h3>5. <strong>Screen Control and Events</strong><a class="headerlink" href="#screen-control-and-events" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple" start="5">
+<li><p>🖼️ <strong>Screen Control &amp; Events</strong></p></li>
+</ol>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -487,47 +492,38 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Screen()</span></code></p></td>
-<td><p>Return the Screen object used for window control.</p></td>
+<td><p>Get turtle window control object</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bye()</span></code></p></td>
-<td><p>Close the Turtle Graphics window.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bgcolor(color)</span></code></p></td>
+<td><p>Set background color</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bgcolor(color)</span></code></p></td>
-<td><p>Set or get the background color.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bgpic(filename)</span></code></p></td>
+<td><p>Set background image</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bgpic(picname)</span></code></p></td>
-<td><p>Set or get the background image.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">title(&quot;Window</span> <span class="pre">Title&quot;)</span></code></p></td>
+<td><p>Set window title</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">title(title)</span></code></p></td>
-<td><p>Set the title of the window.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">onclick(func)</span></code> / <code class="docutils literal notranslate"><span class="pre">onkey(func,</span> <span class="pre">key)</span></code></p></td>
+<td><p>Bind click or key event</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">clearscreen()</span></code></p></td>
-<td><p>Clear the screen.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">listen()</span></code></p></td>
+<td><p>Focus screen to capture keys</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">onclick(fun,</span> <span class="pre">btn=1,</span> <span class="pre">add=None)</span></code></p></td>
-<td><p>Bind a function to a mouse click.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mainloop()</span></code> or <code class="docutils literal notranslate"><span class="pre">done()</span></code></p></td>
+<td><p>Start main loop (keep window open)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">onkey(fun,</span> <span class="pre">key)</span></code></p></td>
-<td><p>Bind a function to a key press.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tracer(n,</span> <span class="pre">delay)</span></code> / <code class="docutils literal notranslate"><span class="pre">update()</span></code></p></td>
+<td><p>Control animation redraw speed</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">listen()</span></code></p></td>
-<td><p>Set focus on the screen to capture key presses.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mainloop()</span></code></p></td>
-<td><p>Start the main event loop.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tracer(n=None,</span> <span class="pre">delay=None)</span></code></p></td>
-<td><p>Set the screen update delay to control animation speed.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">update()</span></code></p></td>
-<td><p>Force an update of the screen.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bye()</span></code></p></td>
+<td><p>Close turtle window</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
-<section id="miscellaneous">
-<h3>6. <strong>Miscellaneous</strong><a class="headerlink" href="#miscellaneous" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple" start="6">
+<li><p>🧩 <strong>Miscellaneous / Advanced</strong></p></li>
+</ol>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -537,41 +533,69 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">begin_poly()</span></code></p></td>
-<td><p>Start recording the vertices of a polygon.</p></td>
+<td><p>Start recording points for a shape</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">end_poly()</span></code></p></td>
-<td><p>Stop recording and store the polygon shape.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">get_poly()</span></code></p></td>
-<td><p>Return the recorded polygon.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">delay(delay=None)</span></code></p></td>
-<td><p>Set the delay value for screen updates.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">window_width()</span></code></p></td>
-<td><p>Return the width of the turtle window.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">window_height()</span></code></p></td>
-<td><p>Return the height of the turtle window.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">end_poly()</span></code> / <code class="docutils literal notranslate"><span class="pre">get_poly()</span></code></p></td>
+<td><p>Stop and return polygon</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">getcanvas()</span></code></p></td>
-<td><p>Return the Canvas object of the turtle window.</p></td>
+<td><p>Access underlying Tkinter canvas</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">getscreen()</span></code></p></td>
-<td><p>Return the TurtleScreen object.</p></td>
+<td><p>Get screen object (same as <code class="docutils literal notranslate"><span class="pre">Screen()</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">delay(ms)</span></code></p></td>
+<td><p>Set animation delay in milliseconds</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">window_width()</span></code> / <code class="docutils literal notranslate"><span class="pre">window_height()</span></code></p></td>
+<td><p>Get window size</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
-<section id="additional-notes">
-<h3>Additional Notes<a class="headerlink" href="#additional-notes" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">Screen()</span></code> Object Methods</strong>: The <code class="docutils literal notranslate"><span class="pre">Screen</span></code> object returned by <code class="docutils literal notranslate"><span class="pre">turtle.Screen()</span></code> has many methods for window and event control, such as <code class="docutils literal notranslate"><span class="pre">bgcolor</span></code>, <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">onkey</span></code>, <code class="docutils literal notranslate"><span class="pre">onscreenclick</span></code>, and <code class="docutils literal notranslate"><span class="pre">listen</span></code>.</p></li>
-<li><p><strong>Aliases</strong>: Many methods have shorthand aliases (e.g., <code class="docutils literal notranslate"><span class="pre">fd</span></code> for <code class="docutils literal notranslate"><span class="pre">forward</span></code>, <code class="docutils literal notranslate"><span class="pre">bk</span></code> for <code class="docutils literal notranslate"><span class="pre">backward</span></code>).</p></li>
-</ul>
-<p>This list provides a solid foundation for creating various Turtle Graphics applications in Python.</p>
-</section>
+<p>🟢 <strong>Example: Draw a Filled Star</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;gold&quot;</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">144</span><span class="p">)</span>
+
+<span class="n">t</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>🛑 <strong>Common Pitfalls and Fixes</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mistake</p></th>
+<th class="head"><p>Fix</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Forgetting <code class="docutils literal notranslate"><span class="pre">turtle.done()</span></code></p></td>
+<td><p>Window closes immediately after drawing</p></td>
+</tr>
+<tr class="row-odd"><td><p>Using <code class="docutils literal notranslate"><span class="pre">turtle.forward()</span></code> without an object</p></td>
+<td><p>Use <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">turtle.Turtle()</span></code> first</p></td>
+</tr>
+<tr class="row-even"><td><p>Mixing up <code class="docutils literal notranslate"><span class="pre">left()</span></code> and <code class="docutils literal notranslate"><span class="pre">right()</span></code></p></td>
+<td><p>Practice turning to understand directions</p></td>
+</tr>
+<tr class="row-odd"><td><p>Drawing before <code class="docutils literal notranslate"><span class="pre">pendown()</span></code> or <code class="docutils literal notranslate"><span class="pre">penup()</span></code></p></td>
+<td><p>Know when the turtle is supposed to draw</p></td>
+</tr>
+<tr class="row-even"><td><p>Expecting <code class="docutils literal notranslate"><span class="pre">char</span></code> type in Python</p></td>
+<td><p>Use strings of length 1 (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;A&quot;</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
 </section>
 </section>
 
@@ -630,17 +654,8 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Python Turtle Basics</a><ul>
-<li><a class="reference internal" href="#pythod-turtle-graphic-methods">Pythod Turtle Graphic Methods</a><ul>
-<li><a class="reference internal" href="#turtle-motion-and-positioning">1. <strong>Turtle Motion and Positioning</strong></a></li>
-<li><a class="reference internal" href="#turtle-state-and-status">2. <strong>Turtle State and Status</strong></a></li>
-<li><a class="reference internal" href="#turtle-pen-control">3. <strong>Turtle Pen Control</strong></a></li>
-<li><a class="reference internal" href="#turtle-appearance">4. <strong>Turtle Appearance</strong></a></li>
-<li><a class="reference internal" href="#screen-control-and-events">5. <strong>Screen Control and Events</strong></a></li>
-<li><a class="reference internal" href="#miscellaneous">6. <strong>Miscellaneous</strong></a></li>
-<li><a class="reference internal" href="#additional-notes">Additional Notes</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">🐢 Python Turtle Graphics — Comprehensive Guide</a><ul>
+<li><a class="reference internal" href="#core-turtle-methods-by-category">🔧 Core Turtle Methods by Category</a></li>
 </ul>
 </li>
 </ul>
