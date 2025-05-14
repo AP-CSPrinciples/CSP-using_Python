@@ -1544,6 +1544,203 @@ Here are the basic data types in Python, along with examples for each.</p>
 <p>Understanding these distinctions can help in writing clearer, more organized code and communicating effectively with other developers.</p>
 </section>
 </section>
+<hr class="docutils" />
+<section id="data-structures">
+<h2>Data Structures<a class="headerlink" href="#data-structures" title="Link to this heading">¶</a></h2>
+<p>Python provides a variety of built-in data structures to store and organize data, each optimized for specific types of operations. Here’s an overview of the core data structures in Python and examples of how and when each might be used in real-world applications.</p>
+<p><strong>1. Lists (<code class="docutils literal notranslate"><span class="pre">list</span></code>)</strong>
+A <strong>list</strong> is an ordered, mutable collection that allows duplicate elements. It’s the most versatile data structure in Python and can store any data type.</p>
+<p><strong>Real-World Example: Shopping Cart in E-commerce</strong>
+In an online shopping cart, each item the user adds can be stored in a list. Since the order and the ability to add/remove items matter, a list is ideal here.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">shopping_cart</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;laptop&quot;</span><span class="p">,</span> <span class="s2">&quot;mouse&quot;</span><span class="p">,</span> <span class="s2">&quot;keyboard&quot;</span><span class="p">]</span>
+<span class="n">shopping_cart</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;headphones&quot;</span><span class="p">)</span>  <span class="c1"># Add an item</span>
+<span class="n">shopping_cart</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;mouse&quot;</span><span class="p">)</span>       <span class="c1"># Remove an item</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">shopping_cart</span><span class="p">)</span>  <span class="c1"># Output: [&#39;laptop&#39;, &#39;keyboard&#39;, &#39;headphones&#39;]</span>
+</pre></div>
+</div>
+<p><strong>Why Use a List?</strong></p>
+<ul class="simple">
+<li><p><strong>Best for</strong>: Ordered, changeable collections.</p></li>
+<li><p><strong>When to Use</strong>: Managing items in a specific order where additions and removals are frequent.</p></li>
+</ul>
+<p><strong>2. Tuples (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>)</strong>
+A <strong>tuple</strong> is an ordered, immutable collection, which means its values cannot be changed after creation. Tuples are often used to store related data.</p>
+<p><strong>Real-World Example: GPS Coordinates</strong>
+Tuples are ideal for storing data that shouldn’t change, such as latitude and longitude coordinates for locations.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates</span> <span class="o">=</span> <span class="p">(</span><span class="mf">40.7128</span><span class="p">,</span> <span class="o">-</span><span class="mf">74.0060</span><span class="p">)</span>  <span class="c1"># New York City</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">coordinates</span><span class="p">)</span>  <span class="c1"># Output: (40.7128, -74.0060)</span>
+</pre></div>
+</div>
+<p><strong>Why Use a Tuple?</strong></p>
+<ul class="simple">
+<li><p><strong>Best for</strong>: Fixed sets of related data.</p></li>
+<li><p><strong>When to Use</strong>: When you need a collection that shouldn’t be modified, like configuration data or coordinate points.</p></li>
+</ul>
+<p><strong>3. Sets (<code class="docutils literal notranslate"><span class="pre">set</span></code>)</strong>
+A <strong>set</strong> is an unordered collection with no duplicate elements. Sets are useful when you need to eliminate duplicate data or perform set operations like union, intersection, and difference.</p>
+<p><strong>Real-World Example: Unique Users in a System</strong>
+In a web application, sets can store unique user IDs to ensure each user appears only once.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_ids</span> <span class="o">=</span> <span class="p">{</span><span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">101</span><span class="p">}</span>  <span class="c1"># Duplicate &#39;101&#39; is ignored</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">user_ids</span><span class="p">)</span>  <span class="c1"># Output: {101, 102, 103}</span>
+</pre></div>
+</div>
+<p><strong>Why Use a Set?</strong></p>
+<ul class="simple">
+<li><p><strong>Best for</strong>: Collections of unique elements.</p></li>
+<li><p><strong>When to Use</strong>: When duplicates need to be removed, or you need to perform set operations.</p></li>
+</ul>
+<p><strong>4. Dictionaries (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</strong>
+A <strong>dictionary</strong> is an unordered collection of key-value pairs. It’s useful for storing data that you want to look up by a unique key.</p>
+<p><strong>Real-World Example: Product Catalog in E-commerce</strong>
+Dictionaries are perfect for storing product information where each product ID maps to a product’s details.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">product_catalog</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;P001&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Laptop&quot;</span><span class="p">,</span> <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">},</span>
+    <span class="s2">&quot;P002&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Mouse&quot;</span><span class="p">,</span> <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">},</span>
+    <span class="s2">&quot;P003&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Keyboard&quot;</span><span class="p">,</span> <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">}</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">product_catalog</span><span class="p">[</span><span class="s2">&quot;P001&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>  <span class="c1"># Output: Laptop</span>
+</pre></div>
+</div>
+<p><strong>Why Use a Dictionary?</strong></p>
+<ul class="simple">
+<li><p><strong>Best for</strong>: Key-value pair data.</p></li>
+<li><p><strong>When to Use</strong>: Fast lookups of values by keys, such as a database record by ID or configuration settings.</p></li>
+</ul>
+<p><strong>5. Stacks (<code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">collections.deque</span></code>)</strong>
+A <strong>stack</strong> follows the Last-In, First-Out (LIFO) principle. You can implement a stack using a <code class="docutils literal notranslate"><span class="pre">list</span></code> (with <code class="docutils literal notranslate"><span class="pre">.append()</span></code> and <code class="docutils literal notranslate"><span class="pre">.pop()</span></code> methods) or with <code class="docutils literal notranslate"><span class="pre">deque</span></code> from the <code class="docutils literal notranslate"><span class="pre">collections</span></code> module.</p>
+<p><strong>Real-World Example: Undo Feature in Text Editor</strong>
+In text editors, the undo functionality is often implemented with a stack where each user action is stored as a new item on the stack. When the user presses “undo,” the most recent action is popped from the stack.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">actions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;type A&quot;</span><span class="p">,</span> <span class="s2">&quot;type B&quot;</span><span class="p">,</span> <span class="s2">&quot;type C&quot;</span><span class="p">]</span>
+<span class="n">actions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;type D&quot;</span><span class="p">)</span>   <span class="c1"># Latest action</span>
+<span class="n">last_action</span> <span class="o">=</span> <span class="n">actions</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>  <span class="c1"># Undo the last action</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">last_action</span><span class="p">)</span>  <span class="c1"># Output: type D</span>
+</pre></div>
+</div>
+<p><strong>Why Use a Stack?</strong></p>
+<ul class="simple">
+<li><p><strong>Best for</strong>: Last-In, First-Out operations.</p></li>
+<li><p><strong>When to Use</strong>: Undo/redo features, function call tracking, and navigation history.</p></li>
+</ul>
+<p><strong>6. Queues (<code class="docutils literal notranslate"><span class="pre">collections.deque</span></code> or <code class="docutils literal notranslate"><span class="pre">queue.Queue</span></code>)</strong>
+A <strong>queue</strong> follows the First-In, First-Out (FIFO) principle. You can implement a queue with <code class="docutils literal notranslate"><span class="pre">deque</span></code> from <code class="docutils literal notranslate"><span class="pre">collections</span></code> or <code class="docutils literal notranslate"><span class="pre">Queue</span></code> from <code class="docutils literal notranslate"><span class="pre">queue</span></code> module for thread-safe operations.</p>
+<p><strong>Real-World Example: Print Queue in Office</strong>
+In an office printer system, documents to be printed are often handled with a queue where the first document sent is printed first.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">deque</span>
+
+<span class="n">print_queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="s2">&quot;Document1&quot;</span><span class="p">,</span> <span class="s2">&quot;Document2&quot;</span><span class="p">,</span> <span class="s2">&quot;Document3&quot;</span><span class="p">])</span>
+<span class="n">print_queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Document4&quot;</span><span class="p">)</span>  <span class="c1"># Add a document to the queue</span>
+<span class="n">first_document</span> <span class="o">=</span> <span class="n">print_queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>  <span class="c1"># Print (remove) the first document</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_document</span><span class="p">)</span>  <span class="c1"># Output: Document1</span>
+</pre></div>
+</div>
+<p><strong>Why Use a Queue?</strong></p>
+<ul class="simple">
+<li><p><strong>Best for</strong>: First-In, First-Out operations.</p></li>
+<li><p><strong>When to Use</strong>: Task scheduling, order processing, and any process where items need to be processed in the order received.</p></li>
+</ul>
+<p><strong>7. Linked Lists (Custom Implementation)</strong>
+Python does not have a built-in linked list, but you can implement one. Linked lists are useful for dynamic memory allocation and data that frequently changes size.</p>
+<p><strong>Real-World Example: Music Playlist</strong>
+In a music player, a playlist could be implemented as a linked list where each song node points to the next song. This allows easy addition or removal of songs.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">LinkedList</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="n">new_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">new_node</span>
+            <span class="k">return</span>
+        <span class="n">last</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="k">while</span> <span class="n">last</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
+            <span class="n">last</span> <span class="o">=</span> <span class="n">last</span><span class="o">.</span><span class="n">next</span>
+        <span class="n">last</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">new_node</span>
+
+<span class="c1"># Usage</span>
+<span class="n">playlist</span> <span class="o">=</span> <span class="n">LinkedList</span><span class="p">()</span>
+<span class="n">playlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Song 1&quot;</span><span class="p">)</span>
+<span class="n">playlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Song 2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Why Use a Linked List?</strong></p>
+<ul class="simple">
+<li><p><strong>Best for</strong>: Data that needs frequent insertion and deletion.</p></li>
+<li><p><strong>When to Use</strong>: Implementing playlists, managing memory in embedded systems, or when resizing overhead is a concern.</p></li>
+</ul>
+<p><strong>8. Heaps (<code class="docutils literal notranslate"><span class="pre">heapq</span></code>)</strong>
+A <strong>heap</strong> is a special tree structure used to maintain a priority queue. In Python, <code class="docutils literal notranslate"><span class="pre">heapq</span></code> implements a min-heap by default.</p>
+<p><strong>Real-World Example: Priority Queue for Emergency Services</strong>
+In emergency dispatch, a priority queue (heap) could prioritize patients by the severity of their condition.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">heapq</span>
+
+<span class="n">emergency_queue</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">emergency_queue</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Patient B&quot;</span><span class="p">))</span>  <span class="c1"># Priority 2</span>
+<span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">emergency_queue</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Patient A&quot;</span><span class="p">))</span>  <span class="c1"># Priority 1 (higher)</span>
+<span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">emergency_queue</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Patient C&quot;</span><span class="p">))</span>  <span class="c1"># Priority 3</span>
+
+<span class="c1"># Remove the patient with the highest priority (lowest number)</span>
+<span class="n">highest_priority_patient</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">emergency_queue</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">highest_priority_patient</span><span class="p">)</span>  <span class="c1"># Output: (1, &#39;Patient A&#39;)</span>
+</pre></div>
+</div>
+<p><strong>Why Use a Heap?</strong></p>
+<ul class="simple">
+<li><p><strong>Best for</strong>: Priority-based operations.</p></li>
+<li><p><strong>When to Use</strong>: Scheduling tasks based on priority, pathfinding algorithms, and load balancing.</p></li>
+</ul>
+<p><strong>Summary Table</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data Structure</p></th>
+<th class="head"><p>Best Use Case</p></th>
+<th class="head"><p>Real-World Instance</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>List</p></td>
+<td><p>Ordered collections</p></td>
+<td><p>Shopping cart, to-do list</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tuple</p></td>
+<td><p>Immutable sets of data</p></td>
+<td><p>GPS coordinates, fixed configuration</p></td>
+</tr>
+<tr class="row-even"><td><p>Set</p></td>
+<td><p>Unique elements</p></td>
+<td><p>Unique usernames, eliminating duplicates</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dictionary</p></td>
+<td><p>Key-value mappings</p></td>
+<td><p>Product catalog, contact list</p></td>
+</tr>
+<tr class="row-even"><td><p>Stack</p></td>
+<td><p>LIFO operations</p></td>
+<td><p>Undo in text editor</p></td>
+</tr>
+<tr class="row-odd"><td><p>Queue</p></td>
+<td><p>FIFO operations</p></td>
+<td><p>Print queue, task scheduling</p></td>
+</tr>
+<tr class="row-even"><td><p>Linked List</p></td>
+<td><p>Frequent insertions/deletions</p></td>
+<td><p>Music playlist, dynamic data size</p></td>
+</tr>
+<tr class="row-odd"><td><p>Heap</p></td>
+<td><p>Priority-based operations</p></td>
+<td><p>Emergency dispatch, priority scheduling</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Choosing the right data structure depends on the specific needs of the application, such as order, mutability, uniqueness, or priority.</p>
+</section>
+<hr class="docutils" />
 <section id="lists-and-list-manipulation">
 <h2>Lists and List Manipulation<a class="headerlink" href="#lists-and-list-manipulation" title="Link to this heading">¶</a></h2>
 <p>For this class, we will not be using tuples, but you should be familiar with how they are used and the difference of a list.</p>
@@ -2350,201 +2547,6 @@ In data science, lambda functions are commonly used with libraries like <code cl
 Lambda functions in Python provide a concise way to define simple functions without the need for formal <code class="docutils literal notranslate"><span class="pre">def</span></code> syntax. They are useful in scenarios where small, throwaway functions are needed, like with <code class="docutils literal notranslate"><span class="pre">map()</span></code>, <code class="docutils literal notranslate"><span class="pre">filter()</span></code>, and data processing tasks. However, lambda functions are limited to single expressions, so they’re best for straightforward operations rather than complex logic.</p>
 </section>
 </section>
-<section id="data-structures">
-<h2>Data Structures<a class="headerlink" href="#data-structures" title="Link to this heading">¶</a></h2>
-<p>Python provides a variety of built-in data structures to store and organize data, each optimized for specific types of operations. Here’s an overview of the core data structures in Python and examples of how and when each might be used in real-world applications.</p>
-<p><strong>1. Lists (<code class="docutils literal notranslate"><span class="pre">list</span></code>)</strong>
-A <strong>list</strong> is an ordered, mutable collection that allows duplicate elements. It’s the most versatile data structure in Python and can store any data type.</p>
-<p><strong>Real-World Example: Shopping Cart in E-commerce</strong>
-In an online shopping cart, each item the user adds can be stored in a list. Since the order and the ability to add/remove items matter, a list is ideal here.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">shopping_cart</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;laptop&quot;</span><span class="p">,</span> <span class="s2">&quot;mouse&quot;</span><span class="p">,</span> <span class="s2">&quot;keyboard&quot;</span><span class="p">]</span>
-<span class="n">shopping_cart</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;headphones&quot;</span><span class="p">)</span>  <span class="c1"># Add an item</span>
-<span class="n">shopping_cart</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;mouse&quot;</span><span class="p">)</span>       <span class="c1"># Remove an item</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">shopping_cart</span><span class="p">)</span>  <span class="c1"># Output: [&#39;laptop&#39;, &#39;keyboard&#39;, &#39;headphones&#39;]</span>
-</pre></div>
-</div>
-<p><strong>Why Use a List?</strong></p>
-<ul class="simple">
-<li><p><strong>Best for</strong>: Ordered, changeable collections.</p></li>
-<li><p><strong>When to Use</strong>: Managing items in a specific order where additions and removals are frequent.</p></li>
-</ul>
-<p><strong>2. Tuples (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>)</strong>
-A <strong>tuple</strong> is an ordered, immutable collection, which means its values cannot be changed after creation. Tuples are often used to store related data.</p>
-<p><strong>Real-World Example: GPS Coordinates</strong>
-Tuples are ideal for storing data that shouldn’t change, such as latitude and longitude coordinates for locations.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates</span> <span class="o">=</span> <span class="p">(</span><span class="mf">40.7128</span><span class="p">,</span> <span class="o">-</span><span class="mf">74.0060</span><span class="p">)</span>  <span class="c1"># New York City</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">coordinates</span><span class="p">)</span>  <span class="c1"># Output: (40.7128, -74.0060)</span>
-</pre></div>
-</div>
-<p><strong>Why Use a Tuple?</strong></p>
-<ul class="simple">
-<li><p><strong>Best for</strong>: Fixed sets of related data.</p></li>
-<li><p><strong>When to Use</strong>: When you need a collection that shouldn’t be modified, like configuration data or coordinate points.</p></li>
-</ul>
-<p><strong>3. Sets (<code class="docutils literal notranslate"><span class="pre">set</span></code>)</strong>
-A <strong>set</strong> is an unordered collection with no duplicate elements. Sets are useful when you need to eliminate duplicate data or perform set operations like union, intersection, and difference.</p>
-<p><strong>Real-World Example: Unique Users in a System</strong>
-In a web application, sets can store unique user IDs to ensure each user appears only once.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_ids</span> <span class="o">=</span> <span class="p">{</span><span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">101</span><span class="p">}</span>  <span class="c1"># Duplicate &#39;101&#39; is ignored</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">user_ids</span><span class="p">)</span>  <span class="c1"># Output: {101, 102, 103}</span>
-</pre></div>
-</div>
-<p><strong>Why Use a Set?</strong></p>
-<ul class="simple">
-<li><p><strong>Best for</strong>: Collections of unique elements.</p></li>
-<li><p><strong>When to Use</strong>: When duplicates need to be removed, or you need to perform set operations.</p></li>
-</ul>
-<p><strong>4. Dictionaries (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</strong>
-A <strong>dictionary</strong> is an unordered collection of key-value pairs. It’s useful for storing data that you want to look up by a unique key.</p>
-<p><strong>Real-World Example: Product Catalog in E-commerce</strong>
-Dictionaries are perfect for storing product information where each product ID maps to a product’s details.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">product_catalog</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;P001&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Laptop&quot;</span><span class="p">,</span> <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">},</span>
-    <span class="s2">&quot;P002&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Mouse&quot;</span><span class="p">,</span> <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">},</span>
-    <span class="s2">&quot;P003&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Keyboard&quot;</span><span class="p">,</span> <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">}</span>
-<span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">product_catalog</span><span class="p">[</span><span class="s2">&quot;P001&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>  <span class="c1"># Output: Laptop</span>
-</pre></div>
-</div>
-<p><strong>Why Use a Dictionary?</strong></p>
-<ul class="simple">
-<li><p><strong>Best for</strong>: Key-value pair data.</p></li>
-<li><p><strong>When to Use</strong>: Fast lookups of values by keys, such as a database record by ID or configuration settings.</p></li>
-</ul>
-<p><strong>5. Stacks (<code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">collections.deque</span></code>)</strong>
-A <strong>stack</strong> follows the Last-In, First-Out (LIFO) principle. You can implement a stack using a <code class="docutils literal notranslate"><span class="pre">list</span></code> (with <code class="docutils literal notranslate"><span class="pre">.append()</span></code> and <code class="docutils literal notranslate"><span class="pre">.pop()</span></code> methods) or with <code class="docutils literal notranslate"><span class="pre">deque</span></code> from the <code class="docutils literal notranslate"><span class="pre">collections</span></code> module.</p>
-<p><strong>Real-World Example: Undo Feature in Text Editor</strong>
-In text editors, the undo functionality is often implemented with a stack where each user action is stored as a new item on the stack. When the user presses “undo,” the most recent action is popped from the stack.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">actions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;type A&quot;</span><span class="p">,</span> <span class="s2">&quot;type B&quot;</span><span class="p">,</span> <span class="s2">&quot;type C&quot;</span><span class="p">]</span>
-<span class="n">actions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;type D&quot;</span><span class="p">)</span>   <span class="c1"># Latest action</span>
-<span class="n">last_action</span> <span class="o">=</span> <span class="n">actions</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>  <span class="c1"># Undo the last action</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">last_action</span><span class="p">)</span>  <span class="c1"># Output: type D</span>
-</pre></div>
-</div>
-<p><strong>Why Use a Stack?</strong></p>
-<ul class="simple">
-<li><p><strong>Best for</strong>: Last-In, First-Out operations.</p></li>
-<li><p><strong>When to Use</strong>: Undo/redo features, function call tracking, and navigation history.</p></li>
-</ul>
-<p><strong>6. Queues (<code class="docutils literal notranslate"><span class="pre">collections.deque</span></code> or <code class="docutils literal notranslate"><span class="pre">queue.Queue</span></code>)</strong>
-A <strong>queue</strong> follows the First-In, First-Out (FIFO) principle. You can implement a queue with <code class="docutils literal notranslate"><span class="pre">deque</span></code> from <code class="docutils literal notranslate"><span class="pre">collections</span></code> or <code class="docutils literal notranslate"><span class="pre">Queue</span></code> from <code class="docutils literal notranslate"><span class="pre">queue</span></code> module for thread-safe operations.</p>
-<p><strong>Real-World Example: Print Queue in Office</strong>
-In an office printer system, documents to be printed are often handled with a queue where the first document sent is printed first.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">deque</span>
-
-<span class="n">print_queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="s2">&quot;Document1&quot;</span><span class="p">,</span> <span class="s2">&quot;Document2&quot;</span><span class="p">,</span> <span class="s2">&quot;Document3&quot;</span><span class="p">])</span>
-<span class="n">print_queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Document4&quot;</span><span class="p">)</span>  <span class="c1"># Add a document to the queue</span>
-<span class="n">first_document</span> <span class="o">=</span> <span class="n">print_queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>  <span class="c1"># Print (remove) the first document</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">first_document</span><span class="p">)</span>  <span class="c1"># Output: Document1</span>
-</pre></div>
-</div>
-<p><strong>Why Use a Queue?</strong></p>
-<ul class="simple">
-<li><p><strong>Best for</strong>: First-In, First-Out operations.</p></li>
-<li><p><strong>When to Use</strong>: Task scheduling, order processing, and any process where items need to be processed in the order received.</p></li>
-</ul>
-<p><strong>7. Linked Lists (Custom Implementation)</strong>
-Python does not have a built-in linked list, but you can implement one. Linked lists are useful for dynamic memory allocation and data that frequently changes size.</p>
-<p><strong>Real-World Example: Music Playlist</strong>
-In a music player, a playlist could be implemented as a linked list where each song node points to the next song. This allows easy addition or removal of songs.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">LinkedList</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="kc">None</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="n">new_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">new_node</span>
-            <span class="k">return</span>
-        <span class="n">last</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
-        <span class="k">while</span> <span class="n">last</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
-            <span class="n">last</span> <span class="o">=</span> <span class="n">last</span><span class="o">.</span><span class="n">next</span>
-        <span class="n">last</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">new_node</span>
-
-<span class="c1"># Usage</span>
-<span class="n">playlist</span> <span class="o">=</span> <span class="n">LinkedList</span><span class="p">()</span>
-<span class="n">playlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Song 1&quot;</span><span class="p">)</span>
-<span class="n">playlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Song 2&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Why Use a Linked List?</strong></p>
-<ul class="simple">
-<li><p><strong>Best for</strong>: Data that needs frequent insertion and deletion.</p></li>
-<li><p><strong>When to Use</strong>: Implementing playlists, managing memory in embedded systems, or when resizing overhead is a concern.</p></li>
-</ul>
-<p><strong>8. Heaps (<code class="docutils literal notranslate"><span class="pre">heapq</span></code>)</strong>
-A <strong>heap</strong> is a special tree structure used to maintain a priority queue. In Python, <code class="docutils literal notranslate"><span class="pre">heapq</span></code> implements a min-heap by default.</p>
-<p><strong>Real-World Example: Priority Queue for Emergency Services</strong>
-In emergency dispatch, a priority queue (heap) could prioritize patients by the severity of their condition.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">heapq</span>
-
-<span class="n">emergency_queue</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">emergency_queue</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Patient B&quot;</span><span class="p">))</span>  <span class="c1"># Priority 2</span>
-<span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">emergency_queue</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Patient A&quot;</span><span class="p">))</span>  <span class="c1"># Priority 1 (higher)</span>
-<span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">emergency_queue</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Patient C&quot;</span><span class="p">))</span>  <span class="c1"># Priority 3</span>
-
-<span class="c1"># Remove the patient with the highest priority (lowest number)</span>
-<span class="n">highest_priority_patient</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">emergency_queue</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">highest_priority_patient</span><span class="p">)</span>  <span class="c1"># Output: (1, &#39;Patient A&#39;)</span>
-</pre></div>
-</div>
-<p><strong>Why Use a Heap?</strong></p>
-<ul class="simple">
-<li><p><strong>Best for</strong>: Priority-based operations.</p></li>
-<li><p><strong>When to Use</strong>: Scheduling tasks based on priority, pathfinding algorithms, and load balancing.</p></li>
-</ul>
-<p><strong>Summary Table</strong></p>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Data Structure</p></th>
-<th class="head"><p>Best Use Case</p></th>
-<th class="head"><p>Real-World Instance</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>List</p></td>
-<td><p>Ordered collections</p></td>
-<td><p>Shopping cart, to-do list</p></td>
-</tr>
-<tr class="row-odd"><td><p>Tuple</p></td>
-<td><p>Immutable sets of data</p></td>
-<td><p>GPS coordinates, fixed configuration</p></td>
-</tr>
-<tr class="row-even"><td><p>Set</p></td>
-<td><p>Unique elements</p></td>
-<td><p>Unique usernames, eliminating duplicates</p></td>
-</tr>
-<tr class="row-odd"><td><p>Dictionary</p></td>
-<td><p>Key-value mappings</p></td>
-<td><p>Product catalog, contact list</p></td>
-</tr>
-<tr class="row-even"><td><p>Stack</p></td>
-<td><p>LIFO operations</p></td>
-<td><p>Undo in text editor</p></td>
-</tr>
-<tr class="row-odd"><td><p>Queue</p></td>
-<td><p>FIFO operations</p></td>
-<td><p>Print queue, task scheduling</p></td>
-</tr>
-<tr class="row-even"><td><p>Linked List</p></td>
-<td><p>Frequent insertions/deletions</p></td>
-<td><p>Music playlist, dynamic data size</p></td>
-</tr>
-<tr class="row-odd"><td><p>Heap</p></td>
-<td><p>Priority-based operations</p></td>
-<td><p>Emergency dispatch, priority scheduling</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Choosing the right data structure depends on the specific needs of the application, such as order, mutability, uniqueness, or priority.</p>
-</section>
 </section>
 
         </article>
@@ -2624,6 +2626,7 @@ In emergency dispatch, a priority queue (heap) could prioritize patients by the 
 <li><a class="reference internal" href="#summary-of-differences">Summary of Differences</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#data-structures">Data Structures</a></li>
 <li><a class="reference internal" href="#lists-and-list-manipulation">Lists and List Manipulation</a><ul>
 <li><a class="reference internal" href="#specifically-lists">Specifically Lists</a></li>
 <li><a class="reference internal" href="#explanation-of-the-methods">Explanation of the methods:</a></li>
@@ -2637,7 +2640,6 @@ In emergency dispatch, a priority queue (heap) could prioritize patients by the 
 <li><a class="reference internal" href="#basic-syntax-of-lambda-functions">Basic Syntax of Lambda Functions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#data-structures">Data Structures</a></li>
 </ul>
 </li>
 </ul>

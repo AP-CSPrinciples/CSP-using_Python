@@ -1197,6 +1197,193 @@ Methods make object-oriented programming in Python powerful, allowing objects to
 
 Understanding these distinctions can help in writing clearer, more organized code and communicating effectively with other developers.
 
+---
+
+## Data Structures
+
+
+Python provides a variety of built-in data structures to store and organize data, each optimized for specific types of operations. Here’s an overview of the core data structures in Python and examples of how and when each might be used in real-world applications.
+
+**1. Lists (`list`)**
+A **list** is an ordered, mutable collection that allows duplicate elements. It’s the most versatile data structure in Python and can store any data type.
+
+**Real-World Example: Shopping Cart in E-commerce**
+In an online shopping cart, each item the user adds can be stored in a list. Since the order and the ability to add/remove items matter, a list is ideal here.
+
+```python
+shopping_cart = ["laptop", "mouse", "keyboard"]
+shopping_cart.append("headphones")  # Add an item
+shopping_cart.remove("mouse")       # Remove an item
+print(shopping_cart)  # Output: ['laptop', 'keyboard', 'headphones']
+```
+
+**Why Use a List?**
+- **Best for**: Ordered, changeable collections.
+- **When to Use**: Managing items in a specific order where additions and removals are frequent.
+
+**2. Tuples (`tuple`)**
+A **tuple** is an ordered, immutable collection, which means its values cannot be changed after creation. Tuples are often used to store related data.
+
+**Real-World Example: GPS Coordinates**
+Tuples are ideal for storing data that shouldn’t change, such as latitude and longitude coordinates for locations.
+
+```python
+coordinates = (40.7128, -74.0060)  # New York City
+print(coordinates)  # Output: (40.7128, -74.0060)
+```
+
+**Why Use a Tuple?**
+- **Best for**: Fixed sets of related data.
+- **When to Use**: When you need a collection that shouldn’t be modified, like configuration data or coordinate points.
+
+**3. Sets (`set`)**
+A **set** is an unordered collection with no duplicate elements. Sets are useful when you need to eliminate duplicate data or perform set operations like union, intersection, and difference.
+
+**Real-World Example: Unique Users in a System**
+In a web application, sets can store unique user IDs to ensure each user appears only once.
+
+```python
+user_ids = {101, 102, 103, 101}  # Duplicate '101' is ignored
+print(user_ids)  # Output: {101, 102, 103}
+```
+
+**Why Use a Set?**
+- **Best for**: Collections of unique elements.
+- **When to Use**: When duplicates need to be removed, or you need to perform set operations.
+
+**4. Dictionaries (`dict`)**
+A **dictionary** is an unordered collection of key-value pairs. It’s useful for storing data that you want to look up by a unique key.
+
+**Real-World Example: Product Catalog in E-commerce**
+Dictionaries are perfect for storing product information where each product ID maps to a product’s details.
+
+```python
+product_catalog = {
+    "P001": {"name": "Laptop", "price": 1000},
+    "P002": {"name": "Mouse", "price": 25},
+    "P003": {"name": "Keyboard", "price": 50}
+}
+print(product_catalog["P001"]["name"])  # Output: Laptop
+```
+
+**Why Use a Dictionary?**
+- **Best for**: Key-value pair data.
+- **When to Use**: Fast lookups of values by keys, such as a database record by ID or configuration settings.
+
+**5. Stacks (`list` or `collections.deque`)**
+A **stack** follows the Last-In, First-Out (LIFO) principle. You can implement a stack using a `list` (with `.append()` and `.pop()` methods) or with `deque` from the `collections` module.
+
+**Real-World Example: Undo Feature in Text Editor**
+In text editors, the undo functionality is often implemented with a stack where each user action is stored as a new item on the stack. When the user presses "undo," the most recent action is popped from the stack.
+
+```python
+actions = ["type A", "type B", "type C"]
+actions.append("type D")   # Latest action
+last_action = actions.pop()  # Undo the last action
+print(last_action)  # Output: type D
+```
+
+**Why Use a Stack?**
+- **Best for**: Last-In, First-Out operations.
+- **When to Use**: Undo/redo features, function call tracking, and navigation history.
+
+**6. Queues (`collections.deque` or `queue.Queue`)**
+A **queue** follows the First-In, First-Out (FIFO) principle. You can implement a queue with `deque` from `collections` or `Queue` from `queue` module for thread-safe operations.
+
+**Real-World Example: Print Queue in Office**
+In an office printer system, documents to be printed are often handled with a queue where the first document sent is printed first.
+
+```python
+from collections import deque
+
+print_queue = deque(["Document1", "Document2", "Document3"])
+print_queue.append("Document4")  # Add a document to the queue
+first_document = print_queue.popleft()  # Print (remove) the first document
+print(first_document)  # Output: Document1
+```
+
+**Why Use a Queue?**
+- **Best for**: First-In, First-Out operations.
+- **When to Use**: Task scheduling, order processing, and any process where items need to be processed in the order received.
+
+**7. Linked Lists (Custom Implementation)**
+Python does not have a built-in linked list, but you can implement one. Linked lists are useful for dynamic memory allocation and data that frequently changes size.
+
+**Real-World Example: Music Playlist**
+In a music player, a playlist could be implemented as a linked list where each song node points to the next song. This allows easy addition or removal of songs.
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        last = self.head
+        while last.next:
+            last = last.next
+        last.next = new_node
+
+# Usage
+playlist = LinkedList()
+playlist.append("Song 1")
+playlist.append("Song 2")
+```
+
+**Why Use a Linked List?**
+- **Best for**: Data that needs frequent insertion and deletion.
+- **When to Use**: Implementing playlists, managing memory in embedded systems, or when resizing overhead is a concern.
+
+**8. Heaps (`heapq`)**
+A **heap** is a special tree structure used to maintain a priority queue. In Python, `heapq` implements a min-heap by default.
+
+**Real-World Example: Priority Queue for Emergency Services**
+In emergency dispatch, a priority queue (heap) could prioritize patients by the severity of their condition.
+
+```python
+import heapq
+
+emergency_queue = []
+heapq.heappush(emergency_queue, (2, "Patient B"))  # Priority 2
+heapq.heappush(emergency_queue, (1, "Patient A"))  # Priority 1 (higher)
+heapq.heappush(emergency_queue, (3, "Patient C"))  # Priority 3
+
+# Remove the patient with the highest priority (lowest number)
+highest_priority_patient = heapq.heappop(emergency_queue)
+print(highest_priority_patient)  # Output: (1, 'Patient A')
+```
+
+**Why Use a Heap?**
+- **Best for**: Priority-based operations.
+- **When to Use**: Scheduling tasks based on priority, pathfinding algorithms, and load balancing.
+
+**Summary Table**
+
+| Data Structure | Best Use Case                           | Real-World Instance                                |
+|----------------|----------------------------------------|---------------------------------------------------|
+| List           | Ordered collections                    | Shopping cart, to-do list                         |
+| Tuple          | Immutable sets of data                 | GPS coordinates, fixed configuration              |
+| Set            | Unique elements                       | Unique usernames, eliminating duplicates          |
+| Dictionary     | Key-value mappings                     | Product catalog, contact list                     |
+| Stack          | LIFO operations                        | Undo in text editor                               |
+| Queue          | FIFO operations                        | Print queue, task scheduling                      |
+| Linked List    | Frequent insertions/deletions          | Music playlist, dynamic data size                 |
+| Heap           | Priority-based operations              | Emergency dispatch, priority scheduling           |
+
+
+
+Choosing the right data structure depends on the specific needs of the application, such as order, mutability, uniqueness, or priority.
+
+---
+
 
 ## Lists and List Manipulation
 
@@ -2067,188 +2254,3 @@ print(data)
 
 **Summary**
 Lambda functions in Python provide a concise way to define simple functions without the need for formal `def` syntax. They are useful in scenarios where small, throwaway functions are needed, like with `map()`, `filter()`, and data processing tasks. However, lambda functions are limited to single expressions, so they're best for straightforward operations rather than complex logic.
-
-
-
-## Data Structures
-
-
-Python provides a variety of built-in data structures to store and organize data, each optimized for specific types of operations. Here’s an overview of the core data structures in Python and examples of how and when each might be used in real-world applications.
-
-**1. Lists (`list`)**
-A **list** is an ordered, mutable collection that allows duplicate elements. It’s the most versatile data structure in Python and can store any data type.
-
-**Real-World Example: Shopping Cart in E-commerce**
-In an online shopping cart, each item the user adds can be stored in a list. Since the order and the ability to add/remove items matter, a list is ideal here.
-
-```python
-shopping_cart = ["laptop", "mouse", "keyboard"]
-shopping_cart.append("headphones")  # Add an item
-shopping_cart.remove("mouse")       # Remove an item
-print(shopping_cart)  # Output: ['laptop', 'keyboard', 'headphones']
-```
-
-**Why Use a List?**
-- **Best for**: Ordered, changeable collections.
-- **When to Use**: Managing items in a specific order where additions and removals are frequent.
-
-**2. Tuples (`tuple`)**
-A **tuple** is an ordered, immutable collection, which means its values cannot be changed after creation. Tuples are often used to store related data.
-
-**Real-World Example: GPS Coordinates**
-Tuples are ideal for storing data that shouldn’t change, such as latitude and longitude coordinates for locations.
-
-```python
-coordinates = (40.7128, -74.0060)  # New York City
-print(coordinates)  # Output: (40.7128, -74.0060)
-```
-
-**Why Use a Tuple?**
-- **Best for**: Fixed sets of related data.
-- **When to Use**: When you need a collection that shouldn’t be modified, like configuration data or coordinate points.
-
-**3. Sets (`set`)**
-A **set** is an unordered collection with no duplicate elements. Sets are useful when you need to eliminate duplicate data or perform set operations like union, intersection, and difference.
-
-**Real-World Example: Unique Users in a System**
-In a web application, sets can store unique user IDs to ensure each user appears only once.
-
-```python
-user_ids = {101, 102, 103, 101}  # Duplicate '101' is ignored
-print(user_ids)  # Output: {101, 102, 103}
-```
-
-**Why Use a Set?**
-- **Best for**: Collections of unique elements.
-- **When to Use**: When duplicates need to be removed, or you need to perform set operations.
-
-**4. Dictionaries (`dict`)**
-A **dictionary** is an unordered collection of key-value pairs. It’s useful for storing data that you want to look up by a unique key.
-
-**Real-World Example: Product Catalog in E-commerce**
-Dictionaries are perfect for storing product information where each product ID maps to a product’s details.
-
-```python
-product_catalog = {
-    "P001": {"name": "Laptop", "price": 1000},
-    "P002": {"name": "Mouse", "price": 25},
-    "P003": {"name": "Keyboard", "price": 50}
-}
-print(product_catalog["P001"]["name"])  # Output: Laptop
-```
-
-**Why Use a Dictionary?**
-- **Best for**: Key-value pair data.
-- **When to Use**: Fast lookups of values by keys, such as a database record by ID or configuration settings.
-
-**5. Stacks (`list` or `collections.deque`)**
-A **stack** follows the Last-In, First-Out (LIFO) principle. You can implement a stack using a `list` (with `.append()` and `.pop()` methods) or with `deque` from the `collections` module.
-
-**Real-World Example: Undo Feature in Text Editor**
-In text editors, the undo functionality is often implemented with a stack where each user action is stored as a new item on the stack. When the user presses "undo," the most recent action is popped from the stack.
-
-```python
-actions = ["type A", "type B", "type C"]
-actions.append("type D")   # Latest action
-last_action = actions.pop()  # Undo the last action
-print(last_action)  # Output: type D
-```
-
-**Why Use a Stack?**
-- **Best for**: Last-In, First-Out operations.
-- **When to Use**: Undo/redo features, function call tracking, and navigation history.
-
-**6. Queues (`collections.deque` or `queue.Queue`)**
-A **queue** follows the First-In, First-Out (FIFO) principle. You can implement a queue with `deque` from `collections` or `Queue` from `queue` module for thread-safe operations.
-
-**Real-World Example: Print Queue in Office**
-In an office printer system, documents to be printed are often handled with a queue where the first document sent is printed first.
-
-```python
-from collections import deque
-
-print_queue = deque(["Document1", "Document2", "Document3"])
-print_queue.append("Document4")  # Add a document to the queue
-first_document = print_queue.popleft()  # Print (remove) the first document
-print(first_document)  # Output: Document1
-```
-
-**Why Use a Queue?**
-- **Best for**: First-In, First-Out operations.
-- **When to Use**: Task scheduling, order processing, and any process where items need to be processed in the order received.
-
-**7. Linked Lists (Custom Implementation)**
-Python does not have a built-in linked list, but you can implement one. Linked lists are useful for dynamic memory allocation and data that frequently changes size.
-
-**Real-World Example: Music Playlist**
-In a music player, a playlist could be implemented as a linked list where each song node points to the next song. This allows easy addition or removal of songs.
-
-```python
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-class LinkedList:
-    def __init__(self):
-        self.head = None
-
-    def append(self, data):
-        new_node = Node(data)
-        if not self.head:
-            self.head = new_node
-            return
-        last = self.head
-        while last.next:
-            last = last.next
-        last.next = new_node
-
-# Usage
-playlist = LinkedList()
-playlist.append("Song 1")
-playlist.append("Song 2")
-```
-
-**Why Use a Linked List?**
-- **Best for**: Data that needs frequent insertion and deletion.
-- **When to Use**: Implementing playlists, managing memory in embedded systems, or when resizing overhead is a concern.
-
-**8. Heaps (`heapq`)**
-A **heap** is a special tree structure used to maintain a priority queue. In Python, `heapq` implements a min-heap by default.
-
-**Real-World Example: Priority Queue for Emergency Services**
-In emergency dispatch, a priority queue (heap) could prioritize patients by the severity of their condition.
-
-```python
-import heapq
-
-emergency_queue = []
-heapq.heappush(emergency_queue, (2, "Patient B"))  # Priority 2
-heapq.heappush(emergency_queue, (1, "Patient A"))  # Priority 1 (higher)
-heapq.heappush(emergency_queue, (3, "Patient C"))  # Priority 3
-
-# Remove the patient with the highest priority (lowest number)
-highest_priority_patient = heapq.heappop(emergency_queue)
-print(highest_priority_patient)  # Output: (1, 'Patient A')
-```
-
-**Why Use a Heap?**
-- **Best for**: Priority-based operations.
-- **When to Use**: Scheduling tasks based on priority, pathfinding algorithms, and load balancing.
-
-**Summary Table**
-
-| Data Structure | Best Use Case                           | Real-World Instance                                |
-|----------------|----------------------------------------|---------------------------------------------------|
-| List           | Ordered collections                    | Shopping cart, to-do list                         |
-| Tuple          | Immutable sets of data                 | GPS coordinates, fixed configuration              |
-| Set            | Unique elements                       | Unique usernames, eliminating duplicates          |
-| Dictionary     | Key-value mappings                     | Product catalog, contact list                     |
-| Stack          | LIFO operations                        | Undo in text editor                               |
-| Queue          | FIFO operations                        | Print queue, task scheduling                      |
-| Linked List    | Frequent insertions/deletions          | Music playlist, dynamic data size                 |
-| Heap           | Priority-based operations              | Emergency dispatch, priority scheduling           |
-
-
-
-Choosing the right data structure depends on the specific needs of the application, such as order, mutability, uniqueness, or priority.
