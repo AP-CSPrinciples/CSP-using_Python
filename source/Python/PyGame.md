@@ -1,167 +1,270 @@
-# PyGame Basics
+# 🎮 PyGame: An Introduction
 
-## Pygame
-Pygame is a free and open-source Python library used for creating 2D video games. It provides modules to handle graphics, sound, user input, and more.
+**🔹 What is PyGame?**
 
-### Why Pygame instead of Turtle?
+**PyGame** is a free, open-source library for Python that helps you build **2D games and multimedia applications**. It includes powerful tools to handle:
 
-Pygame is commonly used to create AP CSP performance tasks. Pygame allows you to add features like images, sound, and animations, making your project more interactive and polished. By using Pygame, your project will have better graphics and functionality, allowing you to showcase your creativity to your potential.
+* Graphics and animation
+* Sounds and music
+* User input (keyboard, mouse)
+* Sprites and collisions
+* Game loops and timers
 
-## Pygame Installation
-Official Pygame Installation Guide:
-[https://www.pygame.org/wiki/GettingStarted]
+✅ Recommended Python Versions for PyGame
+    * Python 3.7 to 3.11 → ✅ Fully supported and stable
+        * These are the most commonly used versions with PyGame.
+        * PyGame is regularly tested against these versions.
+        
+✅ **Use PyGame when Turtle isn’t enough** — if you want smoother animation, images, sound, or interactivity, PyGame is a better fit.
 
-- If theres any trouble, there are many youtube tutorials on Pygame Installation.
-- If theres still trouble, consider asking ChatGPT or Mr.Virak for help. 
+---
 
-## Pygame Basics
+**🛠 Installation**
 
-This section will teach you some important parts of Pygame. It will also teach you how to create a basic moving game with points called "Apple Collect".
+Install with pip:
 
-### Before you Start
-**Important**: Please install the following files for "Apple Collect!" 
-
-Apple Image: https://drive.google.com/file/d/12FsDmDwt-cEES5PriKQmdxH0TvCJNY-8/view?usp=sharing
-
-Background Image: https://drive.google.com/file/d/1tMdfDkbBsqeNGA6w4uuKVGisIhMUgp86/view?usp=sharing
-
-Player Image: https://drive.google.com/file/d/1L_Erw05imMxhvs0M5pgFL5fUJjZiOaZh/view?usp=sharing
-
-### Important Command 
-
-This command must be called whenever you want to put something on the screen.
-
-```python
-
-pygame.init()
-#initializes the Pygame library
-
-window.blit(bg, (0,0))
-
-#window is the main Pygame Window 
-#bg is an object to be rendered
-# (0,0) are the (x,y) coordinates
-
-```
-**Important**: The order how you blit each imagine matters. (blitting x before y will be different from blitting y before x)
-
- However, in order to actually render the object on the screen:
-
-```python
-
-pygame.display.update()
-
-```
-**Tip**: This command should always be present in the end of the Pygame Main Loop
-
-## Pygame Window
-
-Pygame has the ability to create a window. This window will contain all the visual graphics of your game.
-
-```python
-
-height = 500
-length = 500
-
-window = pygame.display.set_mode((length, height))
-pygame.display.set_caption("Example Game")
-
+```bash
+pip install pygame
 ```
 
-This Code will create a window 500 pixel by 500 pixel black screen with the title of "Example Game".
+If you're using a specific Python version:
 
-#### Pygame Window Customization
-
-You may also set the background to a certain image or color. 
-
-```python
-
-bg = pygame.transform.smoothscale(pygame.image.load("bg.jpeg"), (length, height))
-
-#pygame.transform.smoothscale() will scale any image to any size
-#pygame.image.load("bg.jpeg") will load the bg.jpeg
-#(length, height) will the the target size of the image
-
+```bash
+python3.11 -m pip install pygame
 ```
-**Tip**: Pygame can load many image types. However, jpeg and png work the best.
 
-**Debugging**: Make sure that the image you're trying to load is in the same folder as the code. 
-**Debugging**: Don't forget to blit the object!
+**🔍 Check Compatibility with Your Python Version**
 
-Pygame uses a large while True loop in order to keep the game running. Below is an example of such loop:
-
-```python
-# PyGame Main Loop
-
-keepGameRunning = True
-
-while keepGameRunning:
-  for event in pygame.event.get():
-      if event.type == pygame.QUIT:
-          keepGameRunning = False
-
-      pygame.display.update()
-```
-Pygame has many prebuilt events, (such as button pressing) and this loop, in order to not be an infinite loop, checks if the user has clicked on the red X on the top left of the Pygame Window.
-
-
-### Apple Collect 
+Run this in your terminal or Python shell:
 
 ```python
 import pygame
+print(pygame.ver)
+print(pygame.get_sdl_version())
+```
 
+
+🔗 [Official Guide](https://www.pygame.org/wiki/GettingStarted)
+
+
+
+**🧱 PyGame Basics**
+
+**Initial Setup**
+
+```python
+import pygame
 pygame.init()
+```
+
+**Create a Window**
+
+```python
+width, height = 500, 500
+window = pygame.display.set_mode((width, height))
+pygame.display.set_caption("My First Game")
+```
+
+**Main Game Loop**
+
+```python
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    pygame.display.update()
+```
+
+
+
+**🖼 Drawing & Displaying Graphics**
+
+**Background Images**
+
+```python
+bg = pygame.transform.smoothscale(pygame.image.load("bg.jpg"), (width, height))
+window.blit(bg, (0, 0))  # Draw background at (0,0)
+```
+
+**Display Update**
+
+```python
+pygame.display.update()  # Refreshes screen
+```
+
+⛔ Forgetting to call `blit()` or `update()` will result in no visible changes!
+
+---
+
+**🧍 Working with Sprites (Player, Objects)**
+
+**Load and Resize**
+
+```python
+player = pygame.transform.smoothscale(pygame.image.load("player.png"), (100, 100))
+```
+
+**Draw (Blit) to Screen**
+
+```python
+window.blit(player, (player_x, player_y))
+```
+
+> Blit your background **before** your player or the player will disappear!
+
+
+
+**🕹 Keyboard Input & Movement**
+
+```python
+def movement():
+    keys = pygame.key.get_pressed()
+    global player_x, player_y
+    if keys[pygame.K_LEFT]:
+        player_x -= 5
+    if keys[pygame.K_RIGHT]:
+        player_x += 5
+    if keys[pygame.K_UP]:
+        player_y -= 5
+    if keys[pygame.K_DOWN]:
+        player_y += 5
+```
+
+Inside your main loop, call `movement()` before updating the display.
+
+
+
+**🍎 Project: Apple Collect Starter**
+
+You can use the code below to create an interactive game:
+
+```python
+import pygame
+pygame.init()
+
+width, height = 500, 500
+window = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Apple Collect")
 
-height = 500
-length = 500
-
-window = pygame.display.set_mode((length, height))
-bg = pygame.transform.smoothscale(pygame.image.load("bg.jpg"), (length, height))
-keepGameRunning = True
-
-while keepGameRunning:
-    window.blit(bg, (0, 0))
-    for event in pygame.event.get():
-      if event.type == pygame.QUIT:
-          keepGameRunning = False
-
-      pygame.display.update()
-
-```
-
-### Pygame Sprites 
-
-Using similar logic as creating the background, we can create a custom image on top the the background:
-
-```python
-
+bg = pygame.transform.smoothscale(pygame.image.load("bg.jpg"), (width, height))
 player = pygame.transform.smoothscale(pygame.image.load("player.png"), (100, 100))
+apple = pygame.transform.smoothscale(pygame.image.load("apple.png"), (50, 50))
 
-#scales and image called "player.png" to 100 by 100 pixels 
-```
-**Tip**: Make sure to blit the player AFTER the background!
-
-#### Moving the sprite
-
-Pygame can track user's input. For example, pygame can identify when the user is pressing the up arrow on they keyboard. We can use this functionality in order to create some basic movement for the sprite. 
-
-**Let's make a seperate function to track this input!**
-
-```python
+player_x, player_y = 200, 200
 
 def movement():
     keys = pygame.key.get_pressed()
-#Creates a variable "keys" in teh "movement" function that will check what button the user is pressing
+    global player_x, player_y
+    if keys[pygame.K_LEFT]:
+        player_x -= 5
+    if keys[pygame.K_RIGHT]:
+        player_x += 5
+    if keys[pygame.K_UP]:
+        player_y -= 5
+    if keys[pygame.K_DOWN]:
+        player_y += 5
 
+running = True
+while running:
+    window.blit(bg, (0, 0))
+    movement()
+    window.blit(player, (player_x, player_y))
+    window.blit(apple, (100, 100))
+    pygame.display.update()
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
 ```
 
-Since we will be changing the players coordinates by moving, let's make a variable to represent the x and y coordinate of the player
+
+
+**🧠 Intermediate Topics**
+
+**🎯 Collision Detection**
 
 ```python
+player_rect = pygame.Rect(player_x, player_y, 100, 100)
+apple_rect = pygame.Rect(100, 100, 50, 50)
 
-player_x = 0
-player_y = 0
-
+if player_rect.colliderect(apple_rect):
+    print("Apple Collected!")
 ```
-Now, we can manipulate those coordinates in order to make the player move. 
+
+**📦 Using Classes for Sprites**
+
+```python
+class Player(pygame.sprite.Sprite):
+    def __init__(self, x, y):
+        super().__init__()
+        self.image = pygame.image.load("player.png")
+        self.image = pygame.transform.scale(self.image, (100, 100))
+        self.rect = self.image.get_rect()
+        self.rect.topleft = (x, y)
+
+    def move(self, keys):
+        if keys[pygame.K_LEFT]:
+            self.rect.x -= 5
+        if keys[pygame.K_RIGHT]:
+            self.rect.x += 5
+        if keys[pygame.K_UP]:
+            self.rect.y -= 5
+        if keys[pygame.K_DOWN]:
+            self.rect.y += 5
+```
+
+
+
+### 🔥 Advanced Topics
+
+**🎵 Adding Sound**
+
+```python
+pygame.mixer.init()
+collect_sound = pygame.mixer.Sound("collect.wav")
+collect_sound.play()
+```
+
+**🎲 Random Placement**
+
+```python
+import random
+apple_x = random.randint(0, 450)
+apple_y = random.randint(0, 450)
+```
+
+**⏱ Frame Rate Control**
+
+```python
+clock = pygame.time.Clock()
+clock.tick(60)  # Limit to 60 frames per second
+```
+
+**📚 Organizing Code into Modules**
+
+Split code into:
+
+* `main.py`
+* `player.py`
+* `utils.py`
+
+**🧪 Leveling Up Projects**
+
+Encourage students to:
+
+* Add timers or scores
+* Create multiple levels
+* Add enemies
+* Track high scores with file I/O
+
+
+
+**🧰 Final Tips for Teaching**
+
+* Use visuals for explaining coordinates and layering.
+* Show examples of sprite sheets or sprite animations.
+* Let students modify assets to personalize their games.
+* Use pre-built templates and have them “remix” the code.
+
