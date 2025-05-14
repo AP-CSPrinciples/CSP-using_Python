@@ -377,9 +377,8 @@ if name.lower() == "admin":
 | `.find(substring)`  | Returns index of substring, or -1     | `"apple".find("p")` → `1`                       |
 | `.count(substring)` | Counts occurrences                    | `"banana".count("a")` → `3`                     |
 | `.startswith(text)` | Checks if string starts with text     | `"hello".startswith("he")` → `True`             |
-| `.join()`           | Combines a list of strings into one string | `"-".join(["a", "b", "c"])`                |
 | `.endswith(text)`   | Checks if string ends with text       | `"file.txt".endswith(".txt")` → `True`          |
-| `.capitalize()`     | Capitalizes the first letter          | `"python".capitalize()` → `"Python"`            |
+| **`.capitalize()`**    | Capitalizes the first letter          | `"python".capitalize()` → `"Python"`            |
 | `.title()`          | Capitalizes first letter of each word | `"my name is joe".title()` → `"My Name Is Joe"` |
 
 
@@ -387,10 +386,10 @@ if name.lower() == "admin":
 
 | Method        | Description                               | Example                                          |
 | ------------- | ----------------------------------------- | ------------------------------------------------ |
-| `.isalpha()`  | Checks if all characters are letters      | `"abc".isalpha()` → `True`                       |
-| `.isdigit()`  | Checks if all characters are numbers      | `"123".isdigit()` → `True`                       |
+| **`.isalpha()`**  | Checks if all characters are letters      | `"abc".isalpha()` → `True`                       |
+| **`.isdigit()`**  | Checks if all characters are numbers      | `"123".isdigit()` → `True`                       |
 | `.isalnum()`  | Letters or numbers only                   | `"abc123".isalnum()` → `True`                    |
-| `.join(list)` | Joins a list into a string with separator | `" ".join(["Hello", "world"])` → `"Hello world"` |
+| **`.join(list)`** | Joins a list into a string with separator | `" ".join(["Hello", "world"])` → `"Hello world"` |
 
 
 
