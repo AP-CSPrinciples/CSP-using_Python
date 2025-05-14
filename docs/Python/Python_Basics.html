@@ -628,6 +628,205 @@ Here are the basic data types in Python, along with examples for each.</p>
 </li>
 </ul>
 </li>
+</ol>
+<section id="string-methods">
+<h3>String Methods<a class="headerlink" href="#string-methods" title="Link to this heading">¶</a></h3>
+<p><strong>🟢 Beginner-Friendly String Methods</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.lower()</span></code></p></td>
+<td><p>Converts to lowercase</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;HELLO&quot;.lower()</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.upper()</span></code></p></td>
+<td><p>Converts to uppercase</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;.upper()</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;HELLO&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.strip()</span></code></p></td>
+<td><p>Removes leading/trailing spaces</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;</span>&#160; <span class="pre">hello</span>&#160; <span class="pre">&quot;.strip()</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.replace(old,</span> <span class="pre">new)</span></code></p></td>
+<td><p>Replaces parts of a string</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;cat&quot;.replace(&quot;c&quot;,</span> <span class="pre">&quot;b&quot;)</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;bat&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">.split(separator)</span></code></strong></p></td>
+<td><p>Splits string into list</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;a</span> <span class="pre">b</span> <span class="pre">c&quot;.split()</span></code> → <code class="docutils literal notranslate"><span class="pre">[&quot;a&quot;,</span> <span class="pre">&quot;b&quot;,</span> <span class="pre">&quot;c&quot;]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">len()</span></code></strong></p></td>
+<td><p>Returns length of string</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">len(&quot;hello&quot;)</span></code> → <code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;admin&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome, admin!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>🟡 Intermediate Methods (Great with Practice)</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.find(substring)</span></code></p></td>
+<td><p>Returns index of substring, or -1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;apple&quot;.find(&quot;p&quot;)</span></code> → <code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.count(substring)</span></code></p></td>
+<td><p>Counts occurrences</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;banana&quot;.count(&quot;a&quot;)</span></code> → <code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.startswith(text)</span></code></p></td>
+<td><p>Checks if string starts with text</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;.startswith(&quot;he&quot;)</span></code> → <code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.join()</span></code></p></td>
+<td><p>Combines a list of strings into one string</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;-&quot;.join([&quot;a&quot;,</span> <span class="pre">&quot;b&quot;,</span> <span class="pre">&quot;c&quot;])</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.endswith(text)</span></code></p></td>
+<td><p>Checks if string ends with text</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;file.txt&quot;.endswith(&quot;.txt&quot;)</span></code> → <code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.capitalize()</span></code></p></td>
+<td><p>Capitalizes the first letter</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;python&quot;.capitalize()</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;Python&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.title()</span></code></p></td>
+<td><p>Capitalizes first letter of each word</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;my</span> <span class="pre">name</span> <span class="pre">is</span> <span class="pre">joe&quot;.title()</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;My</span> <span class="pre">Name</span> <span class="pre">Is</span> <span class="pre">Joe&quot;</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>🔵 Optional for Advanced Learners</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.isalpha()</span></code></p></td>
+<td><p>Checks if all characters are letters</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;abc&quot;.isalpha()</span></code> → <code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.isdigit()</span></code></p></td>
+<td><p>Checks if all characters are numbers</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;123&quot;.isdigit()</span></code> → <code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.isalnum()</span></code></p></td>
+<td><p>Letters or numbers only</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;abc123&quot;.isalnum()</span></code> → <code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.join(list)</span></code></p></td>
+<td><p>Joins a list into a string with separator</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;.join([&quot;Hello&quot;,</span> <span class="pre">&quot;world&quot;])</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">world&quot;</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>📦 At minimum, you should know the following:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.lower()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.upper()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.strip()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.replace()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">len()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.split()</span></code></p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Indexing in Python</strong></p>
+<p><strong>Definition</strong>: Indexing lets you access individual characters in a string using square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p>
+<p>*<strong>Note</strong>: Python uses <strong>zero-based indexing</strong> – the first character is at position <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p><strong>Examples:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Output: &#39;A&#39; (first character)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Output: &#39;l&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>  <span class="c1"># Output: &#39;e&#39; (fifth character)</span>
+</pre></div>
+</div>
+<p><strong>Negative Indexing:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Output: &#39;e&#39; (last character)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Output: &#39;c&#39; (second to last)</span>
+</pre></div>
+</div>
+<p>✂️ <strong>Slicing in Python</strong></p>
+<p><strong>Definition</strong>: Slicing lets you extract a <strong>substring</strong> using a start and end index:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The <strong>start is included</strong>, but the <strong>end is excluded</strong>.</p>
+<p><strong>Examples:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>  <span class="c1"># Output: &#39;yth&#39; (characters at index 1, 2, 3)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>   <span class="c1"># Output: &#39;Pyt&#39; (start at 0 by default)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>   <span class="c1"># Output: &#39;thon&#39; (go to end)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">[:])</span>    <span class="c1"># Output: &#39;Python&#39; (entire string)</span>
+</pre></div>
+</div>
+<p><strong>With Negative Indices:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Output: &#39;tho&#39; (characters from index -4 to -2)</span>
+</pre></div>
+</div>
+<p><strong>Quick Visualization:</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Character</p></th>
+<th class="head"><p>P</p></th>
+<th class="head"><p>y</p></th>
+<th class="head"><p>t</p></th>
+<th class="head"><p>h</p></th>
+<th class="head"><p>o</p></th>
+<th class="head"><p>n</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Index</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>Negative</p></td>
+<td><p>-6</p></td>
+<td><p>-5</p></td>
+<td><p>-4</p></td>
+<td><p>-3</p></td>
+<td><p>-2</p></td>
+<td><p>-1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p><strong>Practice Programs to test your understanding:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Mad Libs&quot;</span> <span class="k">with</span> <span class="n">string</span> <span class="n">concatenation</span>
+<span class="n">Greeting</span> <span class="n">program</span> <span class="n">that</span> <span class="n">capitalizes</span> <span class="n">user</span> <span class="nb">input</span>
+<span class="n">Word</span> <span class="n">counter</span> <span class="n">using</span> <span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">()</span>
+<span class="n">Simple</span> <span class="n">login</span> <span class="n">screen</span> <span class="k">with</span> <span class="n">string</span> <span class="n">comparison</span>
+</pre></div>
+</div>
+<ol class="arabic" start="4">
 <li><p><strong>Boolean (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)</strong></p>
 <ul>
 <li><p>Represents one of two values: <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
@@ -743,6 +942,7 @@ Here are the basic data types in Python, along with examples for each.</p>
 </pre></div>
 </div>
 <p>Each variable in this example demonstrates a different data type. Using the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function, we can easily check the data type of each variable.</p>
+</section>
 </section>
 <section id="order-of-operation">
 <h2>Order of Operation<a class="headerlink" href="#order-of-operation" title="Link to this heading">¶</a></h2>
@@ -2607,7 +2807,10 @@ Lambda functions in Python provide a concise way to define simple functions with
 <li><a class="reference internal" href="#">Python Basics</a><ul>
 <li><a class="reference internal" href="#python-style-guidelines">Python Style Guidelines</a></li>
 <li><a class="reference internal" href="#print-statements">Print Statements</a></li>
-<li><a class="reference internal" href="#variables-and-data-types">Variables and Data Types</a></li>
+<li><a class="reference internal" href="#variables-and-data-types">Variables and Data Types</a><ul>
+<li><a class="reference internal" href="#string-methods">String Methods</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#order-of-operation">Order of Operation</a></li>
 <li><a class="reference internal" href="#modules-and-packages">Modules and Packages</a><ul>
 <li><a class="reference internal" href="#modules-in-python">Modules in Python</a></li>
