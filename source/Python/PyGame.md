@@ -13,7 +13,7 @@
 
 ✅ Recommended Python Versions for PyGame
 
-- Python 3.7 to 3.11 → ✅ Fully supported and stable
+- ✅ Fully supported and stable versions of Python are 3.7 to 3.11
   - These are the most commonly used versions with PyGame.
   - PyGame is regularly tested against these versions.
 
