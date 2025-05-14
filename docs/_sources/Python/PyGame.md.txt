@@ -2,13 +2,14 @@
 
 **🔹 What is PyGame?**
 
-**PyGame** is a free, open-source library for Python that helps you build **2D games and multimedia applications**. It includes powerful tools to handle:
+**PyGame** is a free, open-source library for Python that helps you build **2D games and multimedia applications**. It has powerful tools that will allow you to use:
 
-* Graphics and animation
-* Sounds and music
-* User input (keyboard, mouse)
-* Sprites and collisions
-* Game loops and timers
+   * Graphics and animation
+   * Sounds and music
+   * User input (keyboard, mouse)
+   * Sprites and collisions
+   * Game loops and timers
+
 
 ✅ Recommended Python Versions for PyGame
     * Python 3.7 to 3.11 → ✅ Fully supported and stable
