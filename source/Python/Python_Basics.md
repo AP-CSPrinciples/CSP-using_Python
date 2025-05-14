@@ -585,7 +585,7 @@ In Python, expressions are evaluated based on a well-defined **order of operatio
 3. **Logical Operators**
 
 
-------------------------------------------------------------
+---
 
 **Operator Precedence in Python**
 
@@ -657,7 +657,7 @@ print(result)  # Output: 10.0
 >                result = 7 // 2  # Output: 3 (integer)
 >             ```
 
-------------------------------------------------------------
+---
 
 **2. Relational (Comparison) Operators**
 
@@ -1024,119 +1024,335 @@ Python has a rich standard library with many commonly used modules and packages 
 - **Packages** are directories containing multiple related modules and an `__init__.py` file, which make large projects more manageable and prevent naming conflicts.
 
 Using modules and packages keeps Python code modular, readable, and reusable, making it easier to structure and manage projects.
-## Control Flow and Conditional Statements
+
+---
 
 
-## Loops
+## 🧭 **Control Flow & Conditional Statements**
+
+**Control flow** determines **which code runs, when, and how often**.
+It allows your program **make decisions**, **repeat actions**, or **branch** based on the conditions.
+
+
+1. **What Is Control Flow?**
+
+Control flow structures include:
+
+* **Conditional Statements** → Decide *which* block of code to run
+* **Loops** → Repeat code *while* a condition holds
+* **Branching Keywords** → Jump or skip parts of the code
+
+
+2. **Conditional Statements**
+
+Used to **test conditions** (True or False) and run specific code blocks.
+
+**✅ Basic `if` Statement**
 
 ```python
-# CODE 1
-for x in range (1, 6):
-  for y in range (1, 6):
-    print("*", end="")
-  print()
+if condition:
+    # code runs if condition is True
+```
 
-# CODE 2
-for x in range (1, 6):
-  for y in range (1, 6):
-    print(x, end="")
-  print()
+**Example:**
 
-# CODE 4
-for x in 'ABCDE':
-  for y in 'ABCDE':
-    print(x, end="")
-  print()
+```python
+age = 18
+if age >= 18:
+    print("You're an adult.")
+```
 
-# CODE 6
-for x in range (5, 0, -1):
-  for y in range (5, 0, -1):
-    print(x, end="")
-  print()
 
-# CODE 7
-for x in range (5, 0, -1):
-  for y in range(5, 0, -1):
-    print(y, end="")
-  print()
+**`if-else` Statement**
 
-# CODE 8
-for x in range (69, 64, -1):
-  for y in range(1, 6):
-    print(chr(x), end="")
-  print()
-  
-# CODE 10
-for x in range (1, 6):
-  for y in range (1, x+1):
-    print("x", end="")
-  print()
+```python
+if condition:
+    # if True
+else:
+    # if False
+```
 
-# CODE 12
-for x in range (1, 6):
-  for y in range (1, x+1):
-    print(y, end="")
-  print()
+**Example:**
 
-# CODE 13
-for x in range (65, 70):
-  for y in range (65, x+1):
-    print(chr(x), end="")
-  print()
+```python
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+```
 
-# CODE 14
-for x in range (65, 70):
-  for y in range (65, x+1):
-    print(chr(y), end="")
-  print()
 
-# CODE 15
-for x in range (1, 6):
-  for y in range (6, x, -1):
-    print("*", end="")
-  print()
 
-# CODE 16
-for x in range (1, 6):
-  for y in range (6, x, -1):
-    print(x, end="")
-  print()
+**`if-elif-else` (Multiple Conditions)**
 
-# CODE 17
-for x in range (6, 1, -1):
-  for y in range (1, x):
-    print(y, end="")
-  print()
+```python
+if condition1:
+    # if condition1 is True
+elif condition2:
+    # if condition1 is False and condition2 is True
+else:
+    # if none are True
+```
 
-# CODE 21
-for x in range (1, 6):
-  for y in range (5, x-1, -1):
-    print(y, end="")
-  print()
+**Example:**
 
-# CODE 22
-for x in range (5, 0, -1):
-  for y in range (0, x):
-    print(chr(x+64), end="")
-  print()
+```python
+score = 85
 
-# CODE 24
-for x in range (1, 6):
-  for y in range (5, x, -1):
-    print("", end="")
-  for z in range (0, x):
-    print("*", end="")
-  print()
+if score >= 90:
+    print("A")
+elif score >= 80:
+    print("B")
+elif score >= 70:
+    print("C")
+else:
+    print("F")
+```
 
-# CODE 25
-for x in range (1, 6):
-  for y in range (5, x, -1):
-    print(" ", end="")
-  for z in range (0, x):
-    print(x, end="")
-  print()
+
+
+3. **Comparison Operators**
+
+Used to form conditions.
+
+| Operator | Meaning          | Example  |
+| -------- | ---------------- | -------- |
+| `==`     | equal to         | `x == 5` |
+| `!=`     | not equal to     | `x != 5` |
+| `>`      | greater than     | `x > 5`  |
+| `<`      | less than        | `x < 5`  |
+| `>=`     | greater or equal | `x >= 5` |
+| `<=`     | less or equal    | `x <= 5` |
+
+
+
+4. **Logical Operators**
+
+Used to combine multiple conditions.
+
+| Operator | Meaning                   | Example                         |
+| -------- | ------------------------- | ------------------------------- |
+| `and`    | both must be True         | `x > 0 and x < 10`              |
+| `or`     | at least one must be True | `x < 0 or x > 10`               |
+| `not`    | reverses a condition      | `not(x > 5)` → True if `x <= 5` |
+
+
+
+**Nested Conditionals**
+
+Putting one conditional inside another.
+
+```python
+if score >= 70:
+    if score >= 90:
+        print("A or A+")
+    else:
+        print("Pass")
+else:
+    print("Fail")
+```
+
+> 💡 Nesting too much can make code hard to read — consider using `elif` instead when possible.
+
+
+
+6. **Indentation Matters in Python**
+
+Python uses **indentation** (usually 4 spaces) to show what code is **inside** the `if`, `else`, or loop block.
+
+```python
+if is_sunny:
+    print("Wear sunglasses")  # indented = inside
+print("Have a nice day!")     # outside
+```
+
+
+
+**Control Flow Summary**
+
+| Concept            | Description                                |
+| ------------------ | ------------------------------------------ |
+| `if`               | Runs code if condition is True             |
+| `else`             | Runs code if condition is False            |
+| `elif`             | Adds extra conditions                      |
+| `==`, `!=`, etc.   | Compare values                             |
+| `and`, `or`, `not` | Combine or modify conditions               |
+| Indentation        | Controls which code belongs to which block |
+
+
+
+**Example: Simple Login Check**
+
+```python
+username = input("Enter username: ")
+
+if username == "admin":
+    print("Access granted")
+else:
+    print("Access denied")
+```
+
+---
+---
+
+
+### 🔁 Loops
+
+
+Loops let you **repeat blocks of code**.  This is useful when working with lists, strings, or running a task multiple times.
+
+**Types of Loops in Python**
+
+1. **`for` Loop**
+
+Used to loop through a **sequence** (like a list, string, or `range()`).
+
+**🔹 Basic Syntax:**
+
+```python
+for item in sequence:
+    # code to repeat
+```
+
+**Example:**
+
+```python
+for fruit in ["apple", "banana", "cherry"]:
+    print(fruit)
+```
+
+**With `range()`:**
+
+```python
+for i in range(3):
+    print(i)
+```
+
+> Output: `0 1 2`
+
+---
+
+2. **`while` Loop**
+
+Repeats code **while a condition is `True`**.
+
+**🔹 Basic Syntax:**
+
+```python
+while condition:
+    # code to repeat
+```
+
+**Example:**
+
+```python
+count = 0
+while count < 3:
+    print(count)
+    count += 1
+```
+
+---
+
+**Loop Control Keywords**
+
+| Keyword    | Purpose                               | Example               |
+| ---------- | ------------------------------------- | --------------------- |
+| `break`    | Exit the loop early                   | `if x == 3: break`    |
+| `continue` | Skip to the next iteration            | `if x == 2: continue` |
+| `pass`     | Placeholder that does nothing         | `if x == 2: pass`     |
+| `else`     | Runs if loop finishes without `break` | `else: print("Done")` |
+
+---
+
+## 🔁 **Nested Loops**
+
+A **nested loop** is a loop **inside another loop**. The inner loop completes **all its iterations for each outer loop cycle**.
+
+**🔹 Syntax:**
+
+```python
+for outer in outer_range:
+    for inner in inner_range:
+        # nested loop body
+```
+
+
+
+**Example 1: Nested `for` Loops (Multiplication Table)**
+
+```python
+for i in range(1, 4):
+    for j in range(1, 4):
+        print(i * j, end=" ")
+    print()  # new line after inner loop
+```
+
+**Output:**
 
 ```
+1 2 3 
+2 4 6 
+3 6 9
+```
+
+
+
+**Example 2: Nested Loops with Strings**
+
+```python
+words = ["hi", "hello"]
+for word in words:
+    for letter in word:
+        print(letter, end=" ")
+    print()
+```
+
+**Output:**
+
+```
+h i 
+h e l l o 
+```
+
+
+
+**Example 3: Nested `while` + `for`**
+
+```python
+x = 0
+while x < 2:
+    for y in range(3):
+        print(f"x={x}, y={y}")
+    x += 1
+```
+
+
+**Choosing the Right Loop**
+
+| Use this | When...                                      |
+| -------- | -------------------------------------------- |
+| `for`    | You know how many times to loop (e.g. lists) |
+| `while`  | You loop until something changes             |
+| Nested   | You need combinations, grids, or pairs       |
+
+
+
+**Summary**
+
+| Keyword     | Description                       |
+| ----------- | --------------------------------- |
+| `for`       | Loop through a sequence           |
+| `while`     | Loop while a condition is true    |
+| `break`     | Exit loop immediately             |
+| `continue`  | Skip to next iteration            |
+| `pass`      | Do nothing (placeholder)          |
+| `else`      | Runs if loop ends without `break` |
+| Nested loop | Loop inside another loop          |
+
+
+---
+
 
 ```python
 # Create a square
@@ -1154,7 +1370,7 @@ for i in range(size):
 ```
 
 
-Sample Output
+**Sample Output**
 
 ```python
 Enter the size of the square: 10
