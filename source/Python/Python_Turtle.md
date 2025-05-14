@@ -1,6 +1,6 @@
 # 🐢 Python Turtle Graphics — Comprehensive Guide 
 
-The `turtle` module in Python is a **built-in library** that makes it easy to introduce programming to beginners. You control a **"turtle" that moves and draws** on the screen.  It is perfect for learning loops, functions, geometry, and logic through visual feedback.
+The `turtle` module in Python is a **built-in library** that makes it easy to introduce programming to beginners. You control a **"turtle" that moves and draws** on the screen.  It is perfect for learning loops, functions, geometry, and logic through visual feedback.  Turtle methods are available using Python 2.6 and are fully supported in Python 3.x, including versions 3.10+, 3.11, and 3.12.
 
 **🔹 Getting Started**
 
