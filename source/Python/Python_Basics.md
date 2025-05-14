@@ -14,7 +14,7 @@ We will be looking at syntax and structures of Python. We will use an Integrated
 
 [**PEP 8 Guidelines**](https://peps.python.org/pep-0008/) is the official style guide for Python code and covers naming conventions, code layout, and indentation.  These style guidelines, along with the examples and rationales, will help you write clean, readable, and maintainable code. 
 
--------------------------------------------------------------------------
+---
 
 **1. Use Descriptive Variable and Function Names**
    - **Guideline**: Use descriptive names that make the purpose of the variable or function clear.
@@ -349,6 +349,132 @@ Here are the basic data types in Python, along with examples for each.
      greeting = 'Hello, World!'
      print(type(name))  # Output: <class 'str'>
      ```
+
+### String Methods
+
+
+**🟢 Beginner-Friendly String Methods**
+
+| Method               | Description                     | Example                               |
+| -------------------- | ------------------------------- | ------------------------------------- |
+| `.lower()`           | Converts to lowercase           | `"HELLO".lower()` → `"hello"`         |
+| `.upper()`           | Converts to uppercase           | `"hello".upper()` → `"HELLO"`         |
+| `.strip()`           | Removes leading/trailing spaces | `"  hello  ".strip()` → `"hello"`     |
+| `.replace(old, new)` | Replaces parts of a string      | `"cat".replace("c", "b")` → `"bat"`   |
+| **`.split(separator)`**  | Splits string into list         | `"a b c".split()` → `["a", "b", "c"]` |
+| **`len()`**              | Returns length of string        | `len("hello")` → `5`                  |
+
+```python
+if name.lower() == "admin":
+    print("Welcome, admin!")
+```
+
+
+**🟡 Intermediate Methods (Great with Practice)**
+
+| Method              | Description                           | Example                                         |
+| ------------------- | ------------------------------------- | ----------------------------------------------- |
+| `.find(substring)`  | Returns index of substring, or -1     | `"apple".find("p")` → `1`                       |
+| `.count(substring)` | Counts occurrences                    | `"banana".count("a")` → `3`                     |
+| `.startswith(text)` | Checks if string starts with text     | `"hello".startswith("he")` → `True`             |
+| `.join()`           | Combines a list of strings into one string | `"-".join(["a", "b", "c"])`                |
+| `.endswith(text)`   | Checks if string ends with text       | `"file.txt".endswith(".txt")` → `True`          |
+| `.capitalize()`     | Capitalizes the first letter          | `"python".capitalize()` → `"Python"`            |
+| `.title()`          | Capitalizes first letter of each word | `"my name is joe".title()` → `"My Name Is Joe"` |
+
+
+**🔵 Optional for Advanced Learners**
+
+| Method        | Description                               | Example                                          |
+| ------------- | ----------------------------------------- | ------------------------------------------------ |
+| `.isalpha()`  | Checks if all characters are letters      | `"abc".isalpha()` → `True`                       |
+| `.isdigit()`  | Checks if all characters are numbers      | `"123".isdigit()` → `True`                       |
+| `.isalnum()`  | Letters or numbers only                   | `"abc123".isalnum()` → `True`                    |
+| `.join(list)` | Joins a list into a string with separator | `" ".join(["Hello", "world"])` → `"Hello world"` |
+
+
+
+**📦 At minimum, you should know the following:**
+
+* `.lower()`
+* `.upper()`
+* `.strip()`
+* `.replace()`
+* `len()`
+* `.split()`
+
+
+---
+
+
+**Indexing in Python**
+
+**Definition**: Indexing lets you access individual characters in a string using square brackets `[]`.
+
+***Note**: Python uses **zero-based indexing** – the first character is at position `0`.
+
+**Examples:**
+
+```python
+name = "Alice"
+print(name[0])  # Output: 'A' (first character)
+print(name[1])  # Output: 'l'
+print(name[4])  # Output: 'e' (fifth character)
+```
+
+**Negative Indexing:**
+
+```python
+print(name[-1])  # Output: 'e' (last character)
+print(name[-2])  # Output: 'c' (second to last)
+```
+
+
+✂️ **Slicing in Python**
+
+**Definition**: Slicing lets you extract a **substring** using a start and end index:
+
+```python
+string[start:end]
+```
+
+The **start is included**, but the **end is excluded**.
+
+**Examples:**
+
+```python
+word = "Python"
+print(word[1:4])  # Output: 'yth' (characters at index 1, 2, 3)
+print(word[:3])   # Output: 'Pyt' (start at 0 by default)
+print(word[2:])   # Output: 'thon' (go to end)
+print(word[:])    # Output: 'Python' (entire string)
+```
+
+**With Negative Indices:**
+
+```python
+print(word[-4:-1])  # Output: 'tho' (characters from index -4 to -2)
+```
+
+
+**Quick Visualization:**
+
+| Character | P  | y  | t  | h  | o  | n  |
+| --------- | -- | -- | -- | -- | -- | -- |
+| Index     | 0  | 1  | 2  | 3  | 4  | 5  |
+| Negative  | -6 | -5 | -4 | -3 | -2 | -1 |
+
+---
+
+
+**Practice Programs to test your understanding:**
+
+```python
+"Mad Libs" with string concatenation
+Greeting program that capitalizes user input
+Word counter using .split() and len()
+Simple login screen with string comparison
+```
 
 4. **Boolean (`bool`)**
    - Represents one of two values: `True` or `False`.
