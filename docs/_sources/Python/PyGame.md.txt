@@ -18,7 +18,12 @@
   - PyGame is regularly tested against these versions.
 
 
-✅ **Use PyGame when Turtle isn’t enough** — if you want smoother animation, images, sound, or interactivity, PyGame is a better fit.
+✅ **Use PyGame when...** 
+— if you want:
+  - smoother animation
+  -  images
+  -  sound
+  -  interactivity
 
 
 
