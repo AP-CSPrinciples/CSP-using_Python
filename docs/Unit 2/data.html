@@ -382,14 +382,44 @@ Binary Representation: 01001000 01100101 01101100 01101100 01101111 00101100 001
 </pre></div>
 </div>
 <p><strong>2. ASCII Encoding and Decoding</strong></p>
-<p><strong>Objective:</strong> Convert binary back to ASCII text.</p>
-<ul class="simple">
-<li><p><strong>Concepts Covered:</strong> ASCII, Data Decoding, Data Extraction.</p></li>
-</ul>
-<p><strong>Task:</strong></p>
-<ul class="simple">
-<li><p>Write a function that takes a string of binary numbers (representing ASCII values) and converts it back into readable text.</p></li>
-</ul>
+<p><strong>Objective:</strong> Write a function that takes a string of binary numbers (representing ASCII values) and converts it back into readable text.</p>
+<p><strong>1: Look at the Message Format</strong></p>
+<p>Look at the string of binary numbers. Each 8 digits are separated by a space. Each binary group stands for a letter, number, or symbol.</p>
+<p>Use the binary that was generated from above.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">01001000</span> <span class="mi">01100101</span> <span class="mi">01101100</span> <span class="mi">01101100</span> <span class="mi">01101111</span> <span class="mi">00101100</span> <span class="mi">00100000</span> <span class="mi">01010111</span> <span class="mi">01101111</span> <span class="mi">01110010</span> <span class="mi">01101100</span> <span class="mi">01100100</span> <span class="mi">00100001</span>
+</pre></div>
+</div>
+<p><strong>2: Break the Message into Smaller Parts</strong></p>
+<ol class="arabic simple">
+<li><p>Convert the message into a list of parts, where each part is one set of 8 binary digits.</p></li>
+<li><p>These will be used to decode the message one character at a time.</p></li>
+</ol>
+<p><strong>3: Turn Each Binary Group Into a Letter</strong></p>
+<p>For each group of 1s and 0s:</p>
+<ol class="arabic simple">
+<li><p>Change it into a base-10 number (what we normally use for counting).</p></li>
+<li><p>Then, change that number into a letter or symbol from the alphabet.</p></li>
+<li><p>Repeat this for every group in the list.</p></li>
+</ol>
+<p><strong>4: Combine All the Letters Together</strong></p>
+<p>After turning every binary group into a letter, combine all of them in the correct order. This gives you the final sentence.</p>
+<p><strong>5: Test the Program With a Sample Message</strong></p>
+<p>Try using the steps above on this secret message:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">01001000</span> <span class="mi">01100101</span> <span class="mi">01101100</span> <span class="mi">01101100</span> <span class="mi">01101111</span> <span class="mi">00101100</span> <span class="mi">00100000</span> <span class="mi">01010111</span> <span class="mi">01101111</span> <span class="mi">01110010</span> <span class="mi">01101100</span> <span class="mi">01100100</span> <span class="mi">00100001</span>
+</pre></div>
+</div>
+<p><strong>Pseudocode</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Define</span> <span class="n">a</span> <span class="n">function</span> <span class="n">that</span> <span class="n">receives</span> <span class="n">a</span> <span class="n">binary</span> <span class="n">message</span>
+    <span class="n">Break</span> <span class="n">the</span> <span class="n">message</span> <span class="n">into</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">binary</span> <span class="n">pieces</span>
+    <span class="n">Create</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">string</span> <span class="k">for</span> <span class="n">the</span> <span class="n">decoded</span> <span class="n">text</span>
+    <span class="n">For</span> <span class="n">each</span> <span class="n">binary</span> <span class="n">piece</span><span class="p">:</span>
+        <span class="n">Convert</span> <span class="n">it</span> <span class="n">to</span> <span class="n">a</span> <span class="n">base</span><span class="o">-</span><span class="mi">10</span> <span class="n">number</span>
+        <span class="n">Convert</span> <span class="n">that</span> <span class="n">number</span> <span class="n">to</span> <span class="n">a</span> <span class="n">letter</span> <span class="ow">or</span> <span class="n">symbol</span>
+        <span class="n">Add</span> <span class="n">the</span> <span class="n">letter</span> <span class="ow">or</span> <span class="n">symbol</span> <span class="n">to</span> <span class="n">the</span> <span class="n">decoded</span> <span class="n">text</span>
+    <span class="n">Give</span> <span class="n">back</span> <span class="n">the</span> <span class="n">final</span> <span class="n">decoded</span> <span class="n">text</span>
+</pre></div>
+</div>
+<hr class="docutils" />
 <p><strong>Python Example:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">binary_to_text</span><span class="p">(</span><span class="n">binary</span><span class="p">):</span>
     <span class="n">binary_values</span> <span class="o">=</span> <span class="n">binary</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>  <span class="c1"># Split the binary input into separate characters</span>

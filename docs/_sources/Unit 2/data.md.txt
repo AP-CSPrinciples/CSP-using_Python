@@ -104,11 +104,63 @@ Binary Representation: 01001000 01100101 01101100 01101100 01101111 00101100 001
 
 **2. ASCII Encoding and Decoding**
 
-**Objective:** Convert binary back to ASCII text.
-* **Concepts Covered:** ASCII, Data Decoding, Data Extraction.
+**Objective:** Write a function that takes a string of binary numbers (representing ASCII values) and converts it back into readable text.
 
-**Task:**
-* Write a function that takes a string of binary numbers (representing ASCII values) and converts it back into readable text.
+
+**1: Look at the Message Format**
+
+Look at the string of binary numbers. Each 8 digits are separated by a space. Each binary group stands for a letter, number, or symbol.
+
+Use the binary that was generated from above.
+
+```
+01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
+```
+
+
+**2: Break the Message into Smaller Parts**
+
+1. Convert the message into a list of parts, where each part is one set of 8 binary digits.
+2. These will be used to decode the message one character at a time.
+
+
+**3: Turn Each Binary Group Into a Letter**
+
+For each group of 1s and 0s:
+
+1. Change it into a base-10 number (what we normally use for counting).
+2. Then, change that number into a letter or symbol from the alphabet.
+3. Repeat this for every group in the list.
+
+
+**4: Combine All the Letters Together**
+
+After turning every binary group into a letter, combine all of them in the correct order. This gives you the final sentence.
+
+
+**5: Test the Program With a Sample Message**
+
+Try using the steps above on this secret message:
+
+```
+01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
+```
+
+
+**Pseudocode**
+
+```
+Define a function that receives a binary message
+    Break the message into a list of binary pieces
+    Create an empty string for the decoded text
+    For each binary piece:
+        Convert it to a base-10 number
+        Convert that number to a letter or symbol
+        Add the letter or symbol to the decoded text
+    Give back the final decoded text
+```
+
+---
 
 **Python Example:**
 
