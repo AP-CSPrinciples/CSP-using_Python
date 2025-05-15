@@ -86,26 +86,32 @@ The project will simulate a "Data Communication and Compression" system where yo
 * Write a function that converts a given string of text into binary representation using the ASCII encoding system.
 * Each character in the text will be converted into its ASCII value, and then the ASCII value will be converted into binary.
 
-**Python Example:**
+**Instructions:**
 
-```python
-def text_to_binary(text):
-    binary_data = []
-    for char in text:
-        binary_data.append(format(ord(char), '08b'))  # Convert char to 8-bit binary
-    return ' '.join(binary_data)
+1. Create a function that accepts a message (the text you want to convert).
 
-text = "Hello, World!"
-binary_representation = text_to_binary(text)
-print(f"Binary Representation: {binary_representation}")
-```
+2. Create an **empty list** to store the binary versions of each character.
+
+3. For each letter in the message:
+
+   * Use a method to find its **ASCII code** (a number that represents that letter).
+   * Format that number into **binary** with 8 digits.
+   * Add this binary version to your list.
+
+4. After all letters are processed:
+
+   * Join the list of binary values together, with **spaces** in between.
+   * **Return** the final string from your tool.
+
+5. Call your function by giving it some text like `"Hello, World!"` and **show the result** on screen with a label.
+
 
 **Expected Output:**
 ```
+What phrase would you like to convert? Hello World
+
 Binary Representation: 01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
 ```
-
-
 
 **2. ASCII Encoding and Decoding**
 
