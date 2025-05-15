@@ -88,21 +88,15 @@ The project will simulate a "Data Communication and Compression" system where yo
 
 **Instructions:**
 
-1. Create a function that accepts a message (the text you want to convert).
-
+1. Create a function with one parameter that accepts a message (the text you want to convert).
 2. Create an **empty list** to store the binary versions of each character.
-
 3. For each letter in the message:
-
    * Use a method to find its **ASCII code** (a number that represents that letter).
    * Format that number into **binary** with 8 digits.
    * Add this binary version to your list.
-
 4. After all letters are processed:
-
    * Join the list of binary values together, with **spaces** in between.
    * **Return** the final string from your tool.
-
 5. Call your function by giving it some text like `"Hello, World!"` and **show the result** on screen with a label.
 
 
