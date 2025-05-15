@@ -79,14 +79,9 @@ The project will simulate a "Data Communication and Compression" system where yo
 
 **1. Binary Representation of Data**
 
-**Objective:** Convert text into binary format (ASCII encoding).
-* **Concepts Covered:** Binary, ASCII, Data Representation.
+**Objective:** Write a function that converts a given string of text into binary representation using the ASCII encoding system. Each character in the text will be converted into its ASCII value, and then the ASCII value will be converted into binary.
 
-**Task:**
-* Write a function that converts a given string of text into binary representation using the ASCII encoding system.
-* Each character in the text will be converted into its ASCII value, and then the ASCII value will be converted into binary.
-
-**Instructions:**
+**Directions:**
 
 1. Create a function with one parameter that accepts a message (the text you want to convert).
 2. Create an **empty list** to store the binary versions of each character.
