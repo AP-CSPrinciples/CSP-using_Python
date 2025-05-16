@@ -376,38 +376,39 @@
 <li><p>Call your function by giving it some text like <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code> and <strong>show the result</strong> on screen with a label.</p></li>
 </ol>
 <p><strong>Expected Output:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>What phrase would you like to convert? Hello World
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>What phrase would you like to convert to binary? Hello World
 
 Binary Representation: 01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
 </pre></div>
 </div>
-<p><strong>2. ASCII Encoding and Decoding</strong></p>
+<p><strong>2. Binary to ASCII Decoder</strong></p>
 <p><strong>Objective:</strong> Write a function that takes a string of binary numbers (representing ASCII values) and converts it back into readable text.</p>
-<p><strong>1: Look at the Message Format</strong></p>
-<p>Look at the string of binary numbers. Each 8 digits are separated by a space. Each binary group stands for a letter, number, or symbol.</p>
-<p>Use the binary that was generated from above.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">01001000</span> <span class="mi">01100101</span> <span class="mi">01101100</span> <span class="mi">01101100</span> <span class="mi">01101111</span> <span class="mi">00101100</span> <span class="mi">00100000</span> <span class="mi">01010111</span> <span class="mi">01101111</span> <span class="mi">01110010</span> <span class="mi">01101100</span> <span class="mi">01100100</span> <span class="mi">00100001</span>
-</pre></div>
-</div>
-<p><strong>2: Break the Message into Smaller Parts</strong></p>
-<ol class="arabic simple">
-<li><p>Convert the message into a list of parts, where each part is one set of 8 binary digits.</p></li>
-<li><p>These will be used to decode the message one character at a time.</p></li>
-</ol>
-<p><strong>3: Turn Each Binary Group Into a Letter</strong></p>
-<p>For each group of 1s and 0s:</p>
-<ol class="arabic simple">
-<li><p>Change it into a base-10 number (what we normally use for counting).</p></li>
-<li><p>Then, change that number into a letter or symbol from the alphabet.</p></li>
-<li><p>Repeat this for every group in the list.</p></li>
-</ol>
-<p><strong>4: Combine All the Letters Together</strong></p>
-<p>After turning every binary group into a letter, combine all of them in the correct order. This gives you the final sentence.</p>
-<p><strong>5: Test the Program With a Sample Message</strong></p>
-<p>Try using the steps above on this secret message:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">01001000</span> <span class="mi">01100101</span> <span class="mi">01101100</span> <span class="mi">01101100</span> <span class="mi">01101111</span> <span class="mi">00101100</span> <span class="mi">00100000</span> <span class="mi">01010111</span> <span class="mi">01101111</span> <span class="mi">01110010</span> <span class="mi">01101100</span> <span class="mi">01100100</span> <span class="mi">00100001</span>
-</pre></div>
-</div>
+<p><strong>1. Create a Function with One Parameter</strong></p>
+<ul class="simple">
+<li><p>The parameter should accept a <strong>binary string</strong> with groups of 8 digits separated by spaces.</p></li>
+<li><p>This will be the message you want to decode.</p></li>
+</ul>
+<p><strong>2. Split the Message into Parts</strong></p>
+<ul class="simple">
+<li><p>Use a method to <strong>split</strong> the long binary message into a <strong>list</strong> of smaller strings.</p></li>
+<li><p>Each piece should be exactly <strong>8 digits long</strong> — representing one character.</p></li>
+</ul>
+<p><strong>3. Create an Empty String to Store the Result</strong></p>
+<ul class="simple">
+<li><p>You’ll build your decoded message <strong>one letter at a time</strong>, so start with an empty string.</p></li>
+</ul>
+<p><strong>4. For Each Binary Group:</strong></p>
+<ul class="simple">
+<li><p>Convert it from <strong>binary to decimal</strong> (this gives you the ASCII number).</p></li>
+<li><p>Convert that decimal number to a <strong>character</strong> (letter, number, or symbol).</p></li>
+<li><p>Add the character to your decoded message string.</p></li>
+</ul>
+<p><strong>5. Return the Final Text</strong></p>
+<ul class="simple">
+<li><p>Once every group has been processed, return the final sentence made from all the characters.</p></li>
+<li><p>Call your function and pass the binary message:</p></li>
+<li><p>Display the result on screen using a <strong>label</strong> or print statement.  It should reveal a <strong>readable sentence</strong>!</p></li>
+</ul>
 <p><strong>Pseudocode</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Define</span> <span class="n">a</span> <span class="n">function</span> <span class="n">that</span> <span class="n">receives</span> <span class="n">a</span> <span class="n">binary</span> <span class="n">message</span>
     <span class="n">Break</span> <span class="n">the</span> <span class="n">message</span> <span class="n">into</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">binary</span> <span class="n">pieces</span>
@@ -419,20 +420,9 @@ Binary Representation: 01001000 01100101 01101100 01101100 01101111 00101100 001
     <span class="n">Give</span> <span class="n">back</span> <span class="n">the</span> <span class="n">final</span> <span class="n">decoded</span> <span class="n">text</span>
 </pre></div>
 </div>
-<hr class="docutils" />
-<p><strong>Python Example:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">binary_to_text</span><span class="p">(</span><span class="n">binary</span><span class="p">):</span>
-    <span class="n">binary_values</span> <span class="o">=</span> <span class="n">binary</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>  <span class="c1"># Split the binary input into separate characters</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">bv</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="k">for</span> <span class="n">bv</span> <span class="ow">in</span> <span class="n">binary_values</span><span class="p">])</span>  <span class="c1"># Convert binary to decimal, then to char</span>
-    <span class="k">return</span> <span class="n">text</span>
-
-<span class="n">binary_data</span> <span class="o">=</span> <span class="s1">&#39;01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001&#39;</span>
-<span class="n">decoded_text</span> <span class="o">=</span> <span class="n">binary_to_text</span><span class="p">(</span><span class="n">binary_data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Decoded Text: </span><span class="si">{</span><span class="n">decoded_text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
 <p><strong>Expected Output:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Decoded Text: Hello, World!
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>What binary string do you want to convert to ASCII? 01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
+Decoded text:  Hello, World!
 </pre></div>
 </div>
 <p><strong>3. Data Compression using Huffman Encoding</strong></p>
