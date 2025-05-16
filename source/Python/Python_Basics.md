@@ -1269,7 +1269,7 @@ while count < 3:
 
 A **nested loop** is a loop **inside another loop**. The inner loop completes **all its iterations for each outer loop cycle**.
 
-**🔹 Syntax:**
+**Syntax:**
 
 ```python
 for outer in outer_range:
@@ -1515,28 +1515,49 @@ Methods make object-oriented programming in Python powerful, allowing objects to
 
 
 
-### Procedure
-- **Definition**: A procedure is a block of code that performs a task but does not necessarily return a value. Procedures are often used for executing a sequence of statements and might be called for their side effects rather than for a result.
-- **Example**: In Pascal, a procedure might look like this:
-  ```pascal
-  procedure DisplayMessage;
-  begin
-      writeln('Hello, World!');
-  end;
-  ```
+Absolutely! Here's an updated explanation that includes:
 
-### Summary of Differences
-- **Return Value**:
-  - **Function**: Returns a value.
-  - **Method**: Can return a value (if designed to do so) and is associated with an object.
-  - **Procedure**: Typically does not return a value.
+1. A clear definition of a **procedure** in Python.
+2. A Python example of a procedure.
+3. A side-by-side chart comparing a **Method**, **Procedure**, and **Function**, specifically in the Python context — making it relevant and understandable for students.
 
-- **Context**:
-  - **Function**: Used in various programming paradigms (procedural, functional).
-  - **Method**: Specific to object-oriented programming.
-  - **Procedure**: Often used in procedural programming languages.
+---
 
-Understanding these distinctions can help in writing clearer, more organized code and communicating effectively with other developers.
+### Procedures
+
+In Python, a **procedure** is a function that performs a task **without returning a value**. It's called for its **side effects**, such as printing text, updating a file, or modifying a global variable. *It doesn't give anything back to the caller.*
+
+---
+
+**Python Procedure**
+
+```python
+def greet_user():
+    print("Welcome to the program!")
+```
+
+How to call a procedure:
+
+```python
+greet_user()
+```
+
+**Sample Output**
+```
+Welcome to the program!
+```
+
+
+
+#### Comparing Method, Procedure, and Function in Python
+
+| Term          | Python Form                         | Returns a Value? | Used For                           | Example                               |
+| ------------- | ----------------------------------- | ---------------- | ---------------------------------- | ------------------------------------- |
+| **Method**    | Function **inside an object/class** | ✅/❌ Depends      | Performing actions on objects      | `"hello".upper()` → returns `"HELLO"` |
+| **Procedure** | `def` without `return`              | ❌ No             | Doing a task with side effects     | `print("Hi")` or `greet_user()`       |
+| **Function**  | `def` with `return`                 | ✅ Yes            | Calculating and returning a result | `def add(a, b): return a + b`         |
+
+
 
 ---
 
