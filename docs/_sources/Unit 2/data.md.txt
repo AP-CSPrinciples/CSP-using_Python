@@ -1,7 +1,7 @@
 # Data
 
 
-### Unit 2 Vocabulary
+#### Unit 2 Vocabulary
 
 <details><summary>Click Here</summary>
 
@@ -84,7 +84,7 @@ The project will simulate a "Data Communication and Compression" system where yo
 
 <details><summary> ASCII Table </summary>
 
-## Binary/ ASCII/ and other fun things
+**Binary/ ASCII/ and other things**
 
 | Dec | Char | Dec | Char | Dec | Char | Dec | Char |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
