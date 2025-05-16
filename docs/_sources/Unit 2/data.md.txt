@@ -256,8 +256,10 @@ for bv in binary_values:
 
 **3. Data Compression using Huffman Encoding**
 
-**Objective:** Implement basic data compression using Huffman encoding.
-* **Concepts Covered:** Data Compression, Encoding, Efficiency.
+**Goals:** 
+    * Understand how Huffman coding compresses data
+    * Build a Huffman tree physically with peers
+    * Optionally write or trace a small piece of code
 
 **Task:**
 * Implement Huffman coding, a common algorithm for lossless data compression. In this part, you’ll write a program to:
@@ -267,7 +269,110 @@ for bv in binary_values:
   3. Generate the Huffman codes for each character.
   4. Compress the text using the generated Huffman codes.
 
-**Python Example:**
+Words for Huffman Coding Activity:
+
+| Word Bank       |                 |
+| --------------- | --------------- |
+|  **SASSAFRAS**  | **CONNECTICUT**    |
+| **TENNESSEE**   | **COMMITTEE**	      |
+| **SUCCESS**     | **ILLINOIS**	       |
+| **BALLOON**     | **KENTUCKY**	       |
+| **ASSESS**      | **ALABAMA**	        |
+| **BANANA**      | **MINNESOTA**	      |
+| **BOOKKEEPER**  | **PENNSYLVANIA**	   |
+| **PEPPERCORN**  | **TATTOO**          |
+
+**Part 1: Physical Huffman Coding Activity**
+
+**Setup:**
+
+* Use the following string: `"MISSISSIPPI"`
+* Create a **frequency chart**:
+
+| Letter | Frequency |
+| ------ | --------- |
+| M      | 1         |
+| I      | 4         |
+| S      | 4         |
+| P      | 2         |
+
+**Step 1: Make Cards**
+
+Make index cards (or slips of paper) for each **letter with its frequency**.
+
+Example:
+
+```
+[M:1]  [I:4]  [S:4]  [P:2]
+```
+
+**Step 2: Build the Tree (Greedy Step-by-Step)**
+
+Each "node" will be a group of cards.
+
+1. Find **two lowest frequency nodes** and combine them into a new node.
+2. The new node’s frequency is the sum.
+3. Label the left branch as `0` and the right branch as `1`.
+
+Repeat until only one node (the full tree) is left.
+
+
+**Example Tree for "MISSISSIPPI":**
+
+```
+        [11] 
+       /    \
+     [4]    [7]
+    (I)    /   \
+         [3]   (S:4)
+        /   \
+    (M:1) (P:2)
+```
+
+**Step 3: Build the Huffman Codes**
+
+Trace paths from root to each letter:
+
+* M: `1100`
+* P: `1101`
+* I: `0`
+* S: `10`
+
+Encode the full word `"MISSISSIPPI"` using these bits.
+
+---
+
+**Part 2: Programming Extension**
+
+Part 1: Code Tracing
+
+Give them Python code that builds a tree and ask:
+
+* What’s the Huffman code for "S"?
+* Which node will combine first?
+
+Part 2: Partial Implementation
+
+With the list of frequencies you physically created, write code that count character frequencies:
+
+```python
+def count_frequencies(text):
+    freq = {}
+    for ch in text:
+        if ch in freq:
+            freq[ch] += 1
+        else:
+            freq[ch] = 1
+    return freq
+
+print(count_frequencies("MISSISSIPPI"))
+```
+
+In Groups of 2 or 3 choose 2 more words and repeat the steps.
+
+
+<details><Summary>Simplified Huffman Coding Example</Summary>
+
 
 ```python
 import heapq
@@ -323,8 +428,15 @@ huffman_codes = generate_codes(huffman_tree)
 print("Huffman Codes:", huffman_codes)
 ```
 
+
 **Expected Output:**
 The Huffman codes for the characters will be printed, which will be shorter for frequently occurring characters and longer for less frequent ones.
+
+
+</details>
+
+
+
 
 ---
 
@@ -372,7 +484,6 @@ Most common character: e (112 occurrences)
 **5. Putting it All Together: A Simple File Communication System**
 
 **Objective:** Create a small system that combines all of the previous concepts to compress and decompress a file.
-* **Concepts Covered:** Binary Data, ASCII, Data Compression, Extraction.
 
 **Task:**
 * Implement a program that:
