@@ -97,54 +97,49 @@ The project will simulate a "Data Communication and Compression" system where yo
 
 **Expected Output:**
 ```
-What phrase would you like to convert? Hello World
+What phrase would you like to convert to binary? Hello World
 
 Binary Representation: 01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
 ```
 
-**2. ASCII Encoding and Decoding**
+**2. Binary to ASCII Decoder**
 
 **Objective:** Write a function that takes a string of binary numbers (representing ASCII values) and converts it back into readable text.
 
 
-**1: Look at the Message Format**
+**1. Create a Function with One Parameter**
 
-Look at the string of binary numbers. Each 8 digits are separated by a space. Each binary group stands for a letter, number, or symbol.
-
-Use the binary that was generated from above.
-
-```
-01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
-```
+* The parameter should accept a **binary string** with groups of 8 digits separated by spaces.
+* This will be the message you want to decode.
 
 
-**2: Break the Message into Smaller Parts**
 
-1. Convert the message into a list of parts, where each part is one set of 8 binary digits.
-2. These will be used to decode the message one character at a time.
+**2. Split the Message into Parts**
 
-
-**3: Turn Each Binary Group Into a Letter**
-
-For each group of 1s and 0s:
-
-1. Change it into a base-10 number (what we normally use for counting).
-2. Then, change that number into a letter or symbol from the alphabet.
-3. Repeat this for every group in the list.
+* Use a method to **split** the long binary message into a **list** of smaller strings.
+* Each piece should be exactly **8 digits long** — representing one character.
 
 
-**4: Combine All the Letters Together**
 
-After turning every binary group into a letter, combine all of them in the correct order. This gives you the final sentence.
+**3. Create an Empty String to Store the Result**
+
+* You’ll build your decoded message **one letter at a time**, so start with an empty string.
 
 
-**5: Test the Program With a Sample Message**
 
-Try using the steps above on this secret message:
+**4. For Each Binary Group:**
 
-```
-01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
-```
+* Convert it from **binary to decimal** (this gives you the ASCII number).
+* Convert that decimal number to a **character** (letter, number, or symbol).
+* Add the character to your decoded message string.
+
+
+
+**5. Return the Final Text**
+
+* Once every group has been processed, return the final sentence made from all the characters.
+* Call your function and pass the binary message:
+* Display the result on screen using a **label** or print statement.  It should reveal a **readable sentence**!
 
 
 **Pseudocode**
@@ -160,24 +155,11 @@ Define a function that receives a binary message
     Give back the final decoded text
 ```
 
----
-
-**Python Example:**
-
-```python
-def binary_to_text(binary):
-    binary_values = binary.split(' ')  # Split the binary input into separate characters
-    text = ''.join([chr(int(bv, 2)) for bv in binary_values])  # Convert binary to decimal, then to char
-    return text
-
-binary_data = '01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001'
-decoded_text = binary_to_text(binary_data)
-print(f"Decoded Text: {decoded_text}")
-```
 
 **Expected Output:**
 ```
-Decoded Text: Hello, World!
+What binary string do you want to convert to ASCII? 01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
+Decoded text:  Hello, World!
 ```
 
 
