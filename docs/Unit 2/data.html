@@ -282,6 +282,7 @@
 <hr class="docutils" />
 <section id="unit-2-vocabulary">
 <h2>Unit 2 Vocabulary<a class="headerlink" href="#unit-2-vocabulary" title="Link to this heading">¶</a></h2>
+<details><summary>Click Here</summary>
 <p><strong>1. Data Representation</strong></p>
 <ul class="simple">
 <li><p><strong>Bit</strong>: The smallest unit of data in a computer, represented as either 0 or 1.</p></li>
@@ -348,7 +349,8 @@
 <li><p><strong>Bias in Data</strong>: When data collection or processing methods lead to unfair or skewed results. For example, biased data could lead to discriminatory algorithms.</p></li>
 <li><p><strong>Privacy</strong>: The protection of individuals’ personal information. Ethical data use includes ensuring that data is collected and shared responsibly, with attention to privacy laws (like GDPR).</p></li>
 </ul>
-<hr class="docutils" />
+</details>
+---
 <hr class="docutils" />
 </section>
 <section id="data-project-1-data-communication-and-compression">
@@ -381,6 +383,32 @@
 Binary Representation: 01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
 </pre></div>
 </div>
+<details><summary>Are you stuck?  Click Here!</summary>
+<p><strong>Key Concepts</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ord()</span></code> → built-in function to get ASCII code of a character</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">format()</span></code> → formats numbers into binary, decimal, hex, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'08b'</span></code> → format specifier: 0-padded, 8 digits, binary</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list.append()</span></code> → adds an item to a list</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ascii_value</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>         <span class="c1"># Step 1: Convert character to ASCII number</span>
+<span class="n">binary_string</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="n">ascii_value</span><span class="p">,</span> <span class="s1">&#39;08b&#39;</span><span class="p">)</span>  <span class="c1"># Step 2: Convert number to binary</span>
+<span class="n">binary_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">binary_string</span><span class="p">)</span>          <span class="c1"># Step 3: Add to list</span>
+</pre></div>
+</div>
+<p><strong>Pseudocode</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&#39;A&#39; → 65 → 01000001
+</pre></div>
+</div>
+<p><strong>Things to Know</strong></p>
+<ul class="simple">
+<li><p>Character → ASCII (with <code class="docutils literal notranslate"><span class="pre">ord()</span></code>)</p></li>
+<li><p>ASCII → Binary (with <code class="docutils literal notranslate"><span class="pre">format()</span></code>)</p></li>
+<li><p>Binary → Decimal (with <code class="docutils literal notranslate"><span class="pre">int(...,</span> <span class="pre">2)</span></code>)</p></li>
+<li><p>Decimal → Character (with <code class="docutils literal notranslate"><span class="pre">chr()</span></code>)</p></li>
+</ul>
+</details>
+<hr class="docutils" />
 <p><strong>2. Binary to ASCII Decoder</strong></p>
 <p><strong>Objective:</strong> Write a function that takes a string of binary numbers (representing ASCII values) and converts it back into readable text.</p>
 <p><strong>1. Create a Function with One Parameter</strong></p>
@@ -425,6 +453,29 @@ Binary Representation: 01001000 01100101 01101100 01101100 01101111 00101100 001
 Decoded text:  Hello, World!
 </pre></div>
 </div>
+<details><summary>Are you stuck?  Click Here!</summary>
+<p><strong>Key Concepts</strong></p>
+<ul class="simple">
+<li><p>List comprehensions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int(...,</span> <span class="pre">2)</span></code> to convert binary to decimal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chr()</span></code> to get character from ASCII code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">''.join()</span></code> to combine a list of strings into one</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>                            <span class="c1"># Start with empty string</span>
+<span class="k">for</span> <span class="n">bv</span> <span class="ow">in</span> <span class="n">binary_values</span><span class="p">:</span>
+    <span class="n">decimal</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">bv</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>             <span class="c1"># Step 1: Binary → Decimal</span>
+    <span class="n">character</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">decimal</span><span class="p">)</span>         <span class="c1"># Step 2: Decimal → Character</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="n">character</span>                <span class="c1"># Step 3: Add character to message</span>
+</pre></div>
+</div>
+<p><strong>Things to Know</strong></p>
+<ul class="simple">
+<li><p>Character → ASCII (with <code class="docutils literal notranslate"><span class="pre">ord()</span></code>)</p></li>
+<li><p>ASCII → Binary (with <code class="docutils literal notranslate"><span class="pre">format()</span></code>)</p></li>
+<li><p>Binary → Decimal (with <code class="docutils literal notranslate"><span class="pre">int(...,</span> <span class="pre">2)</span></code>)</p></li>
+<li><p>Decimal → Character (with <code class="docutils literal notranslate"><span class="pre">chr()</span></code>)</p></li>
+</ul>
+</details>
 <p><strong>3. Data Compression using Huffman Encoding</strong></p>
 <p><strong>Objective:</strong> Implement basic data compression using Huffman encoding.</p>
 <ul class="simple">

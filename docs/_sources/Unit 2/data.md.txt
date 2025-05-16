@@ -3,6 +3,9 @@
 ---
 ### Unit 2 Vocabulary
 
+<details><summary>Click Here</summary>
+
+ 
 **1. Data Representation**
 
 * **Bit**: The smallest unit of data in a computer, represented as either 0 or 1.
@@ -67,6 +70,7 @@
 * **Bias in Data**: When data collection or processing methods lead to unfair or skewed results. For example, biased data could lead to discriminatory algorithms.
 * **Privacy**: The protection of individuals' personal information. Ethical data use includes ensuring that data is collected and shared responsibly, with attention to privacy laws (like GDPR).
 
+</details>
 ---
 
 ---
@@ -101,6 +105,37 @@ What phrase would you like to convert to binary? Hello World
 
 Binary Representation: 01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
 ```
+<details><summary>Are you stuck?  Click Here!</summary>
+
+**Key Concepts**
+
+* `ord()` → built-in function to get ASCII code of a character
+* `format()` → formats numbers into binary, decimal, hex, etc.
+* `'08b'` → format specifier: 0-padded, 8 digits, binary
+* `list.append()` → adds an item to a list
+
+
+```python
+ascii_value = ord(char)         # Step 1: Convert character to ASCII number
+binary_string = format(ascii_value, '08b')  # Step 2: Convert number to binary
+binary_data.append(binary_string)          # Step 3: Add to list
+```
+**Pseudocode**
+```
+'A' → 65 → 01000001
+```
+
+
+**Things to Know**
+* Character → ASCII (with `ord()`)
+* ASCII → Binary (with `format()`)
+* Binary → Decimal (with `int(..., 2)`)
+* Decimal → Character (with `chr()`)
+
+
+</details>
+
+---
 
 **2. Binary to ASCII Decoder**
 
@@ -108,38 +143,25 @@ Binary Representation: 01001000 01100101 01101100 01101100 01101111 00101100 001
 
 
 **1. Create a Function with One Parameter**
-
-* The parameter should accept a **binary string** with groups of 8 digits separated by spaces.
-* This will be the message you want to decode.
-
-
+  * The parameter should accept a **binary string** with groups of 8 digits separated by spaces.
+  * This will be the message you want to decode.
 
 **2. Split the Message into Parts**
-
-* Use a method to **split** the long binary message into a **list** of smaller strings.
-* Each piece should be exactly **8 digits long** — representing one character.
-
-
+  * Use a method to **split** the long binary message into a **list** of smaller strings.
+  * Each piece should be exactly **8 digits long** — representing one character.
 
 **3. Create an Empty String to Store the Result**
-
-* You’ll build your decoded message **one letter at a time**, so start with an empty string.
-
-
+  * You’ll build your decoded message **one letter at a time**, so start with an empty string.
 
 **4. For Each Binary Group:**
-
-* Convert it from **binary to decimal** (this gives you the ASCII number).
-* Convert that decimal number to a **character** (letter, number, or symbol).
-* Add the character to your decoded message string.
-
-
+  * Convert it from **binary to decimal** (this gives you the ASCII number).
+  * Convert that decimal number to a **character** (letter, number, or symbol).
+  * Add the character to your decoded message string.
 
 **5. Return the Final Text**
-
-* Once every group has been processed, return the final sentence made from all the characters.
-* Call your function and pass the binary message:
-* Display the result on screen using a **label** or print statement.  It should reveal a **readable sentence**!
+  * Once every group has been processed, return the final sentence made from all the characters.
+  * Call your function and pass the binary message:
+  * Display the result on screen using a **label** or print statement.  It should reveal a **readable sentence**!
 
 
 **Pseudocode**
@@ -161,6 +183,32 @@ Define a function that receives a binary message
 What binary string do you want to convert to ASCII? 01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
 Decoded text:  Hello, World!
 ```
+
+<details><summary>Are you stuck?  Click Here!</summary>
+
+**Key Concepts**
+
+* List comprehensions
+* `int(..., 2)` to convert binary to decimal
+* `chr()` to get character from ASCII code
+* `''.join()` to combine a list of strings into one
+
+```python
+text = ''                            # Start with empty string
+for bv in binary_values:
+    decimal = int(bv, 2)             # Step 1: Binary → Decimal
+    character = chr(decimal)         # Step 2: Decimal → Character
+    text += character                # Step 3: Add character to message
+```
+
+**Things to Know**
+* Character → ASCII (with `ord()`)
+* ASCII → Binary (with `format()`)
+* Binary → Decimal (with `int(..., 2)`)
+* Decimal → Character (with `chr()`)
+
+
+</details>
 
 
 
