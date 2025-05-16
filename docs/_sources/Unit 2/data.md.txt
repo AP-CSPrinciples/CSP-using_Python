@@ -141,7 +141,7 @@ The project will simulate a "Data Communication and Compression" system where yo
    * Add this binary version to your list.
 4. After all letters are processed:
    * Join the list of binary values together, with **spaces** in between.
-   * **Return** the final string from your tool.
+   * **Return** the final string.
 5. Call your function by giving it some text like `"Hello, World!"` and **show the result** on screen with a label.
 
 
