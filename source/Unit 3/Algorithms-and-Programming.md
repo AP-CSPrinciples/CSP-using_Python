@@ -127,8 +127,3 @@
 * **Block-based to text-based translation (e.g., Scratch to Python)**
 * **Write and refine a simple calculator or game logic**
 * **Pseudocode practice and flowcharts**
-
-
-
-Computer wins, Thanks for playing!
-```
