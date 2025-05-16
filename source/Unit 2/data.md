@@ -1,6 +1,6 @@
 # Data
 
----
+
 ### Unit 2 Vocabulary
 
 <details><summary>Click Here</summary>
