@@ -719,24 +719,39 @@ Binary Representation: 01001000 01100101 01101100 01101100 01101111 00101100 001
 <hr class="docutils" />
 <p><strong>2. Binary to ASCII Decoder</strong></p>
 <p><strong>Objective:</strong> Write a function that takes a string of binary numbers (representing ASCII values) and converts it back into readable text.</p>
-<p><strong>1. Create a Function with One Parameter</strong></p>
+<ol class="arabic simple">
+<li><p>Create a Function with One Parameter</p>
 <ul class="simple">
 <li><p>The parameter should accept a <strong>binary string</strong> with groups of 8 digits separated by spaces.</p></li>
-<li><p>This will be the message you want to decode.
-<strong>2. Split the Message into Parts</strong></p></li>
+<li><p>This will be the message you want to decode.</p></li>
+</ul>
+</li>
+<li><p>Split the Message into Parts</p>
+<ul class="simple">
 <li><p>Use a method to <strong>split</strong> the long binary message into a <strong>list</strong> of smaller strings.</p></li>
-<li><p>Each piece should be exactly <strong>8 digits long</strong> — representing one character.
-<strong>3. Create an Empty String to Store the Result</strong></p></li>
-<li><p>You’ll build your decoded message <strong>one letter at a time</strong>, so start with an empty string.
-<strong>4. For Each Binary Group:</strong></p></li>
+<li><p>Each piece should be exactly <strong>8 digits long</strong> — representing one character.</p></li>
+</ul>
+</li>
+<li><p>Create an Empty String to Store the Result</p>
+<ul class="simple">
+<li><p>You’ll build your decoded message <strong>one letter at a time</strong>, so start with an empty string.</p></li>
+</ul>
+</li>
+<li><p>For Each Binary Group:</p>
+<ul class="simple">
 <li><p>Convert it from <strong>binary to decimal</strong> (this gives you the ASCII number).</p></li>
 <li><p>Convert that decimal number to a <strong>character</strong> (letter, number, or symbol).</p></li>
-<li><p>Add the character to your decoded message string.
-<strong>5. Return the Final Text</strong></p></li>
+<li><p>Add the character to your decoded message string.</p></li>
+</ul>
+</li>
+<li><p>Return the Final Text</p>
+<ul class="simple">
 <li><p>Once every group has been processed, return the final sentence made from all the characters.</p></li>
 <li><p>Call your function and pass the binary message:</p></li>
 <li><p>Display the result on screen using a <strong>label</strong> or print statement.  It should reveal a <strong>readable sentence</strong>!</p></li>
 </ul>
+</li>
+</ol>
 <p><strong>Pseudocode</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Define</span> <span class="n">a</span> <span class="n">function</span> <span class="n">that</span> <span class="n">receives</span> <span class="n">a</span> <span class="n">binary</span> <span class="n">message</span>
     <span class="n">Break</span> <span class="n">the</span> <span class="n">message</span> <span class="n">into</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">binary</span> <span class="n">pieces</span>

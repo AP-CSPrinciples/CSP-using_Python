@@ -188,22 +188,22 @@ binary_data.append(binary_string)          # Step 3: Add to list
 **Objective:** Write a function that takes a string of binary numbers (representing ASCII values) and converts it back into readable text.
 
 
-**1. Create a Function with One Parameter**
-  * The parameter should accept a **binary string** with groups of 8 digits separated by spaces.
-  * This will be the message you want to decode.
-**2. Split the Message into Parts**
-  * Use a method to **split** the long binary message into a **list** of smaller strings.
-  * Each piece should be exactly **8 digits long** — representing one character.
-**3. Create an Empty String to Store the Result**
-  * You’ll build your decoded message **one letter at a time**, so start with an empty string.
-**4. For Each Binary Group:**
-  * Convert it from **binary to decimal** (this gives you the ASCII number).
-  * Convert that decimal number to a **character** (letter, number, or symbol).
-  * Add the character to your decoded message string.
-**5. Return the Final Text**
-  * Once every group has been processed, return the final sentence made from all the characters.
-  * Call your function and pass the binary message:
-  * Display the result on screen using a **label** or print statement.  It should reveal a **readable sentence**!
+1. Create a Function with One Parameter
+     * The parameter should accept a **binary string** with groups of 8 digits separated by spaces.
+     * This will be the message you want to decode.
+2. Split the Message into Parts
+     * Use a method to **split** the long binary message into a **list** of smaller strings.
+     * Each piece should be exactly **8 digits long** — representing one character.
+3. Create an Empty String to Store the Result
+     * You’ll build your decoded message **one letter at a time**, so start with an empty string.
+4. For Each Binary Group:
+     * Convert it from **binary to decimal** (this gives you the ASCII number).
+     * Convert that decimal number to a **character** (letter, number, or symbol).
+     * Add the character to your decoded message string.
+5. Return the Final Text
+     * Once every group has been processed, return the final sentence made from all the characters.
+     * Call your function and pass the binary message:
+     * Display the result on screen using a **label** or print statement.  It should reveal a **readable sentence**!
 
 
 **Pseudocode**
