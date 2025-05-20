@@ -238,7 +238,7 @@ Students will identify a real-world or classroom problem and design a custom alg
 </details>
 
 
-Project 3: Text-Based Game Development
+<details><summary>Project 3: Text-Based Game Development</summary>
 
 **College Board Learning Objectives:**
 
@@ -285,8 +285,10 @@ Students will design and build a text-based adventure game using procedures and 
 
 ---
 
+</details>
 
-Project 4: Debugging & Code Review Simulation
+
+<details><summary>Project 4: Debugging & Code Review Simulation</summary>
 
 **College Board Learning Objectives:**
 
