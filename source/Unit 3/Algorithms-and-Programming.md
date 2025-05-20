@@ -1,6 +1,7 @@
 # Algorithms & Programming
 
-## Unit 3: Algorithms and Programming
+
+<details><summary>Big Ideas - Click Here</summary>
 
 **Big Ideas Covered:**
 
@@ -127,3 +128,259 @@
 * **Block-based to text-based translation (e.g., Scratch to Python)**
 * **Write and refine a simple calculator or game logic**
 * **Pseudocode practice and flowcharts**
+
+</details>
+
+**AP CSP: Algorithms and Programming Project Packet**
+
+Each project includes meaningful challenges in problem-solving, design, data abstraction, and algorithmic thinking, and supports multiple CSP standards.
+
+---
+
+<details> <summary>Project 1: Data Visualization Challenge</summary>
+
+**College Board Learning Objectives:**
+
+* DAT-2.D: Describe the purpose of a computational artifact.
+* DAT-2.E: Create a computational artifact using data.
+* AAP-2.J: Create programs that use libraries or APIs.
+
+**Summary:**
+Students will analyze a real-world dataset (e.g., climate, sports, health) and build a program that visualizes the data through graphs or interactive charts. They must clean the data, apply algorithms to extract meaning, and generate visual output.
+
+**Deliverables:**
+
+* Python or JavaScript program with visualization
+* Annotated code with explanations
+* 1-page summary of insights from the data
+
+**Assessment Rubric:**
+
+Project 1: Data Visualization Challenge
+
+**College Board Learning Objectives:**
+
+* DAT-2.D: Describe the purpose of a computational artifact.
+* DAT-2.E: Create a computational artifact using data.
+* AAP-2.J: Create programs that use libraries or APIs.
+
+**Summary:**
+Students will analyze a real-world dataset (e.g., climate, sports, health) and build a program that visualizes the data through graphs or interactive charts. They must clean the data, apply algorithms to extract meaning, and generate visual output.
+
+**Deliverables:**
+
+* Python or JavaScript program with visualization
+* Annotated code with explanations
+* 1-page summary of insights from the data
+
+**Assessment Rubric:**
+
+| Criteria                   | 4 - Excellent                                                  | 3 - Proficient                         | 2 - Developing                    | 1 - Beginning                           |
+| -------------------------- | -------------------------------------------------------------- | -------------------------------------- | --------------------------------- | --------------------------------------- |
+| Data Processing & Accuracy | Data is cleaned, processed, and represented with high accuracy | Data mostly processed correctly        | Some data processed, minor errors | Major issues or missing data processing |
+| Program Functionality      | Fully functional and interactive                               | Mostly functional, minor bugs          | Partially functional              | Non-functional or incomplete            |
+| Algorithm Use              | Well-structured and efficient algorithms                       | Logical and mostly correct             | Some inefficiency or errors       | Poor or no algorithmic structure        |
+| Visualization Clarity      | Highly clear, informative, and visually appealing              | Generally clear and well-organized     | Some visual confusion             | Unclear or poorly designed              |
+| Communication & Creativity | Excellent explanation and innovative presentation              | Clear explanation with some creativity | Basic explanation                 | Poorly explained or lacking originality |
+
+---
+
+</details>
+
+<details><summary>Project 2: Custom Algorithm Design</summary>
+
+**College Board Learning Objectives:**
+
+* AAP-2.C: Develop an algorithm.
+* AAP-2.G: Express an algorithm using sequencing, selection, and iteration.
+* AAP-2.K: Evaluate algorithms.
+
+**Summary:**
+Students will identify a real-world or classroom problem and design a custom algorithm to solve it. The algorithm should include clear use of control structures and be implemented in code.
+
+**Deliverables:**
+
+* Problem description
+* Flowchart or pseudocode
+* Working program with documentation
+* Analysis of algorithm efficiency (qualitative)
+
+**Assessment Rubric:** 
+
+Project 2: Custom Algorithm Design
+
+**College Board Learning Objectives:**
+
+* AAP-2.C: Develop an algorithm.
+* AAP-2.G: Express an algorithm using sequencing, selection, and iteration.
+* AAP-2.K: Evaluate algorithms.
+
+**Summary:**
+Students will identify a real-world or classroom problem and design a custom algorithm to solve it. The algorithm should include clear use of control structures and be implemented in code.
+
+**Deliverables:**
+
+* Problem description
+* Flowchart or pseudocode
+* Working program with documentation
+* Analysis of algorithm efficiency (qualitative)
+
+**Assessment Rubric:**
+
+| Criteria              | 4 - Excellent                              | 3 - Proficient                              | 2 - Developing       | 1 - Beginning                      |
+| --------------------- | ------------------------------------------ | ------------------------------------------- | -------------------- | ---------------------------------- |
+| Problem Definition    | Clearly articulated and meaningful         | Clear and solvable                          | Vague or simplistic  | Unclear or undeveloped             |
+| Algorithm Design      | Innovative, efficient, and well-structured | Logical with appropriate control structures | Some logical flaws   | Poor structure or missing elements |
+| Code Implementation   | Clean, correct, and complete               | Mostly correct with some issues             | Partially functional | Incomplete or not working          |
+| Algorithm Explanation | Insightful and clearly communicates logic  | Reasonably clear explanation                | Limited clarity      | Missing or incorrect explanation   |
+
+---
+</details>
+
+
+Project 3: Text-Based Game Development
+
+**College Board Learning Objectives:**
+
+* AAP-2.I: Use procedures to organize code.
+* AAP-2.M: Develop programs that use lists.
+* AAP-2.N: Use procedures that operate on data in lists.
+
+**Summary:**
+Students will design and build a text-based adventure game using procedures and data structures. They will implement lists, control flow, and functions to support reusable code and dynamic behavior.
+
+**Deliverables:**
+
+* Fully functional game (e.g., Python, Java)
+* Code with at least two custom procedures and one list-based mechanic
+* Game map or flow diagram
+
+**Assessment Rubric:** 
+
+Project 3: Text-Based Game Development
+
+**College Board Learning Objectives:**
+
+* AAP-2.I: Use procedures to organize code.
+* AAP-2.M: Develop programs that use lists.
+* AAP-2.N: Use procedures that operate on data in lists.
+
+**Summary:**
+Students will design and build a text-based adventure game using procedures and data structures. They will implement lists, control flow, and functions to support reusable code and dynamic behavior.
+
+**Deliverables:**
+
+* Fully functional game (e.g., Python, Java)
+* Code with at least two custom procedures and one list-based mechanic
+* Game map or flow diagram
+
+**Assessment Rubric:**
+
+| Criteria                 | 4 - Excellent                                               | 3 - Proficient                   | 2 - Developing              | 1 - Beginning                          |
+| ------------------------ | ----------------------------------------------------------- | -------------------------------- | --------------------------- | -------------------------------------- |
+| Game Logic & Playability | Highly engaging and bug-free                                | Playable with minor bugs         | Playable but limited        | Unplayable or incomplete               |
+| Procedures & Lists       | Uses multiple reusable procedures and well-integrated lists | Appropriate use of both elements | Limited or inconsistent use | Missing procedures or list integration |
+| Code Structure           | Well-organized and readable                                 | Mostly clear organization        | Some disorganization        | Hard to follow or messy                |
+| Creativity & Innovation  | Highly original and engaging concept                        | Some creativity                  | Basic or conventional       | Lacking originality                    |
+
+---
+
+
+Project 4: Debugging & Code Review Simulation
+
+**College Board Learning Objectives:**
+
+* AAP-1.C: Identify and correct errors in programs.
+* AAP-2.F: Evaluate expressions that use arithmetic operators.
+* AAP-2.H: Determine the result of program execution.
+
+**Summary:**
+Students will be given a broken or inefficient program. Their job is to debug it, improve it, and write a peer review report explaining how and why they made their changes.
+
+**Deliverables:**
+
+* Corrected source code
+* Side-by-side comparison with the original
+* Peer review report (1 page)
+
+**Assessment Rubric:**
+
+Project 4: Debugging & Code Review Simulation
+
+**College Board Learning Objectives:**
+
+* AAP-1.C: Identify and correct errors in programs.
+* AAP-2.F: Evaluate expressions that use arithmetic operators.
+* AAP-2.H: Determine the result of program execution.
+
+**Summary:**
+Students will be given a broken or inefficient program. Their job is to debug it, improve it, and write a peer review report explaining how and why they made their changes.
+
+**Deliverables:**
+
+* Corrected source code
+* Side-by-side comparison with the original
+* Peer review report (1 page)
+
+**Assessment Rubric:**
+
+| Criteria           | 4 - Excellent                               | 3 - Proficient                          | 2 - Developing                        | 1 - Beginning                    |
+| ------------------ | ------------------------------------------- | --------------------------------------- | ------------------------------------- | -------------------------------- |
+| Bug Identification | All bugs correctly identified and explained | Most bugs identified                    | Some bugs found                       | Few or no bugs identified        |
+| Debugging Quality  | Efficient and optimal fixes applied         | Functional fixes with some inefficiency | Fixes with side effects or redundancy | Buggy or no fixes applied        |
+| Code Comparison    | Clear and complete before/after comparison  | Some comparison shown                   | Basic or unclear comparison           | No clear comparison              |
+| Review Explanation | Detailed reasoning and reflection           | Some reasoning included                 | Minimal or vague explanation          | Missing or incorrect explanation |
+
+---
+
+</details>
+
+
+<details><summary>Project 5: Algorithm Museum (Explainer Showcase)</summary>
+
+**College Board Learning Objectives:**
+
+* AAP-2.L: Explain how algorithms reflect different approaches to solving problems.
+* CRD-2.C: Identify inputs and outputs of a program.
+* AAP-2.K: Evaluate algorithms.
+
+**Summary:**
+Students select a classic algorithm (e.g., sorting, searching, pathfinding) and create an interactive or visual explainer. They must describe inputs/outputs, explain its function, and compare it with an alternative.
+
+**Deliverables:**
+
+* Explainer artifact (video, animation, poster, slideshow, etc.)
+* Input/output examples
+* Comparative write-up
+
+**Assessment Rubric:**
+
+Project 5: Algorithm Museum (Explainer Showcase)
+
+**College Board Learning Objectives:**
+
+* AAP-2.L: Explain how algorithms reflect different approaches to solving problems.
+* CRD-2.C: Identify inputs and outputs of a program.
+* AAP-2.K: Evaluate algorithms.
+
+**Summary:**
+Students select a classic algorithm (e.g., sorting, searching, pathfinding) and create an interactive or visual explainer. They must describe inputs/outputs, explain its function, and compare it with an alternative.
+
+**Deliverables:**
+
+* Explainer artifact (video, animation, poster, slideshow, etc.)
+* Input/output examples
+* Comparative write-up
+
+**Assessment Rubric:**
+
+| Criteria                | 4 - Excellent                                   | 3 - Proficient           | 2 - Developing                 | 1 - Beginning                         |
+| ----------------------- | ----------------------------------------------- | ------------------------ | ------------------------------ | ------------------------------------- |
+| Algorithm Explanation   | Clear, deep explanation with visuals/examples   | Mostly clear explanation | Some confusion or gaps         | Inaccurate or unclear explanation     |
+| Inputs & Outputs        | Well-explained with accurate examples           | Mostly correct           | Minor errors or omissions      | Missing or incorrect examples         |
+| Comparison & Evaluation | Thoughtful comparison of two or more approaches | Adequate comparison      | Limited insight or explanation | No meaningful comparison              |
+| Presentation Quality    | Polished, creative, and informative             | Clear and informative    | Somewhat unclear               | Hard to understand or poorly executed |
+
+---
+
+</details>
