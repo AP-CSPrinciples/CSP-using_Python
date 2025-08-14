@@ -314,13 +314,13 @@ If you have any questions, please contact me.
 <details><summary>Click Here</summary>
  <p></br>
 
-https://peps.python.org/pep-0008/
+[Python Style Guidelines 1](https://peps.python.org/pep-0008/)
 
-https://docs.python-guide.org/writing/style/
+[Python Style Guidelines 2](https://docs.python-guide.org/writing/style/)
 
-https://vinayak-hegde.medium.com/a-comprehensive-style-guide-for-python-enhancing-readability-and-maintainability-5f893bdae85a
+[Python Style Guidelines 3](https://vinayak-hegde.medium.com/a-comprehensive-style-guide-for-python-enhancing-readability-and-maintainability-5f893bdae85a)
 
-https://courses.cs.washington.edu/courses/cse160/18sp/computing/style_guide.html
+[Python Style Guidelines 1](https://courses.cs.washington.edu/courses/cse160/18sp/computing/style_guide.html)
 
  
  </p>
