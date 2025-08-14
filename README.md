@@ -5,16 +5,17 @@
 Computer science involves problem-solving, hardware, and algorithms that help people utilize computers and incorporate multiple perspectives
 to address real-world problems in contemporary life. As the application of computer science is integrated into more aspects of our lives, it is important to understand the impact of computer science and how to maintain privacy, safety, and security not only when using computers but also while being the innovators of new computing applications. The course strives to engage all students, including those who have traditionally been underrepresented in computer science—such as female students, students of color, students with disabilities, and rural students—by allowing them to discover the power of computer science through rewarding yet challenging concepts.
 
-AP Computer Science Principles introduces students to the breadth of the field of computer science. In this course, students will learn to design and evaluate solutions and to apply computer science to solve problems through the development of algorithms and programs.  They will incorporate abstraction into programs and use data to discover new knowledge.  Students will also explain how computing innovations and computing systems, including the Internet, work, explore their potential impacts, and contribute to a computing culture that is collaborative and ethical. It is important to note that the AP Computer Science Principles course does not have a designated programminglanguage.  Teachers have the flexibility to choose a programming language(s) that is most appropriate for their students to use in
-the classroom
+AP Computer Science Principles introduces students to the breadth of the field of computer science. In this course, students will learn to design and evaluate solutions and to apply computer science to solve problems through the development of algorithms and programs. They will incorporate abstraction into programs and use data to discover new knowledge. Students will also explain how computing innovations and computing systems, including the Internet, work, explore their potential impacts, and contribute to a computing culture that is collaborative and ethical. It is important to note that the AP Computer Science Principles course does not have a designated programming language. Teachers have the flexibility to choose a programming language(s) that is most appropriate for their students to use in the classroom
 
-The main goals of an introductory college-level computer science course:
-- Computational Solution Design—Design and evaluate computational solutions for a purpose.
-- Algorithms and Program Development—Develop and implement algorithms.
-- Abstraction in Program Development—Develop programs that incorporate abstractions.
-- Code Analysis—Evaluateandtestalgorithmsand programs.
-- Computing Innovations—Investigatecomputing innovations.
-- Responsible Computing—Contributetoan inclusive, safe, collaborative, and ethical computing
+The main goals of an introductory college-level computer science course:
+
+- Computational Solution Design—Design and evaluate computational solutions for a purpose.
+- Algorithms and Program Development—Develop and implement algorithms.
+- Abstraction in Program Development—Develop programs that incorporate abstractions.
+- Code Analysis—Evaluate and test algorithms and  programs.
+- Computing Innovations—Investigate computing innovations.
+- Responsible Computing—Contribute to an inclusive, safe, collaborative, and ethical computing
+
 
 
 ![RubberDuckProtocol](https://github.com/AP-CSPrinciples/CSP-using_Python/assets/12989939/c3326002-3b3a-486b-9134-ca521cc57507)
