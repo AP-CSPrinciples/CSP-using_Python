@@ -16,6 +16,7 @@ We will be looking at syntax and structures of Python. We will use an Integrated
 
 **All Projects and assignments should have a header block for the teacher**
 
+```python
 # Assignment:  Program [number]:  [Assignment Title]
 #
 #       Author:  [Your Name ]
@@ -35,6 +36,8 @@ We will be looking at syntax and structures of Python. We will use an Integrated
 #                      details here, otherwise clearly state that you know
 #                      of no unsatisfied requirements and no logic errors.]
 #
+```
+
 
 ---
 
