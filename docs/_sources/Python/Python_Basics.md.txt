@@ -353,7 +353,7 @@ Here are the basic data types in Python, along with examples for each.
 ### String Methods
 
 
-**🟢 Beginner-Friendly String Methods**
+**Beginner-Friendly String Methods**
 
 | Method               | Description                     | Example                               |
 | -------------------- | ------------------------------- | ------------------------------------- |
@@ -370,7 +370,7 @@ if name.lower() == "admin":
 ```
 
 
-**🟡 Intermediate Methods (Great with Practice)**
+**Intermediate Methods (Great with Practice)**
 
 | Method              | Description                           | Example                                         |
 | ------------------- | ------------------------------------- | ----------------------------------------------- |
@@ -382,7 +382,7 @@ if name.lower() == "admin":
 | `.title()`          | Capitalizes first letter of each word | `"my name is joe".title()` → `"My Name Is Joe"` |
 
 
-**🔵 Optional for Advanced Learners**
+**Optional for Advanced Learners**
 
 | Method        | Description                               | Example                                          |
 | ------------- | ----------------------------------------- | ------------------------------------------------ |
@@ -393,7 +393,7 @@ if name.lower() == "admin":
 
 
 
-**📦 At minimum, you should know the following:**
+**At minimum, you should know the following:**
 
 * `.lower()`
 * `.upper()`
@@ -429,7 +429,7 @@ print(name[-2])  # Output: 'c' (second to last)
 ```
 
 
-✂️ **Slicing in Python**
+**Slicing in Python**
 
 **Definition**: Slicing lets you extract a **substring** using a start and end index:
 
@@ -1028,7 +1028,7 @@ Using modules and packages keeps Python code modular, readable, and reusable, ma
 ---
 
 
-## 🧭 **Control Flow & Conditional Statements**
+## Control Flow & Conditional Statements
 
 **Control flow** determines **which code runs, when, and how often**.
 It allows your program **make decisions**, **repeat actions**, or **branch** based on the conditions.
@@ -1047,7 +1047,7 @@ Control flow structures include:
 
 Used to **test conditions** (True or False) and run specific code blocks.
 
-**✅ Basic `if` Statement**
+**Basic `if` Statement**
 
 ```python
 if condition:
@@ -1196,7 +1196,7 @@ else:
 ---
 
 
-### 🔁 Loops
+### Loops
 
 
 Loops let you **repeat blocks of code**.  This is useful when working with lists, strings, or running a task multiple times.
@@ -1207,7 +1207,7 @@ Loops let you **repeat blocks of code**.  This is useful when working with lists
 
 Used to loop through a **sequence** (like a list, string, or `range()`).
 
-**🔹 Basic Syntax:**
+**Basic Syntax:**
 
 ```python
 for item in sequence:
@@ -1236,7 +1236,7 @@ for i in range(3):
 
 Repeats code **while a condition is `True`**.
 
-**🔹 Basic Syntax:**
+**Basic Syntax:**
 
 ```python
 while condition:
@@ -1265,7 +1265,7 @@ while count < 3:
 
 ---
 
-## 🔁 **Nested Loops**
+## **Nested Loops**
 
 A **nested loop** is a loop **inside another loop**. The inner loop completes **all its iterations for each outer loop cycle**.
 
