@@ -17,7 +17,7 @@ We will be looking at syntax and structures of Python. We will use an Integrated
 **All Projects and assignments should have a header block for the teacher**
 
 ```python
-# Assignment:  Program [number]:  [Assignment Title]
+#       Assignment:  Program [number]:  [Assignment Title]
 #
 #       Author:  [Your Name ]
 #       Partner:  [Partner's Name ]
