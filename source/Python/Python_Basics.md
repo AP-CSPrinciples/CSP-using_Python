@@ -14,6 +14,28 @@ We will be looking at syntax and structures of Python. We will use an Integrated
 
 [**PEP 8 Guidelines**](https://peps.python.org/pep-0008/) is the official style guide for Python code and covers naming conventions, code layout, and indentation.  These style guidelines, along with the examples and rationales, will help you write clean, readable, and maintainable code. 
 
+**All Projects and assignments should have a header block for the teacher**
+
+# Assignment:  Program [number]:  [Assignment Title]
+#
+#       Author:  [Your Name ]
+#       Partner:  [Partner's Name ]
+#
+#       Course Name:  [Course Name]
+#       Instructor:  John Smith
+#       Due Date:  [Due Date and Time]
+#
+#       Description:  [Describe the program's goal, IN DETAIL.]
+#
+#       Language:  [ Python version 18]
+#       Ex. Packages:  [List names and sources of all external packages
+#                       required by this program.]
+#
+#       Deficiencies:  [If you know of any problems with the code, provide
+#                      details here, otherwise clearly state that you know
+#                      of no unsatisfied requirements and no logic errors.]
+#
+
 ---
 
 **1. Use Descriptive Variable and Function Names**
