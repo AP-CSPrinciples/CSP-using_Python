@@ -648,7 +648,7 @@ Students will be able to:
 
 ---
 
-## **Activity 1: PII Collection Table (15–20 minutes)**
+**Activity 1: PII Collection Table**
 
 **Instructions**: Complete the following table using three websites or apps they’ve used recently (e.g., Instagram, Amazon, Google Docs).
 
