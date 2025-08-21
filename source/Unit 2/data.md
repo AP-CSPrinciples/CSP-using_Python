@@ -594,3 +594,130 @@ Deliverables:
 | Written explanation                       | 10         |
 | Creativity and effort                     | 10         |
 | **Total**                                 | **70 pts** |
+
+
+---
+
+---
+
+
+## Project 3 - Phishing
+
+
+**Understanding and Preventing Phishing**
+
+
+**Objective**:
+
+Students will be able to:
+
+* Define phishing and related cybersecurity vocabulary
+* Identify real-life phishing threats
+* Understand how their personal information is collected and used
+* Apply basic to advanced protection measures
+* Create a digital artifact to demonstrate their learning
+
+---
+
+**Vocabulary Words**:
+
+| Term                                      | Definition                                                                          |
+| ----------------------------------------- | ----------------------------------------------------------------------------------- |
+| Personally Identifiable Information (PII) | Any data that could be used to identify an individual (e.g., name, address, SSN)    |
+| Data Breach                               | When sensitive information is accessed or released without authorization            |
+| Cookies                                   | Small files stored on your device to track activity and preferences                 |
+| Phishing                                  | A cyber attack that tricks users into giving up personal or sensitive data          |
+| Malware                                   | Malicious software designed to damage or gain unauthorized access to a system       |
+| Keylogger                                 | A program that records everything you type, often used to steal passwords           |
+| Rogue Access Point                        | A fake Wi-Fi network set up to trick people into connecting and stealing their data |
+
+---
+
+**Introduction**
+
+**Discussion**:
+"Have you ever received a suspicious email or message asking you to click a link or enter your password?"
+
+* Show examples of phishing emails and websites
+* Discuss what clues make them suspicious (spelling, grammar, urgent language, mismatched URLs)
+
+**Instructions**:
+
+* Explain phishing using a real-world analogy (e.g., someone pretending to be your friend to get your house key)
+* Review all vocabulary words with examples
+
+---
+
+## **Activity 1: PII Collection Table (15–20 minutes)**
+
+**Instructions**: Complete the following table using three websites or apps they’ve used recently (e.g., Instagram, Amazon, Google Docs).
+
+| Website or Application | PII Collected                      | How the information is used (Will they share it? With whom? Will they keep it forever?) |
+| ---------------------- | ---------------------------------- | --------------------------------------------------------------------------------------- |
+|               | Email, phone number, location      | For ad targeting, may be shared with advertisers                                        |
+|                  | Name, address, payment info        | For order processing, may retain info for future use                                    |
+|                 | Username, school info, geolocation | To personalize experience and track learning; not usually shared                        |
+
+---
+
+**Protection Measures**
+
+**Instructions**: In your own words, list and explain **at least 5 protection measures** from the list below:
+
+1. **Be suspicious of links and attachments** – Don’t click anything from unknown or suspicious sources
+2. **Use strong, unique passwords** – Don’t reuse passwords across websites
+3. **Enable two-factor authentication (2FA)** – Adds a second layer of security
+4. **Install and update antivirus software** – Detects malware like keyloggers
+5. **Avoid public Wi-Fi for sensitive tasks** – Rogue access points can steal data
+6. **Check URLs carefully** – Look for misspellings and “https”
+7. **Review app permissions** – Only give apps the access they need
+8. **Regularly clear cookies and browser history** – Reduces data tracking
+9. **Monitor your digital footprint** – Search your name and see what’s visible online
+
+---
+
+**Reflection Questions**
+
+Students should respond to the following questions in writing or in a small group discussion:
+
+1. **How does storing your information online facilitate convenience?**
+   *(Example: Autofill forms, saved passwords, personalized recommendations)*
+
+2. **How is convenience online related to data loss?**
+   *(Example: Easy access for you also means easier access for hackers if not protected)*
+
+3. **What are some ways you can protect yourself online?**
+   *(Encourage use of the protection strategies from earlier)*
+
+---
+
+**Digital Artifact**
+
+**Objective**: Students will demonstrate what they’ve learned by creating a **digital poster, infographic, video, or slideshow** that includes:
+
+* Definitions of phishing and at least 3 other vocabulary words
+* Examples of phishing (screenshots, skits, or drawings)
+* 5+ protection tips in student-friendly language
+* One takeaway message or slogan (e.g., “Think Before You Click!”)
+
+**Tools Suggestions**:
+
+* **Canva** (infographic/poster)
+* **Google Slides** (presentation)
+* **Adobe Spark** or **Powtoon** (video)
+* **Flip** (recorded video skit)
+
+---
+
+**Assessment Criteria**:
+
+| Component                | Points |
+| ------------------------ | ------ |
+| Completed PII Table      | 10     |
+| Protection Measures List | 10     |
+| Reflection Questions     | 10     |
+| Digital Artifact         | 20     |
+| **Total**                | **50** |
+
+
+
