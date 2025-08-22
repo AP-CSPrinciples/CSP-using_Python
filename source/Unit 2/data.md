@@ -587,13 +587,13 @@ Deliverables:
 
 | Category                                  | Points     |
 | ----------------------------------------- | ---------- |
-| Relevant topic and data source            | 10         |
-| Clean and organized data                  | 10         |
-| Meaningful analysis (insights/statistics) | 15         |
-| Visualization quality and clarity         | 15         |
-| Written explanation                       | 10         |
-| Creativity and effort                     | 10         |
-| **Total**                                 | **70 pts** |
+| Relevant topic and data source            | 1          |
+| Clean and organized data                  | 1          |
+| Meaningful analysis (insights/statistics) | 2          |
+| Visualization quality and clarity         | 2          |
+| Written explanation                       | 2          |
+| Creativity and effort                     | 2          |
+| **Total**                                 | **10 pts** |
 
 
 ---
@@ -638,7 +638,7 @@ Students will be able to:
 **Discussion**:
 "Have you ever received a suspicious email or message asking you to click a link or enter your password?"
 
-* Show examples of (phishing emails)[https://www.youtube.com/watch?v=Y7zNlEMDmI4] and websites
+* Show examples of [phishing emails](https://www.youtube.com/watch?v=Y7zNlEMDmI4) and websites
 * 
 * What clues make them suspicious?
 
@@ -651,7 +651,7 @@ Students will be able to:
 
 **Activity 1: PII Collection Table**
 
-**Instructions**: What is PII?  Click on the link to learn more about (Personally Identifiable Information)[https://www.youtube.com/watch?v=N1qdvQVke0s]. Research and complete the following table using three websites or apps that you have used recently (e.g., Instagram, Amazon, Google Docs).
+**Instructions**: What is PII?  Click on the link to learn more about [Personally Identifiable Information](https://www.youtube.com/watch?v=N1qdvQVke0s). Research and complete the following table using three websites or apps that you have used recently (e.g., Instagram, Amazon, Google Docs).
 
 | Website or Application | PII Collected                      | How the information is used (Will they share it? With whom? Will they keep it forever?) |
 | ---------------------- | ---------------------------------- | --------------------------------------------------------------------------------------- |
@@ -680,7 +680,7 @@ Students will be able to:
   * **Rootkits** – Hide malicious activities from detection.
 
 **How It Spreads:**
-How does it affect your computer.  Click on the link to learn more about (Malware)[https://www.youtube.com/watch?v=N1qdvQVke0s]. 
+How does it affect your computer.  Click on the link to learn more about [Malware](https://www.youtube.com/watch?v=N1qdvQVke0s). 
 
 
 **Protection Measures**
