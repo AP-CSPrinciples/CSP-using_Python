@@ -650,13 +650,13 @@ Students will be able to:
 
 **Activity 1: PII Collection Table**
 
-**Instructions**: What is PII?  Click on the link to learn more about [Personally Identifiable Information](https://www.youtube.com/watch?v=N1qdvQVke0s). Research and complete the following table using three websites or apps that you have used recently (e.g., Instagram, Google).
+**Instructions**: What is PII?  Click on the link to learn more about [Personally Identifiable Information](https://www.youtube.com/watch?v=N1qdvQVke0s). Research and create a table like the one below.  Identify three websites or apps that you have used recently (e.g., Instagram, Google).
 
 | Website or Application | PII Collected                      | How the information is used (Will they share it? With whom? Will they keep it forever?) |
 | ---------------------- | ---------------------------------- | --------------------------------------------------------------------------------------- |
-|      Amazon         | Email, phone number, location      | For ad targeting, may be shared with advertisers                                        |
-|                  |         |                                     |
-|                 |  |                         |
+|      Amazon         | Email, phone number, location      | For ad targeting, may be shared with advertisers                                        | 
+|         <Name>         |         |                                     |
+|       <Name>          |  |                         |
 
 ---
 
