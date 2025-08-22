@@ -654,9 +654,9 @@ Students will be able to:
 
 | Website or Application | PII Collected                      | How the information is used (Will they share it? With whom? Will they keep it forever?) |
 | ---------------------- | ---------------------------------- | --------------------------------------------------------------------------------------- |
-|      Amazon         | Email, phone number, location      | For ad targeting, may be shared with advertisers                                        | 
-|         <Name>         |         |                                     |
-|       <Name>          |  |                         |
+|      Amazon         | Email, phone number, location      | For ad targeting, may be shared with advertisers               | 
+|         Website/ App Name 2        |         |                                     |
+|       Website/ App Name 3         |          |                                     |
 
 ---
 
