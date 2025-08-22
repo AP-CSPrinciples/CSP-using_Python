@@ -638,8 +638,7 @@ Students will be able to:
 **Discussion**:
 "Have you ever received a suspicious email or message asking you to click a link or enter your password?"
 
-* Show examples of [phishing emails](https://www.youtube.com/watch?v=Y7zNlEMDmI4) and websites
-* 
+* Learn more about [phishing emails](https://www.youtube.com/watch?v=Y7zNlEMDmI4) and websites.
 * What clues make them suspicious?
 
 **Instructions**:
@@ -651,13 +650,13 @@ Students will be able to:
 
 **Activity 1: PII Collection Table**
 
-**Instructions**: What is PII?  Click on the link to learn more about [Personally Identifiable Information](https://www.youtube.com/watch?v=N1qdvQVke0s). Research and complete the following table using three websites or apps that you have used recently (e.g., Instagram, Amazon, Google Docs).
+**Instructions**: What is PII?  Click on the link to learn more about [Personally Identifiable Information](https://www.youtube.com/watch?v=N1qdvQVke0s). Research and complete the following table using three websites or apps that you have used recently (e.g., Instagram, Google).
 
 | Website or Application | PII Collected                      | How the information is used (Will they share it? With whom? Will they keep it forever?) |
 | ---------------------- | ---------------------------------- | --------------------------------------------------------------------------------------- |
-|               | Email, phone number, location      | For ad targeting, may be shared with advertisers                                        |
-|                  | Name, address, payment info        | For order processing, may retain info for future use                                    |
-|                 | Username, school info, geolocation | To personalize experience and track learning; not usually shared                        |
+|      Amazon         | Email, phone number, location      | For ad targeting, may be shared with advertisers                                        |
+|                  |         |                                     |
+|                 |  |                         |
 
 ---
 
