@@ -733,10 +733,10 @@ Students should respond to the following questions in writing or in a small grou
 
 | Component                | Points |
 | ------------------------ | ------ |
-| Completed PII Table      | 1      |
-| Protection Measures List | 1      |
+| Completed PII Table      | 2      |
+| Protection Measures List | 2      |
 | Reflection Questions     | 3      |
-| Digital Artifact         | 5      |
+| Digital Artifact         | 3      |
 | **Total**                | **10** |
 
 
