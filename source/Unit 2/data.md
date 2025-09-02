@@ -952,5 +952,96 @@ elif choice == "3":
 
 ---
 
+### Why is Frequency Important in Cryptography?
+
+**Frequency analysis** is one of the oldest and most powerful tools in **breaking substitution ciphers**. Here's how it helps:
+
+1. **Languages Have Predictable Patterns**
+
+* In English, letters like **E**, **T**, **A**, **O**, and **N** appear most often.
+* If an encrypted message shows one letter (like "X") appearing frequently, it might represent "E" or "T".
+
+2. **Cracks Simple Ciphers**
+
+* Substitution ciphers (like Caesar or cryptograms) can often be broken by comparing **letter frequencies** in the ciphertext to known English frequency patterns.
+
+3. **Foundation for Modern Crypto analysis**
+
+*While modern encryption is more complex, the **principle of pattern recognition*** and analysis is still used in detecting weak encryption algorithms.
+
+---
+
+**Common English Letter Frequencies**
+
+| Letter | Frequency (%) |
+| -------- | --------------- |
+| A        | 8.2%            |
+| B        | 1.5%            |
+| C        | 2.8%            |
+| D        | 4.3%            |
+| E        | 12.7%           |
+| F        | 2.2%            |
+| G        | 2.0%            |
+| H        | 6.1%            |
+| I        | 7.0%            |
+| J        | 0.2%            |
+| K        | 0.8%            |
+| L        | 4.0%            |
+| M        | 2.4%            |
+| N        | 6.7%            |
+| O        | 7.5%            |
+| P        | 1.9%            |
+| Q        | 0.1%            |
+| R        | 6.0%            |
+| S        | 6.3%            |
+| T        | 9.1%            |
+| U        | 2.8%            |
+| V        | 1.0%            |
+| W        | 2.4%            |
+| X        | 0.2%            |
+| Y        | 2.0%            |
+| Z        | 0.1%            |
+
+
+
+---
+
+### Python Program: Letter Frequency Analyzer
+
+```python
+def letter_frequency(text):
+    text = text.lower()  # normalize to lowercase
+    frequency = {}
+
+    for char in text:
+        if char.isalpha():  # count only letters
+            if char in frequency:
+                frequency[char] += 1
+            else:
+                frequency[char] = 1
+
+    total_letters = sum(frequency.values())
+
+    print(" Letter Frequencies:\n")
+    for letter in sorted(frequency):
+        percent = (frequency[letter] / total_letters) * 100
+        print(f"{letter.upper()} : {frequency[letter]} times ({percent:.2f}%)")
+
+# Example usage
+input_text = input("Enter a message to analyze: ")
+letter_frequency(input_text)
+```
+
+---
+
+**How to Use**
+
+* Copy and paste the code into any Python environment.
+* When prompted, paste your encrypted or regular text.
+* The program will print a breakdown of how often each letter appears.
+
+---
+
+
 
 
