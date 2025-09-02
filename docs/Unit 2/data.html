@@ -1562,6 +1562,153 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <li><p>Enter your private key (d) and modulus (n).</p></li>
 <li><p>Get the decrypted message.</p></li>
 </ol>
+</section>
+<hr class="docutils" />
+<section id="why-is-frequency-important-in-cryptography">
+<h3>Why is Frequency Important in Cryptography?<a class="headerlink" href="#why-is-frequency-important-in-cryptography" title="Link to this heading">¶</a></h3>
+<p><strong>Frequency analysis</strong> is one of the oldest and most powerful tools in <strong>breaking substitution ciphers</strong>. Here’s how it helps:</p>
+<ol class="arabic simple">
+<li><p><strong>Languages Have Predictable Patterns</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>In English, letters like <strong>E</strong>, <strong>T</strong>, <strong>A</strong>, <strong>O</strong>, and <strong>N</strong> appear most often.</p></li>
+<li><p>If an encrypted message shows one letter (like “X”) appearing frequently, it might represent “E” or “T”.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>Cracks Simple Ciphers</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Substitution ciphers (like Caesar or cryptograms) can often be broken by comparing <strong>letter frequencies</strong> in the ciphertext to known English frequency patterns.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>Foundation for Modern Crypto analysis</strong></p></li>
+</ol>
+<p><em>While modern encryption is more complex, the <strong>principle of pattern recognition</strong></em> and analysis is still used in detecting weak encryption algorithms.</p>
+<hr class="docutils" />
+<p><strong>Common English Letter Frequencies</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Letter</p></th>
+<th class="head"><p>Frequency (%)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>8.2%</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>1.5%</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>2.8%</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>4.3%</p></td>
+</tr>
+<tr class="row-even"><td><p>E</p></td>
+<td><p>12.7%</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>2.2%</p></td>
+</tr>
+<tr class="row-even"><td><p>G</p></td>
+<td><p>2.0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>H</p></td>
+<td><p>6.1%</p></td>
+</tr>
+<tr class="row-even"><td><p>I</p></td>
+<td><p>7.0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>J</p></td>
+<td><p>0.2%</p></td>
+</tr>
+<tr class="row-even"><td><p>K</p></td>
+<td><p>0.8%</p></td>
+</tr>
+<tr class="row-odd"><td><p>L</p></td>
+<td><p>4.0%</p></td>
+</tr>
+<tr class="row-even"><td><p>M</p></td>
+<td><p>2.4%</p></td>
+</tr>
+<tr class="row-odd"><td><p>N</p></td>
+<td><p>6.7%</p></td>
+</tr>
+<tr class="row-even"><td><p>O</p></td>
+<td><p>7.5%</p></td>
+</tr>
+<tr class="row-odd"><td><p>P</p></td>
+<td><p>1.9%</p></td>
+</tr>
+<tr class="row-even"><td><p>Q</p></td>
+<td><p>0.1%</p></td>
+</tr>
+<tr class="row-odd"><td><p>R</p></td>
+<td><p>6.0%</p></td>
+</tr>
+<tr class="row-even"><td><p>S</p></td>
+<td><p>6.3%</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>9.1%</p></td>
+</tr>
+<tr class="row-even"><td><p>U</p></td>
+<td><p>2.8%</p></td>
+</tr>
+<tr class="row-odd"><td><p>V</p></td>
+<td><p>1.0%</p></td>
+</tr>
+<tr class="row-even"><td><p>W</p></td>
+<td><p>2.4%</p></td>
+</tr>
+<tr class="row-odd"><td><p>X</p></td>
+<td><p>0.2%</p></td>
+</tr>
+<tr class="row-even"><td><p>Y</p></td>
+<td><p>2.0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Z</p></td>
+<td><p>0.1%</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="python-program-letter-frequency-analyzer">
+<h3>Python Program: Letter Frequency Analyzer<a class="headerlink" href="#python-program-letter-frequency-analyzer" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">letter_frequency</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>  <span class="c1"># normalize to lowercase</span>
+    <span class="n">frequency</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>  <span class="c1"># count only letters</span>
+            <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">frequency</span><span class="p">:</span>
+                <span class="n">frequency</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">frequency</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="n">total_letters</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">frequency</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Letter Frequencies:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">frequency</span><span class="p">):</span>
+        <span class="n">percent</span> <span class="o">=</span> <span class="p">(</span><span class="n">frequency</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span> <span class="o">/</span> <span class="n">total_letters</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">letter</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">frequency</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span><span class="si">}</span><span class="s2"> times (</span><span class="si">{</span><span class="n">percent</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Example usage</span>
+<span class="n">input_text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a message to analyze: &quot;</span><span class="p">)</span>
+<span class="n">letter_frequency</span><span class="p">(</span><span class="n">input_text</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>How to Use</strong></p>
+<ul class="simple">
+<li><p>Copy and paste the code into any Python environment.</p></li>
+<li><p>When prompted, paste your encrypted or regular text.</p></li>
+<li><p>The program will print a breakdown of how often each letter appears.</p></li>
+</ul>
 <hr class="docutils" />
 </section>
 </section>
@@ -1630,6 +1777,8 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <li><a class="reference internal" href="#encryption-privacy">Encryption &amp; Privacy</a></li>
 <li><a class="reference internal" href="#rsa-encryption-and-decryption-python-program-educational-version">RSA Encryption and Decryption Python Program Educational Version</a><ul>
 <li><a class="reference internal" href="#how-to-the-rsa-program">How to the RSA Program</a></li>
+<li><a class="reference internal" href="#why-is-frequency-important-in-cryptography">Why is Frequency Important in Cryptography?</a></li>
+<li><a class="reference internal" href="#python-program-letter-frequency-analyzer">Python Program: Letter Frequency Analyzer</a></li>
 </ul>
 </li>
 </ul>
