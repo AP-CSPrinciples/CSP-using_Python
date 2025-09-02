@@ -1338,6 +1338,122 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 </table>
 </div>
 </section>
+<hr class="docutils" />
+<section id="encryption-privacy">
+<h2>Encryption &amp; Privacy<a class="headerlink" href="#encryption-privacy" title="Link to this heading">¶</a></h2>
+<hr class="docutils" />
+<p><strong>Key concepts to learn</strong></p>
+<ul class="simple">
+<li><p>What encryption is and why it’s essential for secure communication.</p></li>
+<li><p>How <strong>Caesar cipher</strong> works as a basic form of <strong>substitution cipher</strong>.</p></li>
+<li><p>The concept of <strong>brute force attacks</strong>.</p></li>
+<li><p>Introduction to <strong>frequency analysis</strong> and basic <strong>cryptanalysis</strong>.</p></li>
+<li><p>Understanding of <strong>public-key cryptography</strong> (RSA) and <strong>private/public key</strong> pairs.</p></li>
+<li><p>Vocabulary relevant to digital security and cryptography.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Vocabulary</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Term</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Encryption</strong></p></td>
+<td><p>Converting information into a code to prevent unauthorized access.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Decryption</strong></p></td>
+<td><p>Converting encrypted data back into readable form.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Cipher</strong></p></td>
+<td><p>A method for performing encryption or decryption.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Caesar Cipher</strong></p></td>
+<td><p>A substitution cipher that shifts letters by a fixed amount.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Brute Force</strong></p></td>
+<td><p>Trying all possible keys to decrypt a message.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Substitution Cipher</strong></p></td>
+<td><p>A cipher that replaces each letter with another.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Cryptanalysis</strong></p></td>
+<td><p>The art of decoding encrypted messages without the key.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Public Key</strong></p></td>
+<td><p>Used to encrypt data in RSA encryption. Shared with everyone.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Private Key</strong></p></td>
+<td><p>Used to decrypt data in RSA. Kept secret.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Modulus</strong></p></td>
+<td><p>A number used to link the public and private keys in RSA.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Frequency Analysis</strong></p></td>
+<td><p>A method of breaking substitution ciphers by studying how often letters appear.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p><strong>Python Code: Caesar Cipher Program</strong></p>
+<p><em>Copy and place this in a workin Python environment.</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">caesar_encrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">shift</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+            <span class="n">offset</span> <span class="o">=</span> <span class="mi">65</span> <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="k">else</span> <span class="mi">97</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">((</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">-</span> <span class="n">offset</span> <span class="o">+</span> <span class="n">shift</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="n">char</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">caesar_decrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">shift</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">caesar_encrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="o">-</span><span class="n">shift</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">brute_force_caesar</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">26</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">caesar_decrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Example usage:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Encrypt&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Decrypt&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. Brute Force&quot;</span><span class="p">)</span>
+<span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your choice: &quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter message to encrypt: &quot;</span><span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter shift key (1-25): &quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encrypted:&quot;</span><span class="p">,</span> <span class="n">caesar_encrypt</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+<span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter message to decrypt: &quot;</span><span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter shift key (1-25): &quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Decrypted:&quot;</span><span class="p">,</span> <span class="n">caesar_decrypt</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+<span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter message to brute-force: &quot;</span><span class="p">)</span>
+    <span class="n">brute_force_caesar</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Complete Caesar decryption for “Vkliw wkuhh” using Caesar shift of 3.</p></li>
+<li><p>Discuss why certain messages need encryption online.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Practice</strong></p>
+<ul class="simple">
+<li><p>Try encrypting and decrypting a sentence using the Python code.</p></li>
+<li><p>Paste encrypted sentence into class doc with your key.</p></li>
+</ul>
+<p><strong>Brute Force</strong></p>
+<p><em>Use the <strong>brute force</strong> option in the script above to decrypt:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Guvf vf n rapelcgrq zrffntr. Lbh jvyy arire or noyr gb ernq vg!
+</pre></div>
+</div>
+<p><em>Discuss if the original message is easy to spot among the outputs.</em></p>
+<hr class="docutils" />
+</section>
 </section>
 
         </article>
@@ -1400,6 +1516,7 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <li><a class="reference internal" href="#data-project-1-data-communication-and-compression">Data Project 1 - Data Communication and Compression:</a></li>
 <li><a class="reference internal" href="#data-project-2-data-detectives-investigating-real-world-trends">Data Project 2: “Data Detectives – Investigating Real-World Trends”</a></li>
 <li><a class="reference internal" href="#project-3-phishing">Project 3 - Phishing</a></li>
+<li><a class="reference internal" href="#encryption-privacy">Encryption &amp; Privacy</a></li>
 </ul>
 </li>
 </ul>
