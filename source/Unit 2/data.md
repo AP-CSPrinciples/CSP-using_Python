@@ -740,4 +740,102 @@ Students should respond to the following questions in writing or in a small grou
 | **Total**                | **10** |
 
 
+---
 
+## Encryption & Privacy
+
+---
+
+**Key concepts to learn**
+
+* What encryption is and why it's essential for secure communication.
+* How **Caesar cipher** works as a basic form of **substitution cipher**.
+* The concept of **brute force attacks**.
+* Introduction to **frequency analysis** and basic **cryptanalysis**.
+* Understanding of **public-key cryptography** (RSA) and **private/public key** pairs.
+* Vocabulary relevant to digital security and cryptography.
+
+---
+
+**Vocabulary**
+
+| Term                      | Definition                                                                      |
+| ------------------------- | ------------------------------------------------------------------------------- |
+| **Encryption**          | Converting information into a code to prevent unauthorized access.              |
+| **Decryption**          | Converting encrypted data back into readable form.                              |
+| **Cipher**              | A method for performing encryption or decryption.                               |
+| **Caesar Cipher**       | A substitution cipher that shifts letters by a fixed amount.                    |
+| **Brute Force**         | Trying all possible keys to decrypt a message.                                  |
+| **Substitution Cipher** | A cipher that replaces each letter with another.                                |
+| **Cryptanalysis**       | The art of decoding encrypted messages without the key.                         |
+| **Public Key**          | Used to encrypt data in RSA encryption. Shared with everyone.                   |
+| **Private Key**         | Used to decrypt data in RSA. Kept secret.                                       |
+| **Modulus**             | A number used to link the public and private keys in RSA.                       |
+| **Frequency Analysis**  | A method of breaking substitution ciphers by studying how often letters appear. |
+
+---
+
+**Python Code: Caesar Cipher Program**
+
+*Copy and place this in a workin Python environment.*
+
+```python
+def caesar_encrypt(text, shift):
+    result = ""
+    for char in text:
+        if char.isalpha():
+            offset = 65 if char.isupper() else 97
+            result += chr((ord(char) - offset + shift) % 26 + offset)
+        else:
+            result += char
+    return result
+
+def caesar_decrypt(text, shift):
+    return caesar_encrypt(text, -shift)
+
+def brute_force_caesar(text):
+    for key in range(1, 26):
+        print(f"Key {key}: {caesar_decrypt(text, key)}")
+
+# Example usage:
+print("1. Encrypt")
+print("2. Decrypt")
+print("3. Brute Force")
+choice = input("Enter your choice: ")
+
+if choice == "1":
+    message = input("Enter message to encrypt: ")
+    key = int(input("Enter shift key (1-25): "))
+    print("Encrypted:", caesar_encrypt(message, key))
+elif choice == "2":
+    message = input("Enter message to decrypt: ")
+    key = int(input("Enter shift key (1-25): "))
+    print("Decrypted:", caesar_decrypt(message, key))
+elif choice == "3":
+    message = input("Enter message to brute-force: ")
+    brute_force_caesar(message)
+```
+
+* Complete Caesar decryption for "Vkliw wkuhh" using Caesar shift of 3.
+* Discuss why certain messages need encryption online.
+
+---
+
+**Practice**
+
+* Try encrypting and decrypting a sentence using the Python code.
+* Paste encrypted sentence into class doc with your key.
+
+
+
+**Brute Force**
+
+*Use the **brute force** option in the script above to decrypt:*
+
+  ```
+  Guvf vf n rapelcgrq zrffntr. Lbh jvyy arire or noyr gb ernq vg!
+  ```
+
+*Discuss if the original message is easy to spot among the outputs.*
+
+---
