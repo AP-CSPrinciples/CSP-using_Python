@@ -772,6 +772,10 @@ Students should respond to the following questions in writing or in a small grou
 | **Private Key**         | Used to decrypt data in RSA. Kept secret.                                       |
 | **Modulus**             | A number used to link the public and private keys in RSA.                       |
 | **Frequency Analysis**  | A method of breaking substitution ciphers by studying how often letters appear. |
+| **Plaintext**           | The original readable message                                                   |
+| **Ciphertext**          | The encrypted (scrambled) message                                               |
+| **Keyword**             | A word used to vary the shifts in the cipher                                    |
+| **Polyalphabetic**      | Involving more than one substitution alphabet                                   |
 
 ---
 
@@ -840,14 +844,11 @@ elif choice == "3":
 
 ---
 
-________________________________________
-## RSA Encryption and Decryption Python Program Educational Version
+
+## RSA Educational Encryption and Decryption Program 
 
 ⚠️ This version is simplified for educational purposes only and not secure for real cryptographic use. It shows the core concepts of RSA: key generation, encryption, and decryption.
 
-Notes
-•	This as a light introduction to public-key cryptography.
-•	Test encryption and decryption with a classroom peer.
 
 ```python
 def gcd(a, b):
@@ -873,27 +874,31 @@ def is_prime(n):
     return True
 
 def generate_keys():
-    print("Choose two small prime numbers (e.g. 17 and 23):")
-    p = int(input("Enter prime p: "))
-    q = int(input("Enter prime q: "))
+    print("\n Choose two prime numbers (p and q) such that their product n = p * q is greater than 255.")
+    p = int(input("Enter prime p (e.g. 61): "))
+    q = int(input("Enter prime q (e.g. 53): "))
+
     if not (is_prime(p) and is_prime(q)):
-        print("Both numbers must be prime.")
-        return
+        print("Error: Both numbers must be prime.")
+        return None, None, None
 
     n = p * q
+    if n <= 255:
+        print("Error: n must be greater than 255 to support all ASCII characters.")
+        return None, None, None
+
     phi = (p - 1) * (q - 1)
 
-    # Choose e
     e = 3
     while gcd(e, phi) != 1:
         e += 2
 
-    # Compute d
     d = modinv(e, phi)
 
     print(f"\n Public Key: ({e}, {n})")
     print(f" Private Key: {d}")
     return e, d, n
+
 
 def encrypt(message, e, n):
     encrypted = [pow(ord(char), e, n) for char in message]
@@ -903,28 +908,45 @@ def decrypt(cipher, d, n):
     decrypted = ''.join([chr(pow(char, d, n)) for char in cipher])
     return decrypted
 
-# Example use
-print(" RSA Cryptosystem")
-choice = input("1. Generate keys\n2. Encrypt\n3. Decrypt\nChoose option: ")
+def main():
+    print("RSA Cryptosystem")
 
-if choice == "1":
-    generate_keys()
+    while True:
+        print("\nMENU:")
+        print("1. Generate Keys")
+        print("2. Encrypt Message")
+        print("3. Decrypt Message")
+        print("4. Exit")
 
-elif choice == "2":
-    msg = input("Enter your message: ")
-    e = int(input("Enter recipient's public key e: "))
-    n = int(input("Enter recipient's public key n: "))
-    encrypted_msg = encrypt(msg, e, n)
-    print(" Encrypted message:", encrypted_msg)
+        choice = input("Choose an option (1-4): ")
 
-elif choice == "3":
-    cipher_input = input("Paste the encrypted message as a list (e.g. [123, 456, ...]): ")
-    cipher = eval(cipher_input)
-    d = int(input("Enter your private key d: "))
-    n = int(input("Enter your modulus n: "))
-    decrypted_msg = decrypt(cipher, d, n)
-    print(" Decrypted message:", decrypted_msg)
+        if choice == "1":
+            e, d, n = generate_keys()
 
+        elif choice == "2":
+            msg = input("Enter your message: ")
+            e = int(input("Enter recipient's public key e: "))
+            n = int(input("Enter recipient's public key n: "))
+            encrypted_msg = encrypt(msg, e, n)
+            print("Encrypted message:", encrypted_msg)
+
+        elif choice == "3":
+            try:
+                cipher_input = input("Paste the encrypted message list (e.g. [123, 456]): ")
+                cipher = eval(cipher_input)
+                d = int(input("Enter your private key d: "))
+                n = int(input("Enter your modulus n: "))
+                decrypted_msg = decrypt(cipher, d, n)
+                print("Decrypted message:", decrypted_msg)
+            except:
+                print("Invalid input. Try again.")
+
+        elif choice == "4":
+            print("Exiting RSA program. Goodbye!")
+            break
+
+        else:
+            print("Invalid option. Please choose 1, 2, 3, or 4.")
 ```
     
 ---
@@ -1042,6 +1064,140 @@ letter_frequency(input_text)
 
 ---
 
+### Vigenère Cipher
 
+
+**What Is the Vigenère Cipher?**
+
+The **Vigenère Cipher** is a **polyalphabetic substitution cipher** that uses a **keyword** to encrypt a message.
+
+* Unlike Caesar Cipher (which uses the same shift for every letter), Vigenère **changes the shift for each letter**, based on a repeating keyword.
+* This makes it **much harder to crack** using simple frequency analysis.
+
+---
+
+***How It Works – Step-by-Step***
+
+**Core Idea:**
+
+* Each letter of the **plaintext** is shifted by an amount **based on the corresponding letter of the keyword**.
+
+---
+
+**Alphabet Reference:**
+
+You work with the alphabet:
+
+```
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+```
+
+* Each letter corresponds to a number: A=0, B=1, ..., Z=25
+
+---
+
+**Keyword:**
+
+A word like `"KEY"` is used to determine the shifts.
+
+If your message is longer than the keyword, you **repeat the keyword**:
+
+```
+Message:  A T T A C K A T D A W N
+Keyword:  K E Y K E Y K E Y K E Y
+```
+
+---
+
+**Encryption Formula:**
+
+```
+EncryptedLetter = (PlainLetter + KeyLetter) % 26
+```
+
+**Decryption Formula:**
+
+```
+PlainLetter = (EncryptedLetter - KeyLetter + 26) % 26
+```
+
+---
+
+**Example: Encrypting “ATTACKATDAWN” with Key “KEY”**
+
+| Position | Message | Key | Plain (Num) | Key (Num) | Encrypted (Num) | Encrypted Letter |
+| -------- | ------- | --- | ----------- | --------- | --------------- | ---------------- |
+| 1        | A       | K   | 0           | 10        | 10              | K                |
+| 2        | T       | E   | 19          | 4         | 23              | X                |
+| 3        | T       | Y   | 19          | 24        | 17              | R                |
+| 4        | A       | K   | 0           | 10        | 10              | K                |
+| 5        | C       | E   | 2           | 4         | 6               | G                |
+| 6        | K       | Y   | 10          | 24        | 8               | I                |
+| 7        | A       | K   | 0           | 10        | 10              | K                |
+| 8        | T       | E   | 19          | 4         | 23              | X                |
+| 9        | D       | Y   | 3           | 24        | 1               | B                |
+| 10       | A       | K   | 0           | 10        | 10              | K                |
+| 11       | W       | E   | 22          | 4         | 0               | A                |
+| 12       | N       | Y   | 13          | 24        | 11              | L                |
+
+**Encrypted Message**: `KXRKGIKXBKAL`
+
+---
+
+**Key Concepts for Students**
+
+| Concept                     | Description                                                                             |
+| --------------------------- | --------------------------------------------------------------------------------------- |
+| **Polyalphabetic Cipher**   | Uses multiple substitution alphabets, not just one                                      |
+| **Keyword**                 | Determines how much each letter is shifted                                              |
+| **Repeating Key**           | The keyword repeats to match the length of the message                                  |
+| **Modular Arithmetic**      | Calculations are done using modulo 26 (number of letters in the alphabet)               |
+| **More Secure than Caesar** | Because shifts vary with the key, it defeats simple frequency analysis (to some extent) |
+
+---
+
+
+
+```python
+def vigenere_encrypt(text, key):
+    result = ""
+    key = key.lower()
+    key_index = 0
+
+    for char in text:
+        if char.isalpha():
+            shift = ord(key[key_index % len(key)]) - 97
+            base = 65 if char.isupper() else 97
+            result += chr((ord(char) - base + shift) % 26 + base)
+            key_index += 1
+        else:
+            result += char
+    return result
+
+def vigenere_decrypt(text, key):
+    result = ""
+    key = key.lower()
+    key_index = 0
+
+    for char in text:
+        if char.isalpha():
+            shift = ord(key[key_index % len(key)]) - 97
+            base = 65 if char.isupper() else 97
+            result += chr((ord(char) - base - shift) % 26 + base)
+            key_index += 1
+        else:
+            result += char
+    return result
+
+# Example use
+msg = input("Enter your message: ")
+key = input("Enter the keyword: ")
+mode = input("Encrypt (e) or Decrypt (d)? ").lower()
+
+if mode == 'e':
+    print("Encrypted:", vigenere_encrypt(msg, key))
+else:
+    print("Decrypted:", vigenere_decrypt(msg, key))
+```
 
 
