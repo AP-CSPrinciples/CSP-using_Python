@@ -936,11 +936,13 @@ elif choice == "3":
 2.	Choose small primes (e.g. 17 and 23).
 3.	Share public key (e, n).
 4.	Keep private key (d) secret.
+
 **Encrypt**
 1.	Select option 2.
 2.	Input your message.
 3.	Input recipient’s public key (e, n).
 4.	Share the encrypted list with the recipient.
+
 **Decrypt**
 1.	Select option 3.
 2.	Paste the encrypted list.
