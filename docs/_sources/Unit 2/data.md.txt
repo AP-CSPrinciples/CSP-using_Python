@@ -73,7 +73,6 @@
 </details>
 
 
----
 
 ---
 
@@ -751,7 +750,7 @@ Students should respond to the following questions in writing or in a small grou
 * What encryption is and why it's essential for secure communication.
 * How **Caesar cipher** works as a basic form of **substitution cipher**.
 * The concept of **brute force attacks**.
-* Introduction to **frequency analysis** and basic **cryptanalysis**.
+* Introduction to **frequency analysis** and basic **crypto-analysis**.
 * Understanding of **public-key cryptography** (RSA) and **private/public key** pairs.
 * Vocabulary relevant to digital security and cryptography.
 
@@ -761,21 +760,115 @@ Students should respond to the following questions in writing or in a small grou
 
 | Term                      | Definition                                                                      |
 | ------------------------- | ------------------------------------------------------------------------------- |
-| **Encryption**          | Converting information into a code to prevent unauthorized access.              |
-| **Decryption**          | Converting encrypted data back into readable form.                              |
-| **Cipher**              | A method for performing encryption or decryption.                               |
-| **Caesar Cipher**       | A substitution cipher that shifts letters by a fixed amount.                    |
 | **Brute Force**         | Trying all possible keys to decrypt a message.                                  |
-| **Substitution Cipher** | A cipher that replaces each letter with another.                                |
-| **Cryptanalysis**       | The art of decoding encrypted messages without the key.                         |
-| **Public Key**          | Used to encrypt data in RSA encryption. Shared with everyone.                   |
-| **Private Key**         | Used to decrypt data in RSA. Kept secret.                                       |
-| **Modulus**             | A number used to link the public and private keys in RSA.                       |
-| **Frequency Analysis**  | A method of breaking substitution ciphers by studying how often letters appear. |
-| **Plaintext**           | The original readable message                                                   |
+| **Caesar Cipher**       | A substitution cipher that shifts letters by a fixed amount.                    |
+| **Cipher**              | A method for performing encryption or decryption.                               |
 | **Ciphertext**          | The encrypted (scrambled) message                                               |
+| **Crypto-analysis**       | The art of decoding encrypted messages without the key.                         |
+| **Decryption**          | Converting encrypted data back into readable form.                              |
+| **Encryption**          | Converting information into a code to prevent unauthorized access.              |
+| **Frequency Analysis**  | A method of breaking substitution ciphers by studying how often letters appear. |
 | **Keyword**             | A word used to vary the shifts in the cipher                                    |
+| **Modular Arithmetic**      | Calculations are done using modulo 26 (number of letters in the alphabet)               |
+| **Modulus**             | A number used to link the public and private keys in RSA.                       |
+| **Plaintext**           | The original readable message                                                   |
 | **Polyalphabetic**      | Involving more than one substitution alphabet                                   |
+| **Private Key**         | Used to decrypt data in RSA. Kept secret.                                       |
+| **Public Key**          | Used to encrypt data in RSA encryption. Shared with everyone.                   |
+| **Repeating Key**           | The keyword repeats to match the length of the message                                  |
+| **Substitution Cipher** | A cipher that replaces each letter with another.                                |
+
+---
+
+
+### Why is Frequency Important in Cryptography?
+
+**Frequency analysis** is one of the oldest and most powerful tools in **breaking substitution ciphers**. Here's how it helps:
+
+1. **Languages Have Predictable Patterns**
+
+* In English, letters like **E**, **T**, **A**, **O**, and **N** appear most often.
+* If an encrypted message shows one letter (like "X") appearing frequently, it might represent "E" or "T".
+
+2. **Cracks Simple Ciphers**
+
+* Substitution ciphers (like Caesar or cryptograms) can often be broken by comparing **letter frequencies** in the ciphertext to known English frequency patterns.
+
+3. **Foundation for Modern Crypto analysis**
+
+*While modern encryption is more complex, the **principle of pattern recognition*** and analysis is still used in detecting weak encryption algorithms.
+
+---
+
+**Common English Letter Frequencies**
+
+| Letter | Frequency (%) |
+| -------- | --------------- |
+| A        | 8.2%            |
+| B        | 1.5%            |
+| C        | 2.8%            |
+| D        | 4.3%            |
+| E        | 12.7%           |
+| F        | 2.2%            |
+| G        | 2.0%            |
+| H        | 6.1%            |
+| I        | 7.0%            |
+| J        | 0.2%            |
+| K        | 0.8%            |
+| L        | 4.0%            |
+| M        | 2.4%            |
+| N        | 6.7%            |
+| O        | 7.5%            |
+| P        | 1.9%            |
+| Q        | 0.1%            |
+| R        | 6.0%            |
+| S        | 6.3%            |
+| T        | 9.1%            |
+| U        | 2.8%            |
+| V        | 1.0%            |
+| W        | 2.4%            |
+| X        | 0.2%            |
+| Y        | 2.0%            |
+| Z        | 0.1%            |
+
+
+---
+
+
+### Python Program: Letter Frequency Analyzer
+
+```python
+def letter_frequency(text):
+    text = text.lower()  # normalize to lowercase
+    frequency = {}
+
+    for char in text:
+        if char.isalpha():  # count only letters
+            if char in frequency:
+                frequency[char] += 1
+            else:
+                frequency[char] = 1
+
+    total_letters = sum(frequency.values())
+
+    print(" Letter Frequencies:\n")
+    for letter in sorted(frequency):
+        percent = (frequency[letter] / total_letters) * 100
+        print(f"{letter.upper()} : {frequency[letter]} times ({percent:.2f}%)")
+
+# Example usage
+input_text = input("Enter a message to analyze: ")
+letter_frequency(input_text)
+```
+
+---
+
+**How to Use**
+
+* Copy and paste the code into any Python environment.
+* When prompted, paste your encrypted or regular text.
+* The program will print a breakdown of how often each letter appears.
+
 
 ---
 
@@ -831,7 +924,6 @@ elif choice == "3":
 * Paste encrypted sentence into class doc with your key.
 
 
-
 **Brute Force**
 
 *Use the **brute force** option in the script above to decrypt:*
@@ -842,10 +934,94 @@ elif choice == "3":
 
 *Discuss if the original message is easy to spot among the outputs.*
 
+
 ---
 
 
-## RSA Educational Encryption and Decryption Program 
+### Vigenère Cipher
+
+
+**What Is the Vigenère Cipher?**
+
+The **Vigenère Cipher** is a **polyalphabetic substitution cipher** that uses a **keyword** to encrypt a message.
+
+* Unlike Caesar Cipher (which uses the same shift for every letter), Vigenère **changes the shift for each letter**, based on a repeating keyword.
+* This makes it **much harder to crack** using simple frequency analysis.
+
+---
+
+***How It Works – Step-by-Step***
+
+**Core Idea:**
+
+* Each letter of the **plaintext** is shifted by an amount **based on the corresponding letter of the keyword**.
+
+---
+
+**Alphabet Reference:**
+
+You work with the alphabet:
+
+```
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+```
+
+* Each letter corresponds to a number: A=0, B=1, ..., Z=25
+
+---
+
+**Keyword:**
+
+A word like `"KEY"` is used to determine the shifts.
+
+If your message is longer than the keyword, you **repeat the keyword**:
+
+```
+Message:  A T T A C K A T D A W N
+Keyword:  K E Y K E Y K E Y K E Y
+```
+
+---
+
+**Encryption Formula:**
+
+```
+EncryptedLetter = (PlainLetter + KeyLetter) % 26
+```
+
+**Decryption Formula:**
+
+```
+PlainLetter = (EncryptedLetter - KeyLetter + 26) % 26
+```
+
+---
+
+**Example: Encrypting “ATTACKATDAWN” with Key “KEY”**
+
+| Position | Message | Key | Plain (Num) | Key (Num) | Encrypted (Num) | Encrypted Letter |
+| -------- | ------- | --- | ----------- | --------- | --------------- | ---------------- |
+| 1        | A       | K   | 0           | 10        | 10              | K                |
+| 2        | T       | E   | 19          | 4         | 23              | X                |
+| 3        | T       | Y   | 19          | 24        | 17              | R                |
+| 4        | A       | K   | 0           | 10        | 10              | K                |
+| 5        | C       | E   | 2           | 4         | 6               | G                |
+| 6        | K       | Y   | 10          | 24        | 8               | I                |
+| 7        | A       | K   | 0           | 10        | 10              | K                |
+| 8        | T       | E   | 19          | 4         | 23              | X                |
+| 9        | D       | Y   | 3           | 24        | 1               | B                |
+| 10       | A       | K   | 0           | 10        | 10              | K                |
+| 11       | W       | E   | 22          | 4         | 0               | A                |
+| 12       | N       | Y   | 13          | 24        | 11              | L                |
+
+**Encrypted Message**: `KXRKGIKXBKAL`
+
+
+---
+
+
+
+### RSA Educational Encryption and Decryption Program 
 
 ⚠️ This version is simplified for educational purposes only and not secure for real cryptographic use. It shows the core concepts of RSA: key generation, encryption, and decryption.
 
@@ -971,188 +1147,6 @@ def main():
 3.	Enter your private key (d) and modulus (n).
 4.	Get the decrypted message.
 
-
----
-
-### Why is Frequency Important in Cryptography?
-
-**Frequency analysis** is one of the oldest and most powerful tools in **breaking substitution ciphers**. Here's how it helps:
-
-1. **Languages Have Predictable Patterns**
-
-* In English, letters like **E**, **T**, **A**, **O**, and **N** appear most often.
-* If an encrypted message shows one letter (like "X") appearing frequently, it might represent "E" or "T".
-
-2. **Cracks Simple Ciphers**
-
-* Substitution ciphers (like Caesar or cryptograms) can often be broken by comparing **letter frequencies** in the ciphertext to known English frequency patterns.
-
-3. **Foundation for Modern Crypto analysis**
-
-*While modern encryption is more complex, the **principle of pattern recognition*** and analysis is still used in detecting weak encryption algorithms.
-
----
-
-**Common English Letter Frequencies**
-
-| Letter | Frequency (%) |
-| -------- | --------------- |
-| A        | 8.2%            |
-| B        | 1.5%            |
-| C        | 2.8%            |
-| D        | 4.3%            |
-| E        | 12.7%           |
-| F        | 2.2%            |
-| G        | 2.0%            |
-| H        | 6.1%            |
-| I        | 7.0%            |
-| J        | 0.2%            |
-| K        | 0.8%            |
-| L        | 4.0%            |
-| M        | 2.4%            |
-| N        | 6.7%            |
-| O        | 7.5%            |
-| P        | 1.9%            |
-| Q        | 0.1%            |
-| R        | 6.0%            |
-| S        | 6.3%            |
-| T        | 9.1%            |
-| U        | 2.8%            |
-| V        | 1.0%            |
-| W        | 2.4%            |
-| X        | 0.2%            |
-| Y        | 2.0%            |
-| Z        | 0.1%            |
-
-
-
----
-
-### Python Program: Letter Frequency Analyzer
-
-```python
-def letter_frequency(text):
-    text = text.lower()  # normalize to lowercase
-    frequency = {}
-
-    for char in text:
-        if char.isalpha():  # count only letters
-            if char in frequency:
-                frequency[char] += 1
-            else:
-                frequency[char] = 1
-
-    total_letters = sum(frequency.values())
-
-    print(" Letter Frequencies:\n")
-    for letter in sorted(frequency):
-        percent = (frequency[letter] / total_letters) * 100
-        print(f"{letter.upper()} : {frequency[letter]} times ({percent:.2f}%)")
-
-# Example usage
-input_text = input("Enter a message to analyze: ")
-letter_frequency(input_text)
-```
-
----
-
-**How to Use**
-
-* Copy and paste the code into any Python environment.
-* When prompted, paste your encrypted or regular text.
-* The program will print a breakdown of how often each letter appears.
-
----
-
-### Vigenère Cipher
-
-
-**What Is the Vigenère Cipher?**
-
-The **Vigenère Cipher** is a **polyalphabetic substitution cipher** that uses a **keyword** to encrypt a message.
-
-* Unlike Caesar Cipher (which uses the same shift for every letter), Vigenère **changes the shift for each letter**, based on a repeating keyword.
-* This makes it **much harder to crack** using simple frequency analysis.
-
----
-
-***How It Works – Step-by-Step***
-
-**Core Idea:**
-
-* Each letter of the **plaintext** is shifted by an amount **based on the corresponding letter of the keyword**.
-
----
-
-**Alphabet Reference:**
-
-You work with the alphabet:
-
-```
-A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-```
-
-* Each letter corresponds to a number: A=0, B=1, ..., Z=25
-
----
-
-**Keyword:**
-
-A word like `"KEY"` is used to determine the shifts.
-
-If your message is longer than the keyword, you **repeat the keyword**:
-
-```
-Message:  A T T A C K A T D A W N
-Keyword:  K E Y K E Y K E Y K E Y
-```
-
----
-
-**Encryption Formula:**
-
-```
-EncryptedLetter = (PlainLetter + KeyLetter) % 26
-```
-
-**Decryption Formula:**
-
-```
-PlainLetter = (EncryptedLetter - KeyLetter + 26) % 26
-```
-
----
-
-**Example: Encrypting “ATTACKATDAWN” with Key “KEY”**
-
-| Position | Message | Key | Plain (Num) | Key (Num) | Encrypted (Num) | Encrypted Letter |
-| -------- | ------- | --- | ----------- | --------- | --------------- | ---------------- |
-| 1        | A       | K   | 0           | 10        | 10              | K                |
-| 2        | T       | E   | 19          | 4         | 23              | X                |
-| 3        | T       | Y   | 19          | 24        | 17              | R                |
-| 4        | A       | K   | 0           | 10        | 10              | K                |
-| 5        | C       | E   | 2           | 4         | 6               | G                |
-| 6        | K       | Y   | 10          | 24        | 8               | I                |
-| 7        | A       | K   | 0           | 10        | 10              | K                |
-| 8        | T       | E   | 19          | 4         | 23              | X                |
-| 9        | D       | Y   | 3           | 24        | 1               | B                |
-| 10       | A       | K   | 0           | 10        | 10              | K                |
-| 11       | W       | E   | 22          | 4         | 0               | A                |
-| 12       | N       | Y   | 13          | 24        | 11              | L                |
-
-**Encrypted Message**: `KXRKGIKXBKAL`
-
----
-
-**Key Concepts for Students**
-
-| Concept                     | Description                                                                             |
-| --------------------------- | --------------------------------------------------------------------------------------- |
-| **Polyalphabetic Cipher**   | Uses multiple substitution alphabets, not just one                                      |
-| **Keyword**                 | Determines how much each letter is shifted                                              |
-| **Repeating Key**           | The keyword repeats to match the length of the message                                  |
-| **Modular Arithmetic**      | Calculations are done using modulo 26 (number of letters in the alphabet)               |
-| **More Secure than Caesar** | Because shifts vary with the key, it defeats simple frequency analysis (to some extent) |
 
 ---
 

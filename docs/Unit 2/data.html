@@ -349,7 +349,6 @@
 </ul>
 </details>
 <hr class="docutils" />
-<hr class="docutils" />
 </section>
 <section id="data-project-1-data-communication-and-compression">
 <h2>Data Project 1 - Data Communication and Compression:<a class="headerlink" href="#data-project-1-data-communication-and-compression" title="Link to this heading">¶</a></h2>
@@ -1347,7 +1346,7 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <li><p>What encryption is and why it’s essential for secure communication.</p></li>
 <li><p>How <strong>Caesar cipher</strong> works as a basic form of <strong>substitution cipher</strong>.</p></li>
 <li><p>The concept of <strong>brute force attacks</strong>.</p></li>
-<li><p>Introduction to <strong>frequency analysis</strong> and basic <strong>cryptanalysis</strong>.</p></li>
+<li><p>Introduction to <strong>frequency analysis</strong> and basic <strong>crypto-analysis</strong>.</p></li>
 <li><p>Understanding of <strong>public-key cryptography</strong> (RSA) and <strong>private/public key</strong> pairs.</p></li>
 <li><p>Vocabulary relevant to digital security and cryptography.</p></li>
 </ul>
@@ -1361,237 +1360,60 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><strong>Encryption</strong></p></td>
-<td><p>Converting information into a code to prevent unauthorized access.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Decryption</strong></p></td>
-<td><p>Converting encrypted data back into readable form.</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Cipher</strong></p></td>
-<td><p>A method for performing encryption or decryption.</p></td>
+<tr class="row-even"><td><p><strong>Brute Force</strong></p></td>
+<td><p>Trying all possible keys to decrypt a message.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Caesar Cipher</strong></p></td>
 <td><p>A substitution cipher that shifts letters by a fixed amount.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Brute Force</strong></p></td>
-<td><p>Trying all possible keys to decrypt a message.</p></td>
+<tr class="row-even"><td><p><strong>Cipher</strong></p></td>
+<td><p>A method for performing encryption or decryption.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Substitution Cipher</strong></p></td>
-<td><p>A cipher that replaces each letter with another.</p></td>
+<tr class="row-odd"><td><p><strong>Ciphertext</strong></p></td>
+<td><p>The encrypted (scrambled) message</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Cryptanalysis</strong></p></td>
+<tr class="row-even"><td><p><strong>Crypto-analysis</strong></p></td>
 <td><p>The art of decoding encrypted messages without the key.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Public Key</strong></p></td>
-<td><p>Used to encrypt data in RSA encryption. Shared with everyone.</p></td>
+<tr class="row-odd"><td><p><strong>Decryption</strong></p></td>
+<td><p>Converting encrypted data back into readable form.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Private Key</strong></p></td>
-<td><p>Used to decrypt data in RSA. Kept secret.</p></td>
+<tr class="row-even"><td><p><strong>Encryption</strong></p></td>
+<td><p>Converting information into a code to prevent unauthorized access.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Modulus</strong></p></td>
-<td><p>A number used to link the public and private keys in RSA.</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Frequency Analysis</strong></p></td>
+<tr class="row-odd"><td><p><strong>Frequency Analysis</strong></p></td>
 <td><p>A method of breaking substitution ciphers by studying how often letters appear.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Keyword</strong></p></td>
+<td><p>A word used to vary the shifts in the cipher</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Modular Arithmetic</strong></p></td>
+<td><p>Calculations are done using modulo 26 (number of letters in the alphabet)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Modulus</strong></p></td>
+<td><p>A number used to link the public and private keys in RSA.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Plaintext</strong></p></td>
 <td><p>The original readable message</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Ciphertext</strong></p></td>
-<td><p>The encrypted (scrambled) message</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Keyword</strong></p></td>
-<td><p>A word used to vary the shifts in the cipher</p></td>
-</tr>
 <tr class="row-even"><td><p><strong>Polyalphabetic</strong></p></td>
 <td><p>Involving more than one substitution alphabet</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Private Key</strong></p></td>
+<td><p>Used to decrypt data in RSA. Kept secret.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Public Key</strong></p></td>
+<td><p>Used to encrypt data in RSA encryption. Shared with everyone.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Repeating Key</strong></p></td>
+<td><p>The keyword repeats to match the length of the message</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Substitution Cipher</strong></p></td>
+<td><p>A cipher that replaces each letter with another.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<hr class="docutils" />
-<p><strong>Python Code: Caesar Cipher Program</strong></p>
-<p><em>Copy and place this in a workin Python environment.</em></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">caesar_encrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">shift</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
-            <span class="n">offset</span> <span class="o">=</span> <span class="mi">65</span> <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="k">else</span> <span class="mi">97</span>
-            <span class="n">result</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">((</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">-</span> <span class="n">offset</span> <span class="o">+</span> <span class="n">shift</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">result</span> <span class="o">+=</span> <span class="n">char</span>
-    <span class="k">return</span> <span class="n">result</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">caesar_decrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">shift</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">caesar_encrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="o">-</span><span class="n">shift</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">brute_force_caesar</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">26</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">caesar_decrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Example usage:</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Encrypt&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Decrypt&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. Brute Force&quot;</span><span class="p">)</span>
-<span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your choice: &quot;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
-    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter message to encrypt: &quot;</span><span class="p">)</span>
-    <span class="n">key</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter shift key (1-25): &quot;</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encrypted:&quot;</span><span class="p">,</span> <span class="n">caesar_encrypt</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
-<span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
-    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter message to decrypt: &quot;</span><span class="p">)</span>
-    <span class="n">key</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter shift key (1-25): &quot;</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Decrypted:&quot;</span><span class="p">,</span> <span class="n">caesar_decrypt</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
-<span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
-    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter message to brute-force: &quot;</span><span class="p">)</span>
-    <span class="n">brute_force_caesar</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Complete Caesar decryption for “Vkliw wkuhh” using Caesar shift of 3.</p></li>
-<li><p>Discuss why certain messages need encryption online.</p></li>
-</ul>
-<hr class="docutils" />
-<p><strong>Practice</strong></p>
-<ul class="simple">
-<li><p>Try encrypting and decrypting a sentence using the Python code.</p></li>
-<li><p>Paste encrypted sentence into class doc with your key.</p></li>
-</ul>
-<p><strong>Brute Force</strong></p>
-<p><em>Use the <strong>brute force</strong> option in the script above to decrypt:</em></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Guvf</span> <span class="n">vf</span> <span class="n">n</span> <span class="n">rapelcgrq</span> <span class="n">zrffntr</span><span class="o">.</span> <span class="n">Lbh</span> <span class="n">jvyy</span> <span class="n">arire</span> <span class="ow">or</span> <span class="n">noyr</span> <span class="n">gb</span> <span class="n">ernq</span> <span class="n">vg</span><span class="err">!</span>
-</pre></div>
-</div>
-<p><em>Discuss if the original message is easy to spot among the outputs.</em></p>
-</section>
-<hr class="docutils" />
-<section id="rsa-educational-encryption-and-decryption-program">
-<h2>RSA Educational Encryption and Decryption Program<a class="headerlink" href="#rsa-educational-encryption-and-decryption-program" title="Link to this heading">¶</a></h2>
-<p>⚠️ This version is simplified for educational purposes only and not secure for real cryptographic use. It shows the core concepts of RSA: key generation, encryption, and decryption.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">while</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
-    <span class="k">return</span> <span class="n">a</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">modinv</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">phi</span><span class="p">):</span>
-    <span class="c1"># Extended Euclidean Algorithm</span>
-    <span class="n">d_old</span><span class="p">,</span> <span class="n">r_old</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">phi</span>
-    <span class="n">d_new</span><span class="p">,</span> <span class="n">r_new</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">e</span>
-    <span class="k">while</span> <span class="n">r_new</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">quotient</span> <span class="o">=</span> <span class="n">r_old</span> <span class="o">//</span> <span class="n">r_new</span>
-        <span class="n">d_old</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">d_new</span><span class="p">,</span> <span class="n">d_old</span> <span class="o">-</span> <span class="n">quotient</span> <span class="o">*</span> <span class="n">d_new</span>
-        <span class="n">r_old</span><span class="p">,</span> <span class="n">r_new</span> <span class="o">=</span> <span class="n">r_new</span><span class="p">,</span> <span class="n">r_old</span> <span class="o">-</span> <span class="n">quotient</span> <span class="o">*</span> <span class="n">r_new</span>
-    <span class="k">return</span> <span class="n">d_old</span> <span class="o">%</span> <span class="n">phi</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span> <span class="k">return</span> <span class="kc">False</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">False</span>
-    <span class="k">return</span> <span class="kc">True</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">generate_keys</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Choose two prime numbers (p and q) such that their product n = p * q is greater than 255.&quot;</span><span class="p">)</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter prime p (e.g. 61): &quot;</span><span class="p">))</span>
-    <span class="n">q</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter prime q (e.g. 53): &quot;</span><span class="p">))</span>
-
-    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="ow">and</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">q</span><span class="p">)):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: Both numbers must be prime.&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
-
-    <span class="n">n</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">q</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: n must be greater than 255 to support all ASCII characters.&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
-
-    <span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-
-    <span class="n">e</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="k">while</span> <span class="n">gcd</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">e</span> <span class="o">+=</span> <span class="mi">2</span>
-
-    <span class="n">d</span> <span class="o">=</span> <span class="n">modinv</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Public Key: (</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Private Key: </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">e</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">encrypt</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="n">encrypted</span> <span class="o">=</span> <span class="p">[</span><span class="nb">pow</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">),</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">message</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">encrypted</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">decrypt</span><span class="p">(</span><span class="n">cipher</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="n">decrypted</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">cipher</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">decrypted</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RSA Cryptosystem&quot;</span><span class="p">)</span>
-
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">MENU:&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Generate Keys&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Encrypt Message&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. Decrypt Message&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4. Exit&quot;</span><span class="p">)</span>
-
-        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose an option (1-4): &quot;</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
-            <span class="n">e</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">generate_keys</span><span class="p">()</span>
-
-        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
-            <span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your message: &quot;</span><span class="p">)</span>
-            <span class="n">e</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter recipient&#39;s public key e: &quot;</span><span class="p">))</span>
-            <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter recipient&#39;s public key n: &quot;</span><span class="p">))</span>
-            <span class="n">encrypted_msg</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encrypted message:&quot;</span><span class="p">,</span> <span class="n">encrypted_msg</span><span class="p">)</span>
-
-        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">cipher_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Paste the encrypted message list (e.g. [123, 456]): &quot;</span><span class="p">)</span>
-                <span class="n">cipher</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">cipher_input</span><span class="p">)</span>
-                <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your private key d: &quot;</span><span class="p">))</span>
-                <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your modulus n: &quot;</span><span class="p">))</span>
-                <span class="n">decrypted_msg</span> <span class="o">=</span> <span class="n">decrypt</span><span class="p">(</span><span class="n">cipher</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Decrypted message:&quot;</span><span class="p">,</span> <span class="n">decrypted_msg</span><span class="p">)</span>
-            <span class="k">except</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input. Try again.&quot;</span><span class="p">)</span>
-
-        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exiting RSA program. Goodbye!&quot;</span><span class="p">)</span>
-            <span class="k">break</span>
-
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid option. Please choose 1, 2, 3, or 4.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<hr class="docutils" />
-<section id="how-to-the-rsa-program">
-<h3>How to the RSA Program<a class="headerlink" href="#how-to-the-rsa-program" title="Link to this heading">¶</a></h3>
-<p><strong>Generate Keys</strong></p>
-<ol class="arabic simple">
-<li><p>Run the program and choose option 1 to generate RSA keys.</p></li>
-<li><p>Choose small primes (e.g. 17 and 23).</p></li>
-<li><p>Share public key (e, n).</p></li>
-<li><p>Keep private key (d) secret.</p></li>
-</ol>
-<p><strong>Encrypt</strong></p>
-<ol class="arabic simple">
-<li><p>Select option 2.</p></li>
-<li><p>Input your message.</p></li>
-<li><p>Input recipient’s public key (e, n).</p></li>
-<li><p>Share the encrypted list with the recipient.</p></li>
-</ol>
-<p><strong>Decrypt</strong></p>
-<ol class="arabic simple">
-<li><p>Select option 3.</p></li>
-<li><p>Paste the encrypted list.</p></li>
-<li><p>Enter your private key (d) and modulus (n).</p></li>
-<li><p>Get the decrypted message.</p></li>
-</ol>
-</section>
 <hr class="docutils" />
 <section id="why-is-frequency-important-in-cryptography">
 <h3>Why is Frequency Important in Cryptography?<a class="headerlink" href="#why-is-frequency-important-in-cryptography" title="Link to this heading">¶</a></h3>
@@ -1738,6 +1560,61 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <li><p>When prompted, paste your encrypted or regular text.</p></li>
 <li><p>The program will print a breakdown of how often each letter appears.</p></li>
 </ul>
+<hr class="docutils" />
+<p><strong>Python Code: Caesar Cipher Program</strong></p>
+<p><em>Copy and place this in a workin Python environment.</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">caesar_encrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">shift</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+            <span class="n">offset</span> <span class="o">=</span> <span class="mi">65</span> <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="k">else</span> <span class="mi">97</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">((</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">-</span> <span class="n">offset</span> <span class="o">+</span> <span class="n">shift</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="n">char</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">caesar_decrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">shift</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">caesar_encrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="o">-</span><span class="n">shift</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">brute_force_caesar</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">26</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">caesar_decrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Example usage:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Encrypt&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Decrypt&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. Brute Force&quot;</span><span class="p">)</span>
+<span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your choice: &quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter message to encrypt: &quot;</span><span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter shift key (1-25): &quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encrypted:&quot;</span><span class="p">,</span> <span class="n">caesar_encrypt</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+<span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter message to decrypt: &quot;</span><span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter shift key (1-25): &quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Decrypted:&quot;</span><span class="p">,</span> <span class="n">caesar_decrypt</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+<span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter message to brute-force: &quot;</span><span class="p">)</span>
+    <span class="n">brute_force_caesar</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Complete Caesar decryption for “Vkliw wkuhh” using Caesar shift of 3.</p></li>
+<li><p>Discuss why certain messages need encryption online.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Practice</strong></p>
+<ul class="simple">
+<li><p>Try encrypting and decrypting a sentence using the Python code.</p></li>
+<li><p>Paste encrypted sentence into class doc with your key.</p></li>
+</ul>
+<p><strong>Brute Force</strong></p>
+<p><em>Use the <strong>brute force</strong> option in the script above to decrypt:</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Guvf</span> <span class="n">vf</span> <span class="n">n</span> <span class="n">rapelcgrq</span> <span class="n">zrffntr</span><span class="o">.</span> <span class="n">Lbh</span> <span class="n">jvyy</span> <span class="n">arire</span> <span class="ow">or</span> <span class="n">noyr</span> <span class="n">gb</span> <span class="n">ernq</span> <span class="n">vg</span><span class="err">!</span>
+</pre></div>
+</div>
+<p><em>Discuss if the original message is easy to spot among the outputs.</em></p>
 </section>
 <hr class="docutils" />
 <section id="vigenere-cipher">
@@ -1895,34 +1772,134 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 </table>
 </div>
 <p><strong>Encrypted Message</strong>: <code class="docutils literal notranslate"><span class="pre">KXRKGIKXBKAL</span></code></p>
+</section>
 <hr class="docutils" />
-<p><strong>Key Concepts for Students</strong></p>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Concept</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong>Polyalphabetic Cipher</strong></p></td>
-<td><p>Uses multiple substitution alphabets, not just one</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Keyword</strong></p></td>
-<td><p>Determines how much each letter is shifted</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Repeating Key</strong></p></td>
-<td><p>The keyword repeats to match the length of the message</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Modular Arithmetic</strong></p></td>
-<td><p>Calculations are done using modulo 26 (number of letters in the alphabet)</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>More Secure than Caesar</strong></p></td>
-<td><p>Because shifts vary with the key, it defeats simple frequency analysis (to some extent)</p></td>
-</tr>
-</tbody>
-</table>
+<section id="rsa-educational-encryption-and-decryption-program">
+<h3>RSA Educational Encryption and Decryption Program<a class="headerlink" href="#rsa-educational-encryption-and-decryption-program" title="Link to this heading">¶</a></h3>
+<p>⚠️ This version is simplified for educational purposes only and not secure for real cryptographic use. It shows the core concepts of RSA: key generation, encryption, and decryption.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">modinv</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">phi</span><span class="p">):</span>
+    <span class="c1"># Extended Euclidean Algorithm</span>
+    <span class="n">d_old</span><span class="p">,</span> <span class="n">r_old</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">phi</span>
+    <span class="n">d_new</span><span class="p">,</span> <span class="n">r_new</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">e</span>
+    <span class="k">while</span> <span class="n">r_new</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">quotient</span> <span class="o">=</span> <span class="n">r_old</span> <span class="o">//</span> <span class="n">r_new</span>
+        <span class="n">d_old</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">d_new</span><span class="p">,</span> <span class="n">d_old</span> <span class="o">-</span> <span class="n">quotient</span> <span class="o">*</span> <span class="n">d_new</span>
+        <span class="n">r_old</span><span class="p">,</span> <span class="n">r_new</span> <span class="o">=</span> <span class="n">r_new</span><span class="p">,</span> <span class="n">r_old</span> <span class="o">-</span> <span class="n">quotient</span> <span class="o">*</span> <span class="n">r_new</span>
+    <span class="k">return</span> <span class="n">d_old</span> <span class="o">%</span> <span class="n">phi</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span> <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_keys</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Choose two prime numbers (p and q) such that their product n = p * q is greater than 255.&quot;</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter prime p (e.g. 61): &quot;</span><span class="p">))</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter prime q (e.g. 53): &quot;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="ow">and</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">q</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: Both numbers must be prime.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">q</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: n must be greater than 255 to support all ASCII characters.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+
+    <span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">e</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">while</span> <span class="n">gcd</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">e</span> <span class="o">+=</span> <span class="mi">2</span>
+
+    <span class="n">d</span> <span class="o">=</span> <span class="n">modinv</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Public Key: (</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Private Key: </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">e</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">encrypt</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">encrypted</span> <span class="o">=</span> <span class="p">[</span><span class="nb">pow</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">),</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">message</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">encrypted</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">decrypt</span><span class="p">(</span><span class="n">cipher</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">decrypted</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">cipher</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">decrypted</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RSA Cryptosystem&quot;</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">MENU:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Generate Keys&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Encrypt Message&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. Decrypt Message&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4. Exit&quot;</span><span class="p">)</span>
+
+        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose an option (1-4): &quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="n">e</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">generate_keys</span><span class="p">()</span>
+
+        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your message: &quot;</span><span class="p">)</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter recipient&#39;s public key e: &quot;</span><span class="p">))</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter recipient&#39;s public key n: &quot;</span><span class="p">))</span>
+            <span class="n">encrypted_msg</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encrypted message:&quot;</span><span class="p">,</span> <span class="n">encrypted_msg</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">cipher_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Paste the encrypted message list (e.g. [123, 456]): &quot;</span><span class="p">)</span>
+                <span class="n">cipher</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">cipher_input</span><span class="p">)</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your private key d: &quot;</span><span class="p">))</span>
+                <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your modulus n: &quot;</span><span class="p">))</span>
+                <span class="n">decrypted_msg</span> <span class="o">=</span> <span class="n">decrypt</span><span class="p">(</span><span class="n">cipher</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Decrypted message:&quot;</span><span class="p">,</span> <span class="n">decrypted_msg</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input. Try again.&quot;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exiting RSA program. Goodbye!&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid option. Please choose 1, 2, 3, or 4.&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
+</section>
+<hr class="docutils" />
+<section id="how-to-the-rsa-program">
+<h3>How to the RSA Program<a class="headerlink" href="#how-to-the-rsa-program" title="Link to this heading">¶</a></h3>
+<p><strong>Generate Keys</strong></p>
+<ol class="arabic simple">
+<li><p>Run the program and choose option 1 to generate RSA keys.</p></li>
+<li><p>Choose small primes (e.g. 17 and 23).</p></li>
+<li><p>Share public key (e, n).</p></li>
+<li><p>Keep private key (d) secret.</p></li>
+</ol>
+<p><strong>Encrypt</strong></p>
+<ol class="arabic simple">
+<li><p>Select option 2.</p></li>
+<li><p>Input your message.</p></li>
+<li><p>Input recipient’s public key (e, n).</p></li>
+<li><p>Share the encrypted list with the recipient.</p></li>
+</ol>
+<p><strong>Decrypt</strong></p>
+<ol class="arabic simple">
+<li><p>Select option 3.</p></li>
+<li><p>Paste the encrypted list.</p></li>
+<li><p>Enter your private key (d) and modulus (n).</p></li>
+<li><p>Get the decrypted message.</p></li>
+</ol>
 <hr class="docutils" />
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vigenere_encrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
@@ -2029,12 +2006,12 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <li><a class="reference internal" href="#data-project-1-data-communication-and-compression">Data Project 1 - Data Communication and Compression:</a></li>
 <li><a class="reference internal" href="#data-project-2-data-detectives-investigating-real-world-trends">Data Project 2: “Data Detectives – Investigating Real-World Trends”</a></li>
 <li><a class="reference internal" href="#project-3-phishing">Project 3 - Phishing</a></li>
-<li><a class="reference internal" href="#encryption-privacy">Encryption &amp; Privacy</a></li>
-<li><a class="reference internal" href="#rsa-educational-encryption-and-decryption-program">RSA Educational Encryption and Decryption Program</a><ul>
-<li><a class="reference internal" href="#how-to-the-rsa-program">How to the RSA Program</a></li>
+<li><a class="reference internal" href="#encryption-privacy">Encryption &amp; Privacy</a><ul>
 <li><a class="reference internal" href="#why-is-frequency-important-in-cryptography">Why is Frequency Important in Cryptography?</a></li>
 <li><a class="reference internal" href="#python-program-letter-frequency-analyzer">Python Program: Letter Frequency Analyzer</a></li>
 <li><a class="reference internal" href="#vigenere-cipher">Vigenère Cipher</a></li>
+<li><a class="reference internal" href="#rsa-educational-encryption-and-decryption-program">RSA Educational Encryption and Decryption Program</a></li>
+<li><a class="reference internal" href="#how-to-the-rsa-program">How to the RSA Program</a></li>
 </ul>
 </li>
 </ul>
