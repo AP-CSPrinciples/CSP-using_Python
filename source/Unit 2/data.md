@@ -1165,7 +1165,7 @@ def main():
 
 **Generate Keys**
 1.	Run the program and choose option 1 to generate RSA keys.
-2.	Choose small primes (e.g. 17 and 23).
+2.	Choose larger primes (e.g. 61 and 53).
 3.	Share public key (e, n).
 4.	Keep private key (d) secret.
 
