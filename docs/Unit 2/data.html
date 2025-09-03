@@ -1917,8 +1917,49 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 </table>
 </div>
 <p><strong>Encrypted Message</strong>: <code class="docutils literal notranslate"><span class="pre">KXRKGIKXBKAL</span></code></p>
-</section>
 <hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vigenere_encrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">key_index</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+            <span class="n">shift</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">key_index</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)])</span> <span class="o">-</span> <span class="mi">97</span>
+            <span class="n">base</span> <span class="o">=</span> <span class="mi">65</span> <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="k">else</span> <span class="mi">97</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">((</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">-</span> <span class="n">base</span> <span class="o">+</span> <span class="n">shift</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span> <span class="o">+</span> <span class="n">base</span><span class="p">)</span>
+            <span class="n">key_index</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="n">char</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">vigenere_decrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">key_index</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+            <span class="n">shift</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">key_index</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)])</span> <span class="o">-</span> <span class="mi">97</span>
+            <span class="n">base</span> <span class="o">=</span> <span class="mi">65</span> <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="k">else</span> <span class="mi">97</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">((</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">-</span> <span class="n">base</span> <span class="o">-</span> <span class="n">shift</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span> <span class="o">+</span> <span class="n">base</span><span class="p">)</span>
+            <span class="n">key_index</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="n">char</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># Example use</span>
+<span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your message: &quot;</span><span class="p">)</span>
+<span class="n">key</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the keyword: &quot;</span><span class="p">)</span>
+<span class="n">mode</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Encrypt (e) or Decrypt (d)? &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encrypted:&quot;</span><span class="p">,</span> <span class="n">vigenere_encrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Decrypted:&quot;</span><span class="p">,</span> <span class="n">vigenere_decrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
 <section id="rsa-educational-encryption-and-decryption-program">
 <h3>RSA Educational Encryption and Decryption Program<a class="headerlink" href="#rsa-educational-encryption-and-decryption-program" title="Link to this heading">¶</a></h3>
 <p>⚠️ This version is simplified for educational purposes only and not secure for real cryptographic use. It shows the core concepts of RSA: key generation, encryption, and decryption.</p>
@@ -2046,47 +2087,6 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <li><p>Get the decrypted message.</p></li>
 </ol>
 <hr class="docutils" />
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vigenere_encrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-    <span class="n">key_index</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
-            <span class="n">shift</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">key_index</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)])</span> <span class="o">-</span> <span class="mi">97</span>
-            <span class="n">base</span> <span class="o">=</span> <span class="mi">65</span> <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="k">else</span> <span class="mi">97</span>
-            <span class="n">result</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">((</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">-</span> <span class="n">base</span> <span class="o">+</span> <span class="n">shift</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span> <span class="o">+</span> <span class="n">base</span><span class="p">)</span>
-            <span class="n">key_index</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">result</span> <span class="o">+=</span> <span class="n">char</span>
-    <span class="k">return</span> <span class="n">result</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">vigenere_decrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-    <span class="n">key_index</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
-            <span class="n">shift</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">key_index</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)])</span> <span class="o">-</span> <span class="mi">97</span>
-            <span class="n">base</span> <span class="o">=</span> <span class="mi">65</span> <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="k">else</span> <span class="mi">97</span>
-            <span class="n">result</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">((</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">-</span> <span class="n">base</span> <span class="o">-</span> <span class="n">shift</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span> <span class="o">+</span> <span class="n">base</span><span class="p">)</span>
-            <span class="n">key_index</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">result</span> <span class="o">+=</span> <span class="n">char</span>
-    <span class="k">return</span> <span class="n">result</span>
-
-<span class="c1"># Example use</span>
-<span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your message: &quot;</span><span class="p">)</span>
-<span class="n">key</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the keyword: &quot;</span><span class="p">)</span>
-<span class="n">mode</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Encrypt (e) or Decrypt (d)? &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-
-<span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encrypted:&quot;</span><span class="p">,</span> <span class="n">vigenere_encrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Decrypted:&quot;</span><span class="p">,</span> <span class="n">vigenere_decrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
-</pre></div>
-</div>
 </section>
 </section>
 </section>
