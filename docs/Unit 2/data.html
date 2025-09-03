@@ -1632,31 +1632,135 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <li><p>Each letter of the <strong>plaintext</strong> is shifted by an amount <strong>based on the corresponding letter of the keyword</strong>.</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>Alphabet Reference:</strong></p>
-<p>You work with the alphabet:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="n">D</span> <span class="n">E</span> <span class="n">F</span> <span class="n">G</span> <span class="n">H</span> <span class="n">I</span> <span class="n">J</span> <span class="n">K</span> <span class="n">L</span> <span class="n">M</span> <span class="n">N</span> <span class="n">O</span> <span class="n">P</span> <span class="n">Q</span> <span class="n">R</span> <span class="n">S</span> <span class="n">T</span> <span class="n">U</span> <span class="n">V</span> <span class="n">W</span> <span class="n">X</span> <span class="n">Y</span> <span class="n">Z</span>
-</pre></div>
+<p><strong>Alphabet Reference</strong></p>
+<p>You’re working with the alphabet:</p>
+<p><strong>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</strong></p>
+<p>Each letter is assigned a number:</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Letter</p></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>C</p></th>
+<th class="head"><p>D</p></th>
+<th class="head"><p>E</p></th>
+<th class="head"><p>F</p></th>
+<th class="head"><p>G</p></th>
+<th class="head"><p>H</p></th>
+<th class="head"><p>I</p></th>
+<th class="head"><p>J</p></th>
+<th class="head"><p>K</p></th>
+<th class="head"><p>L</p></th>
+<th class="head"><p>M</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Number</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td><p>10</p></td>
+<td><p>11</p></td>
+<td><p>12</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<ul class="simple">
-<li><p>Each letter corresponds to a number: A=0, B=1, …, Z=25</p></li>
-</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Letter</p></th>
+<th class="head"><p>N</p></th>
+<th class="head"><p>O</p></th>
+<th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>R</p></th>
+<th class="head"><p>S</p></th>
+<th class="head"><p>T</p></th>
+<th class="head"><p>U</p></th>
+<th class="head"><p>V</p></th>
+<th class="head"><p>W</p></th>
+<th class="head"><p>X</p></th>
+<th class="head"><p>Y</p></th>
+<th class="head"><p>Z</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Number</p></td>
+<td><p>13</p></td>
+<td><p>14</p></td>
+<td><p>15</p></td>
+<td><p>16</p></td>
+<td><p>17</p></td>
+<td><p>18</p></td>
+<td><p>19</p></td>
+<td><p>20</p></td>
+<td><p>21</p></td>
+<td><p>22</p></td>
+<td><p>23</p></td>
+<td><p>24</p></td>
+<td><p>25</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr class="docutils" />
 <p><strong>Keyword:</strong></p>
-<p>A word like <code class="docutils literal notranslate"><span class="pre">&quot;KEY&quot;</span></code> is used to determine the shifts.</p>
-<p>If your message is longer than the keyword, you <strong>repeat the keyword</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Message</span><span class="p">:</span>  <span class="n">A</span> <span class="n">T</span> <span class="n">T</span> <span class="n">A</span> <span class="n">C</span> <span class="n">K</span> <span class="n">A</span> <span class="n">T</span> <span class="n">D</span> <span class="n">A</span> <span class="n">W</span> <span class="n">N</span>
-<span class="n">Keyword</span><span class="p">:</span>  <span class="n">K</span> <span class="n">E</span> <span class="n">Y</span> <span class="n">K</span> <span class="n">E</span> <span class="n">Y</span> <span class="n">K</span> <span class="n">E</span> <span class="n">Y</span> <span class="n">K</span> <span class="n">E</span> <span class="n">Y</span>
-</pre></div>
-</div>
+<p>A <strong>keyword</strong> is used to determine how much each letter in your message gets shifted.</p>
+<p>Example keyword: <strong>KEY</strong></p>
+<p>We convert it to numbers using the alphabet reference:</p>
+<ul class="simple">
+<li><p>K = 10</p></li>
+<li><p>E = 4</p></li>
+<li><p>Y = 24</p></li>
+</ul>
 <hr class="docutils" />
-<p><strong>Encryption Formula:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EncryptedLetter</span> <span class="o">=</span> <span class="p">(</span><span class="n">PlainLetter</span> <span class="o">+</span> <span class="n">KeyLetter</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span>
-</pre></div>
-</div>
-<p><strong>Decryption Formula:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PlainLetter</span> <span class="o">=</span> <span class="p">(</span><span class="n">EncryptedLetter</span> <span class="o">-</span> <span class="n">KeyLetter</span> <span class="o">+</span> <span class="mi">26</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span>
-</pre></div>
-</div>
+<p><strong>Repeating the Keyword</strong></p>
+<p>If your message is longer than the keyword, repeat the keyword to match the message length.</p>
+<p>Example:</p>
+<p><strong>Message:</strong> A T T A C K   A T   D A W N
+<strong>Keyword:</strong> K E Y K E Y   K E   Y K E Y</p>
+<p>(Spaces are just for clarity; they’re not encrypted.)</p>
+<hr class="docutils" />
+<p><strong>Encryption Formula</strong></p>
+<p>To encrypt a message:</p>
+<blockquote>
+<div><p><strong>EncryptedLetter = (PlainLetter + KeyLetter) % 26</strong></p>
+</div></blockquote>
+<p>Each letter of the message is converted to a number. Then, add the number from the keyword (also as a number). Use <code class="docutils literal notranslate"><span class="pre">%</span> <span class="pre">26</span></code> (modulo 26) to make sure the result stays between 0 and 25.</p>
+<hr class="docutils" />
+<p>Example: Encrypt “A” with key letter “K”</p>
+<ul class="simple">
+<li><p>A = 0</p></li>
+<li><p>K = 10</p></li>
+<li><p>Encrypted = (0 + 10) % 26 = 10</p></li>
+<li><p>10 = K
+🔏 So A becomes <strong>K</strong></p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Decryption Formula</strong></p>
+<p>To decrypt a message:</p>
+<blockquote>
+<div><p><strong>PlainLetter = (EncryptedLetter - KeyLetter + 26) % 26</strong></p>
+</div></blockquote>
+<p>You subtract the keyword number from the encrypted letter number. Add 26 before the <code class="docutils literal notranslate"><span class="pre">%</span> <span class="pre">26</span></code> to avoid negative numbers.</p>
+<hr class="docutils" />
+<p>Example: Decrypt “K” with key letter “K”</p>
+<ul class="simple">
+<li><p>K = 10</p></li>
+<li><p>K = 10</p></li>
+<li><p>Decrypted = (10 - 10 + 26) % 26 = 0</p></li>
+<li><p>0 = A
+So K becomes <strong>A</strong></p></li>
+</ul>
 <hr class="docutils" />
 <p><strong>Example: Encrypting “ATTACKATDAWN” with Key “KEY”</strong></p>
 <div class="table-wrapper colwidths-auto docutils container">
