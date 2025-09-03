@@ -1009,7 +1009,8 @@ Example: Encrypt "A" with key letter "K"
 * K = 10
 * Encrypted = (0 + 10) % 26 = 10
 * 10 = K
-  🔏 So A becomes **K**
+
+So A becomes **K**
 
 ---
 
@@ -1029,7 +1030,8 @@ Example: Decrypt "K" with key letter "K"
 * K = 10
 * Decrypted = (10 - 10 + 26) % 26 = 0
 * 0 = A
-  So K becomes **A**
+
+So K becomes **A**
 
 ---
 
@@ -1229,5 +1231,3 @@ if mode == 'e':
 else:
     print("Decrypted:", vigenere_decrypt(msg, key))
 ```
-
-
