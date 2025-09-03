@@ -983,9 +983,10 @@ If your message is longer than the keyword, repeat the keyword to match the mess
 
 Example:
 
-**Message:** A-T-T-A-C-K--A-T--D-A-W-N
-
-**Keyword:** K-E-Y-K-E-Y--K-E--Y-K-E-Y
+| Feature | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 |
+| ------- | - | - | - | - | - | - | - | - | - | -- | -- | -- | -- | -- |
+| **Message:** | A | T | T | A | C | K |  | A | T |  | D | A | W | N |
+| **Keyword:** | K | E | Y | K | E | Y |  | K | E |  | Y | K | E | Y |
 
 
 (Spaces are just for clarity; they’re not encrypted.)
