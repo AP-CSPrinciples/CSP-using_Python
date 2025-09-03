@@ -600,7 +600,7 @@ Deliverables:
 ---
 
 
-## Project 3 - Phishing
+## Data Project 3 - Phishing
 
 
 **Understanding and Preventing Phishing**
@@ -741,7 +741,7 @@ Students should respond to the following questions in writing or in a small grou
 
 ---
 
-## Encryption & Privacy
+## Data Project 4:  Encryption & Privacy
 
 ---
 
