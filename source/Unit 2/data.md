@@ -957,43 +957,88 @@ The **Vigenère Cipher** is a **polyalphabetic substitution cipher** that uses a
 * Each letter of the **plaintext** is shifted by an amount **based on the corresponding letter of the keyword**.
 
 ---
+**Alphabet Reference**
 
-**Alphabet Reference:**
+You’re working with the alphabet:
 
-You work with the alphabet:
+**A B C D E F G H I J K L M N O P Q R S T U V W X Y Z**
 
-```
-A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-```
+Each letter is assigned a number:
 
-* Each letter corresponds to a number: A=0, B=1, ..., Z=25
+| Letter | A | B | C | D | E | F | G | H | I | J | K  | L  | M  |
+| ------ | - | - | - | - | - | - | - | - | - | - | -- | -- | -- |
+| Number | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+
+| Letter | N  | O  | P  | Q  | R  | S  | T  | U  | V  | W  | X  | Y  | Z  |
+| ------ | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| Number | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 |
 
 ---
 
 **Keyword:**
 
-A word like `"KEY"` is used to determine the shifts.
+A **keyword** is used to determine how much each letter in your message gets shifted.
 
-If your message is longer than the keyword, you **repeat the keyword**:
+Example keyword: **KEY**
 
-```
-Message:  A T T A C K A T D A W N
-Keyword:  K E Y K E Y K E Y K E Y
-```
+We convert it to numbers using the alphabet reference:
+
+* K = 10
+* E = 4
+* Y = 24
 
 ---
 
-**Encryption Formula:**
+**Repeating the Keyword**
 
-```
-EncryptedLetter = (PlainLetter + KeyLetter) % 26
-```
+If your message is longer than the keyword, repeat the keyword to match the message length.
 
-**Decryption Formula:**
+Example:
 
-```
-PlainLetter = (EncryptedLetter - KeyLetter + 26) % 26
-```
+**Message:** A T T A C K   A T   D A W N
+**Keyword:** K E Y K E Y   K E   Y K E Y
+
+(Spaces are just for clarity; they’re not encrypted.)
+
+---
+
+**Encryption Formula**
+
+To encrypt a message:
+
+> **EncryptedLetter = (PlainLetter + KeyLetter) % 26**
+
+Each letter of the message is converted to a number. Then, add the number from the keyword (also as a number). Use `% 26` (modulo 26) to make sure the result stays between 0 and 25.
+
+---
+
+Example: Encrypt "A" with key letter "K"
+
+* A = 0
+* K = 10
+* Encrypted = (0 + 10) % 26 = 10
+* 10 = K
+  🔏 So A becomes **K**
+
+---
+
+**Decryption Formula**
+
+To decrypt a message:
+
+> **PlainLetter = (EncryptedLetter - KeyLetter + 26) % 26**
+
+You subtract the keyword number from the encrypted letter number. Add 26 before the `% 26` to avoid negative numbers.
+
+---
+
+Example: Decrypt "K" with key letter "K"
+
+* K = 10
+* K = 10
+* Decrypted = (10 - 10 + 26) % 26 = 0
+* 0 = A
+  So K becomes **A**
 
 ---
 
