@@ -874,7 +874,7 @@ letter_frequency(input_text)
 
 **Python Code: Caesar Cipher Program**
 
-*Copy and place this in a workin Python environment.*
+*Copy and place this in a working Python environment.*
 
 ```python
 def caesar_encrypt(text, shift):
