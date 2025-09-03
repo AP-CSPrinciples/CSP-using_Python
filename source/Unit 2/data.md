@@ -802,34 +802,22 @@ Students should respond to the following questions in writing or in a small grou
 
 **Common English Letter Frequencies**
 
-| Letter | Frequency (%) |
-| -------- | --------------- |
-| A        | 8.2%            |
-| B        | 1.5%            |
-| C        | 2.8%            |
-| D        | 4.3%            |
-| E        | 12.7%           |
-| F        | 2.2%            |
-| G        | 2.0%            |
-| H        | 6.1%            |
-| I        | 7.0%            |
-| J        | 0.2%            |
-| K        | 0.8%            |
-| L        | 4.0%            |
-| M        | 2.4%            |
-| N        | 6.7%            |
-| O        | 7.5%            |
-| P        | 1.9%            |
-| Q        | 0.1%            |
-| R        | 6.0%            |
-| S        | 6.3%            |
-| T        | 9.1%            |
-| U        | 2.8%            |
-| V        | 1.0%            |
-| W        | 2.4%            |
-| X        | 0.2%            |
-| Y        | 2.0%            |
-| Z        | 0.1%            |
+| Letter | Frequency (%)     | Letter | Frequency (%) |
+| -------- | --------------- | ----- | ------------- |
+| A        | 8.2%            | N        | 6.7%            |
+| B        | 1.5%            | O        | 7.5%            |
+| C        | 2.8%            | P        | 1.9%            |
+| D        | 4.3%            | Q        | 0.1%            |
+| E        | 12.7%           | R        | 6.0%            |
+| F        | 2.2%            | S        | 6.3%            |
+| G        | 2.0%            | T        | 9.1%            |
+| H        | 6.1%            | U        | 2.8%            |
+| I        | 7.0%            | V        | 1.0%            |
+| J        | 0.2%            | W        | 2.4%            |
+| K        | 0.8%            | X        | 0.2%            |
+| L        | 4.0%            | Y        | 2.0%            |
+| M        | 2.4%            | Z        | 0.1%            |
+
 
 
 ---
@@ -995,8 +983,10 @@ If your message is longer than the keyword, repeat the keyword to match the mess
 
 Example:
 
-**Message:** A T T A C K   A T   D A W N
-**Keyword:** K E Y K E Y   K E   Y K E Y
+**Message:** A-T-T-A-C-K--A-T--D-A-W-N
+
+**Keyword:** K-E-Y-K-E-Y--K-E--Y-K-E-Y
+
 
 (Spaces are just for clarity; they’re not encrypted.)
 
