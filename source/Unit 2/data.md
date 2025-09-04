@@ -1423,6 +1423,10 @@ While 2FA is much safer than a password alone, no security measure is perfect. K
 
 ---
 
+<img width="1024" height="1536" alt="Image" src="https://github.com/user-attachments/assets/7a3262c3-c952-4ea1-bf8e-31a9f3a4dfff" />
+
+---
+</details>
 
 
 **Summary:**
