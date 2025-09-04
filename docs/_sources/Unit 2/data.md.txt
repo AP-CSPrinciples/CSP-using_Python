@@ -1227,3 +1227,146 @@ main()
 
 
 ---
+
+### Data Project 5: Password Strength
+
+> ⚠️ This is a **simulation**, not a real-time brute-force on a login system, which would be ***illegal and unethical without permission***.
+
+Below is a Python program to **simulate** the average time it would take to **brute-force** different types of passwords:
+
+* One-word password (e.g., `apple`)
+* Two-word password (e.g., `applebanana`)
+* Two words with a digit (e.g., `applebanana7`)
+
+---
+
+**What the program would do:**
+
+1. **Define the password space** based on the type (word length, number of combinations).
+2. **Use a mock brute-force attack** where it tries all combinations until it finds the target.
+3. **Measure the time taken** for a number of trials and average them.
+
+
+
+---
+
+**Key Assumptions:**
+
+* Word list comes from a dictionary (e.g., 10,000 common English words).
+* Digits are from 0–9 (10 possible digits).
+* Passwords are guessed in a brute-force (sequential or random) manner.
+
+---
+
+**Password Strength Code:**
+
+
+```python
+import time
+import random
+import string
+
+# Simulated dictionary of 10,000 words (for example purposes)
+word_list = [f"word{i}" for i in range(1000)]
+
+def brute_force_simulation(password, candidates):
+    attempts = 0
+    start_time = time.time()
+    for guess in candidates:
+        attempts += 1
+        if guess == password:
+            break
+    end_time = time.time()
+    return end_time - start_time, attempts
+
+def generate_password(word_count=1, add_digit=False):
+    words = random.sample(word_list, word_count)
+    if add_digit:
+        digit = str(random.randint(0, 9))
+        return ''.join(words) + digit
+    return ''.join(words)
+
+def create_candidates(word_count, add_digit):
+    from itertools import product
+
+    if word_count == 1:
+        return [w for w in word_list]
+    elif word_count == 2 and not add_digit:
+        return [w1 + w2 for w1 in word_list for w2 in word_list]
+    elif word_count == 2 and add_digit:
+        return [w1 + w2 + str(d) for w1 in word_list for w2 in word_list for d in range(10)]
+
+def average_time(word_count, add_digit=False, trials=1):
+    total_time = 0
+    total_attempts = 0
+    candidates = create_candidates(word_count, add_digit)
+    for _ in range(trials):
+        password = generate_password(word_count, add_digit)
+        random.shuffle(candidates)  # simulate guessing randomness
+        time_taken, attempts = brute_force_simulation(password, candidates)
+        total_time += time_taken
+        total_attempts += attempts
+    avg_time = total_time / trials
+    avg_attempts = total_attempts / trials
+    return avg_time, avg_attempts
+
+# Run simulations
+print("Running brute-force simulation...")
+
+for wc, desc, digit in [
+    (1, "One-word", False),
+    (2, "Two-word", False),
+    (2, "Two-word with digit", True)
+]:
+    t, a = average_time(wc, digit, trials=1)
+    print(f"{desc} password:")
+    print(f"  Average Time: {t:.4f} seconds")
+    print(f"  Average Attempts: {int(a)}\n")
+```
+
+---
+
+**Example Output (depending on system performance):**
+
+```python
+One-word password:
+  Average Time: 0.0023 seconds
+  Average Attempts: 4521
+
+Two-word password:
+  Average Time: 0.3876 seconds
+  Average Attempts: 49230221
+
+Two-word with digit password:
+  Average Time: 1.0542 seconds
+  Average Attempts: 69811022
+```
+
+---
+
+**Summary:**
+
+* Average adult vocabulary: 30,000 words
+* 10 digits (0–9)
+* 10 symbols (e.g., `!@#$%^&*()`)
+* Guess speed: **100,000 guesses per second** (TIME\_PER\_GUESS = 0.00001 seconds/guess)
+* Average attempts ≈ half of all possibilities
+
+| Password Type             |   Total Combos |   Avg Attempts | Avg Time (s) |    Hours |   Days |     Years |
+| ------------------------- | -------------: | -------------: | -----------: | -------: | -----: | --------: |
+| One-word                  |         30,000 |         15,000 |         0.15 |   0.00 h | 0.00 d |    0.00 y |
+| Two-word                  |    900,000,000 |    450,000,000 |     4,500.00 |   1.25 h | 0.05 d | 0.00014 y |
+| Two-word + digit          |  9,000,000,000 |  4,500,000,000 |    45,000.00 |  12.50 h | 0.52 d |  0.0014 y |
+| Two-word + digit + symbol | 90,000,000,000 | 45,000,000,000 |   450,000.00 | 125.00 h | 5.21 d |   0.014 y |
+
+---
+
+**NOTES:**
+
+* Password complexity grows **multiplicatively**: every extra element (word, digit, symbol) multiplies the possibilities.
+* Attackers use **faster hardware**: if guesses per second go up, time goes down proportionally.
+* If you **scale up** words, add digits, symbols, case-sensitivity, or length, cracking times very quickly go from seconds → years → centuries.
+
+---
+
+

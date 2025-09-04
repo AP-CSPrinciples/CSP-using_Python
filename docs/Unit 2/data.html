@@ -2089,6 +2089,176 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <li><p>Enter your private key (d) and modulus (n).</p></li>
 <li><p>Get the decrypted message.</p></li>
 </ol>
+</section>
+<hr class="docutils" />
+<section id="data-project-5-password-strength">
+<h3>Data Project 5: Password Strength<a class="headerlink" href="#data-project-5-password-strength" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>⚠️ This is a <strong>simulation</strong>, not a real-time brute-force on a login system, which would be <em><strong>illegal and unethical without permission</strong></em>.</p>
+</div></blockquote>
+<p>Below is a Python program to <strong>simulate</strong> the average time it would take to <strong>brute-force</strong> different types of passwords:</p>
+<ul class="simple">
+<li><p>One-word password (e.g., <code class="docutils literal notranslate"><span class="pre">apple</span></code>)</p></li>
+<li><p>Two-word password (e.g., <code class="docutils literal notranslate"><span class="pre">applebanana</span></code>)</p></li>
+<li><p>Two words with a digit (e.g., <code class="docutils literal notranslate"><span class="pre">applebanana7</span></code>)</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>What the program would do:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Define the password space</strong> based on the type (word length, number of combinations).</p></li>
+<li><p><strong>Use a mock brute-force attack</strong> where it tries all combinations until it finds the target.</p></li>
+<li><p><strong>Measure the time taken</strong> for a number of trials and average them.</p></li>
+</ol>
+<hr class="docutils" />
+<p><strong>Key Assumptions:</strong></p>
+<ul class="simple">
+<li><p>Word list comes from a dictionary (e.g., 10,000 common English words).</p></li>
+<li><p>Digits are from 0–9 (10 possible digits).</p></li>
+<li><p>Passwords are guessed in a brute-force (sequential or random) manner.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Password Strength Code:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">string</span>
+
+<span class="c1"># Simulated dictionary of 10,000 words (for example purposes)</span>
+<span class="n">word_list</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;word</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">brute_force_simulation</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">candidates</span><span class="p">):</span>
+    <span class="n">attempts</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">guess</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+        <span class="n">attempts</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">password</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">attempts</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_password</span><span class="p">(</span><span class="n">word_count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">add_digit</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">word_list</span><span class="p">,</span> <span class="n">word_count</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">add_digit</span><span class="p">:</span>
+        <span class="n">digit</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span> <span class="o">+</span> <span class="n">digit</span>
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_candidates</span><span class="p">(</span><span class="n">word_count</span><span class="p">,</span> <span class="n">add_digit</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">product</span>
+
+    <span class="k">if</span> <span class="n">word_count</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">word_list</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">word_count</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">add_digit</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">w1</span> <span class="o">+</span> <span class="n">w2</span> <span class="k">for</span> <span class="n">w1</span> <span class="ow">in</span> <span class="n">word_list</span> <span class="k">for</span> <span class="n">w2</span> <span class="ow">in</span> <span class="n">word_list</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">word_count</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">add_digit</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">w1</span> <span class="o">+</span> <span class="n">w2</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">w1</span> <span class="ow">in</span> <span class="n">word_list</span> <span class="k">for</span> <span class="n">w2</span> <span class="ow">in</span> <span class="n">word_list</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">average_time</span><span class="p">(</span><span class="n">word_count</span><span class="p">,</span> <span class="n">add_digit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">trials</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">total_time</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">total_attempts</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">candidates</span> <span class="o">=</span> <span class="n">create_candidates</span><span class="p">(</span><span class="n">word_count</span><span class="p">,</span> <span class="n">add_digit</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">trials</span><span class="p">):</span>
+        <span class="n">password</span> <span class="o">=</span> <span class="n">generate_password</span><span class="p">(</span><span class="n">word_count</span><span class="p">,</span> <span class="n">add_digit</span><span class="p">)</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span>  <span class="c1"># simulate guessing randomness</span>
+        <span class="n">time_taken</span><span class="p">,</span> <span class="n">attempts</span> <span class="o">=</span> <span class="n">brute_force_simulation</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">candidates</span><span class="p">)</span>
+        <span class="n">total_time</span> <span class="o">+=</span> <span class="n">time_taken</span>
+        <span class="n">total_attempts</span> <span class="o">+=</span> <span class="n">attempts</span>
+    <span class="n">avg_time</span> <span class="o">=</span> <span class="n">total_time</span> <span class="o">/</span> <span class="n">trials</span>
+    <span class="n">avg_attempts</span> <span class="o">=</span> <span class="n">total_attempts</span> <span class="o">/</span> <span class="n">trials</span>
+    <span class="k">return</span> <span class="n">avg_time</span><span class="p">,</span> <span class="n">avg_attempts</span>
+
+<span class="c1"># Run simulations</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running brute-force simulation...&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">wc</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">digit</span> <span class="ow">in</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;One-word&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Two-word&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Two-word with digit&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="p">]:</span>
+    <span class="n">t</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">average_time</span><span class="p">(</span><span class="n">wc</span><span class="p">,</span> <span class="n">digit</span><span class="p">,</span> <span class="n">trials</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">desc</span><span class="si">}</span><span class="s2"> password:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Average Time: </span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Average Attempts: </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Example Output (depending on system performance):</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">One</span><span class="o">-</span><span class="n">word</span> <span class="n">password</span><span class="p">:</span>
+  <span class="n">Average</span> <span class="n">Time</span><span class="p">:</span> <span class="mf">0.0023</span> <span class="n">seconds</span>
+  <span class="n">Average</span> <span class="n">Attempts</span><span class="p">:</span> <span class="mi">4521</span>
+
+<span class="n">Two</span><span class="o">-</span><span class="n">word</span> <span class="n">password</span><span class="p">:</span>
+  <span class="n">Average</span> <span class="n">Time</span><span class="p">:</span> <span class="mf">0.3876</span> <span class="n">seconds</span>
+  <span class="n">Average</span> <span class="n">Attempts</span><span class="p">:</span> <span class="mi">49230221</span>
+
+<span class="n">Two</span><span class="o">-</span><span class="n">word</span> <span class="k">with</span> <span class="n">digit</span> <span class="n">password</span><span class="p">:</span>
+  <span class="n">Average</span> <span class="n">Time</span><span class="p">:</span> <span class="mf">1.0542</span> <span class="n">seconds</span>
+  <span class="n">Average</span> <span class="n">Attempts</span><span class="p">:</span> <span class="mi">69811022</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Summary:</strong></p>
+<ul class="simple">
+<li><p>Average adult vocabulary: 30,000 words</p></li>
+<li><p>10 digits (0–9)</p></li>
+<li><p>10 symbols (e.g., <code class="docutils literal notranslate"><span class="pre">!&#64;#$%^&amp;*()</span></code>)</p></li>
+<li><p>Guess speed: <strong>100,000 guesses per second</strong> (TIME_PER_GUESS = 0.00001 seconds/guess)</p></li>
+<li><p>Average attempts ≈ half of all possibilities</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Password Type</p></th>
+<th class="head text-right"><p>Total Combos</p></th>
+<th class="head text-right"><p>Avg Attempts</p></th>
+<th class="head text-right"><p>Avg Time (s)</p></th>
+<th class="head text-right"><p>Hours</p></th>
+<th class="head text-right"><p>Days</p></th>
+<th class="head text-right"><p>Years</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>One-word</p></td>
+<td class="text-right"><p>30,000</p></td>
+<td class="text-right"><p>15,000</p></td>
+<td class="text-right"><p>0.15</p></td>
+<td class="text-right"><p>0.00 h</p></td>
+<td class="text-right"><p>0.00 d</p></td>
+<td class="text-right"><p>0.00 y</p></td>
+</tr>
+<tr class="row-odd"><td><p>Two-word</p></td>
+<td class="text-right"><p>900,000,000</p></td>
+<td class="text-right"><p>450,000,000</p></td>
+<td class="text-right"><p>4,500.00</p></td>
+<td class="text-right"><p>1.25 h</p></td>
+<td class="text-right"><p>0.05 d</p></td>
+<td class="text-right"><p>0.00014 y</p></td>
+</tr>
+<tr class="row-even"><td><p>Two-word + digit</p></td>
+<td class="text-right"><p>9,000,000,000</p></td>
+<td class="text-right"><p>4,500,000,000</p></td>
+<td class="text-right"><p>45,000.00</p></td>
+<td class="text-right"><p>12.50 h</p></td>
+<td class="text-right"><p>0.52 d</p></td>
+<td class="text-right"><p>0.0014 y</p></td>
+</tr>
+<tr class="row-odd"><td><p>Two-word + digit + symbol</p></td>
+<td class="text-right"><p>90,000,000,000</p></td>
+<td class="text-right"><p>45,000,000,000</p></td>
+<td class="text-right"><p>450,000.00</p></td>
+<td class="text-right"><p>125.00 h</p></td>
+<td class="text-right"><p>5.21 d</p></td>
+<td class="text-right"><p>0.014 y</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p><strong>NOTES:</strong></p>
+<ul class="simple">
+<li><p>Password complexity grows <strong>multiplicatively</strong>: every extra element (word, digit, symbol) multiplies the possibilities.</p></li>
+<li><p>Attackers use <strong>faster hardware</strong>: if guesses per second go up, time goes down proportionally.</p></li>
+<li><p>If you <strong>scale up</strong> words, add digits, symbols, case-sensitivity, or length, cracking times very quickly go from seconds → years → centuries.</p></li>
+</ul>
 <hr class="docutils" />
 </section>
 </section>
@@ -2160,6 +2330,7 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <li><a class="reference internal" href="#vigenere-cipher">Vigenère Cipher</a></li>
 <li><a class="reference internal" href="#rsa-educational-encryption-and-decryption-program">RSA Educational Encryption and Decryption Program</a></li>
 <li><a class="reference internal" href="#how-to-the-rsa-program">How to the RSA Program</a></li>
+<li><a class="reference internal" href="#data-project-5-password-strength">Data Project 5: Password Strength</a></li>
 </ul>
 </li>
 </ul>
