@@ -1228,7 +1228,7 @@ main()
 
 ---
 
-### Data Project 5: Password Strength
+## Data Project 5: Password Strength
 
 > ⚠️ This is a **simulation**, not a real-time brute-force on a login system, which would be ***illegal and unethical without permission***.
 
@@ -1351,7 +1351,7 @@ Great question — and an important one. Let’s go deep into **Two-Factor Authe
 <details><summary>2FA Click Here</summary>
 
  
-#### What is 2FA?
+**What is 2FA?**
 
 Two-Factor Authentication is a security process where a user provides **two separate forms of identification** before gaining access to an account or system.
 
@@ -1446,7 +1446,7 @@ While 2FA is much safer than a password alone, no security measure is perfect. K
 
 ---
 
-<img width="2000" height="1100" alt="Image" src="https://github.com/user-attachments/assets/da948499-e75d-423c-b99c-0fa0a89f7b2e" />
+<img width="852" height="1549" alt="Image" src="https://github.com/user-attachments/assets/da948499-e75d-423c-b99c-0fa0a89f7b2e" />
 
 
 **NOTES:**
