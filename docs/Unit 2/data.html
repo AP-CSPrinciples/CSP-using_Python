@@ -2196,6 +2196,101 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 </pre></div>
 </div>
 <hr class="docutils" />
+<p>Great question — and an important one. Let’s go deep into <strong>Two-Factor Authentication (2FA)</strong> in a way that’s clear and practical.</p>
+<hr class="docutils" />
+<details><summary>2FA Click Here</summary>
+<section id="what-is-2fa">
+<h4>What is 2FA?<a class="headerlink" href="#what-is-2fa" title="Link to this heading">¶</a></h4>
+<p>Two-Factor Authentication is a security process where a user provides <strong>two separate forms of identification</strong> before gaining access to an account or system.</p>
+<p>Traditionally, logging in requires <strong>one factor</strong> — usually a <strong>password</strong> (something you know).
+2FA adds a <strong>second factor</strong>, typically one of these:</p>
+<ol class="arabic simple">
+<li><p><strong>Something you know</strong> → Password, PIN, or security question</p></li>
+<li><p><strong>Something you have</strong> → Phone, hardware token, security key, smart card</p></li>
+<li><p><strong>Something you are</strong> → Biometrics (fingerprint, face, iris scan)</p></li>
+</ol>
+<p>When you combine two of these, even if a hacker steals your password, they can’t log in without that second factor.</p>
+<hr class="docutils" />
+<p><strong>Common Types of 2FA</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>How It Works</p></th>
+<th class="head"><p>Security Level</p></th>
+<th class="head"><p>Pros</p></th>
+<th class="head"><p>Cons</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>SMS Codes</strong></p></td>
+<td><p>A code is sent via text message</p></td>
+<td><p>Low-Med</p></td>
+<td><p>Easy to use, no setup</p></td>
+<td><p>Vulnerable to SIM-swaps, phishing</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Authenticator Apps</strong> (e.g., Google Authenticator, Authy)</p></td>
+<td><p>Time-based codes generated on your phone</p></td>
+<td><p>High</p></td>
+<td><p>No internet or SMS needed, more secure than SMS</p></td>
+<td><p>Requires phone; if lost, recovery needed</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Push Notifications</strong> (e.g., Duo, Microsoft Authenticator)</p></td>
+<td><p>App sends a prompt to approve/deny login</p></td>
+<td><p>High</p></td>
+<td><p>Very convenient, less typing</p></td>
+<td><p>Can be tricked by “push fatigue” attacks</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Hardware Security Keys</strong> (e.g., YubiKey)</p></td>
+<td><p>Physical device is tapped or inserted</p></td>
+<td><p>Very High</p></td>
+<td><p>Extremely secure, phishing-resistant</p></td>
+<td><p>Costs money, must be carried</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Biometric</strong></p></td>
+<td><p>Fingerprint, Face ID, etc.</p></td>
+<td><p>Varies</p></td>
+<td><p>Convenient, hard to steal remotely</p></td>
+<td><p>Privacy concerns, device-specific</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p><strong>Should People Use It?</strong></p>
+<p>Security experts consistently recommend enabling 2FA wherever possible — especially on:</p>
+<ul class="simple">
+<li><p><strong>Email accounts</strong> (often the gateway to everything else)</p></li>
+<li><p><strong>Banking and financial accounts</strong></p></li>
+<li><p><strong>Social media accounts</strong> (to prevent identity hijacking)</p></li>
+<li><p><strong>Cloud storage</strong> (e.g., Google Drive, Dropbox, iCloud)</p></li>
+</ul>
+<p>It <strong>dramatically reduces</strong> the chance of your account being hacked. Most account breaches occur because passwords get stolen, guessed, or reused. 2FA blocks almost all of these attacks.</p>
+<hr class="docutils" />
+<p><strong>Risks &amp; Limitations</strong></p>
+<p>While 2FA is much safer than a password alone, no security measure is perfect. Key risks include:</p>
+<ol class="arabic simple">
+<li><p><strong>Account Recovery Risks</strong>
+If you lose your second factor (e.g., phone, hardware key), recovery can be difficult — sometimes impossible without backup codes or a recovery method.</p></li>
+<li><p><strong>Phishing</strong>
+Some phishing attacks can trick users into providing both their password <strong>and</strong> 2FA code (e.g., real-time relay attacks).</p></li>
+<li><p><strong>SIM-Swap Attacks (SMS-based 2FA)</strong>
+Hackers can socially engineer your phone company into transferring your number to them, intercepting SMS codes.</p></li>
+<li><p><strong>Push Fatigue / MFA Bombing</strong>
+Attackers spam push notifications to trick users into approving a login out of annoyance or mistake.</p></li>
+<li><p><strong>Biometric Risks</strong>
+Biometric data (like fingerprints) can’t be “changed” if compromised, though compromise is rare.</p></li>
+</ol>
+<hr class="docutils" />
+<p><strong>Best Practices When Using 2FA</strong></p>
+<ul class="simple">
+<li><p>Prefer <strong>Authenticator Apps</strong> or <strong>Hardware Security Keys</strong> over SMS codes.</p></li>
+<li><p><strong>Save backup codes</strong> somewhere safe (offline or in a secure password manager).</p></li>
+<li><p>Never approve a 2FA prompt unless you’re actively logging in.</p></li>
+<li><p>Keep your <strong>phone account secure</strong> (PIN-protect your SIM and phone carrier account).</p></li>
+<li><p>Consider <strong>multi-factor</strong> (more than two) for highly sensitive accounts.</p></li>
+</ul>
+<hr class="docutils" />
 <p><strong>Summary:</strong></p>
 <ul class="simple">
 <li><p>Average adult vocabulary: 30,000 words</p></li>
@@ -2261,6 +2356,7 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <li><p>If you <strong>scale up</strong> words, add digits, symbols, case-sensitivity, or length, cracking times very quickly go from seconds → years → centuries.</p></li>
 </ul>
 <hr class="docutils" />
+</section>
 </section>
 </section>
 </section>
@@ -2331,7 +2427,10 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <li><a class="reference internal" href="#vigenere-cipher">Vigenère Cipher</a></li>
 <li><a class="reference internal" href="#rsa-educational-encryption-and-decryption-program">RSA Educational Encryption and Decryption Program</a></li>
 <li><a class="reference internal" href="#how-to-the-rsa-program">How to the RSA Program</a></li>
-<li><a class="reference internal" href="#data-project-5-password-strength">Data Project 5: Password Strength</a></li>
+<li><a class="reference internal" href="#data-project-5-password-strength">Data Project 5: Password Strength</a><ul>
+<li><a class="reference internal" href="#what-is-2fa">What is 2FA?</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
