@@ -1252,7 +1252,7 @@ Below is a Python program to **simulate** the average time it would take to **br
 
 **Key Assumptions:**
 
-* Word list comes from a dictionary (e.g., 10,000 common English words).
+* Word list comes from a dictionary (e.g., 1,000 common English words).
 * Digits are from 0–9 (10 possible digits).
 * Passwords are guessed in a brute-force (sequential or random) manner.
 
