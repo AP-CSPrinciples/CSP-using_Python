@@ -1361,6 +1361,9 @@ Two-word with digit password:
 
 ---
 
+<img width="2000" height="1100" alt="Image" src="https://github.com/user-attachments/assets/da948499-e75d-423c-b99c-0fa0a89f7b2e" />
+
+
 **NOTES:**
 
 * Password complexity grows **multiplicatively**: every extra element (word, digit, symbol) multiplies the possibilities.
