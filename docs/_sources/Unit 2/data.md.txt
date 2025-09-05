@@ -602,9 +602,6 @@ Deliverables:
 ## Data Project 3 - Phishing
 
 
-**Understanding and Preventing Phishing**
-
-
 **Objective**:
 
 Students will be able to:
@@ -1198,6 +1195,109 @@ else:
 ### RSA Educational Encryption and Decryption Program 
 
 ⚠️ This version is simplified for educational purposes only and not secure for real cryptographic use. It shows the core concepts of RSA: key generation, encryption, and decryption.
+
+---
+
+**RSA** (named after its inventors **Rivest, Shamir, and Adleman**) is a widely used **asymmetric encryption algorithm**. It allows secure communication over insecure channels.
+
+**Asymmetric Encryption**
+
+RSA uses **two keys**:
+
+* A **public key** for **encryption**
+* A **private key** for **decryption**
+
+These keys are mathematically related, but knowing the public key does not make it feasible to compute the private key (assuming large enough primes).
+
+---
+
+**How RSA Works:** 
+
+**1. Key Generation**
+
+RSA starts with generating two large prime numbers, `p` and `q`.
+
+**a. Compute the modulus:**
+
+$$
+n = p \times q
+$$
+
+
+In RSA encryption, the **modulus** refers to a large integer value n, which is the product of two large prime numbers:
+
+n=p×q
+
+This n is a core part of the public and private keys.
+It defines the arithmetic space in which all encryption, decryption, and key generation operations occur.
+All RSA operations are performed modulo n — that is, within the set range of integers {0, 1, ..., n−1}.
+So RSA, is a number used to define a finite mathematical field for secure computation.
+
+**b. Compute Euler’s totient function:**
+
+$$
+\phi(n) = (p - 1) \times (q - 1)
+$$
+
+**c. Choose a public exponent `e`:**
+
+* `e` must be relatively prime to `φ(n)`
+* Common choice: `e = 65537` (it's fast and secure in practice)
+
+**d. Compute the private exponent `d`:**
+
+$$
+d \equiv e^{-1} \mod \phi(n)
+$$
+
+* In other words, `d` is the **modular inverse** of `e` modulo `φ(n)`
+
+**The keys:**
+
+* **Public key**: `(n, e)`
+* **Private key**: `(n, d)`
+
+---
+
+**2. Encryption**
+
+To encrypt a message `m` (as a number), use the **public key**:
+
+$$
+c = m^e \mod n
+$$
+
+* `c` is the **ciphertext**.
+* `m` must be an integer less than `n`, so padding schemes like **PKCS#1** or **OAEP** are used in real applications.
+
+---
+
+**3. Decryption**
+
+To decrypt the ciphertext `c`, use the **private key**:
+
+$$
+m = c^d \mod n
+$$
+
+* You recover the original message `m`.
+
+---
+
+**Security of RSA**
+
+The **security of RSA** relies on the difficulty of the **integer factorization problem**:
+
+> Given `n = p × q`, it is computationally infeasible to find `p` and `q` if they are large (e.g., 2048-bit primes).
+
+If someone could factor `n`, they could compute `φ(n)`, and then `d`, breaking RSA.
+
+---
+
+
+RSA is **foundational** to modern cryptography but often used in practice to encrypt **symmetric keys**, not large data directly, due to performance and padding limitations.
+
+
 
 
 ```python

@@ -1170,7 +1170,6 @@ The Huffman codes for the characters will be printed, which will be shorter for 
 <hr class="docutils" />
 <section id="data-project-3-phishing">
 <h2>Data Project 3 - Phishing<a class="headerlink" href="#data-project-3-phishing" title="Link to this heading">¶</a></h2>
-<p><strong>Understanding and Preventing Phishing</strong></p>
 <p><strong>Objective</strong>:</p>
 <p>Students will be able to:</p>
 <ul class="simple">
@@ -2031,6 +2030,78 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <section id="rsa-educational-encryption-and-decryption-program">
 <h3>RSA Educational Encryption and Decryption Program<a class="headerlink" href="#rsa-educational-encryption-and-decryption-program" title="Link to this heading">¶</a></h3>
 <p>⚠️ This version is simplified for educational purposes only and not secure for real cryptographic use. It shows the core concepts of RSA: key generation, encryption, and decryption.</p>
+<hr class="docutils" />
+<p><strong>RSA</strong> (named after its inventors <strong>Rivest, Shamir, and Adleman</strong>) is a widely used <strong>asymmetric encryption algorithm</strong>. It allows secure communication over insecure channels.</p>
+<p><strong>Asymmetric Encryption</strong></p>
+<p>RSA uses <strong>two keys</strong>:</p>
+<ul class="simple">
+<li><p>A <strong>public key</strong> for <strong>encryption</strong></p></li>
+<li><p>A <strong>private key</strong> for <strong>decryption</strong></p></li>
+</ul>
+<p>These keys are mathematically related, but knowing the public key does not make it feasible to compute the private key (assuming large enough primes).</p>
+<hr class="docutils" />
+<p><strong>How RSA Works:</strong></p>
+<p><strong>1. Key Generation</strong></p>
+<p>RSA starts with generating two large prime numbers, <code class="docutils literal notranslate"><span class="pre">p</span></code> and <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
+<p><strong>a. Compute the modulus:</strong></p>
+<p>$$
+n = p \times q
+$$</p>
+<p>In RSA encryption, the <strong>modulus</strong> refers to a large integer value n, which is the product of two large prime numbers:</p>
+<p>n=p×q</p>
+<p>This n is a core part of the public and private keys.
+It defines the arithmetic space in which all encryption, decryption, and key generation operations occur.
+All RSA operations are performed modulo n — that is, within the set range of integers {0, 1, …, n−1}.
+So RSA, is a number used to define a finite mathematical field for secure computation.</p>
+<p><strong>b. Compute Euler’s totient function:</strong></p>
+<p>$$
+\phi(n) = (p - 1) \times (q - 1)
+$$</p>
+<p><strong>c. Choose a public exponent <code class="docutils literal notranslate"><span class="pre">e</span></code>:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">e</span></code> must be relatively prime to <code class="docutils literal notranslate"><span class="pre">φ(n)</span></code></p></li>
+<li><p>Common choice: <code class="docutils literal notranslate"><span class="pre">e</span> <span class="pre">=</span> <span class="pre">65537</span></code> (it’s fast and secure in practice)</p></li>
+</ul>
+<p><strong>d. Compute the private exponent <code class="docutils literal notranslate"><span class="pre">d</span></code>:</strong></p>
+<p>$$
+d \equiv e^{-1} \mod \phi(n)
+$$</p>
+<ul class="simple">
+<li><p>In other words, <code class="docutils literal notranslate"><span class="pre">d</span></code> is the <strong>modular inverse</strong> of <code class="docutils literal notranslate"><span class="pre">e</span></code> modulo <code class="docutils literal notranslate"><span class="pre">φ(n)</span></code></p></li>
+</ul>
+<p><strong>The keys:</strong></p>
+<ul class="simple">
+<li><p><strong>Public key</strong>: <code class="docutils literal notranslate"><span class="pre">(n,</span> <span class="pre">e)</span></code></p></li>
+<li><p><strong>Private key</strong>: <code class="docutils literal notranslate"><span class="pre">(n,</span> <span class="pre">d)</span></code></p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>2. Encryption</strong></p>
+<p>To encrypt a message <code class="docutils literal notranslate"><span class="pre">m</span></code> (as a number), use the <strong>public key</strong>:</p>
+<p>$$
+c = m^e \mod n
+$$</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code> is the <strong>ciphertext</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">m</span></code> must be an integer less than <code class="docutils literal notranslate"><span class="pre">n</span></code>, so padding schemes like <strong>PKCS#1</strong> or <strong>OAEP</strong> are used in real applications.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>3. Decryption</strong></p>
+<p>To decrypt the ciphertext <code class="docutils literal notranslate"><span class="pre">c</span></code>, use the <strong>private key</strong>:</p>
+<p>$$
+m = c^d \mod n
+$$</p>
+<ul class="simple">
+<li><p>You recover the original message <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Security of RSA</strong></p>
+<p>The <strong>security of RSA</strong> relies on the difficulty of the <strong>integer factorization problem</strong>:</p>
+<blockquote>
+<div><p>Given <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">p</span> <span class="pre">×</span> <span class="pre">q</span></code>, it is computationally infeasible to find <code class="docutils literal notranslate"><span class="pre">p</span></code> and <code class="docutils literal notranslate"><span class="pre">q</span></code> if they are large (e.g., 2048-bit primes).</p>
+</div></blockquote>
+<p>If someone could factor <code class="docutils literal notranslate"><span class="pre">n</span></code>, they could compute <code class="docutils literal notranslate"><span class="pre">φ(n)</span></code>, and then <code class="docutils literal notranslate"><span class="pre">d</span></code>, breaking RSA.</p>
+<hr class="docutils" />
+<p>RSA is <strong>foundational</strong> to modern cryptography but often used in practice to encrypt <strong>symmetric keys</strong>, not large data directly, due to performance and padding limitations.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">while</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
