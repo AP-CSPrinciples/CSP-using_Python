@@ -1433,7 +1433,7 @@ main()
     
 ---
 
-### How to the RSA Program
+**How to use the RSA Program**
 
 **Generate Keys**
 1.	Run the program and choose option 1 to generate RSA keys.
