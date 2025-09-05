@@ -1724,15 +1724,13 @@ else:
     print("Invalid input or something went wrong maybe.")
 ```
 
-**Why this is sloppy / incorrect:**
-1.
-2. 
-3. 
-4. 
-5. 
+**There are 5 things that need to be corrected within this program.  Can you identify all 5?**
+
 
 
 <details><summary>Check your understanding here</summary>
+
+
 
 * **`age` is a string**, never converted to `int` → numeric comparisons (`>=`, `<`) are unreliable.
 * Logical operators are **inconsistent**: `or` and `and` are mixed with no parentheses → leads to unintended precedence.
@@ -1772,6 +1770,8 @@ else:
 ```
 
 </details>
+
+---
 
 
 **Project:**
