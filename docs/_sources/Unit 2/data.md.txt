@@ -517,7 +517,7 @@ Most common character: e (112 occurrences)
 
 **Objective**
 
-Students will investigate a real-world issue using data. They'll collect or access a dataset, clean and organize the data, analyze it, and present their findings with visualizations and a written explanation.
+Investigate and research a real-world issue using data. Either collect or access a dataset, clean and organize the data, analyze it, and present your findings with visualizations and a written explanation.
 
 ---
 
@@ -595,7 +595,6 @@ Deliverables:
 | **Total**                                 | **10 pts** |
 
 
----
 
 ---
 
@@ -650,6 +649,94 @@ Students will be able to:
 **Activity 1: PII Collection Table**
 
 **Instructions**: What is PII?  Click on the link to learn more about [Personally Identifiable Information](https://www.youtube.com/watch?v=N1qdvQVke0s). Research and create a table like the one below.  Identify three websites or apps that you have used recently (e.g., Instagram, Google).
+
+
+<details><summary>Click Here for evidence relating to PII</summary>
+
+---
+
+**Big Business Breaches**
+
+TransUnion (Credit Reporting Giant)
+  In July 2025, TransUnion suffered a breach affecting over 4.4 million Americans, including Social Security numbers, names, birth dates, email addresses, and more—despite initial claims downplaying the severity. The breach was linked to a compromised Salesforce account. Affected individuals are being offered 24 months of free identity theft protection. ([TechRadar][1], [IT Pro][2])
+
+Allianz Life (Insurance Firm)
+  In late July 2025, about 1.1 million U.S. customers had their personal information—including names, addresses, phone numbers, and emails—compromised in a cyberattack. The company plans to offer two years of identity monitoring to those affected. ([Reuters][3])
+
+*OnTrac (Delivery Service)
+  Between April 13–15, 2025, OnTrac had sensitive data from over 40,000 individuals exposed, including full names, birth dates, Social Security numbers, driver’s license or state ID numbers, and even medical or health insurance details. ([Tom's Guide][4])
+
+Mass Credential Leak
+  An enormous breach exposed 16 billion login credentials—usernames, passwords, and associated URLs—from platforms like Apple, Google, Facebook, and many government and corporate systems. This aggregation stems from multiple sources, frequently due to malware-based theft of credentials. ([Tom's Guide][5])
+
+---
+
+**Medical & Healthcare Industry Breaches**
+
+Change Healthcare (UnitedHealth Group)
+  In February 2024, a ransomware attack (by ALPHV/BlackCat) on Change Healthcare—processing medical and billing data for around a third of Americans—resulted in the theft of sensitive personal and health data from over 100 million individuals. ([TechCrunch][6])
+
+Frederick Health
+  A ransomware attack on January 27, 2025, exposed data of 934,326 individuals—including identifying data, insurance info, clinical records, and more. ([TechTarget][7], [Healthcare Dive][8])
+
+Medusind (Medical Billing Vendor)
+  Discovered in December 2023 and disclosed in early 2025, this breach affected 701,475 individuals, exposing health insurance details, medical histories, prescription data, Social Security numbers, and contact information. ([TechTarget][7], [Healthcare Dive][8])
+
+Kelly & Associates Insurance Group
+  The December 2024 breach affected 553,332+ individuals, planting exposure of names, SSNs, tax IDs, medical/insurance info, and financial account data. ([TechTarget][7])
+
+Change Healthcare—Noted Above
+
+Community Health Systems, UCLA Health, Premera, Excellus, Labcorp, etc.
+  Historically, massive breaches have affected millions in the healthcare sector—for instance, Community Health Systems (4.5 million), UCLA Health (\~4.5 million), Premera (\~11 million), Excellus (\~10 million), and Labcorp (\~10 million) via earlier events. ([Breachsense][9], [Digital Guardian][10])
+
+---
+
+**Government-Related Breaches**
+
+Office of Personnel Management (OPM), 2015
+  State-sponsored hackers (allegedly from China’s MSS) stole 22.1 million records of federal employees and others undergoing background checks—including Social Security numbers, birth data, and addresses—making it one of the largest U.S. government data breaches ever. ([Wikipedia][11])
+
+Texas Department of Transportation (TxDOT)
+  In May 2025, hackers downloaded crash report records affecting data for 423,391 individuals, including sensitive personal data (names, addresses, driver’s license numbers, insurance details). ([San Antonio Express-News][12])
+
+Social Security Administration (SSA) Cloud Warning
+  Not a breach per se, but in late August 2025, the SSA Chief Data Officer resigned, triggering alarm after whistleblower allegations that data on over 300 million Americans had been uploaded to an insecure cloud environment improperly. Though no breach was confirmed, the potential risk was enormous. ([The Washington Post][13], [The Times of India][14])
+
+---
+
+Summary Table
+
+| Sector       | Incident                                                                  | Scope / Individuals Affected          | Sensitive Data Exposed                    |
+| ------------ | ------------------------------------------------------------------------- | ------------------------------------- | ----------------------------------------- |
+| Big Business | TransUnion, Allianz, OnTrac, 16B credentials                              | Millions (4.4M, 1.1M, 40K, 16B creds) | SSNs, PII, contact data, IDs              |
+| Healthcare   | Change Healthcare, Frederick Health, Medusind, Kelly & Associates, others | Hundreds of thousands to 100M+        | Medical records, SSNs, insurance, billing |
+| Government   | OPM (2015), TxDOT (2025), SSA cloud exposure                              | Millions to hundreds of millions      | SSNs, IDs, addresses, crash/health data   |
+
+
+* [TechRadar](https://www.techradar.com/pro/security/transunion-data-breach-may-have-affected-4-4-million-users-heres-what-we-know-and-how-to-stay-safe?utm_source=chatgpt.com)
+* [Tom's Guide](https://www.tomsguide.com/computing/online-security/major-us-delivery-company-hit-in-data-breach-with-full-names-ssns-and-medical-info-of-thousands-exposed-online?utm_source=chatgpt.com)
+* [Reuters](https://www.reuters.com/legal/government/hack-allianz-life-impacts-11-million-customers-breach-notification-site-says-2025-08-18/?utm_source=chatgpt.com)
+* [The Washington Post](https://www.washingtonpost.com/politics/2025/08/29/social-security-data-doge/?utm_source=chatgpt.com)
+
+[1]: https://www.techradar.com/pro/security/transunion-data-breach-may-have-affected-4-4-million-users-heres-what-we-know-and-how-to-stay-safe?utm_source=chatgpt.com "TransUnion data breach may have affected 4.4 million users - here's what we know, and how to stay safe"
+[2]: https://www.itpro.com/security/data-breaches/transunion-breach-what-can-customers-do?utm_source=chatgpt.com "4.5 million people just had their data exposed in the TransUnion breach - here's what customers need to know"
+[3]: https://www.reuters.com/legal/government/hack-allianz-life-impacts-11-million-customers-breach-notification-site-says-2025-08-18/?utm_source=chatgpt.com "Hack at Allianz Life impacts 1.1 million customers, breach notification site says"
+[4]: https://www.tomsguide.com/computing/online-security/major-us-delivery-company-hit-in-data-breach-with-full-names-ssns-and-medical-info-of-thousands-exposed-online?utm_source=chatgpt.com "Major US delivery company hit in data breach with full names, SSNs and medical info of thousands exposed online"
+[5]: https://www.tomsguide.com/news/live/16-billion-passwords-data-breach?utm_source=chatgpt.com "16 billion password data breach hits Apple, Google, Facebook and more - LIVE updates and how to stay safe"
+[6]: https://techcrunch.com/2024/10/24/unitedhealth-change-healthcare-hacked-millions-health-records-ransomware/?utm_source=chatgpt.com "UnitedHealth says Change Healthcare hack affects over 100 million, the largest-ever US healthcare data breach | TechCrunch"
+[7]: https://www.techtarget.com/healthtechsecurity/feature/Biggest-healthcare-data-breaches-reported-in-2025-so-far?utm_source=chatgpt.com "Biggest healthcare data breaches reported in 2025, so far | TechTarget"
+[8]: https://www.healthcaredive.com/news/tracking-healthcare-data-breaches-cybersecurity-hacking-hospitals/696184/?utm_source=chatgpt.com "Tracking healthcare data breaches | Healthcare Dive"
+[9]: https://www.breachsense.com/blog/largest-healthcare-data-breaches/?utm_source=chatgpt.com "15 Biggest Healthcare Data Breaches Today"
+[10]: https://www.digitalguardian.com/resources/knowledge-base/top-10-biggest-healthcare-data-breaches-all-time?utm_source=chatgpt.com "Top 10 Biggest Healthcare Data Breaches of All Time | Fortra's Digital Guardian"
+[11]: https://en.wikipedia.org/wiki/Office_of_Personnel_Management_data_breach?utm_source=chatgpt.com "Office of Personnel Management data breach"
+[12]: https://www.expressnews.com/business/article/texas-data-breaches-txdot-iheartmedia-cps-energy-20351758.php?utm_source=chatgpt.com "Hackers target TxDOT, download thousands of crash records"
+[13]: https://www.washingtonpost.com/politics/2025/08/29/social-security-data-doge/?utm_source=chatgpt.com "Social Security whistleblower quits after saying Americans' data was compromised"
+[14]: https://timesofindia.indiatimes.com/technology/tech-news/ssa-data-chief-charles-borges-resigns-involuntarily-days-after-claims-doge-putting-citizen-info-at-risk-it-is-never-wrong-to-be-/articleshow/123599695.cms?utm_source=chatgpt.com "SSA data chief Charles Borges resigns 'involuntarily' days after claims DOGE putting citizen info at risk: 'It is never wrong to be....'"
+
+
+
+</details>
 
 | Website or Application | PII Collected                      | How the information is used (Will they share it? With whom? Will they keep it forever?) |
 | ---------------------- | ---------------------------------- | --------------------------------------------------------------------------------------- |
