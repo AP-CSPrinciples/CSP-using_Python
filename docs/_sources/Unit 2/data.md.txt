@@ -1855,7 +1855,7 @@ else:
 | **Logical Correctness**                | All code works for all valid inputs            | Minor logical mistakes remain          | Many logical mistakes remain              | Code does not run or does not solve the task |
 | **Clarity & Readability**              | Code is well-formatted and easy to follow      | Mostly clear with some confusing parts | Hard to follow, poor naming or formatting | Very unclear / unreadable                    |
 | **Testing / Validation**               | Multiple test cases included and passed        | Some test cases provided               | Minimal testing shown                     | No testing                                   |
-| **Comments / Reflection** *(optional)* | Clear explanation of fixes and lessons learned | Basic explanation                      | Minimal notes                             | No reflection                                |
+| **Comments / Reflection** | Clear explanation of fixes and lessons learned | Basic explanation                      | Minimal notes                             | No reflection                                |
 
 ---
 
