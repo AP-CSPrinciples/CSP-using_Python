@@ -1222,7 +1222,7 @@ RSA starts with generating two large prime numbers, `p` and `q`.
 In RSA encryption, the **modulus** refers to a large integer value n, which is the product of two large prime numbers.
 
 ```math
-n = p \times q
+n = p x q
 ```
 
 This n is a core part of the public and private keys.
@@ -1233,7 +1233,7 @@ So RSA, is a number used to define a finite mathematical field for secure comput
 **b. Compute Euler’s totient function:**
 
 $$
-\phi(n) = (p - 1) \times (q - 1)
+\phi(n) = (p - 1) x (q - 1)
 $$
 
 **c. Choose a public exponent `e`:**
