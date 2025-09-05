@@ -651,7 +651,7 @@ Students will be able to:
 **Instructions**: What is PII?  Click on the link to learn more about [Personally Identifiable Information](https://www.youtube.com/watch?v=N1qdvQVke0s). Research and create a table like the one below.  Identify three websites or apps that you have used recently (e.g., Instagram, Google).
 
 
-<details><summary>Click Here for evidence relating to PII</summary>
+<details><summary> Click Here for evidence relating to PII </summary>
 
 ---
 
