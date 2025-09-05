@@ -1731,6 +1731,7 @@ else:
 4. 
 5. 
 
+
 <details><summary>Check your understanding here</summary>
 
 * **`age` is a string**, never converted to `int` → numeric comparisons (`>=`, `<`) are unreliable.
@@ -1741,7 +1742,7 @@ else:
 
 ---
 
-### What should you do:
+**What should you do:**
 
 * Convert input to integer.
 * Write clear, correct logical conditions with proper ranges.
@@ -1754,7 +1755,6 @@ print("Welcome to the age checker!")
 
 age_input = input("Enter your age: ")
 
-# Convert to integer safely
 if age_input.isdigit():
     age = int(age_input)
 else:
