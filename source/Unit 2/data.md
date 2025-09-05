@@ -1684,7 +1684,7 @@ While 2FA is much safer than a password alone, no security measure is perfect. K
 
 ---
 
-## Data Project 6: Securing Sloppy Code
+## Data Project 6: Be Professional
 
 ---
 
@@ -1692,19 +1692,19 @@ While 2FA is much safer than a password alone, no security measure is perfect. K
 
 > Writing code is not just about “making it run.” It’s about making it solve the intended problem **reliably**.
 >
-> Sloppy code — code that uses incorrect logical conditions, unclear structure, or poor data handling — may appear to work in some situations but will often:
+> Program code that uses incorrect logical conditions, unclear structure, or poor data handling — may appear to work in some situations but will often:
 >
 > * **Produce wrong results** when certain inputs are used (hidden bugs).
 > * **Confuse other programmers** (including your future self), making it harder to maintain or improve.
 > * **Break silently** — meaning it doesn’t crash, but gives answers that look right but aren’t.
 >
-> One of the most important skills in programming is **rewriting messy code** into clear, logically correct, and readable code. This process is called **refactoring**. By practicing fixing sloppy code, you’re learning how to:
+> One of the most important skills in programming is **rewriting messy code** into clear, logically correct, and readable code. This process is called **refactoring**. By practicing fixing poorly written code, you’re learning how to:
 >
 > * Think logically about what a program *should* do.
 > * Detect logical errors in code that still runs.
 > * Write code that other people can trust and understand.
 >
-> In this project, you will practice rewriting bad code to be correct, clear, and professional.
+> In this project, you will practice rewriting bad code to be correct, clear, and **be Professional**.
 
 ---
 
@@ -1723,6 +1723,7 @@ elif not age == "15" and not age == "14" and not age == "13":
 else:
     print("Invalid input or something went wrong maybe.")
 ```
+
 
 **There are 5 things that need to be corrected within this program.  Can you identify all 5?**
 
@@ -1776,7 +1777,7 @@ else:
 
 **Project:**
 
-   * Fix the **three sloppy examples below** (Grade Checker, Temperature Warning, Dice Game Result).
+   * Fix the poorly written **examples below** (Grade Checker, Temperature Warning, Dice Game Result).
    * You must rewrite each to be logically correct and easy to read.
    * After rewriting, test your code with different inputs.
    * Trade with a partner to verify if the code works logically.
