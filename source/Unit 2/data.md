@@ -1686,9 +1686,6 @@ While 2FA is much safer than a password alone, no security measure is perfect. K
 
 ### Data Project 6: Securing Sloppy Code
 
-Excellent plan — this has the makings of a **great debugging / refactoring mini-project**.
-Here’s a solid **introduction**, plus a few **enhancement ideas** that will make the activity stronger.
-
 ---
 
 **Introduction** 
