@@ -5,70 +5,141 @@
 
 <details><summary>Click Here</summary>
 
- 
+
+---
+
 **1. Data Representation**
 
-* **Bit**: The smallest unit of data in a computer, represented as either 0 or 1.
-* **Byte**: A group of 8 bits. It is the basic unit of storage.
-* **Binary**: A number system using only two digits: 0 and 1. It's used to represent data in computers.
-* **Hexadecimal**: A base-16 number system often used to represent binary data in a more human-readable form (using digits 0-9 and letters A-F).
-* **Character Encoding**: A system for representing characters (letters, digits, symbols) as binary data. Examples include **ASCII** and **Unicode**.
+| **Term**           | **Definition**                                                                                                                |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| Binary             | A number system using only two digits: 0 and 1. It's used to represent data in computers.                                     |
+| Bit                | The smallest unit of data in a computer, represented as either 0 or 1.                                                        |
+| Byte               | A group of 8 bits. It is the basic unit of storage.                                                                           |
+| Character Encoding | A system for representing characters (letters, digits, symbols) as binary data. Examples include ASCII and Unicode.           |
+| Hexadecimal        | A base-16 number system often used to represent binary data in a more human-readable form (using digits 0-9 and letters A-F). |
+
+---
 
 **2. Encoding and Decoding**
 
-* **ASCII (American Standard Code for Information Interchange)**: A character encoding standard that represents text in computers using 7 or 8 bits. It covers characters like letters, digits, punctuation, and control characters.
-* **Unicode**: A character encoding standard that represents a wider range of characters, including non-English letters, symbols, and emoji. It's commonly used in modern programming languages.
-* **Encoding**: The process of converting data from a human-readable format into a machine-readable format (e.g., converting text into binary).
-* **Decoding**: The process of converting machine-readable data (binary) back into a human-readable format (e.g., converting binary back into text).
+| **Term** | **Definition**                                                                                                                |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| ASCII    | A character encoding standard that represents text in computers using 7 or 8 bits.                                            |
+| Decoding | The process of converting machine-readable data (binary) back into a human-readable format.                                   |
+| Encoding | The process of converting data from a human-readable format into a machine-readable format.                                   |
+| Unicode  | A character encoding standard that represents a wider range of characters, including non-English letters, symbols, and emoji. |
+
+---
 
 **3. Compression and Efficiency**
 
-* **Data Compression**: The process of reducing the size of data in order to save storage space or transmission time. There are two types:
+| **Term**             | **Definition**                                                                                                                                    |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Data Compression     | The process of reducing the size of data in order to save storage space or transmission time.                                                     |
+| Huffman Coding       | A lossless data compression algorithm that assigns shorter binary codes to more frequent characters and longer codes to less frequent characters. |
+| Lossless Compression | Data is compressed without losing any information (e.g., ZIP files, Huffman coding).                                                              |
+| Lossy Compression    | Some data is lost in the compression process, but the file size is significantly reduced (e.g., JPEG images, MP3 audio).                          |
 
-  * **Lossless Compression**: Data is compressed without losing any information (e.g., ZIP files, Huffman coding).
-  * **Lossy Compression**: Some data is lost in the compression process, but the file size is significantly reduced (e.g., JPEG images, MP3 audio).
-* **Huffman Coding**: A lossless data compression algorithm that assigns shorter binary codes to more frequent characters and longer codes to less frequent characters. It's often used in file formats like PNG and ZIP.
+---
 
 **4. Data Processing and Transformation**
 
-* **Data Abstraction**: Simplifying complex data by providing only the essential details. For example, representing a large text file as a string of characters or reducing data to a set of important metrics.
-* **Data Visualization**: The graphical representation of data, such as charts, graphs, or maps, to help make the information easier to understand.
-* **Data Transformation**: The process of changing data from one format to another. For example, converting CSV data into JSON format for easier processing in a web application.
+| **Term**            | **Definition**                                                                                        |
+| ------------------- | ----------------------------------------------------------------------------------------------------- |
+| Data Abstraction    | Simplifying complex data by providing only the essential details.                                     |
+| Data Transformation | The process of changing data from one format to another.                                              |
+| Data Visualization  | The graphical representation of data (charts, graphs, maps) to make information easier to understand. |
+
+---
 
 **5. File Formats and Storage**
 
-* **File Format**: A specification that defines how data is encoded and stored in a file. Common formats include CSV (Comma-Separated Values), JSON (JavaScript Object Notation), XML (Extensible Markup Language), and binary formats.
-* **CSV (Comma-Separated Values)**: A simple text-based file format for storing tabular data, where each line represents a row, and each value is separated by a comma.
-* **JSON (JavaScript Object Notation)**: A lightweight, text-based format for storing and exchanging data, commonly used in web development.
-* **XML (Extensible Markup Language)**: A markup language used for encoding documents in a format that is both human-readable and machine-readable.
+| **Term**    | **Definition**                                                                                              |
+| ----------- | ----------------------------------------------------------------------------------------------------------- |
+| CSV         | A simple text-based file format for storing tabular data, with values separated by commas.                  |
+| File Format | A specification that defines how data is encoded and stored in a file.                                      |
+| JSON        | A lightweight, text-based format for storing and exchanging data, commonly used in web development.         |
+| XML         | A markup language used for encoding documents in a format that is both human-readable and machine-readable. |
+
+---
 
 **6. Algorithms and Problem-Solving**
 
-* **Algorithm**: A step-by-step procedure or formula for solving a problem or completing a task, especially when processing data.
-* **Efficiency**: How well an algorithm performs, often measured in terms of time (how quickly it runs) and space (how much memory it uses). Students should understand concepts like **big-O notation** to describe algorithm efficiency, especially in terms of time complexity (e.g., O(n), O(log n)).
-* **Data Structures**: The organization and storage of data for efficient access and modification. Common structures include arrays, lists, stacks, queues, and trees.
+| **Term**        | **Definition**                                                                                  |
+| --------------- | ----------------------------------------------------------------------------------------------- |
+| Algorithm       | A step-by-step procedure or formula for solving a problem or completing a task.                 |
+| Data Structures | The organization and storage of data for efficient access and modification.                     |
+| Efficiency      | How well an algorithm performs, often measured in time and memory usage (e.g., big-O notation). |
+
+---
 
 **7. Security and Privacy**
 
-* **Encryption**: The process of encoding data to protect it from unauthorized access. Data is converted into an unreadable format, and only someone with the correct key can decrypt it.
-* **Decryption**: The process of converting encrypted data back into its original, readable format.
-* **Hashing**: The process of converting data into a fixed-size value (a hash). Hashes are commonly used for verifying data integrity (e.g., checking if a file has been tampered with).
+| **Term**            | **Definition**                                                                  |
+| ------------------- | ------------------------------------------------------------------------------- |
+| Adware              | Displays unwanted ads, often with tracking.                                     |
+| Brute Force         | Trying all possible keys to decrypt a message.                                  |
+| Caesar Cipher       | A substitution cipher that shifts letters by a fixed amount.                    |
+| Cipher              | A method for performing encryption or decryption.                               |
+| Ciphertext          | The encrypted (scrambled) message.                                              |
+| Cookies             | Small files stored on your device to track activity and preferences.            |
+| Crypto-analysis     | The art of decoding encrypted messages without the key.                         |
+| Data Breach         | When sensitive information is accessed or released without authorization.       |
+| Decryption          | Converting encrypted data back into readable form.                              |
+| Encryption          | Converting information into a code to prevent unauthorized access.              |
+| Frequency Analysis  | A method of breaking substitution ciphers by studying how often letters appear. |
+| Hashing             | Converting data into a fixed-size value (a hash) used to verify integrity.      |
+| Keylogger           | A program that records everything you type, often used to steal passwords.      |
+| Keyword             | A word used to vary the shifts in the cipher.                                   |
+| Malware             | Malicious software designed to damage or gain unauthorized access to a system.  |
+| Modular Arithmetic  | Calculations done using modulo 26 (number of letters in the alphabet).          |
+| Modulus             | A number used to link the public and private keys in RSA.                       |
+| Phishing            | A cyber attack that tricks users into giving up personal or sensitive data.     |
+| Plaintext           | The original readable message.                                                  |
+| Polyalphabetic      | Involving more than one substitution alphabet.                                  |
+| Private Key         | Used to decrypt data in RSA. Kept secret.                                       |
+| Public Key          | Used to encrypt data in RSA encryption. Shared with everyone.                   |
+| Repeating Key       | The keyword repeats to match the length of the message.                         |
+| Ransomware          | Locks data and demands payment.                                                 |
+| Rogue Access Point  | A fake Wi-Fi network set up to trick people into connecting and stealing data.  |
+| Rootkits            | Hide malicious activities from detection.                                       |
+| Spyware             | Secretly monitors user activity.                                                |
+| Substitution Cipher | A cipher that replaces each letter with another.                                |
+| Trojans             | Disguise as legitimate software.                                                |
+| Viruses             | Attach to clean files and spread.                                               |
+| Worms               | Self-replicate and spread across networks.                                      |
+
+---
 
 **8. Data Representation in Networks**
 
-* **Packet**: A small chunk of data sent over a network, which may be part of a larger message.
-* **IP Address**: A unique identifier assigned to each device on a network. It's used for routing packets of data to the correct destination.
-* **Protocol**: A set of rules governing how data is transmitted over a network. Examples include **HTTP** (HyperText Transfer Protocol), **FTP** (File Transfer Protocol), and **TCP/IP** (Transmission Control Protocol/Internet Protocol).
+| **Term**   | **Definition**                                                                             |
+| ---------- | ------------------------------------------------------------------------------------------ |
+| IP Address | A unique identifier assigned to each device on a network.                                  |
+| Packet     | A small chunk of data sent over a network, which may be part of a larger message.          |
+| Protocol   | A set of rules governing how data is transmitted over a network (e.g., HTTP, FTP, TCP/IP). |
+
+---
 
 **9. Big Data Concepts**
 
-* **Big Data**: Large and complex data sets that traditional data processing software can't handle efficiently. Often involves analyzing data from various sources like sensors, social media, and logs.
-* **Cloud Computing**: The delivery of computing services (storage, processing power, etc.) over the internet, often used for managing big data.
+| **Term**        | **Definition**                                                                                                      |
+| --------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Big Data        | Large and complex data sets that traditional data processing software can't handle efficiently.                     |
+| Cloud Computing | The delivery of computing services (storage, processing, etc.) over the internet, often used for managing big data. |
+
+---
 
 **10. Data Ethics**
 
-* **Bias in Data**: When data collection or processing methods lead to unfair or skewed results. For example, biased data could lead to discriminatory algorithms.
-* **Privacy**: The protection of individuals' personal information. Ethical data use includes ensuring that data is collected and shared responsibly, with attention to privacy laws (like GDPR).
+| **Term**                                  | **Definition**                                                                                                 |
+| ----------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Bias in Data                              | When data collection or processing methods lead to unfair or skewed results.                                   |
+| Personally Identifiable Information (PII) | Any data that could be used to identify an individual (e.g., name, address, SSN).                              |
+| Privacy                                   | The protection of individuals' personal information, ensuring responsible collection and sharing (e.g., GDPR). |
+
+
+
 
 </details>
 
@@ -614,20 +685,6 @@ Students will be able to:
 
 ---
 
-**Vocabulary Words**:
-
-| Term                                      | Definition                                                                          |
-| ----------------------------------------- | ----------------------------------------------------------------------------------- |
-| Personally Identifiable Information (PII) | Any data that could be used to identify an individual (e.g., name, address, SSN)    |
-| Data Breach                               | When sensitive information is accessed or released without authorization            |
-| Cookies                                   | Small files stored on your device to track activity and preferences                 |
-| Phishing                                  | A cyber attack that tricks users into giving up personal or sensitive data          |
-| Malware                                   | Malicious software designed to damage or gain unauthorized access to a system       |
-| Keylogger                                 | A program that records everything you type, often used to steal passwords           |
-| Rogue Access Point                        | A fake Wi-Fi network set up to trick people into connecting and stealing their data |
-
----
-
 **Introduction**
 
 **Discussion**:
@@ -851,31 +908,6 @@ Students should respond to the following questions in writing or in a small grou
 * Vocabulary relevant to digital security and cryptography.
 
 ---
-
-**Vocabulary**
-
-| Term                      | Definition                                                                      |
-| ------------------------- | ------------------------------------------------------------------------------- |
-| **Brute Force**         | Trying all possible keys to decrypt a message.                                  |
-| **Caesar Cipher**       | A substitution cipher that shifts letters by a fixed amount.                    |
-| **Cipher**              | A method for performing encryption or decryption.                               |
-| **Ciphertext**          | The encrypted (scrambled) message                                               |
-| **Crypto-analysis**       | The art of decoding encrypted messages without the key.                         |
-| **Decryption**          | Converting encrypted data back into readable form.                              |
-| **Encryption**          | Converting information into a code to prevent unauthorized access.              |
-| **Frequency Analysis**  | A method of breaking substitution ciphers by studying how often letters appear. |
-| **Keyword**             | A word used to vary the shifts in the cipher                                    |
-| **Modular Arithmetic**      | Calculations are done using modulo 26 (number of letters in the alphabet)               |
-| **Modulus**             | A number used to link the public and private keys in RSA.                       |
-| **Plaintext**           | The original readable message                                                   |
-| **Polyalphabetic**      | Involving more than one substitution alphabet                                   |
-| **Private Key**         | Used to decrypt data in RSA. Kept secret.                                       |
-| **Public Key**          | Used to encrypt data in RSA encryption. Shared with everyone.                   |
-| **Repeating Key**           | The keyword repeats to match the length of the message                                  |
-| **Substitution Cipher** | A cipher that replaces each letter with another.                                |
-
----
-
 
 ### Why is Frequency Important in Cryptography?
 
@@ -1441,7 +1473,6 @@ Below is a Python program to **simulate** the average time it would take to **br
 1. **Define the password space** based on the type (word length, number of combinations).
 2. **Use a mock brute-force attack** where it tries all combinations until it finds the target.
 3. **Measure the time taken** for a number of trials and average them.
-
 
 
 ---

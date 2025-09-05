@@ -281,72 +281,322 @@
 <section id="unit-2-vocabulary">
 <h2>Unit 2 Vocabulary<a class="headerlink" href="#unit-2-vocabulary" title="Link to this heading">¶</a></h2>
 <details><summary>Click Here</summary>
+<hr class="docutils" />
 <p><strong>1. Data Representation</strong></p>
-<ul class="simple">
-<li><p><strong>Bit</strong>: The smallest unit of data in a computer, represented as either 0 or 1.</p></li>
-<li><p><strong>Byte</strong>: A group of 8 bits. It is the basic unit of storage.</p></li>
-<li><p><strong>Binary</strong>: A number system using only two digits: 0 and 1. It’s used to represent data in computers.</p></li>
-<li><p><strong>Hexadecimal</strong>: A base-16 number system often used to represent binary data in a more human-readable form (using digits 0-9 and letters A-F).</p></li>
-<li><p><strong>Character Encoding</strong>: A system for representing characters (letters, digits, symbols) as binary data. Examples include <strong>ASCII</strong> and <strong>Unicode</strong>.</p></li>
-</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Term</strong></p></th>
+<th class="head"><p><strong>Definition</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Binary</p></td>
+<td><p>A number system using only two digits: 0 and 1. It’s used to represent data in computers.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bit</p></td>
+<td><p>The smallest unit of data in a computer, represented as either 0 or 1.</p></td>
+</tr>
+<tr class="row-even"><td><p>Byte</p></td>
+<td><p>A group of 8 bits. It is the basic unit of storage.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Character Encoding</p></td>
+<td><p>A system for representing characters (letters, digits, symbols) as binary data. Examples include ASCII and Unicode.</p></td>
+</tr>
+<tr class="row-even"><td><p>Hexadecimal</p></td>
+<td><p>A base-16 number system often used to represent binary data in a more human-readable form (using digits 0-9 and letters A-F).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
 <p><strong>2. Encoding and Decoding</strong></p>
-<ul class="simple">
-<li><p><strong>ASCII (American Standard Code for Information Interchange)</strong>: A character encoding standard that represents text in computers using 7 or 8 bits. It covers characters like letters, digits, punctuation, and control characters.</p></li>
-<li><p><strong>Unicode</strong>: A character encoding standard that represents a wider range of characters, including non-English letters, symbols, and emoji. It’s commonly used in modern programming languages.</p></li>
-<li><p><strong>Encoding</strong>: The process of converting data from a human-readable format into a machine-readable format (e.g., converting text into binary).</p></li>
-<li><p><strong>Decoding</strong>: The process of converting machine-readable data (binary) back into a human-readable format (e.g., converting binary back into text).</p></li>
-</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Term</strong></p></th>
+<th class="head"><p><strong>Definition</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ASCII</p></td>
+<td><p>A character encoding standard that represents text in computers using 7 or 8 bits.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Decoding</p></td>
+<td><p>The process of converting machine-readable data (binary) back into a human-readable format.</p></td>
+</tr>
+<tr class="row-even"><td><p>Encoding</p></td>
+<td><p>The process of converting data from a human-readable format into a machine-readable format.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Unicode</p></td>
+<td><p>A character encoding standard that represents a wider range of characters, including non-English letters, symbols, and emoji.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
 <p><strong>3. Compression and Efficiency</strong></p>
-<ul class="simple">
-<li><p><strong>Data Compression</strong>: The process of reducing the size of data in order to save storage space or transmission time. There are two types:</p>
-<ul>
-<li><p><strong>Lossless Compression</strong>: Data is compressed without losing any information (e.g., ZIP files, Huffman coding).</p></li>
-<li><p><strong>Lossy Compression</strong>: Some data is lost in the compression process, but the file size is significantly reduced (e.g., JPEG images, MP3 audio).</p></li>
-</ul>
-</li>
-<li><p><strong>Huffman Coding</strong>: A lossless data compression algorithm that assigns shorter binary codes to more frequent characters and longer codes to less frequent characters. It’s often used in file formats like PNG and ZIP.</p></li>
-</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Term</strong></p></th>
+<th class="head"><p><strong>Definition</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data Compression</p></td>
+<td><p>The process of reducing the size of data in order to save storage space or transmission time.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Huffman Coding</p></td>
+<td><p>A lossless data compression algorithm that assigns shorter binary codes to more frequent characters and longer codes to less frequent characters.</p></td>
+</tr>
+<tr class="row-even"><td><p>Lossless Compression</p></td>
+<td><p>Data is compressed without losing any information (e.g., ZIP files, Huffman coding).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lossy Compression</p></td>
+<td><p>Some data is lost in the compression process, but the file size is significantly reduced (e.g., JPEG images, MP3 audio).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
 <p><strong>4. Data Processing and Transformation</strong></p>
-<ul class="simple">
-<li><p><strong>Data Abstraction</strong>: Simplifying complex data by providing only the essential details. For example, representing a large text file as a string of characters or reducing data to a set of important metrics.</p></li>
-<li><p><strong>Data Visualization</strong>: The graphical representation of data, such as charts, graphs, or maps, to help make the information easier to understand.</p></li>
-<li><p><strong>Data Transformation</strong>: The process of changing data from one format to another. For example, converting CSV data into JSON format for easier processing in a web application.</p></li>
-</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Term</strong></p></th>
+<th class="head"><p><strong>Definition</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data Abstraction</p></td>
+<td><p>Simplifying complex data by providing only the essential details.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Transformation</p></td>
+<td><p>The process of changing data from one format to another.</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Visualization</p></td>
+<td><p>The graphical representation of data (charts, graphs, maps) to make information easier to understand.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
 <p><strong>5. File Formats and Storage</strong></p>
-<ul class="simple">
-<li><p><strong>File Format</strong>: A specification that defines how data is encoded and stored in a file. Common formats include CSV (Comma-Separated Values), JSON (JavaScript Object Notation), XML (Extensible Markup Language), and binary formats.</p></li>
-<li><p><strong>CSV (Comma-Separated Values)</strong>: A simple text-based file format for storing tabular data, where each line represents a row, and each value is separated by a comma.</p></li>
-<li><p><strong>JSON (JavaScript Object Notation)</strong>: A lightweight, text-based format for storing and exchanging data, commonly used in web development.</p></li>
-<li><p><strong>XML (Extensible Markup Language)</strong>: A markup language used for encoding documents in a format that is both human-readable and machine-readable.</p></li>
-</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Term</strong></p></th>
+<th class="head"><p><strong>Definition</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CSV</p></td>
+<td><p>A simple text-based file format for storing tabular data, with values separated by commas.</p></td>
+</tr>
+<tr class="row-odd"><td><p>File Format</p></td>
+<td><p>A specification that defines how data is encoded and stored in a file.</p></td>
+</tr>
+<tr class="row-even"><td><p>JSON</p></td>
+<td><p>A lightweight, text-based format for storing and exchanging data, commonly used in web development.</p></td>
+</tr>
+<tr class="row-odd"><td><p>XML</p></td>
+<td><p>A markup language used for encoding documents in a format that is both human-readable and machine-readable.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
 <p><strong>6. Algorithms and Problem-Solving</strong></p>
-<ul class="simple">
-<li><p><strong>Algorithm</strong>: A step-by-step procedure or formula for solving a problem or completing a task, especially when processing data.</p></li>
-<li><p><strong>Efficiency</strong>: How well an algorithm performs, often measured in terms of time (how quickly it runs) and space (how much memory it uses). Students should understand concepts like <strong>big-O notation</strong> to describe algorithm efficiency, especially in terms of time complexity (e.g., O(n), O(log n)).</p></li>
-<li><p><strong>Data Structures</strong>: The organization and storage of data for efficient access and modification. Common structures include arrays, lists, stacks, queues, and trees.</p></li>
-</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Term</strong></p></th>
+<th class="head"><p><strong>Definition</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Algorithm</p></td>
+<td><p>A step-by-step procedure or formula for solving a problem or completing a task.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Structures</p></td>
+<td><p>The organization and storage of data for efficient access and modification.</p></td>
+</tr>
+<tr class="row-even"><td><p>Efficiency</p></td>
+<td><p>How well an algorithm performs, often measured in time and memory usage (e.g., big-O notation).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
 <p><strong>7. Security and Privacy</strong></p>
-<ul class="simple">
-<li><p><strong>Encryption</strong>: The process of encoding data to protect it from unauthorized access. Data is converted into an unreadable format, and only someone with the correct key can decrypt it.</p></li>
-<li><p><strong>Decryption</strong>: The process of converting encrypted data back into its original, readable format.</p></li>
-<li><p><strong>Hashing</strong>: The process of converting data into a fixed-size value (a hash). Hashes are commonly used for verifying data integrity (e.g., checking if a file has been tampered with).</p></li>
-</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Term</strong></p></th>
+<th class="head"><p><strong>Definition</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Adware</p></td>
+<td><p>Displays unwanted ads, often with tracking.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brute Force</p></td>
+<td><p>Trying all possible keys to decrypt a message.</p></td>
+</tr>
+<tr class="row-even"><td><p>Caesar Cipher</p></td>
+<td><p>A substitution cipher that shifts letters by a fixed amount.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cipher</p></td>
+<td><p>A method for performing encryption or decryption.</p></td>
+</tr>
+<tr class="row-even"><td><p>Ciphertext</p></td>
+<td><p>The encrypted (scrambled) message.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cookies</p></td>
+<td><p>Small files stored on your device to track activity and preferences.</p></td>
+</tr>
+<tr class="row-even"><td><p>Crypto-analysis</p></td>
+<td><p>The art of decoding encrypted messages without the key.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Breach</p></td>
+<td><p>When sensitive information is accessed or released without authorization.</p></td>
+</tr>
+<tr class="row-even"><td><p>Decryption</p></td>
+<td><p>Converting encrypted data back into readable form.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Encryption</p></td>
+<td><p>Converting information into a code to prevent unauthorized access.</p></td>
+</tr>
+<tr class="row-even"><td><p>Frequency Analysis</p></td>
+<td><p>A method of breaking substitution ciphers by studying how often letters appear.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hashing</p></td>
+<td><p>Converting data into a fixed-size value (a hash) used to verify integrity.</p></td>
+</tr>
+<tr class="row-even"><td><p>Keylogger</p></td>
+<td><p>A program that records everything you type, often used to steal passwords.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Keyword</p></td>
+<td><p>A word used to vary the shifts in the cipher.</p></td>
+</tr>
+<tr class="row-even"><td><p>Malware</p></td>
+<td><p>Malicious software designed to damage or gain unauthorized access to a system.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Modular Arithmetic</p></td>
+<td><p>Calculations done using modulo 26 (number of letters in the alphabet).</p></td>
+</tr>
+<tr class="row-even"><td><p>Modulus</p></td>
+<td><p>A number used to link the public and private keys in RSA.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Phishing</p></td>
+<td><p>A cyber attack that tricks users into giving up personal or sensitive data.</p></td>
+</tr>
+<tr class="row-even"><td><p>Plaintext</p></td>
+<td><p>The original readable message.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Polyalphabetic</p></td>
+<td><p>Involving more than one substitution alphabet.</p></td>
+</tr>
+<tr class="row-even"><td><p>Private Key</p></td>
+<td><p>Used to decrypt data in RSA. Kept secret.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Public Key</p></td>
+<td><p>Used to encrypt data in RSA encryption. Shared with everyone.</p></td>
+</tr>
+<tr class="row-even"><td><p>Repeating Key</p></td>
+<td><p>The keyword repeats to match the length of the message.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ransomware</p></td>
+<td><p>Locks data and demands payment.</p></td>
+</tr>
+<tr class="row-even"><td><p>Rogue Access Point</p></td>
+<td><p>A fake Wi-Fi network set up to trick people into connecting and stealing data.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rootkits</p></td>
+<td><p>Hide malicious activities from detection.</p></td>
+</tr>
+<tr class="row-even"><td><p>Spyware</p></td>
+<td><p>Secretly monitors user activity.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Substitution Cipher</p></td>
+<td><p>A cipher that replaces each letter with another.</p></td>
+</tr>
+<tr class="row-even"><td><p>Trojans</p></td>
+<td><p>Disguise as legitimate software.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Viruses</p></td>
+<td><p>Attach to clean files and spread.</p></td>
+</tr>
+<tr class="row-even"><td><p>Worms</p></td>
+<td><p>Self-replicate and spread across networks.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
 <p><strong>8. Data Representation in Networks</strong></p>
-<ul class="simple">
-<li><p><strong>Packet</strong>: A small chunk of data sent over a network, which may be part of a larger message.</p></li>
-<li><p><strong>IP Address</strong>: A unique identifier assigned to each device on a network. It’s used for routing packets of data to the correct destination.</p></li>
-<li><p><strong>Protocol</strong>: A set of rules governing how data is transmitted over a network. Examples include <strong>HTTP</strong> (HyperText Transfer Protocol), <strong>FTP</strong> (File Transfer Protocol), and <strong>TCP/IP</strong> (Transmission Control Protocol/Internet Protocol).</p></li>
-</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Term</strong></p></th>
+<th class="head"><p><strong>Definition</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IP Address</p></td>
+<td><p>A unique identifier assigned to each device on a network.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Packet</p></td>
+<td><p>A small chunk of data sent over a network, which may be part of a larger message.</p></td>
+</tr>
+<tr class="row-even"><td><p>Protocol</p></td>
+<td><p>A set of rules governing how data is transmitted over a network (e.g., HTTP, FTP, TCP/IP).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
 <p><strong>9. Big Data Concepts</strong></p>
-<ul class="simple">
-<li><p><strong>Big Data</strong>: Large and complex data sets that traditional data processing software can’t handle efficiently. Often involves analyzing data from various sources like sensors, social media, and logs.</p></li>
-<li><p><strong>Cloud Computing</strong>: The delivery of computing services (storage, processing power, etc.) over the internet, often used for managing big data.</p></li>
-</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Term</strong></p></th>
+<th class="head"><p><strong>Definition</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Big Data</p></td>
+<td><p>Large and complex data sets that traditional data processing software can’t handle efficiently.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cloud Computing</p></td>
+<td><p>The delivery of computing services (storage, processing, etc.) over the internet, often used for managing big data.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
 <p><strong>10. Data Ethics</strong></p>
-<ul class="simple">
-<li><p><strong>Bias in Data</strong>: When data collection or processing methods lead to unfair or skewed results. For example, biased data could lead to discriminatory algorithms.</p></li>
-<li><p><strong>Privacy</strong>: The protection of individuals’ personal information. Ethical data use includes ensuring that data is collected and shared responsibly, with attention to privacy laws (like GDPR).</p></li>
-</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Term</strong></p></th>
+<th class="head"><p><strong>Definition</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Bias in Data</p></td>
+<td><p>When data collection or processing methods lead to unfair or skewed results.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Personally Identifiable Information (PII)</p></td>
+<td><p>Any data that could be used to identify an individual (e.g., name, address, SSN).</p></td>
+</tr>
+<tr class="row-even"><td><p>Privacy</p></td>
+<td><p>The protection of individuals’ personal information, ensuring responsible collection and sharing (e.g., GDPR).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </details>
 <hr class="docutils" />
 </section>
@@ -1180,40 +1430,6 @@ The Huffman codes for the characters will be printed, which will be shorter for 
 <li><p>Create a digital artifact to demonstrate their learning</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>Vocabulary Words</strong>:</p>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Term</p></th>
-<th class="head"><p>Definition</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Personally Identifiable Information (PII)</p></td>
-<td><p>Any data that could be used to identify an individual (e.g., name, address, SSN)</p></td>
-</tr>
-<tr class="row-odd"><td><p>Data Breach</p></td>
-<td><p>When sensitive information is accessed or released without authorization</p></td>
-</tr>
-<tr class="row-even"><td><p>Cookies</p></td>
-<td><p>Small files stored on your device to track activity and preferences</p></td>
-</tr>
-<tr class="row-odd"><td><p>Phishing</p></td>
-<td><p>A cyber attack that tricks users into giving up personal or sensitive data</p></td>
-</tr>
-<tr class="row-even"><td><p>Malware</p></td>
-<td><p>Malicious software designed to damage or gain unauthorized access to a system</p></td>
-</tr>
-<tr class="row-odd"><td><p>Keylogger</p></td>
-<td><p>A program that records everything you type, often used to steal passwords</p></td>
-</tr>
-<tr class="row-even"><td><p>Rogue Access Point</p></td>
-<td><p>A fake Wi-Fi network set up to trick people into connecting and stealing their data</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr class="docutils" />
 <p><strong>Introduction</strong></p>
 <p><strong>Discussion</strong>:
 “Have you ever received a suspicious email or message asking you to click a link or enter your password?”</p>
@@ -1417,70 +1633,6 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <li><p>Understanding of <strong>public-key cryptography</strong> (RSA) and <strong>private/public key</strong> pairs.</p></li>
 <li><p>Vocabulary relevant to digital security and cryptography.</p></li>
 </ul>
-<hr class="docutils" />
-<p><strong>Vocabulary</strong></p>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Term</p></th>
-<th class="head"><p>Definition</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong>Brute Force</strong></p></td>
-<td><p>Trying all possible keys to decrypt a message.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Caesar Cipher</strong></p></td>
-<td><p>A substitution cipher that shifts letters by a fixed amount.</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Cipher</strong></p></td>
-<td><p>A method for performing encryption or decryption.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Ciphertext</strong></p></td>
-<td><p>The encrypted (scrambled) message</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Crypto-analysis</strong></p></td>
-<td><p>The art of decoding encrypted messages without the key.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Decryption</strong></p></td>
-<td><p>Converting encrypted data back into readable form.</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Encryption</strong></p></td>
-<td><p>Converting information into a code to prevent unauthorized access.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Frequency Analysis</strong></p></td>
-<td><p>A method of breaking substitution ciphers by studying how often letters appear.</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Keyword</strong></p></td>
-<td><p>A word used to vary the shifts in the cipher</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Modular Arithmetic</strong></p></td>
-<td><p>Calculations are done using modulo 26 (number of letters in the alphabet)</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Modulus</strong></p></td>
-<td><p>A number used to link the public and private keys in RSA.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Plaintext</strong></p></td>
-<td><p>The original readable message</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Polyalphabetic</strong></p></td>
-<td><p>Involving more than one substitution alphabet</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Private Key</strong></p></td>
-<td><p>Used to decrypt data in RSA. Kept secret.</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Public Key</strong></p></td>
-<td><p>Used to encrypt data in RSA encryption. Shared with everyone.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Repeating Key</strong></p></td>
-<td><p>The keyword repeats to match the length of the message</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Substitution Cipher</strong></p></td>
-<td><p>A cipher that replaces each letter with another.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 <hr class="docutils" />
 <section id="why-is-frequency-important-in-cryptography">
 <h3>Why is Frequency Important in Cryptography?<a class="headerlink" href="#why-is-frequency-important-in-cryptography" title="Link to this heading">¶</a></h3>
