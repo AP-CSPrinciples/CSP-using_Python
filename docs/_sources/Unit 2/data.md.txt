@@ -1219,14 +1219,11 @@ RSA starts with generating two large prime numbers, `p` and `q`.
 
 **a. Compute the modulus:**
 
-$$
+In RSA encryption, the **modulus** refers to a large integer value n, which is the product of two large prime numbers.
+
+$
 n = p \times q
-$$
-
-
-In RSA encryption, the **modulus** refers to a large integer value n, which is the product of two large prime numbers:
-
-n=p×q
+$
 
 This n is a core part of the public and private keys.
 It defines the arithmetic space in which all encryption, decryption, and key generation operations occur.
