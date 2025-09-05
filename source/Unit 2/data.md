@@ -651,56 +651,68 @@ Students will be able to:
 **Instructions**: What is PII?  Click on the link to learn more about [Personally Identifiable Information](https://www.youtube.com/watch?v=N1qdvQVke0s). Research and create a table like the one below.  Identify three websites or apps that you have used recently (e.g., Instagram, Google).
 
 
+---
+
 <details><summary> Click Here for evidence relating to PII breaches </summary>
 
 ---
 
 **Big Business Breaches**
 
-TransUnion (Credit Reporting Giant)
+**TransUnion (Credit Reporting Giant)**
+
   In July 2025, TransUnion suffered a breach affecting over 4.4 million Americans, including Social Security numbers, names, birth dates, email addresses, and more—despite initial claims downplaying the severity. The breach was linked to a compromised Salesforce account. Affected individuals are being offered 24 months of free identity theft protection. ([TechRadar][1], [IT Pro][2])
 
-Allianz Life (Insurance Firm)
+**Allianz Life (Insurance Firm)**
+
   In late July 2025, about 1.1 million U.S. customers had their personal information—including names, addresses, phone numbers, and emails—compromised in a cyberattack. The company plans to offer two years of identity monitoring to those affected. ([Reuters][3])
 
-*OnTrac (Delivery Service)
+**OnTrac (Delivery Service)**
+
   Between April 13–15, 2025, OnTrac had sensitive data from over 40,000 individuals exposed, including full names, birth dates, Social Security numbers, driver’s license or state ID numbers, and even medical or health insurance details. ([Tom's Guide][4])
 
-Mass Credential Leak
+**Mass Credential Leak**
+
   An enormous breach exposed 16 billion login credentials—usernames, passwords, and associated URLs—from platforms like Apple, Google, Facebook, and many government and corporate systems. This aggregation stems from multiple sources, frequently due to malware-based theft of credentials. ([Tom's Guide][5])
 
 ---
 
 **Medical & Healthcare Industry Breaches**
 
-Change Healthcare (UnitedHealth Group)
+**Change Healthcare (UnitedHealth Group)**
+
   In February 2024, a ransomware attack (by ALPHV/BlackCat) on Change Healthcare—processing medical and billing data for around a third of Americans—resulted in the theft of sensitive personal and health data from over 100 million individuals. ([TechCrunch][6])
 
-Frederick Health
+**Frederick Health**
+
   A ransomware attack on January 27, 2025, exposed data of 934,326 individuals—including identifying data, insurance info, clinical records, and more. ([TechTarget][7], [Healthcare Dive][8])
 
-Medusind (Medical Billing Vendor)
+**Medusind (Medical Billing Vendor)**
+
   Discovered in December 2023 and disclosed in early 2025, this breach affected 701,475 individuals, exposing health insurance details, medical histories, prescription data, Social Security numbers, and contact information. ([TechTarget][7], [Healthcare Dive][8])
 
-Kelly & Associates Insurance Group
+**Kelly & Associates Insurance Group**
+
   The December 2024 breach affected 553,332+ individuals, planting exposure of names, SSNs, tax IDs, medical/insurance info, and financial account data. ([TechTarget][7])
 
-Change Healthcare—Noted Above
+**Community Health Systems, UCLA Health, Premera, Excellus, Labcorp, etc.**
 
-Community Health Systems, UCLA Health, Premera, Excellus, Labcorp, etc.
   Historically, massive breaches have affected millions in the healthcare sector—for instance, Community Health Systems (4.5 million), UCLA Health (\~4.5 million), Premera (\~11 million), Excellus (\~10 million), and Labcorp (\~10 million) via earlier events. ([Breachsense][9], [Digital Guardian][10])
 
 ---
 
 **Government-Related Breaches**
 
-Office of Personnel Management (OPM), 2015
+**Office of Personnel Management (OPM), 2015**
+
   State-sponsored hackers (allegedly from China’s MSS) stole 22.1 million records of federal employees and others undergoing background checks—including Social Security numbers, birth data, and addresses—making it one of the largest U.S. government data breaches ever. ([Wikipedia][11])
 
-Texas Department of Transportation (TxDOT)
+**Texas Department of Transportation (TxDOT)**
+
   In May 2025, hackers downloaded crash report records affecting data for 423,391 individuals, including sensitive personal data (names, addresses, driver’s license numbers, insurance details). ([San Antonio Express-News][12])
 
-Social Security Administration (SSA) Cloud Warning
+**Social Security Administration (SSA) Cloud Warning**
+
   Not a breach per se, but in late August 2025, the SSA Chief Data Officer resigned, triggering alarm after whistleblower allegations that data on over 300 million Americans had been uploaded to an insecure cloud environment improperly. Though no breach was confirmed, the potential risk was enormous. ([The Washington Post][13], [The Times of India][14])
 
 ---
