@@ -1843,8 +1843,8 @@ else:
 * **Style Bonus**
   * Additional point(s) may be awarded for clean formatting, good variable naming convention, and helpful comments (introduces code readability as a skill).
 
-* **Version Control Awareness**
-  * Briefly mention that professionals use tools (like Git) to track changes, review code, and prevent sloppy code from reaching production.
+* **Version Control**
+  * Professionals use tools (like Git) to track changes, review code, and prevent sloppy code from reaching production.
 
 ---
 
