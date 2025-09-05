@@ -1684,4 +1684,182 @@ While 2FA is much safer than a password alone, no security measure is perfect. K
 
 ---
 
+### Data Project 6: Securing Sloppy Code
+
+Excellent plan — this has the makings of a **great debugging / refactoring mini-project**.
+Here’s a solid **introduction**, plus a few **enhancement ideas** that will make the activity stronger.
+
+---
+
+**Introduction** 
+
+> Writing code is not just about “making it run.” It’s about making it solve the intended problem **reliably**.
+>
+> Sloppy code — code that uses incorrect logical conditions, unclear structure, or poor data handling — may appear to work in some situations but will often:
+>
+> * **Produce wrong results** when certain inputs are used (hidden bugs).
+> * **Confuse other programmers** (including your future self), making it harder to maintain or improve.
+> * **Break silently** — meaning it doesn’t crash, but gives answers that look right but aren’t.
+>
+> One of the most important skills in programming is **rewriting messy code** into clear, logically correct, and readable code. This process is called **refactoring**. By practicing fixing sloppy code, you’re learning how to:
+>
+> * Think logically about what a program *should* do.
+> * Detect logical errors in code that still runs.
+> * Write code that other people can trust and understand.
+>
+> In this project, you will practice rewriting bad code to be correct, clear, and professional.
+
+---
+
+```python
+
+print("Welcome to the age checker!")
+
+age = input("Enter your age: ")
+
+if age >= "18" or age < "0":
+    print("You are an adult or a time traveler.")
+elif age < "18" and age > "0" and age == "17" or age == "16":
+    print("You are almost an adult but also maybe a kid.")
+elif not age == "15" and not age == "14" and not age == "13":
+    print("You are a teenager?")
+else:
+    print("Invalid input or something went wrong maybe.")
+```
+
+**Why this is sloppy / incorrect:**
+1.
+2. 
+3. 
+4. 
+5. 
+
+<details><summary>Check your understanding here</summary>
+
+* **`age` is a string**, never converted to `int` → numeric comparisons (`>=`, `<`) are unreliable.
+* Logical operators are **inconsistent**: `or` and `and` are mixed with no parentheses → leads to unintended precedence.
+* Some conditions are **redundant** or **nonsensical** (e.g., `"almost an adult but maybe a kid"`).
+* The `not` logic is **confusing** and hard to read.
+* Default `else` message is unclear.
+
+---
+
+### What should you do:
+
+* Convert input to integer.
+* Write clear, correct logical conditions with proper ranges.
+* Simplify and reorder checks (e.g., negative age should be caught early).
+* Remove conflicting conditions and clarify outputs.
+
+
+```python
+print("Welcome to the age checker!")
+
+age_input = input("Enter your age: ")
+
+# Convert to integer safely
+if age_input.isdigit():
+    age = int(age_input)
+else:
+    print("Invalid input. Please enter a number.")
+    age = -1   # forces an error path later
+
+if age < 0:
+    print("You entered an impossible age.")
+elif age < 13:
+    print("You are a child.")
+elif age < 18:
+    print("You are a teenager.")
+else:
+    print("You are an adult.")
+```
+
+</details>
+
+
+**Project:**
+
+   * Fix the **three sloppy examples below** (Grade Checker, Temperature Warning, Dice Game Result).
+   * You must rewrite each to be logically correct and easy to read.
+   * After rewriting, test your code with different inputs.
+   * Trade with a partner to verify if the code works logically.
+      * **Reflection Questions** (use comments to answer these questions)
+        * “What was the hardest bug to fix, and why?”
+        * “How did testing help you find logical problems?”
+        * “What is one thing you’ll do in future projects to avoid writing sloppy code?”
+
+**1 — Grade Checker**
+
+```python
+print("Grade Checker")
+
+grade = input("Enter your test score: ")
+
+if grade > "90" or grade < "0":
+    print("A or maybe error??")
+elif grade <= "90" and grade >= "80" or grade == "85":
+    print("You got B but maybe A??")
+elif grade < "80" and grade >= "70" or not grade == "60":
+    print("C?")
+else:
+    print("I don't know what your grade is sorry")
+```
+
+**2 — Temperature Warning**
+
+```python
+print("Temperature Warning System")
+
+temp = input("Enter temperature: ")
+
+if temp < "0" and temp > "100":
+    print("Too cold or too hot??")
+elif temp >= "0" or temp <= "100" and temp == "50":
+    print("Perfect maybe?")
+else:
+    print("Weather broken I guess")
+```
+
+**3 — Dice Game Result**
+
+```python
+print("Dice Game Result Checker")
+
+roll = input("Enter dice roll (1-6): ")
+
+if roll == "6" or roll < "1" and roll > "6":
+    print("You win big!")
+elif roll == "3" and roll == "4" or roll == "5":
+    print("You win something small.")
+else:
+    print("Lose maybe?? idk")
+```
+
+--- 
+
+
+**Enhancements**
+
+* **Testing Table**
+  * Provide a small input-output table for each corrected program (e.g., show 3–5 different inputs and what the output should be).
+
+* **Style Bonus**
+  * Additional point(s) may be awarded for clean formatting, good variable naming convention, and helpful comments (introduces code readability as a skill).
+
+* **Version Control Awareness**
+  * Briefly mention that professionals use tools (like Git) to track changes, review code, and prevent sloppy code from reaching production.
+
+---
+
+**Grading Rubric**
+
+| Category                               | Excellent (4)                                  | Proficient (3)                         | Developing (2)                            | Beginning (1)                                |
+| -------------------------------------- | ---------------------------------------------- | -------------------------------------- | ----------------------------------------- | -------------------------------------------- |
+| **Logical Correctness**                | All code works for all valid inputs            | Minor logical mistakes remain          | Many logical mistakes remain              | Code does not run or does not solve the task |
+| **Clarity & Readability**              | Code is well-formatted and easy to follow      | Mostly clear with some confusing parts | Hard to follow, poor naming or formatting | Very unclear / unreadable                    |
+| **Testing / Validation**               | Multiple test cases included and passed        | Some test cases provided               | Minimal testing shown                     | No testing                                   |
+| **Comments / Reflection** *(optional)* | Clear explanation of fixes and lessons learned | Basic explanation                      | Minimal notes                             | No reflection                                |
+
+---
+
 
