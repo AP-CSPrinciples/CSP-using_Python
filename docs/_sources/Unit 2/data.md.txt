@@ -1684,7 +1684,7 @@ While 2FA is much safer than a password alone, no security measure is perfect. K
 
 ---
 
-### Data Project 6: Securing Sloppy Code
+## Data Project 6: Securing Sloppy Code
 
 ---
 
