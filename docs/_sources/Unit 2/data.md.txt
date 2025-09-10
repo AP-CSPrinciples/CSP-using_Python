@@ -394,11 +394,112 @@ print(result)
 
 **Extensions (Optional)**
 
-* Write a program to convert binary *back* to text
 * Encode and decode secret messages
 * Create a visual binary art project using black/white squares
 
+---
 
+**Part 4: Programming - Convert Binary to Text**
+
+**Learning Objectives**
+
+Students will be able to:
+
+1. Explain how binary represents ASCII characters.
+2. Convert binary strings into integers using `int(binary, 2)`.
+3. Translate integers into ASCII characters with `chr()`.
+
+---
+
+> **Recall:**
+> * **Binary**: Base-2 number system (only `0` and `1`).
+> * **ASCII**: Each character has a decimal code (e.g., `A = 65`, `a = 97`).
+> * Computers store text as binary numbers corresponding to these ASCII values.
+
+**Example:**
+
+* Letter `A` → Decimal `65` → Binary `01000001`.
+
+---
+
+**Step 1: Understanding the Conversion**
+
+We need to go **binary → decimal → ASCII character**.
+
+1. **Binary to Decimal**: `int("01000001", 2)` → `65`
+2. **Decimal to ASCII**: `chr(65)` → `"A"`
+
+---
+
+**Step 2: Single Character Conversion**
+
+```python
+# Convert a single 8-bit binary number to ASCII
+binary_num = "01000001"   # Binary for 'A'
+decimal_num = int(binary_num, 2)  # Convert to decimal (65)
+ascii_char = chr(decimal_num)     # Convert to character ('A')
+
+print(ascii_char)
+```
+
+Output: `A`
+
+---
+
+**Step 3: Multiple Binary Characters**
+
+```python
+# Convert a string of binary numbers separated by spaces
+binary_string = "01001000 01001001"  # Binary for "HI"
+
+# Split the string into a list of binary numbers
+binaries = binary_string.split()
+
+# Convert each binary number to ASCII
+ascii_text = "".join([chr(int(b, 2)) for b in binaries])
+
+print(ascii_text)
+```
+
+Output: `HI`
+
+---
+
+**Step 4: Call the function and show the result**
+
+
+```python
+binary_to_ascii()
+```
+
+---
+
+**Practice Activities**
+
+1. **Decode a Message**:
+   Use this binary string:
+
+   ```
+   01001000 01100101 01101100 01101100 01101111
+   ```
+
+   → The output should decode to `"Hello"`.
+
+2. **Encode/Decode Cycle**:
+
+   * Encode `"Cat"` into binary using an ASCII table.
+   * Feed it back into the program to confirm it decodes correctly.
+
+3. **Debugging Challenge**:
+   Ask for the broken version (e.g., missing `.split()` or incorrect base) and fix it.
+
+---
+
+**Extensions**
+
+* Modify the program to **ignore invalid inputs** (skip anything that’s not 8 bits of `0`/`1`).
+* Add an **encode option** (ASCII → Binary).
+* Wrap the program in a **menu system** so the user can choose **Encode** or **Decode**.
 
 ---
 

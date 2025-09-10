@@ -1101,9 +1101,94 @@ Binary (base-2) uses <strong>powers of 2</strong>.</p>
 <hr class="docutils" />
 <p><strong>Extensions (Optional)</strong></p>
 <ul class="simple">
-<li><p>Write a program to convert binary <em>back</em> to text</p></li>
 <li><p>Encode and decode secret messages</p></li>
 <li><p>Create a visual binary art project using black/white squares</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Part 4: Programming - Convert Binary to Text</strong></p>
+<p><strong>Learning Objectives</strong></p>
+<p>Students will be able to:</p>
+<ol class="arabic simple">
+<li><p>Explain how binary represents ASCII characters.</p></li>
+<li><p>Convert binary strings into integers using <code class="docutils literal notranslate"><span class="pre">int(binary,</span> <span class="pre">2)</span></code>.</p></li>
+<li><p>Translate integers into ASCII characters with <code class="docutils literal notranslate"><span class="pre">chr()</span></code>.</p></li>
+</ol>
+<hr class="docutils" />
+<blockquote>
+<div><p><strong>Recall:</strong></p>
+<ul class="simple">
+<li><p><strong>Binary</strong>: Base-2 number system (only <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code>).</p></li>
+<li><p><strong>ASCII</strong>: Each character has a decimal code (e.g., <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">65</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">97</span></code>).</p></li>
+<li><p>Computers store text as binary numbers corresponding to these ASCII values.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<ul class="simple">
+<li><p>Letter <code class="docutils literal notranslate"><span class="pre">A</span></code> → Decimal <code class="docutils literal notranslate"><span class="pre">65</span></code> → Binary <code class="docutils literal notranslate"><span class="pre">01000001</span></code>.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Step 1: Understanding the Conversion</strong></p>
+<p>We need to go <strong>binary → decimal → ASCII character</strong>.</p>
+<ol class="arabic simple">
+<li><p><strong>Binary to Decimal</strong>: <code class="docutils literal notranslate"><span class="pre">int(&quot;01000001&quot;,</span> <span class="pre">2)</span></code> → <code class="docutils literal notranslate"><span class="pre">65</span></code></p></li>
+<li><p><strong>Decimal to ASCII</strong>: <code class="docutils literal notranslate"><span class="pre">chr(65)</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;A&quot;</span></code></p></li>
+</ol>
+<hr class="docutils" />
+<p><strong>Step 2: Single Character Conversion</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert a single 8-bit binary number to ASCII</span>
+<span class="n">binary_num</span> <span class="o">=</span> <span class="s2">&quot;01000001&quot;</span>   <span class="c1"># Binary for &#39;A&#39;</span>
+<span class="n">decimal_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">binary_num</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Convert to decimal (65)</span>
+<span class="n">ascii_char</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">decimal_num</span><span class="p">)</span>     <span class="c1"># Convert to character (&#39;A&#39;)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ascii_char</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output: <code class="docutils literal notranslate"><span class="pre">A</span></code></p>
+<hr class="docutils" />
+<p><strong>Step 3: Multiple Binary Characters</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert a string of binary numbers separated by spaces</span>
+<span class="n">binary_string</span> <span class="o">=</span> <span class="s2">&quot;01001000 01001001&quot;</span>  <span class="c1"># Binary for &quot;HI&quot;</span>
+
+<span class="c1"># Split the string into a list of binary numbers</span>
+<span class="n">binaries</span> <span class="o">=</span> <span class="n">binary_string</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="c1"># Convert each binary number to ASCII</span>
+<span class="n">ascii_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">binaries</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ascii_text</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output: <code class="docutils literal notranslate"><span class="pre">HI</span></code></p>
+<hr class="docutils" />
+<p><strong>Step 4: Call the function and show the result</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">binary_to_ascii</span><span class="p">()</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Practice Activities</strong></p>
+<ol class="arabic">
+<li><p><strong>Decode a Message</strong>:
+Use this binary string:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">01001000</span> <span class="mi">01100101</span> <span class="mi">01101100</span> <span class="mi">01101100</span> <span class="mi">01101111</span>
+</pre></div>
+</div>
+<p>→ The output should decode to <code class="docutils literal notranslate"><span class="pre">&quot;Hello&quot;</span></code>.</p>
+</li>
+<li><p><strong>Encode/Decode Cycle</strong>:</p>
+<ul class="simple">
+<li><p>Encode <code class="docutils literal notranslate"><span class="pre">&quot;Cat&quot;</span></code> into binary using an ASCII table.</p></li>
+<li><p>Feed it back into the program to confirm it decodes correctly.</p></li>
+</ul>
+</li>
+<li><p><strong>Debugging Challenge</strong>:
+Ask for the broken version (e.g., missing <code class="docutils literal notranslate"><span class="pre">.split()</span></code> or incorrect base) and fix it.</p></li>
+</ol>
+<hr class="docutils" />
+<p><strong>Extensions</strong></p>
+<ul class="simple">
+<li><p>Modify the program to <strong>ignore invalid inputs</strong> (skip anything that’s not 8 bits of <code class="docutils literal notranslate"><span class="pre">0</span></code>/<code class="docutils literal notranslate"><span class="pre">1</span></code>).</p></li>
+<li><p>Add an <strong>encode option</strong> (ASCII → Binary).</p></li>
+<li><p>Wrap the program in a <strong>menu system</strong> so the user can choose <strong>Encode</strong> or <strong>Decode</strong>.</p></li>
 </ul>
 </section>
 <hr class="docutils" />
