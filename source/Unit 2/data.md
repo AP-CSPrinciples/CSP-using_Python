@@ -152,6 +152,97 @@
 
 The project will simulate a "Data Communication and Compression" system where you process, compress, and extract information from a text-based dataset. The project will be divided into sections based on the core topics and you will build a program in Python to demonstrate these concepts.
 
+---
+
+**Objectives**
+
+Students will be able to:
+
+* Understand the binary number system (base-2)
+* Convert decimal numbers to binary (and vice versa)
+* Understand how text is represented in binary using ASCII
+* Write a Python program to convert text into binary
+
+---
+
+**Key Vocabulary**
+
+| Term         | Definition                                         |
+| ------------ | -------------------------------------------------- |
+| **Binary**   | A number system using only 0 and 1                 |
+| **Bit**      | A single binary digit (0 or 1)                     |
+| **Byte**     | A group of 8 bits                                  |
+| **ASCII**    | A coding system that assigns numbers to characters |
+| **Encoding** | Turning text into data (like binary)               |
+
+---
+
+**Introduction**
+
+
+
+> "What is the smallest piece of data a computer can understand?"
+>  - A **bit**
+>  - B **byte**
+>  - C **RAM**
+>  - D **Megabyte**
+
+
+**Binary Exploration**
+
+* Hold up two cards: one with a 0 and one with a 1.
+* “How many combination of numbers can we make using just one bit?”
+* Show that **each bit doubles the possible values**.
+
+| Bits | Possible Values |
+| ---- | --------------- |
+| 1    | 2               |
+| 2    | 4               |
+| 3    | 8               |
+| 8    | 256             |
+
+---
+
+**Part 1: Binary Number System**
+
+**1. Decimal vs. Binary**
+
+Decimal (base-10) are made using place values (ones, tens, hundreds...).
+Binary (base-2) uses **powers of 2**.
+
+| Binary | Power of 2 | Value |
+| ------ | ---------- | ----- |
+| 1      | 2⁰         | 1     |
+| 0      | 2¹         | 0     |
+| 1      | 2²         | 4     |
+| 1      | 2³         | 8     |
+| Total  |            | 13    |
+
+Example: **1101 = 8 + 4 + 0 + 1 = 13**
+
+**2. Activity: Convert Decimal ↔ Binary**
+
+**Convert the following:**
+
+* Decimal to binary: 5, 10, 23
+* Binary to decimal: 101, 1110, 10011
+
+---
+
+**Part 2: How Text Becomes Binary**
+
+**1. ASCII Encoding**
+
+Explain that each character (like “A” or “!”) has a number assigned by ASCII.
+
+| Character | ASCII Code | Binary   |
+| --------- | ---------- | -------- |
+| A         | 65         | 01000001 |
+| a         | 97         | 01100001 |
+| !         | 33         | 00100001 |
+
+In Python you can type: `ord('A')` and `chr(65)` to see the conversion.
+
 <details><summary> ASCII Table </summary>
 
 **Binary/ ASCII/ and other things**
@@ -194,392 +285,138 @@ The project will simulate a "Data Communication and Compression" system where yo
 
 </details>
 
----
 
+**2. Activity: Binary Message***
 
-**1. Binary Representation of Data**
-
-**Objective:** Write a function that converts a given string of text into binary representation using the ASCII encoding system. Each character in the text will be converted into its ASCII value, and then the ASCII value will be converted into binary.
-
-**Directions:**
-
-1. Create a function with one parameter that accepts a message (the text you want to convert).
-2. Create an **empty list** to store the binary versions of each character.
-3. For each letter in the message:
-   * Use a method to find its **ASCII code** (a number that represents that letter).
-   * Format that number into **binary** with 8 digits.
-   * Add this binary version to your list.
-4. After all letters are processed:
-   * Join the list of binary values together, with **spaces** in between.
-   * **Return** the final string.
-5. Call your function by giving it some text like `"Hello, World!"` and **show the result** on screen with a label.
-
-
-**Expected Output:**
-```
-What phrase would you like to convert to binary? Hello World
-
-Binary Representation: 01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
-```
-<details><summary>Are you stuck?  Click Here!</summary>
-
-**Key Concepts**
-
-* `ord()` → built-in function to get ASCII code of a character
-* `format()` → formats numbers into binary, decimal, hex, etc.
-* `'08b'` → format specifier: 0-padded, 8 digits, binary
-* `list.append()` → adds an item to a list
-
-
-```python
-ascii_value = ord(char)         # Step 1: Convert character to ASCII number
-binary_string = format(ascii_value, '08b')  # Step 2: Convert number to binary
-binary_data.append(binary_string)          # Step 3: Add to list
-```
-**Pseudocode**
-```
-'A' → 65 → 01000001
-```
-
-
-**Things to Know**
-* Character → ASCII (with `ord()`)
-* ASCII → Binary (with `format()`)
-* Binary → Decimal (with `int(..., 2)`)
-* Decimal → Character (with `chr()`)
-
-
-</details>
+Use the handout to practice binary and ASCII.
 
 ---
 
-**2. Binary to ASCII Decoder**
+**Part 3: Programming - Convert Text to Binary**
 
-**Objective:** Write a function that takes a string of binary numbers (representing ASCII values) and converts it back into readable text.
 
+**Objective:**
 
-1. Create a Function with One Parameter
-     * The parameter should accept a **binary string** with groups of 8 digits separated by spaces.
-     * This will be the message you want to decode.
-2. Split the Message into Parts
-     * Use a method to **split** the long binary message into a **list** of smaller strings.
-     * Each piece should be exactly **8 digits long** — representing one character.
-3. Create an Empty String to Store the Result
-     * You’ll build your decoded message **one letter at a time**, so start with an empty string.
-4. For Each Binary Group:
-     * Convert it from **binary to decimal** (this gives you the ASCII number).
-     * Convert that decimal number to a **character** (letter, number, or symbol).
-     * Add the character to your decoded message string.
-5. Return the Final Text
-     * Once every group has been processed, return the final sentence made from all the characters.
-     * Call your function and pass the binary message:
-     * Display the result on screen using a **label** or print statement.  It should reveal a **readable sentence**!
-
-
-**Pseudocode**
-
-```
-Define a function that receives a binary message
-    Break the message into a list of binary pieces
-    Create an empty string for the decoded text
-    For each binary piece:
-        Convert it to a base-10 number
-        Convert that number to a letter or symbol
-        Add the letter or symbol to the decoded text
-    Give back the final decoded text
-```
-
-
-**Expected Output:**
-```
-What binary string do you want to convert to ASCII? 01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
-Decoded text:  Hello, World!
-```
-
-<details><summary>Are you stuck?  Click Here!</summary>
-
-**Key Concepts**
-
-* List comprehensions
-* `int(..., 2)` to convert binary to decimal
-* `chr()` to get character from ASCII code
-* `''.join()` to combine a list of strings into one
-
-```python
-text = ''                            # Start with empty string
-for bv in binary_values:
-    decimal = int(bv, 2)             # Step 1: Binary → Decimal
-    character = chr(decimal)         # Step 2: Decimal → Character
-    text += character                # Step 3: Add character to message
-```
-
-**Things to Know**
-* Character → ASCII (with `ord()`)
-* ASCII → Binary (with `format()`)
-* Binary → Decimal (with `int(..., 2)`)
-* Decimal → Character (with `chr()`)
-
-
-</details>
-
-
-
-**3. Data Compression using Huffman Encoding**
-
-**Goals:** 
-    * Understand how Huffman coding compresses data
-    * Build a Huffman tree physically with peers
-    * Optionally write or trace a small piece of code
-
-**Task:**
-* Implement Huffman coding, a common algorithm for lossless data compression. In this part, you’ll write a program to:
-
-  1. Calculate the frequency of each character in a string.
-  2. Build a Huffman tree.
-  3. Generate the Huffman codes for each character.
-  4. Compress the text using the generated Huffman codes.
-
-Words for Huffman Coding Activity:
-
-| Word Bank       |                 |
-| --------------- | --------------- |
-|  **SASSAFRAS**  | **CONNECTICUT**    |
-| **TENNESSEE**   | **COMMITTEE**	      |
-| **SUCCESS**     | **ILLINOIS**	       |
-| **BALLOON**     | **KENTUCKY**	       |
-| **ASSESS**      | **ALABAMA**	        |
-| **BANANA**      | **MINNESOTA**	      |
-| **BOOKKEEPER**  | **PENNSYLVANIA**	   |
-| **PEPPERCORN**  | **TATTOO**          |
-
-**Part 1: Physical Huffman Coding Activity**
-
-**Setup:**
-
-* Use the following string: `"MISSISSIPPI"`
-* Create a **frequency chart**:
-
-| Letter | Frequency |
-| ------ | --------- |
-| M      | 1         |
-| I      | 4         |
-| S      | 4         |
-| P      | 2         |
-
-**Step 1: Make Cards**
-
-Make index cards (or slips of paper) for each **letter with its frequency**.
-
-Example:
-
-```
-[M:1]  [I:4]  [S:4]  [P:2]
-```
-
-**Step 2: Build the Tree (Greedy Step-by-Step)**
-
-Each "node" will be a group of cards.
-
-1. Find **two lowest frequency nodes** and combine them into a new node.
-2. The new node’s frequency is the sum.
-3. Label the left branch as `0` and the right branch as `1`.
-
-Repeat until only one node (the full tree) is left.
-
-
-**Example Tree for "MISSISSIPPI":**
-
-```
-        [11] 
-       /    \
-     [4]    [7]
-    (I)    /   \
-         [3]   (S:4)
-        /   \
-    (M:1) (P:2)
-```
-
-**Step 3: Build the Huffman Codes**
-
-Trace paths from root to each letter:
-
-* M: `1100`
-* P: `1101`
-* I: `0`
-* S: `10`
-
-Encode the full word `"MISSISSIPPI"` using these bits.
-
----
-
-**Part 2: Programming Extension**
-
-Part 1: Code Tracing
-
-Give them Python code that builds a tree and ask:
-
-* What’s the Huffman code for "S"?
-* Which node will combine first?
-
-Part 2: Partial Implementation
-
-With the list of frequencies you physically created, write code that count character frequencies:
-
-```python
-def count_frequencies(text):
-    freq = {}
-    for ch in text:
-        if ch in freq:
-            freq[ch] += 1
-        else:
-            freq[ch] = 1
-    return freq
-
-print(count_frequencies("MISSISSIPPI"))
-```
-
-In Groups of 2 or 3 choose 2 more words and repeat the steps.
-
-
-<details><Summary>Simplified Huffman Coding Example</Summary>
-
-
-```python
-import heapq
-from collections import defaultdict
-
-class Node:
-    def __init__(self, char, freq):
-        self.char = char
-        self.freq = freq
-        self.left = None
-        self.right = None
-    
-    def __lt__(self, other):
-        return self.freq < other.freq
-
-def build_huffman_tree(text):
-    frequency = defaultdict(int)
-    for char in text:
-        frequency[char] += 1
-    
-    priority_queue = [Node(char, freq) for char, freq in frequency.items()]
-    heapq.heapify(priority_queue)
-
-    while len(priority_queue) > 1:
-        left = heapq.heappop(priority_queue)
-        right = heapq.heappop(priority_queue)
-
-        merged = Node(None, left.freq + right.freq)
-        merged.left = left
-        merged.right = right
-
-        heapq.heappush(priority_queue, merged)
-
-    return priority_queue[0]
-
-def generate_codes(node, prefix="", codebook=None):
-    if codebook is None:
-        codebook = {}
-    
-    if node:
-        if node.char is not None:
-            codebook[node.char] = prefix
-        generate_codes(node.left, prefix + "0", codebook)
-        generate_codes(node.right, prefix + "1", codebook)
-    
-    return codebook
-
-# Example usage
-text = "this is an example for huffman encoding"
-huffman_tree = build_huffman_tree(text)
-huffman_codes = generate_codes(huffman_tree)
-
-print("Huffman Codes:", huffman_codes)
-```
-
-
-**Expected Output:**
-The Huffman codes for the characters will be printed, which will be shorter for frequently occurring characters and longer for less frequent ones.
-
-
-</details>
-
-
+* Takes a message as input
+* Converts each character to its ASCII number
+* Converts that number to 8-bit binary
+* Displays the final binary string
 
 
 ---
 
-**4. Extracting Information from Data**
+**Convert Text to Binary**
 
-**Objective:** Extract meaningful data from a large dataset (e.g., a file).
-* **Concepts Covered:** Data Extraction, File Processing.
 
-**Task:**
-* Write a program to read a text file, extract specific information (e.g., most frequent words, character count), and print the result.
-* Example: Given a large text file, identify the most common word and character.
 
-**Python Example:**
+
+**Step 1: Create the function**
+
+Start by creating a function that takes **one input (a string message)**.
 
 ```python
-from collections import Counter
-
-def extract_information_from_file(file_path):
-    with open(file_path, 'r') as file:
-        text = file.read().lower()  # Read and convert to lowercase
-    
-    words = text.split()
-    word_count = Counter(words)  # Count frequency of each word
-    most_common_word, count = word_count.most_common(1)[0]
-    
-    char_count = Counter(text)  # Count frequency of each character
-    most_common_char = char_count.most_common(1)[0]
-    
-    print(f"Most common word: {most_common_word} ({count} occurrences)")
-    print(f"Most common character: {most_common_char[0]} ({most_common_char[1]} occurrences)")
-
-# Example usage (use an actual text file)
-file_path = 'sample_text.txt'
-extract_information_from_file(file_path)
+def text_to_binary(message):
 ```
 
-**Expected Output:**
+---
 
+**Step 2: Make an empty list to hold binary codes**
+
+Inside the function, make an empty list to save binary versions of each character.
+
+```python
+    binary_list = []
 ```
-Most common word: the (34 occurrences)
-Most common character: e (112 occurrences)
+
+---
+
+**Step 3: Loop through each letter in the message**
+
+Use a `for` loop to go through each character in the message one by one.
+
+```python
+    for char in message:
+```
+
+---
+
+**Step 4: Convert the character to ASCII code**
+
+Use the `ord()` function to get the ASCII number for that character.
+
+```python
+        ascii_number = ord(char)
+```
+
+---
+
+**Step 5: Convert the ASCII number to binary (8 digits)**
+
+Use the `format()` function to change the number into **8-digit binary**.
+
+```python
+        binary_code = format(ascii_number, '08b')
+```
+
+---
+
+**Step 6: Add the binary code to the list**
+
+Now add the binary version to the list you created earlier.
+
+```python
+        binary_list.append(binary_code)
+```
+
+---
+
+**Step 7: Join the binary codes into one string**
+
+Once the loop is done, combine everything into one string, with a **space between each binary number**.
+
+```python
+    final_binary = ' '.join(binary_list)
+```
+
+---
+
+**Step 8: Return the final binary string**
+
+Return the complete string from the function.
+
+```python
+    return final_binary
+```
+
+---
+
+**Step 9: Call the function and show the result**
+
+Try it out with a message like `"Hello, World!"` and print the result.
+
+```python
+result = text_to_binary("Hello, World!")
+print(result)
+```
+
+---
+
+**Example Output:**
+
+```python
+01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
 ```
 
 
-**5. Putting it All Together: A Simple File Communication System**
+---
 
-**Objective:** Create a small system that combines all of the previous concepts to compress and decompress a file.
+**Extensions (Optional)**
 
-**Task:**
-* Implement a program that:
-
-  1. Reads a text file and converts it to binary (ASCII).
-  2. Compresses the data using Huffman encoding.
-  3. Writes the compressed data to a new file.
-  4. Decompresses the file and converts it back to text.
-
-**Deliverables:**
-1. **Code** for all the above tasks, including:
-   * Functions for binary conversion, text encoding/decoding.
-   * Huffman compression/decompression implementation.
-   * A program that processes a file to extract information.
-
-2. **Documentation:**
-   * An explanation of how the code works.
-   * A brief explanation of the theory behind binary, ASCII, Huffman encoding, and data extraction.
-   * Sample input/output for each part of the project.
+* Write a program to convert binary *back* to text
+* Encode and decode secret messages
+* Create a visual binary art project using black/white squares
 
 
-**Evaluation Criteria Rubric:**
-
-1. **Functionality:** The program works as expected for each part of the task.
-2. **Clarity:** Code is well-commented and easy to follow.
-3. **Creativity:** The project demonstrates an understanding of data representation and compression, and possibly extends the basic implementation.
 
 ---
 
