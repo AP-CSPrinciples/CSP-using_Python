@@ -168,14 +168,16 @@ Students will be able to:
 **Introduction**
 
 
->    What is the smallest piece of data a computer can understand?
->    Why do you think this computer engineers used this idea? 
+> What is the smallest piece of data a computer can understand?
+> Why do you think this computer engineers used this idea?
+>  
 
 
 **Binary Exploration**
 
->    How many combination of numbers can we make using just one bit?
->    Each bit will double the number of possible values.
+> How many combination of numbers can we make using just one bit?
+> Each bit will double the number of possible values.
+> 
 
 | Bits | Possible Values |
 | ---- | --------------- |
