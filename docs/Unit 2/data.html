@@ -603,6 +603,156 @@
 <section id="data-project-1-data-communication-and-compression">
 <h2>Data Project 1 - Data Communication and Compression:<a class="headerlink" href="#data-project-1-data-communication-and-compression" title="Link to this heading">¶</a></h2>
 <p>The project will simulate a “Data Communication and Compression” system where you process, compress, and extract information from a text-based dataset. The project will be divided into sections based on the core topics and you will build a program in Python to demonstrate these concepts.</p>
+<hr class="docutils" />
+<p><strong>Objectives</strong></p>
+<p>Students will be able to:</p>
+<ul class="simple">
+<li><p>Understand the binary number system (base-2)</p></li>
+<li><p>Convert decimal numbers to binary (and vice versa)</p></li>
+<li><p>Understand how text is represented in binary using ASCII</p></li>
+<li><p>Write a Python program to convert text into binary</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Key Vocabulary</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Term</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Binary</strong></p></td>
+<td><p>A number system using only 0 and 1</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Bit</strong></p></td>
+<td><p>A single binary digit (0 or 1)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Byte</strong></p></td>
+<td><p>A group of 8 bits</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ASCII</strong></p></td>
+<td><p>A coding system that assigns numbers to characters</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Encoding</strong></p></td>
+<td><p>Turning text into data (like binary)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p><strong>Introduction</strong></p>
+<blockquote>
+<div><p>“What is the smallest piece of data a computer can understand?”</p>
+<ul class="simple">
+<li><p>A <strong>bit</strong></p></li>
+<li><p>B <strong>byte</strong></p></li>
+<li><p>C <strong>RAM</strong></p></li>
+<li><p>D <strong>Megabyte</strong></p></li>
+</ul>
+</div></blockquote>
+<p><strong>Binary Exploration</strong></p>
+<ul class="simple">
+<li><p>Hold up two cards: one with a 0 and one with a 1.</p></li>
+<li><p>“How many combination of numbers can we make using just one bit?”</p></li>
+<li><p>Show that <strong>each bit doubles the possible values</strong>.</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bits</p></th>
+<th class="head"><p>Possible Values</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>256</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p><strong>Part 1: Binary Number System</strong></p>
+<p><strong>1. Decimal vs. Binary</strong></p>
+<p>Decimal (base-10) are made using place values (ones, tens, hundreds…).
+Binary (base-2) uses <strong>powers of 2</strong>.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Binary</p></th>
+<th class="head"><p>Power of 2</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>2⁰</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>2¹</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>2²</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>2³</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>Total</p></td>
+<td><p></p></td>
+<td><p>13</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Example: <strong>1101 = 8 + 4 + 0 + 1 = 13</strong></p>
+<p><strong>2. Activity: Convert Decimal ↔ Binary</strong></p>
+<p><strong>Convert the following:</strong></p>
+<ul class="simple">
+<li><p>Decimal to binary: 5, 10, 23</p></li>
+<li><p>Binary to decimal: 101, 1110, 10011</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Part 2: How Text Becomes Binary</strong></p>
+<p><strong>1. ASCII Encoding</strong></p>
+<p>Explain that each character (like “A” or “!”) has a number assigned by ASCII.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Character</p></th>
+<th class="head"><p>ASCII Code</p></th>
+<th class="head"><p>Binary</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>65</p></td>
+<td><p>01000001</p></td>
+</tr>
+<tr class="row-odd"><td><p>a</p></td>
+<td><p>97</p></td>
+<td><p>01100001</p></td>
+</tr>
+<tr class="row-even"><td><p>!</p></td>
+<td><p>33</p></td>
+<td><p>00100001</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In Python you can type: <code class="docutils literal notranslate"><span class="pre">ord('A')</span></code> and <code class="docutils literal notranslate"><span class="pre">chr(65)</span></code> to see the conversion.</p>
 <details><summary> ASCII Table </summary>
 <p><strong>Binary/ ASCII/ and other things</strong></p>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -911,402 +1061,85 @@
 </table>
 </div>
 </details>
+<p><strong>2. Activity: Binary Message</strong>*</p>
+<p>Use the handout to practice binary and ASCII.</p>
 <hr class="docutils" />
-<p><strong>1. Binary Representation of Data</strong></p>
-<p><strong>Objective:</strong> Write a function that converts a given string of text into binary representation using the ASCII encoding system. Each character in the text will be converted into its ASCII value, and then the ASCII value will be converted into binary.</p>
-<p><strong>Directions:</strong></p>
-<ol class="arabic simple">
-<li><p>Create a function with one parameter that accepts a message (the text you want to convert).</p></li>
-<li><p>Create an <strong>empty list</strong> to store the binary versions of each character.</p></li>
-<li><p>For each letter in the message:</p>
+<p><strong>Part 3: Programming - Convert Text to Binary</strong></p>
+<p><strong>Objective:</strong></p>
 <ul class="simple">
-<li><p>Use a method to find its <strong>ASCII code</strong> (a number that represents that letter).</p></li>
-<li><p>Format that number into <strong>binary</strong> with 8 digits.</p></li>
-<li><p>Add this binary version to your list.</p></li>
+<li><p>Takes a message as input</p></li>
+<li><p>Converts each character to its ASCII number</p></li>
+<li><p>Converts that number to 8-bit binary</p></li>
+<li><p>Displays the final binary string</p></li>
 </ul>
-</li>
-<li><p>After all letters are processed:</p>
-<ul class="simple">
-<li><p>Join the list of binary values together, with <strong>spaces</strong> in between.</p></li>
-<li><p><strong>Return</strong> the final string.</p></li>
-</ul>
-</li>
-<li><p>Call your function by giving it some text like <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code> and <strong>show the result</strong> on screen with a label.</p></li>
-</ol>
-<p><strong>Expected Output:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>What phrase would you like to convert to binary? Hello World
-
-Binary Representation: 01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
-</pre></div>
-</div>
-<details><summary>Are you stuck?  Click Here!</summary>
-<p><strong>Key Concepts</strong></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ord()</span></code> → built-in function to get ASCII code of a character</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">format()</span></code> → formats numbers into binary, decimal, hex, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">'08b'</span></code> → format specifier: 0-padded, 8 digits, binary</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">list.append()</span></code> → adds an item to a list</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ascii_value</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>         <span class="c1"># Step 1: Convert character to ASCII number</span>
-<span class="n">binary_string</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="n">ascii_value</span><span class="p">,</span> <span class="s1">&#39;08b&#39;</span><span class="p">)</span>  <span class="c1"># Step 2: Convert number to binary</span>
-<span class="n">binary_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">binary_string</span><span class="p">)</span>          <span class="c1"># Step 3: Add to list</span>
-</pre></div>
-</div>
-<p><strong>Pseudocode</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&#39;A&#39; → 65 → 01000001
-</pre></div>
-</div>
-<p><strong>Things to Know</strong></p>
-<ul class="simple">
-<li><p>Character → ASCII (with <code class="docutils literal notranslate"><span class="pre">ord()</span></code>)</p></li>
-<li><p>ASCII → Binary (with <code class="docutils literal notranslate"><span class="pre">format()</span></code>)</p></li>
-<li><p>Binary → Decimal (with <code class="docutils literal notranslate"><span class="pre">int(...,</span> <span class="pre">2)</span></code>)</p></li>
-<li><p>Decimal → Character (with <code class="docutils literal notranslate"><span class="pre">chr()</span></code>)</p></li>
-</ul>
-</details>
 <hr class="docutils" />
-<p><strong>2. Binary to ASCII Decoder</strong></p>
-<p><strong>Objective:</strong> Write a function that takes a string of binary numbers (representing ASCII values) and converts it back into readable text.</p>
-<ol class="arabic simple">
-<li><p>Create a Function with One Parameter</p>
-<ul class="simple">
-<li><p>The parameter should accept a <strong>binary string</strong> with groups of 8 digits separated by spaces.</p></li>
-<li><p>This will be the message you want to decode.</p></li>
-</ul>
-</li>
-<li><p>Split the Message into Parts</p>
-<ul class="simple">
-<li><p>Use a method to <strong>split</strong> the long binary message into a <strong>list</strong> of smaller strings.</p></li>
-<li><p>Each piece should be exactly <strong>8 digits long</strong> — representing one character.</p></li>
-</ul>
-</li>
-<li><p>Create an Empty String to Store the Result</p>
-<ul class="simple">
-<li><p>You’ll build your decoded message <strong>one letter at a time</strong>, so start with an empty string.</p></li>
-</ul>
-</li>
-<li><p>For Each Binary Group:</p>
-<ul class="simple">
-<li><p>Convert it from <strong>binary to decimal</strong> (this gives you the ASCII number).</p></li>
-<li><p>Convert that decimal number to a <strong>character</strong> (letter, number, or symbol).</p></li>
-<li><p>Add the character to your decoded message string.</p></li>
-</ul>
-</li>
-<li><p>Return the Final Text</p>
-<ul class="simple">
-<li><p>Once every group has been processed, return the final sentence made from all the characters.</p></li>
-<li><p>Call your function and pass the binary message:</p></li>
-<li><p>Display the result on screen using a <strong>label</strong> or print statement.  It should reveal a <strong>readable sentence</strong>!</p></li>
-</ul>
-</li>
-</ol>
-<p><strong>Pseudocode</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Define</span> <span class="n">a</span> <span class="n">function</span> <span class="n">that</span> <span class="n">receives</span> <span class="n">a</span> <span class="n">binary</span> <span class="n">message</span>
-    <span class="n">Break</span> <span class="n">the</span> <span class="n">message</span> <span class="n">into</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">binary</span> <span class="n">pieces</span>
-    <span class="n">Create</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">string</span> <span class="k">for</span> <span class="n">the</span> <span class="n">decoded</span> <span class="n">text</span>
-    <span class="n">For</span> <span class="n">each</span> <span class="n">binary</span> <span class="n">piece</span><span class="p">:</span>
-        <span class="n">Convert</span> <span class="n">it</span> <span class="n">to</span> <span class="n">a</span> <span class="n">base</span><span class="o">-</span><span class="mi">10</span> <span class="n">number</span>
-        <span class="n">Convert</span> <span class="n">that</span> <span class="n">number</span> <span class="n">to</span> <span class="n">a</span> <span class="n">letter</span> <span class="ow">or</span> <span class="n">symbol</span>
-        <span class="n">Add</span> <span class="n">the</span> <span class="n">letter</span> <span class="ow">or</span> <span class="n">symbol</span> <span class="n">to</span> <span class="n">the</span> <span class="n">decoded</span> <span class="n">text</span>
-    <span class="n">Give</span> <span class="n">back</span> <span class="n">the</span> <span class="n">final</span> <span class="n">decoded</span> <span class="n">text</span>
+<p><strong>Convert Text to Binary</strong></p>
+<p><strong>Step 1: Create the function</strong></p>
+<p>Start by creating a function that takes <strong>one input (a string message)</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">text_to_binary</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
 </pre></div>
 </div>
-<p><strong>Expected Output:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>What binary string do you want to convert to ASCII? 01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
-Decoded text:  Hello, World!
-</pre></div>
-</div>
-<details><summary>Are you stuck?  Click Here!</summary>
-<p><strong>Key Concepts</strong></p>
-<ul class="simple">
-<li><p>List comprehensions</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">int(...,</span> <span class="pre">2)</span></code> to convert binary to decimal</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">chr()</span></code> to get character from ASCII code</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">''.join()</span></code> to combine a list of strings into one</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>                            <span class="c1"># Start with empty string</span>
-<span class="k">for</span> <span class="n">bv</span> <span class="ow">in</span> <span class="n">binary_values</span><span class="p">:</span>
-    <span class="n">decimal</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">bv</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>             <span class="c1"># Step 1: Binary → Decimal</span>
-    <span class="n">character</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">decimal</span><span class="p">)</span>         <span class="c1"># Step 2: Decimal → Character</span>
-    <span class="n">text</span> <span class="o">+=</span> <span class="n">character</span>                <span class="c1"># Step 3: Add character to message</span>
-</pre></div>
-</div>
-<p><strong>Things to Know</strong></p>
-<ul class="simple">
-<li><p>Character → ASCII (with <code class="docutils literal notranslate"><span class="pre">ord()</span></code>)</p></li>
-<li><p>ASCII → Binary (with <code class="docutils literal notranslate"><span class="pre">format()</span></code>)</p></li>
-<li><p>Binary → Decimal (with <code class="docutils literal notranslate"><span class="pre">int(...,</span> <span class="pre">2)</span></code>)</p></li>
-<li><p>Decimal → Character (with <code class="docutils literal notranslate"><span class="pre">chr()</span></code>)</p></li>
-</ul>
-</details>
-<p><strong>3. Data Compression using Huffman Encoding</strong></p>
-<p><strong>Goals:</strong>
-* Understand how Huffman coding compresses data
-* Build a Huffman tree physically with peers
-* Optionally write or trace a small piece of code</p>
-<p><strong>Task:</strong></p>
-<ul class="simple">
-<li><p>Implement Huffman coding, a common algorithm for lossless data compression. In this part, you’ll write a program to:</p>
-<ol class="arabic simple">
-<li><p>Calculate the frequency of each character in a string.</p></li>
-<li><p>Build a Huffman tree.</p></li>
-<li><p>Generate the Huffman codes for each character.</p></li>
-<li><p>Compress the text using the generated Huffman codes.</p></li>
-</ol>
-</li>
-</ul>
-<p>Words for Huffman Coding Activity:</p>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Word Bank</p></th>
-<th class="head"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong>SASSAFRAS</strong></p></td>
-<td><p><strong>CONNECTICUT</strong></p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>TENNESSEE</strong></p></td>
-<td><p><strong>COMMITTEE</strong></p></td>
-</tr>
-<tr class="row-even"><td><p><strong>SUCCESS</strong></p></td>
-<td><p><strong>ILLINOIS</strong></p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>BALLOON</strong></p></td>
-<td><p><strong>KENTUCKY</strong></p></td>
-</tr>
-<tr class="row-even"><td><p><strong>ASSESS</strong></p></td>
-<td><p><strong>ALABAMA</strong></p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>BANANA</strong></p></td>
-<td><p><strong>MINNESOTA</strong></p></td>
-</tr>
-<tr class="row-even"><td><p><strong>BOOKKEEPER</strong></p></td>
-<td><p><strong>PENNSYLVANIA</strong></p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>PEPPERCORN</strong></p></td>
-<td><p><strong>TATTOO</strong></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>Part 1: Physical Huffman Coding Activity</strong></p>
-<p><strong>Setup:</strong></p>
-<ul class="simple">
-<li><p>Use the following string: <code class="docutils literal notranslate"><span class="pre">&quot;MISSISSIPPI&quot;</span></code></p></li>
-<li><p>Create a <strong>frequency chart</strong>:</p></li>
-</ul>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Letter</p></th>
-<th class="head"><p>Frequency</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>M</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>I</p></td>
-<td><p>4</p></td>
-</tr>
-<tr class="row-even"><td><p>S</p></td>
-<td><p>4</p></td>
-</tr>
-<tr class="row-odd"><td><p>P</p></td>
-<td><p>2</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>Step 1: Make Cards</strong></p>
-<p>Make index cards (or slips of paper) for each <strong>letter with its frequency</strong>.</p>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">M</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>  <span class="p">[</span><span class="n">I</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>  <span class="p">[</span><span class="n">S</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>  <span class="p">[</span><span class="n">P</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
-</pre></div>
-</div>
-<p><strong>Step 2: Build the Tree (Greedy Step-by-Step)</strong></p>
-<p>Each “node” will be a group of cards.</p>
-<ol class="arabic simple">
-<li><p>Find <strong>two lowest frequency nodes</strong> and combine them into a new node.</p></li>
-<li><p>The new node’s frequency is the sum.</p></li>
-<li><p>Label the left branch as <code class="docutils literal notranslate"><span class="pre">0</span></code> and the right branch as <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
-</ol>
-<p>Repeat until only one node (the full tree) is left.</p>
-<p><strong>Example Tree for “MISSISSIPPI”:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="p">[</span><span class="mi">11</span><span class="p">]</span> 
-       <span class="o">/</span>    \
-     <span class="p">[</span><span class="mi">4</span><span class="p">]</span>    <span class="p">[</span><span class="mi">7</span><span class="p">]</span>
-    <span class="p">(</span><span class="n">I</span><span class="p">)</span>    <span class="o">/</span>   \
-         <span class="p">[</span><span class="mi">3</span><span class="p">]</span>   <span class="p">(</span><span class="n">S</span><span class="p">:</span><span class="mi">4</span><span class="p">)</span>
-        <span class="o">/</span>   \
-    <span class="p">(</span><span class="n">M</span><span class="p">:</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="n">P</span><span class="p">:</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Step 3: Build the Huffman Codes</strong></p>
-<p>Trace paths from root to each letter:</p>
-<ul class="simple">
-<li><p>M: <code class="docutils literal notranslate"><span class="pre">1100</span></code></p></li>
-<li><p>P: <code class="docutils literal notranslate"><span class="pre">1101</span></code></p></li>
-<li><p>I: <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
-<li><p>S: <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
-</ul>
-<p>Encode the full word <code class="docutils literal notranslate"><span class="pre">&quot;MISSISSIPPI&quot;</span></code> using these bits.</p>
 <hr class="docutils" />
-<p><strong>Part 2: Programming Extension</strong></p>
-<p>Part 1: Code Tracing</p>
-<p>Give them Python code that builds a tree and ask:</p>
-<ul class="simple">
-<li><p>What’s the Huffman code for “S”?</p></li>
-<li><p>Which node will combine first?</p></li>
-</ul>
-<p>Part 2: Partial Implementation</p>
-<p>With the list of frequencies you physically created, write code that count character frequencies:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">count_frequencies</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="n">freq</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">freq</span><span class="p">:</span>
-            <span class="n">freq</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">freq</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">freq</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">count_frequencies</span><span class="p">(</span><span class="s2">&quot;MISSISSIPPI&quot;</span><span class="p">))</span>
+<p><strong>Step 2: Make an empty list to hold binary codes</strong></p>
+<p>Inside the function, make an empty list to save binary versions of each character.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">binary_list</span> <span class="o">=</span> <span class="p">[]</span>
 </pre></div>
 </div>
-<p>In Groups of 2 or 3 choose 2 more words and repeat the steps.</p>
-<details><Summary>Simplified Huffman Coding Example</Summary>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">heapq</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">char</span><span class="p">,</span> <span class="n">freq</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">char</span> <span class="o">=</span> <span class="n">char</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">freq</span> <span class="o">=</span> <span class="n">freq</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="kc">None</span>
-    
-    <span class="k">def</span><span class="w"> </span><span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">freq</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">freq</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">build_huffman_tree</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="n">frequency</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
-        <span class="n">frequency</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-    
-    <span class="n">priority_queue</span> <span class="o">=</span> <span class="p">[</span><span class="n">Node</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">freq</span><span class="p">)</span> <span class="k">for</span> <span class="n">char</span><span class="p">,</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">frequency</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
-    <span class="n">heapq</span><span class="o">.</span><span class="n">heapify</span><span class="p">(</span><span class="n">priority_queue</span><span class="p">)</span>
-
-    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">priority_queue</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">left</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">priority_queue</span><span class="p">)</span>
-        <span class="n">right</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">priority_queue</span><span class="p">)</span>
-
-        <span class="n">merged</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">freq</span> <span class="o">+</span> <span class="n">right</span><span class="o">.</span><span class="n">freq</span><span class="p">)</span>
-        <span class="n">merged</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
-        <span class="n">merged</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
-
-        <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">priority_queue</span><span class="p">,</span> <span class="n">merged</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">priority_queue</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">generate_codes</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">codebook</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">codebook</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">codebook</span> <span class="o">=</span> <span class="p">{}</span>
-    
-    <span class="k">if</span> <span class="n">node</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">char</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">codebook</span><span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="n">prefix</span>
-        <span class="n">generate_codes</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">prefix</span> <span class="o">+</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="n">codebook</span><span class="p">)</span>
-        <span class="n">generate_codes</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">prefix</span> <span class="o">+</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">codebook</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">codebook</span>
-
-<span class="c1"># Example usage</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;this is an example for huffman encoding&quot;</span>
-<span class="n">huffman_tree</span> <span class="o">=</span> <span class="n">build_huffman_tree</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-<span class="n">huffman_codes</span> <span class="o">=</span> <span class="n">generate_codes</span><span class="p">(</span><span class="n">huffman_tree</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Huffman Codes:&quot;</span><span class="p">,</span> <span class="n">huffman_codes</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Expected Output:</strong>
-The Huffman codes for the characters will be printed, which will be shorter for frequently occurring characters and longer for less frequent ones.</p>
-</details>
 <hr class="docutils" />
-<p><strong>4. Extracting Information from Data</strong></p>
-<p><strong>Objective:</strong> Extract meaningful data from a large dataset (e.g., a file).</p>
-<ul class="simple">
-<li><p><strong>Concepts Covered:</strong> Data Extraction, File Processing.</p></li>
-</ul>
-<p><strong>Task:</strong></p>
-<ul class="simple">
-<li><p>Write a program to read a text file, extract specific information (e.g., most frequent words, character count), and print the result.</p></li>
-<li><p>Example: Given a large text file, identify the most common word and character.</p></li>
-</ul>
-<p><strong>Python Example:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">extract_information_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>  <span class="c1"># Read and convert to lowercase</span>
-    
-    <span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-    <span class="n">word_count</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>  <span class="c1"># Count frequency of each word</span>
-    <span class="n">most_common_word</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span> <span class="n">word_count</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    
-    <span class="n">char_count</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>  <span class="c1"># Count frequency of each character</span>
-    <span class="n">most_common_char</span> <span class="o">=</span> <span class="n">char_count</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Most common word: </span><span class="si">{</span><span class="n">most_common_word</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> occurrences)&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Most common character: </span><span class="si">{</span><span class="n">most_common_char</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">most_common_char</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> occurrences)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Example usage (use an actual text file)</span>
-<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;sample_text.txt&#39;</span>
-<span class="n">extract_information_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+<p><strong>Step 3: Loop through each letter in the message</strong></p>
+<p>Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to go through each character in the message one by one.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
 </pre></div>
 </div>
-<p><strong>Expected Output:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Most</span> <span class="n">common</span> <span class="n">word</span><span class="p">:</span> <span class="n">the</span> <span class="p">(</span><span class="mi">34</span> <span class="n">occurrences</span><span class="p">)</span>
-<span class="n">Most</span> <span class="n">common</span> <span class="n">character</span><span class="p">:</span> <span class="n">e</span> <span class="p">(</span><span class="mi">112</span> <span class="n">occurrences</span><span class="p">)</span>
+<hr class="docutils" />
+<p><strong>Step 4: Convert the character to ASCII code</strong></p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">ord()</span></code> function to get the ASCII number for that character.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="n">ascii_number</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>5. Putting it All Together: A Simple File Communication System</strong></p>
-<p><strong>Objective:</strong> Create a small system that combines all of the previous concepts to compress and decompress a file.</p>
-<p><strong>Task:</strong></p>
+<hr class="docutils" />
+<p><strong>Step 5: Convert the ASCII number to binary (8 digits)</strong></p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">format()</span></code> function to change the number into <strong>8-digit binary</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="n">binary_code</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="n">ascii_number</span><span class="p">,</span> <span class="s1">&#39;08b&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Step 6: Add the binary code to the list</strong></p>
+<p>Now add the binary version to the list you created earlier.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="n">binary_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">binary_code</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Step 7: Join the binary codes into one string</strong></p>
+<p>Once the loop is done, combine everything into one string, with a <strong>space between each binary number</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">final_binary</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">binary_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Step 8: Return the final binary string</strong></p>
+<p>Return the complete string from the function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">return</span> <span class="n">final_binary</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Step 9: Call the function and show the result</strong></p>
+<p>Try it out with a message like <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code> and print the result.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">text_to_binary</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Example Output:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">01001000</span> <span class="mi">01100101</span> <span class="mi">01101100</span> <span class="mi">01101100</span> <span class="mi">01101111</span> <span class="mi">00101100</span> <span class="mi">00100000</span> <span class="mi">01010111</span> <span class="mi">01101111</span> <span class="mi">01110010</span> <span class="mi">01101100</span> <span class="mi">01100100</span> <span class="mi">00100001</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Extensions (Optional)</strong></p>
 <ul class="simple">
-<li><p>Implement a program that:</p>
-<ol class="arabic simple">
-<li><p>Reads a text file and converts it to binary (ASCII).</p></li>
-<li><p>Compresses the data using Huffman encoding.</p></li>
-<li><p>Writes the compressed data to a new file.</p></li>
-<li><p>Decompresses the file and converts it back to text.</p></li>
-</ol>
-</li>
+<li><p>Write a program to convert binary <em>back</em> to text</p></li>
+<li><p>Encode and decode secret messages</p></li>
+<li><p>Create a visual binary art project using black/white squares</p></li>
 </ul>
-<p><strong>Deliverables:</strong></p>
-<ol class="arabic simple">
-<li><p><strong>Code</strong> for all the above tasks, including:</p>
-<ul class="simple">
-<li><p>Functions for binary conversion, text encoding/decoding.</p></li>
-<li><p>Huffman compression/decompression implementation.</p></li>
-<li><p>A program that processes a file to extract information.</p></li>
-</ul>
-</li>
-<li><p><strong>Documentation:</strong></p>
-<ul class="simple">
-<li><p>An explanation of how the code works.</p></li>
-<li><p>A brief explanation of the theory behind binary, ASCII, Huffman encoding, and data extraction.</p></li>
-<li><p>Sample input/output for each part of the project.</p></li>
-</ul>
-</li>
-</ol>
-<p><strong>Evaluation Criteria Rubric:</strong></p>
-<ol class="arabic simple">
-<li><p><strong>Functionality:</strong> The program works as expected for each part of the task.</p></li>
-<li><p><strong>Clarity:</strong> Code is well-commented and easy to follow.</p></li>
-<li><p><strong>Creativity:</strong> The project demonstrates an understanding of data representation and compression, and possibly extends the basic implementation.</p></li>
-</ol>
 </section>
 <hr class="docutils" />
 <section id="data-project-2-data-detectives-investigating-real-world-trends">
