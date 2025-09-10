@@ -506,6 +506,145 @@ binary_to_ascii()
 * Wrap the program in a **menu system** so the user can choose **Encode** or **Decode**.
 
 ---
+---
+
+
+
+**Adding & Subtracting Binary Numbers**
+
+---
+
+**Objectives**
+
+By the end of this lesson, students will be able to:
+
+1. Explain how binary addition and subtraction follow rules similar to decimal arithmetic.
+2. Apply the **binary addition rules** (carry-over with base 2).
+3. Apply the **binary subtraction rules** (borrowing with base 2).
+4. Perform binary addition and subtraction problems by hand and in Python.
+
+---
+
+**Background Knowledge**
+
+* Binary uses only **two digits**: `0` and `1`.
+* Just like base-10 arithmetic uses carries and borrows, binary does too—except instead of carrying over at `10`, it carries over at `2` (binary `10`).
+
+---
+
+**Step 1: Binary Addition Rules**
+
+Binary has 4 possible single-bit addition cases:
+
+| Binary | Result                             |
+| ------ | ---------------------------------- |
+| 0 + 0  | 0                                  |
+| 0 + 1  | 1                                  |
+| 1 + 0  | 1                                  |
+| 1 + 1  | 10 (which is `0` with a carry `1`) |
+
+**Example 1:**
+
+```
+   1011   (decimal 11)
++  1101   (decimal 13)
+---------
+ 11000    (decimal 24)
+```
+
+---
+
+**Step 2: Binary Subtraction Rules**
+
+Binary subtraction has 4 possible single-bit cases:
+
+| Binary | Result                            |
+| ------ | --------------------------------- |
+| 0 - 0  | 0                                 |
+| 1 - 0  | 1                                 |
+| 1 - 1  | 0                                 |
+| 0 - 1  | 1 (borrow 1 from the next column) |
+
+When borrowing in binary, you borrow a `2` (binary `10`).
+
+**Example 2:**
+
+```
+   10101   (decimal 21)
+-   00111  (decimal 7)
+----------
+    01110  (decimal 14)
+```
+
+---
+
+**Step 3: Binary Math in Python**
+
+Python makes this easy by using `int(string, 2)` to convert binary to decimal, then `bin()` to convert back.
+
+**Addition Example**
+
+```python
+a = "1011"   # binary for 11
+b = "1101"   # binary for 13
+
+# Convert to decimal
+a_dec = int(a, 2)
+b_dec = int(b, 2)
+
+# Add and convert back to binary
+result = bin(a_dec + b_dec)[2:]
+
+print("Addition result:", result)  # Output: 11000
+```
+
+**Subtraction Example**
+
+```python
+a = "10101"  # binary for 21
+b = "00111"  # binary for 7
+
+# Convert to decimal
+a_dec = int(a, 2)
+b_dec = int(b, 2)
+
+# Subtract and convert back to binary
+result = bin(a_dec - b_dec)[2:]
+
+print("Subtraction result:", result)  # Output: 1110
+```
+
+---
+
+**Practice**
+
+1. Add `1010` + `0011`.
+   (Check: `10 + 3 = 13 → 1101`).
+2. Subtract `1101` - `0101`.
+   (Check: `13 - 5 = 8 → 1000`).
+
+3. Add:
+
+   * `1110 + 0111`
+   * `10101 + 11001`
+
+4. Subtract:
+
+   * `10010 - 00101`
+   * `11111 - 01111`
+
+---
+
+**Extensions**
+
+* Write a Python program that:
+
+  * Asks the user for two binary numbers.
+  * Asks whether they want to **add** or **subtract**.
+  * Returns the binary result.
+
+
+---
 
 
 ## Data Project 2: "Data Detectives – Investigating Real-World Trends"
