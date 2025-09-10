@@ -196,6 +196,7 @@ Students will be able to:
 
 
 Decimal (base-10) are made using place values (ones, tens, hundreds...).
+
 Binary (base-2) uses **powers of 2**.
 
 | Binary | Power of 2 | Value |
