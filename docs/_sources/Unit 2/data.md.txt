@@ -165,18 +165,6 @@ Students will be able to:
 
 ---
 
-**Key Vocabulary**
-
-| Term         | Definition                                         |
-| ------------ | -------------------------------------------------- |
-| **Binary**   | A number system using only 0 and 1                 |
-| **Bit**      | A single binary digit (0 or 1)                     |
-| **Byte**     | A group of 8 bits                                  |
-| **ASCII**    | A coding system that assigns numbers to characters |
-| **Encoding** | Turning text into data (like binary)               |
-
----
-
 **Introduction**
 
 
