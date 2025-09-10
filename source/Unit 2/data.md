@@ -180,19 +180,14 @@ Students will be able to:
 **Introduction**
 
 
-
-> "What is the smallest piece of data a computer can understand?"
->  - A **bit**
->  - B **byte**
->  - C **RAM**
->  - D **Megabyte**
+>    What is the smallest piece of data a computer can understand?
+>    Why do you think this computer engineers used this idea? 
 
 
 **Binary Exploration**
 
-* Hold up two cards: one with a 0 and one with a 1.
-* “How many combination of numbers can we make using just one bit?”
-* Show that **each bit doubles the possible values**.
+>    How many combination of numbers can we make using just one bit?
+>    Each bit will double the number of possible values.
 
 | Bits | Possible Values |
 | ---- | --------------- |
@@ -218,11 +213,13 @@ Binary (base-2) uses **powers of 2**.
 | 1      | 2³         | 8     |
 | Total  |            | 13    |
 
-Example: **1101 = 8 + 4 + 0 + 1 = 13**
+**Example: 1101 = 8 + 4 + 0 + 1 = 13**
+
+
 
 **2. Activity: Convert Decimal ↔ Binary**
 
-**Convert the following:**
+**Practice converting the following:**
 
 * Decimal to binary: 5, 10, 23
 * Binary to decimal: 101, 1110, 10011
@@ -302,12 +299,7 @@ Use the handout to practice binary and ASCII.
 * Converts that number to 8-bit binary
 * Displays the final binary string
 
-
 ---
-
-**Convert Text to Binary**
-
-
 
 
 **Step 1: Create the function**
