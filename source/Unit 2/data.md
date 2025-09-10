@@ -169,6 +169,7 @@ Students will be able to:
 
 
 > What is the smallest piece of data a computer can understand?
+> 
 > Why do you think this computer engineers used this idea?
 >  
 
@@ -176,6 +177,7 @@ Students will be able to:
 **Binary Exploration**
 
 > How many combination of numbers can we make using just one bit?
+> 
 > Each bit will double the number of possible values.
 > 
 
@@ -191,6 +193,7 @@ Students will be able to:
 **Part 1: Binary Number System**
 
 **1. Decimal vs. Binary**
+
 
 Decimal (base-10) are made using place values (ones, tens, hundreds...).
 Binary (base-2) uses **powers of 2**.
