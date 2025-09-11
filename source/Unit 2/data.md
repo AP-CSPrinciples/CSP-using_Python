@@ -199,6 +199,13 @@ Decimal (base-10) are made using place values (ones, tens, hundreds...).
 
 Binary (base-2) uses **powers of 2**.
 
+| bit 1 | bit 2 | bit 3 | bit 4 | bit 5 | bit 6 | bit 7 | bit 8 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|  1  | 0  | 0  | 0  | 0 | 0 | 1 | 0 |
+
+The binary number of `130` is `10000010`.
+
 | Binary | Power of 2 | Value |
 | ------ | ---------- | ----- |
 | 1      | 2⁰         | 1     |
@@ -530,6 +537,7 @@ By the end of this lesson, students will be able to:
 * Binary uses only **two digits**: `0` and `1`.
 * Just like base-10 arithmetic uses carries and borrows, binary does too—except instead of carrying over at `10`, it carries over at `2` (binary `10`).
 
+
 ---
 
 **Step 1: Binary Addition Rules**
@@ -541,15 +549,17 @@ Binary has 4 possible single-bit addition cases:
 | 0 + 0  | 0                                  |
 | 0 + 1  | 1                                  |
 | 1 + 0  | 1                                  |
-| 1 + 1  | 10 (which is `0` with a carry `1`) |
+| 1 + 1  | 0 (carry `1`)                      |
+| 1 + 1 + 1 | 1 (Carry `1`)                   |
 
 **Example 1:**
 
 ```
+   111    <- Carry a '1'
    1011   (decimal 11)
 +  1101   (decimal 13)
 ---------
- 11000    (decimal 24)
+  11000    (decimal 24)
 ```
 
 ---
@@ -565,15 +575,15 @@ Binary subtraction has 4 possible single-bit cases:
 | 1 - 1  | 0                                 |
 | 0 - 1  | 1 (borrow 1 from the next column) |
 
-When borrowing in binary, you borrow a `2` (binary `10`).
+**Note:** When borrowing in *binary*, you borrow a `2` (binary `10`).
 
 **Example 2:**
 
 ```
    10101   (decimal 21)
--   00111  (decimal 7)
+-  00111   (decimal 7)
 ----------
-    01110  (decimal 14)
+   01110   (decimal 14)
 ```
 
 ---
