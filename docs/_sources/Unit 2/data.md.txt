@@ -200,7 +200,7 @@ The binary number of `130` is `10000010`.
 
 ---
 
-**Part 1: Binary Number System**
+#### **Part 1: Binary Number System**
 
 **1. Decimal vs. Binary**
 
@@ -230,7 +230,7 @@ Binary (base-2) uses **powers of 2**.
 
 ---
 
-**Part 2: How Text Becomes Binary**
+#### **Part 2: How Text Becomes Binary**
 
 **1. ASCII Encoding**
 
@@ -293,7 +293,7 @@ Use the handout to practice binary and ASCII.
 
 ---
 
-**Part 3: Programming - Convert Text to Binary**
+#### **Part 3: Programming - Convert Text to Binary**
 
 
 **Objective:**
@@ -413,7 +413,7 @@ print(result)
 
 ---
 
-**Part 4: Programming - Convert Binary to Text**
+#### **Part 4: Programming - Convert Binary to Text**
 
 **Learning Objectives**
 
