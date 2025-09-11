@@ -654,6 +654,42 @@
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
+<tr class="row-odd"><th class="head"><p>bit 1</p></th>
+<th class="head"><p>bit 2</p></th>
+<th class="head"><p>bit 3</p></th>
+<th class="head"><p>bit 4</p></th>
+<th class="head"><p>bit 5</p></th>
+<th class="head"><p>bit 6</p></th>
+<th class="head"><p>bit 7</p></th>
+<th class="head"><p>bit 8</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>128</p></td>
+<td><p>64</p></td>
+<td><p>32</p></td>
+<td><p>16</p></td>
+<td><p>8</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The binary number of <code class="docutils literal notranslate"><span class="pre">130</span></code> is <code class="docutils literal notranslate"><span class="pre">10000010</span></code>.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
 <tr class="row-odd"><th class="head"><p>Binary</p></th>
 <th class="head"><p>Power of 2</p></th>
 <th class="head"><p>Value</p></th>
@@ -1229,16 +1265,20 @@ Ask for the broken version (e.g., missing <code class="docutils literal notransl
 <td><p>1</p></td>
 </tr>
 <tr class="row-odd"><td><p>1 + 1</p></td>
-<td><p>10 (which is <code class="docutils literal notranslate"><span class="pre">0</span></code> with a carry <code class="docutils literal notranslate"><span class="pre">1</span></code>)</p></td>
+<td><p>0 (carry <code class="docutils literal notranslate"><span class="pre">1</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p>1 + 1 + 1</p></td>
+<td><p>1 (Carry <code class="docutils literal notranslate"><span class="pre">1</span></code>)</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p><strong>Example 1:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="mi">1011</span>   <span class="p">(</span><span class="n">decimal</span> <span class="mi">11</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="mi">111</span>    <span class="o">&lt;-</span> <span class="n">Carry</span> <span class="n">a</span> <span class="s1">&#39;1&#39;</span>
+   <span class="mi">1011</span>   <span class="p">(</span><span class="n">decimal</span> <span class="mi">11</span><span class="p">)</span>
 <span class="o">+</span>  <span class="mi">1101</span>   <span class="p">(</span><span class="n">decimal</span> <span class="mi">13</span><span class="p">)</span>
 <span class="o">---------</span>
- <span class="mi">11000</span>    <span class="p">(</span><span class="n">decimal</span> <span class="mi">24</span><span class="p">)</span>
+  <span class="mi">11000</span>    <span class="p">(</span><span class="n">decimal</span> <span class="mi">24</span><span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -1267,12 +1307,12 @@ Ask for the broken version (e.g., missing <code class="docutils literal notransl
 </tbody>
 </table>
 </div>
-<p>When borrowing in binary, you borrow a <code class="docutils literal notranslate"><span class="pre">2</span></code> (binary <code class="docutils literal notranslate"><span class="pre">10</span></code>).</p>
+<p><strong>Note:</strong> When borrowing in <em>binary</em>, you borrow a <code class="docutils literal notranslate"><span class="pre">2</span></code> (binary <code class="docutils literal notranslate"><span class="pre">10</span></code>).</p>
 <p><strong>Example 2:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="mi">10101</span>   <span class="p">(</span><span class="n">decimal</span> <span class="mi">21</span><span class="p">)</span>
-<span class="o">-</span>   <span class="mi">00111</span>  <span class="p">(</span><span class="n">decimal</span> <span class="mi">7</span><span class="p">)</span>
+<span class="o">-</span>  <span class="mi">00111</span>   <span class="p">(</span><span class="n">decimal</span> <span class="mi">7</span><span class="p">)</span>
 <span class="o">----------</span>
-    <span class="mi">01110</span>  <span class="p">(</span><span class="n">decimal</span> <span class="mi">14</span><span class="p">)</span>
+   <span class="mi">01110</span>   <span class="p">(</span><span class="n">decimal</span> <span class="mi">14</span><span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
