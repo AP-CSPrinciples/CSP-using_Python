@@ -188,6 +188,16 @@ Students will be able to:
 | 3    | 8               |
 | 8    | 256             |
 
+> What does 8 bits look like?
+> 
+
+| bit 1 | bit 2 | bit 3 | bit 4 | bit 5 | bit 6 | bit 7 | bit 8 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|  1  | 0  | 0  | 0  | 0 | 0 | 1 | 0 |
+
+The binary number of `130` is `10000010`.
+
 ---
 
 **Part 1: Binary Number System**
@@ -198,13 +208,6 @@ Students will be able to:
 Decimal (base-10) are made using place values (ones, tens, hundreds...).
 
 Binary (base-2) uses **powers of 2**.
-
-| bit 1 | bit 2 | bit 3 | bit 4 | bit 5 | bit 6 | bit 7 | bit 8 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
-|  1  | 0  | 0  | 0  | 0 | 0 | 1 | 0 |
-
-The binary number of `130` is `10000010`.
 
 | Binary | Power of 2 | Value |
 | ------ | ---------- | ----- |
