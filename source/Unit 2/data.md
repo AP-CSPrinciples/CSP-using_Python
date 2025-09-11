@@ -532,6 +532,7 @@ By the end of this lesson, students will be able to:
 2. Apply the **binary addition rules** (carry-over with base 2).
 3. Apply the **binary subtraction rules** (borrowing with base 2).
 4. Perform binary addition and subtraction problems by hand and in Python.
+5. **Resource** [How to Add  & Subtract Binary Number](https://youtu.be/C5EkxfNEMjE)
 
 ---
 
