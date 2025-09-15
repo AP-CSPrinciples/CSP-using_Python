@@ -801,7 +801,8 @@ Example: `5` would be gray.
 
 **Objective**
 
-Investigate and research a real-world issue using data. Either collect or access a dataset, clean and organize the data, analyze it, and present your findings with visualizations and a written explanation.
+Investigate and research a real-world issue using data. Collect or access a dataset, clean and organize the data, analyze it, and present your findings with **a chart in Google Sheets** and a written explanation.
+
 
 ---
 
@@ -823,6 +824,8 @@ Students choose a topic of interest such as:
 * Music or movie popularity
 * Social media usage
 * Sports performance
+* Gaming trends
+* A survey you conduct with classmates
 
 2. **Find or Collect Data**
 
@@ -835,34 +838,62 @@ Sources can include:
 
 3. **Prepare the Data**
 
-* Convert data to CSV or use Google Sheets
-* Remove duplicates, deal with missing data
-* Reformat columns if needed (e.g., converting strings to numbers)
+    1. Open **Google Sheets** and paste or import your data.
+        * To import: *File → Import → Upload (CSV/Excel)*.
+     
+    2. **Clean the data**:
+       * Delete duplicate rows (*Data → Data cleanup → Remove duplicates*).
+       * Fill in or remove missing values.
+       * Reformat text into numbers if needed (ex: percentages, dates, scores).
 
 4. **Analyze the Data**
 
-* Identify interesting questions like:
+Ask yourself:
 
-  * What trend is increasing the fastest?
-  * Is there a correlation between two variables?
-* Use basic stats: mean, median, mode, max, min, percentages
+* What trend is increasing the fastest?
+* Is there a correlation between two variables?
+* What is the average, maximum, or minimum?
+* How do categories compare (percentages, rankings, etc.)?
 
-5. **Create Visualizations**
+Use **basic Google Sheets functions**:
 
-Use tools like:
+* `=AVERAGE(range)` → mean
+* `=MEDIAN(range)` → median
+* `=MODE(range)` → most common value
+* `=MAX(range)` → largest number
+* `=MIN(range)` → smallest number
+* `=COUNT(range)` or `=COUNTIF(range, condition)` → counts
 
-* Google Sheets
-* Python (pandas + matplotlib or seaborn)
-* Tableau Public
-* Canva or Infogram (for infographics)
+
+5. **Create a Chart in Google Sheets**
+
+**Instructions:**
+
+1. Highlight the data you want to visualize.
+2. Go to **Insert → Chart**.
+3. In the Chart Editor (appears on the right):
+   * Under *Chart type*, choose the best chart for your data:
+     * Column/Bar chart → compare categories
+     * Line chart → show trends over time
+     * Pie chart → show percentages
+     * Scatter plot → show relationships between two variables
+4. Customize your chart:
+   * Add a descriptive title.
+   * Label the x-axis and y-axis.
+   * Use clear colors that make the data easy to read.
+
 
 6. **Present Your Findings**
 
 Deliverables:
 
-* A chart or graph (at least one)
-* A technical written explanation interpreting the data
-* A short presentation or recorded video
+* **A chart or graph** created in Google Sheets
+* **A written explanation** (at least 1 paragraph) that explains:
+  * Why did you choose this dataset
+  * What your chart shows
+  * Why the data is meaningful
+  * What insights you gained
+  * * (Optional) A short presentation or recorded video
 
 ---
 
