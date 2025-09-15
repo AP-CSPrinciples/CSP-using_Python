@@ -848,21 +848,20 @@ Sources can include:
 
 4. **Analyze the Data**
 
-Ask yourself:
+    Ask yourself:
+    * What trend is increasing the fastest?
+    * Is there a correlation between the variables?
+    * What is the average, maximum, or minimum?
+    * How do categories compare (percentages, rankings, etc.)?
 
-* What trend is increasing the fastest?
-* Is there a correlation between two variables?
-* What is the average, maximum, or minimum?
-* How do categories compare (percentages, rankings, etc.)?
+    Use **basic Google Sheets functions**:
 
-Use **basic Google Sheets functions**:
-
-* `=AVERAGE(range)` → mean
-* `=MEDIAN(range)` → median
-* `=MODE(range)` → most common value
-* `=MAX(range)` → largest number
-* `=MIN(range)` → smallest number
-* `=COUNT(range)` or `=COUNTIF(range, condition)` → counts
+    * `=AVERAGE(range)` → mean
+    * `=MEDIAN(range)` → median
+    * `=MODE(range)` → most common value
+    * `=MAX(range)` → largest number
+    * `=MIN(range)` → smallest number
+    * `=COUNT(range)` or `=COUNTIF(range, condition)` → counts
 
 
 5. **Create a Chart in Google Sheets**
@@ -893,7 +892,7 @@ Deliverables:
   * What your chart shows
   * Why the data is meaningful
   * What insights you gained
-  * * (Optional) A short presentation or recorded video
+  * (Optional) A short presentation or recorded video
 
 ---
 
