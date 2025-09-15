@@ -1389,6 +1389,376 @@ Ask for the broken version (e.g., missing <code class="docutils literal notransl
 </li>
 </ul>
 </section>
+<hr class="docutils" />
+<section id="part-5-bitmaps-binary">
+<h3><strong>Part 5: Bitmaps &amp; Binary</strong><a class="headerlink" href="#part-5-bitmaps-binary" title="Link to this heading">¶</a></h3>
+<p><strong>Part 1: What is a Bitmap?</strong></p>
+<ul class="simple">
+<li><p>A <strong>bitmap</strong> is a type of digital image made of small squares called <strong>pixels</strong>.</p></li>
+<li><p>Each pixel has information stored in <strong>binary</strong>.</p></li>
+<li><p><strong>Black-and-white images (1-bit per pixel)</strong>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> = white</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> = black</p></li>
+</ul>
+</li>
+<li><p><strong>Grayscale images (8 bits per pixel)</strong>:</p>
+<ul>
+<li><p>Each pixel stores a number from <code class="docutils literal notranslate"><span class="pre">0</span></code> (black) to <code class="docutils literal notranslate"><span class="pre">255</span></code> (white).</p></li>
+</ul>
+</li>
+<li><p><strong>Color images (24 bits per pixel / RGB)</strong>:</p>
+<ul>
+<li><p>8 bits for <strong>Red</strong>, 8 bits for <strong>Green</strong>, 8 bits for <strong>Blue</strong>.</p></li>
+<li><p>Together, they can make <strong>over 16 million colors</strong>.</p></li>
+</ul>
+</li>
+</ul>
+<p>Example:
+<code class="docutils literal notranslate"><span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> = pure red
+<code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">0)</span></code> = pure green
+<code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">255)</span></code> = pure blue
+<code class="docutils literal notranslate"><span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">255)</span></code> = white</p>
+<hr class="docutils" />
+<p><strong>Create Your Own Binary Picture</strong></p>
+<ol class="arabic simple">
+<li><p>Use the <strong>8×8 grid</strong> below.</p></li>
+<li><p>Fill each square with a <code class="docutils literal notranslate"><span class="pre">0</span></code> (white) or <code class="docutils literal notranslate"><span class="pre">1</span></code> (black).</p></li>
+<li><p>Shade the boxes to match your binary.</p></li>
+</ol>
+<p><em><strong>Challenge: Using Google Sheets make a smiley face, initials, or a pixel heart using a 8 x 8 grid.</strong></em></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Row/Col →</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>8</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p><strong>Decode a Binary Image</strong></p>
+<p>Below is an <strong>8×8 binary picture</strong>.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Row/Col →</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>8</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p><strong>Color Bitmaps</strong></p>
+<p>Below is a 4×4 grid with <strong>grayscale values (0–9)</strong>, where <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">=</span> <span class="pre">black</span></code> and <code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">=</span> <span class="pre">white</span></code>.
+Example: <code class="docutils literal notranslate"><span class="pre">5</span></code> would be gray.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Row/Col →</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>9</p></td>
+<td><p>9</p></td>
+<td><p>9</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>9</p></td>
+<td><p>5</p></td>
+<td><p>5</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>9</p></td>
+<td><p>5</p></td>
+<td><p>5</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>9</p></td>
+<td><p>9</p></td>
+<td><p>9</p></td>
+<td><p>9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em><strong>Use Google Sheets to create a “color” image that uses the shades listed above (light shades for higher numbers, darker for lower).</strong></em></p>
+<hr class="docutils" />
+<p><strong>Resolution &amp; File Size</strong></p>
+<ul class="simple">
+<li><p><strong>Resolution</strong> = number of pixels (e.g., 1920×1080 has over 2 million pixels).</p></li>
+<li><p><strong>Color depth</strong> = number of bits per pixel.</p></li>
+<li><p><strong>File size formula</strong> = pixels × bits per pixel ÷ 8 (to convert to bytes).</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p><strong>Bitmap (.bmp)</strong></p></th>
+<th class="head"><p><strong>JPEG (.jpg)</strong></p></th>
+<th class="head"><p><strong>PNG (.png)</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Compression</strong></p></td>
+<td><p>❌ None (Uncompressed)</p></td>
+<td><p>✅ Lossy Compression</p></td>
+<td><p>✅ Lossless Compression</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>File Size</strong></p></td>
+<td><p>Very Large</p></td>
+<td><p>Small</p></td>
+<td><p>Medium</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Image Quality</strong></p></td>
+<td><p>High (exact pixel values)</p></td>
+<td><p>Lower (some detail lost)</p></td>
+<td><p>High (no quality loss)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Supports Transparency</strong></p></td>
+<td><p>❌ No</p></td>
+<td><p>❌ No</p></td>
+<td><p>✅ Yes</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Best For</strong></p></td>
+<td><p>Raw image storage, editing</p></td>
+<td><p>Photos, web use</p></td>
+<td><p>Graphics with transparency or text</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Color Depth</strong></p></td>
+<td><p>Supports 24-bit &amp; more</p></td>
+<td><p>24-bit color</p></td>
+<td><p>24-bit color + alpha channel</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Speed</strong></p></td>
+<td><p>Fast to decode, slow to transfer</p></td>
+<td><p>Fast to transfer</p></td>
+<td><p>Balanced</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Common Uses</strong></p></td>
+<td><p>Image processing, printing, archives</p></td>
+<td><p>Web photos, social media</p></td>
+<td><p>Logos, icons, UI elements</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Bitmap (.bmp)</strong></p>
+<ul class="simple">
+<li><p>Every single pixel is saved exactly — no shortcuts!</p></li>
+<li><p>Super accurate, but that makes the file huge.</p></li>
+<li><p>Example: A 100×100 pixel image with 24-bit color = ~30 KB</p></li>
+<li><p>Great for image editing where every detail matters.</p></li>
+</ul>
+<p><strong>JPEG (.jpg or .jpeg)</strong></p>
+<ul class="simple">
+<li><p>Uses lossy compression — it throws away some data to shrink file size.</p></li>
+<li><p>Smaller files = faster uploads/downloads</p></li>
+<li><p>Best for photographs, but not great for text, sharp edges, or repeated editing.</p></li>
+<li><p>If you keep saving a JPEG, the quality degrades each time.</p></li>
+</ul>
+<p><strong>PNG (.png)</strong></p>
+<ul class="simple">
+<li><p>Uses lossless compression — it compresses without losing data.</p></li>
+<li><p>Keeps sharp edges and text looking clean.</p></li>
+<li><p>Supports transparency (great for web design, overlays, UI).</p></li>
+<li><p>Bigger than JPEG, but better for logos, screenshots, and pixel art.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Complete the Reflection Questions Below</strong></p>
+<ol class="arabic simple">
+<li><p>How does binary connect to digital images?</p></li>
+<li><p>What’s the difference between black-and-white, grayscale, and color bitmaps?</p></li>
+<li><p>Why do higher resolution and more colors make bigger files?</p></li>
+<li><p>Can you think of a situation where low resolution is actually useful? (hint: emojis, icons, pixel art)</p></li>
+</ol>
+</section>
 </section>
 <hr class="docutils" />
 <section id="data-project-2-data-detectives-investigating-real-world-trends">
@@ -2923,9 +3293,6 @@ Biometric data (like fingerprints) can’t be “changed” if compromised, thou
 </table>
 </div>
 <hr class="docutils" />
-<section id="id1">
-<h3><a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
-</section>
 </section>
 </section>
 
@@ -2991,6 +3358,7 @@ Biometric data (like fingerprints) can’t be “changed” if compromised, thou
 <li><a class="reference internal" href="#part-2-how-text-becomes-binary">Part 2: How Text Becomes Binary</a></li>
 <li><a class="reference internal" href="#part-3-programming-convert-text-to-binary">Part 3: Programming - Convert Text to Binary</a></li>
 <li><a class="reference internal" href="#part-4-programming-convert-binary-to-text">Part 4: Programming - Convert Binary to Text</a></li>
+<li><a class="reference internal" href="#part-5-bitmaps-binary"><strong>Part 5: Bitmaps &amp; Binary</strong></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#data-project-2-data-detectives-investigating-real-world-trends">Data Project 2: “Data Detectives – Investigating Real-World Trends”</a></li>
@@ -3003,10 +3371,7 @@ Biometric data (like fingerprints) can’t be “changed” if compromised, thou
 </ul>
 </li>
 <li><a class="reference internal" href="#data-project-5-password-strength">Data Project 5: Password Strength</a></li>
-<li><a class="reference internal" href="#data-project-6-be-professional">Data Project 6: Be Professional</a><ul>
-<li><a class="reference internal" href="#id1"></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#data-project-6-be-professional">Data Project 6: Be Professional</a></li>
 </ul>
 </li>
 </ul>
