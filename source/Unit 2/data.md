@@ -660,6 +660,142 @@ print("Subtraction result:", result)  # Output: 1110
 
 ---
 
+#### **Part 5: Bitmaps & Binary**
+
+**Part 1: What is a Bitmap?**
+
+* A **bitmap** is a type of digital image made of small squares called **pixels**.
+* Each pixel has information stored in **binary**.
+* **Black-and-white images (1-bit per pixel)**:
+
+  * `0` = white
+  * `1` = black
+* **Grayscale images (8 bits per pixel)**:
+
+  * Each pixel stores a number from `0` (black) to `255` (white).
+* **Color images (24 bits per pixel / RGB)**:
+
+  * 8 bits for **Red**, 8 bits for **Green**, 8 bits for **Blue**.
+  * Together, they can make **over 16 million colors**.
+
+Example:
+`(255, 0, 0)` = pure red
+`(0, 255, 0)` = pure green
+`(0, 0, 255)` = pure blue
+`(255, 255, 255)` = white
+
+---
+
+**Create Your Own Binary Picture**
+
+1. Use the **8×8 grid** below.
+2. Fill each square with a `0` (white) or `1` (black).
+3. Shade the boxes to match your binary.
+
+***Challenge: Using Google Sheets make a smiley face, initials, or a pixel heart using a 8 x 8 grid.***
+
+| Row/Col → | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+| --------- | - | - | - | - | - | - | - | - |
+| 1         |   |   |   |   |   |   |   |   |
+| 2         |   |   |   |   |   |   |   |   |
+| 3         |   |   |   |   |   |   |   |   |
+| 4         |   |   |   |   |   |   |   |   |
+| 5         |   |   |   |   |   |   |   |   |
+| 6         |   |   |   |   |   |   |   |   |
+| 7         |   |   |   |   |   |   |   |   |
+| 8         |   |   |   |   |   |   |   |   |
+
+---
+
+**Decode a Binary Image**
+
+Below is an **8×8 binary picture**.
+
+
+| Row/Col → | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+| --------- | - | - | - | - | - | - | - | - |
+| 1         | 0 | 0 | 1 | 0 | 0 | 1 | 0 | 0 |
+| 2         | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 3         | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 4         | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 5         | 1 | 0 | 0 | 1 | 1 | 0 | 0 | 1 |
+| 6         | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| 7         | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 0 |
+| 8         | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 0 |
+
+
+
+---
+
+**Color Bitmaps**
+
+Below is a 4×4 grid with **grayscale values (0–9)**, where `0 = black` and `9 = white`.
+Example: `5` would be gray.
+
+| Row/Col → | 1 | 2 | 3 | 4 |
+| --------- | - | - | - | - |
+| 1         | 9 | 9 | 9 | 9 |
+| 2         | 9 | 5 | 5 | 9 |
+| 3         | 9 | 5 | 5 | 9 |
+| 4         | 9 | 9 | 9 | 9 |
+
+***Use Google Sheets to create a "color" image that uses the shades listed above (light shades for higher numbers, darker for lower).***
+
+---
+
+**Resolution & File Size**
+
+* **Resolution** = number of pixels (e.g., 1920×1080 has over 2 million pixels).
+* **Color depth** = number of bits per pixel.
+* **File size formula** = pixels × bits per pixel ÷ 8 (to convert to bytes).
+
+| Feature                   | **Bitmap (.bmp)**                    | **JPEG (.jpg)**          | **PNG (.png)**                     |
+| ------------------------- | ------------------------------------ | ------------------------ | ---------------------------------- |
+| **Compression**           | ❌ None (Uncompressed)                | ✅ Lossy Compression      | ✅ Lossless Compression             |
+| **File Size**             | Very Large                           | Small                    | Medium                             |
+| **Image Quality**         | High (exact pixel values)            | Lower (some detail lost) | High (no quality loss)             |
+| **Supports Transparency** | ❌ No                                 | ❌ No                     | ✅ Yes                              |
+| **Best For**              | Raw image storage, editing           | Photos, web use          | Graphics with transparency or text |
+| **Color Depth**           | Supports 24-bit & more               | 24-bit color             | 24-bit color + alpha channel       |
+| **Speed**                 | Fast to decode, slow to transfer     | Fast to transfer         | Balanced                           |
+| **Common Uses**           | Image processing, printing, archives | Web photos, social media | Logos, icons, UI elements          |
+
+
+
+**Bitmap (.bmp)**
+
+- Every single pixel is saved exactly — no shortcuts!
+- Super accurate, but that makes the file huge.
+- Example: A 100×100 pixel image with 24-bit color = ~30 KB
+- Great for image editing where every detail matters.
+
+**JPEG (.jpg or .jpeg)**
+
+- Uses lossy compression — it throws away some data to shrink file size.
+- Smaller files = faster uploads/downloads
+- Best for photographs, but not great for text, sharp edges, or repeated editing.
+- If you keep saving a JPEG, the quality degrades each time.
+
+**PNG (.png)**
+
+- Uses lossless compression — it compresses without losing data.
+- Keeps sharp edges and text looking clean.
+- Supports transparency (great for web design, overlays, UI).
+- Bigger than JPEG, but better for logos, screenshots, and pixel art.
+
+---
+
+**Complete the Reflection Questions Below**
+
+1. How does binary connect to digital images?
+2. What’s the difference between black-and-white, grayscale, and color bitmaps?
+3. Why do higher resolution and more colors make bigger files?
+4. Can you think of a situation where low resolution is actually useful? (hint: emojis, icons, pixel art)
+
+---
+
+
+
 
 ## Data Project 2: "Data Detectives – Investigating Real-World Trends"
 
@@ -1936,6 +2072,3 @@ else:
 | **Comments / Reflection** | Clear explanation of fixes and lessons learned | Basic explanation                      | Minimal notes                             | No reflection                                |
 
 ---
-
-
-###
