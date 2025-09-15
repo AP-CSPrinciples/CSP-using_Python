@@ -1764,7 +1764,7 @@ Example: <code class="docutils literal notranslate"><span class="pre">5</span></
 <section id="data-project-2-data-detectives-investigating-real-world-trends">
 <h2>Data Project 2: “Data Detectives – Investigating Real-World Trends”<a class="headerlink" href="#data-project-2-data-detectives-investigating-real-world-trends" title="Link to this heading">¶</a></h2>
 <p><strong>Objective</strong></p>
-<p>Investigate and research a real-world issue using data. Either collect or access a dataset, clean and organize the data, analyze it, and present your findings with visualizations and a written explanation.</p>
+<p>Investigate and research a real-world issue using data. Collect or access a dataset, clean and organize the data, analyze it, and present your findings with <strong>a chart in Google Sheets</strong> and a written explanation.</p>
 <hr class="docutils" />
 <p><strong>Big Idea 2 Concepts</strong></p>
 <ul class="simple">
@@ -1784,6 +1784,8 @@ Example: <code class="docutils literal notranslate"><span class="pre">5</span></
 <li><p>Music or movie popularity</p></li>
 <li><p>Social media usage</p></li>
 <li><p>Sports performance</p></li>
+<li><p>Gaming trends</p></li>
+<li><p>A survey you conduct with classmates</p></li>
 </ul>
 <ol class="arabic simple" start="2">
 <li><p><strong>Find or Collect Data</strong></p></li>
@@ -1796,43 +1798,83 @@ Example: <code class="docutils literal notranslate"><span class="pre">5</span></
 <li><p>Survey data from peers (e.g., favorite apps, screen time, etc.)</p></li>
 </ul>
 <ol class="arabic simple" start="3">
-<li><p><strong>Prepare the Data</strong></p></li>
-</ol>
+<li><p><strong>Prepare the Data</strong></p>
+<ol class="arabic simple">
+<li><p>Open <strong>Google Sheets</strong> and paste or import your data.</p>
 <ul class="simple">
-<li><p>Convert data to CSV or use Google Sheets</p></li>
-<li><p>Remove duplicates, deal with missing data</p></li>
-<li><p>Reformat columns if needed (e.g., converting strings to numbers)</p></li>
-</ul>
-<ol class="arabic simple" start="4">
-<li><p><strong>Analyze the Data</strong></p></li>
-</ol>
-<ul class="simple">
-<li><p>Identify interesting questions like:</p>
-<ul>
-<li><p>What trend is increasing the fastest?</p></li>
-<li><p>Is there a correlation between two variables?</p></li>
+<li><p>To import: <em>File → Import → Upload (CSV/Excel)</em>.</p></li>
 </ul>
 </li>
-<li><p>Use basic stats: mean, median, mode, max, min, percentages</p></li>
+<li><p><strong>Clean the data</strong>:</p>
+<ul class="simple">
+<li><p>Delete duplicate rows (<em>Data → Data cleanup → Remove duplicates</em>).</p></li>
+<li><p>Fill in or remove missing values.</p></li>
+<li><p>Reformat text into numbers if needed (ex: percentages, dates, scores).</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>Analyze the Data</strong></p></li>
+</ol>
+<p>Ask yourself:</p>
+<ul class="simple">
+<li><p>What trend is increasing the fastest?</p></li>
+<li><p>Is there a correlation between two variables?</p></li>
+<li><p>What is the average, maximum, or minimum?</p></li>
+<li><p>How do categories compare (percentages, rankings, etc.)?</p></li>
+</ul>
+<p>Use <strong>basic Google Sheets functions</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">=AVERAGE(range)</span></code> → mean</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=MEDIAN(range)</span></code> → median</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=MODE(range)</span></code> → most common value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=MAX(range)</span></code> → largest number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=MIN(range)</span></code> → smallest number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=COUNT(range)</span></code> or <code class="docutils literal notranslate"><span class="pre">=COUNTIF(range,</span> <span class="pre">condition)</span></code> → counts</p></li>
 </ul>
 <ol class="arabic simple" start="5">
-<li><p><strong>Create Visualizations</strong></p></li>
+<li><p><strong>Create a Chart in Google Sheets</strong></p></li>
 </ol>
-<p>Use tools like:</p>
+<p><strong>Instructions:</strong></p>
+<ol class="arabic simple">
+<li><p>Highlight the data you want to visualize.</p></li>
+<li><p>Go to <strong>Insert → Chart</strong>.</p></li>
+<li><p>In the Chart Editor (appears on the right):</p>
 <ul class="simple">
-<li><p>Google Sheets</p></li>
-<li><p>Python (pandas + matplotlib or seaborn)</p></li>
-<li><p>Tableau Public</p></li>
-<li><p>Canva or Infogram (for infographics)</p></li>
+<li><p>Under <em>Chart type</em>, choose the best chart for your data:</p>
+<ul>
+<li><p>Column/Bar chart → compare categories</p></li>
+<li><p>Line chart → show trends over time</p></li>
+<li><p>Pie chart → show percentages</p></li>
+<li><p>Scatter plot → show relationships between two variables</p></li>
 </ul>
-<ol class="arabic simple" start="6">
+</li>
+</ul>
+</li>
+<li><p>Customize your chart:</p>
+<ul class="simple">
+<li><p>Add a descriptive title.</p></li>
+<li><p>Label the x-axis and y-axis.</p></li>
+<li><p>Use clear colors that make the data easy to read.</p></li>
+</ul>
+</li>
 <li><p><strong>Present Your Findings</strong></p></li>
 </ol>
 <p>Deliverables:</p>
 <ul class="simple">
-<li><p>A chart or graph (at least one)</p></li>
-<li><p>A technical written explanation interpreting the data</p></li>
-<li><p>A short presentation or recorded video</p></li>
+<li><p><strong>A chart or graph</strong> created in Google Sheets</p></li>
+<li><p><strong>A written explanation</strong> (at least 1 paragraph) that explains:</p>
+<ul>
+<li><p>Why did you choose this dataset</p></li>
+<li><p>What your chart shows</p></li>
+<li><p>Why the data is meaningful</p></li>
+<li><p>What insights you gained</p></li>
+<li><ul>
+<li><p>(Optional) A short presentation or recorded video</p></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <hr class="docutils" />
 <p><strong>Rubric (suggested categories)</strong></p>
