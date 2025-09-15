@@ -660,7 +660,7 @@ print("Subtraction result:", result)  # Output: 1110
 
 ---
 
-#### **Part 5: Bitmaps & Binary**
+#### Part 5: Bitmaps & Binary
 
 **Part 1: What is a Bitmap?**
 
