@@ -761,6 +761,10 @@ Example: `5` would be gray.
 | **Common Uses**           | Image processing, printing, archives | Web photos, social media | Logos, icons, UI elements          |
 
 
+---
+![Image](https://github.com/user-attachments/assets/52188267-9c9c-4165-b940-2943c9143a72)
+
+---
 
 **Bitmap (.bmp)**
 
