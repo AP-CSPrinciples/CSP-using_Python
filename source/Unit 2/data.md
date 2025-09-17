@@ -2107,7 +2107,7 @@ else:
 
 ---
 
-### Final Project Phishy Fish Tank
+## Final Project Phishy Fish Tank
 
 ---
 
@@ -2117,7 +2117,16 @@ The Internet of Things (IoT) consists of devices connected to the internet, whic
 
 **Scenario**
 
-You’ve been contacted by a small business with a fish tank monitoring system. After a recent software update, the fish tank’s health reports seem inaccurate, and several fish are dying. Your task is to:
+You’ve been contacted by a small business with a fish tank monitoring system. 
+
+> They stated, "A few days ago, we updated our fish tank monitoring system using the updates that were
+> provided in our email. Yesterday, one of our fish died unexpectedly. The monitoring system reports
+> everything is okay, but we suspect it might not be working properly. We reset the monitoring
+> system and now more fish are not be doing well.  Can you please check our monitoring system and
+> check that the software is running properly? We are worried about our fish!"
+
+
+After a recent software update, the fish tank’s health reports seem inaccurate, and several fish are dying. Your task is to:
 
 1. Investigate the system for issues.
 2. Identify any security vulnerabilities.
@@ -2159,7 +2168,7 @@ Before making any changes, **create a backup** of the system. This ensures you c
 
 **6. Submission**
 
-* **Final Documentation**: Compile the following for submission:
+* **Final Documentation**: Create a slideshow (PPT, Google Slides, Canva). Compile the following for your submission:
 
   * Screenshots and explanations of your evidence.
   * Screenshots of the running program and output.
