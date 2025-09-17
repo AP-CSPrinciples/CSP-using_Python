@@ -2106,3 +2106,64 @@ else:
 | **Comments / Reflection** | Clear explanation of fixes and lessons learned | Basic explanation                      | Minimal notes                             | No reflection                                |
 
 ---
+
+### Final Project Phishy Fish Tank
+
+---
+
+**Overview**
+
+The Internet of Things (IoT) consists of devices connected to the internet, which can introduce vulnerabilities for end-users. In this project, you’ll address security concerns in a fish tank monitoring system.
+
+**Scenario**
+
+You’ve been contacted by a small business with a fish tank monitoring system. After a recent software update, the fish tank’s health reports seem inaccurate, and several fish are dying. Your task is to:
+
+1. Investigate the system for issues.
+2. Identify any security vulnerabilities.
+3. Fix any problems found.
+
+**Tasks**
+
+**1. Backup the System**
+
+Before making any changes, **create a backup** of the system. This ensures you can restore the original version if needed.
+
+**2. Investigate System Issues**
+
+* **Check for Vulnerabilities**: Investigate the system for any security flaws that might have caused a breach.
+* **Document Problems**: Identify any errors or issues with the monitoring system, including security vulnerabilities and software malfunctions.
+* **Analyze Files**: Explore the provided files on the system for any evidence related to the issues.
+
+**3. Fix the Issues**
+
+* **Record Fixes**: Describe how you fixed each problem. Be specific about the files and lines of code you modified.
+* **Test Changes**: Thoroughly test the system to ensure the problems are resolved. Simulate input data to test the full range of values that might trigger warnings.
+* **Test Outcomes**: Check both the maximum and minimum values for the system’s inputs. Ensure the system provides accurate feedback (e.g., “too high,” “too low,” or “OK”).
+
+**4. Test and Document**
+
+* **Test Case Documentation**: Include screenshots of the modified code and test cases, and explain the changes you made.
+* **Screenshot Evidence**: Capture screenshots showing:
+
+  * Evidence related to the system breach.
+  * The running program with the correct output.
+  * The modified code, including test cases.
+* **Test Coverage**: Ensure your tests cover various scenarios (e.g., boundary cases like extreme high/low values).
+
+**5. Final Steps**
+
+* **Recommendations**: Provide suggestions for improving the software to prevent similar issues in the future.
+* **Verify the System**: Confirm that the system works properly and no errors appear in the VS Code terminal.
+* **Backup Your Work**: Comment out test cases in your code (instead of deleting them) to preserve a record of your tests.
+
+**6. Submission**
+
+* **Final Documentation**: Compile the following for submission:
+
+  * Screenshots and explanations of your evidence.
+  * Screenshots of the running program and output.
+  * Screenshots and explanations of your modified code, including test cases.
+  * Recommendations to improve the software.
+
+---
