@@ -2176,3 +2176,35 @@ Before making any changes, **create a backup** of the system. This ensures you c
   * Recommendations to improve the software.
 
 ---
+
+
+**Phishy Fish Tank Final Project Rubric (20 Points Total)**
+
+| **Category**                      | **Criteria**                                                                  | **Points**  |
+| --------------------------------- | ----------------------------------------------------------------------------- | ----------- |
+| **1. System Backup**              | Clear evidence of full system backup before any modifications.                | 1 pt        |
+| **2. Vulnerability Analysis**     | Identification of **security vulnerabilities** with clear explanations.       | 2 pts       |
+| **3. Problem Documentation**      | Clear, thorough documentation of **issues or errors** in the system.          | 2 pts       |
+| **4. File Analysis**              | Accurate and thoughtful examination of **provided files** for evidence.       | 1 pt        |
+| **5. Code Fixes**                 | Specific, effective fixes are implemented and clearly described.              | 2 pts       |
+| **6. Code Annotation**            | Modified code is well-commented and easy to understand.                       | 1 pt        |
+| **7. Functionality Testing**      | The system is tested with a wide range of input values (normal + edge cases). | 2 pts       |
+| **8. Output Accuracy**            | System provides **correct feedback** ("too high," "too low," "OK").           | 1 pt        |
+| **9. Screenshot Evidence**        | Screenshots provided for:                                                     |             |
+|                                   | - System breach (0.5 pt)                                                      |             |
+|                                   | - Running program with correct output (0.5 pt)                                |             |
+|                                   | - Modified code (0.5 pt)                                                      |             |
+|                                   | - Test cases (0.5 pt)                                                         | 2 pts total |
+| **10. Test Case Documentation**   | Well-documented test cases with clear explanations of each test's purpose.    | 1 pt        |
+| **11. Test Coverage**             | Boundary/extreme case testing is included and meaningful.                     | 1 pt        |
+| **12. Recommendations**           | Logical, insightful, and feasible suggestions for future improvements.        | 1 pt        |
+| **13. Final System Verification** | No errors in VS Code terminal, system works as intended.                      | 1 pt        |
+| **14. Code Cleanup**              | Test cases are commented out, not deleted, preserving record of testing.      | 0.5 pt      |
+| **15. Presentation Quality**      | Clear, professional slideshow with visuals and logical organization.          | 1 pt        |
+| **16. Presentation Content**      | Includes: evidence, output, modified code, test cases, and recommendations.   | 1 pt        |
+
+
+**Total: 20 Points**
+
+---
+
