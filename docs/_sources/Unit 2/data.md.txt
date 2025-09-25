@@ -1483,8 +1483,8 @@ else:
 
 RSA uses **two keys**:
 
-* A **public key** for **encryption**
-* A **private key** for **decryption**
+* A **private key** for **encryption**
+* A **public key** for **decryption**
 
 These keys are mathematically related, but knowing the public key does not make it feasible to compute the private key (assuming large enough primes).
 
