@@ -2790,8 +2790,8 @@ $$</p>
 
     <span class="n">d</span> <span class="o">=</span> <span class="n">modinv</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Public Key: (</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Private Key: </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Private Key: (</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Public Key: </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">e</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span>
 
 
@@ -2820,8 +2820,8 @@ $$</p>
 
         <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your message: &quot;</span><span class="p">)</span>
-            <span class="n">e</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter recipient&#39;s public key e: &quot;</span><span class="p">))</span>
-            <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter recipient&#39;s public key n: &quot;</span><span class="p">))</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter recipient&#39;s private key: &quot;</span><span class="p">))</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter recipient&#39;s modulus key: &quot;</span><span class="p">))</span>
             <span class="n">encrypted_msg</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encrypted message:&quot;</span><span class="p">,</span> <span class="n">encrypted_msg</span><span class="p">)</span>
 
@@ -2829,8 +2829,8 @@ $$</p>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">cipher_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Paste the encrypted message list (e.g. [123, 456]): &quot;</span><span class="p">)</span>
                 <span class="n">cipher</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">cipher_input</span><span class="p">)</span>
-                <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your private key d: &quot;</span><span class="p">))</span>
-                <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your modulus n: &quot;</span><span class="p">))</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your public key: &quot;</span><span class="p">))</span>
+                <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your modulus: &quot;</span><span class="p">))</span>
                 <span class="n">decrypted_msg</span> <span class="o">=</span> <span class="n">decrypt</span><span class="p">(</span><span class="n">cipher</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Decrypted message:&quot;</span><span class="p">,</span> <span class="n">decrypted_msg</span><span class="p">)</span>
             <span class="k">except</span><span class="p">:</span>

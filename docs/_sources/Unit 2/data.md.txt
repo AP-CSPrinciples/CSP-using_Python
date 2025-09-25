@@ -1621,8 +1621,8 @@ def generate_keys():
 
     d = modinv(e, phi)
 
-    print(f"\n Public Key: ({e}, {n})")
-    print(f" Private Key: {d}")
+    print(f"\n Private Key: ({e}, {n})")
+    print(f" Public Key: {d}")
     return e, d, n
 
 
@@ -1651,8 +1651,8 @@ def main():
 
         elif choice == "2":
             msg = input("Enter your message: ")
-            e = int(input("Enter recipient's public key e: "))
-            n = int(input("Enter recipient's public key n: "))
+            e = int(input("Enter recipient's private key: "))
+            n = int(input("Enter recipient's modulus key: "))
             encrypted_msg = encrypt(msg, e, n)
             print("Encrypted message:", encrypted_msg)
 
@@ -1660,8 +1660,8 @@ def main():
             try:
                 cipher_input = input("Paste the encrypted message list (e.g. [123, 456]): ")
                 cipher = eval(cipher_input)
-                d = int(input("Enter your private key d: "))
-                n = int(input("Enter your modulus n: "))
+                d = int(input("Enter your public key: "))
+                n = int(input("Enter your modulus: "))
                 decrypted_msg = decrypt(cipher, d, n)
                 print("Decrypted message:", decrypted_msg)
             except:
