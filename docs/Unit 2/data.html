@@ -2715,8 +2715,9 @@ $$</p>
 </ul>
 <p><strong>The keys:</strong></p>
 <ul class="simple">
-<li><p><strong>Public key</strong>: <code class="docutils literal notranslate"><span class="pre">(n,</span> <span class="pre">e)</span></code></p></li>
-<li><p><strong>Private key</strong>: <code class="docutils literal notranslate"><span class="pre">(n,</span> <span class="pre">d)</span></code></p></li>
+<li><p><strong>Public key</strong>: <code class="docutils literal notranslate"><span class="pre">(d)</span></code></p></li>
+<li><p><strong>Private key</strong>: <code class="docutils literal notranslate"><span class="pre">(e)</span></code></p></li>
+<li><p><strong>Modulus key</strong>: <code class="docutils literal notranslate"><span class="pre">(n)</span></code></p></li>
 </ul>
 <hr class="docutils" />
 <p><strong>2. Encryption</strong></p>
@@ -2790,7 +2791,8 @@ $$</p>
 
     <span class="n">d</span> <span class="o">=</span> <span class="n">modinv</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Private Key: (</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Private Key: (</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Modulus: (</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Public Key: </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">e</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span>
 
