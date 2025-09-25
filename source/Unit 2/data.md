@@ -1530,8 +1530,9 @@ $$
 
 **The keys:**
 
-* **Public key**: `(n, e)`
-* **Private key**: `(n, d)`
+* **Public key**: `(d)`
+* **Private key**: `(e)`
+* **Modulus key**: `(n)`
 
 ---
 
@@ -1621,7 +1622,8 @@ def generate_keys():
 
     d = modinv(e, phi)
 
-    print(f"\n Private Key: ({e}, {n})")
+    print(f"\n Private Key: ({e})")
+    print(f" Modulus: ({n})")
     print(f" Public Key: {d}")
     return e, d, n
 
