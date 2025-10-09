@@ -31,18 +31,8 @@ Example Features:
 - **Remove Student**: Remove a student based on their ID.
 
 
-Example:
-
-```python
-Student Management System
-Choose one of the following: 
-The user can choose -> 1. Add a Student
-The user can choose -> 2. Display All Students
-The user can choose -> 3. Find a Student by ID
-The user can choose -> 4. Remove a Student by ID
-The user can choose -> 5. Update Student Grade
-The user can choose -> 6. Exit
-```
+Submit your program file(s) (.py) include appropriate comments within your program.
+Include Test Cases that demonstrate the program works as intended.  You can include them as a block comment.
 
 
 Example User Input & Output:
@@ -140,4 +130,3 @@ Choose one of the following:
 Choose an option: 6
 
 ```
-Submit your program files (.py) include appropriate comments within your program.  Include Test Cases that demonstrate the program works as intended.
