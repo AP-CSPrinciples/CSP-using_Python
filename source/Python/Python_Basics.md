@@ -2170,82 +2170,174 @@ This covers the basics of file handling in Python!
 ## Object-Oriented Programming
 
 
-## Classes/ Objects
+### Classes/ Objects
 
 
-In Python, **classes** are blueprints for creating objects, which are instances of classes. Classes contain **attributes** (variables) and **methods** (functions) that define the behavior and state of the objects created from them.
+In Python, the concepts of classes, objects, attributes, methods, and constructors are fundamental to object-oriented programming (OOP). 
 
-Essential concepts:
+**1. Class**
 
-**1. Classes and Objects**
-A **class** is defined using the `class` keyword, followed by the class name. An **object** is an instance of a class, created by calling the class like a function.
+A **class** in Python is like a blueprint for creating objects (an instance of). It defines attributes (properties) and methods (functions) that objects created from the class will have.  A class encapsulates data and functions that operate on that data.
 
-**2. Constructors (`__init__` method)**
-The **constructor** is a special method named `__init__` in Python. It initializes the object when it is created, setting up initial values for the object’s attributes.
+**Keyword**: `class`
 
-**3. Instance Variables**
-**Instance variables** are variables that are unique to each instance (object) of a class. They are usually set in the constructor.
-
-**4. Methods**
-**Methods** are functions defined inside a class that perform operations using the instance variables of the object.
-
-**Structure of a Class**
-
+**Example:**
 
 ```python
-# Define the class
 class Car:
-    # Constructor (initialize instance variables)
-    def __init__(self, make, model, year):
-        self.make = make        # Instance variable for car make
-        self.model = model      # Instance variable for car model
-        self.year = year        # Instance variable for car year
-        self.odometer = 0       # Default odometer reading (initially zero)
-
-    # Method to drive the car and increase odometer
-    def drive(self, miles):
-        if miles > 0:
-            self.odometer += miles
-            print(f"Drove {miles} miles. New odometer: {self.odometer}")
-        else:
-            print("Miles must be positive.")
-
-    # Method to display car information
-    def display_info(self):
-        print(f"{self.year} {self.make} {self.model} - Odometer: {self.odometer} miles")
-
-# Creating objects (instances) of the Car class
-car1 = Car("Toyota", "Corolla", 2020)
-car2 = Car("Honda", "Civic", 2019)
-
-# Accessing instance variables and calling methods
-car1.display_info()  # Output: 2020 Toyota Corolla - Odometer: 0 miles
-car1.drive(150)      # Output: Drove 150 miles. New odometer: 150
-car1.display_info()  # Output: 2020 Toyota Corolla - Odometer: 150 miles
-
-car2.display_info()  # Output: 2019 Honda Civic - Odometer: 0 miles
-car2.drive(200)      # Output: Drove 200 miles. New odometer: 200
+    pass  # Empty class definition for now
 ```
 
-**Explanation of the Code**
+**2. Object**
 
-1. **Class Definition**: `class Car` defines a new class named `Car`.
-2. **Constructor**: The `__init__` method is a constructor that initializes the instance variables `make`, `model`, `year`, and `odometer` (which defaults to 0).
-3. **Instance Variables**:
-   - `make`, `model`, and `year` are parameters passed during object creation.
-   - `odometer` is set to 0 by default.
-4. **Methods**:
-   - `drive`: Takes `miles` as an argument, checks if it’s positive, and adds it to the `odometer`.
-   - `display_info`: Prints the car’s details.
+An **object** is an instance of a class. It's a specific, individual entity created based on the 
+blueprint (class). You can think of it as a real-world object that embodies the attributes and behaviors 
+of its class.
 
-**Using the Class**
+**Creating an Object**:
+To create an object, you instantiate the class.
 
-- **Creating Objects**: `car1 = Car("Toyota", "Corolla", 2020)` creates an instance of the `Car` class.
-- **Calling Methods**: `car1.drive(150)` drives the car and updates the `odometer`.
-- **Accessing Instance Variables**: `car1.odometer` directly accesses the `odometer` value for the specific object `car1`.
+**Example:**
 
-**Summary**
-This structure demonstrates how classes, objects, constructors, instance variables, and methods work together to create and manipulate objects in Python. Each instance (object) of the `Car` class has its own set of data, allowing operations specific to that instance.
+```python
+my_car = Car()  # Creating an object (instance) of class Car
+```
+
+**3. Attributes**
+
+Attributes are variables that belong to a class or an object. They represent the state or 
+properties of an object. There are two types of attributes:
+
+* **Instance Attributes**: These are unique to each instance of a class.
+* **Class Attributes**: These are shared across all instances of the class.
+
+**Keyword**: `self`
+
+**Example:**
+
+```python
+class Car:
+    def __init__(self, make, model, year):  # Constructor to initialize attributes
+        self.make = make  # Instance attribute
+        self.model = model  # Instance attribute
+        self.year = year  # Instance attribute
+```
+
+**4. Methods**
+
+Methods are functions that belong to a class and define behaviors that the objects of the 
+class can perform. Methods typically take the `self` parameter, which refers to the current instance 
+of the class.
+
+**Keyword**: `def`
+
+**Example:**
+
+```python
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+
+    def start_engine(self):
+        print(f"The {self.year} {self.make} {self.model}'s engine is now running.")
+    
+    def stop_engine(self):
+        print(f"The {self.year} {self.make} {self.model}'s engine is now off.")
+```
+
+**5. Constructors**
+
+A **constructor** is a special method called `__init__` in Python that is automatically invoked when an 
+object is created from a class. It’s used to initialize the attributes of the new object.
+
+**Keyword**: `__init__`
+
+**Example:**
+
+```python
+class Car:
+    def __init__(self, make, model, year):  # Constructor
+        self.make = make
+        self.model = model
+        self.year = year
+```
+
+---
+
+#### Putting It All Together: Multiple Classes, Objects, Constructors, Methods, and Attributes
+
+**Class 1: `Car`**
+
+```python
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make  # Instance Attribute
+        self.model = model  # Instance Attribute
+        self.year = year  # Instance Attribute
+
+    def start_engine(self):
+        print(f"The {self.year} {self.make} {self.model}'s engine is now running.")
+
+    def stop_engine(self):
+        print(f"The {self.year} {self.make} {self.model}'s engine is now off.")
+```
+
+**Class 2: `Person`**
+
+```python
+class Person:
+    def __init__(self, name, age, occupation):
+        self.name = name  # Instance Attribute
+        self.age = age  # Instance Attribute
+        self.occupation = occupation  # Instance Attribute
+
+    def greet(self):
+        print(f"Hello, my name is {self.name} and I am a {self.occupation}.")
+
+    def have_birthday(self):
+        self.age += 1
+        print(f"Happy Birthday, {self.name}! You are now {self.age} years old.")
+```
+
+**Creating Objects and Using Methods**
+
+```python
+# Creating objects (instances of classes)
+car1 = Car("Toyota", "Corolla", 2022)
+car2 = Car("Honda", "Civic", 2020)
+
+person1 = Person("Alice", 30, "Engineer")
+person2 = Person("Bob", 25, "Designer")
+
+# Using methods
+car1.start_engine()
+car2.stop_engine()
+
+person1.greet()
+person2.have_birthday()
+```
+
+**Output:**
+
+```
+The 2022 Toyota Corolla's engine is now running.
+The 2020 Honda Civic's engine is now off.
+Hello, my name is Alice and I am an Engineer.
+Happy Birthday, Bob! You are now 26 years old.
+```
+
+---
+
+**Key Vocabulary:**
+
+* **Class**: A blueprint for creating objects.
+* **Object**: An instance of a class.
+* **Attributes**: Variables that store data associated with objects (can be instance or class attributes).
+* **Methods**: Functions that define behaviors associated with objects (usually take `self` as the first argument).
+* **Constructor**: A special method `__init__` that initializes attributes when a new object is created.
+
 
 
 Another example and explanation of a program that demonstrates the use of classes, objects, and constructors.
