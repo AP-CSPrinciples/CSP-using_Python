@@ -2732,8 +2732,107 @@ Happy Birthday, Bob! You are now 26 years old.
 <li><p><strong>Methods</strong>: Functions that define behaviors associated with objects (usually take <code class="docutils literal notranslate"><span class="pre">self</span></code> as the first argument).</p></li>
 <li><p><strong>Constructor</strong>: A special method <code class="docutils literal notranslate"><span class="pre">__init__</span></code> that initializes attributes when a new object is created.</p></li>
 </ul>
+<hr class="docutils" />
+<p><strong>Creating Input for the user using OOP</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>  <span class="c1"># Instance Attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>  <span class="c1"># Instance Attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>  <span class="c1"># Instance Attribute</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">make</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">&#39;s engine is now running.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">stop_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">make</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">&#39;s engine is now off.&quot;</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">occupation</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># Instance Attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>  <span class="c1"># Instance Attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">occupation</span> <span class="o">=</span> <span class="n">occupation</span>  <span class="c1"># Instance Attribute</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, my name is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> and I am a </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">occupation</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">have_birthday</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Happy Birthday, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">! You are now </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old.&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Function to create a car object based on user input</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_car</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Enter the details for the car:&quot;</span><span class="p">)</span>
+    <span class="n">make</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Make: &quot;</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Model: &quot;</span><span class="p">)</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Year: &quot;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">Car</span><span class="p">(</span><span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">)</span>
+
+<span class="c1"># Function to create a person object based on user input</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_person</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Enter the details for the person:&quot;</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Name: &quot;</span><span class="p">)</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Age: &quot;</span><span class="p">))</span>
+    <span class="n">occupation</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Occupation: &quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Person</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">occupation</span><span class="p">)</span>
+
+<span class="c1"># Main program to create and interact with the objects</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Create Car and Person objects based on user input</span>
+    <span class="n">car1</span> <span class="o">=</span> <span class="n">create_car</span><span class="p">()</span>
+    <span class="n">car2</span> <span class="o">=</span> <span class="n">create_car</span><span class="p">()</span>
+    
+    <span class="n">person1</span> <span class="o">=</span> <span class="n">create_person</span><span class="p">()</span>
+    <span class="n">person2</span> <span class="o">=</span> <span class="n">create_person</span><span class="p">()</span>
+
+    <span class="c1"># Use the methods on the objects</span>
+    <span class="n">car1</span><span class="o">.</span><span class="n">start_engine</span><span class="p">()</span>
+    <span class="n">car2</span><span class="o">.</span><span class="n">stop_engine</span><span class="p">()</span>
+
+    <span class="n">person1</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>
+    <span class="n">person2</span><span class="o">.</span><span class="n">have_birthday</span><span class="p">()</span>
+
+<span class="c1"># Run the main program</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p><strong>User Input for Car</strong>: The <code class="docutils literal notranslate"><span class="pre">create_car()</span></code> function asks the user for the car’s make, model, and year.</p></li>
+<li><p><strong>User Input for Person</strong>: The <code class="docutils literal notranslate"><span class="pre">create_person()</span></code> function prompts the user for the person’s name, age, and occupation.</p></li>
+<li><p><strong>Creating Objects</strong>: The objects (<code class="docutils literal notranslate"><span class="pre">Car</span></code> and <code class="docutils literal notranslate"><span class="pre">Person</span></code>) are created by calling these functions, which return the new objects with the user-specified attributes.</p></li>
+<li><p><strong>Using Methods</strong>: The methods for <code class="docutils literal notranslate"><span class="pre">Car</span></code> and <code class="docutils literal notranslate"><span class="pre">Person</span></code> objects are called as before, but now with user-provided data.</p></li>
+</ol>
+<p><strong>Example Output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Enter the details for the car:
+Make: Ford
+Model: Mustang
+Year: 2021
+
+Enter the details for the car:
+Make: Chevrolet
+Model: Camaro
+Year: 2020
+
+Enter the details for the person:
+Name: Sarah
+Age: 29
+Occupation: Doctor
+
+Enter the details for the person:
+Name: John
+Age: 35
+Occupation: Artist
+
+The 2021 Ford Mustang&#39;s engine is now running.
+The 2020 Chevrolet Camaro&#39;s engine is now off.
+Hello, my name is Sarah and I am a Doctor.
+Happy Birthday, John! You are now 36 years old.
+</pre></div>
+</div>
+<hr class="docutils" />
 <p>Another example and explanation of a program that demonstrates the use of classes, objects, and constructors.</p>
-<p>*<strong>A Simple Bank Account System</strong></p>
+<p><strong>A Simple Bank Account System</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Main program</span>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="c1"># Create an instance of BankAccount</span>

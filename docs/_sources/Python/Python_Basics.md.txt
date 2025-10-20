@@ -2339,10 +2339,116 @@ Happy Birthday, Bob! You are now 26 years old.
 * **Constructor**: A special method `__init__` that initializes attributes when a new object is created.
 
 
+---
+
+**Creating Input for the user using OOP**
+
+```python
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make  # Instance Attribute
+        self.model = model  # Instance Attribute
+        self.year = year  # Instance Attribute
+
+    def start_engine(self):
+        print(f"The {self.year} {self.make} {self.model}'s engine is now running.")
+
+    def stop_engine(self):
+        print(f"The {self.year} {self.make} {self.model}'s engine is now off.")
+
+class Person:
+    def __init__(self, name, age, occupation):
+        self.name = name  # Instance Attribute
+        self.age = age  # Instance Attribute
+        self.occupation = occupation  # Instance Attribute
+
+    def greet(self):
+        print(f"Hello, my name is {self.name} and I am a {self.occupation}.")
+
+    def have_birthday(self):
+        self.age += 1
+        print(f"Happy Birthday, {self.name}! You are now {self.age} years old.")
+
+
+# Function to create a car object based on user input
+def create_car():
+    print("\nEnter the details for the car:")
+    make = input("Make: ")
+    model = input("Model: ")
+    year = int(input("Year: "))
+    return Car(make, model, year)
+
+# Function to create a person object based on user input
+def create_person():
+    print("\nEnter the details for the person:")
+    name = input("Name: ")
+    age = int(input("Age: "))
+    occupation = input("Occupation: ")
+    return Person(name, age, occupation)
+
+# Main program to create and interact with the objects
+def main():
+    # Create Car and Person objects based on user input
+    car1 = create_car()
+    car2 = create_car()
+    
+    person1 = create_person()
+    person2 = create_person()
+
+    # Use the methods on the objects
+    car1.start_engine()
+    car2.stop_engine()
+
+    person1.greet()
+    person2.have_birthday()
+
+# Run the main program
+if __name__ == "__main__":
+    main()
+```
+
+
+
+1. **User Input for Car**: The `create_car()` function asks the user for the car's make, model, and year.
+2. **User Input for Person**: The `create_person()` function prompts the user for the person's name, age, and occupation.
+3. **Creating Objects**: The objects (`Car` and `Person`) are created by calling these functions, which return the new objects with the user-specified attributes.
+4. **Using Methods**: The methods for `Car` and `Person` objects are called as before, but now with user-provided data.
+
+
+**Example Output:**
+
+```
+Enter the details for the car:
+Make: Ford
+Model: Mustang
+Year: 2021
+
+Enter the details for the car:
+Make: Chevrolet
+Model: Camaro
+Year: 2020
+
+Enter the details for the person:
+Name: Sarah
+Age: 29
+Occupation: Doctor
+
+Enter the details for the person:
+Name: John
+Age: 35
+Occupation: Artist
+
+The 2021 Ford Mustang's engine is now running.
+The 2020 Chevrolet Camaro's engine is now off.
+Hello, my name is Sarah and I am a Doctor.
+Happy Birthday, John! You are now 36 years old.
+```
+
+---
 
 Another example and explanation of a program that demonstrates the use of classes, objects, and constructors.
 
-***A Simple Bank Account System**
+**A Simple Bank Account System**
 
 ```python
 # Main program
