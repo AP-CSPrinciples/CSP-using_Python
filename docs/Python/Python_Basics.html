@@ -2600,79 +2600,138 @@ This is a text file.
 </section>
 <section id="object-oriented-programming">
 <h2>Object-Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Link to this heading">¶</a></h2>
-</section>
 <section id="classes-objects">
-<h2>Classes/ Objects<a class="headerlink" href="#classes-objects" title="Link to this heading">¶</a></h2>
-<p>In Python, <strong>classes</strong> are blueprints for creating objects, which are instances of classes. Classes contain <strong>attributes</strong> (variables) and <strong>methods</strong> (functions) that define the behavior and state of the objects created from them.</p>
-<p>Essential concepts:</p>
-<p><strong>1. Classes and Objects</strong>
-A <strong>class</strong> is defined using the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword, followed by the class name. An <strong>object</strong> is an instance of a class, created by calling the class like a function.</p>
-<p><strong>2. Constructors (<code class="docutils literal notranslate"><span class="pre">__init__</span></code> method)</strong>
-The <strong>constructor</strong> is a special method named <code class="docutils literal notranslate"><span class="pre">__init__</span></code> in Python. It initializes the object when it is created, setting up initial values for the object’s attributes.</p>
-<p><strong>3. Instance Variables</strong>
-<strong>Instance variables</strong> are variables that are unique to each instance (object) of a class. They are usually set in the constructor.</p>
-<p><strong>4. Methods</strong>
-<strong>Methods</strong> are functions defined inside a class that perform operations using the instance variables of the object.</p>
-<p><strong>Structure of a Class</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the class</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">:</span>
-    <span class="c1"># Constructor (initialize instance variables)</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>        <span class="c1"># Instance variable for car make</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>      <span class="c1"># Instance variable for car model</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>        <span class="c1"># Instance variable for car year</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">odometer</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c1"># Default odometer reading (initially zero)</span>
-
-    <span class="c1"># Method to drive the car and increase odometer</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">drive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">miles</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">miles</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">odometer</span> <span class="o">+=</span> <span class="n">miles</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drove </span><span class="si">{</span><span class="n">miles</span><span class="si">}</span><span class="s2"> miles. New odometer: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">odometer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Miles must be positive.&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Method to display car information</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">make</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2"> - Odometer: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">odometer</span><span class="si">}</span><span class="s2"> miles&quot;</span><span class="p">)</span>
-
-<span class="c1"># Creating objects (instances) of the Car class</span>
-<span class="n">car1</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="s2">&quot;Corolla&quot;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">)</span>
-<span class="n">car2</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s2">&quot;Honda&quot;</span><span class="p">,</span> <span class="s2">&quot;Civic&quot;</span><span class="p">,</span> <span class="mi">2019</span><span class="p">)</span>
-
-<span class="c1"># Accessing instance variables and calling methods</span>
-<span class="n">car1</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>  <span class="c1"># Output: 2020 Toyota Corolla - Odometer: 0 miles</span>
-<span class="n">car1</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>      <span class="c1"># Output: Drove 150 miles. New odometer: 150</span>
-<span class="n">car1</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>  <span class="c1"># Output: 2020 Toyota Corolla - Odometer: 150 miles</span>
-
-<span class="n">car2</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>  <span class="c1"># Output: 2019 Honda Civic - Odometer: 0 miles</span>
-<span class="n">car2</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>      <span class="c1"># Output: Drove 200 miles. New odometer: 200</span>
+<h3>Classes/ Objects<a class="headerlink" href="#classes-objects" title="Link to this heading">¶</a></h3>
+<p>In Python, the concepts of classes, objects, attributes, methods, and constructors are fundamental to object-oriented programming (OOP).</p>
+<p><strong>1. Class</strong></p>
+<p>A <strong>class</strong> in Python is like a blueprint for creating objects (an instance of). It defines attributes (properties) and methods (functions) that objects created from the class will have.  A class encapsulates data and functions that operate on that data.</p>
+<p><strong>Keyword</strong>: <code class="docutils literal notranslate"><span class="pre">class</span></code></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">:</span>
+    <span class="k">pass</span>  <span class="c1"># Empty class definition for now</span>
 </pre></div>
 </div>
-<p><strong>Explanation of the Code</strong></p>
-<ol class="arabic simple">
-<li><p><strong>Class Definition</strong>: <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Car</span></code> defines a new class named <code class="docutils literal notranslate"><span class="pre">Car</span></code>.</p></li>
-<li><p><strong>Constructor</strong>: The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method is a constructor that initializes the instance variables <code class="docutils literal notranslate"><span class="pre">make</span></code>, <code class="docutils literal notranslate"><span class="pre">model</span></code>, <code class="docutils literal notranslate"><span class="pre">year</span></code>, and <code class="docutils literal notranslate"><span class="pre">odometer</span></code> (which defaults to 0).</p></li>
-<li><p><strong>Instance Variables</strong>:</p>
+<p><strong>2. Object</strong></p>
+<p>An <strong>object</strong> is an instance of a class. It’s a specific, individual entity created based on the
+blueprint (class). You can think of it as a real-world object that embodies the attributes and behaviors
+of its class.</p>
+<p><strong>Creating an Object</strong>:
+To create an object, you instantiate the class.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">()</span>  <span class="c1"># Creating an object (instance) of class Car</span>
+</pre></div>
+</div>
+<p><strong>3. Attributes</strong></p>
+<p>Attributes are variables that belong to a class or an object. They represent the state or
+properties of an object. There are two types of attributes:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">make</span></code>, <code class="docutils literal notranslate"><span class="pre">model</span></code>, and <code class="docutils literal notranslate"><span class="pre">year</span></code> are parameters passed during object creation.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">odometer</span></code> is set to 0 by default.</p></li>
+<li><p><strong>Instance Attributes</strong>: These are unique to each instance of a class.</p></li>
+<li><p><strong>Class Attributes</strong>: These are shared across all instances of the class.</p></li>
 </ul>
-</li>
-<li><p><strong>Methods</strong>:</p>
+<p><strong>Keyword</strong>: <code class="docutils literal notranslate"><span class="pre">self</span></code></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>  <span class="c1"># Constructor to initialize attributes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>  <span class="c1"># Instance attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>  <span class="c1"># Instance attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>  <span class="c1"># Instance attribute</span>
+</pre></div>
+</div>
+<p><strong>4. Methods</strong></p>
+<p>Methods are functions that belong to a class and define behaviors that the objects of the
+class can perform. Methods typically take the <code class="docutils literal notranslate"><span class="pre">self</span></code> parameter, which refers to the current instance
+of the class.</p>
+<p><strong>Keyword</strong>: <code class="docutils literal notranslate"><span class="pre">def</span></code></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">make</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">&#39;s engine is now running.&quot;</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">stop_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">make</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">&#39;s engine is now off.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>5. Constructors</strong></p>
+<p>A <strong>constructor</strong> is a special method called <code class="docutils literal notranslate"><span class="pre">__init__</span></code> in Python that is automatically invoked when an
+object is created from a class. It’s used to initialize the attributes of the new object.</p>
+<p><strong>Keyword</strong>: <code class="docutils literal notranslate"><span class="pre">__init__</span></code></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>  <span class="c1"># Constructor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<section id="putting-it-all-together-multiple-classes-objects-constructors-methods-and-attributes">
+<h4>Putting It All Together: Multiple Classes, Objects, Constructors, Methods, and Attributes<a class="headerlink" href="#putting-it-all-together-multiple-classes-objects-constructors-methods-and-attributes" title="Link to this heading">¶</a></h4>
+<p><strong>Class 1: <code class="docutils literal notranslate"><span class="pre">Car</span></code></strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>  <span class="c1"># Instance Attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>  <span class="c1"># Instance Attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>  <span class="c1"># Instance Attribute</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">make</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">&#39;s engine is now running.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">stop_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">make</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">&#39;s engine is now off.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Class 2: <code class="docutils literal notranslate"><span class="pre">Person</span></code></strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">occupation</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># Instance Attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>  <span class="c1"># Instance Attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">occupation</span> <span class="o">=</span> <span class="n">occupation</span>  <span class="c1"># Instance Attribute</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, my name is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> and I am a </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">occupation</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">have_birthday</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Happy Birthday, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">! You are now </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Creating Objects and Using Methods</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating objects (instances of classes)</span>
+<span class="n">car1</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="s2">&quot;Corolla&quot;</span><span class="p">,</span> <span class="mi">2022</span><span class="p">)</span>
+<span class="n">car2</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s2">&quot;Honda&quot;</span><span class="p">,</span> <span class="s2">&quot;Civic&quot;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">)</span>
+
+<span class="n">person1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Engineer&quot;</span><span class="p">)</span>
+<span class="n">person2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Designer&quot;</span><span class="p">)</span>
+
+<span class="c1"># Using methods</span>
+<span class="n">car1</span><span class="o">.</span><span class="n">start_engine</span><span class="p">()</span>
+<span class="n">car2</span><span class="o">.</span><span class="n">stop_engine</span><span class="p">()</span>
+
+<span class="n">person1</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>
+<span class="n">person2</span><span class="o">.</span><span class="n">have_birthday</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The 2022 Toyota Corolla&#39;s engine is now running.
+The 2020 Honda Civic&#39;s engine is now off.
+Hello, my name is Alice and I am an Engineer.
+Happy Birthday, Bob! You are now 26 years old.
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Key Vocabulary:</strong></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">drive</span></code>: Takes <code class="docutils literal notranslate"><span class="pre">miles</span></code> as an argument, checks if it’s positive, and adds it to the <code class="docutils literal notranslate"><span class="pre">odometer</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">display_info</span></code>: Prints the car’s details.</p></li>
+<li><p><strong>Class</strong>: A blueprint for creating objects.</p></li>
+<li><p><strong>Object</strong>: An instance of a class.</p></li>
+<li><p><strong>Attributes</strong>: Variables that store data associated with objects (can be instance or class attributes).</p></li>
+<li><p><strong>Methods</strong>: Functions that define behaviors associated with objects (usually take <code class="docutils literal notranslate"><span class="pre">self</span></code> as the first argument).</p></li>
+<li><p><strong>Constructor</strong>: A special method <code class="docutils literal notranslate"><span class="pre">__init__</span></code> that initializes attributes when a new object is created.</p></li>
 </ul>
-</li>
-</ol>
-<p><strong>Using the Class</strong></p>
-<ul class="simple">
-<li><p><strong>Creating Objects</strong>: <code class="docutils literal notranslate"><span class="pre">car1</span> <span class="pre">=</span> <span class="pre">Car(&quot;Toyota&quot;,</span> <span class="pre">&quot;Corolla&quot;,</span> <span class="pre">2020)</span></code> creates an instance of the <code class="docutils literal notranslate"><span class="pre">Car</span></code> class.</p></li>
-<li><p><strong>Calling Methods</strong>: <code class="docutils literal notranslate"><span class="pre">car1.drive(150)</span></code> drives the car and updates the <code class="docutils literal notranslate"><span class="pre">odometer</span></code>.</p></li>
-<li><p><strong>Accessing Instance Variables</strong>: <code class="docutils literal notranslate"><span class="pre">car1.odometer</span></code> directly accesses the <code class="docutils literal notranslate"><span class="pre">odometer</span></code> value for the specific object <code class="docutils literal notranslate"><span class="pre">car1</span></code>.</p></li>
-</ul>
-<p><strong>Summary</strong>
-This structure demonstrates how classes, objects, constructors, instance variables, and methods work together to create and manipulate objects in Python. Each instance (object) of the <code class="docutils literal notranslate"><span class="pre">Car</span></code> class has its own set of data, allowing operations specific to that instance.</p>
 <p>Another example and explanation of a program that demonstrates the use of classes, objects, and constructors.</p>
 <p>*<strong>A Simple Bank Account System</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Main program</span>
@@ -2827,6 +2886,8 @@ This structure demonstrates how classes, objects, constructors, instance variabl
 <li><p>We create instances of the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class with different combinations of arguments to demonstrate the constructors with no arguments, one argument, and two arguments.</p></li>
 <li><p>Finally, we access methods of the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class using the created instances.</p></li>
 </ul>
+</section>
+</section>
 </section>
 <section id="exception-handling">
 <h2>Exception Handling<a class="headerlink" href="#exception-handling" title="Link to this heading">¶</a></h2>
@@ -3133,8 +3194,13 @@ Lambda functions in Python provide a concise way to define simple functions with
 </ul>
 </li>
 <li><a class="reference internal" href="#file-handling">File Handling</a></li>
-<li><a class="reference internal" href="#object-oriented-programming">Object-Oriented Programming</a></li>
-<li><a class="reference internal" href="#classes-objects">Classes/ Objects</a></li>
+<li><a class="reference internal" href="#object-oriented-programming">Object-Oriented Programming</a><ul>
+<li><a class="reference internal" href="#classes-objects">Classes/ Objects</a><ul>
+<li><a class="reference internal" href="#putting-it-all-together-multiple-classes-objects-constructors-methods-and-attributes">Putting It All Together: Multiple Classes, Objects, Constructors, Methods, and Attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#exception-handling">Exception Handling</a></li>
 <li><a class="reference internal" href="#lambda-functions">Lambda Functions</a><ul>
 <li><a class="reference internal" href="#basic-syntax-of-lambda-functions">Basic Syntax of Lambda Functions</a></li>
