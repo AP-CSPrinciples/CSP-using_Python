@@ -172,7 +172,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
@@ -262,7 +262,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
@@ -623,76 +623,174 @@ Students will design and build a text-based adventure game using procedures and 
 </div>
 <hr class="docutils" />
 </details>
-<details><summary>Project 4: Debugging & Code Review Simulation</summary>
-<p><strong>College Board Learning Objectives:</strong></p>
+<details><summary>Project 4: Simulations</summary>
+<p><strong>Big Idea 4: Algorithms and Programming</strong></p>
 <ul class="simple">
-<li><p>AAP-1.C: Identify and correct errors in programs.</p></li>
-<li><p>AAP-2.F: Evaluate expressions that use arithmetic operators.</p></li>
-<li><p>AAP-2.H: Determine the result of program execution.</p></li>
+<li><p><strong>Computational Thinking Practice:</strong> Developing and implementing algorithms; abstracting and modeling.</p></li>
+<li><p><strong>Learning Objective 4.2:</strong>
+<em>The student can use simulations to represent real-world phenomena or examine their behaviors under varying conditions.</em></p></li>
+<li><p><strong>Essential Knowledge statements:</strong></p>
+<ul>
+<li><p><strong>4.2A:</strong> Simulations can be used to model real-world events and predict outcomes.</p></li>
+<li><p><strong>4.2B:</strong> Computer models and simulations use abstraction to represent real phenomena.</p></li>
+<li><p><strong>4.2C:</strong> Random number generation can be used to model the variability in real-world situations.</p></li>
 </ul>
-<p><strong>Summary:</strong>
-Students will be given a broken or inefficient program. Their job is to debug it, improve it, and write a peer review report explaining how and why they made their changes.</p>
-<p><strong>Deliverables:</strong></p>
+</li>
+</ul>
+<section id="getting-started-with-netlogo-web">
+<h2>Getting Started with NetLogo Web<a class="headerlink" href="#getting-started-with-netlogo-web" title="Link to this heading">¶</a></h2>
+<p><strong>Instructions for students</strong></p>
+<ol class="arabic simple">
+<li><p>Open your browser and go to <a class="reference external" href="https://www.netlogoweb.org">https://www.netlogoweb.org</a>. This is the web‐version of NetLogo, which works in Chromebooks or any modern browser. ([ccl.northwestern.edu][1])</p></li>
+<li><p>Once loaded, you’ll see the interface with tabs like <em>Interface</em>, <em>Info</em>, <em>Code</em> (depending on the model).</p></li>
+<li><p>Click the drop‐down menu (Search the Models Library) and choose a model from the built-in library. The Info tab will help you understand it. ([ccl.northwestern.edu][1])</p></li>
+<li><p>Typical workflow:</p>
 <ul class="simple">
-<li><p>Corrected source code</p></li>
-<li><p>Side-by-side comparison with the original</p></li>
-<li><p>Peer review report (1 page)</p></li>
+<li><p>Click <strong>Setup</strong> (or a similar button) to initialize the world.</p></li>
+<li><p>Click <strong>Go</strong> (or a run button) to start the simulation.</p></li>
+<li><p>You may adjust sliders, switches, buttons on the Interface to change parameters.</p></li>
 </ul>
-<p><strong>Assessment Rubric:</strong></p>
-<p>Project 4: Debugging &amp; Code Review Simulation</p>
-<p><strong>College Board Learning Objectives:</strong></p>
+</li>
+<li><p>In the <em>Info</em> tab you’ll often find a description of what the model simulates, how agents behave, any experiments you can do.</p></li>
+<li><p>In the <em>Code</em> tab you can look at how the model is implemented (students don’t always need to modify it, but it’s useful to inspect).</p></li>
+<li><p>Some coding and color conventions: In the Code editor, different kinds of words (primitives, reporters, etc) are color-highlighted, helping readability. ([ccl.northwestern.edu][2])</p></li>
+<li><p>A few tips:</p>
 <ul class="simple">
-<li><p>AAP-1.C: Identify and correct errors in programs.</p></li>
-<li><p>AAP-2.F: Evaluate expressions that use arithmetic operators.</p></li>
-<li><p>AAP-2.H: Determine the result of program execution.</p></li>
+<li><p>Try different parameter values (sliders) and observe the effect.</p></li>
+<li><p>Take notes: what happens when you change something? Why do you think that is?</p></li>
+<li><p>Use the <em>Info</em> tab to read about what the authors intended.</p></li>
+<li><p>If something hangs or seems slow, you can stop the model and reset. Note that NetLogo Web may be slower than the desktop version. ([netlogoweb.org][3])</p></li>
 </ul>
-<p><strong>Summary:</strong>
-Students will be given a broken or inefficient program. Their job is to debug it, improve it, and write a peer review report explaining how and why they made their changes.</p>
-<p><strong>Deliverables:</strong></p>
+</li>
+</ol>
+<hr class="docutils" />
+<section id="traffic-basic">
+<h3>Traffic Basic<a class="headerlink" href="#traffic-basic" title="Link to this heading">¶</a></h3>
+<p><strong>Model:</strong> Use the built-in <em>Traffic Basic</em> model (or any simple model you pick from the Models Library that runs in Web).
+<strong>Goal:</strong> Get comfortable with Setup/Go, sliders/switches, exploring what happens when parameters change.</p>
+<p><strong>Steps for students:</strong></p>
+<ol class="arabic simple">
+<li><p>Load the model (Search the Models Library → “Traffic Basic” or similar).</p></li>
+<li><p>In the Interface tab, inspect the controls: what sliders or switches are available?</p></li>
+<li><p>Press <strong>Setup</strong>. Observe what the world looks like.</p></li>
+<li><p>Press <strong>Go</strong>. Let the simulation run for a few seconds. Then press <strong>Go</strong> again or stop it.</p></li>
+<li><p>Change one slider value (for example, number of cars, speed limit, etc), then press Setup and Go again. What changed?</p></li>
+<li><p>Try changing a switch (for example turn traffic lights on/off) if present. Again, Setup/Go and observe.</p></li>
+<li><p>Optional command center exploration: you can interact via the Command Center (for example choose “turtles” and make a command like <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">color</span> <span class="pre">blue</span></code>) to change agent colors and observe effect. ([docs.netlogo.org][4])</p></li>
+</ol>
+<p><strong>Questions for the practice tutorial:</strong></p>
+<ol class="arabic simple">
+<li><p>What slider or parameter did you alter? What was its original value and what did you change it to?</p></li>
+<li><p>After you changed the parameter and ran the model, what difference did you observe in the simulation?</p></li>
+<li><p>Why do you think that parameter had the effect that it did?</p></li>
+<li><p>Using the Info tab, what is the purpose of this model? Summarize in your own words.</p></li>
+<li><p>In the Code tab, find one line that uses <code class="docutils literal notranslate"><span class="pre">ask</span> <span class="pre">turtles</span> <span class="pre">[...]</span></code> (or similar). What is that line doing?</p></li>
+<li><p>Reflect: Did you notice anything surprising or unexpected when you changed a parameter? What would you like to try next?</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="project-1-wolf-sheep-predation">
+<h3>Project 1: Wolf/Sheep Predation<a class="headerlink" href="#project-1-wolf-sheep-predation" title="Link to this heading">¶</a></h3>
+<p><strong>Model:</strong> Use the built‐in “Wolf Sheep Predation” model.
+<strong>Task:</strong> Run the model several times with different parameter values and answer the questions below.</p>
+<p><strong>Steps for students:</strong></p>
+<ol class="arabic simple">
+<li><p>Load the model via the library.</p></li>
+<li><p>Explore the Interface: there will be parameters like number of sheep, number of wolves, reproduction rates, grass regrowth, etc.</p></li>
+<li><p>Press Setup → then Go. Let the simulation run until things settle or until you choose to stop.</p></li>
+<li><p>Record what you observe (graph trends, populations rising/falling).</p></li>
+<li><p>Change one parameter (for example increase number of wolves, or decrease sheep reproduction rate). Press Setup → Go and observe again.</p></li>
+<li><p>Change a different parameter again (for example speed of wolves, amount of grass). Observe.</p></li>
+<li><p>Try at least 3 different runs with varied parameters and compare results.</p></li>
+</ol>
+<p><strong>Questions for Wolf/Sheep:</strong></p>
+<ol class="arabic simple">
+<li><p>What were your initial values for: number of sheep, number of wolves, sheep reproduction rate, wolf reproduction rate (or grass regrowth) – list them.</p></li>
+<li><p>What happened to the sheep population over time in your first run? What happened to the wolf population?</p></li>
+<li><p>In your second run (after you changed a parameter), how did the outcomes differ? What changed for the sheep? For the wolves?</p></li>
+<li><p>Which parameter change seemed to have the biggest impact on the system? Why do you think that is?</p></li>
+<li><p>Did the system reach a steady state, oscillation, or extinction (of wolves or sheep)? Explain.</p></li>
+<li><p>Looking at the Code tab, find the line(s) where wolves “eat sheep” (or sheep eat grass). Describe in your own words how that mechanism is coded.</p></li>
+<li><p>If you were to <em>design</em> a new experiment in this model (for example adding another predator, or limiting grass differently), what would you try and why?</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="project-2-traffic-grid">
+<h3>Project 2: Traffic Grid<a class="headerlink" href="#project-2-traffic-grid" title="Link to this heading">¶</a></h3>
+<p><strong>Model:</strong> Use the built-in “Traffic Grid” (or similar) model that simulates cars moving on a city grid with traffic lights.
+<strong>Task:</strong> Explore how traffic flow is affected by density, speed limits, number of lights, etc.</p>
+<p><strong>Steps for students:</strong></p>
+<ol class="arabic simple">
+<li><p>Load the Traffic Grid model via the library.</p></li>
+<li><p>Examine the sliders/switches: e.g., number of cars, speed limit, ticks for light change, etc.</p></li>
+<li><p>Press Setup → Go. Observe how traffic flows and how many cars get stopped, average speed, etc.</p></li>
+<li><p>Change one parameter (for example double number of cars). Setup → Go. Observe changes.</p></li>
+<li><p>Change another parameter (for example alter the light-cycle duration or speed limit). Setup → Go. Observe.</p></li>
+<li><p>Use the graph/plots (if available) to record values like average speed or stopped cars.</p></li>
+</ol>
+<p><strong>Questions for Traffic Grid:</strong></p>
+<ol class="arabic simple">
+<li><p>What parameter values did you use for your first run (number of cars, speed limit, tick interval for lights)?</p></li>
+<li><p>In the first run, how did traffic move? Did you see gridlock, smooth flow, many cars stopped? Explain.</p></li>
+<li><p>After you increased the number of cars, what changed? What happened to average speed and stopped cars?</p></li>
+<li><p>When you adjusted light timing (or speed limit), how did that affect traffic flow? What is your hypothesis for why?</p></li>
+<li><p>Which parameter seemed most important in determining traffic flow efficiency? Justify your answer.</p></li>
+<li><p>In the Code tab, find where the cars check for a red light (or where they slow down). Describe briefly how that logic works.</p></li>
+<li><p>If you could redesign the intersection system (for example change road layout or add more lanes), what experiment would you run to test improved flow?</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="project-3-fire-spread">
+<h3>Project 3: Fire Spread<a class="headerlink" href="#project-3-fire-spread" title="Link to this heading">¶</a></h3>
+<p><strong>Model:</strong> Use the built‐in “Fire” model (simulation of fire spreading through a forest of patches).
+<strong>Task:</strong> Investigate how tree density, wind, dryness affect fire spread and containment.</p>
+<p><strong>Steps for students:</strong></p>
+<ol class="arabic simple">
+<li><p>Load the Fire model from the library.</p></li>
+<li><p>Notice parameters: tree density, probability of fire spread, wind direction/speed (if present).</p></li>
+<li><p>Press Setup → Go. Watch how fire spreads through the forest of patches.</p></li>
+<li><p>Change one parameter (e.g., increase tree density) then Setup → Go. Observe difference.</p></li>
+<li><p>Change another parameter (e.g., increase wind speed or direction) then Setup → Go. Observe.</p></li>
+<li><p>Record observations: how quickly fire spreads, how many patches burn vs survive.</p></li>
+</ol>
+<p><strong>Questions for Fire Spread:</strong></p>
+<ol class="arabic simple">
+<li><p>What were your initial parameter values (tree density, spread probability, wind speed/direction)?</p></li>
+<li><p>In your first run, what pattern did the fire spread follow? Did it burn through most trees, stop early, create isolated patches?</p></li>
+<li><p>After increasing tree density, how did the fire behaviour change? What was different?</p></li>
+<li><p>After adjusting wind (or dryness), what additional changes did you observe?</p></li>
+<li><p>Which combination of parameters resulted in the <strong>least</strong> damage (fewest burned patches)? What does that teach you about fire spread?</p></li>
+<li><p>In the Code tab, find where a patch of type “tree” checks nearby patches for burning. Describe that logic in your own words.</p></li>
+<li><p>If you were designing a fire-safe forest, what parameter values might you choose (and why)? What experiment would you run to test it?</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="project-4-dice-random-experiment">
+<h3>Project 4: Dice / Random Experiment<a class="headerlink" href="#project-4-dice-random-experiment" title="Link to this heading">¶</a></h3>
+<p><strong>Model:</strong> Create or use a simple dice simulation (if there is a built-in model; if not, you can create one in NetLogo Web). For example: simulate rolling two dice many times and count the sums, or simulate many agents rolling dice and tracking results.
+<strong>Task:</strong> Use NetLogo Web to run a simulation of repeated random events, collect data (counts/frequencies) and answer questions about probability distribution, fairness, etc.
+<strong>Steps for students:</strong></p>
+<ol class="arabic simple">
+<li><p>If a built-in model exists (“Dice” or “Die Roll”), load it. If not, you may create a simple version:</p>
 <ul class="simple">
-<li><p>Corrected source code</p></li>
-<li><p>Side-by-side comparison with the original</p></li>
-<li><p>Peer review report (1 page)</p></li>
+<li><p>Setup: create many turtles; each turtle has two variables (die1, die2) using <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">die1</span> <span class="pre">random</span> <span class="pre">6</span> <span class="pre">+</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">die2</span> <span class="pre">random</span> <span class="pre">6</span> <span class="pre">+</span> <span class="pre">1</span></code> etc.</p></li>
+<li><p>Go: ask turtles to roll again, tally sum, update a plot/histogram.</p></li>
 </ul>
-<p><strong>Assessment Rubric:</strong></p>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Criteria</p></th>
-<th class="head"><p>4 - Excellent</p></th>
-<th class="head"><p>3 - Proficient</p></th>
-<th class="head"><p>2 - Developing</p></th>
-<th class="head"><p>1 - Beginning</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Bug Identification</p></td>
-<td><p>All bugs correctly identified and explained</p></td>
-<td><p>Most bugs identified</p></td>
-<td><p>Some bugs found</p></td>
-<td><p>Few or no bugs identified</p></td>
-</tr>
-<tr class="row-odd"><td><p>Debugging Quality</p></td>
-<td><p>Efficient and optimal fixes applied</p></td>
-<td><p>Functional fixes with some inefficiency</p></td>
-<td><p>Fixes with side effects or redundancy</p></td>
-<td><p>Buggy or no fixes applied</p></td>
-</tr>
-<tr class="row-even"><td><p>Code Comparison</p></td>
-<td><p>Clear and complete before/after comparison</p></td>
-<td><p>Some comparison shown</p></td>
-<td><p>Basic or unclear comparison</p></td>
-<td><p>No clear comparison</p></td>
-</tr>
-<tr class="row-odd"><td><p>Review Explanation</p></td>
-<td><p>Detailed reasoning and reflection</p></td>
-<td><p>Some reasoning included</p></td>
-<td><p>Minimal or vague explanation</p></td>
-<td><p>Missing or incorrect explanation</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+</li>
+<li><p>Use the simulation: run for, say, 100, 1000, 10 000 trials (if feasible).</p></li>
+<li><p>Record frequencies of sums (2–12) or whatever your experiment is.</p></li>
+<li><p>Change something: e.g., bias one die (set probabilities differently), or use three dice instead of two. Run again and observe the distribution.</p></li>
+</ol>
+<p><strong>Questions for Dice Simulation:</strong></p>
+<ol class="arabic simple">
+<li><p>What is the theoretical probability distribution for rolling two fair six-sided dice (sums from 2 to 12)? Describe it (which sums are most likely, least likely).</p></li>
+<li><p>In your first simulation run (with fair dice), what did you observe? Did your experimental frequencies roughly match the theoretical distribution? Provide a summary of results.</p></li>
+<li><p>When you changed something (for example biased a die or added a third die), how did the distribution change? Provide the observed differences.</p></li>
+<li><p>Why do you think the distribution changed when you made that alteration? Explain using probability reasoning.</p></li>
+<li><p>In the Code tab, locate where the dice are rolled (e.g., <code class="docutils literal notranslate"><span class="pre">random</span> <span class="pre">6</span> <span class="pre">+</span> <span class="pre">1</span></code>). Write down the line and explain what it does.</p></li>
+<li><p>If you were designing a “fair game” using this simulation, what parameters would you ensure (and why)?</p></li>
+<li><p>Optional extension: Design a new experiment (e.g., roll two dice 1000 times and track how many times you get doubles, or track the longest streak of a particular sum). What would you test and why?</p></li>
+</ol>
 <hr class="docutils" />
 </details>
 <details><summary>Project 5: Algorithm Museum (Explainer Showcase)</summary>
@@ -768,6 +866,8 @@ Students select a classic algorithm (e.g., sorting, searching, pathfinding) and 
 <hr class="docutils" />
 </details>
 </section>
+</section>
+</section>
 
         </article>
       </div>
@@ -812,8 +912,34 @@ Students select a classic algorithm (e.g., sorting, searching, pathfinding) and 
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Algorithms &amp; Programming</a><ul>
+<li><a class="reference internal" href="#getting-started-with-netlogo-web">Getting Started with NetLogo Web</a><ul>
+<li><a class="reference internal" href="#traffic-basic">Traffic Basic</a></li>
+<li><a class="reference internal" href="#project-1-wolf-sheep-predation">Project 1: Wolf/Sheep Predation</a></li>
+<li><a class="reference internal" href="#project-2-traffic-grid">Project 2: Traffic Grid</a></li>
+<li><a class="reference internal" href="#project-3-fire-spread">Project 3: Fire Spread</a></li>
+<li><a class="reference internal" href="#project-4-dice-random-experiment">Project 4: Dice / Random Experiment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
