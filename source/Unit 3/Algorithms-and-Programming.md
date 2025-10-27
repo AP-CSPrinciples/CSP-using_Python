@@ -288,50 +288,174 @@ Students will design and build a text-based adventure game using procedures and 
 </details>
 
 
-<details><summary>Project 4: Debugging & Code Review Simulation</summary>
+<details><summary>Project 4: Simulations</summary>
 
-**College Board Learning Objectives:**
 
-* AAP-1.C: Identify and correct errors in programs.
-* AAP-2.F: Evaluate expressions that use arithmetic operators.
-* AAP-2.H: Determine the result of program execution.
+**Big Idea 4: Algorithms and Programming**
 
-**Summary:**
-Students will be given a broken or inefficient program. Their job is to debug it, improve it, and write a peer review report explaining how and why they made their changes.
+* **Computational Thinking Practice:** Developing and implementing algorithms; abstracting and modeling.
 
-**Deliverables:**
+* **Learning Objective 4.2:**
+  *The student can use simulations to represent real-world phenomena or examine their behaviors under varying conditions.*
 
-* Corrected source code
-* Side-by-side comparison with the original
-* Peer review report (1 page)
+* **Essential Knowledge statements:**
 
-**Assessment Rubric:**
+  * **4.2A:** Simulations can be used to model real-world events and predict outcomes.
+  * **4.2B:** Computer models and simulations use abstraction to represent real phenomena.
+  * **4.2C:** Random number generation can be used to model the variability in real-world situations.
 
-Project 4: Debugging & Code Review Simulation
+### Getting Started with NetLogo Web
 
-**College Board Learning Objectives:**
+**Instructions for students**
 
-* AAP-1.C: Identify and correct errors in programs.
-* AAP-2.F: Evaluate expressions that use arithmetic operators.
-* AAP-2.H: Determine the result of program execution.
+1. Open your browser and go to [https://www.netlogoweb.org](https://www.netlogoweb.org). This is the web‐version of NetLogo, which works in Chromebooks or any modern browser. ([ccl.northwestern.edu][1])
+2. Once loaded, you’ll see the interface with tabs like *Interface*, *Info*, *Code* (depending on the model).
+3. Click the drop‐down menu (Search the Models Library) and choose a model from the built-in library. The Info tab will help you understand it. ([ccl.northwestern.edu][1])
+4. Typical workflow:
 
-**Summary:**
-Students will be given a broken or inefficient program. Their job is to debug it, improve it, and write a peer review report explaining how and why they made their changes.
+   * Click **Setup** (or a similar button) to initialize the world.
+   * Click **Go** (or a run button) to start the simulation.
+   * You may adjust sliders, switches, buttons on the Interface to change parameters.
+5. In the *Info* tab you’ll often find a description of what the model simulates, how agents behave, any experiments you can do.
+6. In the *Code* tab you can look at how the model is implemented (students don’t always need to modify it, but it’s useful to inspect).
+7. Some coding and color conventions: In the Code editor, different kinds of words (primitives, reporters, etc) are color-highlighted, helping readability. ([ccl.northwestern.edu][2])
+8. A few tips:
 
-**Deliverables:**
+   * Try different parameter values (sliders) and observe the effect.
+   * Take notes: what happens when you change something? Why do you think that is?
+   * Use the *Info* tab to read about what the authors intended.
+   * If something hangs or seems slow, you can stop the model and reset. Note that NetLogo Web may be slower than the desktop version. ([netlogoweb.org][3])
 
-* Corrected source code
-* Side-by-side comparison with the original
-* Peer review report (1 page)
+---
 
-**Assessment Rubric:**
+#### Traffic Basic
 
-| Criteria           | 4 - Excellent                               | 3 - Proficient                          | 2 - Developing                        | 1 - Beginning                    |
-| ------------------ | ------------------------------------------- | --------------------------------------- | ------------------------------------- | -------------------------------- |
-| Bug Identification | All bugs correctly identified and explained | Most bugs identified                    | Some bugs found                       | Few or no bugs identified        |
-| Debugging Quality  | Efficient and optimal fixes applied         | Functional fixes with some inefficiency | Fixes with side effects or redundancy | Buggy or no fixes applied        |
-| Code Comparison    | Clear and complete before/after comparison  | Some comparison shown                   | Basic or unclear comparison           | No clear comparison              |
-| Review Explanation | Detailed reasoning and reflection           | Some reasoning included                 | Minimal or vague explanation          | Missing or incorrect explanation |
+**Model:** Use the built-in *Traffic Basic* model (or any simple model you pick from the Models Library that runs in Web).
+**Goal:** Get comfortable with Setup/Go, sliders/switches, exploring what happens when parameters change.
+
+**Steps for students:**
+
+1. Load the model (Search the Models Library → “Traffic Basic” or similar).
+2. In the Interface tab, inspect the controls: what sliders or switches are available?
+3. Press **Setup**. Observe what the world looks like.
+4. Press **Go**. Let the simulation run for a few seconds. Then press **Go** again or stop it.
+5. Change one slider value (for example, number of cars, speed limit, etc), then press Setup and Go again. What changed?
+6. Try changing a switch (for example turn traffic lights on/off) if present. Again, Setup/Go and observe.
+7. Optional command center exploration: you can interact via the Command Center (for example choose “turtles” and make a command like `set color blue`) to change agent colors and observe effect. ([docs.netlogo.org][4])
+
+**Questions for the practice tutorial:**
+
+1. What slider or parameter did you alter? What was its original value and what did you change it to?
+2. After you changed the parameter and ran the model, what difference did you observe in the simulation?
+3. Why do you think that parameter had the effect that it did?
+4. Using the Info tab, what is the purpose of this model? Summarize in your own words.
+5. In the Code tab, find one line that uses `ask turtles [...]` (or similar). What is that line doing?
+6. Reflect: Did you notice anything surprising or unexpected when you changed a parameter? What would you like to try next?
+
+---
+
+#### Project 1: Wolf/Sheep Predation
+
+**Model:** Use the built‐in “Wolf Sheep Predation” model.
+**Task:** Run the model several times with different parameter values and answer the questions below.
+
+**Steps for students:**
+
+1. Load the model via the library.
+2. Explore the Interface: there will be parameters like number of sheep, number of wolves, reproduction rates, grass regrowth, etc.
+3. Press Setup → then Go. Let the simulation run until things settle or until you choose to stop.
+4. Record what you observe (graph trends, populations rising/falling).
+5. Change one parameter (for example increase number of wolves, or decrease sheep reproduction rate). Press Setup → Go and observe again.
+6. Change a different parameter again (for example speed of wolves, amount of grass). Observe.
+7. Try at least 3 different runs with varied parameters and compare results.
+
+**Questions for Wolf/Sheep:**
+
+1. What were your initial values for: number of sheep, number of wolves, sheep reproduction rate, wolf reproduction rate (or grass regrowth) – list them.
+2. What happened to the sheep population over time in your first run? What happened to the wolf population?
+3. In your second run (after you changed a parameter), how did the outcomes differ? What changed for the sheep? For the wolves?
+4. Which parameter change seemed to have the biggest impact on the system? Why do you think that is?
+5. Did the system reach a steady state, oscillation, or extinction (of wolves or sheep)? Explain.
+6. Looking at the Code tab, find the line(s) where wolves “eat sheep” (or sheep eat grass). Describe in your own words how that mechanism is coded.
+7. If you were to *design* a new experiment in this model (for example adding another predator, or limiting grass differently), what would you try and why?
+
+---
+
+#### Project 2: Traffic Grid
+
+**Model:** Use the built-in “Traffic Grid” (or similar) model that simulates cars moving on a city grid with traffic lights.
+**Task:** Explore how traffic flow is affected by density, speed limits, number of lights, etc.
+
+**Steps for students:**
+
+1. Load the Traffic Grid model via the library.
+2. Examine the sliders/switches: e.g., number of cars, speed limit, ticks for light change, etc.
+3. Press Setup → Go. Observe how traffic flows and how many cars get stopped, average speed, etc.
+4. Change one parameter (for example double number of cars). Setup → Go. Observe changes.
+5. Change another parameter (for example alter the light-cycle duration or speed limit). Setup → Go. Observe.
+6. Use the graph/plots (if available) to record values like average speed or stopped cars.
+
+**Questions for Traffic Grid:**
+
+1. What parameter values did you use for your first run (number of cars, speed limit, tick interval for lights)?
+2. In the first run, how did traffic move? Did you see gridlock, smooth flow, many cars stopped? Explain.
+3. After you increased the number of cars, what changed? What happened to average speed and stopped cars?
+4. When you adjusted light timing (or speed limit), how did that affect traffic flow? What is your hypothesis for why?
+5. Which parameter seemed most important in determining traffic flow efficiency? Justify your answer.
+6. In the Code tab, find where the cars check for a red light (or where they slow down). Describe briefly how that logic works.
+7. If you could redesign the intersection system (for example change road layout or add more lanes), what experiment would you run to test improved flow?
+
+---
+
+#### Project 3: Fire Spread
+
+**Model:** Use the built‐in “Fire” model (simulation of fire spreading through a forest of patches).
+**Task:** Investigate how tree density, wind, dryness affect fire spread and containment.
+
+**Steps for students:**
+
+1. Load the Fire model from the library.
+2. Notice parameters: tree density, probability of fire spread, wind direction/speed (if present).
+3. Press Setup → Go. Watch how fire spreads through the forest of patches.
+4. Change one parameter (e.g., increase tree density) then Setup → Go. Observe difference.
+5. Change another parameter (e.g., increase wind speed or direction) then Setup → Go. Observe.
+6. Record observations: how quickly fire spreads, how many patches burn vs survive.
+
+**Questions for Fire Spread:**
+
+1. What were your initial parameter values (tree density, spread probability, wind speed/direction)?
+2. In your first run, what pattern did the fire spread follow? Did it burn through most trees, stop early, create isolated patches?
+3. After increasing tree density, how did the fire behaviour change? What was different?
+4. After adjusting wind (or dryness), what additional changes did you observe?
+5. Which combination of parameters resulted in the **least** damage (fewest burned patches)? What does that teach you about fire spread?
+6. In the Code tab, find where a patch of type “tree” checks nearby patches for burning. Describe that logic in your own words.
+7. If you were designing a fire-safe forest, what parameter values might you choose (and why)? What experiment would you run to test it?
+
+---
+
+#### Project 4: Dice / Random Experiment
+
+**Model:** Create or use a simple dice simulation (if there is a built-in model; if not, you can create one in NetLogo Web). For example: simulate rolling two dice many times and count the sums, or simulate many agents rolling dice and tracking results.
+**Task:** Use NetLogo Web to run a simulation of repeated random events, collect data (counts/frequencies) and answer questions about probability distribution, fairness, etc.
+**Steps for students:**
+
+1. If a built-in model exists (“Dice” or “Die Roll”), load it. If not, you may create a simple version:
+
+   * Setup: create many turtles; each turtle has two variables (die1, die2) using `set die1 random 6 + 1`, `set die2 random 6 + 1` etc.
+   * Go: ask turtles to roll again, tally sum, update a plot/histogram.
+2. Use the simulation: run for, say, 100, 1000, 10 000 trials (if feasible).
+3. Record frequencies of sums (2–12) or whatever your experiment is.
+4. Change something: e.g., bias one die (set probabilities differently), or use three dice instead of two. Run again and observe the distribution.
+
+**Questions for Dice Simulation:**
+
+1. What is the theoretical probability distribution for rolling two fair six-sided dice (sums from 2 to 12)? Describe it (which sums are most likely, least likely).
+2. In your first simulation run (with fair dice), what did you observe? Did your experimental frequencies roughly match the theoretical distribution? Provide a summary of results.
+3. When you changed something (for example biased a die or added a third die), how did the distribution change? Provide the observed differences.
+4. Why do you think the distribution changed when you made that alteration? Explain using probability reasoning.
+5. In the Code tab, locate where the dice are rolled (e.g., `random 6 + 1`). Write down the line and explain what it does.
+6. If you were designing a “fair game” using this simulation, what parameters would you ensure (and why)?
+7. Optional extension: Design a new experiment (e.g., roll two dice 1000 times and track how many times you get doubles, or track the longest streak of a particular sum). What would you test and why?
 
 ---
 
@@ -386,3 +510,4 @@ Students select a classic algorithm (e.g., sorting, searching, pathfinding) and 
 ---
 
 </details>
+
