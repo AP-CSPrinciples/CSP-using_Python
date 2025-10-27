@@ -308,9 +308,9 @@ Students will design and build a text-based adventure game using procedures and 
 
 **Instructions for students**
 
-1. Open your browser and go to [https://www.netlogoweb.org](https://www.netlogoweb.org). This is the web‐version of NetLogo, which works in Chromebooks or any modern browser. ([ccl.northwestern.edu][1])
+1. Open your browser and go to [https://www.netlogoweb.org](https://www.netlogoweb.org). This is the web‐version of NetLogo, which works in Chromebooks or any modern browser.
 2. Once loaded, you’ll see the interface with tabs like *Interface*, *Info*, *Code* (depending on the model).
-3. Click the drop‐down menu (Search the Models Library) and choose a model from the built-in library. The Info tab will help you understand it. ([ccl.northwestern.edu][1])
+3. Click the drop‐down menu (Search the Models Library) and choose a model from the built-in library. The Info tab will help you understand it.
 4. Typical workflow:
 
    * Click **Setup** (or a similar button) to initialize the world.
@@ -437,10 +437,10 @@ Students will design and build a text-based adventure game using procedures and 
 
 **Model:** Create or use a simple dice simulation (if there is a built-in model; if not, you can create one in NetLogo Web). For example: simulate rolling two dice many times and count the sums, or simulate many agents rolling dice and tracking results.
 **Task:** Use NetLogo Web to run a simulation of repeated random events, collect data (counts/frequencies) and answer questions about probability distribution, fairness, etc.
+
 **Steps for students:**
 
 1. If a built-in model exists (“Dice” or “Die Roll”), load it. If not, you may create a simple version:
-
    * Setup: create many turtles; each turtle has two variables (die1, die2) using `set die1 random 6 + 1`, `set die2 random 6 + 1` etc.
    * Go: ask turtles to roll again, tally sum, update a plot/histogram.
 2. Use the simulation: run for, say, 100, 1000, 10 000 trials (if feasible).
@@ -510,4 +510,5 @@ Students select a classic algorithm (e.g., sorting, searching, pathfinding) and 
 ---
 
 </details>
+
 
