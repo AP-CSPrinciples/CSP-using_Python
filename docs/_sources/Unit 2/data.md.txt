@@ -803,15 +803,35 @@ Example: `5` would be gray.
 
 **Introduction**
 
-**Hexadecimal (base-16)** is a number system that uses 16 symbols: 0–9 for values zero to nine, and A–F for values ten to fifteen. It’s widely used in computing because it maps neatly onto binary, which is the fundamental language of computers.  **Created in the 1960s**: Hexadecimal began being widely used in the early days of digital computing.  Early computer engineers and mathematicians needed a way to **represent long strings of binary digits more compactly**. Binary numbers are long and hard for humans to read. Hexadecimal offers a shorthand: **each hex digit represents 4 binary bits**.  Hexadecimal simplifies reading, writing, and debugging **memory addresses**, machine code, and low-level data.
+**Hexadecimal (base-16)** is a number system that uses 16 symbols: **0–9 for values zero to nine, and A–F for values ten to fifteen**. It’s widely used in computing because it maps neatly onto binary, which is the fundamental language of computers.  *Created in the 1960s*: Hexadecimal began being widely used in the early days of digital computing.  Early computer engineers and mathematicians needed a way to *represent long strings of binary digits more compactly*. Binary numbers are long and hard for humans to read. Hexadecimal offers a shorthand: *each hex digit represents 4 binary bits*.  Hexadecimal simplifies reading, writing, and debugging *memory addresses*, machine code, and low-level data.
 
 **Milestones**
 
 * **1960s** – Hex starts appearing in computer manuals and textbooks.
 * **1965** – IBM popularizes hex notation in assembly language manuals.
 * **1970s–1980s** – Hex becomes standard in programming, digital electronics, and computer science education.
-* **Today** – Hexadecimal is used in **computer memory, color codes in web design (HTML/CSS), debugging, and data representation**.
+* **Today** – Hexadecimal is used in *computer memory, color codes in web design (HTML/CSS), debugging, and data representation*.
 
+---
+
+# Hexadecimal Combinations Chart
+
+| # of Hex Digits | Formula | Number of Combinations | Example Range |
+| --------------- | ------- | ---------------------- | ------------- |
+| 1               | 16¹     | 16                     | 0 – F         |
+| 2               | 16²     | 256                    | 00 – FF       |
+| 3               | 16³     | 4,096                  | 000 – FFF     |
+| 4               | 16⁴     | 65,536                 | 0000 – FFFF   |
+
+---
+
+**Things to Remember**
+
+* Each hex digit represents **4 bits**.
+* More digits → exponentially more combinations (powers of 16).
+* 2-digit hex = 1 byte (8 bits) → common in memory addresses, color codes, and ASCII representation.
+
+---
 
 **Understanding the Number Systems**
 
