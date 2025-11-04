@@ -816,14 +816,15 @@ Example: `5` would be gray.
 
 ##### Hexadecimal Combinations Chart
 
-| # of Hex Digits | Formula | Number of Combinations | Example Range |
-| --------------- | ------- | ---------------------- | ------------- |
-| 1               | 16¹     | 16                     | 0 – F         |
-| 2               | 16²     | 256                    | 00 – FF       |
-| 3               | 16³     | 4,096                  | 000 – FFF     |
-| 4               | 16⁴     | 65,536                 | 0000 – FFFF   |
-| 5               | 16^5^     | 1,048,576              | 00000 - FFFFF |
-| 6               | 16^6^     | 16,777,216             | 000000 - FFFFFF |
+| # of Hex Digits | Formula | Number of Combinations | Example Range   |
+| --------------- | ------- | ---------------------- | --------------- |
+| 1               | 16¹     | 16                     | 0 – F           |
+| 2               | 16²     | 256                    | 00 – FF         |
+| 3               | 16³     | 4,096                  | 000 – FFF       |
+| 4               | 16⁴     | 65,536                 | 0000 – FFFF     |
+| 5               | 16⁵     | 1,048,576              | 00000 – FFFFF   |
+| 6               | 16⁶     | 16,777,216             | 000000 – FFFFFF |
+
 ---
 
 **Things to Remember**
