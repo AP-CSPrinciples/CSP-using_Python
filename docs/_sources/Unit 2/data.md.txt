@@ -840,6 +840,7 @@ Example: `5` would be gray.
 * Step 1: Convert Hex to Decimal → 48₁₆ = 72₁₀
 * Step 2: Convert Decimal to ASCII → 72 → 'H'
 * Step 3: Convert Hex to Binary → 01001000
+
   **Result:** 48₁₆ = 72₁₀ = 01001000₂ = 'H'
 
 **Example 2: Hex 65**
@@ -847,6 +848,7 @@ Example: `5` would be gray.
 * Step 1: Convert Hex to Decimal → 65₁₆ = 101₁₀
 * Step 2: Convert Decimal to ASCII → 101 → 'e'
 * Step 3: Convert Hex to Binary → 01100101
+
   **Result:** 65₁₆ = 101₁₀ = 01100101₂ = 'e'
 
 **Example 3: Hex 6C**
@@ -854,6 +856,7 @@ Example: `5` would be gray.
 * Step 1: Convert Hex to Decimal → 6C₁₆ = 108₁₀
 * Step 2: Convert Decimal to ASCII → 108 → 'l'
 * Step 3: Convert Hex to Binary → 01101100
+
   **Result:** 6C₁₆ = 108₁₀ = 01101100₂ = 'l'
 
 **Example 4: Hex 6F**
@@ -861,6 +864,7 @@ Example: `5` would be gray.
 * Step 1: Convert Hex to Decimal → 6F₁₆ = 111₁₀
 * Step 2: Convert Decimal to ASCII → 111 → 'o'
 * Step 3: Convert Hex to Binary → 01101111
+
   **Result:** 6F₁₆ = 111₁₀ = 01101111₂ = 'o'
 
 **Example 5: Hex 21**
@@ -868,9 +872,8 @@ Example: `5` would be gray.
 * Step 1: Convert Hex to Decimal → 21₁₆ = 33₁₀
 * Step 2: Convert Decimal to ASCII → 33 → '!'
 * Step 3: Convert Hex to Binary → 00100001
-  **Result:** 21₁₆ = 33₁₀ = 00100001₂ = '!'
 
-*Notice:* These hex values spell out **"Hello!"**
+  **Result:** 21₁₆ = 33₁₀ = 00100001₂ = '!'
 
 ---
 
