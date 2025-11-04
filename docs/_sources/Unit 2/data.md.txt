@@ -799,6 +799,94 @@ Example: `5` would be gray.
 ---
 
 
+#### Part 6: Hexidecimal
+
+**Introduction**
+
+**Hexadecimal (base-16)** is a number system that uses 16 symbols: 0–9 for values zero to nine, and A–F for values ten to fifteen. It’s widely used in computing because it maps neatly onto binary, which is the fundamental language of computers.  **Created in the 1960s**: Hexadecimal began being widely used in the early days of digital computing.  Early computer engineers and mathematicians needed a way to **represent long strings of binary digits more compactly**. Binary numbers are long and hard for humans to read. Hexadecimal offers a shorthand: **each hex digit represents 4 binary bits**.  Hexadecimal simplifies reading, writing, and debugging **memory addresses**, machine code, and low-level data.
+
+**Milestones**
+
+* **1960s** – Hex starts appearing in computer manuals and textbooks.
+* **1965** – IBM popularizes hex notation in assembly language manuals.
+* **1970s–1980s** – Hex becomes standard in programming, digital electronics, and computer science education.
+* **Today** – Hexadecimal is used in **computer memory, color codes in web design (HTML/CSS), debugging, and data representation**.
+
+
+**Understanding the Number Systems**
+
+* **Hexadecimal (Hex)** is base 16 and uses digits 0–9 and letters A–F.
+* **Binary** is base 2 and uses digits 0 and 1.
+* **ASCII** assigns a number to each character (for example, 65 → 'A').
+
+---
+
+**Conversion**
+
+| Step                        | Process                             |
+| --------------------------- | ----------------------------------- |
+| 1. Convert Hex to Decimal   | Hex 41 → (4 × 16¹) + (1 × 16⁰) = 65 |
+| 2. Convert Decimal to ASCII | 65 → 'A'                            |
+| 3. Convert Hex to Binary    | 4 → 0100, 1 → 0001 → 01000001       |
+
+**Result:** Hex 41 = Binary 01000001 = Decimal 65 = ASCII 'A'
+
+---
+
+**Examples: Hexadecimal to Decimal, ASCII, and Binary**
+
+**Example 1: Hex 48**
+
+* Step 1: Convert Hex to Decimal → 48₁₆ = 72₁₀
+* Step 2: Convert Decimal to ASCII → 72 → 'H'
+* Step 3: Convert Hex to Binary → 01001000
+  **Result:** 48₁₆ = 72₁₀ = 01001000₂ = 'H'
+
+**Example 2: Hex 65**
+
+* Step 1: Convert Hex to Decimal → 65₁₆ = 101₁₀
+* Step 2: Convert Decimal to ASCII → 101 → 'e'
+* Step 3: Convert Hex to Binary → 01100101
+  **Result:** 65₁₆ = 101₁₀ = 01100101₂ = 'e'
+
+**Example 3: Hex 6C**
+
+* Step 1: Convert Hex to Decimal → 6C₁₆ = 108₁₀
+* Step 2: Convert Decimal to ASCII → 108 → 'l'
+* Step 3: Convert Hex to Binary → 01101100
+  **Result:** 6C₁₆ = 108₁₀ = 01101100₂ = 'l'
+
+**Example 4: Hex 6F**
+
+* Step 1: Convert Hex to Decimal → 6F₁₆ = 111₁₀
+* Step 2: Convert Decimal to ASCII → 111 → 'o'
+* Step 3: Convert Hex to Binary → 01101111
+  **Result:** 6F₁₆ = 111₁₀ = 01101111₂ = 'o'
+
+**Example 5: Hex 21**
+
+* Step 1: Convert Hex to Decimal → 21₁₆ = 33₁₀
+* Step 2: Convert Decimal to ASCII → 33 → '!'
+* Step 3: Convert Hex to Binary → 00100001
+  **Result:** 21₁₆ = 33₁₀ = 00100001₂ = '!'
+
+*Notice:* These hex values spell out **"Hello!"**
+
+---
+
+**Practice Problems**
+
+Convert each hexadecimal value into Decimal, ASCII Character and Binary.
+
+1. 56
+2. 4D
+3. 6F
+4. 21
+5. 7A
+6. 5A
+
+
+---
 
 
 ## Data Project 2: "Data Detectives – Investigating Real-World Trends"
