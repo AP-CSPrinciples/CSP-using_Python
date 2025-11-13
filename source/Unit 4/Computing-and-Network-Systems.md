@@ -120,11 +120,7 @@ Advantages
 | ------- | :------------------: | :---------------------: |
 | Speed	| Faster execution due to simultaneous processing	| Fault tolerance; failure of one node does not halt the entire system |
 | Resource Utilization | Efficient use of processing units | Can leverage multiple locations and resources |
-
-|      | Challenges |
-| ---- | :-------: |
-| Parallel Computing | Requires synchronization between processors, which can complicate programming and increase overhead. |
-| Distributed Computing | Faces issues like network latency and the need for robust communication protocols. |
+| Challenges | Requires synchronization between processors, which can complicate programming and increase overhead. | Faces issues like network latency and the need for robust communication protocols. |
 
 Understanding these differences helps in choosing the right model for specific computational tasks.
 
@@ -187,6 +183,7 @@ Understanding these differences helps in choosing the right model for specific c
   * Unit test with multiple choice + short answer (aligned to AP CSP style).
 
 ---
+
 
 
 
