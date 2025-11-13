@@ -100,19 +100,46 @@ Here’s a structured unit you can use right away:
 * Compare sequential vs. parallel vs. distributed computing.
 * Recognize real-world uses (scientific research, AI, climate modeling, SETI@Home).
 
-**Activities**:
+Parallel and distributed computing are two models used to perform complex computations efficiently. While they share similarities, they differ in structure and functionality.
 
-1. **Unplugged Parallel Activity** – solve a large math problem (like adding 1–1000) sequentially vs. dividing among groups (parallel).
-2. **Coding Lab (optional, Python/JavaScript)** –
+**Key Differences**
 
-   * Write a program that processes a large list sequentially vs. with simple parallel methods (if environment supports threads/async).
-   * OR simulate distributed computing with multiple students working on different parts of a dataset.
+***Parallel Computing***
+- Structure: Involves multiple processors that work on tasks simultaneously. These processors can share memory.
+- Functionality: Tasks are divided into smaller sub-tasks, which are processed at the same time.
+- Examples: Supercomputers, smartphones, and artificial intelligence applications.
 
-**Project/Check**:
+***Distributed Computing***
+- Structure: Comprises multiple autonomous computers that communicate over a network. Each computer has its own memory.
+- Functionality: A single task is divided among different computers, which work together to achieve a common goal.
+- Examples: Cloud computing services, online applications like Google Docs, and cryptocurrency mining.
 
-* Reflection: *Why are parallel and distributed computing essential for modern problems like AI, space exploration, or healthcare?*
+Advantages and Challenges
+Advantages
+| Feature |	Parallel Computing | Distributed Computing |
+| ------- | :------------------: | :---------------------: |
+| Speed	| Faster execution due to simultaneous processing	| Fault tolerance; failure of one node does not halt the entire system |
+| Resource Utilization | Efficient use of processing units | Can leverage multiple locations and resources |
+
+|      | Challenges |
+| ---- | :-------: |
+| Parallel Computing | Requires synchronization between processors, which can complicate programming and increase overhead. |
+| Distributed Computing | Faces issues like network latency and the need for robust communication protocols. |
+
+Understanding these differences helps in choosing the right model for specific computational tasks.
+
+**Activities**
+- Binary Messages
+- Let's Make a cake
+  
+
+**Reflection:**
+
+*Why are parallel and distributed computing essential for modern problems like AI, space exploration, or healthcare?*
+
 
 ---
+
 
 **Lesson 6: Review & Synthesis**
 
@@ -160,5 +187,6 @@ Here’s a structured unit you can use right away:
   * Unit test with multiple choice + short answer (aligned to AP CSP style).
 
 ---
+
 
 
