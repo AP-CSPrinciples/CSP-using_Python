@@ -511,4 +511,262 @@ Students select a classic algorithm (e.g., sorting, searching, pathfinding) and 
 
 </details>
 
+<details><summary>Sorting</summary>
+
+#### Merge Sort
+
+```python
+counter = 0 # to track the number of comparisons
+
+def merge_sort(arr):
+    """ Merge Sort, Complexity: O(n log(n)) """
+    global counter
+    
+    # our recursive base case
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    
+    counter += 1 # add to the comparison counter
+    # perform merge_sort recursively on both halves
+    left, right = merge_sort(arr[:mid]), merge_sort(arr[mid:])
+
+    # merge each side together
+    return merge(left, right, arr.copy())
+
+def merge(left, right, merged):
+    """ Merge helper, Complexity: O(n) """
+
+    left_cursor, right_cursor = 0, 0
+    while left_cursor < len(left) and right_cursor < len(right):
+        # sort each one and place into the result
+        if left[left_cursor] <= right[right_cursor]:
+            merged[left_cursor+right_cursor]=left[left_cursor]
+            left_cursor += 1
+        else:
+            merged[left_cursor + right_cursor] = right[right_cursor]
+            right_cursor += 1
+    # add the left overs if there's any left to the result
+    for left_cursor in range(left_cursor, len(left)):
+        merged[left_cursor + right_cursor] = left[left_cursor]
+    # add the left overs if there's any left to the result
+    for right_cursor in range(right_cursor, len(right)):
+        merged[left_cursor + right_cursor] = right[right_cursor]
+
+    # return result
+    return merged
+
+def get_counter():
+    global counter
+    return counter
+  
+if __name__ == "__main__":
+    array = [12, 5, 11, 6, -3, -4, -11, 6, 3, 4, 1, -2]
+    array = merge_sort(array)
+    print(array)
+    print("Number of comparisons:", get_counter())```
+
+
+---
+---
+
+
+#### Insertion Sort
+
+```python
+counter = 0 # to track the number of comparisons
+
+def swap(array, i, j):
+    tmp = array[i]
+    array[i] = array[j]
+    array[j] = tmp
+
+def insertionsort(array):
+    global counter
+
+    for i in range(1, len(array)):
+        unsorted = array[i]
+
+        # a marker to hold the last element of the sorted portion
+        marker = i - 1
+
+        # loop backwards through the sorted portion
+        while marker >= 0:
+            counter += 1
+            if unsorted < array[marker]:
+                swap(array, marker, marker + 1)
+            else:
+                break
+            marker -= 1
+
+def get_counter():
+    global counter
+    return counter
+
+if __name__ == "__main__":
+    array = [12, 5, 11, 6, -3, -4, -11, 6, 3, 4, 1, -2]
+    insertionsort(array)
+    print(array)
+    print("Number of comparisons:", get_counter())```
+
+
+---
+---
+
+
+#### 
+    
+
+```python
+counter = 0 # to track the number of comparisons
+
+def swap(array, i, j):
+    tmp = array[i]
+    array[i] = array[j]
+    array[j] = tmp
+
+def partition(array, start, end):
+    global counter
+    """ quicksort partitioning, using end """
+    pivot = array[end]
+    L = start
+    R = end
+    while L < R:
+        while array[L] < pivot:
+            L += 1
+            counter += 1
+        while array[R] > pivot:
+            R -= 1
+            counter += 1
+        swap(array, L, R)
+        # avoid hanging on the same numbers
+        if ( array[L] == array[R] ):
+            L += 1
+    return R
+
+def _quicksort(array, start, end):
+    """ Recursive quicksort function """
+    global counter
+    if start < end:
+        counter += 1
+        split = partition(array, start, end)
+        _quicksort(array, start, split-1)
+        _quicksort(array, split+1, end)
+
+def quicksort(array):
+    _quicksort(array, 0, len(array)-1)
+    
+def get_counter():
+    global counter
+    return counter
+
+if __name__ == "__main__":
+    array = [12, 5, 11, 6, -3, -4, -11, 6, 3, 4]
+    quicksort(array)
+    print(array)
+    print("Number of comparisons:", get_counter())```
+
+
+---
+---
+
+
+#### Quick Sort
+
+
+```python
+counter = 0 # to track the number of comparisons
+
+def swap(array, i, j):
+    tmp = array[i]
+    array[i] = array[j]
+    array[j] = tmp
+
+def partition(array, start, end):
+    global counter
+    """ quicksort partitioning, using end """
+    pivot = array[end]
+    L = start
+    R = end
+    while L < R:
+        while array[L] < pivot:
+            L += 1
+            counter += 1
+        while array[R] > pivot:
+            R -= 1
+            counter += 1
+        swap(array, L, R)
+        # avoid hanging on the same numbers
+        if ( array[L] == array[R] ):
+            L += 1
+    return R
+
+def _quicksort(array, start, end):
+    """ Recursive quicksort function """
+    global counter
+    if start < end:
+        counter += 1
+        split = partition(array, start, end)
+        _quicksort(array, start, split-1)
+        _quicksort(array, split+1, end)
+
+def quicksort(array):
+    _quicksort(array, 0, len(array)-1)
+    
+def get_counter():
+    global counter
+    return counter
+
+if __name__ == "__main__":
+    array = [12, 5, 11, 6, -3, -4, -11, 6, 3, 4]
+    quicksort(array)
+    print(array)
+    print("Number of comparisons:", get_counter())```
+
+
+---
+---
+
+
+#### Bubble Sort
+
+
+```python
+counter = 0 # to track the number of comparisons
+
+def swap(array, i, j):
+    tmp = array[i]
+    array[i] = array[j]
+    array[j] = tmp
+
+def bubblesort(array):
+    global counter
+    n = len(array)-1
+    for i in range(0, len(array)):
+        for j in range(0, n):
+            if array[j] > array[j+1]:
+                counter += 1
+                swap(array, j+1, j)
+        n -= 1
+    return array
+    
+def get_counter():
+    global counter
+    return counter
+
+if __name__ == "__main__":
+    array = [12, 5, 11, 6, -3, -4, -11, 6, 3, 4, 1, -2]
+    array = bubblesort(array)
+    print(array)
+    print("Number of comparisons:", get_counter())```
+
+
+</details>
+
+---
+
+
+
+
+
 
