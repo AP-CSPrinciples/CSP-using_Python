@@ -564,7 +564,8 @@ if __name__ == "__main__":
     array = [12, 5, 11, 6, -3, -4, -11, 6, 3, 4, 1, -2]
     array = merge_sort(array)
     print(array)
-    print("Number of comparisons:", get_counter())```
+    print("Number of comparisons:", get_counter())
+```
 
 
 ---
@@ -607,64 +608,8 @@ if __name__ == "__main__":
     array = [12, 5, 11, 6, -3, -4, -11, 6, 3, 4, 1, -2]
     insertionsort(array)
     print(array)
-    print("Number of comparisons:", get_counter())```
-
-
----
----
-
-
-#### 
-    
-
-```python
-counter = 0 # to track the number of comparisons
-
-def swap(array, i, j):
-    tmp = array[i]
-    array[i] = array[j]
-    array[j] = tmp
-
-def partition(array, start, end):
-    global counter
-    """ quicksort partitioning, using end """
-    pivot = array[end]
-    L = start
-    R = end
-    while L < R:
-        while array[L] < pivot:
-            L += 1
-            counter += 1
-        while array[R] > pivot:
-            R -= 1
-            counter += 1
-        swap(array, L, R)
-        # avoid hanging on the same numbers
-        if ( array[L] == array[R] ):
-            L += 1
-    return R
-
-def _quicksort(array, start, end):
-    """ Recursive quicksort function """
-    global counter
-    if start < end:
-        counter += 1
-        split = partition(array, start, end)
-        _quicksort(array, start, split-1)
-        _quicksort(array, split+1, end)
-
-def quicksort(array):
-    _quicksort(array, 0, len(array)-1)
-    
-def get_counter():
-    global counter
-    return counter
-
-if __name__ == "__main__":
-    array = [12, 5, 11, 6, -3, -4, -11, 6, 3, 4]
-    quicksort(array)
-    print(array)
-    print("Number of comparisons:", get_counter())```
+    print("Number of comparisons:", get_counter())
+```
 
 
 ---
@@ -672,7 +617,7 @@ if __name__ == "__main__":
 
 
 #### Quick Sort
-
+    
 
 ```python
 counter = 0 # to track the number of comparisons
@@ -721,7 +666,8 @@ if __name__ == "__main__":
     array = [12, 5, 11, 6, -3, -4, -11, 6, 3, 4]
     quicksort(array)
     print(array)
-    print("Number of comparisons:", get_counter())```
+    print("Number of comparisons:", get_counter())
+```
 
 
 ---
@@ -758,12 +704,14 @@ if __name__ == "__main__":
     array = [12, 5, 11, 6, -3, -4, -11, 6, 3, 4, 1, -2]
     array = bubblesort(array)
     print(array)
-    print("Number of comparisons:", get_counter())```
+    print("Number of comparisons:", get_counter())
+```
 
 
 </details>
 
 ---
+
 
 
 
