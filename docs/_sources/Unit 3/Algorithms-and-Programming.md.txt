@@ -1060,7 +1060,7 @@ Your program must:
 
 **Project Choices:**
 
-**🟢 Easy Projects**
+**🟢 Easy Projects** +0
 
 Choose one:
 
@@ -1070,7 +1070,7 @@ Choose one:
 
 ---
 
-**🟡 Moderate Projects**
+**🟡 Moderate Projects** +2
 
 Choose one:
 
@@ -1080,7 +1080,7 @@ Choose one:
 
 ---
 
-**🔴 Challenging Projects**
+**🔴 Challenging Projects** +4
 
 Choose one:
 
@@ -1140,6 +1140,7 @@ Design your program for the **user**, not just the computer.
 
 
 ---
+
 
 
 
