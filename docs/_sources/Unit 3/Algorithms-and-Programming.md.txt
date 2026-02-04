@@ -756,6 +756,46 @@ from tkinter import messagebox
 
 ---
 
+> **Built-in Tkinter Modules (Standard Library)**
+> 
+> These modules are included with Python's standard library and provide additional functionality or themed widgets: 
+>
+> tkinter.ttk -> This module provides access to the Tk themed widgets (Ttk), which offer a more modern, native look and feel across different platforms compared to classic Tk widgets.
+> 
+> tkinter.filedialog -> Provides standard dialogs for file selection (open, save, etc.).
+> 
+> tkinter.simpledialog -> Offers basic dialog windows for inputting values.
+> 
+> tkinter.messagebox -> Used for displaying message prompts and confirmation dialogs.
+> 
+> tkinter.colorchooser -> Provides a dialog for selecting colors.
+> 
+> tkinter.font -> A wrapper for working with fonts.
+> 
+> tkinter.scrolledtext -> Provides a text widget with a built-in scrollbar.
+> 
+> tkinter.dnd -> Adds drag-and-drop support.
+
+
+---
+
+**Step 3:** Create the Main Window
+
+Create the **root window** and configure its properties.
+
+📌 *Vocabulary:* root window, application window, geometry
+
+```python
+window = tk.Tk()
+window.title("Simple Calculator")
+window.geometry("300x250")
+window.resizable(False, False)
+```
+
+---
+
+**Step 4:** Plan the Layout
+
 **What is an effective GUI Design & Layout**
 
 **1. Visual Organization**
@@ -860,52 +900,11 @@ from tkinter import messagebox
 > A good GUI should be **organized, consistent, readable, easy to use, and visually clear**.
 > As a general guide, if a user can understand how to use it **without instructions**, the design is effective.
 
-
 ---
-
-> **Built-in Tkinter Modules (Standard Library)**
-> 
-> These modules are included with Python's standard library and provide additional functionality or themed widgets: 
->
-> tkinter.ttk -> This module provides access to the Tk themed widgets (Ttk), which offer a more modern, native look and feel across different platforms compared to classic Tk widgets.
-> 
-> tkinter.filedialog -> Provides standard dialogs for file selection (open, save, etc.).
-> 
-> tkinter.simpledialog -> Offers basic dialog windows for inputting values.
-> 
-> tkinter.messagebox -> Used for displaying message prompts and confirmation dialogs.
-> 
-> tkinter.colorchooser -> Provides a dialog for selecting colors.
-> 
-> tkinter.font -> A wrapper for working with fonts.
-> 
-> tkinter.scrolledtext -> Provides a text widget with a built-in scrollbar.
-> 
-> tkinter.dnd -> Adds drag-and-drop support.
-
-
----
-
-**Step 3:** Create the Main Window
-
-Create the **root window** and configure its properties.
-
-📌 *Vocabulary:* root window, application window, geometry
-
-```python
-window = tk.Tk()
-window.title("Simple Calculator")
-window.geometry("300x250")
-window.resizable(False, False)
-```
-
----
-
-**Step 4:** Plan the Layout
 
 Decide how widgets will be arranged on the screen.
 
-📌 *Vocabulary:* layout, layout manager, grid, alignment
+📌 *Vocabulary:* layout, [layout manager](https://docs.python.org/3/library/tkinter.html), grid, alignment
 
 ```python
 # This program uses the grid layout manager
@@ -1141,6 +1140,7 @@ Design your program for the **user**, not just the computer.
 
 
 ---
+
 
 
 

@@ -1069,6 +1069,30 @@ Each step includes <strong>example code</strong> and <strong>key vocabulary</str
 </pre></div>
 </div>
 <hr class="docutils" />
+<blockquote>
+<div><p><strong>Built-in Tkinter Modules (Standard Library)</strong></p>
+<p>These modules are included with Python’s standard library and provide additional functionality or themed widgets:</p>
+<p>tkinter.ttk -&gt; This module provides access to the Tk themed widgets (Ttk), which offer a more modern, native look and feel across different platforms compared to classic Tk widgets.</p>
+<p>tkinter.filedialog -&gt; Provides standard dialogs for file selection (open, save, etc.).</p>
+<p>tkinter.simpledialog -&gt; Offers basic dialog windows for inputting values.</p>
+<p>tkinter.messagebox -&gt; Used for displaying message prompts and confirmation dialogs.</p>
+<p>tkinter.colorchooser -&gt; Provides a dialog for selecting colors.</p>
+<p>tkinter.font -&gt; A wrapper for working with fonts.</p>
+<p>tkinter.scrolledtext -&gt; Provides a text widget with a built-in scrollbar.</p>
+<p>tkinter.dnd -&gt; Adds drag-and-drop support.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p><strong>Step 3:</strong> Create the Main Window</p>
+<p>Create the <strong>root window</strong> and configure its properties.</p>
+<p>📌 <em>Vocabulary:</em> root window, application window, geometry</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">window</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">window</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Simple Calculator&quot;</span><span class="p">)</span>
+<span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;300x250&quot;</span><span class="p">)</span>
+<span class="n">window</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Step 4:</strong> Plan the Layout</p>
 <p><strong>What is an effective GUI Design &amp; Layout</strong></p>
 <p><strong>1. Visual Organization</strong></p>
 <ul class="simple">
@@ -1165,32 +1189,8 @@ Each step includes <strong>example code</strong> and <strong>key vocabulary</str
 As a general guide, if a user can understand how to use it <strong>without instructions</strong>, the design is effective.</p>
 </div></blockquote>
 <hr class="docutils" />
-<blockquote>
-<div><p><strong>Built-in Tkinter Modules (Standard Library)</strong></p>
-<p>These modules are included with Python’s standard library and provide additional functionality or themed widgets:</p>
-<p>tkinter.ttk -&gt; This module provides access to the Tk themed widgets (Ttk), which offer a more modern, native look and feel across different platforms compared to classic Tk widgets.</p>
-<p>tkinter.filedialog -&gt; Provides standard dialogs for file selection (open, save, etc.).</p>
-<p>tkinter.simpledialog -&gt; Offers basic dialog windows for inputting values.</p>
-<p>tkinter.messagebox -&gt; Used for displaying message prompts and confirmation dialogs.</p>
-<p>tkinter.colorchooser -&gt; Provides a dialog for selecting colors.</p>
-<p>tkinter.font -&gt; A wrapper for working with fonts.</p>
-<p>tkinter.scrolledtext -&gt; Provides a text widget with a built-in scrollbar.</p>
-<p>tkinter.dnd -&gt; Adds drag-and-drop support.</p>
-</div></blockquote>
-<hr class="docutils" />
-<p><strong>Step 3:</strong> Create the Main Window</p>
-<p>Create the <strong>root window</strong> and configure its properties.</p>
-<p>📌 <em>Vocabulary:</em> root window, application window, geometry</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">window</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
-<span class="n">window</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Simple Calculator&quot;</span><span class="p">)</span>
-<span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;300x250&quot;</span><span class="p">)</span>
-<span class="n">window</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-<hr class="docutils" />
-<p><strong>Step 4:</strong> Plan the Layout</p>
 <p>Decide how widgets will be arranged on the screen.</p>
-<p>📌 <em>Vocabulary:</em> layout, layout manager, grid, alignment</p>
+<p>📌 <em>Vocabulary:</em> layout, <a class="reference external" href="https://docs.python.org/3/library/tkinter.html">layout manager</a>, grid, alignment</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program uses the grid layout manager</span>
 </pre></div>
 </div>
