@@ -513,7 +513,7 @@ Students select a classic algorithm (e.g., sorting, searching, pathfinding) and 
 
 <details><summary>Sorting</summary>
 
-#### Merge Sort
+**Merge Sort**
 
 ```python
 counter = 0 # to track the number of comparisons
@@ -572,7 +572,7 @@ if __name__ == "__main__":
 ---
 
 
-#### Insertion Sort
+**Insertion Sort**
 
 ```python
 counter = 0 # to track the number of comparisons
@@ -616,7 +616,7 @@ if __name__ == "__main__":
 ---
 
 
-#### Quick Sort
+**Quick Sort**
     
 
 ```python
@@ -674,7 +674,7 @@ if __name__ == "__main__":
 ---
 
 
-#### Bubble Sort
+**Bubble Sort**
 
 
 ```python
@@ -707,10 +707,319 @@ if __name__ == "__main__":
     print("Number of comparisons:", get_counter())
 ```
 
+</details>
+
+
+---
+
+
+<details><summary>Creating a GUI</summary>
+
+### GUI Development Project
+
+**Part 1:** How to Create a GUI (Step-by-Step with Code)
+
+This section walks you through **how to build a GUI for the first time**.  
+Each step includes **example code** and **key vocabulary**.
+
+The examples use **Python + Tkinter**, but the ideas apply to all GUI frameworks.
+
+---
+
+**Step 1:** Define the Purpose (Requirements)
+
+Before writing code, decide:
+- What problem does the program solve?
+- What can the user do?
+- What input and output are required?
+
+📌 *Vocabulary:* requirements, input, output, user interaction
+
+```python
+# Purpose:
+# This GUI allows the user to add two numbers
+# Inputs: two numbers
+# Output: the sum
+```
+
+---
+
+**Step 2:** Choose the GUI Framework
+
+Select a framework and import required modules.
+
+📌 *Vocabulary:* framework, library, module, dependency
+
+```python
+import tkinter as tk
+from tkinter import messagebox
+```
+
+---
+
+**Step 3:** Create the Main Window
+
+Create the **root window** and configure its properties.
+
+📌 *Vocabulary:* root window, application window, geometry
+
+```python
+window = tk.Tk()
+window.title("Simple Calculator")
+window.geometry("300x250")
+window.resizable(False, False)
+```
+
+---
+
+**Step 4:** Plan the Layout
+
+Decide how widgets will be arranged on the screen.
+
+📌 *Vocabulary:* layout, layout manager, grid, alignment
+
+```python
+# This program uses the grid layout manager
+```
+
+---
+
+**Step 5:** Add GUI Components (Widgets)
+
+Create the visual elements the user interacts with.
+
+📌 *Vocabulary:* widget, component, control
+
+```python
+label_title = tk.Label(window, text="Add Two Numbers")
+label_num1 = tk.Label(window, text="Number 1:")
+entry_num1 = tk.Entry(window)
+
+label_num2 = tk.Label(window, text="Number 2:")
+entry_num2 = tk.Entry(window)
+
+calculate_button = tk.Button(window, text="Calculate")
+result_label = tk.Label(window, text="Result:")
+```
+
+---
+
+**Step 6:** Configure Widget Properties
+
+Adjust text, size, spacing, and appearance.
+
+📌 *Vocabulary:* properties, attributes, configuration
+
+```python
+label_title.config(font=("Arial", 14), pady=10)
+calculate_button.config(width=15)
+```
+
+---
+
+**Step 7:** Handle User Events
+
+**Define *event handlers* that run when the user interacts.**
+
+📌 *Vocabulary:* event, event-driven programming, callback
+
+```python
+def calculate_sum():
+    try:
+        num1 = float(entry_num1.get())
+        num2 = float(entry_num2.get())
+        result_label.config(text=f"Result: {num1 + num2}")
+    except ValueError:
+        messagebox.showerror("Error", "Enter valid numbers")
+```
+
+---
+
+**Step 8:** Connect Events to Widgets
+
+Link user actions to functions.
+
+📌 *Vocabulary:* event binding, command callback
+
+```python
+calculate_button.config(command=calculate_sum)
+```
+
+---
+
+**Step 9:** Apply the Layout Manager
+
+Place widgets on the screen.
+
+📌 *Vocabulary:* grid system, spacing
+
+```python
+label_title.grid(row=0, column=0, columnspan=2)
+label_num1.grid(row=1, column=0)
+entry_num1.grid(row=1, column=1)
+
+label_num2.grid(row=2, column=0)
+entry_num2.grid(row=2, column=1)
+
+calculate_button.grid(row=3, column=0, columnspan=2, pady=10)
+result_label.grid(row=4, column=0, columnspan=2)
+```
+
+---
+
+**Step 10:** Display Output to the User
+
+Update labels or show message boxes.
+
+📌 *Vocabulary:* output display, user feedback
+
+```python
+result_label.config(text="Result: 10")
+```
+
+---
+
+**Step 11:** Test and Debug
+
+Run the program and test:
+
+* Valid input
+* Invalid input
+* Button behavior
+
+📌 *Vocabulary:* testing, debugging, runtime error
+
+```python
+window.mainloop()
+```
+
+---
+
+**Step 12:** Finalize and Document
+
+Add comments and clean up code.
+
+📌 *Vocabulary:* documentation, refactoring
+
+```python
+# This program demonstrates a basic event-driven GUI
+# using Tkinter for AP CSP students
+```
+
+---
+
+> **Teacher Tip:**
+> A GUI program is *event-driven* — it waits for the user to do something.
+
+---
+
+---
+
+**Part 2:** AP CSP GUI Project
+
+**Project Overview**
+
+You will design and build your **own GUI-based program** using the steps above.
+
+Your program must:
+
+* Accept user input
+* Respond to user events
+* Process data using program logic
+* Display meaningful output
+
+---
+
+**Project Choices:**
+
+**🟢 Easy Projects**
+
+Choose one:
+
+* **Basic Calculator**
+* **Temperature Converter**
+* **Click Counter**
+
+---
+
+**🟡 Moderate Projects**
+
+Choose one:
+
+* **Grade Calculator**
+* **Simple To-Do List**
+* **Random Password Generator**
+
+---
+
+**🔴 Challenging Projects**
+
+Choose one:
+
+* **Unit Conversion Dashboard**
+* **Quiz Application**
+* **Expense Tracker**
+
+---
+
+**Required Features**
+
+Your project must include:
+
+* At least **3 widgets**
+* At least **1 event handler**
+* Input validation
+* Clear output
+
+---
+
+**Universal Rubric (10 Points)**
+
+| Category            | Points |
+| ------------------- | ------ |
+| GUI Design & Layout | 2      |
+| Functionality       | 2      |
+| Event Handling      | 2      |
+| Program Logic       | 2      |
+| Input Validation    | 1      |
+| Documentation       | 1      |
+| **Total**           | **10** |
+
+---
+
+**Submission Requirements**
+
+Submit:
+
+* Python source code
+* Short written explanation as a block comment at the bottom your program:
+
+  * What does your program do?
+  * How does the user interact with it?
+  * Where is user input handled?
+  * Where is program logic implemented?
+
+---
+
+**Final Reminder**
+
+Design your program for the **user**, not just the computer.
+
+```
+
+---
+
+**Why this works well for AP CSP**
+- Explicit **step-by-step scaffolding**
+- Direct mapping from **concept → code**
+- Encourages **independent design**
+- Cleanly supports the **Create Performance Task**
+```
 
 </details>
 
 ---
+
 
 
 
