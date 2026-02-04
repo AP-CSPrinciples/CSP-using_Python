@@ -722,6 +722,8 @@ This section walks you through **how to build a GUI for the first time**.
 Each step includes **example code** and **key vocabulary**.
 
 You will be using **Python + Tkinter**.
+[Tkinter Resource](https://tkdocs.com/tutorial/intro.html#audience)
+[Python Support Docs](https://docs.python.org/3/)
 
 ---
 
@@ -1140,6 +1142,7 @@ Design your program for the **user**, not just the computer.
 
 
 ---
+
 
 
 
