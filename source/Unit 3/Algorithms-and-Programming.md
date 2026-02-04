@@ -509,7 +509,9 @@ Students select a classic algorithm (e.g., sorting, searching, pathfinding) and 
 
 ---
 
+
 </details>
+
 
 <details><summary>Sorting</summary>
 
@@ -569,7 +571,6 @@ if __name__ == "__main__":
 
 
 ---
----
 
 
 **Insertion Sort**
@@ -612,7 +613,6 @@ if __name__ == "__main__":
 ```
 
 
----
 ---
 
 
@@ -671,7 +671,6 @@ if __name__ == "__main__":
 
 
 ---
----
 
 
 **Bubble Sort**
@@ -707,10 +706,11 @@ if __name__ == "__main__":
     print("Number of comparisons:", get_counter())
 ```
 
-</details>
-
 
 ---
+
+
+</details>
 
 
 <details><summary>Creating a GUI</summary>
@@ -1019,6 +1019,7 @@ Design your program for the **user**, not just the computer.
 </details>
 
 ---
+
 
 
 
