@@ -756,7 +756,7 @@ from tkinter import messagebox
 
 ---
 
-#### What is an effective GUI Design & Layout
+**What is an effective GUI Design & Layout**
 
 **1. Visual Organization**
 
@@ -1141,6 +1141,7 @@ Design your program for the **user**, not just the computer.
 
 
 ---
+
 
 
 
