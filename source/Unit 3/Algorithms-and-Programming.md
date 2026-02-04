@@ -722,7 +722,7 @@ if __name__ == "__main__":
 This section walks you through **how to build a GUI for the first time**.  
 Each step includes **example code** and **key vocabulary**.
 
-The examples use **Python + Tkinter**, but the ideas apply to all GUI frameworks.
+You will be using **Python + Tkinter**.
 
 ---
 
@@ -1035,6 +1035,7 @@ Design your program for the **user**, not just the computer.
 
 
 ---
+
 
 
 
