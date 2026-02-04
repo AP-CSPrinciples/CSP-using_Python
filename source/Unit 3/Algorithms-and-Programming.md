@@ -713,10 +713,8 @@ if __name__ == "__main__":
 </details>
 
 
-<details><summary>Creating a GUI</summary>
+<details><summary>GUI Development Project</summary>
 
-
-### GUI Development Project
 
 **Part 1:** How to Create a GUI (Step-by-Step with Code)
 
@@ -1035,6 +1033,7 @@ Design your program for the **user**, not just the computer.
 
 
 ---
+
 
 
 
