@@ -798,7 +798,7 @@ window.resizable(False, False)
 
 **What is an effective GUI Design & Layout**
 
-**1. Visual Organization**
+**A. Visual Organization**
 
 * Elements are **aligned** (buttons, labels, inputs line up cleanly)
 * Related items are **grouped together**
@@ -812,7 +812,7 @@ window.resizable(False, False)
 
 ---
 
-**2. Consistency**
+**B. Consistency**
 
 * Fonts, colors, and button styles are consistent throughout
 * Similar actions use similar controls (e.g., all actions use buttons)
@@ -824,7 +824,7 @@ window.resizable(False, False)
 
 ---
 
-**3. Readability**
+**C. Readability**
 
 * Text is large enough to read easily
 * Font style is simple and appropriate
@@ -836,7 +836,7 @@ window.resizable(False, False)
 
 ---
 
-**4. Logical Layout**
+**D. Logical Layout**
 
 * GUI follows a natural flow (top-to-bottom or left-to-right)
 * User knows what to do **without instructions**
@@ -848,7 +848,7 @@ window.resizable(False, False)
 
 ---
 
-**5. Usability**
+**E. Usability**
 
 * Buttons are clearly labeled
 * Controls are easy to click or interact with
@@ -860,7 +860,7 @@ window.resizable(False, False)
 
 ---
 
-**6. Aesthetics**
+**F. Aesthetics**
 
 * Colors are visually pleasing and not distracting
 * Design supports the purpose of the application
@@ -872,7 +872,7 @@ window.resizable(False, False)
 
 ---
 
-**7. Screen Fit & Responsiveness** 
+**G. Screen Fit & Responsiveness** 
 
 * GUI fits within the window without scrolling
 * Elements do not overlap
@@ -884,7 +884,7 @@ window.resizable(False, False)
 
 ---
 
-**8. Accessibility**
+**H. Accessibility**
 
 * Labels clearly describe inputs
 * Color is not the only way information is conveyed
@@ -1064,7 +1064,7 @@ Your program must:
 
 Choose one:
 
-* **Basic Calculator**
+* **A Calculator(0-9,+,/,+,-,.)**
 * **Temperature Converter**
 * **Click Counter**
 
@@ -1140,6 +1140,7 @@ Design your program for the **user**, not just the computer.
 
 
 ---
+
 
 
 
