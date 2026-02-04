@@ -755,6 +755,28 @@ import tkinter as tk
 from tkinter import messagebox
 ```
 
+
+> **Built-in Tkinter Modules (Standard Library)**
+> 
+> These modules are included with Python's standard library and provide additional functionality or themed widgets: 
+>
+> tkinter.ttk -> This module provides access to the Tk themed widgets (Ttk), which offer a more modern, native look and feel across different platforms compared to classic Tk widgets.
+> 
+> tkinter.filedialog -> Provides standard dialogs for file selection (open, save, etc.).
+> 
+> tkinter.simpledialog -> Offers basic dialog windows for inputting values.
+> 
+> tkinter.messagebox -> Used for displaying message prompts and confirmation dialogs.
+> 
+> tkinter.colorchooser -> Provides a dialog for selecting colors.
+> 
+> tkinter.font -> A wrapper for working with fonts.
+> 
+> tkinter.scrolledtext -> Provides a text widget with a built-in scrollbar.
+> 
+> tkinter.dnd -> Adds drag-and-drop support.
+
+
 ---
 
 **Step 3:** Create the Main Window
@@ -908,12 +930,12 @@ Add comments and clean up code.
 
 ---
 
-> **Teacher Tip:**
+
 > A GUI program is *event-driven* — it waits for the user to do something.
 
----
 
 ---
+
 
 **Part 2:** AP CSP GUI Project
 
@@ -992,7 +1014,7 @@ Your project must include:
 Submit:
 
 * Python source code
-* Short written explanation as a block comment at the bottom your program:
+* Short written explanation as a **block comment** at the bottom your program:
 
   * What does your program do?
   * How does the user interact with it?
@@ -1005,20 +1027,15 @@ Submit:
 
 Design your program for the **user**, not just the computer.
 
-```
 
 ---
 
-**Why this works well for AP CSP**
-- Explicit **step-by-step scaffolding**
-- Direct mapping from **concept → code**
-- Encourages **independent design**
-- Cleanly supports the **Create Performance Task**
-```
 
 </details>
 
+
 ---
+
 
 
 
