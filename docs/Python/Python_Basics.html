@@ -202,7 +202,25 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Python:</span></p>
 <ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Python_Basics</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Python Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#python-mini-minesweeper-66">Python: Mini Minesweeper (6×6)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#key-programming-concepts-good-for-students">Key Programming Concepts (Good for Students)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#ideas-if-you-want-to-turn-this-into-a-student-project">Ideas if You Want to Turn This Into a Student Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#full-minesweeper-program-teacher-version">Full Minesweeper Program (Teacher Version)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#why-this-version-works-well-for-students">Why This Version Works Well for Students</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#student-starter-version-what-i-recommend">Student Starter Version (What I Recommend)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#ap-csp-project">AP CSP Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#build-a-python-minesweeper-game">Build a Python Minesweeper Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#learning-objectives-ap-csp">Learning Objectives (AP CSP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#program-requirements">Program Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#student-starter-code">Student Starter Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#suggested-development-order-for-students">Suggested Development Order for Students</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#grading-rubric-10-points">Grading Rubric (10 Points)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#computational-thinking-skills-demonstrated">Computational Thinking Skills Demonstrated</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#optional-extension-challenges-for-advanced-students">Optional Extension Challenges (For Advanced Students)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#additional-python-foundations-ap-csp-alignment">Additional Python Foundations (AP CSP Alignment)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#python-mini-projects">Python Mini Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#minesweeper-project">Minesweeper Project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PyGame.html">PyGame</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python_Turtle.html">Python_Turtle</a></li>
 </ul>
@@ -269,6 +287,7 @@
         <article role="main" id="furo-main-content">
           <section id="python-basics">
 <h1>Python Basics<a class="headerlink" href="#python-basics" title="Link to this heading">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Revised</span> <span class="pre">March</span> <span class="pre">2026</span></code></p>
 <p>Python is an open-source programming language that is one of the easiest programs that a person can learn for their first programming language.  Python is a versatile programming language that can be used in many areas such as data analysis, science, web development, AI, and IoT.  As of 2024, it is one of the most in demand programming languages in the market place.  Python is a high-level programming language that offers simplicity, readability, and versatility.  Python supports multiple programming paradigms and has an extensive library that simplifies coding tasks. Python has a robust community and documentation support that enables beginners to excel quickly in this language.</p>
 <p>We will be looking at syntax and structures of Python. We will use an Integrated Development Environment to develop our code in this course.</p>
 <section id="python-style-guidelines">
@@ -3197,6 +3216,1128 @@ In data science, lambda functions are commonly used with libraries like <code cl
 </div>
 <p><strong>Summary</strong>
 Lambda functions in Python provide a concise way to define simple functions without the need for formal <code class="docutils literal notranslate"><span class="pre">def</span></code> syntax. They are useful in scenarios where small, throwaway functions are needed, like with <code class="docutils literal notranslate"><span class="pre">map()</span></code>, <code class="docutils literal notranslate"><span class="pre">filter()</span></code>, and data processing tasks. However, lambda functions are limited to single expressions, so they’re best for straightforward operations rather than complex logic.</p>
+<p>I would like to add this content to my Python Basics</p>
+<p>Below is a <strong>simple classroom-friendly Minesweeper program (6×6)</strong> written in <strong>Python using Tkinter</strong>. It includes the things you asked for:</p>
+<ul class="simple">
+<li><p>6 × 6 grid</p></li>
+<li><p>Random mine placement</p></li>
+<li><p><strong>List that records player moves</strong></p></li>
+<li><p><strong>Score that increases for safe clicks</strong></p></li>
+<li><p><strong>Game over if a mine is clicked</strong></p></li>
+<li><p><strong>“Try Again” button to reset the game</strong></p></li>
+</ul>
+<p>This version is intentionally <strong>clear and readable</strong> so students can study the logic (similar to how you structure projects for AP CSP / intro Python students).</p>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="python-mini-minesweeper-66">
+<h1>Python: Mini Minesweeper (6×6)<a class="headerlink" href="#python-mini-minesweeper-66" title="Link to this heading">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">SIZE</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">MINES</span> <span class="o">=</span> <span class="mi">6</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MiniMinesweeper</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">root</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Mini Minesweeper&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">moves</span> <span class="o">=</span> <span class="p">[]</span>      <span class="c1"># list to track player moves</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">score_label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Score: 0&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">14</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score_label</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="n">SIZE</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_grid</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">retry_button</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Try Again&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">reset_game</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">retry_button</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">SIZE</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="n">SIZE</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&quot;we&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">place_mines</span><span class="p">()</span>
+
+    <span class="c1"># -----------------------------------------</span>
+    <span class="c1"># Create the grid of buttons</span>
+    <span class="c1"># -----------------------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">SIZE</span><span class="p">):</span>
+
+            <span class="n">row_buttons</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">SIZE</span><span class="p">):</span>
+
+                <span class="n">btn</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span>
+                                <span class="n">width</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+                                <span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                <span class="n">command</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+
+                <span class="n">btn</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">r</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
+
+                <span class="n">row_buttons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">btn</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row_buttons</span><span class="p">)</span>
+
+    <span class="c1"># -----------------------------------------</span>
+    <span class="c1"># Random mine placement</span>
+    <span class="c1"># -----------------------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">place_mines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">mine_locations</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mine_locations</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">MINES</span><span class="p">:</span>
+
+            <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SIZE</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SIZE</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">mine_locations</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+
+    <span class="c1"># -----------------------------------------</span>
+    <span class="c1"># Button click logic</span>
+    <span class="c1"># -----------------------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">moves</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">moves</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+
+        <span class="n">button</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mine_locations</span><span class="p">:</span>
+
+            <span class="n">button</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;💣&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">game_over</span><span class="p">()</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">count_mines</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+            <span class="n">button</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">),</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;lightgray&quot;</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">score_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Score: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="p">))</span>
+
+    <span class="c1"># -----------------------------------------</span>
+    <span class="c1"># Count nearby mines</span>
+    <span class="c1"># -----------------------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">count_mines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="o">+</span><span class="mi">2</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="mi">2</span><span class="p">):</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mine_locations</span><span class="p">:</span>
+                    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">count</span>
+
+    <span class="c1"># -----------------------------------------</span>
+    <span class="c1"># Game over function</span>
+    <span class="c1"># -----------------------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">game_over</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">SIZE</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">SIZE</span><span class="p">):</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mine_locations</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;💣&quot;</span><span class="p">)</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="s2">&quot;disabled&quot;</span><span class="p">)</span>
+
+    <span class="c1"># -----------------------------------------</span>
+    <span class="c1"># Reset the game</span>
+    <span class="c1"># -----------------------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">reset_game</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">moves</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Score: 0&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">SIZE</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">SIZE</span><span class="p">):</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">config</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;SystemButtonFace&quot;</span><span class="p">,</span>
+                    <span class="n">state</span><span class="o">=</span><span class="s2">&quot;normal&quot;</span>
+                <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">mine_locations</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">place_mines</span><span class="p">()</span>
+
+
+<span class="c1"># -----------------------------------------</span>
+<span class="c1"># Run program</span>
+<span class="c1"># -----------------------------------------</span>
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">game</span> <span class="o">=</span> <span class="n">MiniMinesweeper</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="key-programming-concepts-good-for-students">
+<h1>Key Programming Concepts (Good for Students)<a class="headerlink" href="#key-programming-concepts-good-for-students" title="Link to this heading">¶</a></h1>
+<section id="list-for-tracking-moves">
+<h2>1️⃣ List for Tracking Moves<a class="headerlink" href="#list-for-tracking-moves" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">moves</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">moves</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Stores every location the player has clicked.</p>
+<hr class="docutils" />
+</section>
+<section id="score-tracking">
+<h2>2️⃣ Score Tracking<a class="headerlink" href="#score-tracking" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Score increases when the player safely clicks a square.</p>
+<hr class="docutils" />
+</section>
+<section id="random-mine-placement">
+<h2>3️⃣ Random Mine Placement<a class="headerlink" href="#random-mine-placement" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SIZE</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Places mines in random grid locations.</p>
+<hr class="docutils" />
+</section>
+<section id="d-grid-using-lists">
+<h2>4️⃣ 2D Grid Using Lists<a class="headerlink" href="#d-grid-using-lists" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Grid structure stored as a <strong>list of lists</strong>.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ideas-if-you-want-to-turn-this-into-a-student-project">
+<h1>Ideas if You Want to Turn This Into a Student Project<a class="headerlink" href="#ideas-if-you-want-to-turn-this-into-a-student-project" title="Link to this heading">¶</a></h1>
+<p>Since you often build <strong>portfolio-style projects</strong>, here are good extensions students could implement:</p>
+<p><strong>Level 1</strong></p>
+<ul class="simple">
+<li><p>Add <strong>flagging system (right-click 🚩)</strong></p></li>
+<li><p>Limit number of flags</p></li>
+</ul>
+<p><strong>Level 2</strong></p>
+<ul class="simple">
+<li><p>Reveal <strong>empty regions automatically</strong></p></li>
+</ul>
+<p><strong>Level 3</strong></p>
+<ul class="simple">
+<li><p>Show <strong>high score</strong></p></li>
+</ul>
+<p><strong>Level 4</strong></p>
+<ul class="simple">
+<li><p>Change difficulty</p>
+<ul>
+<li><p>Easy (6×6)</p></li>
+<li><p>Medium (8×8)</p></li>
+<li><p>Hard (10×10)</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p>✅ If you’d like, I can also make a <strong>student starter version</strong> where sections are replaced with comments like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Write code that counts nearby mines</span>
+</pre></div>
+</div>
+<p>That works extremely well for <strong>intro Python or AP CSP style assignments.</strong></p>
+<p>Below is a <strong>complete expanded Minesweeper program</strong> that includes the four levels of functionality you requested. I kept the code <strong>structured and readable for students</strong>, since you often use these as <strong>portfolio-style learning projects</strong>.</p>
+<p>Features included:</p>
+<p>Level 1</p>
+<ul class="simple">
+<li><p>Right-click <strong>flagging system 🚩</strong></p></li>
+<li><p><strong>Limited number of flags</strong></p></li>
+</ul>
+<p>Level 2</p>
+<ul class="simple">
+<li><p><strong>Automatic reveal of empty regions</strong></p></li>
+</ul>
+<p>Level 3</p>
+<ul class="simple">
+<li><p><strong>High score tracking</strong></p></li>
+</ul>
+<p>Level 4</p>
+<ul class="simple">
+<li><p><strong>Difficulty selector</strong></p>
+<ul>
+<li><p>Easy (6×6)</p></li>
+<li><p>Medium (8×8)</p></li>
+<li><p>Hard (10×10)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="full-minesweeper-program-teacher-version">
+<h1>Full Minesweeper Program (Teacher Version)<a class="headerlink" href="#full-minesweeper-program-teacher-version" title="Link to this heading">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Minesweeper</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">root</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Python Minesweeper&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">high_score</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">top_frame</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">top_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+        <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">top_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Difficulty&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">StringVar</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Easy&quot;</span><span class="p">)</span>
+
+        <span class="n">difficulty_menu</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">OptionMenu</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">top_frame</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span><span class="p">,</span>
+            <span class="s2">&quot;Easy&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Medium&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Hard&quot;</span><span class="p">,</span>
+            <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">change_difficulty</span>
+        <span class="p">)</span>
+        <span class="n">difficulty_menu</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">score_label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">top_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Score: 0&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score_label</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">high_label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">top_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;High Score: 0&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">high_label</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">flag_label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">top_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flag_label</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">retry</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">top_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Try Again&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">reset_game</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">retry</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid_frame</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">change_difficulty</span><span class="p">(</span><span class="s2">&quot;Easy&quot;</span><span class="p">)</span>
+
+    <span class="c1"># -----------------------------</span>
+    <span class="c1"># Difficulty Settings</span>
+    <span class="c1"># -----------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">change_difficulty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;Easy&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">6</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mines</span> <span class="o">=</span> <span class="mi">6</span>
+
+        <span class="k">elif</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;Medium&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">8</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mines</span> <span class="o">=</span> <span class="mi">12</span>
+
+        <span class="k">elif</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;Hard&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">10</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mines</span> <span class="o">=</span> <span class="mi">20</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">reset_game</span><span class="p">()</span>
+
+    <span class="c1"># -----------------------------</span>
+    <span class="c1"># Create Board</span>
+    <span class="c1"># -----------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_board</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">moves</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flags</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">remaining_flags</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mines</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">score_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Score: 0&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flag_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Flags: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">remaining_flags</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">widget</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_frame</span><span class="o">.</span><span class="n">winfo_children</span><span class="p">():</span>
+            <span class="n">widget</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+
+            <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+
+                <span class="n">btn</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid_frame</span><span class="p">,</span>
+                                <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                                <span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+                <span class="n">btn</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
+
+                <span class="n">btn</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-1&gt;&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+                <span class="n">btn</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-3&gt;&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">flag</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+
+                <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">btn</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">place_mines</span><span class="p">()</span>
+
+    <span class="c1"># -----------------------------</span>
+    <span class="c1"># Mine Placement</span>
+    <span class="c1"># -----------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">place_mines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">mine_locations</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mine_locations</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">mines</span><span class="p">:</span>
+
+            <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">mine_locations</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+
+    <span class="c1"># -----------------------------</span>
+    <span class="c1"># Count Nearby Mines</span>
+    <span class="c1"># -----------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">count_mines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="o">+</span><span class="mi">2</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="mi">2</span><span class="p">):</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mine_locations</span><span class="p">:</span>
+                    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">count</span>
+
+    <span class="c1"># -----------------------------</span>
+    <span class="c1"># Click Cell</span>
+    <span class="c1"># -----------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">moves</span> <span class="ow">or</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">flags</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">moves</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mine_locations</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;💣&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">game_over</span><span class="p">()</span>
+            <span class="k">return</span>
+
+        <span class="n">count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">count_mines</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">),</span> <span class="n">relief</span><span class="o">=</span><span class="s2">&quot;sunken&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Score: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">reveal_empty</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_win</span><span class="p">()</span>
+
+    <span class="c1"># -----------------------------</span>
+    <span class="c1"># Reveal Empty Region</span>
+    <span class="c1"># -----------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">reveal_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="o">+</span><span class="mi">2</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="mi">2</span><span class="p">):</span>
+
+                <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+
+                    <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">moves</span><span class="p">:</span>
+
+                        <span class="bp">self</span><span class="o">.</span><span class="n">moves</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+
+                        <span class="n">count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">count_mines</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+                        <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">),</span> <span class="n">relief</span><span class="o">=</span><span class="s2">&quot;sunken&quot;</span><span class="p">)</span>
+
+                        <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">reveal_empty</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+    <span class="c1"># -----------------------------</span>
+    <span class="c1"># Flagging System</span>
+    <span class="c1"># -----------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">moves</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="n">btn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">flags</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">flags</span><span class="o">.</span><span class="n">remove</span><span class="p">((</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+            <span class="n">btn</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">remaining_flags</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">remaining_flags</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">flags</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+            <span class="n">btn</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;🚩&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">remaining_flags</span> <span class="o">-=</span> <span class="mi">1</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">flag_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Flags: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">remaining_flags</span><span class="p">))</span>
+
+    <span class="c1"># -----------------------------</span>
+    <span class="c1"># Win Check</span>
+    <span class="c1"># -----------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">check_win</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">safe_cells</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">mines</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">==</span> <span class="n">safe_cells</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">high_score</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">high_score</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">score</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">high_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;High Score: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">high_score</span><span class="p">))</span>
+
+            <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="s2">&quot;disabled&quot;</span><span class="p">)</span>
+
+    <span class="c1"># -----------------------------</span>
+    <span class="c1"># Game Over</span>
+    <span class="c1"># -----------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">game_over</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mine_locations</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;💣&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">btn</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+                <span class="n">btn</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="s2">&quot;disabled&quot;</span><span class="p">)</span>
+
+    <span class="c1"># -----------------------------</span>
+    <span class="c1"># Reset Game</span>
+    <span class="c1"># -----------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">reset_game</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_board</span><span class="p">()</span>
+
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">game</span> <span class="o">=</span> <span class="n">Minesweeper</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="why-this-version-works-well-for-students">
+<h1>Why This Version Works Well for Students<a class="headerlink" href="#why-this-version-works-well-for-students" title="Link to this heading">¶</a></h1>
+<p>This program exposes students to <strong>many AP-level CS ideas</strong>:</p>
+<p>Data structures</p>
+<ul class="simple">
+<li><p>Lists</p></li>
+<li><p>Sets</p></li>
+<li><p>2D lists</p></li>
+</ul>
+<p>Event-driven programming</p>
+<ul class="simple">
+<li><p>Left click</p></li>
+<li><p>Right click</p></li>
+</ul>
+<p>Algorithms</p>
+<ul class="simple">
+<li><p>Recursive flood fill (<code class="docutils literal notranslate"><span class="pre">reveal_empty()</span></code>)</p></li>
+</ul>
+<p>State management</p>
+<ul class="simple">
+<li><p>score</p></li>
+<li><p>moves</p></li>
+<li><p>flags</p></li>
+<li><p>mine locations</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="student-starter-version-what-i-recommend">
+<h1>Student Starter Version (What I Recommend)<a class="headerlink" href="#student-starter-version-what-i-recommend" title="Link to this heading">¶</a></h1>
+<p>For classroom use, you can remove code and replace it with <strong>TODO sections</strong> like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">count_mines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+
+    <span class="c1"># TODO</span>
+    <span class="c1"># Write code that checks surrounding cells</span>
+    <span class="c1"># Return number of mines nearby</span>
+
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Other good student tasks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: create list to store player moves</span>
+
+<span class="c1"># TODO: prevent player from clicking flagged cells</span>
+
+<span class="c1"># TODO: update score</span>
+
+<span class="c1"># TODO: implement recursive empty reveal</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>💡 If you’d like, I can also generate a <strong>full classroom package</strong> for this project:</p>
+<ul class="simple">
+<li><p><strong>Student Starter Code</strong></p></li>
+<li><p><strong>Teacher Solution</strong></p></li>
+<li><p><strong>Project Instructions</strong></p></li>
+<li><p><strong>Grading Rubric (10 or 20 points)</strong></p></li>
+<li><p><strong>AP CSP / AP CSA learning objectives</strong></p></li>
+</ul>
+<p>It actually fits very well with the <strong>game-based simulation work you mentioned earlier (Mars simulation, robot maze, etc.)</strong>.</p>
+<p>Below is a <strong>complete classroom package</strong> you can give students. It is designed for <strong>AP CSP style learning objectives</strong>, focusing on:</p>
+<ul class="simple">
+<li><p>Lists and data tracking</p></li>
+<li><p>Algorithms and program logic</p></li>
+<li><p>Event-driven programming</p></li>
+<li><p>Abstraction through functions</p></li>
+<li><p>Testing and debugging</p></li>
+</ul>
+<p>I kept the <strong>starter code partially complete</strong> so students focus on the <strong>computational thinking parts</strong>, not the GUI boilerplate.</p>
+</section>
+<hr class="docutils" />
+<section id="ap-csp-project">
+<h1>AP CSP Project<a class="headerlink" href="#ap-csp-project" title="Link to this heading">¶</a></h1>
+</section>
+<section id="build-a-python-minesweeper-game">
+<h1>Build a Python Minesweeper Game<a class="headerlink" href="#build-a-python-minesweeper-game" title="Link to this heading">¶</a></h1>
+<section id="project-overview">
+<h2>Project Overview<a class="headerlink" href="#project-overview" title="Link to this heading">¶</a></h2>
+<p>In this project, you will build a simplified version of the classic <strong>Minesweeper game</strong> using Python and Tkinter.</p>
+<p>The player will click cells in a grid trying to <strong>avoid hidden mines</strong>. Safe cells show the number of nearby mines. The player may also <strong>place flags</strong> where they believe a mine exists.</p>
+<p>You will implement the logic that makes the game work.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="learning-objectives-ap-csp">
+<h1>Learning Objectives (AP CSP)<a class="headerlink" href="#learning-objectives-ap-csp" title="Link to this heading">¶</a></h1>
+<p>This project aligns with the following <strong>AP CSP Computational Thinking Practices and Learning Objectives</strong>.</p>
+<section id="data-abstraction">
+<h2>Data Abstraction<a class="headerlink" href="#data-abstraction" title="Link to this heading">¶</a></h2>
+<p>Students will use <strong>lists and sets</strong> to store game data.</p>
+<p>Relevant LO:</p>
+<ul class="simple">
+<li><p><strong>AAP-2.O</strong> Represent collections of related data using lists.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="algorithms-and-program-development">
+<h2>Algorithms and Program Development<a class="headerlink" href="#algorithms-and-program-development" title="Link to this heading">¶</a></h2>
+<p>Students will develop algorithms that:</p>
+<ul class="simple">
+<li><p>count nearby mines</p></li>
+<li><p>reveal empty regions</p></li>
+<li><p>track player moves</p></li>
+</ul>
+<p>Relevant LO:</p>
+<ul class="simple">
+<li><p><strong>AAP-2.M</strong> Combine and modify algorithms to solve problems.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="abstraction">
+<h2>Abstraction<a class="headerlink" href="#abstraction" title="Link to this heading">¶</a></h2>
+<p>Students will organize their program using <strong>functions/methods</strong>.</p>
+<p>Relevant LO:</p>
+<ul class="simple">
+<li><p><strong>AAP-3.B</strong> Use abstraction to manage complexity.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="testing-and-debugging">
+<h2>Testing and Debugging<a class="headerlink" href="#testing-and-debugging" title="Link to this heading">¶</a></h2>
+<p>Students will test their code to ensure the game behaves correctly.</p>
+<p>Relevant LO:</p>
+<ul class="simple">
+<li><p><strong>CRD-2.J</strong> Identify and correct errors in algorithms.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="program-requirements">
+<h1>Program Requirements<a class="headerlink" href="#program-requirements" title="Link to this heading">¶</a></h1>
+<p>Your program must include the following features.</p>
+<section id="level-1">
+<h2>Level 1<a class="headerlink" href="#level-1" title="Link to this heading">¶</a></h2>
+<p>Right-click <strong>flagging system 🚩</strong>
+Limit number of flags</p>
+<hr class="docutils" />
+</section>
+<section id="level-2">
+<h2>Level 2<a class="headerlink" href="#level-2" title="Link to this heading">¶</a></h2>
+<p>Automatically reveal <strong>empty regions</strong> when a 0-cell is clicked</p>
+<hr class="docutils" />
+</section>
+<section id="level-3">
+<h2>Level 3<a class="headerlink" href="#level-3" title="Link to this heading">¶</a></h2>
+<p>Track and display <strong>High Score</strong></p>
+<hr class="docutils" />
+</section>
+<section id="level-4">
+<h2>Level 4<a class="headerlink" href="#level-4" title="Link to this heading">¶</a></h2>
+<p>Difficulty selection</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Difficulty</p></th>
+<th class="head"><p>Grid Size</p></th>
+<th class="head"><p>Mines</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Easy</p></td>
+<td><p>6×6</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Medium</p></td>
+<td><p>8×8</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-even"><td><p>Hard</p></td>
+<td><p>10×10</p></td>
+<td><p>20</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="student-starter-code">
+<h1>Student Starter Code<a class="headerlink" href="#student-starter-code" title="Link to this heading">¶</a></h1>
+<p>Students must complete sections marked <strong>TODO</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Minesweeper</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">root</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Student Minesweeper&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">6</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mines</span> <span class="o">=</span> <span class="mi">6</span>
+
+        <span class="c1"># TODO</span>
+        <span class="c1"># Create variables for:</span>
+        <span class="c1"># score</span>
+        <span class="c1"># high score</span>
+        <span class="c1"># moves list</span>
+        <span class="c1"># flags set</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid_frame</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_board</span><span class="p">()</span>
+
+    <span class="c1"># ---------------------------------</span>
+    <span class="c1"># Create Grid</span>
+    <span class="c1"># ---------------------------------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_board</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+
+            <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+
+                <span class="n">btn</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid_frame</span><span class="p">,</span>
+                                <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                                <span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+                <span class="n">btn</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
+
+                <span class="c1"># left click</span>
+                <span class="n">btn</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-1&gt;&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="p">))</span>
+
+                <span class="c1"># right click</span>
+                <span class="n">btn</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-3&gt;&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">flag</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="p">))</span>
+
+                <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">btn</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">place_mines</span><span class="p">()</span>
+
+    <span class="c1"># ---------------------------------</span>
+    <span class="c1"># Place Mines</span>
+    <span class="c1"># ---------------------------------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">place_mines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">mine_locations</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+        <span class="c1"># TODO</span>
+        <span class="c1"># Write code that randomly places mines</span>
+        <span class="c1"># into mine_locations</span>
+
+
+    <span class="c1"># ---------------------------------</span>
+    <span class="c1"># Count Nearby Mines</span>
+    <span class="c1"># ---------------------------------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">count_mines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># TODO</span>
+        <span class="c1"># Write algorithm that checks surrounding cells</span>
+        <span class="c1"># Return number of nearby mines</span>
+
+        <span class="k">return</span> <span class="n">count</span>
+
+
+    <span class="c1"># ---------------------------------</span>
+    <span class="c1"># Click Cell</span>
+    <span class="c1"># ---------------------------------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+
+        <span class="c1"># TODO</span>
+        <span class="c1"># Prevent clicking flagged cells</span>
+
+        <span class="c1"># TODO</span>
+        <span class="c1"># Check if the cell contains a mine</span>
+        <span class="c1"># If it does -&gt; end game</span>
+
+        <span class="c1"># TODO</span>
+        <span class="c1"># Otherwise show number of nearby mines</span>
+
+        <span class="c1"># TODO</span>
+        <span class="c1"># Update score</span>
+
+
+        <span class="n">count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">count_mines</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
+
+        <span class="c1"># TODO</span>
+        <span class="c1"># If count == 0</span>
+        <span class="c1"># reveal surrounding cells</span>
+
+
+    <span class="c1"># ---------------------------------</span>
+    <span class="c1"># Reveal Empty Region</span>
+    <span class="c1"># ---------------------------------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">reveal_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+
+        <span class="c1"># TODO</span>
+        <span class="c1"># Create recursive algorithm that reveals</span>
+        <span class="c1"># surrounding cells when there are no mines nearby</span>
+
+        <span class="k">pass</span>
+
+
+    <span class="c1"># ---------------------------------</span>
+    <span class="c1"># Flagging System</span>
+    <span class="c1"># ---------------------------------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+
+        <span class="c1"># TODO</span>
+        <span class="c1"># Add flag if square not revealed</span>
+        <span class="c1"># Limit number of flags</span>
+
+        <span class="k">pass</span>
+
+
+    <span class="c1"># ---------------------------------</span>
+    <span class="c1"># Game Over</span>
+    <span class="c1"># ---------------------------------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">game_over</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="c1"># TODO</span>
+        <span class="c1"># Reveal all mines</span>
+        <span class="c1"># Disable board</span>
+
+        <span class="k">pass</span>
+
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">game</span> <span class="o">=</span> <span class="n">Minesweeper</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="suggested-development-order-for-students">
+<h1>Suggested Development Order for Students<a class="headerlink" href="#suggested-development-order-for-students" title="Link to this heading">¶</a></h1>
+<p>Students should build the game in this order.</p>
+<p>Step 1
+Create <strong>mine placement algorithm</strong></p>
+<p>Step 2
+Implement <strong>count nearby mines</strong></p>
+<p>Step 3
+Reveal numbers when clicked</p>
+<p>Step 4
+Add <strong>flagging system</strong></p>
+<p>Step 5
+Implement <strong>recursive empty reveal</strong></p>
+<p>Step 6
+Add <strong>score and high score</strong></p>
+<p>Step 7
+Add <strong>difficulty selection</strong></p>
+</section>
+<hr class="docutils" />
+<section id="grading-rubric-10-points">
+<h1>Grading Rubric (10 Points)<a class="headerlink" href="#grading-rubric-10-points" title="Link to this heading">¶</a></h1>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Criteria</p></th>
+<th class="head"><p>Points</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mine placement algorithm works correctly</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Nearby mine counting algorithm works</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Flagging system implemented and limited</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Empty region reveal algorithm</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Use of lists/sets to track game data</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Program runs correctly and is tested/debugged</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Total: <strong>10 points</strong></p>
+</section>
+<hr class="docutils" />
+<section id="computational-thinking-skills-demonstrated">
+<h1>Computational Thinking Skills Demonstrated<a class="headerlink" href="#computational-thinking-skills-demonstrated" title="Link to this heading">¶</a></h1>
+<p>Students practice:</p>
+<p><strong>Decomposition</strong></p>
+<ul class="simple">
+<li><p>Breaking the game into functions</p></li>
+</ul>
+<p><strong>Algorithm Design</strong></p>
+<ul class="simple">
+<li><p>Counting mines</p></li>
+<li><p>Recursive reveal</p></li>
+</ul>
+<p><strong>Data Abstraction</strong></p>
+<ul class="simple">
+<li><p>Lists and sets for game state</p></li>
+</ul>
+<p><strong>Testing &amp; Debugging</strong></p>
+<ul class="simple">
+<li><p>Ensuring the game works in different scenarios</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="optional-extension-challenges-for-advanced-students">
+<h1>Optional Extension Challenges (For Advanced Students)<a class="headerlink" href="#optional-extension-challenges-for-advanced-students" title="Link to this heading">¶</a></h1>
+<p>1️ Add <strong>timer scoring system</strong></p>
+<p>2️ Add <strong>flag counter display</strong></p>
+<p>3️ Add <strong>color coded numbers</strong></p>
+<p>4️ Add <strong>win screen</strong></p>
+<p>5️ Add <strong>save/load high score file</strong></p>
+<hr class="docutils" />
+<p>Since you often have students create <strong>portfolio artifacts</strong>, I can also generate a <strong>1-page student reflection sheet</strong> where they explain:</p>
+<ul class="simple">
+<li><p>their mine counting algorithm</p></li>
+<li><p>how recursion works in the reveal function</p></li>
+<li><p>how lists are used for data abstraction</p></li>
+</ul>
+</section>
+<section id="additional-python-foundations-ap-csp-alignment">
+<h1>Additional Python Foundations (AP CSP Alignment)<a class="headerlink" href="#additional-python-foundations-ap-csp-alignment" title="Link to this heading">¶</a></h1>
+<section id="user-input">
+<h2>User Input<a class="headerlink" href="#user-input" title="Link to this heading">¶</a></h2>
+<section id="ap-csp-learning-goals">
+<h3>AP CSP Learning Goals<a class="headerlink" href="#ap-csp-learning-goals" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>AAP-1.D: Display output and receive input from a user.</p></li>
+<li><p>AAP-1.A: Represent data using variables.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your name: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Type conversion:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your age: &quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="random-numbers">
+<h2>Random Numbers<a class="headerlink" href="#random-numbers" title="Link to this heading">¶</a></h2>
+<section id="id1">
+<h3>AP CSP Learning Goals<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>AAP-2.E: Develop algorithms using sequencing, selection, and iteration.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="d-lists-grids">
+<h2>2D Lists (Grids)<a class="headerlink" href="#d-lists-grids" title="Link to this heading">¶</a></h2>
+<section id="id2">
+<h3>AP CSP Learning Goals<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>AAP-4.A: Use data abstractions to manage complexity.</p></li>
+</ul>
+<p>Example grid:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Access elements:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="debugging-strategies">
+<h2>Debugging Strategies<a class="headerlink" href="#debugging-strategies" title="Link to this heading">¶</a></h2>
+<section id="id3">
+<h3>AP CSP Learning Goals<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>CRD-2.J: Test and debug a program.</p></li>
+</ul>
+<p>Common techniques:</p>
+<ul class="simple">
+<li><p>Use print statements</p></li>
+<li><p>Read error messages carefully</p></li>
+<li><p>Test small pieces of code</p></li>
+<li><p>Comment out sections of code</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value of x:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="file-input-and-output">
+<h2>File Input and Output<a class="headerlink" href="#file-input-and-output" title="Link to this heading">¶</a></h2>
+<section id="id4">
+<h3>AP CSP Learning Goals<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>AAP-2.B: Use data stored in files.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="python-mini-projects">
+<h1>Python Mini Projects<a class="headerlink" href="#python-mini-projects" title="Link to this heading">¶</a></h1>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Project</p></th>
+<th class="head"><p>Concepts</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mad Libs</p></td>
+<td><p>strings, input</p></td>
+</tr>
+<tr class="row-odd"><td><p>Number Guessing</p></td>
+<td><p>loops, conditionals</p></td>
+</tr>
+<tr class="row-even"><td><p>Word Counter</p></td>
+<td><p>strings, lists</p></td>
+</tr>
+<tr class="row-odd"><td><p>Password Checker</p></td>
+<td><p>conditionals</p></td>
+</tr>
+<tr class="row-even"><td><p>Maze Solver</p></td>
+<td><p>algorithms</p></td>
+</tr>
+<tr class="row-odd"><td><p>Minesweeper</p></td>
+<td><p>2D lists, algorithms</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="minesweeper-project">
+<h1>Minesweeper Project<a class="headerlink" href="#minesweeper-project" title="Link to this heading">¶</a></h1>
+<section id="id5">
+<h2>AP CSP Learning Goals<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>AAP-2.E: Develop algorithms using sequencing, selection, and iteration.</p></li>
+<li><p>AAP-4.A: Use data abstractions to manage complexity.</p></li>
+<li><p>CRD-2.B: Implement algorithms in a programming language.</p></li>
+<li><p>CRD-2.J: Test and debug programs.</p></li>
+</ul>
+</section>
+<section id="concepts-used">
+<h2>Concepts Used<a class="headerlink" href="#concepts-used" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Lists and 2D Lists</p></li>
+<li><p>Nested Loops</p></li>
+<li><p>Conditional Logic</p></li>
+<li><p>Random Numbers</p></li>
+<li><p>Algorithms</p></li>
+</ul>
+<p>Example board:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">board</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Example random mine placement:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">row</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">col</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">board</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span>
+</pre></div>
+</div>
+<section id="project-objectives">
+<h3>Project Objectives<a class="headerlink" href="#project-objectives" title="Link to this heading">¶</a></h3>
+<p>Students should:</p>
+<ol class="arabic simple">
+<li><p>Generate a game board</p></li>
+<li><p>Place mines randomly</p></li>
+<li><p>Count adjacent mines</p></li>
+<li><p>Allow player moves</p></li>
+<li><p>Reveal tiles</p></li>
+<li><p>Determine win or loss</p></li>
+</ol>
 </section>
 </section>
 </section>
@@ -3303,6 +4444,74 @@ Lambda functions in Python provide a concise way to define simple functions with
 <li><a class="reference internal" href="#exception-handling">Exception Handling</a></li>
 <li><a class="reference internal" href="#lambda-functions">Lambda Functions</a><ul>
 <li><a class="reference internal" href="#basic-syntax-of-lambda-functions">Basic Syntax of Lambda Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#python-mini-minesweeper-66">Python: Mini Minesweeper (6×6)</a></li>
+<li><a class="reference internal" href="#key-programming-concepts-good-for-students">Key Programming Concepts (Good for Students)</a><ul>
+<li><a class="reference internal" href="#list-for-tracking-moves">1️⃣ List for Tracking Moves</a></li>
+<li><a class="reference internal" href="#score-tracking">2️⃣ Score Tracking</a></li>
+<li><a class="reference internal" href="#random-mine-placement">3️⃣ Random Mine Placement</a></li>
+<li><a class="reference internal" href="#d-grid-using-lists">4️⃣ 2D Grid Using Lists</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ideas-if-you-want-to-turn-this-into-a-student-project">Ideas if You Want to Turn This Into a Student Project</a></li>
+<li><a class="reference internal" href="#full-minesweeper-program-teacher-version">Full Minesweeper Program (Teacher Version)</a></li>
+<li><a class="reference internal" href="#why-this-version-works-well-for-students">Why This Version Works Well for Students</a></li>
+<li><a class="reference internal" href="#student-starter-version-what-i-recommend">Student Starter Version (What I Recommend)</a></li>
+<li><a class="reference internal" href="#ap-csp-project">AP CSP Project</a></li>
+<li><a class="reference internal" href="#build-a-python-minesweeper-game">Build a Python Minesweeper Game</a><ul>
+<li><a class="reference internal" href="#project-overview">Project Overview</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#learning-objectives-ap-csp">Learning Objectives (AP CSP)</a><ul>
+<li><a class="reference internal" href="#data-abstraction">Data Abstraction</a></li>
+<li><a class="reference internal" href="#algorithms-and-program-development">Algorithms and Program Development</a></li>
+<li><a class="reference internal" href="#abstraction">Abstraction</a></li>
+<li><a class="reference internal" href="#testing-and-debugging">Testing and Debugging</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#program-requirements">Program Requirements</a><ul>
+<li><a class="reference internal" href="#level-1">Level 1</a></li>
+<li><a class="reference internal" href="#level-2">Level 2</a></li>
+<li><a class="reference internal" href="#level-3">Level 3</a></li>
+<li><a class="reference internal" href="#level-4">Level 4</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#student-starter-code">Student Starter Code</a></li>
+<li><a class="reference internal" href="#suggested-development-order-for-students">Suggested Development Order for Students</a></li>
+<li><a class="reference internal" href="#grading-rubric-10-points">Grading Rubric (10 Points)</a></li>
+<li><a class="reference internal" href="#computational-thinking-skills-demonstrated">Computational Thinking Skills Demonstrated</a></li>
+<li><a class="reference internal" href="#optional-extension-challenges-for-advanced-students">Optional Extension Challenges (For Advanced Students)</a></li>
+<li><a class="reference internal" href="#additional-python-foundations-ap-csp-alignment">Additional Python Foundations (AP CSP Alignment)</a><ul>
+<li><a class="reference internal" href="#user-input">User Input</a><ul>
+<li><a class="reference internal" href="#ap-csp-learning-goals">AP CSP Learning Goals</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#random-numbers">Random Numbers</a><ul>
+<li><a class="reference internal" href="#id1">AP CSP Learning Goals</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#d-lists-grids">2D Lists (Grids)</a><ul>
+<li><a class="reference internal" href="#id2">AP CSP Learning Goals</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#debugging-strategies">Debugging Strategies</a><ul>
+<li><a class="reference internal" href="#id3">AP CSP Learning Goals</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#file-input-and-output">File Input and Output</a><ul>
+<li><a class="reference internal" href="#id4">AP CSP Learning Goals</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#python-mini-projects">Python Mini Projects</a></li>
+<li><a class="reference internal" href="#minesweeper-project">Minesweeper Project</a><ul>
+<li><a class="reference internal" href="#id5">AP CSP Learning Goals</a></li>
+<li><a class="reference internal" href="#concepts-used">Concepts Used</a><ul>
+<li><a class="reference internal" href="#project-objectives">Project Objectives</a></li>
 </ul>
 </li>
 </ul>

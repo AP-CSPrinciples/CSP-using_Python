@@ -1,4 +1,5 @@
-# Python Basics
+# Python Basics 
+```Revised March 2026```
 
 Python is an open-source programming language that is one of the easiest programs that a person can learn for their first programming language.  Python is a versatile programming language that can be used in many areas such as data analysis, science, web development, AI, and IoT.  As of 2024, it is one of the most in demand programming languages in the market place.  Python is a high-level programming language that offers simplicity, readability, and versatility.  Python supports multiple programming paradigms and has an extensive library that simplifies coding tasks. Python has a robust community and documentation support that enables beginners to excel quickly in this language.   
 
@@ -2839,3 +2840,1109 @@ print(data)
 
 **Summary**
 Lambda functions in Python provide a concise way to define simple functions without the need for formal `def` syntax. They are useful in scenarios where small, throwaway functions are needed, like with `map()`, `filter()`, and data processing tasks. However, lambda functions are limited to single expressions, so they're best for straightforward operations rather than complex logic.
+
+
+I would like to add this content to my Python Basics
+
+Below is a **simple classroom-friendly Minesweeper program (6×6)** written in **Python using Tkinter**. It includes the things you asked for:
+
+* 6 × 6 grid
+* Random mine placement
+* **List that records player moves**
+* **Score that increases for safe clicks**
+* **Game over if a mine is clicked**
+* **“Try Again” button to reset the game**
+
+This version is intentionally **clear and readable** so students can study the logic (similar to how you structure projects for AP CSP / intro Python students).
+
+---
+
+# Python: Mini Minesweeper (6×6)
+
+```python
+import tkinter as tk
+import random
+
+SIZE = 6
+MINES = 6
+
+class MiniMinesweeper:
+
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Mini Minesweeper")
+
+        self.buttons = []
+        self.moves = []      # list to track player moves
+        self.score = 0
+
+        self.score_label = tk.Label(root, text="Score: 0", font=("Arial", 14))
+        self.score_label.grid(row=0, column=0, columnspan=SIZE)
+
+        self.create_grid()
+
+        self.retry_button = tk.Button(root, text="Try Again", command=self.reset_game)
+        self.retry_button.grid(row=SIZE+1, column=0, columnspan=SIZE, sticky="we")
+
+        self.place_mines()
+
+    # -----------------------------------------
+    # Create the grid of buttons
+    # -----------------------------------------
+    def create_grid(self):
+
+        for r in range(SIZE):
+
+            row_buttons = []
+
+            for c in range(SIZE):
+
+                btn = tk.Button(self.root,
+                                width=4,
+                                height=2,
+                                command=lambda r=r, c=c: self.click(r, c))
+
+                btn.grid(row=r+1, column=c)
+
+                row_buttons.append(btn)
+
+            self.buttons.append(row_buttons)
+
+    # -----------------------------------------
+    # Random mine placement
+    # -----------------------------------------
+    def place_mines(self):
+
+        self.mine_locations = set()
+
+        while len(self.mine_locations) < MINES:
+
+            r = random.randint(0, SIZE-1)
+            c = random.randint(0, SIZE-1)
+
+            self.mine_locations.add((r, c))
+
+    # -----------------------------------------
+    # Button click logic
+    # -----------------------------------------
+    def click(self, r, c):
+
+        if (r, c) in self.moves:
+            return
+
+        self.moves.append((r, c))
+
+        button = self.buttons[r][c]
+
+        if (r, c) in self.mine_locations:
+
+            button.config(text="💣", bg="red")
+            self.game_over()
+
+        else:
+
+            count = self.count_mines(r, c)
+            button.config(text=str(count), bg="lightgray")
+
+            self.score += 1
+            self.score_label.config(text="Score: " + str(self.score))
+
+    # -----------------------------------------
+    # Count nearby mines
+    # -----------------------------------------
+    def count_mines(self, r, c):
+
+        count = 0
+
+        for i in range(r-1, r+2):
+            for j in range(c-1, c+2):
+
+                if (i, j) in self.mine_locations:
+                    count += 1
+
+        return count
+
+    # -----------------------------------------
+    # Game over function
+    # -----------------------------------------
+    def game_over(self):
+
+        for r in range(SIZE):
+            for c in range(SIZE):
+
+                if (r, c) in self.mine_locations:
+                    self.buttons[r][c].config(text="💣")
+
+                self.buttons[r][c].config(state="disabled")
+
+    # -----------------------------------------
+    # Reset the game
+    # -----------------------------------------
+    def reset_game(self):
+
+        self.moves = []
+        self.score = 0
+        self.score_label.config(text="Score: 0")
+
+        for r in range(SIZE):
+            for c in range(SIZE):
+
+                self.buttons[r][c].config(
+                    text="",
+                    bg="SystemButtonFace",
+                    state="normal"
+                )
+
+        self.mine_locations.clear()
+        self.place_mines()
+
+
+# -----------------------------------------
+# Run program
+# -----------------------------------------
+
+root = tk.Tk()
+game = MiniMinesweeper(root)
+root.mainloop()
+```
+
+---
+
+# Key Programming Concepts (Good for Students)
+
+### 1️⃣ List for Tracking Moves
+
+```python
+self.moves = []
+self.moves.append((r,c))
+```
+
+Stores every location the player has clicked.
+
+---
+
+### 2️⃣ Score Tracking
+
+```python
+self.score += 1
+```
+
+Score increases when the player safely clicks a square.
+
+---
+
+### 3️⃣ Random Mine Placement
+
+```python
+random.randint(0, SIZE-1)
+```
+
+Places mines in random grid locations.
+
+---
+
+### 4️⃣ 2D Grid Using Lists
+
+```python
+self.buttons[r][c]
+```
+
+Grid structure stored as a **list of lists**.
+
+---
+
+# Ideas if You Want to Turn This Into a Student Project
+
+Since you often build **portfolio-style projects**, here are good extensions students could implement:
+
+**Level 1**
+
+* Add **flagging system (right-click 🚩)**
+* Limit number of flags
+
+**Level 2**
+
+* Reveal **empty regions automatically**
+
+**Level 3**
+
+* Show **high score**
+
+**Level 4**
+
+* Change difficulty
+
+  * Easy (6×6)
+  * Medium (8×8)
+  * Hard (10×10)
+
+---
+
+✅ If you'd like, I can also make a **student starter version** where sections are replaced with comments like:
+
+```
+# TODO: Write code that counts nearby mines
+```
+
+That works extremely well for **intro Python or AP CSP style assignments.**
+
+Below is a **complete expanded Minesweeper program** that includes the four levels of functionality you requested. I kept the code **structured and readable for students**, since you often use these as **portfolio-style learning projects**.
+
+Features included:
+
+Level 1
+
+* Right-click **flagging system 🚩**
+* **Limited number of flags**
+
+Level 2
+
+* **Automatic reveal of empty regions**
+
+Level 3
+
+* **High score tracking**
+
+Level 4
+
+* **Difficulty selector**
+
+  * Easy (6×6)
+  * Medium (8×8)
+  * Hard (10×10)
+
+---
+
+# Full Minesweeper Program (Teacher Version)
+
+```python
+import tkinter as tk
+import random
+
+class Minesweeper:
+
+    def __init__(self, root):
+
+        self.root = root
+        self.root.title("Python Minesweeper")
+
+        self.high_score = 0
+
+        self.top_frame = tk.Frame(root)
+        self.top_frame.pack()
+
+        tk.Label(self.top_frame, text="Difficulty").pack(side="left")
+
+        self.difficulty = tk.StringVar()
+        self.difficulty.set("Easy")
+
+        difficulty_menu = tk.OptionMenu(
+            self.top_frame,
+            self.difficulty,
+            "Easy",
+            "Medium",
+            "Hard",
+            command=self.change_difficulty
+        )
+        difficulty_menu.pack(side="left")
+
+        self.score_label = tk.Label(self.top_frame, text="Score: 0")
+        self.score_label.pack(side="left", padx=10)
+
+        self.high_label = tk.Label(self.top_frame, text="High Score: 0")
+        self.high_label.pack(side="left", padx=10)
+
+        self.flag_label = tk.Label(self.top_frame, text="")
+        self.flag_label.pack(side="left", padx=10)
+
+        self.retry = tk.Button(self.top_frame, text="Try Again", command=self.reset_game)
+        self.retry.pack(side="left")
+
+        self.grid_frame = tk.Frame(root)
+        self.grid_frame.pack()
+
+        self.change_difficulty("Easy")
+
+    # -----------------------------
+    # Difficulty Settings
+    # -----------------------------
+    def change_difficulty(self, level):
+
+        if level == "Easy":
+            self.size = 6
+            self.mines = 6
+
+        elif level == "Medium":
+            self.size = 8
+            self.mines = 12
+
+        elif level == "Hard":
+            self.size = 10
+            self.mines = 20
+
+        self.reset_game()
+
+    # -----------------------------
+    # Create Board
+    # -----------------------------
+    def create_board(self):
+
+        self.buttons = []
+        self.moves = []
+        self.flags = set()
+        self.score = 0
+        self.remaining_flags = self.mines
+
+        self.score_label.config(text="Score: 0")
+        self.flag_label.config(text="Flags: " + str(self.remaining_flags))
+
+        for widget in self.grid_frame.winfo_children():
+            widget.destroy()
+
+        for r in range(self.size):
+
+            row = []
+
+            for c in range(self.size):
+
+                btn = tk.Button(self.grid_frame,
+                                width=3,
+                                height=1)
+
+                btn.grid(row=r, column=c)
+
+                btn.bind("<Button-1>", lambda e, r=r, c=c: self.click(r, c))
+                btn.bind("<Button-3>", lambda e, r=r, c=c: self.flag(r, c))
+
+                row.append(btn)
+
+            self.buttons.append(row)
+
+        self.place_mines()
+
+    # -----------------------------
+    # Mine Placement
+    # -----------------------------
+    def place_mines(self):
+
+        self.mine_locations = set()
+
+        while len(self.mine_locations) < self.mines:
+
+            r = random.randint(0, self.size-1)
+            c = random.randint(0, self.size-1)
+
+            self.mine_locations.add((r, c))
+
+    # -----------------------------
+    # Count Nearby Mines
+    # -----------------------------
+    def count_mines(self, r, c):
+
+        count = 0
+
+        for i in range(r-1, r+2):
+            for j in range(c-1, c+2):
+
+                if (i, j) in self.mine_locations:
+                    count += 1
+
+        return count
+
+    # -----------------------------
+    # Click Cell
+    # -----------------------------
+    def click(self, r, c):
+
+        if (r, c) in self.moves or (r, c) in self.flags:
+            return
+
+        self.moves.append((r, c))
+
+        if (r, c) in self.mine_locations:
+
+            self.buttons[r][c].config(text="💣", bg="red")
+            self.game_over()
+            return
+
+        count = self.count_mines(r, c)
+
+        self.buttons[r][c].config(text=str(count), relief="sunken")
+
+        self.score += 1
+        self.score_label.config(text="Score: " + str(self.score))
+
+        if count == 0:
+            self.reveal_empty(r, c)
+
+        self.check_win()
+
+    # -----------------------------
+    # Reveal Empty Region
+    # -----------------------------
+    def reveal_empty(self, r, c):
+
+        for i in range(r-1, r+2):
+            for j in range(c-1, c+2):
+
+                if 0 <= i < self.size and 0 <= j < self.size:
+
+                    if (i, j) not in self.moves:
+
+                        self.moves.append((i, j))
+
+                        count = self.count_mines(i, j)
+
+                        self.buttons[i][j].config(text=str(count), relief="sunken")
+
+                        if count == 0:
+                            self.reveal_empty(i, j)
+
+    # -----------------------------
+    # Flagging System
+    # -----------------------------
+    def flag(self, r, c):
+
+        if (r, c) in self.moves:
+            return
+
+        btn = self.buttons[r][c]
+
+        if (r, c) in self.flags:
+
+            self.flags.remove((r, c))
+            btn.config(text="")
+            self.remaining_flags += 1
+
+        else:
+
+            if self.remaining_flags == 0:
+                return
+
+            self.flags.add((r, c))
+            btn.config(text="🚩")
+            self.remaining_flags -= 1
+
+        self.flag_label.config(text="Flags: " + str(self.remaining_flags))
+
+    # -----------------------------
+    # Win Check
+    # -----------------------------
+    def check_win(self):
+
+        safe_cells = self.size*self.size - self.mines
+
+        if self.score == safe_cells:
+
+            if self.score > self.high_score:
+                self.high_score = self.score
+                self.high_label.config(text="High Score: " + str(self.high_score))
+
+            for r in range(self.size):
+                for c in range(self.size):
+                    self.buttons[r][c].config(state="disabled")
+
+    # -----------------------------
+    # Game Over
+    # -----------------------------
+    def game_over(self):
+
+        for r, c in self.mine_locations:
+            self.buttons[r][c].config(text="💣")
+
+        for row in self.buttons:
+            for btn in row:
+                btn.config(state="disabled")
+
+    # -----------------------------
+    # Reset Game
+    # -----------------------------
+    def reset_game(self):
+
+        self.create_board()
+
+
+root = tk.Tk()
+game = Minesweeper(root)
+root.mainloop()
+```
+
+---
+
+# Why This Version Works Well for Students
+
+This program exposes students to **many AP-level CS ideas**:
+
+Data structures
+
+* Lists
+* Sets
+* 2D lists
+
+Event-driven programming
+
+* Left click
+* Right click
+
+Algorithms
+
+* Recursive flood fill (`reveal_empty()`)
+
+State management
+
+* score
+* moves
+* flags
+* mine locations
+
+---
+
+# Student Starter Version (What I Recommend)
+
+For classroom use, you can remove code and replace it with **TODO sections** like:
+
+```python
+def count_mines(self, r, c):
+
+    # TODO
+    # Write code that checks surrounding cells
+    # Return number of mines nearby
+
+    pass
+```
+
+Other good student tasks:
+
+```
+# TODO: create list to store player moves
+
+# TODO: prevent player from clicking flagged cells
+
+# TODO: update score
+
+# TODO: implement recursive empty reveal
+```
+
+---
+
+💡 If you'd like, I can also generate a **full classroom package** for this project:
+
+* **Student Starter Code**
+* **Teacher Solution**
+* **Project Instructions**
+* **Grading Rubric (10 or 20 points)**
+* **AP CSP / AP CSA learning objectives**
+
+It actually fits very well with the **game-based simulation work you mentioned earlier (Mars simulation, robot maze, etc.)**.
+
+
+Below is a **complete classroom package** you can give students. It is designed for **AP CSP style learning objectives**, focusing on:
+
+* Lists and data tracking
+* Algorithms and program logic
+* Event-driven programming
+* Abstraction through functions
+* Testing and debugging
+
+I kept the **starter code partially complete** so students focus on the **computational thinking parts**, not the GUI boilerplate.
+
+---
+
+# AP CSP Project
+
+# Build a Python Minesweeper Game
+
+## Project Overview
+
+In this project, you will build a simplified version of the classic **Minesweeper game** using Python and Tkinter.
+
+The player will click cells in a grid trying to **avoid hidden mines**. Safe cells show the number of nearby mines. The player may also **place flags** where they believe a mine exists.
+
+You will implement the logic that makes the game work.
+
+---
+
+# Learning Objectives (AP CSP)
+
+This project aligns with the following **AP CSP Computational Thinking Practices and Learning Objectives**.
+
+### Data Abstraction
+
+Students will use **lists and sets** to store game data.
+
+Relevant LO:
+
+* **AAP-2.O** Represent collections of related data using lists.
+
+---
+
+### Algorithms and Program Development
+
+Students will develop algorithms that:
+
+* count nearby mines
+* reveal empty regions
+* track player moves
+
+Relevant LO:
+
+* **AAP-2.M** Combine and modify algorithms to solve problems.
+
+---
+
+### Abstraction
+
+Students will organize their program using **functions/methods**.
+
+Relevant LO:
+
+* **AAP-3.B** Use abstraction to manage complexity.
+
+---
+
+### Testing and Debugging
+
+Students will test their code to ensure the game behaves correctly.
+
+Relevant LO:
+
+* **CRD-2.J** Identify and correct errors in algorithms.
+
+---
+
+# Program Requirements
+
+Your program must include the following features.
+
+### Level 1
+
+Right-click **flagging system 🚩**
+Limit number of flags
+
+---
+
+### Level 2
+
+Automatically reveal **empty regions** when a 0-cell is clicked
+
+---
+
+### Level 3
+
+Track and display **High Score**
+
+---
+
+### Level 4
+
+Difficulty selection
+
+| Difficulty | Grid Size | Mines |
+| ---------- | --------- | ----- |
+| Easy       | 6×6       | 6     |
+| Medium     | 8×8       | 12    |
+| Hard       | 10×10     | 20    |
+
+---
+
+# Student Starter Code
+
+Students must complete sections marked **TODO**.
+
+```python
+import tkinter as tk
+import random
+
+class Minesweeper:
+
+    def __init__(self, root):
+
+        self.root = root
+        self.root.title("Student Minesweeper")
+
+        self.size = 6
+        self.mines = 6
+
+        # TODO
+        # Create variables for:
+        # score
+        # high score
+        # moves list
+        # flags set
+
+        self.grid_frame = tk.Frame(root)
+        self.grid_frame.pack()
+
+        self.create_board()
+
+    # ---------------------------------
+    # Create Grid
+    # ---------------------------------
+
+    def create_board(self):
+
+        self.buttons = []
+
+        for r in range(self.size):
+
+            row = []
+
+            for c in range(self.size):
+
+                btn = tk.Button(self.grid_frame,
+                                width=3,
+                                height=1)
+
+                btn.grid(row=r, column=c)
+
+                # left click
+                btn.bind("<Button-1>", lambda e, r=r, c=c: self.click(r,c))
+
+                # right click
+                btn.bind("<Button-3>", lambda e, r=r, c=c: self.flag(r,c))
+
+                row.append(btn)
+
+            self.buttons.append(row)
+
+        self.place_mines()
+
+    # ---------------------------------
+    # Place Mines
+    # ---------------------------------
+
+    def place_mines(self):
+
+        self.mine_locations = set()
+
+        # TODO
+        # Write code that randomly places mines
+        # into mine_locations
+
+
+    # ---------------------------------
+    # Count Nearby Mines
+    # ---------------------------------
+
+    def count_mines(self, r, c):
+
+        count = 0
+
+        # TODO
+        # Write algorithm that checks surrounding cells
+        # Return number of nearby mines
+
+        return count
+
+
+    # ---------------------------------
+    # Click Cell
+    # ---------------------------------
+
+    def click(self, r, c):
+
+        # TODO
+        # Prevent clicking flagged cells
+
+        # TODO
+        # Check if the cell contains a mine
+        # If it does -> end game
+
+        # TODO
+        # Otherwise show number of nearby mines
+
+        # TODO
+        # Update score
+
+
+        count = self.count_mines(r,c)
+
+        self.buttons[r][c].config(text=str(count))
+
+        # TODO
+        # If count == 0
+        # reveal surrounding cells
+
+
+    # ---------------------------------
+    # Reveal Empty Region
+    # ---------------------------------
+
+    def reveal_empty(self, r, c):
+
+        # TODO
+        # Create recursive algorithm that reveals
+        # surrounding cells when there are no mines nearby
+
+        pass
+
+
+    # ---------------------------------
+    # Flagging System
+    # ---------------------------------
+
+    def flag(self, r, c):
+
+        # TODO
+        # Add flag if square not revealed
+        # Limit number of flags
+
+        pass
+
+
+    # ---------------------------------
+    # Game Over
+    # ---------------------------------
+
+    def game_over(self):
+
+        # TODO
+        # Reveal all mines
+        # Disable board
+
+        pass
+
+
+root = tk.Tk()
+game = Minesweeper(root)
+root.mainloop()
+```
+
+---
+
+# Suggested Development Order for Students
+
+Students should build the game in this order.
+
+Step 1
+Create **mine placement algorithm**
+
+Step 2
+Implement **count nearby mines**
+
+Step 3
+Reveal numbers when clicked
+
+Step 4
+Add **flagging system**
+
+Step 5
+Implement **recursive empty reveal**
+
+Step 6
+Add **score and high score**
+
+Step 7
+Add **difficulty selection**
+
+---
+
+# Grading Rubric (10 Points)
+
+| Criteria                                      | Points |
+| --------------------------------------------- | ------ |
+| Mine placement algorithm works correctly      | 2      |
+| Nearby mine counting algorithm works          | 2      |
+| Flagging system implemented and limited       | 2      |
+| Empty region reveal algorithm                 | 2      |
+| Use of lists/sets to track game data          | 1      |
+| Program runs correctly and is tested/debugged | 1      |
+
+Total: **10 points**
+
+---
+
+# Computational Thinking Skills Demonstrated
+
+Students practice:
+
+**Decomposition**
+
+* Breaking the game into functions
+
+**Algorithm Design**
+
+* Counting mines
+* Recursive reveal
+
+**Data Abstraction**
+
+* Lists and sets for game state
+
+**Testing & Debugging**
+
+* Ensuring the game works in different scenarios
+
+---
+
+# Optional Extension Challenges (For Advanced Students)
+
+1️ Add **timer scoring system**
+
+2️ Add **flag counter display**
+
+3️ Add **color coded numbers**
+
+4️ Add **win screen**
+
+5️ Add **save/load high score file**
+
+---
+
+Since you often have students create **portfolio artifacts**, I can also generate a **1-page student reflection sheet** where they explain:
+
+* their mine counting algorithm
+* how recursion works in the reveal function
+* how lists are used for data abstraction
+
+
+
+
+
+# Additional Python Foundations (AP CSP Alignment)
+
+## User Input
+### AP CSP Learning Goals
+- AAP-1.D: Display output and receive input from a user.
+- AAP-1.A: Represent data using variables.
+
+```python
+name = input("Enter your name: ")
+print("Hello", name)
+```
+
+Type conversion:
+
+```python
+age = int(input("Enter your age: "))
+```
+
+---
+
+## Random Numbers
+### AP CSP Learning Goals
+- AAP-2.E: Develop algorithms using sequencing, selection, and iteration.
+
+```python
+import random
+
+number = random.randint(1,10)
+print(number)
+```
+
+---
+
+## 2D Lists (Grids)
+### AP CSP Learning Goals
+- AAP-4.A: Use data abstractions to manage complexity.
+
+Example grid:
+
+```python
+grid = [
+    [0,0,0],
+    [0,1,0],
+    [0,0,0]
+]
+```
+
+Access elements:
+
+```python
+grid[row][col]
+```
+
+---
+
+## Debugging Strategies
+### AP CSP Learning Goals
+- CRD-2.J: Test and debug a program.
+
+Common techniques:
+
+- Use print statements
+- Read error messages carefully
+- Test small pieces of code
+- Comment out sections of code
+
+Example:
+
+```python
+print("Value of x:", x)
+```
+
+---
+
+## File Input and Output
+### AP CSP Learning Goals
+- AAP-2.B: Use data stored in files.
+
+```python
+with open("data.txt", "r") as file:
+    data = file.read()
+    print(data)
+```
+
+---
+
+# Python Mini Projects
+
+| Project | Concepts |
+|------|------|
+| Mad Libs | strings, input |
+| Number Guessing | loops, conditionals |
+| Word Counter | strings, lists |
+| Password Checker | conditionals |
+| Maze Solver | algorithms |
+| Minesweeper | 2D lists, algorithms |
+
+---
+
+# Minesweeper Project
+
+### AP CSP Learning Goals
+- AAP-2.E: Develop algorithms using sequencing, selection, and iteration.
+- AAP-4.A: Use data abstractions to manage complexity.
+- CRD-2.B: Implement algorithms in a programming language.
+- CRD-2.J: Test and debug programs.
+
+## Concepts Used
+
+- Lists and 2D Lists
+- Nested Loops
+- Conditional Logic
+- Random Numbers
+- Algorithms
+
+Example board:
+
+```python
+board = [
+    [" "," "," "],
+    [" ","*"," "],
+    [" "," "," "]
+]
+```
+
+Example random mine placement:
+
+```python
+import random
+
+row = random.randint(0,2)
+col = random.randint(0,2)
+
+board[row][col] = "*"
+```
+
+### Project Objectives
+
+Students should:
+
+1. Generate a game board
+2. Place mines randomly
+3. Count adjacent mines
+4. Allow player moves
+5. Reveal tiles
+6. Determine win or loss
+
