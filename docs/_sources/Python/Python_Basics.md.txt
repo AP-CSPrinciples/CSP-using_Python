@@ -965,89 +965,113 @@ print(geometry.area_circle(3))  # Output: 28.27 (approx)
 
 Python has a rich standard library with many commonly used modules and packages that are built into Python. Some of these are:
 
-1. **`math` Module**: Provides mathematical functions.
-   - Example:
-     ```python
-     import math
-     print(math.sqrt(16))  # Output: 4.0
-     ```
+```
+math Module: Provides mathematical functions.
+    Example:
 
-2. **`datetime` Module**: Handles date and time manipulations.
-   - Example:
-     ```python
-     import datetime
-     print(datetime.datetime.now())  # Output: Current date and time
-     ```
+    import math
+    print(math.sqrt(16))  # Output: 4.0
 
-3. **`random` Module**: Used for generating random numbers.
-   - Example:
-     ```python
-     import random
-     print(random.randint(1, 10))  # Output: Random integer between 1 and 10
-     ```
+datetime Module: Handles date and time manipulations.
+    Example:
 
-4. **`os` Module**: Provides functions to interact with the operating system.
-   - Example:
-     ```python
-     import os
-     print(os.getcwd())  # Output: Current working directory
-     ```
+    import datetime
+    print(datetime.datetime.now())  # Output: Current date and time
 
-5. **`sys` Module**: Provides access to system-specific parameters and functions.
-   - Example:
-     ```python
-     import sys
-     print(sys.version)  # Output: Python version
-     ```
+random Module: Used for generating random numbers.
+    Example:
 
-6. **`re` Module**: Used for working with regular expressions.
-   - Example:
-     ```python
-     import re
-     pattern = r"\bword\b"
-     text = "Find the word in this sentence."
-     match = re.search(pattern, text)
-     print(match.group())  # Output: 'word'
-     ```
+    import random
+    print(random.randint(1, 10))  # Output: Random integer between 1 and 10
 
-7. **`json` Module**: Used for parsing JSON data.
-   - Example:
-     ```python
-     import json
-     data = '{"name": "John", "age": 30}'
-     parsed_data = json.loads(data)
-     print(parsed_data['name'])  # Output: John
-     ```
+os Module: Provides functions to interact with the operating system.
+    Example:
 
-8. **`collections` Module**: Provides specialized container data types, like `Counter`, `defaultdict`, and `namedtuple`.
-   - Example:
-     ```python
-     from collections import Counter
-     data = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple']
-     print(Counter(data))  # Output: Counter({'apple': 3, 'banana': 2, 'orange': 1})
-     ```
+    import os
+    print(os.getcwd())  # Output: Current working directory
 
-9. **`numpy` Package** (external): Used for numerical computations, especially for array operations.
-   - Example:
-     ```python
-     import numpy as np
-     array = np.array([1, 2, 3])
-     print(np.mean(array))  # Output: 2.0
-     ```
+sys Module: Provides access to system-specific parameters and functions.
+    Example:
 
-10. **`pandas` Package** (external): Used for data analysis and manipulation.
-    - Example:
-      ```python
-      import pandas as pd
-      data = {'Name': ['John', 'Jane'], 'Age': [28, 24]}
-      df = pd.DataFrame(data)
-      print(df)
-      ```
+    import sys
+    print(sys.version)  # Output: Python version
+
+re Module: Used for working with regular expressions.
+    Example:
+
+    import re
+    pattern = r"\bword\b"
+    text = "Find the word in this sentence."
+    match = re.search(pattern, text)
+    print(match.group())  # Output: 'word'
+
+json Module: Used for parsing JSON data.
+    Example:
+
+    import json
+    data = '{"name": "John", "age": 30}'
+    parsed_data = json.loads(data)
+    print(parsed_data['name'])  # Output: John
+
+collections Module: Provides specialized container data types, like Counter, defaultdict, and namedtuple.
+    Example:
+
+    from collections import Counter
+    data = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple']
+    print(Counter(data))  # Output: Counter({'apple': 3, 'banana': 2, 'orange': 1})
+
+numpy Package (external): Used for numerical computations, especially for array operations.
+    Example:
+
+    import numpy as np
+    array = np.array([1, 2, 3])
+    print(np.mean(array))  # Output: 2.0
+
+pandas Package (external): Used for data analysis and manipulation.
+    Example:
+
+    import pandas as pd
+    data = {'Name': ['John', 'Jane'], 'Age': [28, 24]}
+    df = pd.DataFrame(data)
+    print(df)
+
+tkinter Module: Used for creating graphical user interfaces (GUIs) in Python.
+    Example:
+
+    import tkinter as tk
+
+    # Create the main window
+    root = tk.Tk()
+    root.title("Simple Tkinter Window")
+
+    # Create a label
+    label = tk.Label(root, text="Enter your name:")
+    label.pack()
+
+    # Create an entry box
+    entry = tk.Entry(root)
+    entry.pack()
+
+    # Create a button that updates the label with the entry text
+    def update_label():
+        name = entry.get()
+        label.config(text=f"Hello, {name}!")
+
+    button = tk.Button(root, text="Greet Me", command=update_label)
+    button.pack()
+
+    # Start the GUI event loop
+    root.mainloop()
+```
+
+---
 
 **Summary**
 
-- **Modules** are single files with Python code, useful for organizing and reusing functions, classes, or variables.
-- **Packages** are directories containing multiple related modules and an `__init__.py` file, which make large projects more manageable and prevent naming conflicts.
+```
+Modules are single files with Python code, useful for organizing and reusing functions, classes, or variables.  
+Packages are directories containing multiple related modules and an __init__.py file, which make large projects more manageable and prevent naming conflicts.
+```
 
 Using modules and packages keeps Python code modular, readable, and reusable, making it easier to structure and manage projects.
 

@@ -1337,122 +1337,110 @@ Here are the basic data types in Python, along with examples for each.</p>
 <hr class="docutils" />
 <p><strong>Common Python Modules and Packages</strong></p>
 <p>Python has a rich standard library with many commonly used modules and packages that are built into Python. Some of these are:</p>
-<ol class="arabic">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">math</span></code> Module</strong>: Provides mathematical functions.</p>
-<ul>
-<li><p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>  <span class="c1"># Output: 4.0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">math</span> <span class="n">Module</span><span class="p">:</span> <span class="n">Provides</span> <span class="n">mathematical</span> <span class="n">functions</span><span class="o">.</span>
+    <span class="n">Example</span><span class="p">:</span>
+
+    <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>  <span class="c1"># Output: 4.0</span>
+
+<span class="n">datetime</span> <span class="n">Module</span><span class="p">:</span> <span class="n">Handles</span> <span class="n">date</span> <span class="ow">and</span> <span class="n">time</span> <span class="n">manipulations</span><span class="o">.</span>
+    <span class="n">Example</span><span class="p">:</span>
+
+    <span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>  <span class="c1"># Output: Current date and time</span>
+
+<span class="n">random</span> <span class="n">Module</span><span class="p">:</span> <span class="n">Used</span> <span class="k">for</span> <span class="n">generating</span> <span class="n">random</span> <span class="n">numbers</span><span class="o">.</span>
+    <span class="n">Example</span><span class="p">:</span>
+
+    <span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>  <span class="c1"># Output: Random integer between 1 and 10</span>
+
+<span class="n">os</span> <span class="n">Module</span><span class="p">:</span> <span class="n">Provides</span> <span class="n">functions</span> <span class="n">to</span> <span class="n">interact</span> <span class="k">with</span> <span class="n">the</span> <span class="n">operating</span> <span class="n">system</span><span class="o">.</span>
+    <span class="n">Example</span><span class="p">:</span>
+
+    <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>  <span class="c1"># Output: Current working directory</span>
+
+<span class="n">sys</span> <span class="n">Module</span><span class="p">:</span> <span class="n">Provides</span> <span class="n">access</span> <span class="n">to</span> <span class="n">system</span><span class="o">-</span><span class="n">specific</span> <span class="n">parameters</span> <span class="ow">and</span> <span class="n">functions</span><span class="o">.</span>
+    <span class="n">Example</span><span class="p">:</span>
+
+    <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>  <span class="c1"># Output: Python version</span>
+
+<span class="n">re</span> <span class="n">Module</span><span class="p">:</span> <span class="n">Used</span> <span class="k">for</span> <span class="n">working</span> <span class="k">with</span> <span class="n">regular</span> <span class="n">expressions</span><span class="o">.</span>
+    <span class="n">Example</span><span class="p">:</span>
+
+    <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;\bword\b&quot;</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Find the word in this sentence.&quot;</span>
+    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>  <span class="c1"># Output: &#39;word&#39;</span>
+
+<span class="n">json</span> <span class="n">Module</span><span class="p">:</span> <span class="n">Used</span> <span class="k">for</span> <span class="n">parsing</span> <span class="n">JSON</span> <span class="n">data</span><span class="o">.</span>
+    <span class="n">Example</span><span class="p">:</span>
+
+    <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;{&quot;name&quot;: &quot;John&quot;, &quot;age&quot;: 30}&#39;</span>
+    <span class="n">parsed_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">parsed_data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>  <span class="c1"># Output: John</span>
+
+<span class="n">collections</span> <span class="n">Module</span><span class="p">:</span> <span class="n">Provides</span> <span class="n">specialized</span> <span class="n">container</span> <span class="n">data</span> <span class="n">types</span><span class="p">,</span> <span class="n">like</span> <span class="n">Counter</span><span class="p">,</span> <span class="n">defaultdict</span><span class="p">,</span> <span class="ow">and</span> <span class="n">namedtuple</span><span class="o">.</span>
+    <span class="n">Example</span><span class="p">:</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>  <span class="c1"># Output: Counter({&#39;apple&#39;: 3, &#39;banana&#39;: 2, &#39;orange&#39;: 1})</span>
+
+<span class="n">numpy</span> <span class="n">Package</span> <span class="p">(</span><span class="n">external</span><span class="p">):</span> <span class="n">Used</span> <span class="k">for</span> <span class="n">numerical</span> <span class="n">computations</span><span class="p">,</span> <span class="n">especially</span> <span class="k">for</span> <span class="n">array</span> <span class="n">operations</span><span class="o">.</span>
+    <span class="n">Example</span><span class="p">:</span>
+
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">array</span><span class="p">))</span>  <span class="c1"># Output: 2.0</span>
+
+<span class="n">pandas</span> <span class="n">Package</span> <span class="p">(</span><span class="n">external</span><span class="p">):</span> <span class="n">Used</span> <span class="k">for</span> <span class="n">data</span> <span class="n">analysis</span> <span class="ow">and</span> <span class="n">manipulation</span><span class="o">.</span>
+    <span class="n">Example</span><span class="p">:</span>
+
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">28</span><span class="p">,</span> <span class="mi">24</span><span class="p">]}</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="n">tkinter</span> <span class="n">Module</span><span class="p">:</span> <span class="n">Used</span> <span class="k">for</span> <span class="n">creating</span> <span class="n">graphical</span> <span class="n">user</span> <span class="n">interfaces</span> <span class="p">(</span><span class="n">GUIs</span><span class="p">)</span> <span class="ow">in</span> <span class="n">Python</span><span class="o">.</span>
+    <span class="n">Example</span><span class="p">:</span>
+
+    <span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+
+    <span class="c1"># Create the main window</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Simple Tkinter Window&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Create a label</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Enter your name:&quot;</span><span class="p">)</span>
+    <span class="n">label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="c1"># Create an entry box</span>
+    <span class="n">entry</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+    <span class="n">entry</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="c1"># Create a button that updates the label with the entry text</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_label</span><span class="p">():</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+
+    <span class="n">button</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Greet Me&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">update_label</span><span class="p">)</span>
+    <span class="n">button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="c1"># Start the GUI event loop</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 </pre></div>
 </div>
-</li>
-</ul>
-</li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">datetime</span></code> Module</strong>: Handles date and time manipulations.</p>
-<ul>
-<li><p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>  <span class="c1"># Output: Current date and time</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">random</span></code> Module</strong>: Used for generating random numbers.</p>
-<ul>
-<li><p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>  <span class="c1"># Output: Random integer between 1 and 10</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">os</span></code> Module</strong>: Provides functions to interact with the operating system.</p>
-<ul>
-<li><p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>  <span class="c1"># Output: Current working directory</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">sys</span></code> Module</strong>: Provides access to system-specific parameters and functions.</p>
-<ul>
-<li><p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>  <span class="c1"># Output: Python version</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">re</span></code> Module</strong>: Used for working with regular expressions.</p>
-<ul>
-<li><p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
-<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;\bword\b&quot;</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Find the word in this sentence.&quot;</span>
-<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>  <span class="c1"># Output: &#39;word&#39;</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">json</span></code> Module</strong>: Used for parsing JSON data.</p>
-<ul>
-<li><p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
-<span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;{&quot;name&quot;: &quot;John&quot;, &quot;age&quot;: 30}&#39;</span>
-<span class="n">parsed_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">parsed_data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>  <span class="c1"># Output: John</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">collections</span></code> Module</strong>: Provides specialized container data types, like <code class="docutils literal notranslate"><span class="pre">Counter</span></code>, <code class="docutils literal notranslate"><span class="pre">defaultdict</span></code>, and <code class="docutils literal notranslate"><span class="pre">namedtuple</span></code>.</p>
-<ul>
-<li><p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>  <span class="c1"># Output: Counter({&#39;apple&#39;: 3, &#39;banana&#39;: 2, &#39;orange&#39;: 1})</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">numpy</span></code> Package</strong> (external): Used for numerical computations, especially for array operations.</p>
-<ul>
-<li><p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">array</span><span class="p">))</span>  <span class="c1"># Output: 2.0</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">pandas</span></code> Package</strong> (external): Used for data analysis and manipulation.</p>
-<ul>
-<li><p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">28</span><span class="p">,</span> <span class="mi">24</span><span class="p">]}</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
-</ol>
+<hr class="docutils" />
 <p><strong>Summary</strong></p>
-<ul class="simple">
-<li><p><strong>Modules</strong> are single files with Python code, useful for organizing and reusing functions, classes, or variables.</p></li>
-<li><p><strong>Packages</strong> are directories containing multiple related modules and an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file, which make large projects more manageable and prevent naming conflicts.</p></li>
-</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Modules</span> <span class="n">are</span> <span class="n">single</span> <span class="n">files</span> <span class="k">with</span> <span class="n">Python</span> <span class="n">code</span><span class="p">,</span> <span class="n">useful</span> <span class="k">for</span> <span class="n">organizing</span> <span class="ow">and</span> <span class="n">reusing</span> <span class="n">functions</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="ow">or</span> <span class="n">variables</span><span class="o">.</span>  
+<span class="n">Packages</span> <span class="n">are</span> <span class="n">directories</span> <span class="n">containing</span> <span class="n">multiple</span> <span class="n">related</span> <span class="n">modules</span> <span class="ow">and</span> <span class="n">an</span> <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="n">file</span><span class="p">,</span> <span class="n">which</span> <span class="n">make</span> <span class="n">large</span> <span class="n">projects</span> <span class="n">more</span> <span class="n">manageable</span> <span class="ow">and</span> <span class="n">prevent</span> <span class="n">naming</span> <span class="n">conflicts</span><span class="o">.</span>
+</pre></div>
+</div>
 <p>Using modules and packages keeps Python code modular, readable, and reusable, making it easier to structure and manage projects.</p>
 </section>
 </section>
