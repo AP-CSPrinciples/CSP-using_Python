@@ -3156,11 +3156,9 @@ State management
 
 ---
 
-# AP CSP Project
+## Python Project Minesweeper
 
-# Build a Python Minesweeper Game
-
-## Project Overview
+**Project Overview**
 
 In this project, you will build a simplified version of the classic **Minesweeper game** using Python and Tkinter.
 
@@ -3444,7 +3442,7 @@ Add **difficulty selection**
 
 ---
 
-# Grading Rubric (10 Points)
+**Grading Rubric (10 Points)**
 
 | Criteria                                      | Points |
 | --------------------------------------------- | ------ |
@@ -3459,7 +3457,7 @@ Add **difficulty selection**
 
 ---
 
-# Computational Thinking Skills Demonstrated
+### Computational Thinking Skills Demonstrated
 
 Students practice:
 
@@ -3482,7 +3480,7 @@ Students practice:
 
 ---
 
-# Optional Extension Challenges (For Advanced Students)
+### Optional Extension Challenges (For Advanced Students)
 
 1️ Add **timer scoring system**
 
@@ -3506,7 +3504,7 @@ Since you often have students create **portfolio artifacts**, I can also generat
 
 
 
-# Additional Python Foundations (AP CSP Alignment)
+### Additional Python Foundations
 
 **User Input**
 *AP CSP Learning Goals*
