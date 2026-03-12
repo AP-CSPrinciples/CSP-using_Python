@@ -376,7 +376,7 @@ Here are the basic data types in Python, along with examples for each.
      print(type(name))  # Output: <class 'str'>
      ```
 
-### String Methods
+## String Methods
 
 
 **Beginner-Friendly String Methods**
@@ -673,7 +673,7 @@ print(result)  # Output: 10.0
 
 
 
-> <mark>NOTE:</mark> **Why Division Returns a Float**: In Python 3, the `/` operator always returns a float, even if both operands are integers. This is to provide accurate results without unexpected truncation. For integer-only results, Python offers the `//` operator (floor division).
+> ***NOTE:*** **Why Division Returns a Float**: In Python 3, the `/` operator always returns a float, even if both operands are integers. This is to provide accurate results without unexpected truncation. For integer-only results, Python offers the `//` operator (floor division).
 > 
 > The `/` operator preserves fractional results, which is especially helpful in complex calculations, while `//` discards the decimal part.
 > 
@@ -1315,7 +1315,7 @@ while count < 3:
 
 ---
 
-## **Nested Loops**
+### **Nested Loops**
 
 A **nested loop** is a loop **inside another loop**. The inner loop completes **all its iterations for each outer loop cycle**.
 
@@ -1564,20 +1564,16 @@ Let's break down the key concepts:
 Methods make object-oriented programming in Python powerful, allowing objects to encapsulate both data and functionality.
 
 
-
-Absolutely! Here's an updated explanation that includes:
-
-1. A clear definition of a **procedure** in Python.
-2. A Python example of a procedure.
-3. A side-by-side chart comparing a **Method**, **Procedure**, and **Function**, specifically in the Python context — making it relevant and understandable for students.
-
 ---
+
 
 ### Procedures
 
 In Python, a **procedure** is a function that performs a task **without returning a value**. It's called for its **side effects**, such as printing text, updating a file, or modifying a global variable. *It doesn't give anything back to the caller.*
 
+
 ---
+
 
 **Python Procedure**
 
@@ -2881,7 +2877,7 @@ This version is intentionally **clear and readable** so students can study the l
 
 ---
 
-# Python: Mini Minesweeper (6×6)
+## Python Program: Mini Minesweeper
 
 ```python
 import tkinter as tk
@@ -3032,9 +3028,9 @@ root.mainloop()
 
 ---
 
-# Key Programming Concepts (Good for Students)
+### Key Programming Concepts
 
-### 1️⃣ List for Tracking Moves
+**1️⃣ List for Tracking Moves**
 
 ```python
 self.moves = []
@@ -3045,7 +3041,7 @@ Stores every location the player has clicked.
 
 ---
 
-### 2️⃣ Score Tracking
+**2️⃣ Score Tracking**
 
 ```python
 self.score += 1
@@ -3055,7 +3051,7 @@ Score increases when the player safely clicks a square.
 
 ---
 
-### 3️⃣ Random Mine Placement
+**3️⃣ Random Mine Placement**
 
 ```python
 random.randint(0, SIZE-1)
@@ -3065,19 +3061,19 @@ Places mines in random grid locations.
 
 ---
 
-### 4️⃣ 2D Grid Using Lists
+**4️⃣ 2D Grid Using Lists**
 
 ```python
 self.buttons[r][c]
 ```
 
-Grid structure stored as a **list of lists**.
+Grid structure stored as a ***list of lists***.
 
 ---
 
-# Ideas if You Want to Turn This Into a Student Project
+### Student Project Considerations:
 
-Since you often build **portfolio-style projects**, here are good extensions students could implement:
+**Portfolio-style projects**, here are good extensions that you could implement:
 
 **Level 1**
 
@@ -3102,17 +3098,7 @@ Since you often build **portfolio-style projects**, here are good extensions stu
 
 ---
 
-✅ If you'd like, I can also make a **student starter version** where sections are replaced with comments like:
 
-```
-# TODO: Write code that counts nearby mines
-```
-
-That works extremely well for **intro Python or AP CSP style assignments.**
-
-Below is a **complete expanded Minesweeper program** that includes the four levels of functionality you requested. I kept the code **structured and readable for students**, since you often use these as **portfolio-style learning projects**.
-
-Features included:
 
 Level 1
 
@@ -3137,263 +3123,9 @@ Level 4
 
 ---
 
-# Full Minesweeper Program (Teacher Version)
 
-```python
-import tkinter as tk
-import random
-
-class Minesweeper:
-
-    def __init__(self, root):
-
-        self.root = root
-        self.root.title("Python Minesweeper")
-
-        self.high_score = 0
-
-        self.top_frame = tk.Frame(root)
-        self.top_frame.pack()
-
-        tk.Label(self.top_frame, text="Difficulty").pack(side="left")
-
-        self.difficulty = tk.StringVar()
-        self.difficulty.set("Easy")
-
-        difficulty_menu = tk.OptionMenu(
-            self.top_frame,
-            self.difficulty,
-            "Easy",
-            "Medium",
-            "Hard",
-            command=self.change_difficulty
-        )
-        difficulty_menu.pack(side="left")
-
-        self.score_label = tk.Label(self.top_frame, text="Score: 0")
-        self.score_label.pack(side="left", padx=10)
-
-        self.high_label = tk.Label(self.top_frame, text="High Score: 0")
-        self.high_label.pack(side="left", padx=10)
-
-        self.flag_label = tk.Label(self.top_frame, text="")
-        self.flag_label.pack(side="left", padx=10)
-
-        self.retry = tk.Button(self.top_frame, text="Try Again", command=self.reset_game)
-        self.retry.pack(side="left")
-
-        self.grid_frame = tk.Frame(root)
-        self.grid_frame.pack()
-
-        self.change_difficulty("Easy")
-
-    # -----------------------------
-    # Difficulty Settings
-    # -----------------------------
-    def change_difficulty(self, level):
-
-        if level == "Easy":
-            self.size = 6
-            self.mines = 6
-
-        elif level == "Medium":
-            self.size = 8
-            self.mines = 12
-
-        elif level == "Hard":
-            self.size = 10
-            self.mines = 20
-
-        self.reset_game()
-
-    # -----------------------------
-    # Create Board
-    # -----------------------------
-    def create_board(self):
-
-        self.buttons = []
-        self.moves = []
-        self.flags = set()
-        self.score = 0
-        self.remaining_flags = self.mines
-
-        self.score_label.config(text="Score: 0")
-        self.flag_label.config(text="Flags: " + str(self.remaining_flags))
-
-        for widget in self.grid_frame.winfo_children():
-            widget.destroy()
-
-        for r in range(self.size):
-
-            row = []
-
-            for c in range(self.size):
-
-                btn = tk.Button(self.grid_frame,
-                                width=3,
-                                height=1)
-
-                btn.grid(row=r, column=c)
-
-                btn.bind("<Button-1>", lambda e, r=r, c=c: self.click(r, c))
-                btn.bind("<Button-3>", lambda e, r=r, c=c: self.flag(r, c))
-
-                row.append(btn)
-
-            self.buttons.append(row)
-
-        self.place_mines()
-
-    # -----------------------------
-    # Mine Placement
-    # -----------------------------
-    def place_mines(self):
-
-        self.mine_locations = set()
-
-        while len(self.mine_locations) < self.mines:
-
-            r = random.randint(0, self.size-1)
-            c = random.randint(0, self.size-1)
-
-            self.mine_locations.add((r, c))
-
-    # -----------------------------
-    # Count Nearby Mines
-    # -----------------------------
-    def count_mines(self, r, c):
-
-        count = 0
-
-        for i in range(r-1, r+2):
-            for j in range(c-1, c+2):
-
-                if (i, j) in self.mine_locations:
-                    count += 1
-
-        return count
-
-    # -----------------------------
-    # Click Cell
-    # -----------------------------
-    def click(self, r, c):
-
-        if (r, c) in self.moves or (r, c) in self.flags:
-            return
-
-        self.moves.append((r, c))
-
-        if (r, c) in self.mine_locations:
-
-            self.buttons[r][c].config(text="💣", bg="red")
-            self.game_over()
-            return
-
-        count = self.count_mines(r, c)
-
-        self.buttons[r][c].config(text=str(count), relief="sunken")
-
-        self.score += 1
-        self.score_label.config(text="Score: " + str(self.score))
-
-        if count == 0:
-            self.reveal_empty(r, c)
-
-        self.check_win()
-
-    # -----------------------------
-    # Reveal Empty Region
-    # -----------------------------
-    def reveal_empty(self, r, c):
-
-        for i in range(r-1, r+2):
-            for j in range(c-1, c+2):
-
-                if 0 <= i < self.size and 0 <= j < self.size:
-
-                    if (i, j) not in self.moves:
-
-                        self.moves.append((i, j))
-
-                        count = self.count_mines(i, j)
-
-                        self.buttons[i][j].config(text=str(count), relief="sunken")
-
-                        if count == 0:
-                            self.reveal_empty(i, j)
-
-    # -----------------------------
-    # Flagging System
-    # -----------------------------
-    def flag(self, r, c):
-
-        if (r, c) in self.moves:
-            return
-
-        btn = self.buttons[r][c]
-
-        if (r, c) in self.flags:
-
-            self.flags.remove((r, c))
-            btn.config(text="")
-            self.remaining_flags += 1
-
-        else:
-
-            if self.remaining_flags == 0:
-                return
-
-            self.flags.add((r, c))
-            btn.config(text="🚩")
-            self.remaining_flags -= 1
-
-        self.flag_label.config(text="Flags: " + str(self.remaining_flags))
-
-    # -----------------------------
-    # Win Check
-    # -----------------------------
-    def check_win(self):
-
-        safe_cells = self.size*self.size - self.mines
-
-        if self.score == safe_cells:
-
-            if self.score > self.high_score:
-                self.high_score = self.score
-                self.high_label.config(text="High Score: " + str(self.high_score))
-
-            for r in range(self.size):
-                for c in range(self.size):
-                    self.buttons[r][c].config(state="disabled")
-
-    # -----------------------------
-    # Game Over
-    # -----------------------------
-    def game_over(self):
-
-        for r, c in self.mine_locations:
-            self.buttons[r][c].config(text="💣")
-
-        for row in self.buttons:
-            for btn in row:
-                btn.config(state="disabled")
-
-    # -----------------------------
-    # Reset Game
-    # -----------------------------
-    def reset_game(self):
-
-        self.create_board()
-
-
-root = tk.Tk()
-game = Minesweeper(root)
-root.mainloop()
-```
 
 ---
-
-# Why This Version Works Well for Students
 
 This program exposes students to **many AP-level CS ideas**:
 
@@ -3419,56 +3151,8 @@ State management
 * flags
 * mine locations
 
----
-
-# Student Starter Version (What I Recommend)
-
-For classroom use, you can remove code and replace it with **TODO sections** like:
-
-```python
-def count_mines(self, r, c):
-
-    # TODO
-    # Write code that checks surrounding cells
-    # Return number of mines nearby
-
-    pass
-```
-
-Other good student tasks:
-
-```
-# TODO: create list to store player moves
-
-# TODO: prevent player from clicking flagged cells
-
-# TODO: update score
-
-# TODO: implement recursive empty reveal
-```
-
----
-
-💡 If you'd like, I can also generate a **full classroom package** for this project:
-
-* **Student Starter Code**
-* **Teacher Solution**
-* **Project Instructions**
-* **Grading Rubric (10 or 20 points)**
-* **AP CSP / AP CSA learning objectives**
-
-It actually fits very well with the **game-based simulation work you mentioned earlier (Mars simulation, robot maze, etc.)**.
 
 
-Below is a **complete classroom package** you can give students. It is designed for **AP CSP style learning objectives**, focusing on:
-
-* Lists and data tracking
-* Algorithms and program logic
-* Event-driven programming
-* Abstraction through functions
-* Testing and debugging
-
-I kept the **starter code partially complete** so students focus on the **computational thinking parts**, not the GUI boilerplate.
 
 ---
 
@@ -3486,11 +3170,11 @@ You will implement the logic that makes the game work.
 
 ---
 
-# Learning Objectives (AP CSP)
+**Learning Objectives**
 
 This project aligns with the following **AP CSP Computational Thinking Practices and Learning Objectives**.
 
-### Data Abstraction
+**Data Abstraction**
 
 Students will use **lists and sets** to store game data.
 
@@ -3500,7 +3184,7 @@ Relevant LO:
 
 ---
 
-### Algorithms and Program Development
+**Algorithms and Program Development**
 
 Students will develop algorithms that:
 
@@ -3514,7 +3198,7 @@ Relevant LO:
 
 ---
 
-### Abstraction
+**Abstraction**
 
 Students will organize their program using **functions/methods**.
 
@@ -3524,7 +3208,7 @@ Relevant LO:
 
 ---
 
-### Testing and Debugging
+**Testing and Debugging**
 
 Students will test their code to ensure the game behaves correctly.
 
@@ -3534,30 +3218,30 @@ Relevant LO:
 
 ---
 
-# Program Requirements
+**Program Requirements**
 
 Your program must include the following features.
 
-### Level 1
+**Level 1**
 
 Right-click **flagging system 🚩**
 Limit number of flags
 
 ---
 
-### Level 2
+**Level 2**
 
 Automatically reveal **empty regions** when a 0-cell is clicked
 
 ---
 
-### Level 3
+**Level 3**
 
 Track and display **High Score**
 
 ---
 
-### Level 4
+**Level 4**
 
 Difficulty selection
 
@@ -3569,7 +3253,7 @@ Difficulty selection
 
 ---
 
-# Student Starter Code
+**Student Starter Code:**
 
 Students must complete sections marked **TODO**.
 
@@ -3734,9 +3418,8 @@ root.mainloop()
 
 ---
 
-# Suggested Development Order for Students
+**Development Order** 
 
-Students should build the game in this order.
 
 Step 1
 Create **mine placement algorithm**
@@ -3771,8 +3454,8 @@ Add **difficulty selection**
 | Empty region reveal algorithm                 | 2      |
 | Use of lists/sets to track game data          | 1      |
 | Program runs correctly and is tested/debugged | 1      |
+| **Total Points**                              | 10     |
 
-Total: **10 points**
 
 ---
 
@@ -3825,8 +3508,8 @@ Since you often have students create **portfolio artifacts**, I can also generat
 
 # Additional Python Foundations (AP CSP Alignment)
 
-## User Input
-### AP CSP Learning Goals
+**User Input**
+*AP CSP Learning Goals*
 - AAP-1.D: Display output and receive input from a user.
 - AAP-1.A: Represent data using variables.
 
@@ -3843,8 +3526,8 @@ age = int(input("Enter your age: "))
 
 ---
 
-## Random Numbers
-### AP CSP Learning Goals
+**Random Numbers**
+*AP CSP Learning Goals*
 - AAP-2.E: Develop algorithms using sequencing, selection, and iteration.
 
 ```python
@@ -3856,8 +3539,8 @@ print(number)
 
 ---
 
-## 2D Lists (Grids)
-### AP CSP Learning Goals
+**2D Lists (Grids)**
+*AP CSP Learning Goals*
 - AAP-4.A: Use data abstractions to manage complexity.
 
 Example grid:
@@ -3878,8 +3561,8 @@ grid[row][col]
 
 ---
 
-## Debugging Strategies
-### AP CSP Learning Goals
+**Debugging Strategies**
+*AP CSP Learning Goals*
 - CRD-2.J: Test and debug a program.
 
 Common techniques:
@@ -3897,8 +3580,8 @@ print("Value of x:", x)
 
 ---
 
-## File Input and Output
-### AP CSP Learning Goals
+**File Input and Output**
+*AP CSP Learning Goals*
 - AAP-2.B: Use data stored in files.
 
 ```python
@@ -3909,7 +3592,7 @@ with open("data.txt", "r") as file:
 
 ---
 
-# Python Mini Projects
+**Python Mini Projects**
 
 | Project | Concepts |
 |------|------|
@@ -3922,15 +3605,15 @@ with open("data.txt", "r") as file:
 
 ---
 
-# Minesweeper Project
+**Minesweeper Project**
 
-### AP CSP Learning Goals
+*AP CSP Learning Goals*
 - AAP-2.E: Develop algorithms using sequencing, selection, and iteration.
 - AAP-4.A: Use data abstractions to manage complexity.
 - CRD-2.B: Implement algorithms in a programming language.
 - CRD-2.J: Test and debug programs.
 
-## Concepts Used
+**Concepts Used**
 
 - Lists and 2D Lists
 - Nested Loops
@@ -3959,7 +3642,7 @@ col = random.randint(0,2)
 board[row][col] = "*"
 ```
 
-### Project Objectives
+**Project Objectives**
 
 Students should:
 
@@ -3969,4 +3652,3 @@ Students should:
 4. Allow player moves
 5. Reveal tiles
 6. Determine win or loss
-
