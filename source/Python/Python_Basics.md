@@ -355,7 +355,7 @@ Before asking a teacher or peer, students should be able to explain:
 
 ### Student Debugging Checklist
 
-Before asking for help, students should confirm they have:
+Before asking for help, you should check the following:
 
 ☐ Read the error message
 
