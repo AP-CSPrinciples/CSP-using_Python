@@ -3370,6 +3370,106 @@ Lambda functions in Python provide a concise way to define simple functions with
 </section>
 </section>
 <hr class="docutils" />
+<section id="recursion">
+<h2>Recursion<a class="headerlink" href="#recursion" title="Link to this heading">¶</a></h2>
+<p>Recursion is a fundamental concept in programming where a function calls itself to solve smaller instances of a problem. In Python 3.x, recursion is straightforward but needs careful handling to avoid infinite loops or exceeding the recursion limit. Let’s break it down.</p>
+</section>
+<hr class="docutils" />
+<section id="how-recursion-works">
+<h2>How Recursion Works<a class="headerlink" href="#how-recursion-works" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Base Case</strong>: This is the condition under which the recursive function stops calling itself. Without it, recursion would go on indefinitely.</p></li>
+<li><p><strong>Recursive Case</strong>: This is where the function calls itself with a smaller or simpler input.</p></li>
+</ol>
+<p>Python keeps track of each function call on the <strong>call stack</strong>, so each call has its own local variables and execution state. When a base case is reached, Python unwinds the stack, returning results back up the chain.</p>
+<hr class="docutils" />
+<p><strong>Example 1: Factorial</strong></p>
+<p>Factorial of <code class="docutils literal notranslate"><span class="pre">n</span></code> (denoted <code class="docutils literal notranslate"><span class="pre">n!</span></code>) is <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">*</span> <span class="pre">(n-1)</span> <span class="pre">*</span> <span class="pre">...</span> <span class="pre">*</span> <span class="pre">1</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># base case</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># recursive call</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># Output: 120</span>
+</pre></div>
+</div>
+<p><strong>Explanation</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">factorial(5)</span></code> calls <code class="docutils literal notranslate"><span class="pre">factorial(4)</span></code>, which calls <code class="docutils literal notranslate"><span class="pre">factorial(3)</span></code> … until <code class="docutils literal notranslate"><span class="pre">factorial(0)</span></code>.</p></li>
+<li><p>Then the stack starts returning results: <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">→</span> <span class="pre">1*1</span> <span class="pre">→</span> <span class="pre">2*1</span> <span class="pre">→</span> <span class="pre">3*2</span> <span class="pre">→</span> <span class="pre">4*6</span> <span class="pre">→</span> <span class="pre">5*24</span> <span class="pre">→</span> <span class="pre">120</span></code>.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Example 2: Fibonacci Sequence</strong></p>
+<p>Fibonacci numbers: <code class="docutils literal notranslate"><span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">5,</span> <span class="pre">8…</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># base case</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># recursive calls</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>  <span class="c1"># Output: 8</span>
+</pre></div>
+</div>
+<p><strong>Explanation</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fibonacci(6)</span></code> calls <code class="docutils literal notranslate"><span class="pre">fibonacci(5)</span></code> and <code class="docutils literal notranslate"><span class="pre">fibonacci(4)</span></code> and so on, breaking the problem into smaller subproblems.</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Note:</strong> This naive Fibonacci recursion has exponential time complexity. Iterative or memoized approaches are better for large <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p><strong>Example 3: Sum of a List</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_list</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">lst</span><span class="p">:</span>  <span class="c1"># base case: empty list</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>  <span class="c1"># recursive call on the rest of the list</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>  <span class="c1"># Output: 10</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<blockquote>
+<div><p><strong>Key Points</strong></p>
+<ul class="simple">
+<li><p>Python has a recursion limit (<code class="docutils literal notranslate"><span class="pre">sys.getrecursionlimit()</span></code>), default ~1000. Deep recursion can cause <code class="docutils literal notranslate"><span class="pre">RecursionError</span></code>.</p></li>
+<li><p>Recursive functions are elegant for problems naturally defined in smaller subproblems (like trees, graphs, divide-and-conquer algorithms).</p></li>
+<li><p>Always define a base case to prevent infinite recursion.</p></li>
+</ul>
+</div></blockquote>
+<section id="recursive-call-stack-for-factorial-3">
+<h3>Recursive Call Stack for <code class="docutils literal notranslate"><span class="pre">factorial(3)</span></code><a class="headerlink" href="#recursive-call-stack-for-factorial-3" title="Link to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+  <span class="o">-&gt;</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+           <span class="o">-&gt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                     <span class="o">-&gt;</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                               <span class="o">-&gt;</span> <span class="mi">1</span> <span class="p">(</span><span class="n">base</span> <span class="n">case</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Unwinding the Stack (Returning Values)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="n">returns</span> <span class="mi">1</span>
+<span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">returns</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">returns</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">returns</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">6</span>
+</pre></div>
+</div>
+<p><strong>Visual Diagram</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Call</span> <span class="n">Stack</span> <span class="p">(</span><span class="n">Top</span> <span class="o">-&gt;</span> <span class="n">Bottom</span><span class="p">):</span>
+
+<span class="o">|</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">|</span>  <span class="o">&lt;-</span> <span class="n">waiting</span> <span class="k">for</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">|</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">|</span>  <span class="o">&lt;-</span> <span class="n">waiting</span> <span class="k">for</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">|</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">|</span>  <span class="o">&lt;-</span> <span class="n">waiting</span> <span class="k">for</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="o">|</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">|</span>  <span class="o">&lt;-</span> <span class="n">base</span> <span class="n">case</span> <span class="n">reached</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Each layer waits for the next recursive call to return.</p></li>
+<li><p>Once the base case is hit, Python <strong>pops the stack</strong> and computes the result as it returns.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
 <section id="mini-minesweeper-project">
 <h2>Mini Minesweeper Project<a class="headerlink" href="#mini-minesweeper-project" title="Link to this heading">¶</a></h2>
 <p><strong>Project Overview</strong></p>
@@ -3771,6 +3871,11 @@ Lambda functions in Python provide a concise way to define simple functions with
 <li><a class="reference internal" href="#exception-handling">Exception Handling</a></li>
 <li><a class="reference internal" href="#lambda-functions">Lambda Functions</a><ul>
 <li><a class="reference internal" href="#basic-syntax-of-lambda-functions">Basic Syntax of Lambda Functions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#recursion">Recursion</a></li>
+<li><a class="reference internal" href="#how-recursion-works">How Recursion Works</a><ul>
+<li><a class="reference internal" href="#recursive-call-stack-for-factorial-3">Recursive Call Stack for <code class="docutils literal notranslate"><span class="pre">factorial(3)</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#mini-minesweeper-project">Mini Minesweeper Project</a></li>

@@ -3056,6 +3056,122 @@ Lambda functions in Python provide a concise way to define simple functions with
 ---
 
 
+## Recursion
+
+Recursion is a fundamental concept in programming where a function calls itself to solve smaller instances of a problem. In Python 3.x, recursion is straightforward but needs careful handling to avoid infinite loops or exceeding the recursion limit. Let’s break it down.
+
+---
+
+## How Recursion Works
+
+1. **Base Case**: This is the condition under which the recursive function stops calling itself. Without it, recursion would go on indefinitely.
+2. **Recursive Case**: This is where the function calls itself with a smaller or simpler input.
+
+Python keeps track of each function call on the **call stack**, so each call has its own local variables and execution state. When a base case is reached, Python unwinds the stack, returning results back up the chain.
+
+---
+
+**Example 1: Factorial**
+
+Factorial of `n` (denoted `n!`) is `n * (n-1) * ... * 1`.
+
+```python
+def factorial(n):
+    if n == 0:  # base case
+        return 1
+    else:
+        return n * factorial(n - 1)  # recursive call
+
+print(factorial(5))  # Output: 120
+```
+
+**Explanation**:
+
+* `factorial(5)` calls `factorial(4)`, which calls `factorial(3)` … until `factorial(0)`.
+* Then the stack starts returning results: `1 → 1*1 → 2*1 → 3*2 → 4*6 → 5*24 → 120`.
+
+---
+
+**Example 2: Fibonacci Sequence**
+
+Fibonacci numbers: `0, 1, 1, 2, 3, 5, 8…`
+
+```python
+def fibonacci(n):
+    if n <= 1:  # base case
+        return n
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)  # recursive calls
+
+print(fibonacci(6))  # Output: 8
+```
+
+**Explanation**:
+
+* `fibonacci(6)` calls `fibonacci(5)` and `fibonacci(4)` and so on, breaking the problem into smaller subproblems.
+
+> **Note:** This naive Fibonacci recursion has exponential time complexity. Iterative or memoized approaches are better for large `n`.
+
+---
+
+**Example 3: Sum of a List**
+
+```python
+def sum_list(lst):
+    if not lst:  # base case: empty list
+        return 0
+    else:
+        return lst[0] + sum_list(lst[1:])  # recursive call on the rest of the list
+
+print(sum_list([1, 2, 3, 4]))  # Output: 10
+```
+
+---
+
+> **Key Points**
+>
+> * Python has a recursion limit (`sys.getrecursionlimit()`), default ~1000. Deep recursion can cause `RecursionError`.
+> * Recursive functions are elegant for problems naturally defined in smaller subproblems (like trees, graphs, divide-and-conquer algorithms).
+> * Always define a base case to prevent infinite recursion.
+
+
+### Recursive Call Stack for `factorial(3)`
+
+```
+factorial(3)
+  -> 3 * factorial(2)
+           -> 2 * factorial(1)
+                     -> 1 * factorial(0)
+                               -> 1 (base case)
+```
+
+**Unwinding the Stack (Returning Values)**
+
+```
+factorial(0) returns 1
+factorial(1) returns 1 * 1 = 1
+factorial(2) returns 2 * 1 = 2
+factorial(3) returns 3 * 2 = 6
+```
+
+**Visual Diagram** 
+
+```
+Call Stack (Top -> Bottom):
+
+| factorial(3) |  <- waiting for factorial(2)
+| factorial(2) |  <- waiting for factorial(1)
+| factorial(1) |  <- waiting for factorial(0)
+| factorial(0) |  <- base case reached
+```
+
+* Each layer waits for the next recursive call to return.
+* Once the base case is hit, Python **pops the stack** and computes the result as it returns.
+
+
+---
+
+
 ## Mini Minesweeper Project
 
 **Project Overview**
