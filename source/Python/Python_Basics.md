@@ -2478,7 +2478,9 @@ class Car:
 
 ---
 
-#### Putting It All Together: Multiple Classes, Objects, Constructors, Methods, and Attributes
+#### Putting It All Together
+
+**Multiple Classes, Objects, Constructors, Methods, and Attributes**
 
 **Class 1: `Car`**
 
@@ -3135,7 +3137,7 @@ print(sum_list([1, 2, 3, 4]))  # Output: 10
 > * Always define a base case to prevent infinite recursion.
 
 
-### Recursive Call Stack for `factorial(3)`
+**Recursive Call Stack for `factorial(3)`**
 
 ```
 factorial(3)
