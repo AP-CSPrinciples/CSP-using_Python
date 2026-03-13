@@ -1439,7 +1439,7 @@ while count < 3:
 
 ---
 
-### **Nested Loops**
+### Nested Loops
 
 A **nested loop** is a loop **inside another loop**. The inner loop completes **all its iterations for each outer loop cycle**.
 
