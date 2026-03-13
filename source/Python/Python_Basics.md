@@ -3056,7 +3056,7 @@ Lambda functions in Python provide a concise way to define simple functions with
 ---
 
 
-## Python Program: Mini Minesweeper
+## Mini Minesweeper Project
 
 **Project Overview**
 
