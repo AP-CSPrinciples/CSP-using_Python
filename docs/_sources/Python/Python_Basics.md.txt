@@ -270,8 +270,7 @@ Following these guidelines helps ensure code that is easy to read, maintain, and
 </details>
 
 
-## 
-**Debugging Strategies**
+## Debugging Strategies
 
 
 **1. Read the Error Message Carefully**
@@ -280,15 +279,11 @@ Following these guidelines helps ensure code that is easy to read, maintain, and
 * Identify whether the error is a **syntax error, runtime error, or logic error**.
 * Focus first on the line mentioned, then check lines directly above it.
 
----
-
 **2. Trace the Program Step-by-Step**
 
 * Walk through the program **line by line**.
 * Track variable values and program flow.
 * Use paper or a table to simulate what the program does.
-
----
 
 **3. Use Print Statements**
 
@@ -305,15 +300,11 @@ Example:
 print("Value of score:", score)
 ```
 
----
-
 **4. Test with Simple Inputs**
 
 * Start with **small, predictable test cases**.
 * Use values where you already know the expected output.
 * Gradually test more complex inputs.
-
----
 
 **5. Isolate the Problem**
 
@@ -321,15 +312,11 @@ print("Value of score:", score)
 * Test smaller pieces individually.
 * Determine **which specific section causes the issue**.
 
----
-
 **6. Check Variables and Data Types**
 
 * Confirm variables contain the **values you expect**.
 * Verify correct **data types** (number, string, boolean, list).
 * Look for accidental reassignment of variables.
-
----
 
 **7. Review Logic and Conditions**
 
@@ -341,29 +328,21 @@ print("Value of score:", score)
   * misplaced parentheses
   * incorrect loop conditions.
 
----
-
 **8. Rubber Duck Debugging**
 
 * Explain the code **out loud** step-by-step.
 * Pretend you are teaching the program to someone else.
 * Often the mistake becomes obvious while explaining.
 
----
-
 **9. Use Incremental Development**
 
 * Write and test **small pieces of code at a time**.
 * Ensure each part works before adding more features.
 
----
-
 **10. Take a Break and Revisit**
 
 * Step away briefly when stuck.
 * Returning with fresh eyes often reveals simple mistakes.
-
----
 
 **11. Ask for Help with Evidence**
 
