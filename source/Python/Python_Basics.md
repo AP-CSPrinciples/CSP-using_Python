@@ -968,6 +968,33 @@ Here’s a quick summary of operator precedence from highest to lowest:
 ## Modules and Packages
 
 
+* **AP CSP Standards:**
+
+  * **AAP-2.E:** Develop algorithms using sequencing, selection, and iteration.
+
+    * *Example:* `math.sqrt()` can be part of a calculation sequence or algorithm.
+  * **AAP-2.F:** Use mathematical operations in algorithms.
+
+    * *Example:* Using arithmetic operations, powers, or square roots.
+
+  * **AAP-2.E:** Develop algorithms using sequencing, selection, and iteration.
+
+    * *Example:* `random.randint()` used in loops or conditional logic.
+  * **AAP-2.G:** Use abstraction to manage complexity in algorithms.
+
+    * *Example:* Wrapping random logic in a function to simplify code.
+
+  * **AAP-3.A:** Collect and represent data digitally.
+
+    * *Example:* Parsing JSON into Python dictionaries or lists.
+  * **AAP-3.B:** Use abstractions to organize and process data.
+
+    * *Example:* Using dictionaries or lists to hold JSON data.
+  * **AAP-3.C:** Analyze data to draw conclusions.
+
+    * *Example:* Accessing JSON fields and performing calculations or counts.
+   
+
 In Python, **modules** and **packages** are essential organizational tools that help in managing, organizing, and reusing code. They make code more modular and allow developers to structure their projects efficiently.
 
 ### Modules in Python
