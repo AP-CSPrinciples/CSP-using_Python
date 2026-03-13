@@ -1727,7 +1727,7 @@ Welcome to the program!
 
 
 
-#### Comparing Method, Procedure, and Function in Python
+### Comparing Function Members
 
 | Term          | Python Form                         | Returns a Value? | Used For                           | Example                               |
 | ------------- | ----------------------------------- | ---------------- | ---------------------------------- | ------------------------------------- |
