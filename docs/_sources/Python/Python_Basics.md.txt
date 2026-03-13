@@ -2940,7 +2940,9 @@ Exception handling helps manage different types of errors gracefully, enabling a
 
 In Python, a **lambda function** is a small, anonymous function that is defined using the `lambda` keyword. Unlike regular functions created with `def`, lambda functions are written in a single line and are often used for short, simple operations that are not reused elsewhere. 
 
-### Basic Syntax of Lambda Functions
+### Basic Lambda Syntax
+
+
 ```python
 lambda arguments: expression
 ```
