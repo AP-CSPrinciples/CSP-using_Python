@@ -54,7 +54,7 @@ We will be looking at syntax and structures of Python. We will use an Integrated
      ```
    - **Rationale**: Code is more readable when variable names clearly indicate their purpose, making it easier to understand and maintain.
 
--------------------------------------------------------------------------
+---
 
 **2. Use Consistent Indentation (4 Spaces)**
    - **Guideline**: Use four spaces per indentation level; do not use tabs.
@@ -65,7 +65,7 @@ We will be looking at syntax and structures of Python. We will use an Integrated
      ```
    - **Rationale**: Consistent indentation is essential for readability and prevents syntax errors.
 
--------------------------------------------------------------------------
+---
 
 **3. Limit Line Length to 79 Characters**
    - **Guideline**: Limit all lines to a maximum of 79 characters.
@@ -80,7 +80,7 @@ We will be looking at syntax and structures of Python. We will use an Integrated
      ```
    - **Rationale**: This improves readability and ensures the code displays well on all devices, including smaller screens.
 
--------------------------------------------------------------------------
+---
 
 **4. Use Blank Lines to Separate Code Sections**
    - **Guideline**: Use two blank lines to separate top-level functions and class definitions, and one blank line to separate methods within a class.
@@ -98,7 +98,7 @@ We will be looking at syntax and structures of Python. We will use an Integrated
      ```
    - **Rationale**: Blank lines help visually separate sections of code, improving readability.
 
--------------------------------------------------------------------------
+---
 
 **5. Use Docstrings to Document Functions, Classes, and Modules**
    - **Guideline**: Use triple-quoted strings (`"""`) for all public modules, functions, classes, and methods.
@@ -110,7 +110,7 @@ We will be looking at syntax and structures of Python. We will use an Integrated
      ```
    - **Rationale**: Docstrings provide useful explanations of code functionality, which helps future readers and collaborators.
 
--------------------------------------------------------------------------
+---
 
 **6. Use Spaces Around Operators**
    - **Guideline**: Use spaces around operators and after commas, but not directly inside parentheses.
@@ -124,7 +124,7 @@ We will be looking at syntax and structures of Python. We will use an Integrated
      ```
    - **Rationale**: Spacing around operators makes expressions easier to read.
 
--------------------------------------------------------------------------
+---
 
 **7. Avoid Excessive Nesting**
    - **Guideline**: Break down complex logic with multiple levels of nesting into smaller functions.
@@ -146,7 +146,7 @@ We will be looking at syntax and structures of Python. We will use an Integrated
      ```
    - **Rationale**: Deeply nested code is harder to read and debug. Breaking code into smaller functions improves readability and reusability.
 
--------------------------------------------------------------------------
+---
 
 **8. Use List Comprehensions for Simple Operations**
    - **Guideline**: Use list comprehensions for simple operations but avoid them for complex nested operations.
@@ -162,7 +162,7 @@ We will be looking at syntax and structures of Python. We will use an Integrated
      ```
    - **Rationale**: List comprehensions are concise and often faster than equivalent for-loops for simple operations.
 
--------------------------------------------------------------------------
+---
 
 **9. Handle Exceptions Properly**
    - **Guideline**: Use specific exceptions rather than catching all exceptions with `except` alone.
@@ -182,7 +182,7 @@ We will be looking at syntax and structures of Python. We will use an Integrated
      ```
    - **Rationale**: Catching specific exceptions allows you to handle errors appropriately, making debugging easier.
 
--------------------------------------------------------------------------
+---
 
 **10. Use Meaningful Constants Instead of Magic Numbers**
    - **Guideline**: Define constants with descriptive names for “magic numbers” (unexplained numerical values).
@@ -197,7 +197,7 @@ We will be looking at syntax and structures of Python. We will use an Integrated
      ```
    - **Rationale**: Constants with meaningful names improve readability and make the code easier to modify and maintain.
 
--------------------------------------------------------------------------
+---
 
 **11. Avoid Global Variables**
    - **Guideline**: Avoid using global variables; instead, use function parameters or class attributes.
@@ -214,7 +214,7 @@ We will be looking at syntax and structures of Python. We will use an Integrated
      ```
    - **Rationale**: Global variables can lead to hard-to-track bugs and make code harder to reuse and maintain.
 
--------------------------------------------------------------------------
+---
 
 **12. Use `is` for Comparison to `None`**
    - **Guideline**: Use `is` or `is not` when comparing to `None`.
@@ -230,7 +230,7 @@ We will be looking at syntax and structures of Python. We will use an Integrated
      ```
    - **Rationale**: `is` is more efficient and explicitly intended for this type of comparison, improving clarity and performance.
 
--------------------------------------------------------------------------
+---
 
 **13. Organize Imports Properly**
    - **Guideline**: Group imports into three sections in this order: standard library imports, related third-party imports, and local application-specific imports. Separate each group with a blank line.
@@ -247,7 +247,7 @@ We will be looking at syntax and structures of Python. We will use an Integrated
      ```
    - **Rationale**: This structure improves readability and avoids clutter.
 
--------------------------------------------------------------------------
+---
 
 **14. Use Type Annotations (Python 3.5+)**
    - **Guideline**: Use type annotations to specify expected data types for function arguments and return values.
@@ -258,9 +258,133 @@ We will be looking at syntax and structures of Python. We will use an Integrated
      ```
    - **Rationale**: Type annotations make it clear what types are expected, which can help prevent bugs and improve readability. 
 
-------------------------------------------------------------------------- 
+---
 
 Following these guidelines helps ensure code that is easy to read, maintain, and understand across teams.
+
+
+---
+
+
+**Debugging Strategies**
+
+
+**1. Read the Error Message Carefully**
+
+* Look at the **exact line number** and description.
+* Identify whether the error is a **syntax error, runtime error, or logic error**.
+* Focus first on the line mentioned, then check lines directly above it.
+
+---
+
+**2. Trace the Program Step-by-Step**
+
+* Walk through the program **line by line**.
+* Track variable values and program flow.
+* Use paper or a table to simulate what the program does.
+
+---
+
+**3. Use Print Statements**
+
+* Insert temporary `print` statements to display:
+
+  * variable values
+  * function outputs
+  * checkpoints in the code
+* This helps locate where the program behavior becomes incorrect.
+
+Example:
+
+```
+print("Value of score:", score)
+```
+
+---
+
+**4. Test with Simple Inputs**
+
+* Start with **small, predictable test cases**.
+* Use values where you already know the expected output.
+* Gradually test more complex inputs.
+
+---
+
+**5. Isolate the Problem**
+
+* Comment out or temporarily remove sections of code.
+* Test smaller pieces individually.
+* Determine **which specific section causes the issue**.
+
+---
+
+**6. Check Variables and Data Types**
+
+* Confirm variables contain the **values you expect**.
+* Verify correct **data types** (number, string, boolean, list).
+* Look for accidental reassignment of variables.
+
+---
+
+**7. Review Logic and Conditions**
+
+* Check `if` statements and loops carefully.
+* Verify conditions are written correctly.
+* Look for common mistakes:
+
+  * incorrect comparison operators
+  * misplaced parentheses
+  * incorrect loop conditions.
+
+---
+
+**8. Rubber Duck Debugging**
+
+* Explain the code **out loud** step-by-step.
+* Pretend you are teaching the program to someone else.
+* Often the mistake becomes obvious while explaining.
+
+---
+
+**9. Use Incremental Development**
+
+* Write and test **small pieces of code at a time**.
+* Ensure each part works before adding more features.
+
+---
+
+**10. Take a Break and Revisit**
+
+* Step away briefly when stuck.
+* Returning with fresh eyes often reveals simple mistakes.
+
+---
+
+**11. Ask for Help with Evidence**
+
+Before asking a teacher or peer, students should be able to explain:
+
+* What the program is **supposed to do**
+* What it is **actually doing**
+* What they **already tried to fix it**
+
+---
+
+## Optional “Student Debugging Checklist”
+
+Before asking for help, students should confirm they have:
+
+☐ Read the error message
+☐ Checked the line number and nearby code
+☐ Added print/debug statements
+☐ Tested with simple inputs
+☐ Traced variables step-by-step
+☐ Explained the code out loud (Rubber Ducky)
+
+
+---
+---
+
 
 </details>
 
@@ -1795,6 +1919,9 @@ Choosing the right data structure depends on the specific needs of the applicati
 
 ## Lists and List Manipulation
 
+*AP CSP Learning Goals*
+- AAP-4.A: Use data abstractions to manage complexity.
+
 For this class, we will not be using tuples, but you should be familiar with how they are used and the difference of a list.
 
 |      | Indexing | Ordered | Mutable | Duplicate |
@@ -2045,6 +2172,9 @@ print("After clear:", fruits)
 
 
 ## File Handling
+
+*AP CSP Learning Goal:*
+- AAP-2.B: Use data stored in files.
 
 
 File handling in Python allows you to work with files on your computer: reading data from files, writing data to files, and appending data. Python provides built-in functions and modules to make this straightforward. Here's a guide to the basics of file handling in Python 3.x, with examples.
