@@ -2161,6 +2161,47 @@ It allows your program <strong>make decisions</strong>, <strong>repeat actions</
 <section id="data-structures">
 <h2>Data Structures<a class="headerlink" href="#data-structures" title="Link to this heading">¶</a></h2>
 <p>Python provides a variety of built-in data structures to store and organize data, each optimized for specific types of operations. Here’s an overview of the core data structures in Python and examples of how and when each might be used in real-world applications.</p>
+<p><strong>AP CSP Standards</strong></p>
+<p><strong>AAP-3.A: Collect and represent data digitally.</strong>
+<em>Example:</em> Use variables, lists, or dictionaries to store information.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># List of student names</span>
+<span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">]</span>
+
+<span class="c1"># Dictionary mapping names to ages</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Alice&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>AAP-3.B: Use abstractions to organize and process data.</strong>
+<em>Example:</em> Use a list of dictionaries to manage multiple records instead of separate variables.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>AAP-3.C: Analyze data to draw conclusions.</strong>
+<em>Example:</em> Loop through a list or dictionary to compute averages or counts.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Count students age 14</span>
+<span class="n">count</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students</span> <span class="k">if</span> <span class="n">student</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">14</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>  <span class="c1"># Output: 2</span>
+</pre></div>
+</div>
+<p><strong>AAP-2.E: Develop algorithms using sequencing, selection, and iteration.</strong>
+<em>Example:</em> Iterate over data structures to implement logic.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">student</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">14</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">student</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>AAP-2.G: Use abstraction to manage complexity in algorithms.</strong>
+<em>Example:</em> Wrap repeated operations on data structures in functions.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">count_age</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students</span> <span class="k">if</span> <span class="n">student</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">age</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">count_age</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="mi">14</span><span class="p">))</span>  <span class="c1"># Output: 2</span>
+</pre></div>
+</div>
 <p><strong>1. Lists (<code class="docutils literal notranslate"><span class="pre">list</span></code>)</strong>
 A <strong>list</strong> is an ordered, mutable collection that allows duplicate elements. It’s the most versatile data structure in Python and can store any data type.</p>
 <p><strong>Real-World Example: Shopping Cart in E-commerce</strong>
