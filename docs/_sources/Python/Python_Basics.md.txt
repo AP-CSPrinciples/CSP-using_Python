@@ -353,20 +353,24 @@ Before asking a teacher or peer, students should be able to explain:
 * What they **already tried to fix it**
 
 
----
-
-
 ### Student Debugging Checklist
 
 Before asking for help, students should confirm they have:
 
 ☐ Read the error message
+
 ☐ Checked the line number and nearby code
+
 ☐ Added print/debug statements
+
 ☐ Tested with simple inputs
+
 ☐ Traced variables step-by-step
+
 ☐ Explained the code out loud (Rubber Ducky)
 
+
+---
 
 
 ## Print Statements
