@@ -2862,398 +2862,125 @@ print(data)
 Lambda functions in Python provide a concise way to define simple functions without the need for formal `def` syntax. They are useful in scenarios where small, throwaway functions are needed, like with `map()`, `filter()`, and data processing tasks. However, lambda functions are limited to single expressions, so they're best for straightforward operations rather than complex logic.
 
 
-I would like to add this content to my Python Basics
-
-Below is a **simple classroom-friendly Minesweeper program (6×6)** written in **Python using Tkinter**. It includes the things you asked for:
-
-* 6 × 6 grid
-* Random mine placement
-* **List that records player moves**
-* **Score that increases for safe clicks**
-* **Game over if a mine is clicked**
-* **“Try Again” button to reset the game**
-
-This version is intentionally **clear and readable** so students can study the logic (similar to how you structure projects for AP CSP / intro Python students).
-
 ---
+
 
 ## Python Program: Mini Minesweeper
 
+**Project Overview**
+
+In this project, you will build a simplified version of the classic **Minesweeper game** using Python and Tkinter.  The player will click cells in a grid trying to **avoid hidden mines**. Safe cells show the number of nearby mines. The player may also **place flags** where they believe a mine exists.  You will implement the logic that makes the game work.
+
+**Project Objectives**
+
+1. Generate a game board - 6 × 6 grid
+2. Place mines randomly
+3. Count adjacent mines
+4. Allow player moves
+5. Score that increases for safe clicks
+6. List that records player moves
+7. Game over if a mine is clicked
+8. Reveal tiles
+9. Determine win or loss
+10. Try Again” button to reset the game
+
+
+---
+
+
+*AP CSP Learning Goals*
+- AAP-2.E: Develop algorithms using sequencing, selection, and iteration.
+- AAP-4.A: Use data abstractions to manage complexity.
+- CRD-2.B: Implement algorithms in a programming language.
+- CRD-2.J: Test and debug programs.
+
+**Concepts Used**
+
+- Lists and 2D Lists
+- Nested Loops
+- Conditional Logic
+- Random Numbers
+- Algorithms
+
+**2D Grid Using Lists:** Grid structure stored as a ***list of lists***. 
+
+Example board:
 ```python
-import tkinter as tk
-import random
+board = [
+    [" "," "," "],
+    [" ","*"," "],
+    [" "," "," "]
+]
+```
 
-SIZE = 6
-MINES = 6
-
-class MiniMinesweeper:
-
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Mini Minesweeper")
-
-        self.buttons = []
-        self.moves = []      # list to track player moves
-        self.score = 0
-
-        self.score_label = tk.Label(root, text="Score: 0", font=("Arial", 14))
-        self.score_label.grid(row=0, column=0, columnspan=SIZE)
-
-        self.create_grid()
-
-        self.retry_button = tk.Button(root, text="Try Again", command=self.reset_game)
-        self.retry_button.grid(row=SIZE+1, column=0, columnspan=SIZE, sticky="we")
-
-        self.place_mines()
-
-    # -----------------------------------------
-    # Create the grid of buttons
-    # -----------------------------------------
-    def create_grid(self):
-
-        for r in range(SIZE):
-
-            row_buttons = []
-
-            for c in range(SIZE):
-
-                btn = tk.Button(self.root,
-                                width=4,
-                                height=2,
-                                command=lambda r=r, c=c: self.click(r, c))
-
-                btn.grid(row=r+1, column=c)
-
-                row_buttons.append(btn)
-
-            self.buttons.append(row_buttons)
-
-    # -----------------------------------------
-    # Random mine placement
-    # -----------------------------------------
-    def place_mines(self):
-
-        self.mine_locations = set()
-
-        while len(self.mine_locations) < MINES:
-
-            r = random.randint(0, SIZE-1)
-            c = random.randint(0, SIZE-1)
-
-            self.mine_locations.add((r, c))
-
-    # -----------------------------------------
-    # Button click logic
-    # -----------------------------------------
-    def click(self, r, c):
-
-        if (r, c) in self.moves:
-            return
-
-        self.moves.append((r, c))
-
-        button = self.buttons[r][c]
-
-        if (r, c) in self.mine_locations:
-
-            button.config(text="💣", bg="red")
-            self.game_over()
-
-        else:
-
-            count = self.count_mines(r, c)
-            button.config(text=str(count), bg="lightgray")
-
-            self.score += 1
-            self.score_label.config(text="Score: " + str(self.score))
-
-    # -----------------------------------------
-    # Count nearby mines
-    # -----------------------------------------
-    def count_mines(self, r, c):
-
-        count = 0
-
-        for i in range(r-1, r+2):
-            for j in range(c-1, c+2):
-
-                if (i, j) in self.mine_locations:
-                    count += 1
-
-        return count
-
-    # -----------------------------------------
-    # Game over function
-    # -----------------------------------------
-    def game_over(self):
-
-        for r in range(SIZE):
-            for c in range(SIZE):
-
-                if (r, c) in self.mine_locations:
-                    self.buttons[r][c].config(text="💣")
-
-                self.buttons[r][c].config(state="disabled")
-
-    # -----------------------------------------
-    # Reset the game
-    # -----------------------------------------
-    def reset_game(self):
-
-        self.moves = []
-        self.score = 0
-        self.score_label.config(text="Score: 0")
-
-        for r in range(SIZE):
-            for c in range(SIZE):
-
-                self.buttons[r][c].config(
-                    text="",
-                    bg="SystemButtonFace",
-                    state="normal"
-                )
-
-        self.mine_locations.clear()
-        self.place_mines()
-
-
-# -----------------------------------------
-# Run program
-# -----------------------------------------
-
-root = tk.Tk()
-game = MiniMinesweeper(root)
-root.mainloop()
+```python
+self.buttons[r][c]
 ```
 
 ---
 
-### Key Programming Concepts
+**Random Mine Placement:** Places mines in random grid locations.
 
-**1️⃣ List for Tracking Moves**
+Example:
+
+```python
+import random
+
+row = random.randint(0,2)
+col = random.randint(0,2)
+
+board[row][col] = "*"
+```
+
+---
+
+**List for Tracking Moves:** Stores every location the player has clicked.
 
 ```python
 self.moves = []
 self.moves.append((r,c))
 ```
 
-Stores every location the player has clicked.
-
 ---
 
-**2️⃣ Score Tracking**
+
+**Score Tracking:** Score increases when the player safely clicks a square.
 
 ```python
 self.score += 1
 ```
 
-Score increases when the player safely clicks a square.
-
 ---
 
-**3️⃣ Random Mine Placement**
+**Random Mine Placement:** Places mines in random grid locations.
 
 ```python
 random.randint(0, SIZE-1)
 ```
 
-Places mines in random grid locations.
-
 ---
 
-**4️⃣ 2D Grid Using Lists**
-
-```python
-self.buttons[r][c]
-```
-
-Grid structure stored as a ***list of lists***.
-
----
-
-### Student Project Considerations:
-
-**Portfolio-style projects**, here are good extensions that you could implement:
-
-**Level 1**
+**Student Project Extensions:**
 
 * Add **flagging system (right-click 🚩)**
 * Limit number of flags
-
-**Level 2**
-
 * Reveal **empty regions automatically**
-
-**Level 3**
-
 * Show **high score**
-
-**Level 4**
-
-* Change difficulty
-
+* **timer scoring system**
+* Add **win screen**
+* **save/load high score file**
+* Change grid level of difficulty
   * Easy (6×6)
   * Medium (8×8)
   * Hard (10×10)
 
----
-
-
-
-Level 1
-
-* Right-click **flagging system 🚩**
-* **Limited number of flags**
-
-Level 2
-
-* **Automatic reveal of empty regions**
-
-Level 3
-
-* **High score tracking**
-
-Level 4
-
-* **Difficulty selector**
-
-  * Easy (6×6)
-  * Medium (8×8)
-  * Hard (10×10)
 
 ---
 
-
-
----
-
-This program exposes students to **many AP-level CS ideas**:
-
-Data structures
-
-* Lists
-* Sets
-* 2D lists
-
-Event-driven programming
-
-* Left click
-* Right click
-
-Algorithms
-
-* Recursive flood fill (`reveal_empty()`)
-
-State management
-
-* score
-* moves
-* flags
-* mine locations
-
-
-
-
----
-
-## Python Project Minesweeper
-
-**Project Overview**
-
-In this project, you will build a simplified version of the classic **Minesweeper game** using Python and Tkinter.
-
-The player will click cells in a grid trying to **avoid hidden mines**. Safe cells show the number of nearby mines. The player may also **place flags** where they believe a mine exists.
-
-You will implement the logic that makes the game work.
-
----
-
-**Learning Objectives**
-
-This project aligns with the following **AP CSP Computational Thinking Practices and Learning Objectives**.
-
-**Data Abstraction**
-
-Students will use **lists and sets** to store game data.
-
-Relevant LO:
-
-* **AAP-2.O** Represent collections of related data using lists.
-
----
-
-**Algorithms and Program Development**
-
-Students will develop algorithms that:
-
-* count nearby mines
-* reveal empty regions
-* track player moves
-
-Relevant LO:
-
-* **AAP-2.M** Combine and modify algorithms to solve problems.
-
----
-
-**Abstraction**
-
-Students will organize their program using **functions/methods**.
-
-Relevant LO:
-
-* **AAP-3.B** Use abstraction to manage complexity.
-
----
-
-**Testing and Debugging**
-
-Students will test their code to ensure the game behaves correctly.
-
-Relevant LO:
-
-* **CRD-2.J** Identify and correct errors in algorithms.
-
----
-
-**Program Requirements**
-
-Your program must include the following features.
-
-**Level 1**
-
-Right-click **flagging system 🚩**
-Limit number of flags
-
----
-
-**Level 2**
-
-Automatically reveal **empty regions** when a 0-cell is clicked
-
----
-
-**Level 3**
-
-Track and display **High Score**
-
----
-
-**Level 4**
-
-Difficulty selection
-
-| Difficulty | Grid Size | Mines |
-| ---------- | --------- | ----- |
-| Easy       | 6×6       | 6     |
-| Medium     | 8×8       | 12    |
-| Hard       | 10×10     | 20    |
-
----
 
 **Student Starter Code:**
 
-Students must complete sections marked **TODO**.
+Complete sections marked **TODO**.
 
 ```python
 import tkinter as tk
@@ -3416,29 +3143,15 @@ root.mainloop()
 
 ---
 
-**Development Order** 
-
-
-Step 1
-Create **mine placement algorithm**
-
-Step 2
-Implement **count nearby mines**
-
-Step 3
-Reveal numbers when clicked
-
-Step 4
-Add **flagging system**
-
-Step 5
-Implement **recursive empty reveal**
-
-Step 6
-Add **score and high score**
-
-Step 7
-Add **difficulty selection**
+|  | **Development Order** |
+| -- | --- |
+| Step 1 | Create **mine placement algorithm** |
+| Step 2 | Implement **count nearby mines** |
+| Step 3 | Reveal numbers when clicked |
+| Step 4 | Add **flagging system** |
+| Step 5 | Implement **recursive empty reveal** |
+| Step 6 | Add **score and high score** |
+| Step 7 | Add **difficulty selection** |
 
 ---
 
@@ -3446,207 +3159,18 @@ Add **difficulty selection**
 
 | Criteria                                      | Points |
 | --------------------------------------------- | ------ |
-| Mine placement algorithm works correctly      | 2      |
+| Mine placement algorithm works correctly      | 1      |
 | Nearby mine counting algorithm works          | 2      |
 | Flagging system implemented and limited       | 2      |
 | Empty region reveal algorithm                 | 2      |
 | Use of lists/sets to track game data          | 1      |
 | Program runs correctly and is tested/debugged | 1      |
+| Portfolio (txt file)                          | 1      |
 | **Total Points**                              | 10     |
 
 
----
-
-### Computational Thinking Skills Demonstrated
-
-Students practice:
-
-**Decomposition**
-
-* Breaking the game into functions
-
-**Algorithm Design**
-
-* Counting mines
-* Recursive reveal
-
-**Data Abstraction**
-
-* Lists and sets for game state
-
-**Testing & Debugging**
-
-* Ensuring the game works in different scenarios
-
----
-
-### Optional Extension Challenges (For Advanced Students)
-
-1️ Add **timer scoring system**
-
-2️ Add **flag counter display**
-
-3️ Add **color coded numbers**
-
-4️ Add **win screen**
-
-5️ Add **save/load high score file**
-
----
-
-Since you often have students create **portfolio artifacts**, I can also generate a **1-page student reflection sheet** where they explain:
+**Portfolio: 1-page explanation:** 
 
 * their mine counting algorithm
 * how recursion works in the reveal function
 * how lists are used for data abstraction
-
-
-
-
-
-### Additional Python Foundations
-
-**User Input**
-*AP CSP Learning Goals*
-- AAP-1.D: Display output and receive input from a user.
-- AAP-1.A: Represent data using variables.
-
-```python
-name = input("Enter your name: ")
-print("Hello", name)
-```
-
-Type conversion:
-
-```python
-age = int(input("Enter your age: "))
-```
-
----
-
-**Random Numbers**
-*AP CSP Learning Goals*
-- AAP-2.E: Develop algorithms using sequencing, selection, and iteration.
-
-```python
-import random
-
-number = random.randint(1,10)
-print(number)
-```
-
----
-
-**2D Lists (Grids)**
-*AP CSP Learning Goals*
-- AAP-4.A: Use data abstractions to manage complexity.
-
-Example grid:
-
-```python
-grid = [
-    [0,0,0],
-    [0,1,0],
-    [0,0,0]
-]
-```
-
-Access elements:
-
-```python
-grid[row][col]
-```
-
----
-
-**Debugging Strategies**
-*AP CSP Learning Goals*
-- CRD-2.J: Test and debug a program.
-
-Common techniques:
-
-- Use print statements
-- Read error messages carefully
-- Test small pieces of code
-- Comment out sections of code
-
-Example:
-
-```python
-print("Value of x:", x)
-```
-
----
-
-**File Input and Output**
-*AP CSP Learning Goals*
-- AAP-2.B: Use data stored in files.
-
-```python
-with open("data.txt", "r") as file:
-    data = file.read()
-    print(data)
-```
-
----
-
-**Python Mini Projects**
-
-| Project | Concepts |
-|------|------|
-| Mad Libs | strings, input |
-| Number Guessing | loops, conditionals |
-| Word Counter | strings, lists |
-| Password Checker | conditionals |
-| Maze Solver | algorithms |
-| Minesweeper | 2D lists, algorithms |
-
----
-
-**Minesweeper Project**
-
-*AP CSP Learning Goals*
-- AAP-2.E: Develop algorithms using sequencing, selection, and iteration.
-- AAP-4.A: Use data abstractions to manage complexity.
-- CRD-2.B: Implement algorithms in a programming language.
-- CRD-2.J: Test and debug programs.
-
-**Concepts Used**
-
-- Lists and 2D Lists
-- Nested Loops
-- Conditional Logic
-- Random Numbers
-- Algorithms
-
-Example board:
-
-```python
-board = [
-    [" "," "," "],
-    [" ","*"," "],
-    [" "," "," "]
-]
-```
-
-Example random mine placement:
-
-```python
-import random
-
-row = random.randint(0,2)
-col = random.randint(0,2)
-
-board[row][col] = "*"
-```
-
-**Project Objectives**
-
-Students should:
-
-1. Generate a game board
-2. Place mines randomly
-3. Count adjacent mines
-4. Allow player moves
-5. Reveal tiles
-6. Determine win or loss
