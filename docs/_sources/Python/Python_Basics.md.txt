@@ -264,8 +264,13 @@ Following these guidelines helps ensure code that is easy to read, maintain, and
 
 
 ---
+---
 
 
+</details>
+
+
+## 
 **Debugging Strategies**
 
 
@@ -368,9 +373,11 @@ Before asking a teacher or peer, students should be able to explain:
 * What it is **actually doing**
 * What they **already tried to fix it**
 
+
 ---
 
-## Optional “Student Debugging Checklist”
+
+### Student Debugging Checklist
 
 Before asking for help, students should confirm they have:
 
@@ -380,13 +387,6 @@ Before asking for help, students should confirm they have:
 ☐ Tested with simple inputs
 ☐ Traced variables step-by-step
 ☐ Explained the code out loud (Rubber Ducky)
-
-
----
----
-
-
-</details>
 
 
 
