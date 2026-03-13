@@ -1744,6 +1744,59 @@ Welcome to the program!
 
 Python provides a variety of built-in data structures to store and organize data, each optimized for specific types of operations. Here’s an overview of the core data structures in Python and examples of how and when each might be used in real-world applications.
 
+**AP CSP Standards**
+
+**AAP-3.A: Collect and represent data digitally.**
+*Example:* Use variables, lists, or dictionaries to store information.
+
+```python
+# List of student names
+students = ["Alice", "Bob", "Charlie"]
+
+# Dictionary mapping names to ages
+ages = {"Alice": 14, "Bob": 15, "Charlie": 14}
+```
+
+**AAP-3.B: Use abstractions to organize and process data.**
+*Example:* Use a list of dictionaries to manage multiple records instead of separate variables.
+
+```python
+students = [
+    {"name": "Alice", "age": 14},
+    {"name": "Bob", "age": 15},
+    {"name": "Charlie", "age": 14}
+]
+```
+
+**AAP-3.C: Analyze data to draw conclusions.**
+*Example:* Loop through a list or dictionary to compute averages or counts.
+
+```python
+# Count students age 14
+count = sum(1 for student in students if student["age"] == 14)
+print(count)  # Output: 2
+```
+
+**AAP-2.E: Develop algorithms using sequencing, selection, and iteration.**
+*Example:* Iterate over data structures to implement logic.
+
+```python
+for student in students:
+    if student["age"] > 14:
+        print(student["name"])
+```
+
+**AAP-2.G: Use abstraction to manage complexity in algorithms.**
+*Example:* Wrap repeated operations on data structures in functions.
+
+```python
+def count_age(students, age):
+    return sum(1 for student in students if student["age"] == age)
+
+print(count_age(students, 14))  # Output: 2
+```
+
+
 **1. Lists (`list`)**
 A **list** is an ordered, mutable collection that allows duplicate elements. It’s the most versatile data structure in Python and can store any data type.
 
