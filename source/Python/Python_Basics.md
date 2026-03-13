@@ -435,10 +435,10 @@ These different print methods offer flexibility in formatting and display for di
 
 ## Variables and Data Types
 
-In Python, **variables** are used to store data, which can be used and manipulated throughout a program. **Data types** specify the kind of value a variable holds, determining what operations can be performed on it. Python automatically assigns a data type based on the value assigned to a variable.
+In Python, **variables** are used to store data, which can be used and manipulated throughout a program. **Data types** specify the kind of value a variable holds, determining what operations can be performed on it. <mark>Python automatically assigns a data type based on the value assigned to a variable</mark>.
 
 **Python Variables**
-A **variable** is essentially a name given to a memory location where data is stored. In Python, you don’t need to declare the data type of a variable; you just assign a value to it, and Python infers the type.
+A **variable** is essentially a name given to a memory location where data is stored. In Python, you **do not** need to declare the data type of a variable; you just assign a value to it, and Python infers the type.
 
 **Syntax**:
 ```python
