@@ -1200,14 +1200,12 @@ tkinter Module: Used for creating graphical user interfaces (GUIs) in Python.
 
 ---
 
-**Summary**
+> **Summary**
+> Modules are single files with Python code, useful for organizing and reusing functions, classes, or variables.  
+> Packages are directories containing multiple related modules and an __init__.py file, which make large projects
+> more manageable and prevent naming conflicts.  Using modules and packages keeps Python code modular, readable,
+> and reusable, making it easier to structure and manage projects.
 
-```
-Modules are single files with Python code, useful for organizing and reusing functions, classes, or variables.  
-Packages are directories containing multiple related modules and an __init__.py file, which make large projects more manageable and prevent naming conflicts.
-```
-
-Using modules and packages keeps Python code modular, readable, and reusable, making it easier to structure and manage projects.
 
 ---
 
