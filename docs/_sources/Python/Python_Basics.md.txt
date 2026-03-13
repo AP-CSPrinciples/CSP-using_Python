@@ -3182,7 +3182,7 @@ class Minesweeper:
     def __init__(self, root):
 
         self.root = root
-        self.root.title("Student Minesweeper")
+        self.root.title("<<YOUR NAME>> Minesweeper")
 
         self.size = 6
         self.mines = 6
@@ -3332,17 +3332,6 @@ game = Minesweeper(root)
 root.mainloop()
 ```
 
----
-
-|  | **Development Order** |
-| -- | --- |
-| Step 1 | Create **mine placement algorithm** |
-| Step 2 | Implement **count nearby mines** |
-| Step 3 | Reveal numbers when clicked |
-| Step 4 | Add **flagging system** |
-| Step 5 | Implement **recursive empty reveal** |
-| Step 6 | Add **score and high score** |
-| Step 7 | Add **difficulty selection** |
 
 ---
 
@@ -3356,11 +3345,11 @@ root.mainloop()
 | Empty region reveal algorithm                 | 2      |
 | Use of lists/sets to track game data          | 1      |
 | Program runs correctly and is tested/debugged | 1      |
-| Portfolio (txt file)                          | 1      |
+| Reflection (txt file)                         | 1      |
 | **Total Points**                              | 10     |
 
 
-**Portfolio: 1-page explanation:** 
+**Reflection: 1-page explanation:** 
 
 * their mine counting algorithm
 * how recursion works in the reveal function
