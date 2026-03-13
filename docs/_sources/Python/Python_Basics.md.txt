@@ -1727,7 +1727,7 @@ Welcome to the program!
 
 
 
-### Comparing Function Members
+#### Comparing Function Members
 
 | Term          | Python Form                         | Returns a Value? | Used For                           | Example                               |
 | ------------- | ----------------------------------- | ---------------- | ---------------------------------- | ------------------------------------- |
