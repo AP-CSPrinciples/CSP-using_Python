@@ -11,9 +11,9 @@ This course is designed to prepare you for:
 
 ---
 
-## 📅 18-Week Pacing Guide
+## 📅 Python Pacing Guide
 
-`Aug 17 – Dec 18, 2026 | Monday–Friday school weeks only | Periods 1,3,5,7: Mon/Wed 88 min + Fri 40 min | Periods 2,4,6,8: Tue/Thu 88 min + Fri 40 min`
+`Aug 17 – Dec 18, 2026`
 
 | Week | Dates | Content Focus | Notebook Spread | Activities / Projects | PT / CPT In-Class Time | Weekly Min |
 |:---:|:---:|:---|:---:|:---|:---:|:---:|
