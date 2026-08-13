@@ -56,7 +56,7 @@ This course is designed to prepare you for:
 `🔖 PCEP 1.2` — Python's logic and structure; indentation; PEP-8 recommendations
 `🔖 PCEP 1.3` — Naming conventions; implementing PEP-8
 
-**All Projects and Assignments Must Include a Header Block:**
+**All *Projects* Must Include a Header Block:**
 
 ```python
 #       Assignment:  Program [number]:  [Assignment Title]
