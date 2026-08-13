@@ -310,7 +310,318 @@ But what if they no longer exist in the office? We end up resorting to general p
 <li><p><strong>Documentation keeps a record of lessons learned</strong>.</p></li>
 </ol>
 <p>Proper project management includes discussions and documentation of lessons learned. This should not only apply to the team as a whole, but it also applies to individual contributors. In fact, a friend of mine keeps a lessons log for her personal life. Lessons learned does not only document things that should not be repeated. It also documents the things that CAN — and maybe should — be repeated. Taking the time to review the document at the beginning of the project could prevent repeating mistakes. I mean, isn’t it less excruciating to review lessons learned than staring at the code to find a bug that could have been prevented? But don’t wait until the end of the project to record the lessons. It is crucial to take responsibility and record them once they are recognized. Otherwise, they could be long forgotten. So if not immediately, at least by the end of the close of business.</p>
-<p>In the end, it all boils down to this: Documentation builds empathy for future efforts. It is selfish and irresponsible to only think in the here-and-now and not consider new members who will take over the work or who need to translate it to the bottom line. By creating concise, meaningful documentation, future team members can be more productive and free to innovate. Be smart about it.</p>
+</section>
+<hr class="docutils" />
+<section id="how-to-read-an-error-message">
+<h2>How to Read an Error Message<a class="headerlink" href="#how-to-read-an-error-message" title="Link to this heading">¶</a></h2>
+<p>When your code breaks, the error message isn’t your enemy. It’s the most specific hint you’re going to get. Learning to actually read it (instead of scrolling past it in a panic) is one of the fastest ways to level up as a programmer.</p>
+<ol class="arabic simple">
+<li><p><strong>Start at the bottom, not the top.</strong></p></li>
+</ol>
+<p>Python (and most languages) print the <em>type</em> of error and the final explanation at the very bottom of the traceback. That’s the headline. Everything above it is backstory, so read the bottom first, then work your way up if you need more context.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>The error type tells you the category of problem.</strong></p></li>
+</ol>
+<p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> means Python couldn’t even understand your code’s structure. A <code class="docutils literal notranslate"><span class="pre">NameError</span></code> means you used a variable that doesn’t exist (yet, or ever; check your spelling). A <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> means you tried to do something with a value that doesn’t support it, like adding a number to a string. Knowing the category narrows your search dramatically.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>The line number is a starting point, not a guarantee.</strong></p></li>
+</ol>
+<p>Sometimes the actual mistake is a line or two <em>above</em> the line listed, especially with missing colons, parentheses, or quotation marks. If the flagged line looks fine, check just before it.</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Read the message like a sentence, not a code.</strong></p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;list</span> <span class="pre">index</span> <span class="pre">out</span> <span class="pre">of</span> <span class="pre">range&quot;</span></code> is Python telling you, in plain English, that you asked for an item in a list that doesn’t exist at that position. Most error messages are more readable than they look at first glance, so slow down and read them as English.</p>
+<ol class="arabic simple" start="5">
+<li><p><strong>One error at a time.</strong></p></li>
+</ol>
+<p>Fixing one error can reveal another underneath it. That’s normal, not a sign you made things worse. Fix the first one, rerun, and repeat.</p>
+<ol class="arabic simple" start="6">
+<li><p><strong>Copying the exact error into a search engine is a real debugging skill, not cheating.</strong></p></li>
+</ol>
+<p>Professional developers do this constantly. The skill isn’t memorizing every error; it’s knowing how to search effectively and evaluate whether the answer you find actually applies to your situation.</p>
+</section>
+<hr class="docutils" />
+<section id="the-debugging-mindset">
+<h2>The Debugging Mindset<a class="headerlink" href="#the-debugging-mindset" title="Link to this heading">¶</a></h2>
+<p>Debugging isn’t a sign that you did something wrong. It’s a normal, expected part of writing code. Every programmer, at every skill level, spends real time debugging. The goal isn’t to avoid it; it’s to get faster and calmer at it.</p>
+<ol class="arabic simple">
+<li><p><strong>Reproduce the problem first.</strong></p></li>
+</ol>
+<p>Before you try to fix anything, make sure you can consistently make the bug happen. If you can’t reproduce it, you can’t confirm you’ve actually fixed it.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Isolate before you fix.</strong></p></li>
+</ol>
+<p>Narrow down <em>where</em> the problem lives before you start changing code. Comment out sections, test small pieces individually, or add print statements to see what your program actually thinks is happening at each step.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Compare what you expected to what actually happened.</strong></p></li>
+</ol>
+<p>The gap between “what I expected” and “what actually printed” is where the bug is hiding. Say both out loud (or write them down); the gap becomes much easier to see.</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Change one thing at a time.</strong></p></li>
+</ol>
+<p>If you change five things at once and the bug disappears, you won’t know which change fixed it, or whether you introduced a new problem. Make one change, test, then decide your next move.</p>
+<ol class="arabic simple" start="5">
+<li><p><strong>Take a break before you get frustrated, not after.</strong></p></li>
+</ol>
+<p>Staring harder rarely works. Stepping away for even two minutes, or explaining the problem out loud to someone else (or to no one; this is called “rubber duck debugging”), often surfaces the answer.</p>
+<ol class="arabic simple" start="6">
+<li><p><strong>Every bug you fix is a bug you’ll recognize faster next time.</strong></p></li>
+</ol>
+<p>Debugging skill is cumulative. The second time you see a certain error, you’ll already have a hunch. That’s the payoff for pushing through the first time.</p>
+</section>
+<hr class="docutils" />
+<section id="growth-mindset-in-computer-science">
+<h2>Growth Mindset in Computer Science<a class="headerlink" href="#growth-mindset-in-computer-science" title="Link to this heading">¶</a></h2>
+<p>How you talk to yourself about mistakes in this course will shape how much you actually learn in it.</p>
+<ol class="arabic simple">
+<li><p><strong>“I can’t code” and “I can’t code <em>yet</em>” are different sentences.</strong></p></li>
+</ol>
+<p>The second one is true and useful. The first one just isn’t accurate. Nobody can code the first time they try, and that’s not evidence of a fixed limit.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Struggling with a problem is where the learning happens, not a sign you’re behind.</strong></p></li>
+</ol>
+<p>If a problem felt easy, you probably already knew how to solve it. The productive struggle, the part that feels uncomfortable, is usually exactly where new understanding gets built.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Comparing your first draft to someone else’s finished product isn’t a fair comparison.</strong></p></li>
+</ol>
+<p>You’re seeing their final version, not their false starts, their deleted code, or their debugging process. Compare your work to your own last attempt instead.</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Confusion is data, not failure.</strong></p></li>
+</ol>
+<p>If something doesn’t make sense, that’s useful information about what to ask about next, not proof you’re not cut out for this.</p>
+<ol class="arabic simple" start="5">
+<li><p><strong>Effective effort looks like trying an approach, testing it, and adjusting, not just spending time.</strong></p></li>
+</ol>
+<p>Sitting with a problem for an hour without changing your approach isn’t the same as productive effort. Growth mindset isn’t “try harder.” It’s “try differently.”</p>
+<ol class="arabic simple" start="6">
+<li><p><strong>Ability in this course is built through practice, not something you either have or don’t.</strong></p></li>
+</ol>
+<p>Every skill in this class (reading errors, breaking down problems, writing clean code) is trainable. Nobody starts with it.</p>
+</section>
+<hr class="docutils" />
+<section id="what-is-abstraction-really">
+<h2>What Is Abstraction, Really?<a class="headerlink" href="#what-is-abstraction-really" title="Link to this heading">¶</a></h2>
+<p>Abstraction is one of the core ideas in computer science, and it’s simpler than it sounds: it means hiding unnecessary detail so you can focus on what matters right now.</p>
+<ol class="arabic simple">
+<li><p><strong>You use abstraction every day without thinking about it.</strong></p></li>
+</ol>
+<p>When you drive a car, you don’t need to understand the combustion engine to turn the key and go. The dashboard <em>abstracts away</em> the engine’s complexity into a few simple controls.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>In code, a function is an abstraction.</strong></p></li>
+</ol>
+<p>When you call a function like <code class="docutils literal notranslate"><span class="pre">print()</span></code>, you don’t need to know how Python actually draws characters on your screen. You just need to know what to give it and what it gives back.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Abstraction happens in layers.</strong></p></li>
+</ol>
+<p>A website you click on sits on top of HTML, which sits on top of network protocols, which sit on top of electrical signals. Each layer hides the complexity of the layer below it. You interact with the top layer without needing to think about the bottom ones.</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Good abstraction lets you manage problems that would otherwise be too big to hold in your head.</strong></p></li>
+</ol>
+<p>No single person understands every layer of a modern computer, from the transistors to the app on your phone. Abstraction is what makes that possible: it lets teams and individuals build on top of work they don’t need to fully re-understand.</p>
+<ol class="arabic simple" start="5">
+<li><p><strong>The trade-off is that abstraction can hide details you sometimes <em>do</em> need.</strong></p></li>
+</ol>
+<p>When something breaks, understanding what’s happening “underneath” the abstraction, even just one layer down, is often the key to debugging it.</p>
+</section>
+<hr class="docutils" />
+<section id="how-the-internet-actually-works">
+<h2>How the Internet Actually Works<a class="headerlink" href="#how-the-internet-actually-works" title="Link to this heading">¶</a></h2>
+<p>The internet feels like magic until you see the basic idea underneath it: your data doesn’t travel in one piece, and it doesn’t need a single unbroken path to get where it’s going.</p>
+<ol class="arabic simple">
+<li><p><strong>Data travels in small pieces called packets.</strong></p></li>
+</ol>
+<p>Before your message, image, or video leaves your device, it gets broken into small chunks. Each chunk is labeled with where it’s going and where it came from.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Packets don’t all take the same route.</strong></p></li>
+</ol>
+<p>Different packets from the same message can travel through completely different paths across the network and still end up arriving at the right destination, where they’re reassembled in order.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>This design is intentionally redundant.</strong></p></li>
+</ol>
+<p>If one path is congested or a connection fails, packets can be rerouted through a different path. No single point of failure can take down the whole system; that redundancy is a deliberate design choice, not an accident.</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Protocols are the agreed-upon rules that make this work.</strong></p></li>
+</ol>
+<p>A protocol is just a shared set of rules two systems agree to follow so they can understand each other, similar to how a shared language lets two people communicate. TCP/IP is the core protocol suite the internet runs on.</p>
+<ol class="arabic simple" start="5">
+<li><p><strong>“The internet” and “the web” are not the same thing.</strong></p></li>
+</ol>
+<p>The internet is the physical and logical network of connected devices. The web (what you access through a browser) is just one of many services that runs <em>on top of</em> the internet; email and streaming are examples of others.</p>
+<ol class="arabic simple" start="6">
+<li><p><strong>Scale is the whole story.</strong></p></li>
+</ol>
+<p>None of these ideas are exotic on their own. What makes the internet remarkable is that this system reliably works at the scale of billions of devices, all the time.</p>
+</section>
+<hr class="docutils" />
+<section id="algorithms-and-efficiency-without-the-math-panic">
+<h2>Algorithms and Efficiency, Without the Math Panic<a class="headerlink" href="#algorithms-and-efficiency-without-the-math-panic" title="Link to this heading">¶</a></h2>
+<p>An algorithm is just a precise, step-by-step way of solving a problem, and some ways of solving the same problem are meaningfully better than others.</p>
+<ol class="arabic simple">
+<li><p><strong>You already write algorithms outside of class.</strong></p></li>
+</ol>
+<p>A recipe is an algorithm. Directions to your house are an algorithm. If you’ve ever explained step-by-step how to do something, you’ve written one.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>“Efficient” doesn’t mean “fast” in the way you’d think of a fast car.</strong></p></li>
+</ol>
+<p>In computer science, efficiency usually means how the amount of work grows as the amount of data grows. An algorithm that works fine on 10 items but grinds to a halt on 10,000 has an efficiency problem.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>You can compare algorithms without running the code.</strong></p></li>
+</ol>
+<p>Just by looking at how many steps an approach takes relative to the size of the input, you can predict which of two solutions will scale better, before you even test them.</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Small inefficiencies matter more as data grows.</strong></p></li>
+</ol>
+<p>A slow approach might feel identical to a fast one on a tiny practice dataset, then completely fall apart on a real-world dataset with millions of entries. This is why efficiency is a design concern, not just an optimization afterthought.</p>
+<ol class="arabic simple" start="5">
+<li><p><strong>There’s usually more than one correct algorithm for the same problem.</strong></p></li>
+</ol>
+<p>“Correct” and “efficient” are separate questions. A working solution that’s slow is still worth writing first; you can improve its efficiency once you know it produces the right answer.</p>
+</section>
+<hr class="docutils" />
+<section id="data-privacy-and-you">
+<h2>Data, Privacy, and You<a class="headerlink" href="#data-privacy-and-you" title="Link to this heading">¶</a></h2>
+<p>Every app, site, and service you use collects data about you. Understanding how and why is part of being a responsible computer scientist, and a responsible user.</p>
+<ol class="arabic simple">
+<li><p><strong>Data can identify you even without your name attached.</strong></p></li>
+</ol>
+<p>Location history, browsing patterns, and even how you scroll can be enough to identify a specific person, even in datasets that were supposedly “anonymized.”</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>“Free” services are usually funded by your data, not by nothing.</strong></p></li>
+</ol>
+<p>If you’re not paying money for a product, your attention or your data is very often part of what’s being exchanged for the service.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Data breaches are common, not rare.</strong></p></li>
+</ol>
+<p>Companies you trust with your information can still lose control of it. Understanding this is part of why strong, unique passwords and multi-factor authentication matter.</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Metadata can reveal more than the content itself.</strong></p></li>
+</ol>
+<p>Even without reading a message, knowing <em>who</em> messaged <em>whom</em>, <em>when</em>, and <em>for how long</em> can reveal a surprising amount about a relationship or a pattern of behavior.</p>
+<ol class="arabic simple" start="5">
+<li><p><strong>Privacy settings are a starting point, not a guarantee.</strong></p></li>
+</ol>
+<p>Adjusting your settings reduces your exposure, but it doesn’t eliminate it; data you share can still be copied, screenshotted, or shared onward by others.</p>
+<ol class="arabic simple" start="6">
+<li><p><strong>Thinking about data use is part of designing software, not just using it.</strong></p></li>
+</ol>
+<p>As you build projects this year, you’ll make real decisions about what data to collect and how to handle it. Those are design choices with real consequences, not just technical details.</p>
+</section>
+<hr class="docutils" />
+<section id="bias-in-algorithms">
+<h2>Bias in Algorithms<a class="headerlink" href="#bias-in-algorithms" title="Link to this heading">¶</a></h2>
+<p>Algorithms don’t automatically produce fair or neutral results just because they’re “just math.” The people who build them, and the data used to train or design them, shape what they produce.</p>
+<ol class="arabic simple">
+<li><p><strong>Bias usually enters through the training data, not through malicious intent.</strong></p></li>
+</ol>
+<p>If a dataset reflects historical inequalities, an algorithm trained on it will tend to reproduce those same patterns, even if no one involved intended that outcome.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>A biased algorithm can look objective while still being unfair.</strong></p></li>
+</ol>
+<p>Because the output comes from a calculation rather than a person’s stated opinion, it can carry a false sense of neutrality that makes the bias harder to notice and harder to challenge.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Small design decisions can have large downstream effects.</strong></p></li>
+</ol>
+<p>Choices as specific as which features a model considers, or how a category is defined, can quietly shape who benefits from a system and who doesn’t.</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Real-world examples exist across hiring, lending, and criminal justice tools.</strong></p></li>
+</ol>
+<p>Automated systems used to screen resumes, assess loan applications, or predict recidivism have all been documented producing unequal outcomes across different demographic groups.</p>
+<ol class="arabic simple" start="5">
+<li><p><strong>Recognizing bias is a skill you can practice, not just a topic to memorize.</strong></p></li>
+</ol>
+<p>As you evaluate the projects and systems you encounter this year, it’s worth regularly asking: who collected this data, who’s represented in it, and who might be left out?</p>
+<ol class="arabic simple" start="6">
+<li><p><strong>This isn’t a reason to distrust all algorithms. It’s a reason to build them thoughtfully.</strong></p></li>
+</ol>
+<p>Understanding where bias comes from is what makes it possible to design around it.</p>
+</section>
+<hr class="docutils" />
+<section id="pair-programming-not-scrum">
+<h2>Pair Programming, Not Scrum<a class="headerlink" href="#pair-programming-not-scrum" title="Link to this heading">¶</a></h2>
+<p>You don’t need a full team process to collaborate well. You need two clear roles and a habit of switching between them.</p>
+<ol class="arabic simple">
+<li><p><strong>One person drives, one person navigates.</strong></p></li>
+</ol>
+<p>The <strong>driver</strong> is at the keyboard, actually typing the code. The <strong>navigator</strong> is reading along, thinking ahead, catching typos, and asking questions about the approach.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>The navigator’s job is not to stay silent.</strong></p></li>
+</ol>
+<p>A good navigator is actively thinking a step or two ahead, spotting a logic issue before it becomes a bug, or suggesting a cleaner way to structure something.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Switch roles regularly.</strong></p></li>
+</ol>
+<p>Trading the keyboard every 10–15 minutes (or at a natural stopping point) keeps both people engaged and makes sure both partners understand the whole solution, not just their half of it.</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Talk out loud while you work.</strong></p></li>
+</ol>
+<p>Narrating your thinking, saying something like “I’m going to check if this list is empty first,” gives your partner the chance to catch mistakes in your <em>reasoning</em>, not just in your syntax.</p>
+<ol class="arabic simple" start="5">
+<li><p><strong>Disagreement is normal and useful.</strong></p></li>
+</ol>
+<p>If you and your partner have different ideas about how to solve something, that’s a chance to compare approaches, not a problem to avoid. Try one, see how it goes, and stay open to switching.</p>
+<ol class="arabic simple" start="6">
+<li><p><strong>The goal is a better solution and a shared understanding, not just finishing faster.</strong></p></li>
+</ol>
+<p>Two people who both understand the final code is a better outcome than one person doing all the thinking while the other watches.</p>
+</section>
+<hr class="docutils" />
+<section id="academic-integrity-collaboration-rules-for-the-create-performance-task">
+<h2>Academic Integrity &amp; Collaboration Rules for the Create Performance Task<a class="headerlink" href="#academic-integrity-collaboration-rules-for-the-create-performance-task" title="Link to this heading">¶</a></h2>
+<p>The Create Performance Task (PT) is individually authored and submitted to the College Board, which makes the line between “getting help” and “academic integrity violation” more important than it is on regular classwork.</p>
+<ol class="arabic simple">
+<li><p><strong>You may discuss ideas and concepts with others, but you may not share code.</strong></p></li>
+</ol>
+<p>Talking through <em>how</em> an algorithm might work is collaboration. Sending, showing, or typing someone else’s actual code into your project is not.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Your program code must be your own, individual work.</strong></p></li>
+</ol>
+<p>Even code that was “just inspired by” a classmate’s specific implementation can cross the line. Understand a concept well enough to write it yourself in your own way.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Using outside resources (tutorials, documentation, AI tools) is allowed, but must be properly acknowledged.</strong></p></li>
+</ol>
+<p>The College Board requires you to document collaboration and the resources you used in your submission. Not disclosing help you received is the violation; using help isn’t, as long as it’s disclosed and the code itself is yours.</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Copy-pasting code from any source without attribution and understanding is a violation, even if you “fixed it a little.”</strong></p></li>
+</ol>
+<p>Changing variable names or reformatting someone else’s code doesn’t make it your original work.</p>
+<ol class="arabic simple" start="5">
+<li><p><strong>Two students submitting suspiciously similar programs will both be flagged, not just one.</strong></p></li>
+</ol>
+<p>The scoring process is specifically designed to detect this. It’s not worth the risk to either of you.</p>
+<ol class="arabic simple" start="6">
+<li><p><strong>When in doubt, ask before you submit, not after.</strong></p></li>
+</ol>
+<p>If you’re unsure whether something crosses a line, it’s always better to check with me before the Create PT is submitted than to find out afterward.</p>
+</section>
+<hr class="docutils" />
+<section id="reading-code-before-writing-code">
+<h2>Reading Code Before Writing Code<a class="headerlink" href="#reading-code-before-writing-code" title="Link to this heading">¶</a></h2>
+<p>Before you edit or extend a piece of code, yours or someone else’s, take the time to actually understand what it currently does. This single habit prevents a huge number of avoidable bugs.</p>
+<ol class="arabic simple">
+<li><p><strong>Trace through the code by hand before you run it.</strong></p></li>
+</ol>
+<p>Pick a sample input and walk through each line, tracking what each variable holds as you go. Predict the output before you run the program and check yourself.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Read for structure before you read for detail.</strong></p></li>
+</ol>
+<p>Identify the major sections first, such as where variables are set up, where the main logic happens, and where output is produced, before getting lost in the specifics of any one line.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Ask what each variable represents, not just what it’s named.</strong></p></li>
+</ol>
+<p>A variable named <code class="docutils literal notranslate"><span class="pre">count</span></code> should represent something specific, so figure out <em>what</em> it’s counting before you trust your assumptions about it.</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Look for the parts you don’t understand and name them specifically.</strong></p></li>
+</ol>
+<p>“I don’t get this” is hard to act on. “I don’t understand why this loop uses <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">len(list)</span> <span class="pre">-</span> <span class="pre">1</span></code> instead of <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">len(list)</span></code>” is something you can look up or ask about directly.</p>
+<ol class="arabic simple" start="5">
+<li><p><strong>Predicting wrong is more useful than predicting nothing.</strong></p></li>
+</ol>
+<p>If your hand-traced prediction turns out to be wrong, that mismatch tells you exactly where your understanding of the code breaks down, which is far more useful than skipping straight to running it.</p>
+<ol class="arabic simple" start="6">
+<li><p><strong>This habit transfers directly to debugging.</strong></p></li>
+</ol>
+<p>Every debugging strategy above assumes you can read code closely. Practicing this on working code makes it much easier to do under pressure when code is broken.
+In the end, it all boils down to this: Documentation builds empathy for future efforts. It is selfish and irresponsible to only think in the here-and-now and not consider new members who will take over the work or who need to translate it to the bottom line. By creating concise, meaningful documentation, future team members can be more productive and free to innovate. Be smart about it.</p>
 <hr class="docutils" />
 </section>
 </section>
@@ -372,6 +683,17 @@ But what if they no longer exist in the office? We end up resorting to general p
             <ul>
 <li><a class="reference internal" href="#">Student Resources</a><ul>
 <li><a class="reference internal" href="#the-six-benefits-of-documentation">The Six Benefits of Documentation</a></li>
+<li><a class="reference internal" href="#how-to-read-an-error-message">How to Read an Error Message</a></li>
+<li><a class="reference internal" href="#the-debugging-mindset">The Debugging Mindset</a></li>
+<li><a class="reference internal" href="#growth-mindset-in-computer-science">Growth Mindset in Computer Science</a></li>
+<li><a class="reference internal" href="#what-is-abstraction-really">What Is Abstraction, Really?</a></li>
+<li><a class="reference internal" href="#how-the-internet-actually-works">How the Internet Actually Works</a></li>
+<li><a class="reference internal" href="#algorithms-and-efficiency-without-the-math-panic">Algorithms and Efficiency, Without the Math Panic</a></li>
+<li><a class="reference internal" href="#data-privacy-and-you">Data, Privacy, and You</a></li>
+<li><a class="reference internal" href="#bias-in-algorithms">Bias in Algorithms</a></li>
+<li><a class="reference internal" href="#pair-programming-not-scrum">Pair Programming, Not Scrum</a></li>
+<li><a class="reference internal" href="#academic-integrity-collaboration-rules-for-the-create-performance-task">Academic Integrity &amp; Collaboration Rules for the Create Performance Task</a></li>
+<li><a class="reference internal" href="#reading-code-before-writing-code">Reading Code Before Writing Code</a></li>
 </ul>
 </li>
 </ul>
