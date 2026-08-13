@@ -154,6 +154,7 @@ To provide keyboard input to a running program (for `input()` calls), click into
 <details>
    <summary>Benefits of Documentation -- Click Here</summary>
 
+---
 
 ### The Six Benefits of Documentation
 
@@ -195,6 +196,7 @@ Proper project management includes discussions and documentation of lessons lear
 <details>
    <summary>How to Read Error Messages -- Click Here</summary>
 
+---
 
 ### How to Read an Error Message
 
@@ -231,7 +233,8 @@ Professional developers do this constantly. The skill isn't memorizing every err
 <details>
    <summary>Debugging Mindset -- Click Here</summary>
 
-   
+---
+
 ### The Debugging Mindset
 
 Debugging isn't a sign that you did something wrong. It's a normal, expected part of writing code. Every programmer, at every skill level, spends real time debugging. The goal isn't to avoid it; it's to get faster and calmer at it.
@@ -266,6 +269,7 @@ Debugging skill is cumulative. The second time you see a certain error, you'll a
 <details>
    <summary>Growth Mindset -- Click Here</summary>
 
+---
 
 ### Growth Mindset in Computer Science
 
@@ -302,6 +306,7 @@ Every skill in this class (reading errors, breaking down problems, writing clean
 <details>
    <summary>What is Abstraction -- Click Here</summary>
 
+---
 
 ### What Is Abstraction, Really?
 
@@ -334,6 +339,7 @@ When something breaks, understanding what's happening "underneath" the abstracti
 <details>
    <summary>How the Internet Works -- Click Here</summary>
 
+---
 
 ### How the Internet Actually Works
 
@@ -370,6 +376,7 @@ None of these ideas are exotic on their own. What makes the internet remarkable 
 <details>
    <summary>Algorithms & Efficiency -- Click Here</summary>
 
+---
 
 ### Algorithms and Efficiency, Without the Math Panic
 
@@ -402,7 +409,8 @@ A slow approach might feel identical to a fast one on a tiny practice dataset, t
 <details>
    <summary>Data & Privacy -- Click Here</summary>
 
-   
+---
+
 ### Data, Privacy, and You
 
 Every app, site, and service you use collects data about you. Understanding how and why is part of being a responsible computer scientist, and a responsible user.
@@ -438,6 +446,7 @@ As you build projects this year, you'll make real decisions about what data to c
 <details>
    <summary>Bias in Algorithms -- Click Here</summary>
 
+---
 
 ### Bias in Algorithms
 
@@ -474,6 +483,7 @@ Understanding where bias comes from is what makes it possible to design around i
 <details>
    <summary>Pair Programming -- Click Here</summary>
 
+---
 
 ### Pair Programming, Not Scrum
 
@@ -510,6 +520,7 @@ Two people who both understand the final code is a better outcome than one perso
 <details>
    <summary>Academic Integrity -- Click Here</summary>
 
+---
 
 ### Academic Integrity & Collaboration Rules for the Create Performance Task
 
@@ -546,6 +557,7 @@ If you're unsure whether something crosses a line, it's always better to check w
 <details>
    <summary>Reading vs Writing Code -- Click Here</summary>
 
+---
 
 ### Reading Code Before Writing Code
 
