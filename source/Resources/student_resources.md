@@ -7,13 +7,13 @@
 
 ---
 
-# Using VS Code on Windows 11 — A Student Guide
+## Using VS Code on Windows 11 — A Student Guide
 
 This guide walks you through installing VS Code, setting it up for Python, and organizing your files so your work is easy to find, back up, and submit.
 
 ---
 
-## 1. Installing VS Code
+### 1. Installing VS Code
 
 - [ ] Go to [code.visualstudio.com](https://code.visualstudio.com) and download the **Windows** installer (it should detect Windows 11 automatically).
 - [ ] Run the installer. On the "Select Additional Tasks" screen, check these boxes — they save you time later:
@@ -27,7 +27,7 @@ This guide walks you through installing VS Code, setting it up for Python, and o
 
 ---
 
-## 2. Installing Python Itself
+### 2. Installing Python Itself
 
 VS Code is just an editor — it doesn't run Python on its own. You need Python installed separately.
 
@@ -43,7 +43,7 @@ If you see a version number (like `Python 3.13.x`), you're set. If you see an er
 
 ---
 
-## 3. Required Extensions for Python
+### 3. Required Extensions for Python
 
 Open the Extensions panel with `Ctrl + Shift + X`, search for each of the following, and click **Install**.
 
@@ -52,7 +52,7 @@ Open the Extensions panel with `Ctrl + Shift + X`, search for each of the follow
 | **Python** | Microsoft | Core extension — adds Python language support, debugging, and the "Run Python File" button. Installing it also pulls in Pylance and the Python Debugger automatically. |
 | **Pylance** | Microsoft | Fast autocomplete, error-checking, and type hints as you type. Usually installs automatically with the Python extension — confirm it's there. |
 
-### Recommended (Optional) Extensions
+#### Recommended (Optional) Extensions
 
 | Extension | Publisher | Why It Helps |
 | --- | --- | --- |
@@ -65,7 +65,7 @@ Open the Extensions panel with `Ctrl + Shift + X`, search for each of the follow
 
 ---
 
-## 4. Selecting the Python Interpreter
+### 4. Selecting the Python Interpreter
 
 VS Code needs to know *which* Python installation to run your code with.
 
@@ -78,11 +78,11 @@ You'll see the selected interpreter in the bottom-right corner of the VS Code wi
 
 ---
 
-## 5. Managing Your Files
+### 5. Managing Your Files
 
 Staying organized here will save you real time all semester — messy file management is one of the most common reasons students lose points on submission requirements.
 
-### Set Up One Course Folder
+#### Set Up One Course Folder
 
 - [ ] In File Explorer, create a single top-level folder for this class, for example:
 
@@ -105,19 +105,19 @@ AP-CSP-Python\
 
 - [ ] Open your **whole course folder** in VS Code — not individual files — using **File → Open Folder**. This gives you the file explorer sidebar on the left so you can navigate between assignments without hunting through File Explorer.
 
-### File Naming
+#### File Naming
 
 - Use the assignment number from class, followed by a short description, with underscores instead of spaces: `1.3_Variables.py`, not `python hw` or `Untitled3.py`.
 - Always use the `.py` extension. VS Code will not treat a file as Python code without it.
 - Never use spaces or special characters (`&`, `#`, `%`) in filenames — some tools and submission systems handle them poorly.
 
-### Saving Your Work
+#### Saving Your Work
 
 - [ ] Save constantly with `Ctrl + S`. VS Code shows a white dot on the file tab when you have unsaved changes.
 - [ ] Turn on **Auto Save** so you never lose work: **File → Auto Save** (checkmark it), or search "Auto Save" in the Command Palette.
 - [ ] Back up your course folder somewhere other than just the laptop's hard drive — a personal Google Drive, OneDrive, or USB drive. **School laptops may be reset or reassigned between class periods.**
 
-### Submitting Files
+#### Submitting Files
 
 - Submissions require the exact `.py` file(s) plus your test cases document — check the [Submission Requirements](#) for the full list.
 - Before submitting, reopen your file from its saved location (not from an old tab) to confirm you're turning in the version you think you are.
@@ -125,7 +125,7 @@ AP-CSP-Python\
 
 ---
 
-## 6. Running Your Code
+### 6. Running Your Code
 
 - [ ] Open your `.py` file.
 - [ ] Click the **▷ Run** button in the top-right corner of the editor, or press `Ctrl + F5`.
@@ -135,7 +135,7 @@ To provide keyboard input to a running program (for `input()` calls), click into
 
 ---
 
-## 7. Common First-Week Problems
+### 7. Common First-Week Problems
 
 | Problem | Likely Fix |
 | --- | --- |
@@ -155,7 +155,7 @@ To provide keyboard input to a running program (for `input()` calls), click into
    <summary>Benefits of Documentation -- Click Here</summary>
 
 
-## The Six Benefits of Documentation
+### The Six Benefits of Documentation
 
 [Link](https://cindyscheung.medium.com/pleeeeaase-explain-your-code-e1fdfdf19566 )
 
@@ -196,7 +196,7 @@ Proper project management includes discussions and documentation of lessons lear
    <summary>How to Read Error Messages -- Click Here</summary>
 
 
-## How to Read an Error Message
+### How to Read an Error Message
 
 When your code breaks, the error message isn't your enemy. It's the most specific hint you're going to get. Learning to actually read it (instead of scrolling past it in a panic) is one of the fastest ways to level up as a programmer.
 
@@ -232,7 +232,7 @@ Professional developers do this constantly. The skill isn't memorizing every err
    <summary>Debugging Mindset -- Click Here</summary>
 
    
-## The Debugging Mindset
+### The Debugging Mindset
 
 Debugging isn't a sign that you did something wrong. It's a normal, expected part of writing code. Every programmer, at every skill level, spends real time debugging. The goal isn't to avoid it; it's to get faster and calmer at it.
 
@@ -267,7 +267,7 @@ Debugging skill is cumulative. The second time you see a certain error, you'll a
    <summary>Growth Mindset -- Click Here</summary>
 
 
-## Growth Mindset in Computer Science
+### Growth Mindset in Computer Science
 
 How you talk to yourself about mistakes in this course will shape how much you actually learn in it.
 
@@ -303,7 +303,7 @@ Every skill in this class (reading errors, breaking down problems, writing clean
    <summary>What is Abstraction -- Click Here</summary>
 
 
-## What Is Abstraction, Really?
+### What Is Abstraction, Really?
 
 Abstraction is one of the core ideas in computer science, and it's simpler than it sounds: it means hiding unnecessary detail so you can focus on what matters right now.
 
@@ -335,7 +335,7 @@ When something breaks, understanding what's happening "underneath" the abstracti
    <summary>How the Internet Works -- Click Here</summary>
 
 
-## How the Internet Actually Works
+### How the Internet Actually Works
 
 The internet feels like magic until you see the basic idea underneath it: your data doesn't travel in one piece, and it doesn't need a single unbroken path to get where it's going.
 
@@ -371,7 +371,7 @@ None of these ideas are exotic on their own. What makes the internet remarkable 
    <summary>Algorithms & Efficiency -- Click Here</summary>
 
 
-## Algorithms and Efficiency, Without the Math Panic
+### Algorithms and Efficiency, Without the Math Panic
 
 An algorithm is just a precise, step-by-step way of solving a problem, and some ways of solving the same problem are meaningfully better than others.
 
@@ -403,7 +403,7 @@ A slow approach might feel identical to a fast one on a tiny practice dataset, t
    <summary>Data & Privacy -- Click Here</summary>
 
    
-## Data, Privacy, and You
+### Data, Privacy, and You
 
 Every app, site, and service you use collects data about you. Understanding how and why is part of being a responsible computer scientist, and a responsible user.
 
@@ -439,7 +439,7 @@ As you build projects this year, you'll make real decisions about what data to c
    <summary>Bias in Algorithms -- Click Here</summary>
 
 
-## Bias in Algorithms
+### Bias in Algorithms
 
 Algorithms don't automatically produce fair or neutral results just because they're "just math." The people who build them, and the data used to train or design them, shape what they produce.
 
@@ -475,7 +475,7 @@ Understanding where bias comes from is what makes it possible to design around i
    <summary>Pair Programming -- Click Here</summary>
 
 
-## Pair Programming, Not Scrum
+### Pair Programming, Not Scrum
 
 You don't need a full team process to collaborate well. You need two clear roles and a habit of switching between them.
 
@@ -511,7 +511,7 @@ Two people who both understand the final code is a better outcome than one perso
    <summary>Academic Integrity -- Click Here</summary>
 
 
-## Academic Integrity & Collaboration Rules for the Create Performance Task
+### Academic Integrity & Collaboration Rules for the Create Performance Task
 
 The Create Performance Task (PT) is individually authored and submitted to the College Board, which makes the line between "getting help" and "academic integrity violation" more important than it is on regular classwork.
 
@@ -547,7 +547,7 @@ If you're unsure whether something crosses a line, it's always better to check w
    <summary>Reading vs Writing Code -- Click Here</summary>
 
 
-## Reading Code Before Writing Code
+### Reading Code Before Writing Code
 
 Before you edit or extend a piece of code, yours or someone else's, take the time to actually understand what it currently does. This single habit prevents a huge number of avoidable bugs.
 
