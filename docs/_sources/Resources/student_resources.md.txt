@@ -150,6 +150,11 @@ To provide keyboard input to a running program (for `input()` calls), click into
 
 ---
 
+
+<details>
+   <summary>Benefits of Documentation -- Click Here</summary>
+
+
 ## The Six Benefits of Documentation
 
 [Link](https://cindyscheung.medium.com/pleeeeaase-explain-your-code-e1fdfdf19566 )
@@ -180,7 +185,16 @@ What about the people whose primary interest is the bottom line? Writing summari
    
 Proper project management includes discussions and documentation of lessons learned. This should not only apply to the team as a whole, but it also applies to individual contributors. In fact, a friend of mine keeps a lessons log for her personal life. Lessons learned does not only document things that should not be repeated. It also documents the things that CAN — and maybe should — be repeated. Taking the time to review the document at the beginning of the project could prevent repeating mistakes. I mean, isn’t it less excruciating to review lessons learned than staring at the code to find a bug that could have been prevented? But don’t wait until the end of the project to record the lessons. It is crucial to take responsibility and record them once they are recognized. Otherwise, they could be long forgotten. So if not immediately, at least by the end of the close of business.
 
+
+</details>
+
+
 ---
+
+
+<details>
+   <summary>How to Read Error Messages -- Click Here</summary>
+
 
 ## How to Read an Error Message
 
@@ -209,9 +223,15 @@ Fixing one error can reveal another underneath it. That's normal, not a sign you
 6. **Copying the exact error into a search engine is a real debugging skill, not cheating.**
 
 Professional developers do this constantly. The skill isn't memorizing every error; it's knowing how to search effectively and evaluate whether the answer you find actually applies to your situation.
+</details>
+
 
 ---
 
+<details>
+   <summary>Debugging Mindset -- Click Here</summary>
+
+   
 ## The Debugging Mindset
 
 Debugging isn't a sign that you did something wrong. It's a normal, expected part of writing code. Every programmer, at every skill level, spends real time debugging. The goal isn't to avoid it; it's to get faster and calmer at it.
@@ -239,8 +259,13 @@ Staring harder rarely works. Stepping away for even two minutes, or explaining t
 6. **Every bug you fix is a bug you'll recognize faster next time.**
 
 Debugging skill is cumulative. The second time you see a certain error, you'll already have a hunch. That's the payoff for pushing through the first time.
+</details>
 
 ---
+
+<details>
+   <summary>Growth Mindset -- Click Here</summary>
+
 
 ## Growth Mindset in Computer Science
 
@@ -269,8 +294,14 @@ Sitting with a problem for an hour without changing your approach isn't the same
 6. **Ability in this course is built through practice, not something you either have or don't.**
 
 Every skill in this class (reading errors, breaking down problems, writing clean code) is trainable. Nobody starts with it.
+</details>
+
 
 ---
+
+<details>
+   <summary>What is Abstraction -- Click Here</summary>
+
 
 ## What Is Abstraction, Really?
 
@@ -295,8 +326,14 @@ No single person understands every layer of a modern computer, from the transist
 5. **The trade-off is that abstraction can hide details you sometimes *do* need.**
 
 When something breaks, understanding what's happening "underneath" the abstraction, even just one layer down, is often the key to debugging it.
+</details>
+
 
 ---
+
+<details>
+   <summary>How the Internet Works -- Click Here</summary>
+
 
 ## How the Internet Actually Works
 
@@ -325,8 +362,14 @@ The internet is the physical and logical network of connected devices. The web (
 6. **Scale is the whole story.**
 
 None of these ideas are exotic on their own. What makes the internet remarkable is that this system reliably works at the scale of billions of devices, all the time.
+</details>
+
 
 ---
+
+<details>
+   <summary>Algorithms & Efficiency -- Click Here</summary>
+
 
 ## Algorithms and Efficiency, Without the Math Panic
 
@@ -351,9 +394,15 @@ A slow approach might feel identical to a fast one on a tiny practice dataset, t
 5. **There's usually more than one correct algorithm for the same problem.**
 
 "Correct" and "efficient" are separate questions. A working solution that's slow is still worth writing first; you can improve its efficiency once you know it produces the right answer.
+</details>
+
 
 ---
 
+<details>
+   <summary>Data & Privacy -- Click Here</summary>
+
+   
 ## Data, Privacy, and You
 
 Every app, site, and service you use collects data about you. Understanding how and why is part of being a responsible computer scientist, and a responsible user.
@@ -381,8 +430,14 @@ Adjusting your settings reduces your exposure, but it doesn't eliminate it; data
 6. **Thinking about data use is part of designing software, not just using it.**
 
 As you build projects this year, you'll make real decisions about what data to collect and how to handle it. Those are design choices with real consequences, not just technical details.
+</details>
+
 
 ---
+
+<details>
+   <summary>Bias in Algorithms -- Click Here</summary>
+
 
 ## Bias in Algorithms
 
@@ -411,8 +466,14 @@ As you evaluate the projects and systems you encounter this year, it's worth reg
 6. **This isn't a reason to distrust all algorithms. It's a reason to build them thoughtfully.**
 
 Understanding where bias comes from is what makes it possible to design around it.
+</details>
+
 
 ---
+
+<details>
+   <summary>Pair Programming -- Click Here</summary>
+
 
 ## Pair Programming, Not Scrum
 
@@ -441,8 +502,14 @@ If you and your partner have different ideas about how to solve something, that'
 6. **The goal is a better solution and a shared understanding, not just finishing faster.**
 
 Two people who both understand the final code is a better outcome than one person doing all the thinking while the other watches.
+</details>
+
 
 ---
+
+<details>
+   <summary>Academic Integrity -- Click Here</summary>
+
 
 ## Academic Integrity & Collaboration Rules for the Create Performance Task
 
@@ -471,8 +538,14 @@ The scoring process is specifically designed to detect this. It's not worth the 
 6. **When in doubt, ask before you submit, not after.**
 
 If you're unsure whether something crosses a line, it's always better to check with me before the Create PT is submitted than to find out afterward.
+</details>
+
 
 ---
+
+<details>
+   <summary>Reading vs Writing Code -- Click Here</summary>
+
 
 ## Reading Code Before Writing Code
 
@@ -502,6 +575,7 @@ If your hand-traced prediction turns out to be wrong, that mismatch tells you ex
 
 Every debugging strategy above assumes you can read code closely. Practicing this on working code makes it much easier to do under pressure when code is broken.
 In the end, it all boils down to this: Documentation builds empathy for future efforts. It is selfish and irresponsible to only think in the here-and-now and not consider new members who will take over the work or who need to translate it to the bottom line. By creating concise, meaningful documentation, future team members can be more productive and free to innovate. Be smart about it.
+</details>
 
 ---
 
