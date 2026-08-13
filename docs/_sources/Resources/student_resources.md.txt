@@ -1,5 +1,154 @@
 # Student Resources
 
+---
+
+<details>
+   <summary>VS Code Instructions -- Click Here</summary>
+
+---
+
+# Using VS Code on Windows 11 — A Student Guide
+
+This guide walks you through installing VS Code, setting it up for Python, and organizing your files so your work is easy to find, back up, and submit.
+
+---
+
+## 1. Installing VS Code
+
+- [ ] Go to [code.visualstudio.com](https://code.visualstudio.com) and download the **Windows** installer (it should detect Windows 11 automatically).
+- [ ] Run the installer. On the "Select Additional Tasks" screen, check these boxes — they save you time later:
+  - **Add "Open with Code" action to Windows Explorer file context menu**
+  - **Add "Open with Code" action to Windows Explorer directory context menu**
+  - **Register Code as an editor for supported file types**
+  - **Add to PATH**
+- [ ] Finish the install and launch VS Code.
+
+> 📌 **Personal laptop vs. school laptop:** If you're using a CAMS-provided Windows laptop, check with your instructor first — VS Code may already be installed, or installing new software may require permission.
+
+---
+
+## 2. Installing Python Itself
+
+VS Code is just an editor — it doesn't run Python on its own. You need Python installed separately.
+
+- [ ] Go to [python.org/downloads](https://www.python.org/downloads/) and download the latest **Python 3** release for Windows.
+- [ ] Run the installer. **This step matters:** check the box at the bottom of the first screen that says **"Add python.exe to PATH"** before clicking Install.
+- [ ] After installing, confirm it worked. Open VS Code's terminal (`` Ctrl + ` ``) and type:
+
+```
+python --version
+```
+
+If you see a version number (like `Python 3.13.x`), you're set. If you see an error, restart VS Code and try again — if it still fails, ask your instructor.
+
+---
+
+## 3. Required Extensions for Python
+
+Open the Extensions panel with `Ctrl + Shift + X`, search for each of the following, and click **Install**.
+
+| Extension | Publisher | Why You Need It |
+| --- | --- | --- |
+| **Python** | Microsoft | Core extension — adds Python language support, debugging, and the "Run Python File" button. Installing it also pulls in Pylance and the Python Debugger automatically. |
+| **Pylance** | Microsoft | Fast autocomplete, error-checking, and type hints as you type. Usually installs automatically with the Python extension — confirm it's there. |
+
+### Recommended (Optional) Extensions
+
+| Extension | Publisher | Why It Helps |
+| --- | --- | --- |
+| **autopep8** or **Black Formatter** | Microsoft | Automatically reformats your code to match PEP 8 style on save — useful for meeting the course's [Python Style Guidelines](#). |
+| **Error Lens** | Alexander | Shows errors and warnings inline next to the line that caused them, instead of only in a separate panel. |
+| **indent-rainbow** | oderwat | Color-codes indentation levels, which makes it much easier to spot indentation mistakes (a very common Python bug). |
+| **Code Spell Checker** | Street Side Software | Flags typos in variable names, comments, and strings. |
+
+> ⚠️ You do **not** need extensions like "Python Snippets 3" or AI autocomplete tools unless your instructor specifically approves them — some conflict with the Academic Honesty Policy's rule against AI-generated complete solutions.
+
+---
+
+## 4. Selecting the Python Interpreter
+
+VS Code needs to know *which* Python installation to run your code with.
+
+1. Open any `.py` file.
+2. Press `Ctrl + Shift + P` to open the Command Palette.
+3. Type **"Python: Select Interpreter"** and press Enter.
+4. Choose the Python 3 version you installed in Step 2 (it will usually be the only one listed, or the one showing the highest version number).
+
+You'll see the selected interpreter in the bottom-right corner of the VS Code window. If that area is missing or says "Select Interpreter," repeat the steps above.
+
+---
+
+## 5. Managing Your Files
+
+Staying organized here will save you real time all semester — messy file management is one of the most common reasons students lose points on submission requirements.
+
+### Set Up One Course Folder
+
+- [ ] In File Explorer, create a single top-level folder for this class, for example:
+
+```
+C:\Users\<your name>\Documents\AP-CSP-Python\
+```
+
+- [ ] Inside it, create a subfolder for each unit or assignment number, matching how assignments are numbered in class:
+
+```
+AP-CSP-Python\
+  Unit1-Fundamentals\
+    1.1_Fundamental_Terms.py
+    1.3_Variables.py
+  Unit2-ControlFlow\
+    2.1_Conditionals.py
+  PracticePT\
+  CreatePT\
+```
+
+- [ ] Open your **whole course folder** in VS Code — not individual files — using **File → Open Folder**. This gives you the file explorer sidebar on the left so you can navigate between assignments without hunting through File Explorer.
+
+### File Naming
+
+- Use the assignment number from class, followed by a short description, with underscores instead of spaces: `1.3_Variables.py`, not `python hw` or `Untitled3.py`.
+- Always use the `.py` extension. VS Code will not treat a file as Python code without it.
+- Never use spaces or special characters (`&`, `#`, `%`) in filenames — some tools and submission systems handle them poorly.
+
+### Saving Your Work
+
+- [ ] Save constantly with `Ctrl + S`. VS Code shows a white dot on the file tab when you have unsaved changes.
+- [ ] Turn on **Auto Save** so you never lose work: **File → Auto Save** (checkmark it), or search "Auto Save" in the Command Palette.
+- [ ] Back up your course folder somewhere other than just the laptop's hard drive — a personal Google Drive, OneDrive, or USB drive. **School laptops may be reset or reassigned between class periods.**
+
+### Submitting Files
+
+- Submissions require the exact `.py` file(s) plus your test cases document — check the [Submission Requirements](#) for the full list.
+- Before submitting, reopen your file from its saved location (not from an old tab) to confirm you're turning in the version you think you are.
+- Double-check your docstring header is filled in — see [Assignment Header & Submission Requirements](#).
+
+---
+
+## 6. Running Your Code
+
+- [ ] Open your `.py` file.
+- [ ] Click the **▷ Run** button in the top-right corner of the editor, or press `Ctrl + F5`.
+- [ ] Output appears in the **Terminal** panel at the bottom. If the Terminal panel isn't visible, open it with `` Ctrl + ` ``.
+
+To provide keyboard input to a running program (for `input()` calls), click into the Terminal panel first, then type your response and press Enter.
+
+---
+
+## 7. Common First-Week Problems
+
+| Problem | Likely Fix |
+| --- | --- |
+| `'python' is not recognized as an internal or external command` | Python wasn't added to PATH during install. Reinstall Python and check the "Add python.exe to PATH" box. |
+| Run button is missing or grayed out | No interpreter selected. Repeat [Step 4](#4-selecting-the-python-interpreter). |
+| Code runs but nothing happens | Check the Terminal panel is actually open and scrolled to the bottom. |
+| File won't save in the right folder | Confirm you used **File → Open Folder** on your course folder, not **File → Open File** on a single file. |
+| Red squiggly lines everywhere, even in correct code | Pylance isn't fully loaded yet — wait a few seconds, or check the Python extension installed correctly. |
+
+
+</details>
+
+---
 
 ## The Six Benefits of Documentation
 

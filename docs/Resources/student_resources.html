@@ -172,7 +172,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
@@ -196,7 +196,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Resources:</span></p>
 <ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Student_Resources</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Student Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#using-vs-code-on-windows-11-a-student-guide">Using VS Code on Windows 11 — A Student Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PBA.html">PBA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Performance_Task.html">Performance_Task</a></li>
 </ul>
@@ -274,13 +275,221 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
           <section id="student-resources">
 <h1>Student Resources<a class="headerlink" href="#student-resources" title="Link to this heading">¶</a></h1>
+<hr class="docutils" />
+<details>
+   <summary>VS Code Instructions -- Click Here</summary>
+</section>
+<hr class="docutils" />
+<section id="using-vs-code-on-windows-11-a-student-guide">
+<h1>Using VS Code on Windows 11 — A Student Guide<a class="headerlink" href="#using-vs-code-on-windows-11-a-student-guide" title="Link to this heading">¶</a></h1>
+<p>This guide walks you through installing VS Code, setting it up for Python, and organizing your files so your work is easy to find, back up, and submit.</p>
+<hr class="docutils" />
+<section id="installing-vs-code">
+<h2>1. Installing VS Code<a class="headerlink" href="#installing-vs-code" title="Link to this heading">¶</a></h2>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Go to <a class="reference external" href="https://code.visualstudio.com">code.visualstudio.com</a> and download the <strong>Windows</strong> installer (it should detect Windows 11 automatically).</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Run the installer. On the “Select Additional Tasks” screen, check these boxes — they save you time later:</p>
+<ul>
+<li><p><strong>Add “Open with Code” action to Windows Explorer file context menu</strong></p></li>
+<li><p><strong>Add “Open with Code” action to Windows Explorer directory context menu</strong></p></li>
+<li><p><strong>Register Code as an editor for supported file types</strong></p></li>
+<li><p><strong>Add to PATH</strong></p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Finish the install and launch VS Code.</p></li>
+</ul>
+<blockquote>
+<div><p>📌 <strong>Personal laptop vs. school laptop:</strong> If you’re using a CAMS-provided Windows laptop, check with your instructor first — VS Code may already be installed, or installing new software may require permission.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="installing-python-itself">
+<h2>2. Installing Python Itself<a class="headerlink" href="#installing-python-itself" title="Link to this heading">¶</a></h2>
+<p>VS Code is just an editor — it doesn’t run Python on its own. You need Python installed separately.</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Go to <a class="reference external" href="https://www.python.org/downloads/">python.org/downloads</a> and download the latest <strong>Python 3</strong> release for Windows.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Run the installer. <strong>This step matters:</strong> check the box at the bottom of the first screen that says <strong>“Add python.exe to PATH”</strong> before clicking Install.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> After installing, confirm it worked. Open VS Code’s terminal (<code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">`</span></code>) and type:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>If you see a version number (like <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.13.x</span></code>), you’re set. If you see an error, restart VS Code and try again — if it still fails, ask your instructor.</p>
+</section>
+<hr class="docutils" />
+<section id="required-extensions-for-python">
+<h2>3. Required Extensions for Python<a class="headerlink" href="#required-extensions-for-python" title="Link to this heading">¶</a></h2>
+<p>Open the Extensions panel with <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">X</span></code>, search for each of the following, and click <strong>Install</strong>.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Extension</p></th>
+<th class="head"><p>Publisher</p></th>
+<th class="head"><p>Why You Need It</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Python</strong></p></td>
+<td><p>Microsoft</p></td>
+<td><p>Core extension — adds Python language support, debugging, and the “Run Python File” button. Installing it also pulls in Pylance and the Python Debugger automatically.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Pylance</strong></p></td>
+<td><p>Microsoft</p></td>
+<td><p>Fast autocomplete, error-checking, and type hints as you type. Usually installs automatically with the Python extension — confirm it’s there.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="recommended-optional-extensions">
+<h3>Recommended (Optional) Extensions<a class="headerlink" href="#recommended-optional-extensions" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Extension</p></th>
+<th class="head"><p>Publisher</p></th>
+<th class="head"><p>Why It Helps</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>autopep8</strong> or <strong>Black Formatter</strong></p></td>
+<td><p>Microsoft</p></td>
+<td><p>Automatically reformats your code to match PEP 8 style on save — useful for meeting the course’s <a class="reference internal" href="#"><span class="xref myst">Python Style Guidelines</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Error Lens</strong></p></td>
+<td><p>Alexander</p></td>
+<td><p>Shows errors and warnings inline next to the line that caused them, instead of only in a separate panel.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>indent-rainbow</strong></p></td>
+<td><p>oderwat</p></td>
+<td><p>Color-codes indentation levels, which makes it much easier to spot indentation mistakes (a very common Python bug).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Code Spell Checker</strong></p></td>
+<td><p>Street Side Software</p></td>
+<td><p>Flags typos in variable names, comments, and strings.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p>⚠️ You do <strong>not</strong> need extensions like “Python Snippets 3” or AI autocomplete tools unless your instructor specifically approves them — some conflict with the Academic Honesty Policy’s rule against AI-generated complete solutions.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="selecting-the-python-interpreter">
+<h2>4. Selecting the Python Interpreter<a class="headerlink" href="#selecting-the-python-interpreter" title="Link to this heading">¶</a></h2>
+<p>VS Code needs to know <em>which</em> Python installation to run your code with.</p>
+<ol class="arabic simple">
+<li><p>Open any <code class="docutils literal notranslate"><span class="pre">.py</span></code> file.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">P</span></code> to open the Command Palette.</p></li>
+<li><p>Type <strong>“Python: Select Interpreter”</strong> and press Enter.</p></li>
+<li><p>Choose the Python 3 version you installed in Step 2 (it will usually be the only one listed, or the one showing the highest version number).</p></li>
+</ol>
+<p>You’ll see the selected interpreter in the bottom-right corner of the VS Code window. If that area is missing or says “Select Interpreter,” repeat the steps above.</p>
+</section>
+<hr class="docutils" />
+<section id="managing-your-files">
+<h2>5. Managing Your Files<a class="headerlink" href="#managing-your-files" title="Link to this heading">¶</a></h2>
+<p>Staying organized here will save you real time all semester — messy file management is one of the most common reasons students lose points on submission requirements.</p>
+<section id="set-up-one-course-folder">
+<h3>Set Up One Course Folder<a class="headerlink" href="#set-up-one-course-folder" title="Link to this heading">¶</a></h3>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> In File Explorer, create a single top-level folder for this class, for example:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="o">&lt;</span><span class="n">your</span> <span class="n">name</span><span class="o">&gt;</span>\<span class="n">Documents</span>\<span class="n">AP</span><span class="o">-</span><span class="n">CSP</span><span class="o">-</span><span class="n">Python</span>\
+</pre></div>
+</div>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Inside it, create a subfolder for each unit or assignment number, matching how assignments are numbered in class:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AP</span><span class="o">-</span><span class="n">CSP</span><span class="o">-</span><span class="n">Python</span>\
+  <span class="n">Unit1</span><span class="o">-</span><span class="n">Fundamentals</span>\
+    <span class="mf">1.1</span><span class="n">_Fundamental_Terms</span><span class="o">.</span><span class="n">py</span>
+    <span class="mf">1.3</span><span class="n">_Variables</span><span class="o">.</span><span class="n">py</span>
+  <span class="n">Unit2</span><span class="o">-</span><span class="n">ControlFlow</span>\
+    <span class="mf">2.1</span><span class="n">_Conditionals</span><span class="o">.</span><span class="n">py</span>
+  <span class="n">PracticePT</span>\
+  <span class="n">CreatePT</span>\
+</pre></div>
+</div>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Open your <strong>whole course folder</strong> in VS Code — not individual files — using <strong>File → Open Folder</strong>. This gives you the file explorer sidebar on the left so you can navigate between assignments without hunting through File Explorer.</p></li>
+</ul>
+</section>
+<section id="file-naming">
+<h3>File Naming<a class="headerlink" href="#file-naming" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Use the assignment number from class, followed by a short description, with underscores instead of spaces: <code class="docutils literal notranslate"><span class="pre">1.3_Variables.py</span></code>, not <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">hw</span></code> or <code class="docutils literal notranslate"><span class="pre">Untitled3.py</span></code>.</p></li>
+<li><p>Always use the <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension. VS Code will not treat a file as Python code without it.</p></li>
+<li><p>Never use spaces or special characters (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">#</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code>) in filenames — some tools and submission systems handle them poorly.</p></li>
+</ul>
+</section>
+<section id="saving-your-work">
+<h3>Saving Your Work<a class="headerlink" href="#saving-your-work" title="Link to this heading">¶</a></h3>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Save constantly with <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">S</span></code>. VS Code shows a white dot on the file tab when you have unsaved changes.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Turn on <strong>Auto Save</strong> so you never lose work: <strong>File → Auto Save</strong> (checkmark it), or search “Auto Save” in the Command Palette.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Back up your course folder somewhere other than just the laptop’s hard drive — a personal Google Drive, OneDrive, or USB drive. <strong>School laptops may be reset or reassigned between class periods.</strong></p></li>
+</ul>
+</section>
+<section id="submitting-files">
+<h3>Submitting Files<a class="headerlink" href="#submitting-files" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Submissions require the exact <code class="docutils literal notranslate"><span class="pre">.py</span></code> file(s) plus your test cases document — check the <a class="reference internal" href="#"><span class="xref myst">Submission Requirements</span></a> for the full list.</p></li>
+<li><p>Before submitting, reopen your file from its saved location (not from an old tab) to confirm you’re turning in the version you think you are.</p></li>
+<li><p>Double-check your docstring header is filled in — see <a class="reference internal" href="#"><span class="xref myst">Assignment Header &amp; Submission Requirements</span></a>.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="running-your-code">
+<h2>6. Running Your Code<a class="headerlink" href="#running-your-code" title="Link to this heading">¶</a></h2>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Open your <code class="docutils literal notranslate"><span class="pre">.py</span></code> file.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Click the <strong>▷ Run</strong> button in the top-right corner of the editor, or press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">F5</span></code>.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Output appears in the <strong>Terminal</strong> panel at the bottom. If the Terminal panel isn’t visible, open it with <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">`</span></code>.</p></li>
+</ul>
+<p>To provide keyboard input to a running program (for <code class="docutils literal notranslate"><span class="pre">input()</span></code> calls), click into the Terminal panel first, then type your response and press Enter.</p>
+</section>
+<hr class="docutils" />
+<section id="common-first-week-problems">
+<h2>7. Common First-Week Problems<a class="headerlink" href="#common-first-week-problems" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Problem</p></th>
+<th class="head"><p>Likely Fix</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'python'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span> <span class="pre">as</span> <span class="pre">an</span> <span class="pre">internal</span> <span class="pre">or</span> <span class="pre">external</span> <span class="pre">command</span></code></p></td>
+<td><p>Python wasn’t added to PATH during install. Reinstall Python and check the “Add python.exe to PATH” box.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Run button is missing or grayed out</p></td>
+<td><p>No interpreter selected. Repeat <a class="reference internal" href="#selecting-the-python-interpreter">Step 4</a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>Code runs but nothing happens</p></td>
+<td><p>Check the Terminal panel is actually open and scrolled to the bottom.</p></td>
+</tr>
+<tr class="row-odd"><td><p>File won’t save in the right folder</p></td>
+<td><p>Confirm you used <strong>File → Open Folder</strong> on your course folder, not <strong>File → Open File</strong> on a single file.</p></td>
+</tr>
+<tr class="row-even"><td><p>Red squiggly lines everywhere, even in correct code</p></td>
+<td><p>Pylance isn’t fully loaded yet — wait a few seconds, or check the Python extension installed correctly.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</section>
+<hr class="docutils" />
 <section id="the-six-benefits-of-documentation">
 <h2>The Six Benefits of Documentation<a class="headerlink" href="#the-six-benefits-of-documentation" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://cindyscheung.medium.com/pleeeeaase-explain-your-code-e1fdfdf19566">Link</a></p>
@@ -669,38 +878,8 @@ In the end, it all boils down to this: Documentation builds empathy for future e
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Student Resources</a><ul>
-<li><a class="reference internal" href="#the-six-benefits-of-documentation">The Six Benefits of Documentation</a></li>
-<li><a class="reference internal" href="#how-to-read-an-error-message">How to Read an Error Message</a></li>
-<li><a class="reference internal" href="#the-debugging-mindset">The Debugging Mindset</a></li>
-<li><a class="reference internal" href="#growth-mindset-in-computer-science">Growth Mindset in Computer Science</a></li>
-<li><a class="reference internal" href="#what-is-abstraction-really">What Is Abstraction, Really?</a></li>
-<li><a class="reference internal" href="#how-the-internet-actually-works">How the Internet Actually Works</a></li>
-<li><a class="reference internal" href="#algorithms-and-efficiency-without-the-math-panic">Algorithms and Efficiency, Without the Math Panic</a></li>
-<li><a class="reference internal" href="#data-privacy-and-you">Data, Privacy, and You</a></li>
-<li><a class="reference internal" href="#bias-in-algorithms">Bias in Algorithms</a></li>
-<li><a class="reference internal" href="#pair-programming-not-scrum">Pair Programming, Not Scrum</a></li>
-<li><a class="reference internal" href="#academic-integrity-collaboration-rules-for-the-create-performance-task">Academic Integrity &amp; Collaboration Rules for the Create Performance Task</a></li>
-<li><a class="reference internal" href="#reading-code-before-writing-code">Reading Code Before Writing Code</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
