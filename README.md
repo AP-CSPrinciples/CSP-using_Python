@@ -19,7 +19,7 @@ The following big ideas serve as the foundation of the course:
 | **Computing Systems and Networks** | Computer systems and networks are used to transfer data. |
 | **Impact of Computing** | Computers and computing have revolutionized our lives. To use computing safely and responsibly, we need to be aware of privacy, security, and ethical issues. |
 
-For this course we will use various Integrated Development Environments (IDEs) to manage programs, data files, and images. **Coding Rooms** is our primary online IDE. For personal development and collaboration, online IDEs allow peer collaboration. Students using a personal laptop may install **VS Code** as a desktop IDE.
+For this course we will use various Integrated Development Environments (IDEs) to manage programs, data files, and images. **VS Code** is our primary online IDE. For personal development and collaboration, online IDEs allow peer collaboration. Students using a personal laptop may install **VS Code** as a desktop IDE.
 
 ---
 
