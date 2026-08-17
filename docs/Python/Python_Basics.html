@@ -209,6 +209,7 @@
 <li class="toctree-l1"><a class="reference internal" href="#section-2-control-flow-conditional-blocks-and-loops">Section 2 — Control Flow: Conditional Blocks and Loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#section-3-data-collections-lists-tuples-dictionaries-and-strings">Section 3 — Data Collections: Lists, Tuples, Dictionaries, and Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#section-4-functions-and-exceptions">Section 4 — Functions and Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#file-operations">File Operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#data-structures-deep-dive">Data Structures Deep Dive</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#object-oriented-programming-oop">Object-Oriented Programming (OOP)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#ap-csp-performance-task-preparation">AP CSP Performance Task Preparation</a></li>
@@ -280,7 +281,7 @@
         <article role="main" id="furo-main-content">
           <section id="python-basics">
 <h1>Python Basics<a class="headerlink" href="#python-basics" title="Link to this heading">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">Revised</span> <span class="pre">June</span> <span class="pre">2026</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Revised</span> <span class="pre">August</span> <span class="pre">2026</span></code></p>
 <p>Python is an open-source, high-level programming language that is widely considered one of the best first languages to learn. It supports multiple programming paradigms — including <strong>procedural</strong>, <strong>functional</strong>, and <strong>object-oriented programming (OOP)</strong> — and is backed by an enormous standard library and community. As of 2024, it is one of the most in-demand languages in the job market, used in web development, data science, artificial intelligence, IoT, and cybersecurity.</p>
 <p>This course is designed to prepare you for:</p>
 <ul class="simple">
@@ -1837,6 +1838,326 @@ Blue Notebook	Sale Price: $24.99
 </section>
 </section>
 <hr class="docutils" />
+<section id="built-in-functions">
+<h2>Built-In Functions<a class="headerlink" href="#built-in-functions" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-2.G,</span> <span class="pre">AAP-3.B</span></code> — Use existing abstractions to manage complexity.
+<code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP-adjacent</span></code> — not a separately numbered PCEP-30-02 objective, but strengthens Section 4 (Functions) fluency and shows up throughout the certification exam’s code-reading questions.</p>
+<p><strong>Explanation</strong></p>
+<p>A <strong>built-in function</strong> is a function Python provides for you automatically — no <code class="docutils literal notranslate"><span class="pre">import</span></code>, no <code class="docutils literal notranslate"><span class="pre">def</span></code>, it’s just there the moment Python starts. You’ve already been using several (<code class="docutils literal notranslate"><span class="pre">print()</span></code>, <code class="docutils literal notranslate"><span class="pre">len()</span></code>, <code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">range()</span></code>) without thinking of them as a category. This section introduces the built-ins that let you <em>transform</em>, <em>filter</em>, and <em>summarize</em> data in a single line, instead of writing a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop every time.</p>
+<p><strong>When Would You Use This?</strong></p>
+<p>Any time you need to apply the same operation to every item in a collection (<code class="docutils literal notranslate"><span class="pre">map</span></code>), keep only the items that meet a condition (<code class="docutils literal notranslate"><span class="pre">filter</span></code>), combine every item into one result (<code class="docutils literal notranslate"><span class="pre">reduce</span></code>), pair up two lists (<code class="docutils literal notranslate"><span class="pre">zip</span></code>), or ask a yes/no question about an entire collection (<code class="docutils literal notranslate"><span class="pre">any</span></code>, <code class="docutils literal notranslate"><span class="pre">all</span></code>) — reach for a built-in before you reach for a loop. They’re faster to write, harder to get wrong, and instantly readable to anyone who knows Python.</p>
+<p><strong>Key Built-In Functions</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>What It Does</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">map(func,</span> <span class="pre">iterable)</span></code></p></td>
+<td><p>Applies <code class="docutils literal notranslate"><span class="pre">func</span></code> to every item</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">list(map(str.upper,</span> <span class="pre">[&quot;hi&quot;,&quot;bye&quot;]))</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">['HI',</span> <span class="pre">'BYE']</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">filter(func,</span> <span class="pre">iterable)</span></code></p></td>
+<td><p>Keeps items where <code class="docutils literal notranslate"><span class="pre">func</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">list(filter(lambda</span> <span class="pre">x:</span> <span class="pre">x</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">0,</span> <span class="pre">range(10)))</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">2,</span> <span class="pre">4,</span> <span class="pre">6,</span> <span class="pre">8]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">reduce(func,</span> <span class="pre">iterable)</span></code></p></td>
+<td><p>Combines all items into one value (needs <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">functools</span> <span class="pre">import</span> <span class="pre">reduce</span></code>)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">reduce(lambda</span> <span class="pre">a,</span> <span class="pre">b:</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b,</span> <span class="pre">[1,2,3,4])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">zip(iter1,</span> <span class="pre">iter2)</span></code></p></td>
+<td><p>Pairs up items from two+ iterables</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">list(zip([1,2],[&quot;a&quot;,&quot;b&quot;]))</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[(1,'a'),</span> <span class="pre">(2,'b')]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">any(iterable)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if <strong>at least one</strong> item is truthy</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">any([0,</span> <span class="pre">0,</span> <span class="pre">3])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">all(iterable)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if <strong>every</strong> item is truthy</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">all([1,</span> <span class="pre">1,</span> <span class="pre">0])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sorted(iterable,</span> <span class="pre">key=...)</span></code></p></td>
+<td><p>Returns a <strong>new</strong> sorted list</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sorted([3,1,2])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">chr(n)</span></code></p></td>
+<td><p>Converts a Unicode code point to a character</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">chr(65)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'A'</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ord(c)</span></code></p></td>
+<td><p>Converts a character to its Unicode code point</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ord('A')</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">65</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">globals()</span></code></p></td>
+<td><p>Returns a dict of the <strong>global</strong> namespace</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">globals()['x']</span></code></p></td>
+<td><p>current value of <code class="docutils literal notranslate"><span class="pre">x</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">locals()</span></code></p></td>
+<td><p>Returns a dict of the <strong>local</strong> namespace</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">locals()</span></code></p></td>
+<td><p>current local variables</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p><mark><strong>Exam-style trap:</strong> <code class="docutils literal notranslate"><span class="pre">map()</span></code> and <code class="docutils literal notranslate"><span class="pre">filter()</span></code> return a <strong>lazy iterator</strong>, not a list — you must wrap them in <code class="docutils literal notranslate"><span class="pre">list(...)</span></code> to see or print the actual values. <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> and <code class="docutils literal notranslate"><span class="pre">map()</span></code>/<code class="docutils literal notranslate"><span class="pre">filter()</span></code> never modify the original list; they hand you back a brand-new one.</mark></p>
+</div></blockquote>
+<p><strong>Example</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">55</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">88</span><span class="p">]</span>
+
+<span class="n">passing</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">,</span> <span class="n">scores</span><span class="p">))</span>     <span class="c1"># keep passing scores</span>
+<span class="n">curved</span>  <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">scores</span><span class="p">))</span>           <span class="c1"># add 5 to every score</span>
+<span class="n">top_3</span>   <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>             <span class="c1"># highest 3 scores</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Passing:"</span><span class="p">,</span> <span class="n">passing</span><span class="p">)</span>   <span class="c1"># [82, 91, 76, 88]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Curved:"</span><span class="p">,</span>  <span class="n">curved</span><span class="p">)</span>    <span class="c1"># [60, 87, 96, 45, 81, 93]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Top 3:"</span><span class="p">,</span>   <span class="n">top_3</span><span class="p">)</span>     <span class="c1"># [91, 88, 82]</span>
+</pre></div>
+</div>
+<p><strong>Best Practices</strong></p>
+<ul class="simple">
+<li><p>Wrap <code class="docutils literal notranslate"><span class="pre">map()</span></code>/<code class="docutils literal notranslate"><span class="pre">filter()</span></code> in <code class="docutils literal notranslate"><span class="pre">list()</span></code> before printing — otherwise you’ll just see <code class="docutils literal notranslate"><span class="pre">&lt;filter</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x...&gt;</span></code>.</p></li>
+<li><p>If the built-in version is harder to read than a plain <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, use the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. Readability beats “clever,” per PEP 8.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sorted(iterable,</span> <span class="pre">key=func)</span></code> is the built-in most worth mastering — combined with <code class="docutils literal notranslate"><span class="pre">lambda</span></code> (next section), it lets you sort <em>anything</em> by <em>any</em> rule.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reduce()</span></code> needs an explicit import (<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">functools</span> <span class="pre">import</span> <span class="pre">reduce</span></code>) — it’s the only one on this list that isn’t automatically available.</p></li>
+</ul>
+<p><strong>Sample Program</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert a list of Celsius temps to Fahrenheit, then report which are "hot" (&gt;= 85°F)</span>
+
+<span class="n">celsius</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+
+<span class="n">fahrenheit</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span> <span class="o">*</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">32</span><span class="p">,</span> <span class="n">celsius</span><span class="p">))</span>
+<span class="n">hot_days</span>   <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span> <span class="o">&gt;=</span> <span class="mi">85</span><span class="p">,</span> <span class="n">fahrenheit</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Fahrenheit:"</span><span class="p">,</span> <span class="n">fahrenheit</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Hot days (&gt;=85°F):"</span><span class="p">,</span> <span class="n">hot_days</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Any hot day?"</span><span class="p">,</span> <span class="nb">any</span><span class="p">(</span><span class="n">f</span> <span class="o">&gt;=</span> <span class="mi">85</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fahrenheit</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"All hot days?"</span><span class="p">,</span> <span class="nb">all</span><span class="p">(</span><span class="n">f</span> <span class="o">&gt;=</span> <span class="mi">85</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fahrenheit</span><span class="p">))</span>
+</pre></div>
+</div>
+<section id="activity-grade-report-refactor">
+<h3>Activity: Grade Report Refactor<a class="headerlink" href="#activity-grade-report-refactor" title="Link to this heading">¶</a></h3>
+<p>Take the <strong>Grade Calculator</strong> activity you built earlier (Section 2) and refactor part of it using built-in functions instead of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<p><strong>Requirements:</strong></p>
+<ol class="arabic simple">
+<li><p>Start with a list of at least 10 student scores (<code class="docutils literal notranslate"><span class="pre">int</span></code> values 0–100).</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">filter()</span></code> to build a list of students who <strong>passed</strong> (score ≥ 70).</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">map()</span></code> to build a list of the same scores <strong>converted to a 4.0 GPA scale</strong> (formula: <code class="docutils literal notranslate"><span class="pre">score</span> <span class="pre">/</span> <span class="pre">25</span></code>, rounded to 2 decimal places with <code class="docutils literal notranslate"><span class="pre">round()</span></code>).</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> with a <code class="docutils literal notranslate"><span class="pre">key=</span></code> and <code class="docutils literal notranslate"><span class="pre">reverse=True</span></code> to print the scores from highest to lowest <strong>without changing the original list</strong>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">any()</span></code> to check whether <strong>any</strong> student scored a perfect 100, and <code class="docutils literal notranslate"><span class="pre">all()</span></code> to check whether <strong>every</strong> student passed.</p></li>
+<li><p>Print all five results with clear labels.</p></li>
+</ol>
+<p><em>AP CSP: AAP-2.G, CRD-2.B</em></p>
+<p><strong>Actual Program with Test Samples</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#       Assignment:  Built-In Functions — Grade Report Refactor</span>
+<span class="c1">#       Description: Analyzes a list of scores using map, filter, sorted, any, all.</span>
+<span class="c1">#       Language:    Python 3.x</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">analyze_scores</span><span class="p">(</span><span class="n">scores</span><span class="p">):</span>
+    <span class="n">passing</span>   <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">,</span> <span class="n">scores</span><span class="p">))</span>
+    <span class="n">gpa_scale</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">s</span> <span class="o">/</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">scores</span><span class="p">))</span>
+    <span class="n">ranked</span>    <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">perfect</span>   <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">s</span> <span class="o">==</span> <span class="mi">100</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">)</span>
+    <span class="n">all_pass</span>  <span class="o">=</span> <span class="nb">all</span><span class="p">(</span><span class="n">s</span> <span class="o">&gt;=</span> <span class="mi">70</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">passing</span><span class="p">,</span> <span class="n">gpa_scale</span><span class="p">,</span> <span class="n">ranked</span><span class="p">,</span> <span class="n">perfect</span><span class="p">,</span> <span class="n">all_pass</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">55</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">59</span><span class="p">]</span>
+    <span class="n">passing</span><span class="p">,</span> <span class="n">gpa_scale</span><span class="p">,</span> <span class="n">ranked</span><span class="p">,</span> <span class="n">perfect</span><span class="p">,</span> <span class="n">all_pass</span> <span class="o">=</span> <span class="n">analyze_scores</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Passing scores:"</span><span class="p">,</span> <span class="n">passing</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"GPA scale:"</span><span class="p">,</span> <span class="n">gpa_scale</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ranked (high to low):"</span><span class="p">,</span> <span class="n">ranked</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Original list unchanged:"</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Any perfect score?"</span><span class="p">,</span> <span class="n">perfect</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Did everyone pass?"</span><span class="p">,</span> <span class="n">all_pass</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Sample Test Cases</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Input <code class="docutils literal notranslate"><span class="pre">scores</span></code></p></th>
+<th class="head"><p>Passing (≥70)</p></th>
+<th class="head"><p>Any 100?</p></th>
+<th class="head"><p>All passed?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[55,</span> <span class="pre">82,</span> <span class="pre">91,</span> <span class="pre">40,</span> <span class="pre">76,</span> <span class="pre">88,</span> <span class="pre">100,</span> <span class="pre">63,</span> <span class="pre">74,</span> <span class="pre">59]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[82,</span> <span class="pre">91,</span> <span class="pre">76,</span> <span class="pre">88,</span> <span class="pre">100,</span> <span class="pre">74]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">[70,</span> <span class="pre">71,</span> <span class="pre">72,</span> <span class="pre">73]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[70,</span> <span class="pre">71,</span> <span class="pre">72,</span> <span class="pre">73]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[10,</span> <span class="pre">20,</span> <span class="pre">30]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="lambda-functions">
+<h2>Lambda Functions<a class="headerlink" href="#lambda-functions" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-2.G</span></code> — Use abstraction to manage complexity.
+<code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP-adjacent</span></code> — not separately numbered, but a natural extension of Section 4 (Functions).</p>
+<p><strong>Explanation</strong></p>
+<p>A <strong>lambda</strong> is a small, unnamed (“anonymous”) function written in a single line. It’s Python’s shorthand for a function you only need once — usually as an argument to another function like <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>, <code class="docutils literal notranslate"><span class="pre">map()</span></code>, or <code class="docutils literal notranslate"><span class="pre">filter()</span></code>. A lambda can only contain <strong>one expression</strong> (no multiple lines, no <code class="docutils literal notranslate"><span class="pre">if/else</span></code> blocks, no loops) and it automatically <code class="docutils literal notranslate"><span class="pre">return</span></code>s the result of that expression.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">square</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+
+<span class="c1"># Equivalent to:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p><strong>When Would You Use This?</strong></p>
+<p>Use a lambda when you need a quick, throwaway function to hand to another function — most commonly the <code class="docutils literal notranslate"><span class="pre">key=</span></code> argument of <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>, or as the first argument to <code class="docutils literal notranslate"><span class="pre">map()</span></code>/<code class="docutils literal notranslate"><span class="pre">filter()</span></code>. If you find yourself calling the same lambda logic in more than one place, that’s your signal to write a real <code class="docutils literal notranslate"><span class="pre">def</span></code> function instead and give it a name.</p>
+<p><strong>Key Words</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Term</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Lambda / anonymous function</strong></p></td>
+<td><p>A function with no name, defined inline with the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> keyword</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Expression</strong></p></td>
+<td><p>A single computation that produces a value (what a lambda is limited to)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">key=</span></code> argument</strong></p></td>
+<td><p>Tells <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>/<code class="docutils literal notranslate"><span class="pre">min()</span></code>/<code class="docutils literal notranslate"><span class="pre">max()</span></code> <em>what to sort by</em>, instead of the raw values</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>First-class function</strong></p></td>
+<td><p>A function that can be passed around like any other value (Python treats all functions this way)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Example</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="mi">91</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Bob"</span><span class="p">,</span> <span class="mi">76</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Charlie"</span><span class="p">,</span> <span class="mi">88</span><span class="p">)]</span>
+
+<span class="c1"># Sort by score (the second item in each tuple) instead of by name</span>
+<span class="n">by_score</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">by_score</span><span class="p">)</span>   <span class="c1"># [('Alice', 91), ('Charlie', 88), ('Bob', 76)]</span>
+</pre></div>
+</div>
+<p><strong>Best Practices</strong></p>
+<ul class="simple">
+<li><p>Keep lambdas <strong>short</strong> — one expression, ideally under one line of screen width. If it’s getting hard to read, write a named <code class="docutils literal notranslate"><span class="pre">def</span></code> function instead.</p></li>
+<li><p>Never assign a lambda to a variable just to call it later (<code class="docutils literal notranslate"><span class="pre">square</span> <span class="pre">=</span> <span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">x**2</span></code> then <code class="docutils literal notranslate"><span class="pre">square(4)</span></code>) — that’s exactly what <code class="docutils literal notranslate"><span class="pre">def</span></code> is for. Lambdas earn their keep as <strong>throwaway arguments</strong>, not named functions.</p></li>
+<li><p>The most common, most useful pattern by far is <code class="docutils literal notranslate"><span class="pre">sorted(iterable,</span> <span class="pre">key=lambda</span> <span class="pre">item:</span> <span class="pre">...)</span></code> — master that one first.</p></li>
+<li><p>A lambda <strong>cannot</strong> contain <code class="docutils literal notranslate"><span class="pre">print()</span></code> statements, loops, or multiple lines — if you need any of those, it’s not a lambda job.</p></li>
+</ul>
+<p><strong>Sample Program</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">inventory</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">"item"</span><span class="p">:</span> <span class="s2">"Pencil"</span><span class="p">,</span> <span class="s2">"price"</span><span class="p">:</span> <span class="mf">0.50</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"item"</span><span class="p">:</span> <span class="s2">"Notebook"</span><span class="p">,</span> <span class="s2">"price"</span><span class="p">:</span> <span class="mf">2.75</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"item"</span><span class="p">:</span> <span class="s2">"Backpack"</span><span class="p">,</span> <span class="s2">"price"</span><span class="p">:</span> <span class="mf">24.99</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="n">cheapest_first</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">inventory</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">"price"</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">cheapest_first</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">'item'</span><span class="p">]</span><span class="si">}</span><span class="s2">: $</span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">'price'</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="activity-sort-it-your-way">
+<h3>Activity: Sort It Your Way<a class="headerlink" href="#activity-sort-it-your-way" title="Link to this heading">¶</a></h3>
+<p>Given a list of dictionaries representing books (<code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">author</span></code>, <code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">pages</span></code>), write <strong>three separate <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> calls</strong>, each using a different <code class="docutils literal notranslate"><span class="pre">lambda</span></code> key:</p>
+<ol class="arabic simple">
+<li><p>Sort by <code class="docutils literal notranslate"><span class="pre">year</span></code>, oldest first.</p></li>
+<li><p>Sort by <code class="docutils literal notranslate"><span class="pre">pages</span></code>, longest first (<code class="docutils literal notranslate"><span class="pre">reverse=True</span></code>).</p></li>
+<li><p>Sort by the <strong>length of the title</strong> (<code class="docutils literal notranslate"><span class="pre">len(title)</span></code>), shortest first.</p></li>
+</ol>
+<p>Print each sorted list with a clear label before it.</p>
+<p><em>AP CSP: AAP-2.G</em></p>
+<p><strong>Actual Program with Test Samples</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#       Assignment:  Lambda Functions — Sort It Your Way</span>
+<span class="c1">#       Description: Sorts a list of book dictionaries three different ways using lambda keys.</span>
+<span class="c1">#       Language:    Python 3.x</span>
+
+<span class="n">books</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">"title"</span><span class="p">:</span> <span class="s2">"Dune"</span><span class="p">,</span> <span class="s2">"author"</span><span class="p">:</span> <span class="s2">"Herbert"</span><span class="p">,</span> <span class="s2">"year"</span><span class="p">:</span> <span class="mi">1965</span><span class="p">,</span> <span class="s2">"pages"</span><span class="p">:</span> <span class="mi">412</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"title"</span><span class="p">:</span> <span class="s2">"1984"</span><span class="p">,</span> <span class="s2">"author"</span><span class="p">:</span> <span class="s2">"Orwell"</span><span class="p">,</span> <span class="s2">"year"</span><span class="p">:</span> <span class="mi">1949</span><span class="p">,</span> <span class="s2">"pages"</span><span class="p">:</span> <span class="mi">328</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"title"</span><span class="p">:</span> <span class="s2">"The Hobbit"</span><span class="p">,</span> <span class="s2">"author"</span><span class="p">:</span> <span class="s2">"Tolkien"</span><span class="p">,</span> <span class="s2">"year"</span><span class="p">:</span> <span class="mi">1937</span><span class="p">,</span> <span class="s2">"pages"</span><span class="p">:</span> <span class="mi">310</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="n">by_year</span>      <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">books</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">b</span><span class="p">[</span><span class="s2">"year"</span><span class="p">])</span>
+<span class="n">by_pages</span>     <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">books</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">b</span><span class="p">[</span><span class="s2">"pages"</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">by_title_len</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">books</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="s2">"title"</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"By year (oldest first):"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">by_year</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">b</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span><span class="si">}</span><span class="s2"> — </span><span class="si">{</span><span class="n">b</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"By pages (longest first):"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">by_pages</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">b</span><span class="p">[</span><span class="s1">'pages'</span><span class="p">]</span><span class="si">}</span><span class="s2">pp — </span><span class="si">{</span><span class="n">b</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"By title length (shortest first):"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">by_title_len</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="s1">'title'</span><span class="p">])</span><span class="si">}</span><span class="s2"> chars — </span><span class="si">{</span><span class="n">b</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Sample Test Cases</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sort Key</p></th>
+<th class="head"><p>First Result</p></th>
+<th class="head"><p>Last Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">year</span></code> (ascending)</p></td>
+<td><p><em>The Hobbit</em> (1937)</p></td>
+<td><p><em>Dune</em> (1965)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pages</span></code> (descending)</p></td>
+<td><p><em>Dune</em> (412pp)</p></td>
+<td><p><em>The Hobbit</em> (310pp)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">len(title)</span></code> (ascending)</p></td>
+<td><p><em>1984</em> (4 chars)</p></td>
+<td><p><em>The Hobbit</em> (10 chars)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
 <section id="modules-and-packages">
 <h2>Modules and Packages<a class="headerlink" href="#modules-and-packages" title="Link to this heading">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-2.G</span></code> — Use abstraction to manage complexity.</p>
@@ -2075,6 +2396,242 @@ Blue Notebook	Sale Price: $24.99
 </section>
 </section>
 <hr class="docutils" />
+<section id="file-operations">
+<h1>File Operations<a class="headerlink" href="#file-operations" title="Link to this heading">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-3.A,</span> <span class="pre">CRD-2.B,</span> <span class="pre">CRD-2.J</span></code> — Collect and represent data; implement and test programs.
+<code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP-adjacent</span></code> — file I/O isn’t a separately numbered PCEP-30-02 block (it’s tested at the next certification level, PCAP), but it’s essential real-world Python and a natural fit now that you know <code class="docutils literal notranslate"><span class="pre">try/except</span></code>.</p>
+<p><strong>Explanation</strong></p>
+<p>So far, every program you’ve written loses all its data the moment it stops running. <strong>File operations</strong> let a program <strong>read</strong> data that already exists on disk and <strong>write</strong> data that survives after the program ends — the difference between a program that “remembers” and one that starts from zero every time.</p>
+<p>Python’s <code class="docutils literal notranslate"><span class="pre">open()</span></code> function is the entry point for all file work. The safest way to use it is with a <code class="docutils literal notranslate"><span class="pre">with</span></code> block, which automatically closes the file for you — even if an error happens partway through.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"filename.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1"># file is automatically closed here, even if something went wrong</span>
+</pre></div>
+</div>
+<p><strong>Key Words</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Term</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>File mode</strong></p></td>
+<td><p>How you’re opening the file: <code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code> read, <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> write (overwrites!), <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> append, <code class="docutils literal notranslate"><span class="pre">&quot;r+&quot;</span></code> read+write</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">with</span></code> statement</strong></p></td>
+<td><p>Automatically closes the file when the block ends — always prefer this over manual <code class="docutils literal notranslate"><span class="pre">open()</span></code>/<code class="docutils literal notranslate"><span class="pre">close()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Stream</strong></p></td>
+<td><p>The connection Python keeps open to the file while you’re reading/writing it</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Newline character (<code class="docutils literal notranslate"><span class="pre">\n</span></code>)</strong></p></td>
+<td><p>Marks the end of a line — <code class="docutils literal notranslate"><span class="pre">.readlines()</span></code> keeps these; <code class="docutils literal notranslate"><span class="pre">.strip()</span></code> removes them</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Text file</strong></p></td>
+<td><p>Stores human-readable characters (<code class="docutils literal notranslate"><span class="pre">.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">.csv</span></code>, <code class="docutils literal notranslate"><span class="pre">.py</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Delimiter</strong></p></td>
+<td><p>The character that separates fields on a line (commonly <code class="docutils literal notranslate"><span class="pre">,</span></code> in <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>File Modes</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>Meaning</p></th>
+<th class="head"><p>If file doesn’t exist</p></th>
+<th class="head"><p>If file exists</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code></p></td>
+<td><p>Read only</p></td>
+<td><p>Raises <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code></p></td>
+<td><p>Reads from the start</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code></p></td>
+<td><p>Write only</p></td>
+<td><p>Creates it</p></td>
+<td><p><strong>Erases existing content first</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code></p></td>
+<td><p>Append</p></td>
+<td><p>Creates it</p></td>
+<td><p>Adds to the end, keeps existing content</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;r+&quot;</span></code></p></td>
+<td><p>Read and write</p></td>
+<td><p>Raises <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code></p></td>
+<td><p>Reads and writes without erasing</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p><mark><strong>Common trap:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> mode <strong>erases the entire file</strong> the instant you open it — even if you never write anything. If you need to keep existing content, use <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> (append) or <code class="docutils literal notranslate"><span class="pre">&quot;r+&quot;</span></code>.</mark></p>
+</div></blockquote>
+<p><strong>Reading Files — Three Ways</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"data.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">whole_thing</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>        <span class="c1"># one big string, includes \n characters</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"data.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">all_lines</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>     <span class="c1"># list of strings, one per line (keeps \n)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"data.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>                <span class="c1"># loop line-by-line — best for large files</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>          <span class="c1"># .strip() removes the trailing \n</span>
+</pre></div>
+</div>
+<p><strong>Writing and Appending</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"output.txt"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"First line</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Second line</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"output.txt"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"This gets added to the end</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>When Would You Use This?</strong></p>
+<p>Any time your program needs to <strong>outlive a single run</strong> — saving a high score, loading a roster of students from a <code class="docutils literal notranslate"><span class="pre">.csv</span></code>, writing a log of every calculation a user made, or building the kind of “save/load” feature the Random Trivia Quiz and Minesweeper projects hint at with their stretch challenges. File operations are also how real programs move data between each other: one program writes a file, another reads it.</p>
+<p><strong>Best Practices</strong></p>
+<ul class="simple">
+<li><p><strong>Always use <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open(...)</span> <span class="pre">as</span> <span class="pre">file:</span></code></strong> — never call <code class="docutils literal notranslate"><span class="pre">open()</span></code> without it. A file opened without <code class="docutils literal notranslate"><span class="pre">with</span></code> can stay locked/open if your program crashes before you remember to call <code class="docutils literal notranslate"><span class="pre">.close()</span></code>.</p></li>
+<li><p><strong>Always wrap file access in <code class="docutils literal notranslate"><span class="pre">try/except</span></code></strong>, catching <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> at minimum — you have no guarantee the file exists (see Exception Handling above).</p></li>
+<li><p>Double-check your <strong>mode</strong> before writing — <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> silently destroys existing content. When in doubt, use <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> or check <code class="docutils literal notranslate"><span class="pre">os.path.exists()</span></code> first.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">.strip()</span></code> on every line you read from a text file to remove the trailing <code class="docutils literal notranslate"><span class="pre">\n</span></code> before you use the value.</p></li>
+<li><p>For structured data (comma-separated records), consider the <code class="docutils literal notranslate"><span class="pre">csv</span></code> module instead of manually splitting on commas — it correctly handles edge cases like commas <em>inside</em> quoted fields.</p></li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"roster.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Loaded </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span><span class="si">}</span><span class="s2"> students:"</span><span class="p">,</span> <span class="n">names</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"roster.txt not found — starting with an empty roster."</span><span class="p">)</span>
+    <span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p><strong>Sample Program</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Append a new high score to a running log file, then print the full history</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">log_score</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">"scores_log.txt"</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">show_log</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"scores_log.txt"</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+                <span class="n">name</span><span class="p">,</span> <span class="n">score</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"No scores logged yet."</span><span class="p">)</span>
+
+<span class="n">log_score</span><span class="p">(</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="mi">91</span><span class="p">)</span>
+<span class="n">log_score</span><span class="p">(</span><span class="s2">"Bob"</span><span class="p">,</span> <span class="mi">76</span><span class="p">)</span>
+<span class="n">show_log</span><span class="p">()</span>
+</pre></div>
+</div>
+<section id="activity-student-roster-file-manager">
+<h2>Activity: Student Roster File Manager<a class="headerlink" href="#activity-student-roster-file-manager" title="Link to this heading">¶</a></h2>
+<p>Write a program that manages a roster stored in a text file called <code class="docutils literal notranslate"><span class="pre">roster.txt</span></code> (one name per line).</p>
+<p><strong>Requirements:</strong></p>
+<ol class="arabic simple">
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">load_roster(filename)</span></code> that reads the file and returns a list of names. If the file doesn’t exist, catch <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> and return an empty list instead of crashing.</p></li>
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">add_student(filename,</span> <span class="pre">name)</span></code> that <strong>appends</strong> a new name to the file (don’t overwrite the existing roster!).</p></li>
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">save_roster(filename,</span> <span class="pre">roster)</span></code> that <strong>overwrites</strong> the file with the current contents of a roster list (one name per line) — used after removing a student.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, build a menu (<code class="docutils literal notranslate"><span class="pre">while</span></code> loop) that lets the user: view the roster, add a student, remove a student (remove from the in-memory list, then call <code class="docutils literal notranslate"><span class="pre">save_roster()</span></code>), or quit.</p></li>
+<li><p>Every write operation must use a <code class="docutils literal notranslate"><span class="pre">with</span></code> block. Every read must be wrapped in a <code class="docutils literal notranslate"><span class="pre">try/except</span> <span class="pre">FileNotFoundError</span></code>.</p></li>
+</ol>
+<p><em>AP CSP: AAP-3.A, CRD-2.B, CRD-2.J</em></p>
+<p><strong>Actual Program with Test Samples</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#       Assignment:  File Operations — Student Roster File Manager</span>
+<span class="c1">#       Description: Loads, adds to, removes from, and saves a student roster stored in a text file.</span>
+<span class="c1">#       Language:    Python 3.x</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">load_roster</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">add_student</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">save_roster</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">roster</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">roster</span><span class="p">:</span>
+            <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="s2">"roster.txt"</span>
+    <span class="n">roster</span> <span class="o">=</span> <span class="n">load_roster</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">1) View  2) Add  3) Remove  4) Quit"</span><span class="p">)</span>
+        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Choose an option: "</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"1"</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Roster:"</span><span class="p">,</span> <span class="n">roster</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"2"</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Name to add: "</span><span class="p">)</span>
+            <span class="n">add_student</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="n">roster</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"3"</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Name to remove: "</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">roster</span><span class="p">:</span>
+                <span class="n">roster</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                <span class="n">save_roster</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">roster</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> not found."</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"4"</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Invalid option."</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Sample Test Cases</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Starting <code class="docutils literal notranslate"><span class="pre">roster.txt</span></code></p></th>
+<th class="head"><p>Action</p></th>
+<th class="head"><p>Resulting Roster</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>(file doesn’t exist)</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">load_roster()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[]</span></code> (no crash)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">[&quot;Ava&quot;,</span> <span class="pre">&quot;Liam&quot;]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">add_student(&quot;Noah&quot;)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[&quot;Ava&quot;,</span> <span class="pre">&quot;Liam&quot;,</span> <span class="pre">&quot;Noah&quot;]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[&quot;Ava&quot;,</span> <span class="pre">&quot;Liam&quot;,</span> <span class="pre">&quot;Noah&quot;]</span></code></p></td>
+<td><p>remove <code class="docutils literal notranslate"><span class="pre">&quot;Liam&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">save_roster()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[&quot;Ava&quot;,</span> <span class="pre">&quot;Noah&quot;]</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
 <section id="data-structures-deep-dive">
 <h1>Data Structures Deep Dive<a class="headerlink" href="#data-structures-deep-dive" title="Link to this heading">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-3.A,</span> <span class="pre">AAP-3.B,</span> <span class="pre">AAP-3.C</span></code></p>
@@ -2133,6 +2690,148 @@ Blue Notebook	Sale Price: $24.99
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># Difference:   {1}</span>
 </pre></div>
 </div>
+<p><strong>Frozensets</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-3.A,</span> <span class="pre">AAP-3.B</span></code> — Collect, represent, and organize data using abstractions.
+<code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP-adjacent</span></code> — sets/frozensets aren’t separately numbered in the PCEP-30-02 blocks, but they build directly on Section 3 (Data Collections) fluency.</p>
+<p><strong>Explanation</strong></p>
+<p>A <strong>frozenset</strong> is exactly what it sounds like: a <code class="docutils literal notranslate"><span class="pre">set</span></code> that’s been frozen — <strong>immutable</strong>, just like a tuple is an immutable list. Once created, you cannot add, remove, or change its contents. Everything else about sets (unordered, no duplicates, supports <code class="docutils literal notranslate"><span class="pre">|</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">^</span></code>) still applies.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">([</span><span class="s2">"red"</span><span class="p">,</span> <span class="s2">"green"</span><span class="p">,</span> <span class="s2">"blue"</span><span class="p">])</span>
+<span class="c1"># colors.add("yellow")   # AttributeError — frozensets have no .add()</span>
+</pre></div>
+</div>
+<p><strong>When Would You Use This?</strong></p>
+<p>Use a <code class="docutils literal notranslate"><span class="pre">frozenset</span></code> any time you want the <strong>uniqueness and fast-lookup</strong> benefits of a set, but need the collection to be <strong>unchangeable</strong> — most often because it’s being used as a <strong>dictionary key</strong> (regular sets can’t be dict keys; frozensets can) or because you want to guarantee a function can’t accidentally modify the data it’s given.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># A regular set CANNOT be a dictionary key:</span>
+<span class="c1"># schedule = {  {"Mon", "Wed"}: "Math"  }   # TypeError!</span>
+
+<span class="c1"># A frozenset CAN:</span>
+<span class="n">schedule</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nb">frozenset</span><span class="p">([</span><span class="s2">"Mon"</span><span class="p">,</span> <span class="s2">"Wed"</span><span class="p">,</span> <span class="s2">"Fri"</span><span class="p">]):</span> <span class="s2">"Math"</span><span class="p">,</span>
+    <span class="nb">frozenset</span><span class="p">([</span><span class="s2">"Tue"</span><span class="p">,</span> <span class="s2">"Thu"</span><span class="p">]):</span> <span class="s2">"Science"</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">schedule</span><span class="p">[</span><span class="nb">frozenset</span><span class="p">([</span><span class="s2">"Tue"</span><span class="p">,</span> <span class="s2">"Thu"</span><span class="p">])])</span>   <span class="c1"># Science</span>
+</pre></div>
+</div>
+<p><strong>Key Words</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Term</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Immutable</strong></p></td>
+<td><p>Cannot be changed after creation</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Hashable</strong></p></td>
+<td><p>Can be used as a dictionary key or set member (frozensets are hashable; sets are not)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Set operations</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">|</span></code> union, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> intersection, <code class="docutils literal notranslate"><span class="pre">-</span></code> difference, <code class="docutils literal notranslate"><span class="pre">^</span></code> symmetric difference — all work on frozensets too</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Example</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">required_tools</span>    <span class="o">=</span> <span class="nb">frozenset</span><span class="p">([</span><span class="s2">"hammer"</span><span class="p">,</span> <span class="s2">"saw"</span><span class="p">,</span> <span class="s2">"drill"</span><span class="p">])</span>
+<span class="n">students_toolkit</span>  <span class="o">=</span> <span class="nb">frozenset</span><span class="p">([</span><span class="s2">"hammer"</span><span class="p">,</span> <span class="s2">"saw"</span><span class="p">,</span> <span class="s2">"wrench"</span><span class="p">,</span> <span class="s2">"level"</span><span class="p">])</span>
+
+<span class="n">missing</span> <span class="o">=</span> <span class="n">required_tools</span> <span class="o">-</span> <span class="n">students_toolkit</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Missing tools:"</span><span class="p">,</span> <span class="n">missing</span><span class="p">)</span>   <span class="c1"># frozenset({'drill'})</span>
+</pre></div>
+</div>
+<p><strong>Best Practices</strong></p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">set</span></code> for a collection you plan to <strong>modify</strong> during the program; use <code class="docutils literal notranslate"><span class="pre">frozenset</span></code> for a collection meant to stay <strong>constant</strong> (e.g., valid menu options, allowed file extensions).</p></li>
+<li><p>Reach for a <code class="docutils literal notranslate"><span class="pre">frozenset</span></code> specifically when you need to use a collection as a <strong>dictionary key</strong> or store it <em>inside</em> another set (<code class="docutils literal notranslate"><span class="pre">set</span></code> of <code class="docutils literal notranslate"><span class="pre">set</span></code>s isn’t legal; <code class="docutils literal notranslate"><span class="pre">set</span></code> of <code class="docutils literal notranslate"><span class="pre">frozenset</span></code>s is).</p></li>
+<li><p>Set operations (<code class="docutils literal notranslate"><span class="pre">|</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">^</span></code>) return a <strong>new</strong> frozenset/set — they never modify the originals, which is exactly why frozensets are safe to share across functions.</p></li>
+</ul>
+<p><strong>Sample Program</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">VALID_EXTENSIONS</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">([</span><span class="s2">".py"</span><span class="p">,</span> <span class="s2">".txt"</span><span class="p">,</span> <span class="s2">".csv"</span><span class="p">,</span> <span class="s2">".json"</span><span class="p">])</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">is_valid_file</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">ext</span> <span class="ow">in</span> <span class="n">VALID_EXTENSIONS</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">ext</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">is_valid_file</span><span class="p">(</span><span class="s2">"data.csv"</span><span class="p">))</span>    <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_valid_file</span><span class="p">(</span><span class="s2">"image.png"</span><span class="p">))</span>   <span class="c1"># False</span>
+</pre></div>
+</div>
+<section id="activity-class-roster-overlap">
+<h2>Activity: Class Roster Overlap<a class="headerlink" href="#activity-class-roster-overlap" title="Link to this heading">¶</a></h2>
+<p>Two teachers each have a frozenset of student names in their AP CSP class:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">period_1</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">([</span><span class="s2">"Ava"</span><span class="p">,</span> <span class="s2">"Liam"</span><span class="p">,</span> <span class="s2">"Noah"</span><span class="p">,</span> <span class="s2">"Emma"</span><span class="p">,</span> <span class="s2">"Mia"</span><span class="p">])</span>
+<span class="n">period_3</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">([</span><span class="s2">"Noah"</span><span class="p">,</span> <span class="s2">"Emma"</span><span class="p">,</span> <span class="s2">"Sofia"</span><span class="p">,</span> <span class="s2">"Lucas"</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Write a program that prints:</p>
+<ol class="arabic simple">
+<li><p>Students in <strong>both</strong> periods (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>)</p></li>
+<li><p>Students in <strong>either</strong> period, with no duplicates (<code class="docutils literal notranslate"><span class="pre">|</span></code>)</p></li>
+<li><p>Students <strong>only</strong> in Period 1, not Period 3 (<code class="docutils literal notranslate"><span class="pre">-</span></code>)</p></li>
+<li><p>Students in <strong>exactly one</strong> of the two periods, not both (<code class="docutils literal notranslate"><span class="pre">^</span></code>)</p></li>
+<li><p>Whether the two rosters share <strong>any</strong> student at all (hint: check if the intersection is empty)</p></li>
+</ol>
+<p><em>AP CSP: AAP-3.A, AAP-3.B</em></p>
+<p><strong>Actual Program with Test Samples</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#       Assignment:  Frozensets — Class Roster Overlap</span>
+<span class="c1">#       Description: Compares two class rosters using frozenset operations.</span>
+<span class="c1">#       Language:    Python 3.x</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">compare_rosters</span><span class="p">(</span><span class="n">period_1</span><span class="p">,</span> <span class="n">period_3</span><span class="p">):</span>
+    <span class="n">both</span>        <span class="o">=</span> <span class="n">period_1</span> <span class="o">&amp;</span> <span class="n">period_3</span>
+    <span class="n">either</span>      <span class="o">=</span> <span class="n">period_1</span> <span class="o">|</span> <span class="n">period_3</span>
+    <span class="n">only_p1</span>     <span class="o">=</span> <span class="n">period_1</span> <span class="o">-</span> <span class="n">period_3</span>
+    <span class="n">exactly_one</span> <span class="o">=</span> <span class="n">period_1</span> <span class="o">^</span> <span class="n">period_3</span>
+    <span class="n">overlaps</span>    <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">both</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">both</span><span class="p">,</span> <span class="n">either</span><span class="p">,</span> <span class="n">only_p1</span><span class="p">,</span> <span class="n">exactly_one</span><span class="p">,</span> <span class="n">overlaps</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">period_1</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">([</span><span class="s2">"Ava"</span><span class="p">,</span> <span class="s2">"Liam"</span><span class="p">,</span> <span class="s2">"Noah"</span><span class="p">,</span> <span class="s2">"Emma"</span><span class="p">,</span> <span class="s2">"Mia"</span><span class="p">])</span>
+    <span class="n">period_3</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">([</span><span class="s2">"Noah"</span><span class="p">,</span> <span class="s2">"Emma"</span><span class="p">,</span> <span class="s2">"Sofia"</span><span class="p">,</span> <span class="s2">"Lucas"</span><span class="p">])</span>
+
+    <span class="n">both</span><span class="p">,</span> <span class="n">either</span><span class="p">,</span> <span class="n">only_p1</span><span class="p">,</span> <span class="n">exactly_one</span><span class="p">,</span> <span class="n">overlaps</span> <span class="o">=</span> <span class="n">compare_rosters</span><span class="p">(</span><span class="n">period_1</span><span class="p">,</span> <span class="n">period_3</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"In both periods:"</span><span class="p">,</span> <span class="n">both</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"In either period:"</span><span class="p">,</span> <span class="n">either</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Only in Period 1:"</span><span class="p">,</span> <span class="n">only_p1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"In exactly one period:"</span><span class="p">,</span> <span class="n">exactly_one</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Do the rosters overlap?"</span><span class="p">,</span> <span class="n">overlaps</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Sample Test Cases</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operation</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">period_1</span> <span class="pre">&amp;</span> <span class="pre">period_3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">frozenset({'Noah',</span> <span class="pre">'Emma'})</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">period_1</span> <span class="pre">-</span> <span class="pre">period_3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">frozenset({'Ava',</span> <span class="pre">'Liam',</span> <span class="pre">'Mia'})</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">period_1</span> <span class="pre">^</span> <span class="pre">period_3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">frozenset({'Ava',</span> <span class="pre">'Liam',</span> <span class="pre">'Mia',</span> <span class="pre">'Sofia',</span> <span class="pre">'Lucas'})</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>overlap check</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
 <p><strong>Stacks (LIFO) using Lists</strong></p>
 <p>A <strong>stack</strong> follows <strong>LIFO</strong> — <strong>Last In, First Out</strong>. Think of a stack of plates: you add a new plate to the top, and you also take from the top. The most recently added item is always the first one removed. Python’s <code class="docutils literal notranslate"><span class="pre">undo</span></code> button behavior, browser back-buttons, and function call stacks (like the recursion diagram above!) all work this way.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2153,6 +2852,126 @@ Blue Notebook	Sale Price: $24.99
 <blockquote>
 <div><p><mark><strong>Memory trick:</strong> LIFO = last in, first out (a <strong>stack</strong> of trays). FIFO = first in, first out (a <strong>line</strong> at the store). Both use <code class="docutils literal notranslate"><span class="pre">.append()</span></code> to add, but stacks remove with <code class="docutils literal notranslate"><span class="pre">.pop()</span></code> (from the end) while queues remove with <code class="docutils literal notranslate"><span class="pre">.popleft()</span></code> (from the front).</mark></p>
 </div></blockquote>
+<hr class="docutils" />
+</section>
+<section id="project-library-catalog-analyzer">
+<h2>Project: Library Catalog Analyzer<a class="headerlink" href="#project-library-catalog-analyzer" title="Link to this heading">¶</a></h2>
+<p>Build a program that reads a small library catalog from a text file, analyzes it using built-in functions and lambdas, and uses frozensets to answer genre questions — pulling together <strong>File Operations, Built-In Functions, Lambda Functions, and Frozensets</strong> into one working project.</p>
+<p><strong>Setup — <code class="docutils literal notranslate"><span class="pre">catalog.txt</span></code> format:</strong> one book per line, comma-separated: <code class="docutils literal notranslate"><span class="pre">title,author,year,genre1|genre2</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dune</span><span class="p">,</span><span class="n">Frank</span> <span class="n">Herbert</span><span class="p">,</span><span class="mi">1965</span><span class="p">,</span><span class="n">Sci</span><span class="o">-</span><span class="n">Fi</span><span class="o">|</span><span class="n">Adventure</span>
+<span class="mi">1984</span><span class="p">,</span><span class="n">George</span> <span class="n">Orwell</span><span class="p">,</span><span class="mi">1949</span><span class="p">,</span><span class="n">Sci</span><span class="o">-</span><span class="n">Fi</span><span class="o">|</span><span class="n">Dystopian</span>
+<span class="n">The</span> <span class="n">Hobbit</span><span class="p">,</span><span class="n">J</span><span class="o">.</span><span class="n">R</span><span class="o">.</span><span class="n">R</span><span class="o">.</span> <span class="n">Tolkien</span><span class="p">,</span><span class="mi">1937</span><span class="p">,</span><span class="n">Fantasy</span><span class="o">|</span><span class="n">Adventure</span>
+<span class="n">Klara</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">Sun</span><span class="p">,</span><span class="n">Kazuo</span> <span class="n">Ishiguro</span><span class="p">,</span><span class="mi">2021</span><span class="p">,</span><span class="n">Sci</span><span class="o">-</span><span class="n">Fi</span><span class="o">|</span><span class="n">Drama</span>
+</pre></div>
+</div>
+<p><strong>Requirements:</strong></p>
+<ol class="arabic simple">
+<li><p>Write <code class="docutils literal notranslate"><span class="pre">load_catalog(filename)</span></code> that reads <code class="docutils literal notranslate"><span class="pre">catalog.txt</span></code> line by line (using <code class="docutils literal notranslate"><span class="pre">with</span></code>, wrapped in <code class="docutils literal notranslate"><span class="pre">try/except</span> <span class="pre">FileNotFoundError</span></code>) and returns a <strong>list of dictionaries</strong>, each with keys <code class="docutils literal notranslate"><span class="pre">&quot;title&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;author&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;year&quot;</span></code> (as <code class="docutils literal notranslate"><span class="pre">int</span></code>), and <code class="docutils literal notranslate"><span class="pre">&quot;genres&quot;</span></code> (as a <strong>frozenset</strong> built by splitting on <code class="docutils literal notranslate"><span class="pre">|</span></code>).</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> with a <code class="docutils literal notranslate"><span class="pre">lambda</span></code> key to print the catalog <strong>sorted by year</strong>, oldest first.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">filter()</span></code> with a <code class="docutils literal notranslate"><span class="pre">lambda</span></code> to print only books published <strong>after 2000</strong>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">map()</span></code> with a <code class="docutils literal notranslate"><span class="pre">lambda</span></code> to print a list of just the <strong>titles</strong>, in upper case.</p></li>
+<li><p>Use frozenset operations to find and print:</p>
+<ul class="simple">
+<li><p>Every <strong>unique genre</strong> across the whole catalog (union <code class="docutils literal notranslate"><span class="pre">|</span></code> of all books’ genre frozensets)</p></li>
+<li><p>All books that include <strong>both</strong> “Sci-Fi” and “Adventure” as genres</p></li>
+</ul>
+</li>
+<li><p>Write <code class="docutils literal notranslate"><span class="pre">save_report(filename,</span> <span class="pre">catalog)</span></code> that writes a summary report to <code class="docutils literal notranslate"><span class="pre">report.txt</span></code> — total book count, oldest and newest year, and the full unique-genre list — using a <code class="docutils literal notranslate"><span class="pre">with</span></code> block in <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> mode.</p></li>
+<li><p>Include a full program header block.</p></li>
+</ol>
+<p><strong>Actual Program with Test Samples</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#       Assignment:  Culminating Project — Library Catalog Analyzer</span>
+<span class="c1">#       Description: Reads a book catalog from file, analyzes it with map/filter/sorted/lambda,</span>
+<span class="c1">#                    and uses frozensets to compare genres, then writes a summary report.</span>
+<span class="c1">#       Language:    Python 3.x</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">load_catalog</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">catalog</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+                <span class="n">title</span><span class="p">,</span> <span class="n">author</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">genres</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span>
+                <span class="n">catalog</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                    <span class="s2">"title"</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+                    <span class="s2">"author"</span><span class="p">:</span> <span class="n">author</span><span class="p">,</span>
+                    <span class="s2">"year"</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">year</span><span class="p">),</span>
+                    <span class="s2">"genres"</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">(</span><span class="n">genres</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"|"</span><span class="p">)),</span>
+                <span class="p">})</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> not found — starting with an empty catalog."</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">catalog</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">save_report</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">catalog</span><span class="p">,</span> <span class="n">all_genres</span><span class="p">):</span>
+    <span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="n">book</span><span class="p">[</span><span class="s2">"year"</span><span class="p">]</span> <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">catalog</span><span class="p">]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Total books: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">catalog</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Oldest year: </span><span class="si">{</span><span class="nb">min</span><span class="p">(</span><span class="n">years</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">years</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">'N/A'</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Newest year: </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">years</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">years</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">'N/A'</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unique genres: </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">all_genres</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">catalog</span> <span class="o">=</span> <span class="n">load_catalog</span><span class="p">(</span><span class="s2">"catalog.txt"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">catalog</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="n">by_year</span>   <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">catalog</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">b</span><span class="p">[</span><span class="s2">"year"</span><span class="p">])</span>
+    <span class="n">modern</span>    <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">b</span><span class="p">[</span><span class="s2">"year"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2000</span><span class="p">,</span> <span class="n">catalog</span><span class="p">))</span>
+    <span class="n">titles</span>    <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">b</span><span class="p">[</span><span class="s2">"title"</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">catalog</span><span class="p">))</span>
+
+    <span class="n">all_genres</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">catalog</span><span class="p">:</span>
+        <span class="n">all_genres</span> <span class="o">=</span> <span class="n">all_genres</span> <span class="o">|</span> <span class="n">book</span><span class="p">[</span><span class="s2">"genres"</span><span class="p">]</span>
+
+    <span class="n">scifi_adventure</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">b</span><span class="p">[</span><span class="s2">"title"</span><span class="p">]</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">catalog</span>
+        <span class="k">if</span> <span class="nb">frozenset</span><span class="p">([</span><span class="s2">"Sci-Fi"</span><span class="p">,</span> <span class="s2">"Adventure"</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">[</span><span class="s2">"genres"</span><span class="p">]</span>
+    <span class="p">]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Sorted by year:"</span><span class="p">,</span> <span class="p">[</span><span class="n">b</span><span class="p">[</span><span class="s2">"title"</span><span class="p">]</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">by_year</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Published after 2000:"</span><span class="p">,</span> <span class="p">[</span><span class="n">b</span><span class="p">[</span><span class="s2">"title"</span><span class="p">]</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">modern</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Titles (upper case):"</span><span class="p">,</span> <span class="n">titles</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"All unique genres:"</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">all_genres</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Sci-Fi AND Adventure:"</span><span class="p">,</span> <span class="n">scifi_adventure</span><span class="p">)</span>
+
+    <span class="n">save_report</span><span class="p">(</span><span class="s2">"report.txt"</span><span class="p">,</span> <span class="n">catalog</span><span class="p">,</span> <span class="n">all_genres</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Sample Test Cases</strong> <em>(using the four-book <code class="docutils literal notranslate"><span class="pre">catalog.txt</span></code> shown above)</em></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Check</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sorted by year (oldest first)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">['The</span> <span class="pre">Hobbit',</span> <span class="pre">'1984',</span> <span class="pre">'Dune',</span> <span class="pre">'Klara</span> <span class="pre">and</span> <span class="pre">the</span> <span class="pre">Sun']</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Published after 2000</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">['Klara</span> <span class="pre">and</span> <span class="pre">the</span> <span class="pre">Sun']</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Unique genres (union of all frozensets)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">['Adventure',</span> <span class="pre">'Drama',</span> <span class="pre">'Dystopian',</span> <span class="pre">'Fantasy',</span> <span class="pre">'Sci-Fi']</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Books with <strong>both</strong> Sci-Fi and Adventure</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">['Dune']</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">report.txt</span></code> after running</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Total</span> <span class="pre">books:</span> <span class="pre">4</span></code>, <code class="docutils literal notranslate"><span class="pre">Oldest</span> <span class="pre">year:</span> <span class="pre">1937</span></code>, <code class="docutils literal notranslate"><span class="pre">Newest</span> <span class="pre">year:</span> <span class="pre">2021</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Stretch challenge:</strong> Add a <code class="docutils literal notranslate"><span class="pre">most_common_genre()</span></code> function that uses <code class="docutils literal notranslate"><span class="pre">max()</span></code> with a <code class="docutils literal notranslate"><span class="pre">key=lambda</span></code> to find which single genre appears in the most books — without importing any extra modules.</p>
+<p><em>AP CSP: AAP-3.A, AAP-3.B, AAP-2.G, CRD-2.B, CRD-2.J</em></p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="object-oriented-programming-oop">
@@ -2735,9 +3554,28 @@ Blue Notebook	Sale Price: $24.99
 <td><p><code class="docutils literal notranslate"><span class="pre">try-except</span></code>, ordering branches, propagation</p></td>
 <td><p>Section 4 — Exceptions</p></td>
 </tr>
+<tr class="row-odd"><td><p><em>Supplemental</em></p></td>
+<td><p>Built-in functions (<code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code>, <code class="docutils literal notranslate"><span class="pre">sorted</span></code>, <code class="docutils literal notranslate"><span class="pre">zip</span></code>, <code class="docutils literal notranslate"><span class="pre">any</span></code>, <code class="docutils literal notranslate"><span class="pre">all</span></code>)</p></td>
+<td><p>Section 4 — Built-In Functions</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Supplemental</em></p></td>
+<td><p>Lambda (anonymous) functions</p></td>
+<td><p>Section 4 — Lambda Functions</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Supplemental</em></p></td>
+<td><p>Frozensets (immutable sets)</p></td>
+<td><p>Data Structures Deep Dive — Frozensets</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Supplemental</em></p></td>
+<td><p>File I/O (<code class="docutils literal notranslate"><span class="pre">open</span></code>, <code class="docutils literal notranslate"><span class="pre">with</span></code>, read/write/append modes)</p></td>
+<td><p>File Operations</p></td>
+</tr>
 </tbody>
 </table>
 </div>
+<blockquote>
+<div><p><mark>Rows marked <em>Supplemental</em> aren’t separately numbered objectives in the official PCEP-30-02 exam blocks (file I/O in particular is tested at the next certification level, PCAP) — they’re included here because they’re core Python fluency and directly support the AP CSP CPT.</mark></p>
+</div></blockquote>
 </section>
 <hr class="docutils" />
 <section id="ap-csp-standards-alignment">
@@ -2765,7 +3603,7 @@ Blue Notebook	Sale Price: $24.99
 </tr>
 <tr class="row-odd"><td><p><strong>CRD-2.J</strong></p></td>
 <td><p>Test and debug</p></td>
-<td><p>Debugging, Exception Handling</p></td>
+<td><p>Debugging, Exception Handling, File Operations</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>AAP-2.E</strong></p></td>
 <td><p>Sequencing, selection, iteration</p></td>
@@ -2777,7 +3615,7 @@ Blue Notebook	Sale Price: $24.99
 </tr>
 <tr class="row-even"><td><p><strong>AAP-2.G</strong></p></td>
 <td><p>Abstraction to manage complexity</p></td>
-<td><p>Functions, Modules, OOP</p></td>
+<td><p>Functions, Built-In Functions, Lambda Functions, Modules, OOP</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>AAP-2.K</strong></p></td>
 <td><p>List iteration</p></td>
@@ -2785,11 +3623,11 @@ Blue Notebook	Sale Price: $24.99
 </tr>
 <tr class="row-even"><td><p><strong>AAP-3.A</strong></p></td>
 <td><p>Collect and represent data</p></td>
-<td><p>Data Structures</p></td>
+<td><p>Data Structures, Frozensets, File Operations</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>AAP-3.B</strong></p></td>
 <td><p>Use abstractions to organize data</p></td>
-<td><p>Dictionaries, OOP, Lists</p></td>
+<td><p>Dictionaries, OOP, Lists, Frozensets</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>AAP-3.C</strong></p></td>
 <td><p>Analyze data to draw conclusions</p></td>
@@ -2916,6 +3754,14 @@ Blue Notebook	Sale Price: $24.99
 <li><a class="reference internal" href="#activity-recursion-practice-three-levels">Activity: Recursion Practice — Three Levels</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#built-in-functions">Built-In Functions</a><ul>
+<li><a class="reference internal" href="#activity-grade-report-refactor">Activity: Grade Report Refactor</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lambda-functions">Lambda Functions</a><ul>
+<li><a class="reference internal" href="#activity-sort-it-your-way">Activity: Sort It Your Way</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#modules-and-packages">Modules and Packages</a><ul>
 <li><a class="reference internal" href="#project-random-trivia-quiz-generator">Project: Random Trivia Quiz Generator</a></li>
 </ul>
@@ -2926,7 +3772,15 @@ Blue Notebook	Sale Price: $24.99
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#data-structures-deep-dive">Data Structures Deep Dive</a></li>
+<li><a class="reference internal" href="#file-operations">File Operations</a><ul>
+<li><a class="reference internal" href="#activity-student-roster-file-manager">Activity: Student Roster File Manager</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-structures-deep-dive">Data Structures Deep Dive</a><ul>
+<li><a class="reference internal" href="#activity-class-roster-overlap">Activity: Class Roster Overlap</a></li>
+<li><a class="reference internal" href="#project-library-catalog-analyzer">Project: Library Catalog Analyzer</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#object-oriented-programming-oop">Object-Oriented Programming (OOP)</a><ul>
 <li><a class="reference internal" href="#core-oop-concepts">Core OOP Concepts</a></li>
 <li><a class="reference internal" href="#building-a-class">Building a Class</a></li>
