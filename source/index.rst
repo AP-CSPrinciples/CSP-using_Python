@@ -16,7 +16,7 @@ Contents:
    :caption: Resources:
 
    Student_Resources <./Resources/student_resources.md>
-   PBA <./Resources/PBA.md>
+   Announcements <./Resources/Class_Announcements.md>
    Performance_Task <./Resources/Performance_Task.md>
 
 
