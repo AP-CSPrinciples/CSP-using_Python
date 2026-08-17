@@ -9,5 +9,5 @@ August 17, 2026
 6. Variables and Data Types
 7. Operators
 8. Compound Boolean Experssions
-9. **Exit Ticket**
+9. **Exit Ticket** - handout
 
