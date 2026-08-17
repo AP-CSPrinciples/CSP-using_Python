@@ -15,8 +15,8 @@ Contents:
    :maxdepth: 2
    :caption: Resources:
 
-   Student_Resources <./Resources/student_resources.md>
-   Announcements <./Resources/Class_Announcements.md>
+   Announcements <./Resources/Class_Announcements.md>   
+   Student_Resources <./Resources/student_resources.md> 
    Performance_Task <./Resources/Performance_Task.md>
 
 
