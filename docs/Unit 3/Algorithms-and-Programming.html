@@ -214,7 +214,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../Python/Python_Basics.html#ap-csp-performance-task-preparation">AP CSP Performance Task Preparation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Python/Python_Basics.html#final-project-options">Final Project Options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Python/Python_Basics.html#certification-alignment-reference">Certification Alignment Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Python/Python_Basics.html#id1">Python Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Python/PyGame.html">PyGame</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Python/Python_Turtle.html">Python_Turtle</a></li>
 </ul>
@@ -882,7 +881,7 @@ Students select a classic algorithm (e.g., sorting, searching, pathfinding) and 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># to track the number of comparisons</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">merge_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Merge Sort, Complexity: O(n log(n)) &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">""" Merge Sort, Complexity: O(n log(n)) """</span>
     <span class="k">global</span> <span class="n">counter</span>
     
     <span class="c1"># our recursive base case</span>
@@ -898,7 +897,7 @@ Students select a classic algorithm (e.g., sorting, searching, pathfinding) and 
     <span class="k">return</span> <span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">arr</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">merged</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Merge helper, Complexity: O(n) &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">""" Merge helper, Complexity: O(n) """</span>
 
     <span class="n">left_cursor</span><span class="p">,</span> <span class="n">right_cursor</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
     <span class="k">while</span> <span class="n">left_cursor</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">left</span><span class="p">)</span> <span class="ow">and</span> <span class="n">right_cursor</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">right</span><span class="p">):</span>
@@ -909,10 +908,10 @@ Students select a classic algorithm (e.g., sorting, searching, pathfinding) and 
         <span class="k">else</span><span class="p">:</span>
             <span class="n">merged</span><span class="p">[</span><span class="n">left_cursor</span> <span class="o">+</span> <span class="n">right_cursor</span><span class="p">]</span> <span class="o">=</span> <span class="n">right</span><span class="p">[</span><span class="n">right_cursor</span><span class="p">]</span>
             <span class="n">right_cursor</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="c1"># add the left overs if there&#39;s any left to the result</span>
+    <span class="c1"># add the left overs if there's any left to the result</span>
     <span class="k">for</span> <span class="n">left_cursor</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">left_cursor</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">left</span><span class="p">)):</span>
         <span class="n">merged</span><span class="p">[</span><span class="n">left_cursor</span> <span class="o">+</span> <span class="n">right_cursor</span><span class="p">]</span> <span class="o">=</span> <span class="n">left</span><span class="p">[</span><span class="n">left_cursor</span><span class="p">]</span>
-    <span class="c1"># add the left overs if there&#39;s any left to the result</span>
+    <span class="c1"># add the left overs if there's any left to the result</span>
     <span class="k">for</span> <span class="n">right_cursor</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">right_cursor</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">right</span><span class="p">)):</span>
         <span class="n">merged</span><span class="p">[</span><span class="n">left_cursor</span> <span class="o">+</span> <span class="n">right_cursor</span><span class="p">]</span> <span class="o">=</span> <span class="n">right</span><span class="p">[</span><span class="n">right_cursor</span><span class="p">]</span>
 
@@ -923,11 +922,11 @@ Students select a classic algorithm (e.g., sorting, searching, pathfinding) and 
     <span class="k">global</span> <span class="n">counter</span>
     <span class="k">return</span> <span class="n">counter</span>
   
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]</span>
     <span class="n">array</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of comparisons:&quot;</span><span class="p">,</span> <span class="n">get_counter</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Number of comparisons:"</span><span class="p">,</span> <span class="n">get_counter</span><span class="p">())</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -961,11 +960,11 @@ Students select a classic algorithm (e.g., sorting, searching, pathfinding) and 
     <span class="k">global</span> <span class="n">counter</span>
     <span class="k">return</span> <span class="n">counter</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]</span>
     <span class="n">insertionsort</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of comparisons:&quot;</span><span class="p">,</span> <span class="n">get_counter</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Number of comparisons:"</span><span class="p">,</span> <span class="n">get_counter</span><span class="p">())</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -979,7 +978,7 @@ Students select a classic algorithm (e.g., sorting, searching, pathfinding) and 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">partition</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">counter</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; quicksort partitioning, using end &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">""" quicksort partitioning, using end """</span>
     <span class="n">pivot</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">end</span><span class="p">]</span>
     <span class="n">L</span> <span class="o">=</span> <span class="n">start</span>
     <span class="n">R</span> <span class="o">=</span> <span class="n">end</span>
@@ -997,7 +996,7 @@ Students select a classic algorithm (e.g., sorting, searching, pathfinding) and 
     <span class="k">return</span> <span class="n">R</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_quicksort</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Recursive quicksort function &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">""" Recursive quicksort function """</span>
     <span class="k">global</span> <span class="n">counter</span>
     <span class="k">if</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">:</span>
         <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -1012,11 +1011,11 @@ Students select a classic algorithm (e.g., sorting, searching, pathfinding) and 
     <span class="k">global</span> <span class="n">counter</span>
     <span class="k">return</span> <span class="n">counter</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
     <span class="n">quicksort</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of comparisons:&quot;</span><span class="p">,</span> <span class="n">get_counter</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Number of comparisons:"</span><span class="p">,</span> <span class="n">get_counter</span><span class="p">())</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -1043,11 +1042,11 @@ Students select a classic algorithm (e.g., sorting, searching, pathfinding) and 
     <span class="k">global</span> <span class="n">counter</span>
     <span class="k">return</span> <span class="n">counter</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]</span>
     <span class="n">array</span> <span class="o">=</span> <span class="n">bubblesort</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of comparisons:&quot;</span><span class="p">,</span> <span class="n">get_counter</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Number of comparisons:"</span><span class="p">,</span> <span class="n">get_counter</span><span class="p">())</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -1100,8 +1099,8 @@ Each step includes <strong>example code</strong> and <strong>key vocabulary</str
 <p>Create the <strong>root window</strong> and configure its properties.</p>
 <p>📌 <em>Vocabulary:</em> root window, application window, geometry</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">window</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
-<span class="n">window</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Simple Calculator&quot;</span><span class="p">)</span>
-<span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;300x250&quot;</span><span class="p">)</span>
+<span class="n">window</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Simple Calculator"</span><span class="p">)</span>
+<span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">"300x250"</span><span class="p">)</span>
 <span class="n">window</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1212,22 +1211,22 @@ As a general guide, if a user can understand how to use it <strong>without instr
 <p><strong>Step 5:</strong> Add GUI Components (Widgets)</p>
 <p>Create the visual elements the user interacts with.</p>
 <p>📌 <em>Vocabulary:</em> widget, component, control</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">label_title</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Add Two Numbers&quot;</span><span class="p">)</span>
-<span class="n">label_num1</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Number 1:&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">label_title</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Add Two Numbers"</span><span class="p">)</span>
+<span class="n">label_num1</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Number 1:"</span><span class="p">)</span>
 <span class="n">entry_num1</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
 
-<span class="n">label_num2</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Number 2:&quot;</span><span class="p">)</span>
+<span class="n">label_num2</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Number 2:"</span><span class="p">)</span>
 <span class="n">entry_num2</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
 
-<span class="n">calculate_button</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Calculate&quot;</span><span class="p">)</span>
-<span class="n">result_label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Result:&quot;</span><span class="p">)</span>
+<span class="n">calculate_button</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Calculate"</span><span class="p">)</span>
+<span class="n">result_label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Result:"</span><span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
 <p><strong>Step 6:</strong> Configure Widget Properties</p>
 <p>Adjust text, size, spacing, and appearance.</p>
 <p>📌 <em>Vocabulary:</em> properties, attributes, configuration</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">label_title</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">label_title</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">"Arial"</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">calculate_button</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1239,9 +1238,9 @@ As a general guide, if a user can understand how to use it <strong>without instr
     <span class="k">try</span><span class="p">:</span>
         <span class="n">num1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">entry_num1</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
         <span class="n">num2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">entry_num2</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-        <span class="n">result_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Result: </span><span class="si">{</span><span class="n">num1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">result_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Result: </span><span class="si">{</span><span class="n">num1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num2</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-        <span class="n">messagebox</span><span class="o">.</span><span class="n">showerror</span><span class="p">(</span><span class="s2">&quot;Error&quot;</span><span class="p">,</span> <span class="s2">&quot;Enter valid numbers&quot;</span><span class="p">)</span>
+        <span class="n">messagebox</span><span class="o">.</span><span class="n">showerror</span><span class="p">(</span><span class="s2">"Error"</span><span class="p">,</span> <span class="s2">"Enter valid numbers"</span><span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -1270,7 +1269,7 @@ As a general guide, if a user can understand how to use it <strong>without instr
 <p><strong>Step 10:</strong> Display Output to the User</p>
 <p>Update labels or show message boxes.</p>
 <p>📌 <em>Vocabulary:</em> output display, user feedback</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Result: 10&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"Result: 10"</span><span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />

@@ -214,7 +214,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../Python/Python_Basics.html#ap-csp-performance-task-preparation">AP CSP Performance Task Preparation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Python/Python_Basics.html#final-project-options">Final Project Options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Python/Python_Basics.html#certification-alignment-reference">Certification Alignment Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Python/Python_Basics.html#id1">Python Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Python/PyGame.html">PyGame</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Python/Python_Turtle.html">Python_Turtle</a></li>
 </ul>
@@ -1112,7 +1111,7 @@
 <hr class="docutils" />
 <p><strong>Step 5: Convert the ASCII number to binary (8 digits)</strong></p>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">format()</span></code> function to change the number into <strong>8-digit binary</strong>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="n">binary_code</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="n">ascii_number</span><span class="p">,</span> <span class="s1">&#39;08b&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="n">binary_code</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="n">ascii_number</span><span class="p">,</span> <span class="s1">'08b'</span><span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -1124,7 +1123,7 @@
 <hr class="docutils" />
 <p><strong>Step 7: Join the binary codes into one string</strong></p>
 <p>Once the loop is done, combine everything into one string, with a <strong>space between each binary number</strong>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">final_binary</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">binary_list</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">final_binary</span> <span class="o">=</span> <span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">binary_list</span><span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -1136,7 +1135,7 @@
 <hr class="docutils" />
 <p><strong>Step 9: Call the function and show the result</strong></p>
 <p>Try it out with a message like <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code> and print the result.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">text_to_binary</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">text_to_binary</span><span class="p">(</span><span class="s2">"Hello, World!"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1185,9 +1184,9 @@
 <hr class="docutils" />
 <p><strong>Step 2: Single Character Conversion</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert a single 8-bit binary number to ASCII</span>
-<span class="n">binary_num</span> <span class="o">=</span> <span class="s2">&quot;01000001&quot;</span>   <span class="c1"># Binary for &#39;A&#39;</span>
+<span class="n">binary_num</span> <span class="o">=</span> <span class="s2">"01000001"</span>   <span class="c1"># Binary for 'A'</span>
 <span class="n">decimal_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">binary_num</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Convert to decimal (65)</span>
-<span class="n">ascii_char</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">decimal_num</span><span class="p">)</span>     <span class="c1"># Convert to character (&#39;A&#39;)</span>
+<span class="n">ascii_char</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">decimal_num</span><span class="p">)</span>     <span class="c1"># Convert to character ('A')</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">ascii_char</span><span class="p">)</span>
 </pre></div>
@@ -1196,13 +1195,13 @@
 <hr class="docutils" />
 <p><strong>Step 3: Multiple Binary Characters</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert a string of binary numbers separated by spaces</span>
-<span class="n">binary_string</span> <span class="o">=</span> <span class="s2">&quot;01001000 01001001&quot;</span>  <span class="c1"># Binary for &quot;HI&quot;</span>
+<span class="n">binary_string</span> <span class="o">=</span> <span class="s2">"01001000 01001001"</span>  <span class="c1"># Binary for "HI"</span>
 
 <span class="c1"># Split the string into a list of binary numbers</span>
 <span class="n">binaries</span> <span class="o">=</span> <span class="n">binary_string</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
 <span class="c1"># Convert each binary number to ASCII</span>
-<span class="n">ascii_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">binaries</span><span class="p">])</span>
+<span class="n">ascii_text</span> <span class="o">=</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">binaries</span><span class="p">])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">ascii_text</span><span class="p">)</span>
 </pre></div>
@@ -1288,7 +1287,7 @@ Ask for the broken version (e.g., missing <code class="docutils literal notransl
 </table>
 </div>
 <p><strong>Example 1:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="mi">111</span>    <span class="o">&lt;-</span> <span class="n">Carry</span> <span class="n">a</span> <span class="s1">&#39;1&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="mi">111</span>    <span class="o">&lt;-</span> <span class="n">Carry</span> <span class="n">a</span> <span class="s1">'1'</span>
    <span class="mi">1011</span>   <span class="p">(</span><span class="n">decimal</span> <span class="mi">11</span><span class="p">)</span>
 <span class="o">+</span>  <span class="mi">1101</span>   <span class="p">(</span><span class="n">decimal</span> <span class="mi">13</span><span class="p">)</span>
 <span class="o">---------</span>
@@ -1333,8 +1332,8 @@ Ask for the broken version (e.g., missing <code class="docutils literal notransl
 <p><strong>Step 3: Binary Math in Python</strong></p>
 <p>Python makes this easy by using <code class="docutils literal notranslate"><span class="pre">int(string,</span> <span class="pre">2)</span></code> to convert binary to decimal, then <code class="docutils literal notranslate"><span class="pre">bin()</span></code> to convert back.</p>
 <p><strong>Addition Example</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;1011&quot;</span>   <span class="c1"># binary for 11</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;1101&quot;</span>   <span class="c1"># binary for 13</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">"1011"</span>   <span class="c1"># binary for 11</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">"1101"</span>   <span class="c1"># binary for 13</span>
 
 <span class="c1"># Convert to decimal</span>
 <span class="n">a_dec</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -1343,12 +1342,12 @@ Ask for the broken version (e.g., missing <code class="docutils literal notransl
 <span class="c1"># Add and convert back to binary</span>
 <span class="n">result</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="n">a_dec</span> <span class="o">+</span> <span class="n">b_dec</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Addition result:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>  <span class="c1"># Output: 11000</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Addition result:"</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>  <span class="c1"># Output: 11000</span>
 </pre></div>
 </div>
 <p><strong>Subtraction Example</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;10101&quot;</span>  <span class="c1"># binary for 21</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;00111&quot;</span>  <span class="c1"># binary for 7</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">"10101"</span>  <span class="c1"># binary for 21</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">"00111"</span>  <span class="c1"># binary for 7</span>
 
 <span class="c1"># Convert to decimal</span>
 <span class="n">a_dec</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -1357,7 +1356,7 @@ Ask for the broken version (e.g., missing <code class="docutils literal notransl
 <span class="c1"># Subtract and convert back to binary</span>
 <span class="n">result</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="n">a_dec</span> <span class="o">-</span> <span class="n">b_dec</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Subtraction result:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>  <span class="c1"># Output: 1110</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Subtraction result:"</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>  <span class="c1"># Output: 1110</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -2397,13 +2396,13 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 
     <span class="n">total_letters</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">frequency</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Letter Frequencies:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">" Letter Frequencies:</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">frequency</span><span class="p">):</span>
         <span class="n">percent</span> <span class="o">=</span> <span class="p">(</span><span class="n">frequency</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span> <span class="o">/</span> <span class="n">total_letters</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">letter</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">frequency</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span><span class="si">}</span><span class="s2"> times (</span><span class="si">{</span><span class="n">percent</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">letter</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">frequency</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span><span class="si">}</span><span class="s2"> times (</span><span class="si">{</span><span class="n">percent</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%)"</span><span class="p">)</span>
 
 <span class="c1"># Example usage</span>
-<span class="n">input_text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a message to analyze: &quot;</span><span class="p">)</span>
+<span class="n">input_text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a message to analyze: "</span><span class="p">)</span>
 <span class="n">letter_frequency</span><span class="p">(</span><span class="n">input_text</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2418,7 +2417,7 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <p><strong>Python Code: Caesar Cipher Program</strong></p>
 <p><em>Copy and place this in a working Python environment.</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">caesar_encrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">shift</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">""</span>
     <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
             <span class="n">offset</span> <span class="o">=</span> <span class="mi">65</span> <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="k">else</span> <span class="mi">97</span>
@@ -2432,24 +2431,24 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 
 <span class="k">def</span><span class="w"> </span><span class="nf">brute_force_caesar</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">26</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">caesar_decrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Key </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">caesar_decrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># Example usage:</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Encrypt&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Decrypt&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. Brute Force&quot;</span><span class="p">)</span>
-<span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your choice: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"1. Encrypt"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"2. Decrypt"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"3. Brute Force"</span><span class="p">)</span>
+<span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your choice: "</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
-    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter message to encrypt: &quot;</span><span class="p">)</span>
-    <span class="n">key</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter shift key (1-25): &quot;</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encrypted:&quot;</span><span class="p">,</span> <span class="n">caesar_encrypt</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
-<span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
-    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter message to decrypt: &quot;</span><span class="p">)</span>
-    <span class="n">key</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter shift key (1-25): &quot;</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Decrypted:&quot;</span><span class="p">,</span> <span class="n">caesar_decrypt</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
-<span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
-    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter message to brute-force: &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"1"</span><span class="p">:</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter message to encrypt: "</span><span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter shift key (1-25): "</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Encrypted:"</span><span class="p">,</span> <span class="n">caesar_encrypt</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+<span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"2"</span><span class="p">:</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter message to decrypt: "</span><span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter shift key (1-25): "</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Decrypted:"</span><span class="p">,</span> <span class="n">caesar_decrypt</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+<span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"3"</span><span class="p">:</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter message to brute-force: "</span><span class="p">)</span>
     <span class="n">brute_force_caesar</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2784,7 +2783,7 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <p><strong>Encrypted Message</strong>: <code class="docutils literal notranslate"><span class="pre">KXRKGIKXBKAL</span></code></p>
 <hr class="docutils" />
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vigenere_encrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">""</span>
     <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
     <span class="n">key_index</span> <span class="o">=</span> <span class="mi">0</span>
 
@@ -2799,7 +2798,7 @@ How does it affect your computer.  Click on the link to learn more about <a clas
     <span class="k">return</span> <span class="n">result</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">vigenere_decrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">""</span>
     <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
     <span class="n">key_index</span> <span class="o">=</span> <span class="mi">0</span>
 
@@ -2814,14 +2813,14 @@ How does it affect your computer.  Click on the link to learn more about <a clas
     <span class="k">return</span> <span class="n">result</span>
 
 <span class="c1"># Example use</span>
-<span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your message: &quot;</span><span class="p">)</span>
-<span class="n">key</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the keyword: &quot;</span><span class="p">)</span>
-<span class="n">mode</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Encrypt (e) or Decrypt (d)? &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your message: "</span><span class="p">)</span>
+<span class="n">key</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the keyword: "</span><span class="p">)</span>
+<span class="n">mode</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Encrypt (e) or Decrypt (d)? "</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 
-<span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encrypted:&quot;</span><span class="p">,</span> <span class="n">vigenere_encrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">'e'</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Encrypted:"</span><span class="p">,</span> <span class="n">vigenere_encrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Decrypted:&quot;</span><span class="p">,</span> <span class="n">vigenere_decrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Decrypted:"</span><span class="p">,</span> <span class="n">vigenere_decrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
@@ -2923,17 +2922,17 @@ $$</p>
     <span class="k">return</span> <span class="kc">True</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">generate_keys</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Choose two prime numbers (p and q) such that their product n = p * q is greater than 255.&quot;</span><span class="p">)</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter prime p (e.g. 61): &quot;</span><span class="p">))</span>
-    <span class="n">q</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter prime q (e.g. 53): &quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> Choose two prime numbers (p and q) such that their product n = p * q is greater than 255."</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter prime p (e.g. 61): "</span><span class="p">))</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter prime q (e.g. 53): "</span><span class="p">))</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="ow">and</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">q</span><span class="p">)):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: Both numbers must be prime.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Error: Both numbers must be prime."</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
 
     <span class="n">n</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">q</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: n must be greater than 255 to support all ASCII characters.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Error: n must be greater than 255 to support all ASCII characters."</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
 
     <span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
@@ -2944,9 +2943,9 @@ $$</p>
 
     <span class="n">d</span> <span class="o">=</span> <span class="n">modinv</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Private Key: (</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Modulus: (</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Public Key: </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> Private Key: (</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">" Modulus: (</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">" Public Key: </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">e</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span>
 
 
@@ -2955,48 +2954,48 @@ $$</p>
     <span class="k">return</span> <span class="n">encrypted</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">decrypt</span><span class="p">(</span><span class="n">cipher</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="n">decrypted</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">cipher</span><span class="p">])</span>
+    <span class="n">decrypted</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">cipher</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">decrypted</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RSA Cryptosystem&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"RSA Cryptosystem"</span><span class="p">)</span>
 
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">MENU:&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Generate Keys&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Encrypt Message&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. Decrypt Message&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4. Exit&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">MENU:"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"1. Generate Keys"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"2. Encrypt Message"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"3. Decrypt Message"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"4. Exit"</span><span class="p">)</span>
 
-        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose an option (1-4): &quot;</span><span class="p">)</span>
+        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Choose an option (1-4): "</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"1"</span><span class="p">:</span>
             <span class="n">e</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">generate_keys</span><span class="p">()</span>
 
-        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
-            <span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your message: &quot;</span><span class="p">)</span>
-            <span class="n">e</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter recipient&#39;s private key: &quot;</span><span class="p">))</span>
-            <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter recipient&#39;s modulus key: &quot;</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"2"</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your message: "</span><span class="p">)</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter recipient's private key: "</span><span class="p">))</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter recipient's modulus key: "</span><span class="p">))</span>
             <span class="n">encrypted_msg</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encrypted message:&quot;</span><span class="p">,</span> <span class="n">encrypted_msg</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Encrypted message:"</span><span class="p">,</span> <span class="n">encrypted_msg</span><span class="p">)</span>
 
-        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"3"</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">cipher_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Paste the encrypted message list (e.g. [123, 456]): &quot;</span><span class="p">)</span>
+                <span class="n">cipher_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Paste the encrypted message list (e.g. [123, 456]): "</span><span class="p">)</span>
                 <span class="n">cipher</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">cipher_input</span><span class="p">)</span>
-                <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your public key: &quot;</span><span class="p">))</span>
-                <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your modulus: &quot;</span><span class="p">))</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your public key: "</span><span class="p">))</span>
+                <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your modulus: "</span><span class="p">))</span>
                 <span class="n">decrypted_msg</span> <span class="o">=</span> <span class="n">decrypt</span><span class="p">(</span><span class="n">cipher</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Decrypted message:&quot;</span><span class="p">,</span> <span class="n">decrypted_msg</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Decrypted message:"</span><span class="p">,</span> <span class="n">decrypted_msg</span><span class="p">)</span>
             <span class="k">except</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input. Try again.&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Invalid input. Try again."</span><span class="p">)</span>
 
-        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exiting RSA program. Goodbye!&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"4"</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Exiting RSA program. Goodbye!"</span><span class="p">)</span>
             <span class="k">break</span>
 
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid option. Please choose 1, 2, 3, or 4.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Invalid option. Please choose 1, 2, 3, or 4."</span><span class="p">)</span>
 
 
 <span class="n">main</span><span class="p">()</span>
@@ -3060,7 +3059,7 @@ $$</p>
 <span class="kn">import</span><span class="w"> </span><span class="nn">string</span>
 
 <span class="c1"># Simulated dictionary of 10,000 words (for example purposes)</span>
-<span class="n">word_list</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;word</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
+<span class="n">word_list</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">"word</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">brute_force_simulation</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">candidates</span><span class="p">):</span>
     <span class="n">attempts</span> <span class="o">=</span> <span class="mi">0</span>
@@ -3076,8 +3075,8 @@ $$</p>
     <span class="n">words</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">word_list</span><span class="p">,</span> <span class="n">word_count</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">add_digit</span><span class="p">:</span>
         <span class="n">digit</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
-        <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span> <span class="o">+</span> <span class="n">digit</span>
-    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span> <span class="o">+</span> <span class="n">digit</span>
+    <span class="k">return</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">create_candidates</span><span class="p">(</span><span class="n">word_count</span><span class="p">,</span> <span class="n">add_digit</span><span class="p">):</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">product</span>
@@ -3104,17 +3103,17 @@ $$</p>
     <span class="k">return</span> <span class="n">avg_time</span><span class="p">,</span> <span class="n">avg_attempts</span>
 
 <span class="c1"># Run simulations</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running brute-force simulation...&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Running brute-force simulation..."</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">wc</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">digit</span> <span class="ow">in</span> <span class="p">[</span>
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;One-word&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Two-word&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Two-word with digit&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"One-word"</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"Two-word"</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"Two-word with digit"</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 <span class="p">]:</span>
     <span class="n">t</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">average_time</span><span class="p">(</span><span class="n">wc</span><span class="p">,</span> <span class="n">digit</span><span class="p">,</span> <span class="n">trials</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">desc</span><span class="si">}</span><span class="s2"> password:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Average Time: </span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Average Attempts: </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">desc</span><span class="si">}</span><span class="s2"> password:"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Average Time: </span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Average Attempts: </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -3318,18 +3317,18 @@ Biometric data (like fingerprints) can’t be “changed” if compromised, thou
 </div></blockquote>
 <hr class="docutils" />
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to the age checker!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Welcome to the age checker!"</span><span class="p">)</span>
 
-<span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your age: &quot;</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your age: "</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="s2">&quot;18&quot;</span> <span class="ow">or</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="s2">&quot;0&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are an adult or a time traveler.&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="s2">&quot;18&quot;</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="s2">&quot;0&quot;</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">==</span> <span class="s2">&quot;17&quot;</span> <span class="ow">or</span> <span class="n">age</span> <span class="o">==</span> <span class="s2">&quot;16&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are almost an adult but also maybe a kid.&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="ow">not</span> <span class="n">age</span> <span class="o">==</span> <span class="s2">&quot;15&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">age</span> <span class="o">==</span> <span class="s2">&quot;14&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">age</span> <span class="o">==</span> <span class="s2">&quot;13&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are a teenager?&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="s2">"18"</span> <span class="ow">or</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="s2">"0"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"You are an adult or a time traveler."</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="s2">"18"</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="s2">"0"</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">==</span> <span class="s2">"17"</span> <span class="ow">or</span> <span class="n">age</span> <span class="o">==</span> <span class="s2">"16"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"You are almost an adult but also maybe a kid."</span><span class="p">)</span>
+<span class="k">elif</span> <span class="ow">not</span> <span class="n">age</span> <span class="o">==</span> <span class="s2">"15"</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">age</span> <span class="o">==</span> <span class="s2">"14"</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">age</span> <span class="o">==</span> <span class="s2">"13"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"You are a teenager?"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input or something went wrong maybe.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Invalid input or something went wrong maybe."</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>There are 5 things that need to be corrected within this program.  Can you identify all 5?</strong></p>
@@ -3349,24 +3348,24 @@ Biometric data (like fingerprints) can’t be “changed” if compromised, thou
 <li><p>Simplify and reorder checks (e.g., negative age should be caught early).</p></li>
 <li><p>Remove conflicting conditions and clarify outputs.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to the age checker!&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Welcome to the age checker!"</span><span class="p">)</span>
 
-<span class="n">age_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your age: &quot;</span><span class="p">)</span>
+<span class="n">age_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your age: "</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">age_input</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
     <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age_input</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input. Please enter a number.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Invalid input. Please enter a number."</span><span class="p">)</span>
     <span class="n">age</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>   <span class="c1"># forces an error path later</span>
 
 <span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You entered an impossible age.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"You entered an impossible age."</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">13</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are a child.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"You are a child."</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are a teenager.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"You are a teenager."</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are an adult.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"You are an adult."</span><span class="p">)</span>
 </pre></div>
 </div>
 </details>
@@ -3389,44 +3388,44 @@ Biometric data (like fingerprints) can’t be “changed” if compromised, thou
 </li>
 </ul>
 <p><strong>1 — Grade Checker</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Grade Checker&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Grade Checker"</span><span class="p">)</span>
 
-<span class="n">grade</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your test score: &quot;</span><span class="p">)</span>
+<span class="n">grade</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your test score: "</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="s2">&quot;90&quot;</span> <span class="ow">or</span> <span class="n">grade</span> <span class="o">&lt;</span> <span class="s2">&quot;0&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A or maybe error??&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">grade</span> <span class="o">&lt;=</span> <span class="s2">&quot;90&quot;</span> <span class="ow">and</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="s2">&quot;80&quot;</span> <span class="ow">or</span> <span class="n">grade</span> <span class="o">==</span> <span class="s2">&quot;85&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You got B but maybe A??&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">grade</span> <span class="o">&lt;</span> <span class="s2">&quot;80&quot;</span> <span class="ow">and</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="s2">&quot;70&quot;</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">grade</span> <span class="o">==</span> <span class="s2">&quot;60&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C?&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="s2">"90"</span> <span class="ow">or</span> <span class="n">grade</span> <span class="o">&lt;</span> <span class="s2">"0"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"A or maybe error??"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">grade</span> <span class="o">&lt;=</span> <span class="s2">"90"</span> <span class="ow">and</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="s2">"80"</span> <span class="ow">or</span> <span class="n">grade</span> <span class="o">==</span> <span class="s2">"85"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"You got B but maybe A??"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">grade</span> <span class="o">&lt;</span> <span class="s2">"80"</span> <span class="ow">and</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="s2">"70"</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">grade</span> <span class="o">==</span> <span class="s2">"60"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"C?"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I don&#39;t know what your grade is sorry&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"I don't know what your grade is sorry"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>2 — Temperature Warning</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Temperature Warning System&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Temperature Warning System"</span><span class="p">)</span>
 
-<span class="n">temp</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter temperature: &quot;</span><span class="p">)</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter temperature: "</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">temp</span> <span class="o">&lt;</span> <span class="s2">&quot;0&quot;</span> <span class="ow">and</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="s2">&quot;100&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Too cold or too hot??&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">temp</span> <span class="o">&gt;=</span> <span class="s2">&quot;0&quot;</span> <span class="ow">or</span> <span class="n">temp</span> <span class="o">&lt;=</span> <span class="s2">&quot;100&quot;</span> <span class="ow">and</span> <span class="n">temp</span> <span class="o">==</span> <span class="s2">&quot;50&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Perfect maybe?&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">temp</span> <span class="o">&lt;</span> <span class="s2">"0"</span> <span class="ow">and</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="s2">"100"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Too cold or too hot??"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">temp</span> <span class="o">&gt;=</span> <span class="s2">"0"</span> <span class="ow">or</span> <span class="n">temp</span> <span class="o">&lt;=</span> <span class="s2">"100"</span> <span class="ow">and</span> <span class="n">temp</span> <span class="o">==</span> <span class="s2">"50"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Perfect maybe?"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Weather broken I guess&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Weather broken I guess"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>3 — Dice Game Result</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dice Game Result Checker&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Dice Game Result Checker"</span><span class="p">)</span>
 
-<span class="n">roll</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter dice roll (1-6): &quot;</span><span class="p">)</span>
+<span class="n">roll</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter dice roll (1-6): "</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">roll</span> <span class="o">==</span> <span class="s2">&quot;6&quot;</span> <span class="ow">or</span> <span class="n">roll</span> <span class="o">&lt;</span> <span class="s2">&quot;1&quot;</span> <span class="ow">and</span> <span class="n">roll</span> <span class="o">&gt;</span> <span class="s2">&quot;6&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win big!&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">roll</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span> <span class="ow">and</span> <span class="n">roll</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span> <span class="ow">or</span> <span class="n">roll</span> <span class="o">==</span> <span class="s2">&quot;5&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win something small.&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">roll</span> <span class="o">==</span> <span class="s2">"6"</span> <span class="ow">or</span> <span class="n">roll</span> <span class="o">&lt;</span> <span class="s2">"1"</span> <span class="ow">and</span> <span class="n">roll</span> <span class="o">&gt;</span> <span class="s2">"6"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"You win big!"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">roll</span> <span class="o">==</span> <span class="s2">"3"</span> <span class="ow">and</span> <span class="n">roll</span> <span class="o">==</span> <span class="s2">"4"</span> <span class="ow">or</span> <span class="n">roll</span> <span class="o">==</span> <span class="s2">"5"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"You win something small."</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lose maybe?? idk&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Lose maybe?? idk"</span><span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
