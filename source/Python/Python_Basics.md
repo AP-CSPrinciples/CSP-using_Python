@@ -1,5 +1,5 @@
 # Python Basics
-```Revised June 2026```
+```Revised August 2026```
 
 Python is an open-source, high-level programming language that is widely considered one of the best first languages to learn. It supports multiple programming paradigms — including **procedural**, **functional**, and **object-oriented programming (OOP)** — and is backed by an enormous standard library and community. As of 2024, it is one of the most in-demand languages in the job market, used in web development, data science, artificial intelligence, IoT, and cybersecurity.
 
@@ -1209,6 +1209,243 @@ Recursion clicks once you can identify two things in *any* recursive problem: th
 
 ---
 
+## Built-In Functions
+
+`📋 AP CSP: AAP-2.G, AAP-3.B` — Use existing abstractions to manage complexity.
+`🔖 PCEP-adjacent` — not a separately numbered PCEP-30-02 objective, but strengthens Section 4 (Functions) fluency and shows up throughout the certification exam's code-reading questions.
+
+**Explanation**
+
+A **built-in function** is a function Python provides for you automatically — no `import`, no `def`, it's just there the moment Python starts. You've already been using several (`print()`, `len()`, `int()`, `range()`) without thinking of them as a category. This section introduces the built-ins that let you *transform*, *filter*, and *summarize* data in a single line, instead of writing a `for` loop every time.
+
+**When Would You Use This?**
+
+Any time you need to apply the same operation to every item in a collection (`map`), keep only the items that meet a condition (`filter`), combine every item into one result (`reduce`), pair up two lists (`zip`), or ask a yes/no question about an entire collection (`any`, `all`) — reach for a built-in before you reach for a loop. They're faster to write, harder to get wrong, and instantly readable to anyone who knows Python.
+
+**Key Built-In Functions**
+
+| Function | What It Does | Example | Result |
+|---|---|---|---|
+| `map(func, iterable)` | Applies `func` to every item | `list(map(str.upper, ["hi","bye"]))` | `['HI', 'BYE']` |
+| `filter(func, iterable)` | Keeps items where `func` returns `True` | `list(filter(lambda x: x % 2 == 0, range(10)))` | `[0, 2, 4, 6, 8]` |
+| `reduce(func, iterable)` | Combines all items into one value (needs `from functools import reduce`) | `reduce(lambda a, b: a + b, [1,2,3,4])` | `10` |
+| `zip(iter1, iter2)` | Pairs up items from two+ iterables | `list(zip([1,2],["a","b"]))` | `[(1,'a'), (2,'b')]` |
+| `any(iterable)` | `True` if **at least one** item is truthy | `any([0, 0, 3])` | `True` |
+| `all(iterable)` | `True` if **every** item is truthy | `all([1, 1, 0])` | `False` |
+| `sorted(iterable, key=...)` | Returns a **new** sorted list | `sorted([3,1,2])` | `[1, 2, 3]` |
+| `chr(n)` | Converts a Unicode code point to a character | `chr(65)` | `'A'` |
+| `ord(c)` | Converts a character to its Unicode code point | `ord('A')` | `65` |
+| `globals()` | Returns a dict of the **global** namespace | `globals()['x']` | current value of `x` |
+| `locals()` | Returns a dict of the **local** namespace | `locals()` | current local variables |
+
+> <mark>**Exam-style trap:** `map()` and `filter()` return a **lazy iterator**, not a list — you must wrap them in `list(...)` to see or print the actual values. `sorted()` and `map()`/`filter()` never modify the original list; they hand you back a brand-new one.</mark>
+
+**Example**
+
+```python
+scores = [55, 82, 91, 40, 76, 88]
+
+passing = list(filter(lambda s: s >= 60, scores))     # keep passing scores
+curved  = list(map(lambda s: s + 5, scores))           # add 5 to every score
+top_3   = sorted(scores, reverse=True)[:3]             # highest 3 scores
+
+print("Passing:", passing)   # [82, 91, 76, 88]
+print("Curved:",  curved)    # [60, 87, 96, 45, 81, 93]
+print("Top 3:",   top_3)     # [91, 88, 82]
+```
+
+**Best Practices**
+
+- Wrap `map()`/`filter()` in `list()` before printing — otherwise you'll just see `<filter object at 0x...>`.
+- If the built-in version is harder to read than a plain `for` loop, use the `for` loop. Readability beats "clever," per PEP 8.
+- `sorted(iterable, key=func)` is the built-in most worth mastering — combined with `lambda` (next section), it lets you sort *anything* by *any* rule.
+- `reduce()` needs an explicit import (`from functools import reduce`) — it's the only one on this list that isn't automatically available.
+
+**Sample Program**
+
+```python
+# Convert a list of Celsius temps to Fahrenheit, then report which are "hot" (>= 85°F)
+
+celsius = [0, 20, 37, 30, 15, 40]
+
+fahrenheit = list(map(lambda c: c * 9/5 + 32, celsius))
+hot_days   = list(filter(lambda f: f >= 85, fahrenheit))
+
+print("Fahrenheit:", fahrenheit)
+print("Hot days (>=85°F):", hot_days)
+print("Any hot day?", any(f >= 85 for f in fahrenheit))
+print("All hot days?", all(f >= 85 for f in fahrenheit))
+```
+
+### Activity: Grade Report Refactor
+
+Take the **Grade Calculator** activity you built earlier (Section 2) and refactor part of it using built-in functions instead of a `for` loop.
+
+**Requirements:**
+1. Start with a list of at least 10 student scores (`int` values 0–100).
+2. Use `filter()` to build a list of students who **passed** (score ≥ 70).
+3. Use `map()` to build a list of the same scores **converted to a 4.0 GPA scale** (formula: `score / 25`, rounded to 2 decimal places with `round()`).
+4. Use `sorted()` with a `key=` and `reverse=True` to print the scores from highest to lowest **without changing the original list**.
+5. Use `any()` to check whether **any** student scored a perfect 100, and `all()` to check whether **every** student passed.
+6. Print all five results with clear labels.
+
+*AP CSP: AAP-2.G, CRD-2.B*
+
+**Actual Program with Test Samples**
+
+```python
+#       Assignment:  Built-In Functions — Grade Report Refactor
+#       Description: Analyzes a list of scores using map, filter, sorted, any, all.
+#       Language:    Python 3.x
+
+def analyze_scores(scores):
+    passing   = list(filter(lambda s: s >= 70, scores))
+    gpa_scale = list(map(lambda s: round(s / 25, 2), scores))
+    ranked    = sorted(scores, reverse=True)
+    perfect   = any(s == 100 for s in scores)
+    all_pass  = all(s >= 70 for s in scores)
+    return passing, gpa_scale, ranked, perfect, all_pass
+
+
+def main():
+    scores = [55, 82, 91, 40, 76, 88, 100, 63, 74, 59]
+    passing, gpa_scale, ranked, perfect, all_pass = analyze_scores(scores)
+
+    print("Passing scores:", passing)
+    print("GPA scale:", gpa_scale)
+    print("Ranked (high to low):", ranked)
+    print("Original list unchanged:", scores)
+    print("Any perfect score?", perfect)
+    print("Did everyone pass?", all_pass)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+**Sample Test Cases**
+
+| Input `scores` | Passing (≥70) | Any 100? | All passed? |
+|---|---|---|---|
+| `[55, 82, 91, 40, 76, 88, 100, 63, 74, 59]` | `[82, 91, 76, 88, 100, 74]` | `True` | `False` |
+| `[70, 71, 72, 73]` | `[70, 71, 72, 73]` | `False` | `True` |
+| `[10, 20, 30]` | `[]` | `False` | `False` |
+
+---
+
+## Lambda Functions
+
+`📋 AP CSP: AAP-2.G` — Use abstraction to manage complexity.
+`🔖 PCEP-adjacent` — not separately numbered, but a natural extension of Section 4 (Functions).
+
+**Explanation**
+
+A **lambda** is a small, unnamed ("anonymous") function written in a single line. It's Python's shorthand for a function you only need once — usually as an argument to another function like `sorted()`, `map()`, or `filter()`. A lambda can only contain **one expression** (no multiple lines, no `if/else` blocks, no loops) and it automatically `return`s the result of that expression.
+
+```python
+square = lambda x: x ** 2
+
+# Equivalent to:
+def square(x):
+    return x ** 2
+```
+
+**When Would You Use This?**
+
+Use a lambda when you need a quick, throwaway function to hand to another function — most commonly the `key=` argument of `sorted()`, or as the first argument to `map()`/`filter()`. If you find yourself calling the same lambda logic in more than one place, that's your signal to write a real `def` function instead and give it a name.
+
+**Key Words**
+
+| Term | Meaning |
+|---|---|
+| **Lambda / anonymous function** | A function with no name, defined inline with the `lambda` keyword |
+| **Expression** | A single computation that produces a value (what a lambda is limited to) |
+| **`key=` argument** | Tells `sorted()`/`min()`/`max()` *what to sort by*, instead of the raw values |
+| **First-class function** | A function that can be passed around like any other value (Python treats all functions this way) |
+
+**Example**
+
+```python
+students = [("Alice", 91), ("Bob", 76), ("Charlie", 88)]
+
+# Sort by score (the second item in each tuple) instead of by name
+by_score = sorted(students, key=lambda s: s[1], reverse=True)
+print(by_score)   # [('Alice', 91), ('Charlie', 88), ('Bob', 76)]
+```
+
+**Best Practices**
+
+- Keep lambdas **short** — one expression, ideally under one line of screen width. If it's getting hard to read, write a named `def` function instead.
+- Never assign a lambda to a variable just to call it later (`square = lambda x: x**2` then `square(4)`) — that's exactly what `def` is for. Lambdas earn their keep as **throwaway arguments**, not named functions.
+- The most common, most useful pattern by far is `sorted(iterable, key=lambda item: ...)` — master that one first.
+- A lambda **cannot** contain `print()` statements, loops, or multiple lines — if you need any of those, it's not a lambda job.
+
+**Sample Program**
+
+```python
+inventory = [
+    {"item": "Pencil", "price": 0.50},
+    {"item": "Notebook", "price": 2.75},
+    {"item": "Backpack", "price": 24.99},
+]
+
+cheapest_first = sorted(inventory, key=lambda x: x["price"])
+for entry in cheapest_first:
+    print(f"{entry['item']}: ${entry['price']:.2f}")
+```
+
+### Activity: Sort It Your Way
+
+Given a list of dictionaries representing books (`title`, `author`, `year`, `pages`), write **three separate `sorted()` calls**, each using a different `lambda` key:
+
+1. Sort by `year`, oldest first.
+2. Sort by `pages`, longest first (`reverse=True`).
+3. Sort by the **length of the title** (`len(title)`), shortest first.
+
+Print each sorted list with a clear label before it.
+
+*AP CSP: AAP-2.G*
+
+**Actual Program with Test Samples**
+
+```python
+#       Assignment:  Lambda Functions — Sort It Your Way
+#       Description: Sorts a list of book dictionaries three different ways using lambda keys.
+#       Language:    Python 3.x
+
+books = [
+    {"title": "Dune", "author": "Herbert", "year": 1965, "pages": 412},
+    {"title": "1984", "author": "Orwell", "year": 1949, "pages": 328},
+    {"title": "The Hobbit", "author": "Tolkien", "year": 1937, "pages": 310},
+]
+
+by_year      = sorted(books, key=lambda b: b["year"])
+by_pages     = sorted(books, key=lambda b: b["pages"], reverse=True)
+by_title_len = sorted(books, key=lambda b: len(b["title"]))
+
+print("By year (oldest first):")
+for b in by_year:
+    print(f"  {b['year']} — {b['title']}")
+
+print("By pages (longest first):")
+for b in by_pages:
+    print(f"  {b['pages']}pp — {b['title']}")
+
+print("By title length (shortest first):")
+for b in by_title_len:
+    print(f"  {len(b['title'])} chars — {b['title']}")
+```
+
+**Sample Test Cases**
+
+| Sort Key | First Result | Last Result |
+|---|---|---|
+| `year` (ascending) | *The Hobbit* (1937) | *Dune* (1965) |
+| `pages` (descending) | *Dune* (412pp) | *The Hobbit* (310pp) |
+| `len(title)` (ascending) | *1984* (4 chars) | *The Hobbit* (10 chars) |
+
+---
+
 ## Modules and Packages
 
 `📋 AP CSP: AAP-2.G` — Use abstraction to manage complexity.
@@ -1397,6 +1634,197 @@ Build a calculator program that:
 
 ---
 
+# File Operations
+
+`📋 AP CSP: AAP-3.A, CRD-2.B, CRD-2.J` — Collect and represent data; implement and test programs.
+`🔖 PCEP-adjacent` — file I/O isn't a separately numbered PCEP-30-02 block (it's tested at the next certification level, PCAP), but it's essential real-world Python and a natural fit now that you know `try/except`.
+
+**Explanation**
+
+So far, every program you've written loses all its data the moment it stops running. **File operations** let a program **read** data that already exists on disk and **write** data that survives after the program ends — the difference between a program that "remembers" and one that starts from zero every time.
+
+Python's `open()` function is the entry point for all file work. The safest way to use it is with a `with` block, which automatically closes the file for you — even if an error happens partway through.
+
+```python
+with open("filename.txt", "r") as file:
+    content = file.read()
+# file is automatically closed here, even if something went wrong
+```
+
+**Key Words**
+
+| Term | Meaning |
+|---|---|
+| **File mode** | How you're opening the file: `"r"` read, `"w"` write (overwrites!), `"a"` append, `"r+"` read+write |
+| **`with` statement** | Automatically closes the file when the block ends — always prefer this over manual `open()`/`close()` |
+| **Stream** | The connection Python keeps open to the file while you're reading/writing it |
+| **Newline character (`\n`)** | Marks the end of a line — `.readlines()` keeps these; `.strip()` removes them |
+| **Text file** | Stores human-readable characters (`.txt`, `.csv`, `.py`) |
+| **Delimiter** | The character that separates fields on a line (commonly `,` in `.csv` files) |
+
+**File Modes**
+
+| Mode | Meaning | If file doesn't exist | If file exists |
+|---|---|---|---|
+| `"r"` | Read only | Raises `FileNotFoundError` | Reads from the start |
+| `"w"` | Write only | Creates it | **Erases existing content first** |
+| `"a"` | Append | Creates it | Adds to the end, keeps existing content |
+| `"r+"` | Read and write | Raises `FileNotFoundError` | Reads and writes without erasing |
+
+> <mark>**Common trap:** `"w"` mode **erases the entire file** the instant you open it — even if you never write anything. If you need to keep existing content, use `"a"` (append) or `"r+"`.</mark>
+
+**Reading Files — Three Ways**
+
+```python
+with open("data.txt", "r") as file:
+    whole_thing = file.read()        # one big string, includes \n characters
+
+with open("data.txt", "r") as file:
+    all_lines = file.readlines()     # list of strings, one per line (keeps \n)
+
+with open("data.txt", "r") as file:
+    for line in file:                # loop line-by-line — best for large files
+        print(line.strip())          # .strip() removes the trailing \n
+```
+
+**Writing and Appending**
+
+```python
+with open("output.txt", "w") as file:
+    file.write("First line\n")
+    file.write("Second line\n")
+
+with open("output.txt", "a") as file:
+    file.write("This gets added to the end\n")
+```
+
+**When Would You Use This?**
+
+Any time your program needs to **outlive a single run** — saving a high score, loading a roster of students from a `.csv`, writing a log of every calculation a user made, or building the kind of "save/load" feature the Random Trivia Quiz and Minesweeper projects hint at with their stretch challenges. File operations are also how real programs move data between each other: one program writes a file, another reads it.
+
+**Best Practices**
+
+- **Always use `with open(...) as file:`** — never call `open()` without it. A file opened without `with` can stay locked/open if your program crashes before you remember to call `.close()`.
+- **Always wrap file access in `try/except`**, catching `FileNotFoundError` at minimum — you have no guarantee the file exists (see Exception Handling above).
+- Double-check your **mode** before writing — `"w"` silently destroys existing content. When in doubt, use `"a"` or check `os.path.exists()` first.
+- Use `.strip()` on every line you read from a text file to remove the trailing `\n` before you use the value.
+- For structured data (comma-separated records), consider the `csv` module instead of manually splitting on commas — it correctly handles edge cases like commas *inside* quoted fields.
+
+**Example**
+
+```python
+try:
+    with open("roster.txt", "r") as file:
+        names = [line.strip() for line in file]
+    print(f"Loaded {len(names)} students:", names)
+except FileNotFoundError:
+    print("roster.txt not found — starting with an empty roster.")
+    names = []
+```
+
+**Sample Program**
+
+```python
+# Append a new high score to a running log file, then print the full history
+
+def log_score(name, score, filename="scores_log.txt"):
+    with open(filename, "a") as file:
+        file.write(f"{name},{score}\n")
+
+def show_log(filename="scores_log.txt"):
+    try:
+        with open(filename, "r") as file:
+            for line in file:
+                name, score = line.strip().split(",")
+                print(f"{name}: {score}")
+    except FileNotFoundError:
+        print("No scores logged yet.")
+
+log_score("Alice", 91)
+log_score("Bob", 76)
+show_log()
+```
+
+### Activity: Student Roster File Manager
+
+Write a program that manages a roster stored in a text file called `roster.txt` (one name per line).
+
+**Requirements:**
+1. Write a function `load_roster(filename)` that reads the file and returns a list of names. If the file doesn't exist, catch `FileNotFoundError` and return an empty list instead of crashing.
+2. Write a function `add_student(filename, name)` that **appends** a new name to the file (don't overwrite the existing roster!).
+3. Write a function `save_roster(filename, roster)` that **overwrites** the file with the current contents of a roster list (one name per line) — used after removing a student.
+4. In `main()`, build a menu (`while` loop) that lets the user: view the roster, add a student, remove a student (remove from the in-memory list, then call `save_roster()`), or quit.
+5. Every write operation must use a `with` block. Every read must be wrapped in a `try/except FileNotFoundError`.
+
+*AP CSP: AAP-3.A, CRD-2.B, CRD-2.J*
+
+**Actual Program with Test Samples**
+
+```python
+#       Assignment:  File Operations — Student Roster File Manager
+#       Description: Loads, adds to, removes from, and saves a student roster stored in a text file.
+#       Language:    Python 3.x
+
+def load_roster(filename):
+    try:
+        with open(filename, "r") as file:
+            return [line.strip() for line in file if line.strip()]
+    except FileNotFoundError:
+        return []
+
+
+def add_student(filename, name):
+    with open(filename, "a") as file:
+        file.write(name + "\n")
+
+
+def save_roster(filename, roster):
+    with open(filename, "w") as file:
+        for name in roster:
+            file.write(name + "\n")
+
+
+def main():
+    filename = "roster.txt"
+    roster = load_roster(filename)
+
+    while True:
+        print("\n1) View  2) Add  3) Remove  4) Quit")
+        choice = input("Choose an option: ")
+
+        if choice == "1":
+            print("Roster:", roster)
+        elif choice == "2":
+            name = input("Name to add: ")
+            add_student(filename, name)
+            roster.append(name)
+        elif choice == "3":
+            name = input("Name to remove: ")
+            if name in roster:
+                roster.remove(name)
+                save_roster(filename, roster)
+            else:
+                print(f"{name} not found.")
+        elif choice == "4":
+            break
+        else:
+            print("Invalid option.")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+**Sample Test Cases**
+
+| Starting `roster.txt` | Action | Resulting Roster |
+|---|---|---|
+| *(file doesn't exist)* | `load_roster()` | `[]` (no crash) |
+| `["Ava", "Liam"]` | `add_student("Noah")` | `["Ava", "Liam", "Noah"]` |
+| `["Ava", "Liam", "Noah"]` | remove `"Liam"` → `save_roster()` | `["Ava", "Noah"]` |
+
+---
+
 # Data Structures Deep Dive
 
 `📋 AP CSP: AAP-3.A, AAP-3.B, AAP-3.C`
@@ -1423,6 +1851,137 @@ print(a & b)   # Intersection: {2, 3}
 print(a - b)   # Difference:   {1}
 ```
 
+**Frozensets**
+
+`📋 AP CSP: AAP-3.A, AAP-3.B` — Collect, represent, and organize data using abstractions.
+`🔖 PCEP-adjacent` — sets/frozensets aren't separately numbered in the PCEP-30-02 blocks, but they build directly on Section 3 (Data Collections) fluency.
+
+**Explanation**
+
+A **frozenset** is exactly what it sounds like: a `set` that's been frozen — **immutable**, just like a tuple is an immutable list. Once created, you cannot add, remove, or change its contents. Everything else about sets (unordered, no duplicates, supports `|`, `&`, `-`, `^`) still applies.
+
+```python
+colors = frozenset(["red", "green", "blue"])
+# colors.add("yellow")   # AttributeError — frozensets have no .add()
+```
+
+**When Would You Use This?**
+
+Use a `frozenset` any time you want the **uniqueness and fast-lookup** benefits of a set, but need the collection to be **unchangeable** — most often because it's being used as a **dictionary key** (regular sets can't be dict keys; frozensets can) or because you want to guarantee a function can't accidentally modify the data it's given.
+
+```python
+# A regular set CANNOT be a dictionary key:
+# schedule = {  {"Mon", "Wed"}: "Math"  }   # TypeError!
+
+# A frozenset CAN:
+schedule = {
+    frozenset(["Mon", "Wed", "Fri"]): "Math",
+    frozenset(["Tue", "Thu"]): "Science",
+}
+print(schedule[frozenset(["Tue", "Thu"])])   # Science
+```
+
+**Key Words**
+
+| Term | Meaning |
+|---|---|
+| **Immutable** | Cannot be changed after creation |
+| **Hashable** | Can be used as a dictionary key or set member (frozensets are hashable; sets are not) |
+| **Set operations** | `\|` union, `&` intersection, `-` difference, `^` symmetric difference — all work on frozensets too |
+
+**Example**
+
+```python
+required_tools    = frozenset(["hammer", "saw", "drill"])
+students_toolkit  = frozenset(["hammer", "saw", "wrench", "level"])
+
+missing = required_tools - students_toolkit
+print("Missing tools:", missing)   # frozenset({'drill'})
+```
+
+**Best Practices**
+
+- Use `set` for a collection you plan to **modify** during the program; use `frozenset` for a collection meant to stay **constant** (e.g., valid menu options, allowed file extensions).
+- Reach for a `frozenset` specifically when you need to use a collection as a **dictionary key** or store it *inside* another set (`set` of `set`s isn't legal; `set` of `frozenset`s is).
+- Set operations (`|`, `&`, `-`, `^`) return a **new** frozenset/set — they never modify the originals, which is exactly why frozensets are safe to share across functions.
+
+**Sample Program**
+
+```python
+VALID_EXTENSIONS = frozenset([".py", ".txt", ".csv", ".json"])
+
+def is_valid_file(filename):
+    for ext in VALID_EXTENSIONS:
+        if filename.endswith(ext):
+            return True
+    return False
+
+print(is_valid_file("data.csv"))    # True
+print(is_valid_file("image.png"))   # False
+```
+
+### Activity: Class Roster Overlap
+
+Two teachers each have a frozenset of student names in their AP CSP class:
+
+```python
+period_1 = frozenset(["Ava", "Liam", "Noah", "Emma", "Mia"])
+period_3 = frozenset(["Noah", "Emma", "Sofia", "Lucas"])
+```
+
+Write a program that prints:
+1. Students in **both** periods (`&`)
+2. Students in **either** period, with no duplicates (`|`)
+3. Students **only** in Period 1, not Period 3 (`-`)
+4. Students in **exactly one** of the two periods, not both (`^`)
+5. Whether the two rosters share **any** student at all (hint: check if the intersection is empty)
+
+*AP CSP: AAP-3.A, AAP-3.B*
+
+**Actual Program with Test Samples**
+
+```python
+#       Assignment:  Frozensets — Class Roster Overlap
+#       Description: Compares two class rosters using frozenset operations.
+#       Language:    Python 3.x
+
+def compare_rosters(period_1, period_3):
+    both        = period_1 & period_3
+    either      = period_1 | period_3
+    only_p1     = period_1 - period_3
+    exactly_one = period_1 ^ period_3
+    overlaps    = len(both) > 0
+    return both, either, only_p1, exactly_one, overlaps
+
+
+def main():
+    period_1 = frozenset(["Ava", "Liam", "Noah", "Emma", "Mia"])
+    period_3 = frozenset(["Noah", "Emma", "Sofia", "Lucas"])
+
+    both, either, only_p1, exactly_one, overlaps = compare_rosters(period_1, period_3)
+
+    print("In both periods:", both)
+    print("In either period:", either)
+    print("Only in Period 1:", only_p1)
+    print("In exactly one period:", exactly_one)
+    print("Do the rosters overlap?", overlaps)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+**Sample Test Cases**
+
+| Operation | Result |
+|---|---|
+| `period_1 & period_3` | `frozenset({'Noah', 'Emma'})` |
+| `period_1 - period_3` | `frozenset({'Ava', 'Liam', 'Mia'})` |
+| `period_1 ^ period_3` | `frozenset({'Ava', 'Liam', 'Mia', 'Sofia', 'Lucas'})` |
+| overlap check | `True` |
+
+---
+
 **Stacks (LIFO) using Lists**
 
 A **stack** follows **LIFO** — **Last In, First Out**. Think of a stack of plates: you add a new plate to the top, and you also take from the top. The most recently added item is always the first one removed. Python's `undo` button behavior, browser back-buttons, and function call stacks (like the recursion diagram above!) all work this way.
@@ -1447,6 +2006,112 @@ first = queue.popleft()    # remove from the front → "first" (first one in, fi
 ```
 
 > <mark>**Memory trick:** LIFO = last in, first out (a **stack** of trays). FIFO = first in, first out (a **line** at the store). Both use `.append()` to add, but stacks remove with `.pop()` (from the end) while queues remove with `.popleft()` (from the front).</mark>
+
+---
+
+### Project: Library Catalog Analyzer
+
+Build a program that reads a small library catalog from a text file, analyzes it using built-in functions and lambdas, and uses frozensets to answer genre questions — pulling together **File Operations, Built-In Functions, Lambda Functions, and Frozensets** into one working project.
+
+**Setup — `catalog.txt` format:** one book per line, comma-separated: `title,author,year,genre1|genre2`
+
+```
+Dune,Frank Herbert,1965,Sci-Fi|Adventure
+1984,George Orwell,1949,Sci-Fi|Dystopian
+The Hobbit,J.R.R. Tolkien,1937,Fantasy|Adventure
+Klara and the Sun,Kazuo Ishiguro,2021,Sci-Fi|Drama
+```
+
+**Requirements:**
+
+1. Write `load_catalog(filename)` that reads `catalog.txt` line by line (using `with`, wrapped in `try/except FileNotFoundError`) and returns a **list of dictionaries**, each with keys `"title"`, `"author"`, `"year"` (as `int`), and `"genres"` (as a **frozenset** built by splitting on `|`).
+2. Use `sorted()` with a `lambda` key to print the catalog **sorted by year**, oldest first.
+3. Use `filter()` with a `lambda` to print only books published **after 2000**.
+4. Use `map()` with a `lambda` to print a list of just the **titles**, in upper case.
+5. Use frozenset operations to find and print:
+   - Every **unique genre** across the whole catalog (union `|` of all books' genre frozensets)
+   - All books that include **both** "Sci-Fi" and "Adventure" as genres
+6. Write `save_report(filename, catalog)` that writes a summary report to `report.txt` — total book count, oldest and newest year, and the full unique-genre list — using a `with` block in `"w"` mode.
+7. Include a full program header block.
+
+**Actual Program with Test Samples**
+
+```python
+#       Assignment:  Culminating Project — Library Catalog Analyzer
+#       Description: Reads a book catalog from file, analyzes it with map/filter/sorted/lambda,
+#                    and uses frozensets to compare genres, then writes a summary report.
+#       Language:    Python 3.x
+
+def load_catalog(filename):
+    catalog = []
+    try:
+        with open(filename, "r") as file:
+            for line in file:
+                title, author, year, genres = line.strip().split(",")
+                catalog.append({
+                    "title": title,
+                    "author": author,
+                    "year": int(year),
+                    "genres": frozenset(genres.split("|")),
+                })
+    except FileNotFoundError:
+        print(f"{filename} not found — starting with an empty catalog.")
+    return catalog
+
+
+def save_report(filename, catalog, all_genres):
+    years = [book["year"] for book in catalog]
+    with open(filename, "w") as file:
+        file.write(f"Total books: {len(catalog)}\n")
+        file.write(f"Oldest year: {min(years) if years else 'N/A'}\n")
+        file.write(f"Newest year: {max(years) if years else 'N/A'}\n")
+        file.write(f"Unique genres: {sorted(all_genres)}\n")
+
+
+def main():
+    catalog = load_catalog("catalog.txt")
+    if not catalog:
+        return
+
+    by_year   = sorted(catalog, key=lambda b: b["year"])
+    modern    = list(filter(lambda b: b["year"] > 2000, catalog))
+    titles    = list(map(lambda b: b["title"].upper(), catalog))
+
+    all_genres = frozenset()
+    for book in catalog:
+        all_genres = all_genres | book["genres"]
+
+    scifi_adventure = [
+        b["title"] for b in catalog
+        if frozenset(["Sci-Fi", "Adventure"]) <= b["genres"]
+    ]
+
+    print("Sorted by year:", [b["title"] for b in by_year])
+    print("Published after 2000:", [b["title"] for b in modern])
+    print("Titles (upper case):", titles)
+    print("All unique genres:", sorted(all_genres))
+    print("Sci-Fi AND Adventure:", scifi_adventure)
+
+    save_report("report.txt", catalog, all_genres)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+**Sample Test Cases** *(using the four-book `catalog.txt` shown above)*
+
+| Check | Result |
+|---|---|
+| Sorted by year (oldest first) | `['The Hobbit', '1984', 'Dune', 'Klara and the Sun']` |
+| Published after 2000 | `['Klara and the Sun']` |
+| Unique genres (union of all frozensets) | `['Adventure', 'Drama', 'Dystopian', 'Fantasy', 'Sci-Fi']` |
+| Books with **both** Sci-Fi and Adventure | `['Dune']` |
+| `report.txt` after running | `Total books: 4`, `Oldest year: 1937`, `Newest year: 2021` |
+
+**Stretch challenge:** Add a `most_common_genre()` function that uses `max()` with a `key=lambda` to find which single genre appears in the most books — without importing any extra modules.
+
+*AP CSP: AAP-3.A, AAP-3.B, AAP-2.G, CRD-2.B, CRD-2.J*
 
 ---
 
@@ -1890,6 +2555,12 @@ root.mainloop()
 | **4.2** | Parameters, arguments, defaults, scope, `global`, shadowing | Section 4 — Functions |
 | **4.3** | Exception hierarchy: `BaseException`, `Exception`, `ValueError`, etc. | Section 4 — Exceptions |
 | **4.4** | `try-except`, ordering branches, propagation | Section 4 — Exceptions |
+| *Supplemental* | Built-in functions (`map`, `filter`, `sorted`, `zip`, `any`, `all`) | Section 4 — Built-In Functions |
+| *Supplemental* | Lambda (anonymous) functions | Section 4 — Lambda Functions |
+| *Supplemental* | Frozensets (immutable sets) | Data Structures Deep Dive — Frozensets |
+| *Supplemental* | File I/O (`open`, `with`, read/write/append modes) | File Operations |
+
+> <mark>Rows marked *Supplemental* aren't separately numbered objectives in the official PCEP-30-02 exam blocks (file I/O in particular is tested at the next certification level, PCAP) — they're included here because they're core Python fluency and directly support the AP CSP CPT.</mark>
 
 ---
 
@@ -1900,13 +2571,13 @@ root.mainloop()
 | **CRD-2.A** | Program design and development | Throughout |
 | **CRD-2.B** | Implement algorithms | Functions, OOP, Projects |
 | **CRD-2.G** | Call procedures | Functions |
-| **CRD-2.J** | Test and debug | Debugging, Exception Handling |
+| **CRD-2.J** | Test and debug | Debugging, Exception Handling, File Operations |
 | **AAP-2.E** | Sequencing, selection, iteration | Control Flow |
 | **AAP-2.F** | Mathematical operations | Operators |
-| **AAP-2.G** | Abstraction to manage complexity | Functions, Modules, OOP |
+| **AAP-2.G** | Abstraction to manage complexity | Functions, Built-In Functions, Lambda Functions, Modules, OOP |
 | **AAP-2.K** | List iteration | Lists |
-| **AAP-3.A** | Collect and represent data | Data Structures |
-| **AAP-3.B** | Use abstractions to organize data | Dictionaries, OOP, Lists |
+| **AAP-3.A** | Collect and represent data | Data Structures, Frozensets, File Operations |
+| **AAP-3.B** | Use abstractions to organize data | Dictionaries, OOP, Lists, Frozensets |
 | **AAP-3.C** | Analyze data to draw conclusions | Data Structures |
 | **AAP-4.A** | Data abstractions for complexity | Lists, 2D Lists, Classes |
 
