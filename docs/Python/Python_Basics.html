@@ -206,6 +206,7 @@
 <li class="toctree-l1"><a class="reference internal" href="#python-style-guidelines">Python Style Guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#debugging-strategies">Debugging Strategies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#section-1-computer-programming-and-python-fundamentals">Section 1 — Computer Programming and Python Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#assignment-print-statements-and-input-output">Assignment — Print Statements and Input/Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#section-2-control-flow-conditional-blocks-and-loops">Section 2 — Control Flow: Conditional Blocks and Loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#section-3-data-collections-lists-tuples-dictionaries-and-strings">Section 3 — Data Collections: Lists, Tuples, Dictionaries, and Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#section-4-functions-and-exceptions">Section 4 — Functions and Exceptions</a></li>
@@ -1030,7 +1031,7 @@
 </details>
 <section id="activity-movie-ticket-eligibility-checker">
 <h3>Activity: Movie Ticket Eligibility Checker<a class="headerlink" href="#activity-movie-ticket-eligibility-checker" title="Link to this heading">¶</a></h3>
-<p>Write a program that determines whether a person can buy a discounted movie ticket, using <strong>only compound boolean expressions</strong> (<code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>) — no <code class="docutils literal notranslate"><span class="pre">if/elif</span></code> chains yet.</p>
+<p>Write a program that determines whether a person can buy a discounted movie ticket, using <strong>compound boolean expressions</strong> (<code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>).</p>
 <p><strong>Requirements:</strong></p>
 <ol class="arabic simple">
 <li><p>Ask the user for their age and whether they have a student ID (<code class="docutils literal notranslate"><span class="pre">yes</span></code>/<code class="docutils literal notranslate"><span class="pre">no</span></code>).</p></li>
@@ -1039,6 +1040,7 @@
 <li><p>Add a second check: the theater is closed to anyone under 6 with <strong>no adult present</strong> — ask a follow-up question and use <code class="docutils literal notranslate"><span class="pre">not</span></code> to write the condition for “an adult is NOT present.”</p></li>
 <li><p>Print a trace of your boolean logic as a comment above each condition, explaining what it evaluates in plain English (this mirrors how you’ll need to explain conditions in your AP CSP written responses).</p></li>
 </ol>
+<p><strong>Submit your .py file and test cases showing that your program worked as intended.</strong></p>
 <p><em>PCEP: 1.4 | AP CSP: AAP-2.F</em></p>
 <hr class="docutils" />
 <p><strong>Why Bitwise Operators Matter</strong></p>
@@ -1064,30 +1066,104 @@
 </div>
 </section>
 </section>
-<section id="print-statements-and-input-output">
-<h2>Print Statements and Input/Output<a class="headerlink" href="#print-statements-and-input-output" title="Link to this heading">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">1.5</span></code> — Perform Input/Output console operations
-<code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">CRD-2.B</span></code> — Implement algorithms in a programming language.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Basic print</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, World!"</span><span class="p">)</span>
+</section>
+<section id="assignment-print-statements-and-input-output">
+<h1>Assignment — Print Statements and Input/Output<a class="headerlink" href="#assignment-print-statements-and-input-output" title="Link to this heading">¶</a></h1>
+<p>🔖 <strong>PCEP 1.5</strong> — Perform Input/Output console operations
+📋 <strong>AP CSP: CRD-2.B</strong> — Implement algorithms in a programming language.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>Python gives you several ways to build and display output. In this assignment
+you’ll practice four of them — f-strings, the <code class="docutils literal notranslate"><span class="pre">format()</span></code> method, string
+concatenation, and the <code class="docutils literal notranslate"><span class="pre">sep=</span></code>/<code class="docutils literal notranslate"><span class="pre">end=</span></code> keyword parameters — by completing the
+TODOs embedded in the starter code below. This time, <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code> come
+from the user instead of being hardcoded, so you’ll also practice reading
+input from the console.</p>
+</section>
+<section id="starter-code">
+<h2>Starter code<a class="headerlink" href="#starter-code" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># print_io.py</span>
 
-<span class="c1"># 2. f-strings (most readable — preferred method)</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s2">"Alice"</span>
-<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> and I am </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old."</span><span class="p">)</span>
+<span class="c1"># TODO 0) Use input() to ask the user for their name, and store it in a</span>
+<span class="c1">#         variable called name. Then use input() again to ask for their</span>
+<span class="c1">#         age, and store it in a variable called age.</span>
+<span class="c1">#         Remember: input() always returns a string — you'll need to</span>
+<span class="c1">#         convert age to an int before you can use it in math, but the</span>
+<span class="c1">#         examples below only print it, so str()/f-string formatting</span>
+<span class="c1">#         will handle that part for you.</span>
 
-<span class="c1"># 3. format() method</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"My name is </span><span class="si">{}</span><span class="s2"> and I am </span><span class="si">{}</span><span class="s2"> years old."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">))</span>
 
-<span class="c1"># 4. Concatenation (must convert non-strings)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Name: "</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">", Age: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">))</span>
+<span class="c1"># TODO 1) f-strings (most readable — preferred method)</span>
+<span class="c1">#         Use an f-string to print a sentence that includes both</span>
+<span class="c1">#         `name` and `age`.</span>
 
-<span class="c1"># 5. sep= and end= keyword parameters</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"-"</span><span class="p">)</span>   <span class="c1"># A-B-C</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">"! "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"World"</span><span class="p">)</span>                  <span class="c1"># Hello! World</span>
+
+<span class="c1"># TODO 2) format() method</span>
+<span class="c1">#         Print the same sentence as TODO 1, but built with the</span>
+<span class="c1">#         .format() method instead of an f-string.</span>
+
+
+<span class="c1"># TODO 3) Concatenation</span>
+<span class="c1">#         Print the same sentence again, this time using the + operator</span>
+<span class="c1">#         to concatenate strings. Remember: non-string values (like age)</span>
+<span class="c1">#         must be converted with str() before you can concatenate them.</span>
+
+
+<span class="c1"># TODO 4) sep= keyword parameter</span>
+<span class="c1">#         Print the letters "A", "B", and "C" as three separate</span>
+<span class="c1">#         arguments to print(), using sep="-" so the output reads:</span>
+<span class="c1">#         A-B-C</span>
+
+
+<span class="c1"># TODO 5) end= keyword parameter</span>
+<span class="c1">#         Print "Hello" using end="! " so that it does NOT start a new</span>
+<span class="c1">#         line, then print "World" right after it on the same line.</span>
+<span class="c1">#         The combined output should read:</span>
+<span class="c1">#         Hello! World</span>
 </pre></div>
 </div>
+</section>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h2>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> TODO 0) Collect <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code> using <code class="docutils literal notranslate"><span class="pre">input()</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> TODO 1) Print <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code> in a sentence using an f-string</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> TODO 2) Print the same sentence using the <code class="docutils literal notranslate"><span class="pre">.format()</span></code> method</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> TODO 3) Print the same sentence using string concatenation (<code class="docutils literal notranslate"><span class="pre">+</span></code>), converting <code class="docutils literal notranslate"><span class="pre">age</span></code> with <code class="docutils literal notranslate"><span class="pre">str()</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> TODO 4) Print <code class="docutils literal notranslate"><span class="pre">&quot;A&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;B&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;C&quot;</span></code> as separate arguments with <code class="docutils literal notranslate"><span class="pre">sep=&quot;-&quot;</span></code> so the output reads <code class="docutils literal notranslate"><span class="pre">A-B-C</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> TODO 5) Print <code class="docutils literal notranslate"><span class="pre">&quot;Hello&quot;</span></code> with <code class="docutils literal notranslate"><span class="pre">end=&quot;!</span> <span class="pre">&quot;</span></code>, then print <code class="docutils literal notranslate"><span class="pre">&quot;World&quot;</span></code> so the output reads <code class="docutils literal notranslate"><span class="pre">Hello!</span> <span class="pre">World</span></code> on one line</p></li>
+</ul>
+</section>
+<section id="reflection-question">
+<h2>Reflection question<a class="headerlink" href="#reflection-question" title="Link to this heading">¶</a></h2>
+<p>All three of TODO 1–3 produce the <em>same</em> sentence on screen, but they’re
+written three different ways. Which method did you find easiest to read and
+write, and why do you think f-strings are considered the preferred method in
+modern Python?</p>
+<details>
+<summary>Answer key (instructor use)</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO 0</span>
+<span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What is your name? "</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"How old are you? "</span><span class="p">)</span>
+
+<span class="c1"># TODO 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> and I am </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old."</span><span class="p">)</span>
+
+<span class="c1"># TODO 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"My name is </span><span class="si">{}</span><span class="s2"> and I am </span><span class="si">{}</span><span class="s2"> years old."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">))</span>
+
+<span class="c1"># TODO 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"My name is "</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">" and I am "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" years old."</span><span class="p">)</span>
+
+<span class="c1"># TODO 4</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"-"</span><span class="p">)</span>
+
+<span class="c1"># TODO 5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">"! "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"World"</span><span class="p">)</span>
+</pre></div>
+</div>
+</details>
 <p><strong>User Input</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your name: "</span><span class="p">)</span>          <span class="c1"># always returns a string</span>
 <span class="n">age</span>  <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your age: "</span><span class="p">))</span>      <span class="c1"># convert to int</span>
@@ -3718,7 +3794,13 @@ Blue Notebook	Sale Price: $24.99
 <li><a class="reference internal" href="#activity-movie-ticket-eligibility-checker">Activity: Movie Ticket Eligibility Checker</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#print-statements-and-input-output">Print Statements and Input/Output</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#assignment-print-statements-and-input-output">Assignment — Print Statements and Input/Output</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#starter-code">Starter code</a></li>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#reflection-question">Reflection question</a><ul>
 <li><a class="reference internal" href="#activity-hello-world-variations">Activity: Hello, World! Variations</a></li>
 </ul>
 </li>
