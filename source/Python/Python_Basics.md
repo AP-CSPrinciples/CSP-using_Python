@@ -461,6 +461,17 @@ Write a program that determines whether a person can buy a discounted movie tick
 4. Add a second check: the theater is closed to anyone under 6 with **no adult present** — ask a follow-up question and use `not` to write the condition for "an adult is NOT present."
 5. Print a trace of your boolean logic as a comment above each condition, explaining what it evaluates in plain English (this mirrors how you'll need to explain conditions in your AP CSP written responses).
 
+```python
+Use this header for your programs:
+
+Name:          [Your Full Name]
+Partner:       [Partner's Full Name, or "None"]
+Course:        AP Computer Science A
+Instructor:    [Instructor Name]
+Assignment:    [Assignment Number — Assignment Title]
+Due Date:      [Month Day, Year]
+```
+
 **Submit your .py file and test cases showing that your program worked as intended.**
 
 *PCEP: 1.4 | AP CSP: AAP-2.F*
