@@ -492,12 +492,12 @@ print(a << 1)  # Left shift → 20
 print(a >> 1)  # Right shift → 5
 ```
 
-# Assignment — Print Statements and Input/Output
+### Assignment — Print Statements and Input/Output
 
 🔖 **PCEP 1.5** — Perform Input/Output console operations
 📋 **AP CSP: CRD-2.B** — Implement algorithms in a programming language.
 
-## Overview
+#### Overview
 
 Python gives you several ways to build and display output. In this assignment
 you'll practice four of them — f-strings, the `format()` method, string
@@ -506,7 +506,7 @@ TODOs embedded in the starter code below. This time, `name` and `age` come
 from the user instead of being hardcoded, so you'll also practice reading
 input from the console.
 
-## Starter code
+**Starter code**
 
 ```python
 # print_io.py
@@ -549,7 +549,7 @@ input from the console.
 #         Hello! World
 ```
 
-## Requirements
+#### Requirements
 
 - [ ] TODO 0) Collect `name` and `age` using `input()`
 - [ ] TODO 1) Print `name` and `age` in a sentence using an f-string
@@ -558,41 +558,15 @@ input from the console.
 - [ ] TODO 4) Print `"A"`, `"B"`, `"C"` as separate arguments with `sep="-"` so the output reads `A-B-C`
 - [ ] TODO 5) Print `"Hello"` with `end="! "`, then print `"World"` so the output reads `Hello! World` on one line
 
-## Reflection question
+#### Reflection question
 
 All three of TODO 1–3 produce the *same* sentence on screen, but they're
 written three different ways. Which method did you find easiest to read and
 write, and why do you think f-strings are considered the preferred method in
 modern Python?
 
-<details>
-<summary>Answer key (instructor use)</summary>
 
-```python
-# TODO 0
-name = input("What is your name? ")
-age = input("How old are you? ")
-
-# TODO 1
-print(f"My name is {name} and I am {age} years old.")
-
-# TODO 2
-print("My name is {} and I am {} years old.".format(name, age))
-
-# TODO 3
-print("My name is " + name + " and I am " + str(age) + " years old.")
-
-# TODO 4
-print("A", "B", "C", sep="-")
-
-# TODO 5
-print("Hello", end="! ")
-print("World")
-```
-
-</details>
-
-**User Input**
+**NOTE: User Input**
 
 ```python
 name = input("Enter your name: ")          # always returns a string
