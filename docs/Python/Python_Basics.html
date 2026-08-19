@@ -206,7 +206,6 @@
 <li class="toctree-l1"><a class="reference internal" href="#python-style-guidelines">Python Style Guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#debugging-strategies">Debugging Strategies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#section-1-computer-programming-and-python-fundamentals">Section 1 — Computer Programming and Python Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#assignment-print-statements-and-input-output">Assignment — Print Statements and Input/Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#section-2-control-flow-conditional-blocks-and-loops">Section 2 — Control Flow: Conditional Blocks and Loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#section-3-data-collections-lists-tuples-dictionaries-and-strings">Section 3 — Data Collections: Lists, Tuples, Dictionaries, and Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#section-4-functions-and-exceptions">Section 4 — Functions and Exceptions</a></li>
@@ -1065,23 +1064,19 @@
 </pre></div>
 </div>
 </section>
-</section>
-</section>
 <section id="assignment-print-statements-and-input-output">
-<h1>Assignment — Print Statements and Input/Output<a class="headerlink" href="#assignment-print-statements-and-input-output" title="Link to this heading">¶</a></h1>
+<h3>Assignment — Print Statements and Input/Output<a class="headerlink" href="#assignment-print-statements-and-input-output" title="Link to this heading">¶</a></h3>
 <p>🔖 <strong>PCEP 1.5</strong> — Perform Input/Output console operations
 📋 <strong>AP CSP: CRD-2.B</strong> — Implement algorithms in a programming language.</p>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<h4>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h4>
 <p>Python gives you several ways to build and display output. In this assignment
 you’ll practice four of them — f-strings, the <code class="docutils literal notranslate"><span class="pre">format()</span></code> method, string
 concatenation, and the <code class="docutils literal notranslate"><span class="pre">sep=</span></code>/<code class="docutils literal notranslate"><span class="pre">end=</span></code> keyword parameters — by completing the
 TODOs embedded in the starter code below. This time, <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code> come
 from the user instead of being hardcoded, so you’ll also practice reading
 input from the console.</p>
-</section>
-<section id="starter-code">
-<h2>Starter code<a class="headerlink" href="#starter-code" title="Link to this heading">¶</a></h2>
+<p><strong>Starter code</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># print_io.py</span>
 
 <span class="c1"># TODO 0) Use input() to ask the user for their name, and store it in a</span>
@@ -1124,7 +1119,7 @@ input from the console.</p>
 </div>
 </section>
 <section id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h2>
+<h4>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h4>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> TODO 0) Collect <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code> using <code class="docutils literal notranslate"><span class="pre">input()</span></code></p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> TODO 1) Print <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code> in a sentence using an f-string</p></li>
@@ -1135,36 +1130,12 @@ input from the console.</p>
 </ul>
 </section>
 <section id="reflection-question">
-<h2>Reflection question<a class="headerlink" href="#reflection-question" title="Link to this heading">¶</a></h2>
+<h4>Reflection question<a class="headerlink" href="#reflection-question" title="Link to this heading">¶</a></h4>
 <p>All three of TODO 1–3 produce the <em>same</em> sentence on screen, but they’re
 written three different ways. Which method did you find easiest to read and
 write, and why do you think f-strings are considered the preferred method in
 modern Python?</p>
-<details>
-<summary>Answer key (instructor use)</summary>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO 0</span>
-<span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What is your name? "</span><span class="p">)</span>
-<span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"How old are you? "</span><span class="p">)</span>
-
-<span class="c1"># TODO 1</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> and I am </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old."</span><span class="p">)</span>
-
-<span class="c1"># TODO 2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"My name is </span><span class="si">{}</span><span class="s2"> and I am </span><span class="si">{}</span><span class="s2"> years old."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">))</span>
-
-<span class="c1"># TODO 3</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"My name is "</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">" and I am "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" years old."</span><span class="p">)</span>
-
-<span class="c1"># TODO 4</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"-"</span><span class="p">)</span>
-
-<span class="c1"># TODO 5</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">"! "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"World"</span><span class="p">)</span>
-</pre></div>
-</div>
-</details>
-<p><strong>User Input</strong></p>
+<p><strong>NOTE: User Input</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your name: "</span><span class="p">)</span>          <span class="c1"># always returns a string</span>
 <span class="n">age</span>  <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your age: "</span><span class="p">))</span>      <span class="c1"># convert to int</span>
 <span class="n">price</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter price: "</span><span class="p">))</span>      <span class="c1"># convert to float</span>
@@ -1173,6 +1144,8 @@ modern Python?</p>
 <blockquote>
 <div><p><mark><strong>PCEP Exam Tip:</strong> <code class="docutils literal notranslate"><span class="pre">input()</span></code> always returns a <code class="docutils literal notranslate"><span class="pre">str</span></code>. You must use <code class="docutils literal notranslate"><span class="pre">int()</span></code> or <code class="docutils literal notranslate"><span class="pre">float()</span></code> to convert it for math operations.</mark></p>
 </div></blockquote>
+</section>
+</section>
 <section id="activity-hello-world-variations">
 <h3>Activity: Hello, World! Variations<a class="headerlink" href="#activity-hello-world-variations" title="Link to this heading">¶</a></h3>
 <p>Write a program that asks the user for their name, age, and favorite color. Print a formatted sentence using each of the three print methods (f-string, <code class="docutils literal notranslate"><span class="pre">format()</span></code>, concatenation). Include a header block.</p>
@@ -3792,15 +3765,12 @@ Blue Notebook	Sale Price: $24.99
 <li><a class="reference internal" href="#variables-and-data-types">Variables and Data Types</a></li>
 <li><a class="reference internal" href="#operators">Operators</a><ul>
 <li><a class="reference internal" href="#activity-movie-ticket-eligibility-checker">Activity: Movie Ticket Eligibility Checker</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li><a class="reference internal" href="#assignment-print-statements-and-input-output">Assignment — Print Statements and Input/Output</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#starter-code">Starter code</a></li>
 <li><a class="reference internal" href="#requirements">Requirements</a></li>
-<li><a class="reference internal" href="#reflection-question">Reflection question</a><ul>
+<li><a class="reference internal" href="#reflection-question">Reflection question</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#activity-hello-world-variations">Activity: Hello, World! Variations</a></li>
 </ul>
 </li>
