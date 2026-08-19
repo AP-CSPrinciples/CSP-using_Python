@@ -478,7 +478,110 @@ Bitwise operators work directly on the **binary representation** of numbers — 
 
 You won't use these daily as a beginner, but recognizing them — and knowing they operate on bits, not on the number's "everyday" value — will keep you from being caught off guard by `&` (bitwise AND) when you meant `and` (logical AND), which is a common bug even experienced programmers make.
 
-**Bitwise Operators** — `🔖 PCEP 1.4`
+**Bitwise Operators in Python** — `🔖 PCEP 1.4`
+
+Python numbers can be written in **binary** (base 2) using the `0b` prefix. Each digit (called a *bit*) is worth a power of 2, reading right to left: 1, 2, 4, 8, 16...
+
+```python
+a = 0b1010   # decimal 10
+b = 0b1100   # decimal 12
+```
+
+```
+a = 1 0 1 0   →  8+0+2+0 = 10
+b = 1 1 0 0   →  8+4+0+0 = 12
+```
+
+Bitwise operators compare two numbers **column by column**, one bit at a time.
+
+**AND (`&`) — "both must be 1"**
+
+The result bit is `1` only if **both** bits in that column are `1`.
+
+```python
+print(a & b)   # 8
+```
+
+```
+  1010
+& 1100
+------
+  1000   → 8
+```
+
+**OR (`|`) — "at least one must be 1"**
+
+The result bit is `1` if **either** bit is `1`.
+
+```python
+print(a | b)   # 14
+```
+
+```
+  1010
+| 1100
+------
+  1110   → 14
+```
+
+**## **XOR (`^`) — "exactly one, not both"**
+
+The result bit is `1` if the two bits are **different**. Think of it as "OR, but if they're both `1`, that doesn't count."
+
+```python
+print(a ^ b)   # 6
+```
+
+```
+  1010
+^ 1100
+------
+  0110   → 6
+```
+
+**NOT (`~`) — flips every bit**
+
+Python integers aren't stored with a fixed number of bits — they act as if they have infinitely many leading `0`s. Flipping *all* of those bits sends the result negative. Rather than deriving this by hand, it's easiest to memorize the shortcut:
+
+```
+~a  =  -(a + 1)
+```
+
+```python
+print(~a)   # -11
+```
+
+**Left shift (`<<`) — slide bits left, fill with 0s**
+
+Every bit moves one spot to the left, and a `0` slides in on the right.
+
+```python
+print(a << 1)   # 20
+```
+
+```
+1010  →  10100
+```
+
+Each left shift by 1 is the same as **multiplying by 2** — similar to how adding a zero to a base-10 number multiplies it by 10.
+
+## Right shift (`>>`) — slide bits right, drop the end
+
+Every bit moves one spot to the right, and whatever falls off the end is discarded.
+
+```python
+print(a >> 1)   # 5
+```
+
+```
+1010  →  101
+```
+
+Each right shift by 1 is the same as **integer division by 2** (rounding down).
+
+**Try it yourself**
+
+Before running the code, convert `a` and `b` to binary on paper and work out each operation by hand column by column. Then check your answers with `print()`.
 
 ```python
 a = 0b1010   # 10
@@ -492,12 +595,91 @@ print(a << 1)  # Left shift → 20
 print(a >> 1)  # Right shift → 5
 ```
 
+
 ### Assignment — Print Statements and Input/Output
 
 🔖 **PCEP 1.5** — Perform Input/Output console operations
 📋 **AP CSP: CRD-2.B** — Implement algorithms in a programming language.
 
-#### Overview
+### What is an f-string?
+
+An f-string ("formatted string literal") lets you embed variables and expressions directly inside a string, instead of gluing pieces together with `+` or placeholders. You create one by putting the letter `f` right before the opening quote:
+
+```python
+name = "Maya"
+age = 15
+
+print(f"{name} is {age} years old.")
+# Output: Maya is 15 years old.
+```
+
+Anything inside curly braces `{ }` gets evaluated as Python code, and the result is inserted into the string as text — even if it wasn't a string to begin with. That's why `age` (an int) doesn't need `str()` conversion here — the f-string handles that automatically.
+
+#### Why "f"?
+
+The `f` tells Python "this string has live code inside it." Without the `f`, curly braces are just literal characters:
+
+```python
+print("{name} is {age} years old.")
+# Output: {name} is {age} years old.   ← not what you want!
+
+print(f"{name} is {age} years old.")
+# Output: Maya is 15 years old.        ← the f makes the magic happen
+```
+
+#### You can put more than just variables inside `{ }`
+
+Since the braces run real Python code, you can do math, call functions, or even index into things:
+
+```python
+print(f"Next year you'll be {age + 1}.")
+# Output: Next year you'll be 16.
+
+print(f"Your name in caps: {name.upper()}")
+# Output: Your name in caps: MAYA
+```
+
+#### Formatting numbers with `:`
+
+A colon inside the braces lets you control *how* the value looks — decimal places, padding, commas, etc.
+
+```python
+pi = 3.14159
+print(f"Pi rounded: {pi:.2f}")
+# Output: Pi rounded: 3.14
+
+big_number = 1000000
+print(f"With commas: {big_number:,}")
+# Output: With commas: 1,000,000
+```
+
+This is one of the biggest advantages f-strings have over `.format()` and concatenation.
+
+#### Comparing all three methods side by side
+
+```python
+name = "Maya"
+age = 15
+
+# f-string
+print(f"{name} is {age} years old.")
+
+# .format()
+print("{} is {} years old.".format(name, age))
+
+# concatenation
+print(name + " is " + str(age) + " years old.")
+```
+
+All three print the same thing, but notice:
+
+- **f-string** — variables live right where they're used, so it's the easiest to read, and no manual type conversion is needed.
+- **`.format()`** — variables are listed separately at the end, so for a long sentence you have to count placeholders to match them up.
+- **concatenation** — works, but gets messy fast, and you must remember `str()` for anything that isn't already a string (a common bug source — forgetting it raises a `TypeError`).
+
+**NOTE:** f-strings became the preferred style starting in Python 3.6.
+
+**Overview**
 
 Python gives you several ways to build and display output. In this assignment
 you'll practice four of them — f-strings, the `format()` method, string
@@ -509,8 +691,6 @@ input from the console.
 **Starter code**
 
 ```python
-# print_io.py
-
 # TODO 0) Use input() to ask the user for their name, and store it in a
 #         variable called name. Then use input() again to ask for their
 #         age, and store it in a variable called age.
@@ -549,7 +729,7 @@ input from the console.
 #         Hello! World
 ```
 
-#### Requirements
+**Requirements**
 
 - [ ] TODO 0) Collect `name` and `age` using `input()`
 - [ ] TODO 1) Print `name` and `age` in a sentence using an f-string
@@ -558,13 +738,12 @@ input from the console.
 - [ ] TODO 4) Print `"A"`, `"B"`, `"C"` as separate arguments with `sep="-"` so the output reads `A-B-C`
 - [ ] TODO 5) Print `"Hello"` with `end="! "`, then print `"World"` so the output reads `Hello! World` on one line
 
-#### Reflection question
+**Reflection question**
 
 All three of TODO 1–3 produce the *same* sentence on screen, but they're
 written three different ways. Which method did you find easiest to read and
 write, and why do you think f-strings are considered the preferred method in
 modern Python?
-
 
 **NOTE: User Input**
 

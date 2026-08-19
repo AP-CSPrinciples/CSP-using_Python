@@ -1051,7 +1051,81 @@
 <li><p><strong>Shifts are a fast way to multiply/divide by powers of 2</strong>: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;&lt;</span> <span class="pre">1</span></code> doubles a number, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;&gt;</span> <span class="pre">1</span></code> halves it (integer division) — a trick you’ll sometimes see in performance-sensitive code.</p></li>
 </ul>
 <p>You won’t use these daily as a beginner, but recognizing them — and knowing they operate on bits, not on the number’s “everyday” value — will keep you from being caught off guard by <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (bitwise AND) when you meant <code class="docutils literal notranslate"><span class="pre">and</span></code> (logical AND), which is a common bug even experienced programmers make.</p>
-<p><strong>Bitwise Operators</strong> — <code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">1.4</span></code></p>
+<p><strong>Bitwise Operators in Python</strong> — <code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">1.4</span></code></p>
+<p>Python numbers can be written in <strong>binary</strong> (base 2) using the <code class="docutils literal notranslate"><span class="pre">0b</span></code> prefix. Each digit (called a <em>bit</em>) is worth a power of 2, reading right to left: 1, 2, 4, 8, 16…</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mb">0b1010</span>   <span class="c1"># decimal 10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mb">0b1100</span>   <span class="c1"># decimal 12</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>a = 1 0 1 0   →  8+0+2+0 = 10
+b = 1 1 0 0   →  8+4+0+0 = 12
+</pre></div>
+</div>
+<p>Bitwise operators compare two numbers <strong>column by column</strong>, one bit at a time.</p>
+<p><strong>AND (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>) — “both must be 1”</strong></p>
+<p>The result bit is <code class="docutils literal notranslate"><span class="pre">1</span></code> only if <strong>both</strong> bits in that column are <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># 8</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  1010
+&amp; 1100
+------
+  1000   → 8
+</pre></div>
+</div>
+<p><strong>OR (<code class="docutils literal notranslate"><span class="pre">|</span></code>) — “at least one must be 1”</strong></p>
+<p>The result bit is <code class="docutils literal notranslate"><span class="pre">1</span></code> if <strong>either</strong> bit is <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">|</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># 14</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  1010
+| 1100
+------
+  1110   → 14
+</pre></div>
+</div>
+<p>**## <strong>XOR (<code class="docutils literal notranslate"><span class="pre">^</span></code>) — “exactly one, not both”</strong></p>
+<p>The result bit is <code class="docutils literal notranslate"><span class="pre">1</span></code> if the two bits are <strong>different</strong>. Think of it as “OR, but if they’re both <code class="docutils literal notranslate"><span class="pre">1</span></code>, that doesn’t count.”</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># 6</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  1010
+^ 1100
+------
+  0110   → 6
+</pre></div>
+</div>
+<p><strong>NOT (<code class="docutils literal notranslate"><span class="pre">~</span></code>) — flips every bit</strong></p>
+<p>Python integers aren’t stored with a fixed number of bits — they act as if they have infinitely many leading <code class="docutils literal notranslate"><span class="pre">0</span></code>s. Flipping <em>all</em> of those bits sends the result negative. Rather than deriving this by hand, it’s easiest to memorize the shortcut:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">a</span>  <span class="o">=</span>  <span class="o">-</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="o">~</span><span class="n">a</span><span class="p">)</span>   <span class="c1"># -11</span>
+</pre></div>
+</div>
+<p><strong>Left shift (<code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>) — slide bits left, fill with 0s</strong></p>
+<p>Every bit moves one spot to the left, and a <code class="docutils literal notranslate"><span class="pre">0</span></code> slides in on the right.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span>   <span class="c1"># 20</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1010  →  10100
+</pre></div>
+</div>
+<p>Each left shift by 1 is the same as <strong>multiplying by 2</strong> — similar to how adding a zero to a base-10 number multiplies it by 10.</p>
+</section>
+</section>
+<section id="right-shift-slide-bits-right-drop-the-end">
+<h2>Right shift (<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>) — slide bits right, drop the end<a class="headerlink" href="#right-shift-slide-bits-right-drop-the-end" title="Link to this heading">¶</a></h2>
+<p>Every bit moves one spot to the right, and whatever falls off the end is discarded.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span>   <span class="c1"># 5</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1010  →  101
+</pre></div>
+</div>
+<p>Each right shift by 1 is the same as <strong>integer division by 2</strong> (rounding down).</p>
+<p><strong>Try it yourself</strong></p>
+<p>Before running the code, convert <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> to binary on paper and work out each operation by hand column by column. Then check your answers with <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mb">0b1010</span>   <span class="c1"># 10</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mb">0b1100</span>   <span class="c1"># 12</span>
 
@@ -1063,13 +1137,81 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Right shift → 5</span>
 </pre></div>
 </div>
-</section>
 <section id="assignment-print-statements-and-input-output">
 <h3>Assignment — Print Statements and Input/Output<a class="headerlink" href="#assignment-print-statements-and-input-output" title="Link to this heading">¶</a></h3>
 <p>🔖 <strong>PCEP 1.5</strong> — Perform Input/Output console operations
 📋 <strong>AP CSP: CRD-2.B</strong> — Implement algorithms in a programming language.</p>
-<section id="overview">
-<h4>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h4>
+</section>
+<section id="what-is-an-f-string">
+<h3>What is an f-string?<a class="headerlink" href="#what-is-an-f-string" title="Link to this heading">¶</a></h3>
+<p>An f-string (“formatted string literal”) lets you embed variables and expressions directly inside a string, instead of gluing pieces together with <code class="docutils literal notranslate"><span class="pre">+</span></code> or placeholders. You create one by putting the letter <code class="docutils literal notranslate"><span class="pre">f</span></code> right before the opening quote:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">"Maya"</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old."</span><span class="p">)</span>
+<span class="c1"># Output: Maya is 15 years old.</span>
+</pre></div>
+</div>
+<p>Anything inside curly braces <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code> gets evaluated as Python code, and the result is inserted into the string as text — even if it wasn’t a string to begin with. That’s why <code class="docutils literal notranslate"><span class="pre">age</span></code> (an int) doesn’t need <code class="docutils literal notranslate"><span class="pre">str()</span></code> conversion here — the f-string handles that automatically.</p>
+<section id="why-f">
+<h4>Why “f”?<a class="headerlink" href="#why-f" title="Link to this heading">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">f</span></code> tells Python “this string has live code inside it.” Without the <code class="docutils literal notranslate"><span class="pre">f</span></code>, curly braces are just literal characters:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">{name}</span><span class="s2"> is </span><span class="si">{age}</span><span class="s2"> years old."</span><span class="p">)</span>
+<span class="c1"># Output: {name} is {age} years old.   ← not what you want!</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old."</span><span class="p">)</span>
+<span class="c1"># Output: Maya is 15 years old.        ← the f makes the magic happen</span>
+</pre></div>
+</div>
+</section>
+<section id="you-can-put-more-than-just-variables-inside">
+<h4>You can put more than just variables inside <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code><a class="headerlink" href="#you-can-put-more-than-just-variables-inside" title="Link to this heading">¶</a></h4>
+<p>Since the braces run real Python code, you can do math, call functions, or even index into things:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Next year you'll be </span><span class="si">{</span><span class="n">age</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+<span class="c1"># Output: Next year you'll be 16.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Your name in caps: </span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="c1"># Output: Your name in caps: MAYA</span>
+</pre></div>
+</div>
+</section>
+<section id="formatting-numbers-with">
+<h4>Formatting numbers with <code class="docutils literal notranslate"><span class="pre">:</span></code><a class="headerlink" href="#formatting-numbers-with" title="Link to this heading">¶</a></h4>
+<p>A colon inside the braces lets you control <em>how</em> the value looks — decimal places, padding, commas, etc.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Pi rounded: </span><span class="si">{</span><span class="n">pi</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="c1"># Output: Pi rounded: 3.14</span>
+
+<span class="n">big_number</span> <span class="o">=</span> <span class="mi">1000000</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"With commas: </span><span class="si">{</span><span class="n">big_number</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="c1"># Output: With commas: 1,000,000</span>
+</pre></div>
+</div>
+<p>This is one of the biggest advantages f-strings have over <code class="docutils literal notranslate"><span class="pre">.format()</span></code> and concatenation.</p>
+</section>
+<section id="comparing-all-three-methods-side-by-side">
+<h4>Comparing all three methods side by side<a class="headerlink" href="#comparing-all-three-methods-side-by-side" title="Link to this heading">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">"Maya"</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="c1"># f-string</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old."</span><span class="p">)</span>
+
+<span class="c1"># .format()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2"> years old."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">))</span>
+
+<span class="c1"># concatenation</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s2">" is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" years old."</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>All three print the same thing, but notice:</p>
+<ul class="simple">
+<li><p><strong>f-string</strong> — variables live right where they’re used, so it’s the easiest to read, and no manual type conversion is needed.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">.format()</span></code></strong> — variables are listed separately at the end, so for a long sentence you have to count placeholders to match them up.</p></li>
+<li><p><strong>concatenation</strong> — works, but gets messy fast, and you must remember <code class="docutils literal notranslate"><span class="pre">str()</span></code> for anything that isn’t already a string (a common bug source — forgetting it raises a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>).</p></li>
+</ul>
+<p><strong>NOTE:</strong> f-strings became the preferred style starting in Python 3.6.</p>
+<p><strong>Overview</strong></p>
 <p>Python gives you several ways to build and display output. In this assignment
 you’ll practice four of them — f-strings, the <code class="docutils literal notranslate"><span class="pre">format()</span></code> method, string
 concatenation, and the <code class="docutils literal notranslate"><span class="pre">sep=</span></code>/<code class="docutils literal notranslate"><span class="pre">end=</span></code> keyword parameters — by completing the
@@ -1077,9 +1219,7 @@ TODOs embedded in the starter code below. This time, <code class="docutils liter
 from the user instead of being hardcoded, so you’ll also practice reading
 input from the console.</p>
 <p><strong>Starter code</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># print_io.py</span>
-
-<span class="c1"># TODO 0) Use input() to ask the user for their name, and store it in a</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO 0) Use input() to ask the user for their name, and store it in a</span>
 <span class="c1">#         variable called name. Then use input() again to ask for their</span>
 <span class="c1">#         age, and store it in a variable called age.</span>
 <span class="c1">#         Remember: input() always returns a string — you'll need to</span>
@@ -1117,9 +1257,7 @@ input from the console.</p>
 <span class="c1">#         Hello! World</span>
 </pre></div>
 </div>
-</section>
-<section id="requirements">
-<h4>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h4>
+<p><strong>Requirements</strong></p>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> TODO 0) Collect <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code> using <code class="docutils literal notranslate"><span class="pre">input()</span></code></p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> TODO 1) Print <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code> in a sentence using an f-string</p></li>
@@ -1128,9 +1266,7 @@ input from the console.</p>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> TODO 4) Print <code class="docutils literal notranslate"><span class="pre">&quot;A&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;B&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;C&quot;</span></code> as separate arguments with <code class="docutils literal notranslate"><span class="pre">sep=&quot;-&quot;</span></code> so the output reads <code class="docutils literal notranslate"><span class="pre">A-B-C</span></code></p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> TODO 5) Print <code class="docutils literal notranslate"><span class="pre">&quot;Hello&quot;</span></code> with <code class="docutils literal notranslate"><span class="pre">end=&quot;!</span> <span class="pre">&quot;</span></code>, then print <code class="docutils literal notranslate"><span class="pre">&quot;World&quot;</span></code> so the output reads <code class="docutils literal notranslate"><span class="pre">Hello!</span> <span class="pre">World</span></code> on one line</p></li>
 </ul>
-</section>
-<section id="reflection-question">
-<h4>Reflection question<a class="headerlink" href="#reflection-question" title="Link to this heading">¶</a></h4>
+<p><strong>Reflection question</strong></p>
 <p>All three of TODO 1–3 produce the <em>same</em> sentence on screen, but they’re
 written three different ways. Which method did you find easiest to read and
 write, and why do you think f-strings are considered the preferred method in
@@ -3765,10 +3901,15 @@ Blue Notebook	Sale Price: $24.99
 <li><a class="reference internal" href="#variables-and-data-types">Variables and Data Types</a></li>
 <li><a class="reference internal" href="#operators">Operators</a><ul>
 <li><a class="reference internal" href="#activity-movie-ticket-eligibility-checker">Activity: Movie Ticket Eligibility Checker</a></li>
-<li><a class="reference internal" href="#assignment-print-statements-and-input-output">Assignment — Print Statements and Input/Output</a><ul>
-<li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#requirements">Requirements</a></li>
-<li><a class="reference internal" href="#reflection-question">Reflection question</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#right-shift-slide-bits-right-drop-the-end">Right shift (<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>) — slide bits right, drop the end</a><ul>
+<li><a class="reference internal" href="#assignment-print-statements-and-input-output">Assignment — Print Statements and Input/Output</a></li>
+<li><a class="reference internal" href="#what-is-an-f-string">What is an f-string?</a><ul>
+<li><a class="reference internal" href="#why-f">Why “f”?</a></li>
+<li><a class="reference internal" href="#you-can-put-more-than-just-variables-inside">You can put more than just variables inside <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code></a></li>
+<li><a class="reference internal" href="#formatting-numbers-with">Formatting numbers with <code class="docutils literal notranslate"><span class="pre">:</span></code></a></li>
+<li><a class="reference internal" href="#comparing-all-three-methods-side-by-side">Comparing all three methods side by side</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#activity-hello-world-variations">Activity: Hello, World! Variations</a></li>
