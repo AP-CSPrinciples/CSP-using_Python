@@ -565,7 +565,7 @@ print(a << 1)   # 20
 
 Each left shift by 1 is the same as **multiplying by 2** — similar to how adding a zero to a base-10 number multiplies it by 10.
 
-## Right shift (`>>`) — slide bits right, drop the end
+**Right shift (`>>`) — slide bits right, drop the end**
 
 Every bit moves one spot to the right, and whatever falls off the end is discarded.
 
@@ -601,7 +601,7 @@ print(a >> 1)  # Right shift → 5
 🔖 **PCEP 1.5** — Perform Input/Output console operations
 📋 **AP CSP: CRD-2.B** — Implement algorithms in a programming language.
 
-### What is an f-string?
+**What is an f-string?**
 
 An f-string ("formatted string literal") lets you embed variables and expressions directly inside a string, instead of gluing pieces together with `+` or placeholders. You create one by putting the letter `f` right before the opening quote:
 
@@ -615,7 +615,7 @@ print(f"{name} is {age} years old.")
 
 Anything inside curly braces `{ }` gets evaluated as Python code, and the result is inserted into the string as text — even if it wasn't a string to begin with. That's why `age` (an int) doesn't need `str()` conversion here — the f-string handles that automatically.
 
-#### Why "f"?
+**Why "f"?**
 
 The `f` tells Python "this string has live code inside it." Without the `f`, curly braces are just literal characters:
 
@@ -627,7 +627,7 @@ print(f"{name} is {age} years old.")
 # Output: Maya is 15 years old.        ← the f makes the magic happen
 ```
 
-#### You can put more than just variables inside `{ }`
+**You can put more than just variables inside `{ }`**
 
 Since the braces run real Python code, you can do math, call functions, or even index into things:
 
@@ -639,7 +639,7 @@ print(f"Your name in caps: {name.upper()}")
 # Output: Your name in caps: MAYA
 ```
 
-#### Formatting numbers with `:`
+**Formatting numbers with `:`**
 
 A colon inside the braces lets you control *how* the value looks — decimal places, padding, commas, etc.
 
@@ -655,7 +655,7 @@ print(f"With commas: {big_number:,}")
 
 This is one of the biggest advantages f-strings have over `.format()` and concatenation.
 
-#### Comparing all three methods side by side
+**Comparing all three methods side by side**
 
 ```python
 name = "Maya"
