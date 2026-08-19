@@ -1112,10 +1112,7 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </pre></div>
 </div>
 <p>Each left shift by 1 is the same as <strong>multiplying by 2</strong> — similar to how adding a zero to a base-10 number multiplies it by 10.</p>
-</section>
-</section>
-<section id="right-shift-slide-bits-right-drop-the-end">
-<h2>Right shift (<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>) — slide bits right, drop the end<a class="headerlink" href="#right-shift-slide-bits-right-drop-the-end" title="Link to this heading">¶</a></h2>
+<p><strong>Right shift (<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>) — slide bits right, drop the end</strong></p>
 <p>Every bit moves one spot to the right, and whatever falls off the end is discarded.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span>   <span class="c1"># 5</span>
 </pre></div>
@@ -1137,13 +1134,12 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Right shift → 5</span>
 </pre></div>
 </div>
+</section>
 <section id="assignment-print-statements-and-input-output">
 <h3>Assignment — Print Statements and Input/Output<a class="headerlink" href="#assignment-print-statements-and-input-output" title="Link to this heading">¶</a></h3>
 <p>🔖 <strong>PCEP 1.5</strong> — Perform Input/Output console operations
 📋 <strong>AP CSP: CRD-2.B</strong> — Implement algorithms in a programming language.</p>
-</section>
-<section id="what-is-an-f-string">
-<h3>What is an f-string?<a class="headerlink" href="#what-is-an-f-string" title="Link to this heading">¶</a></h3>
+<p><strong>What is an f-string?</strong></p>
 <p>An f-string (“formatted string literal”) lets you embed variables and expressions directly inside a string, instead of gluing pieces together with <code class="docutils literal notranslate"><span class="pre">+</span></code> or placeholders. You create one by putting the letter <code class="docutils literal notranslate"><span class="pre">f</span></code> right before the opening quote:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">"Maya"</span>
 <span class="n">age</span> <span class="o">=</span> <span class="mi">15</span>
@@ -1153,8 +1149,7 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </pre></div>
 </div>
 <p>Anything inside curly braces <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code> gets evaluated as Python code, and the result is inserted into the string as text — even if it wasn’t a string to begin with. That’s why <code class="docutils literal notranslate"><span class="pre">age</span></code> (an int) doesn’t need <code class="docutils literal notranslate"><span class="pre">str()</span></code> conversion here — the f-string handles that automatically.</p>
-<section id="why-f">
-<h4>Why “f”?<a class="headerlink" href="#why-f" title="Link to this heading">¶</a></h4>
+<p><strong>Why “f”?</strong></p>
 <p>The <code class="docutils literal notranslate"><span class="pre">f</span></code> tells Python “this string has live code inside it.” Without the <code class="docutils literal notranslate"><span class="pre">f</span></code>, curly braces are just literal characters:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">{name}</span><span class="s2"> is </span><span class="si">{age}</span><span class="s2"> years old."</span><span class="p">)</span>
 <span class="c1"># Output: {name} is {age} years old.   ← not what you want!</span>
@@ -1163,9 +1158,7 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <span class="c1"># Output: Maya is 15 years old.        ← the f makes the magic happen</span>
 </pre></div>
 </div>
-</section>
-<section id="you-can-put-more-than-just-variables-inside">
-<h4>You can put more than just variables inside <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code><a class="headerlink" href="#you-can-put-more-than-just-variables-inside" title="Link to this heading">¶</a></h4>
+<p><strong>You can put more than just variables inside <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code></strong></p>
 <p>Since the braces run real Python code, you can do math, call functions, or even index into things:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Next year you'll be </span><span class="si">{</span><span class="n">age</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 <span class="c1"># Output: Next year you'll be 16.</span>
@@ -1174,9 +1167,7 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <span class="c1"># Output: Your name in caps: MAYA</span>
 </pre></div>
 </div>
-</section>
-<section id="formatting-numbers-with">
-<h4>Formatting numbers with <code class="docutils literal notranslate"><span class="pre">:</span></code><a class="headerlink" href="#formatting-numbers-with" title="Link to this heading">¶</a></h4>
+<p><strong>Formatting numbers with <code class="docutils literal notranslate"><span class="pre">:</span></code></strong></p>
 <p>A colon inside the braces lets you control <em>how</em> the value looks — decimal places, padding, commas, etc.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Pi rounded: </span><span class="si">{</span><span class="n">pi</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
@@ -1188,9 +1179,7 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </pre></div>
 </div>
 <p>This is one of the biggest advantages f-strings have over <code class="docutils literal notranslate"><span class="pre">.format()</span></code> and concatenation.</p>
-</section>
-<section id="comparing-all-three-methods-side-by-side">
-<h4>Comparing all three methods side by side<a class="headerlink" href="#comparing-all-three-methods-side-by-side" title="Link to this heading">¶</a></h4>
+<p><strong>Comparing all three methods side by side</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">"Maya"</span>
 <span class="n">age</span> <span class="o">=</span> <span class="mi">15</span>
 
@@ -1280,7 +1269,6 @@ modern Python?</p>
 <blockquote>
 <div><p><mark><strong>PCEP Exam Tip:</strong> <code class="docutils literal notranslate"><span class="pre">input()</span></code> always returns a <code class="docutils literal notranslate"><span class="pre">str</span></code>. You must use <code class="docutils literal notranslate"><span class="pre">int()</span></code> or <code class="docutils literal notranslate"><span class="pre">float()</span></code> to convert it for math operations.</mark></p>
 </div></blockquote>
-</section>
 </section>
 <section id="activity-hello-world-variations">
 <h3>Activity: Hello, World! Variations<a class="headerlink" href="#activity-hello-world-variations" title="Link to this heading">¶</a></h3>
@@ -3901,17 +3889,7 @@ Blue Notebook	Sale Price: $24.99
 <li><a class="reference internal" href="#variables-and-data-types">Variables and Data Types</a></li>
 <li><a class="reference internal" href="#operators">Operators</a><ul>
 <li><a class="reference internal" href="#activity-movie-ticket-eligibility-checker">Activity: Movie Ticket Eligibility Checker</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#right-shift-slide-bits-right-drop-the-end">Right shift (<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>) — slide bits right, drop the end</a><ul>
 <li><a class="reference internal" href="#assignment-print-statements-and-input-output">Assignment — Print Statements and Input/Output</a></li>
-<li><a class="reference internal" href="#what-is-an-f-string">What is an f-string?</a><ul>
-<li><a class="reference internal" href="#why-f">Why “f”?</a></li>
-<li><a class="reference internal" href="#you-can-put-more-than-just-variables-inside">You can put more than just variables inside <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code></a></li>
-<li><a class="reference internal" href="#formatting-numbers-with">Formatting numbers with <code class="docutils literal notranslate"><span class="pre">:</span></code></a></li>
-<li><a class="reference internal" href="#comparing-all-three-methods-side-by-side">Comparing all three methods side by side</a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#activity-hello-world-variations">Activity: Hello, World! Variations</a></li>
 </ul>
 </li>
