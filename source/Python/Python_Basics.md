@@ -451,7 +451,7 @@ gets_discount = (age > 25 or is_eligible) and not has_discount_coupon
 
 ### Activity: Movie Ticket Eligibility Checker
 
-Write a program that determines whether a person can buy a discounted movie ticket, using **only compound boolean expressions** (`and`, `or`, `not`) — no `if/elif` chains yet.
+Write a program that determines whether a person can buy a discounted movie ticket, using **compound boolean expressions** (`and`, `or`, `not`).
 
 **Requirements:**
 
@@ -460,6 +460,8 @@ Write a program that determines whether a person can buy a discounted movie tick
 3. Store the result of that full condition in a single boolean variable, e.g. `gets_discount = ...`, then print `"Discount applies!"` or `"Full price."` based on its value.
 4. Add a second check: the theater is closed to anyone under 6 with **no adult present** — ask a follow-up question and use `not` to write the condition for "an adult is NOT present."
 5. Print a trace of your boolean logic as a comment above each condition, explaining what it evaluates in plain English (this mirrors how you'll need to explain conditions in your AP CSP written responses).
+
+**Submit your .py file and test cases showing that your program worked as intended.**
 
 *PCEP: 1.4 | AP CSP: AAP-2.F*
 
@@ -490,31 +492,105 @@ print(a << 1)  # Left shift → 20
 print(a >> 1)  # Right shift → 5
 ```
 
-## Print Statements and Input/Output
+# Assignment — Print Statements and Input/Output
 
-`🔖 PCEP 1.5` — Perform Input/Output console operations
-`📋 AP CSP: CRD-2.B` — Implement algorithms in a programming language.
+🔖 **PCEP 1.5** — Perform Input/Output console operations
+📋 **AP CSP: CRD-2.B** — Implement algorithms in a programming language.
+
+## Overview
+
+Python gives you several ways to build and display output. In this assignment
+you'll practice four of them — f-strings, the `format()` method, string
+concatenation, and the `sep=`/`end=` keyword parameters — by completing the
+TODOs embedded in the starter code below. This time, `name` and `age` come
+from the user instead of being hardcoded, so you'll also practice reading
+input from the console.
+
+## Starter code
 
 ```python
-# 1. Basic print
-print("Hello, World!")
+# print_io.py
 
-# 2. f-strings (most readable — preferred method)
-name = "Alice"
-age = 25
+# TODO 0) Use input() to ask the user for their name, and store it in a
+#         variable called name. Then use input() again to ask for their
+#         age, and store it in a variable called age.
+#         Remember: input() always returns a string — you'll need to
+#         convert age to an int before you can use it in math, but the
+#         examples below only print it, so str()/f-string formatting
+#         will handle that part for you.
+
+
+# TODO 1) f-strings (most readable — preferred method)
+#         Use an f-string to print a sentence that includes both
+#         `name` and `age`.
+
+
+# TODO 2) format() method
+#         Print the same sentence as TODO 1, but built with the
+#         .format() method instead of an f-string.
+
+
+# TODO 3) Concatenation
+#         Print the same sentence again, this time using the + operator
+#         to concatenate strings. Remember: non-string values (like age)
+#         must be converted with str() before you can concatenate them.
+
+
+# TODO 4) sep= keyword parameter
+#         Print the letters "A", "B", and "C" as three separate
+#         arguments to print(), using sep="-" so the output reads:
+#         A-B-C
+
+
+# TODO 5) end= keyword parameter
+#         Print "Hello" using end="! " so that it does NOT start a new
+#         line, then print "World" right after it on the same line.
+#         The combined output should read:
+#         Hello! World
+```
+
+## Requirements
+
+- [ ] TODO 0) Collect `name` and `age` using `input()`
+- [ ] TODO 1) Print `name` and `age` in a sentence using an f-string
+- [ ] TODO 2) Print the same sentence using the `.format()` method
+- [ ] TODO 3) Print the same sentence using string concatenation (`+`), converting `age` with `str()`
+- [ ] TODO 4) Print `"A"`, `"B"`, `"C"` as separate arguments with `sep="-"` so the output reads `A-B-C`
+- [ ] TODO 5) Print `"Hello"` with `end="! "`, then print `"World"` so the output reads `Hello! World` on one line
+
+## Reflection question
+
+All three of TODO 1–3 produce the *same* sentence on screen, but they're
+written three different ways. Which method did you find easiest to read and
+write, and why do you think f-strings are considered the preferred method in
+modern Python?
+
+<details>
+<summary>Answer key (instructor use)</summary>
+
+```python
+# TODO 0
+name = input("What is your name? ")
+age = input("How old are you? ")
+
+# TODO 1
 print(f"My name is {name} and I am {age} years old.")
 
-# 3. format() method
+# TODO 2
 print("My name is {} and I am {} years old.".format(name, age))
 
-# 4. Concatenation (must convert non-strings)
-print("Name: " + name + ", Age: " + str(age))
+# TODO 3
+print("My name is " + name + " and I am " + str(age) + " years old.")
 
-# 5. sep= and end= keyword parameters
-print("A", "B", "C", sep="-")   # A-B-C
+# TODO 4
+print("A", "B", "C", sep="-")
+
+# TODO 5
 print("Hello", end="! ")
-print("World")                  # Hello! World
+print("World")
 ```
+
+</details>
 
 **User Input**
 
