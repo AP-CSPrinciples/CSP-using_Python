@@ -633,7 +633,7 @@ All three print the same thing, but notice:
 - **f-string** — variables live right where they're used, so it's the easiest to read, and no manual type conversion is needed.
 - **`.format()`** — variables are listed separately at the end, so for a long sentence you have to count placeholders to match them up.
 - **concatenation** — works, but gets messy fast, and you must remember `str()` for anything that isn't already a string (a common bug source — forgetting it raises a `TypeError`).
-- 
+
 
 **NOTE:** f-strings became the preferred style starting in Python 3.6.
 
@@ -665,31 +665,40 @@ price = float(input("Enter price: "))      # convert to float
 
 ---
 
-`sep`= — controls what goes between multiple arguments
+**`sep`** = — controls what goes between multiple arguments
 
-By default, print() joins multiple comma-separated arguments with a single space. `sep=` lets you override that separator.
+By default, print() joins multiple comma-separated arguments with a single space. **`sep=`** lets you override that separator.
 
 python
-print("A", "B", "C")            # A B C   (default `sep=`" ")
+print("A", "B", "C")            # A B C   (default **`sep=`**" ")
 print("A", "B", "C", sep="-")   # A-B-C
 print("A", "B", "C", sep="")    # ABC
 print(2026, 8, 20, sep="/")     # 2026/8/20
 
-Each comma-separated item is a separate argument — `sep` only affects the space between them, not anything else about the string.
+Each comma-separated item is a separate argument — **`sep`** only affects the space between them, not anything else about the string.
 
-`end`= — controls what goes after the whole print call
+**`end`**= — controls what goes after the whole print call
 
 By default, print() ends every call with a newline ("\n"), which is why each print() normally starts a new line. end= replaces that trailing newline with whatever string you give it.
 
-python
+```python
 print("Hello")
 print("World")
-**Hello**
-**World**
+```
+**Sample Output:** 
+```python
+Hello
+World
+```
 
+```python
 print("Hello", end="! ")
 print("World")
-**Hello! World**
+```
+**Sample Output:**
+```python
+Hello! World
+```
 
 Here, the first print() doesn't move to a new line — it ends with "! " instead — so the second print() continues right where the first left off.
 
