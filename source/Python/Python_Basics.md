@@ -701,6 +701,7 @@ input from the console.
 - [ ] TODO 3) Print the same sentence using string concatenation (`+`), converting `age` with `str()`
 - [ ] TODO 4) Print `"A"`, `"B"`, `"C"` as separate arguments with `sep="-"` so the output reads `A-B-C`
 - [ ] TODO 5) Print `"Hello"` with `end="! "`, then print `"World"` so the output reads `Hello! World` on one line
+- [ ] **Submit your .py file and test cases showing that your program worked as intended.**
 
 **Reflection question**
 
