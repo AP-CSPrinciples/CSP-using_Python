@@ -1244,6 +1244,12 @@ concatenation, and the <code class="docutils literal notranslate"><span class="p
 TODOs embedded in the starter code below. This time, <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code> come
 from the user instead of being hardcoded, so you’ll also practice reading
 input from the console.</p>
+<p><strong>NOTE: User Input</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your name: "</span><span class="p">)</span>          <span class="c1"># always returns a string</span>
+<span class="n">age</span>  <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your age: "</span><span class="p">))</span>      <span class="c1"># convert to int</span>
+<span class="n">price</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter price: "</span><span class="p">))</span>      <span class="c1"># convert to float</span>
+</pre></div>
+</div>
 <p><strong>Starter code</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO 0) Use input() to ask the user for their name, and store it in a</span>
 <span class="c1">#         variable called name. Then use input() again to ask for their</span>
@@ -1298,16 +1304,11 @@ input from the console.</p>
 written three different ways. Which method did you find easiest to read and
 write, and why do you think f-strings are considered the preferred method in
 modern Python?</p>
-<p><strong>NOTE: User Input</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your name: "</span><span class="p">)</span>          <span class="c1"># always returns a string</span>
-<span class="n">age</span>  <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your age: "</span><span class="p">))</span>      <span class="c1"># convert to int</span>
-<span class="n">price</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter price: "</span><span class="p">))</span>      <span class="c1"># convert to float</span>
-</pre></div>
-</div>
 <blockquote>
 <div><p><mark><strong>Reminder:</strong> <code class="docutils literal notranslate"><span class="pre">input()</span></code> always returns a <code class="docutils literal notranslate"><span class="pre">str</span></code>. You must use <code class="docutils literal notranslate"><span class="pre">int()</span></code> or <code class="docutils literal notranslate"><span class="pre">float()</span></code> to convert it for math operations.</mark></p>
 </div></blockquote>
 </section>
+<hr class="docutils" />
 <section id="activity-hello-world-variations">
 <h3>Activity: Hello, World! Variations<a class="headerlink" href="#activity-hello-world-variations" title="Link to this heading">¶</a></h3>
 <p>Write a program that asks the user for their name, age, and favorite color. Print a formatted sentence using each of the three print methods (f-string, <code class="docutils literal notranslate"><span class="pre">format()</span></code>, concatenation). Include a header block.</p>

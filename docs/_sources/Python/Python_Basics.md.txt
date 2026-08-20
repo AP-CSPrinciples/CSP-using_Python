@@ -652,6 +652,16 @@ TODOs embedded in the starter code below. This time, `name` and `age` come
 from the user instead of being hardcoded, so you'll also practice reading
 input from the console.
 
+
+**NOTE: User Input**
+
+```python
+name = input("Enter your name: ")          # always returns a string
+age  = int(input("Enter your age: "))      # convert to int
+price = float(input("Enter price: "))      # convert to float
+```
+
+
 **Starter code**
 
 ```python
@@ -710,15 +720,9 @@ written three different ways. Which method did you find easiest to read and
 write, and why do you think f-strings are considered the preferred method in
 modern Python?
 
-**NOTE: User Input**
-
-```python
-name = input("Enter your name: ")          # always returns a string
-age  = int(input("Enter your age: "))      # convert to int
-price = float(input("Enter price: "))      # convert to float
-```
-
 > <mark>**Reminder:** `input()` always returns a `str`. You must use `int()` or `float()` to convert it for math operations.</mark>
+
+---
 
 ### Activity: Hello, World! Variations
 
