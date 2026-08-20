@@ -1231,6 +1231,7 @@
 <li><p><strong>f-string</strong> — variables live right where they’re used, so it’s the easiest to read, and no manual type conversion is needed.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">.format()</span></code></strong> — variables are listed separately at the end, so for a long sentence you have to count placeholders to match them up.</p></li>
 <li><p><strong>concatenation</strong> — works, but gets messy fast, and you must remember <code class="docutils literal notranslate"><span class="pre">str()</span></code> for anything that isn’t already a string (a common bug source — forgetting it raises a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>).</p></li>
+<li></li>
 </ul>
 <p><strong>NOTE:</strong> f-strings became the preferred style starting in Python 3.6.</p>
 <details><summary>🤔 Thinking Question — check your answer</summary>
@@ -1250,8 +1251,38 @@ input from the console.</p>
 <span class="n">price</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter price: "</span><span class="p">))</span>      <span class="c1"># convert to float</span>
 </pre></div>
 </div>
-<p><strong>Starter code</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO 0) Use input() to ask the user for their name, and store it in a</span>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">sep</span></code>= — controls what goes between multiple arguments</p>
+<p>By default, print() joins multiple comma-separated arguments with a single space. <code class="docutils literal notranslate"><span class="pre">sep=</span></code> lets you override that separator.</p>
+<p>python
+print(“A”, “B”, “C”)            # A B C   (default <code class="docutils literal notranslate"><span class="pre">sep=</span></code>” “)
+print(“A”, “B”, “C”, sep=”-”)   # A-B-C
+print(“A”, “B”, “C”, sep=””)    # ABC
+print(2026, 8, 20, sep=”/”)     # 2026/8/20</p>
+<p>Each comma-separated item is a separate argument — <code class="docutils literal notranslate"><span class="pre">sep</span></code> only affects the space between them, not anything else about the string.</p>
+<p><code class="docutils literal notranslate"><span class="pre">end</span></code>= — controls what goes after the whole print call</p>
+<p>By default, print() ends every call with a newline (“\n”), which is why each print() normally starts a new line. end= replaces that trailing newline with whatever string you give it.</p>
+<p>python
+print(“Hello”)
+print(“World”)
+<strong>Hello</strong>
+<strong>World</strong></p>
+<p>print(“Hello”, end=”! “)
+print(“World”)
+<strong>Hello! World</strong></p>
+<p>Here, the first print() doesn’t move to a new line — it ends with “! “ instead — so the second print() continues right where the first left off.</p>
+<p>Together:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"-"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" | "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"D"</span><span class="p">,</span> <span class="s2">"E"</span><span class="p">,</span> <span class="s2">"F"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"-"</span><span class="p">)</span><span class="err">```</span>
+<span class="o">**</span><span class="n">A</span><span class="o">-</span><span class="n">B</span><span class="o">-</span><span class="n">C</span> <span class="o">|</span> <span class="n">D</span><span class="o">-</span><span class="n">E</span><span class="o">-</span><span class="n">F</span><span class="o">**</span>
+
+<span class="o">---</span>
+
+
+<span class="o">**</span><span class="n">Starter</span> <span class="n">code</span><span class="o">**</span>
+
+<span class="err">```</span><span class="n">python</span>
+<span class="c1"># TODO 0) Use input() to ask the user for their name, and store it in a</span>
 <span class="c1">#         variable called name. Then use input() again to ask for their</span>
 <span class="c1">#         age, and store it in a variable called age.</span>
 <span class="c1">#         Remember: input() always returns a string — you'll need to</span>
