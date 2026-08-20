@@ -1253,11 +1253,12 @@ input from the console.</p>
 <hr class="docutils" />
 <p><strong><code class="docutils literal notranslate"><span class="pre">sep</span></code></strong> = — controls what goes between multiple arguments</p>
 <p>By default, print() joins multiple comma-separated arguments with a single space. <strong><code class="docutils literal notranslate"><span class="pre">sep=</span></code></strong> lets you override that separator.</p>
-<p>python
-print(“A”, “B”, “C”)            # A B C   (default <strong><code class="docutils literal notranslate"><span class="pre">sep=</span></code></strong>” “)
-print(“A”, “B”, “C”, sep=”-”)   # A-B-C
-print(“A”, “B”, “C”, sep=””)    # ABC
-print(2026, 8, 20, sep=”/”)     # 2026/8/20</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">)</span>            <span class="c1"># A B C   (default **`sep=`**" ")</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"-"</span><span class="p">)</span>   <span class="c1"># A-B-C</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>    <span class="c1"># ABC</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"/"</span><span class="p">)</span>     <span class="c1"># 2026/8/20</span>
+</pre></div>
+</div>
 <p>Each comma-separated item is a separate argument — <strong><code class="docutils literal notranslate"><span class="pre">sep</span></code></strong> only affects the space between them, not anything else about the string.</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">end</span></code></strong>= — controls what goes after the whole print call</p>
 <p>By default, print() ends every call with a newline (“\n”), which is why each print() normally starts a new line. end= replaces that trailing newline with whatever string you give it.</p>
@@ -1281,16 +1282,14 @@ print(2026, 8, 20, sep=”/”)     # 2026/8/20</p>
 <p>Here, the first print() doesn’t move to a new line — it ends with “! “ instead — so the second print() continues right where the first left off.</p>
 <p>Together:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"-"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" | "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"D"</span><span class="p">,</span> <span class="s2">"E"</span><span class="p">,</span> <span class="s2">"F"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"-"</span><span class="p">)</span><span class="err">```</span>
-<span class="o">**</span><span class="n">A</span><span class="o">-</span><span class="n">B</span><span class="o">-</span><span class="n">C</span> <span class="o">|</span> <span class="n">D</span><span class="o">-</span><span class="n">E</span><span class="o">-</span><span class="n">F</span><span class="o">**</span>
-
-<span class="o">---</span>
-
-
-<span class="o">**</span><span class="n">Starter</span> <span class="n">code</span><span class="o">**</span>
-
-<span class="err">```</span><span class="n">python</span>
-<span class="c1"># TODO 0) Use input() to ask the user for their name, and store it in a</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"D"</span><span class="p">,</span> <span class="s2">"E"</span><span class="p">,</span> <span class="s2">"F"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"-"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Sample Output</strong>
+A-B-C | D-E-F</p>
+<hr class="docutils" />
+<p><strong>Starter code</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO 0) Use input() to ask the user for their name, and store it in a</span>
 <span class="c1">#         variable called name. Then use input() again to ask for their</span>
 <span class="c1">#         age, and store it in a variable called age.</span>
 <span class="c1">#         Remember: input() always returns a string — you'll need to</span>

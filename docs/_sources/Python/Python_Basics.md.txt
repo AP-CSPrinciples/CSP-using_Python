@@ -669,11 +669,12 @@ price = float(input("Enter price: "))      # convert to float
 
 By default, print() joins multiple comma-separated arguments with a single space. **`sep=`** lets you override that separator.
 
-python
+```python
 print("A", "B", "C")            # A B C   (default **`sep=`**" ")
 print("A", "B", "C", sep="-")   # A-B-C
 print("A", "B", "C", sep="")    # ABC
 print(2026, 8, 20, sep="/")     # 2026/8/20
+```
 
 Each comma-separated item is a separate argument — **`sep`** only affects the space between them, not anything else about the string.
 
@@ -706,8 +707,10 @@ Together:
 
 ```python
 print("A", "B", "C", sep="-", end=" | ")
-print("D", "E", "F", sep="-")```
-**A-B-C | D-E-F**
+print("D", "E", "F", sep="-")
+```
+**Sample Output**
+A-B-C | D-E-F
 
 ---
 
