@@ -1,6 +1,6 @@
 # Class Announcements
 
-| Date | Period 4 | Date | Period 6 |
+| Date | Period 7 | Date | Period 4 |
 | :---: | :---: | :---: | :---: |
 |        |                                | 8-20-26 |  Movie Ticket Class Assignment |
 | 8-19-26 | Movie Ticket Class Assignment | 8-20-26 | Print Statements and Input/Output |
