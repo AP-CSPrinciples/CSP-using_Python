@@ -1,5 +1,5 @@
 # Python Basics
-```Revised August 2026 — Reorganized for CSP-First / PCEP-Over-Two-Years```
+```Revised August 2026 — Reorganized for CSP-First-Semester / PCEP-Second-Semester```
 
 Python is an open-source, high-level programming language that is widely considered one of the best first languages to learn. It supports multiple programming paradigms — including **procedural**, **functional**, and **object-oriented programming (OOP)** — and is backed by an enormous standard library and community. As of 2024, it is one of the most in-demand languages in the job market, used in web development, data science, artificial intelligence, IoT, and cybersecurity.
 
