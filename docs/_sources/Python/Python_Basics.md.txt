@@ -1,5 +1,5 @@
 # Python Basics
-```Revised August 2026```
+```Revised August 2026 — Reorganized for CSP-First / PCEP-Second Semester```
 
 Python is an open-source, high-level programming language that is widely considered one of the best first languages to learn. It supports multiple programming paradigms — including **procedural**, **functional**, and **object-oriented programming (OOP)** — and is backed by an enormous standard library and community. As of 2024, it is one of the most in-demand languages in the job market, used in web development, data science, artificial intelligence, IoT, and cybersecurity.
 
@@ -7,18 +7,18 @@ This course is designed to prepare you for:
 - 🎯 **AP Computer Science Principles (AP CSP)** — College Board performance task and exam
 - 🏅 **PCEP™ – Certified Entry-Level Python Programmer** (Exam PCEP-30-02, OpenEDG Python Institute)
 
-> **How to use this document:** Topics are organized to build skills progressively. PCEP exam objectives are labeled `🔖 PCEP` and AP CSP standards are labeled `📋 AP CSP`. Activities and projects are marked with `###`.
+> **How to use this document — READ THIS FIRST:** Topics are now organized around **when you need them for the AP CSP Create Performance Task (CPT)**, not around the PCEP exam blueprint. Everything you need to write, test, and explain your CPT program lives in the main body of this document (Sections 1–4, File Operations, Data Structures, OOP). PCEP-only exam content that isn't required for the CPT — numeral systems, bitwise operators, built-in functions like `map`/`filter`, lambda functions, frozensets, and the full exception hierarchy tree — has been moved to **[PCEP Certification -Second Semester](#pcep-certification-path-year-2)** at the end of this document, where you'll study it at a slower pace *after* the CPT is done, over the second half of the year. PCEP exam objectives are labeled `🔖 PCEP` and AP CSP standards are labeled `📋 AP CSP`. Activities and projects are marked with `###`. New this revision: **🤔 Thinking Question** checkpoints after every new concept, a **📌 Worked Example** before every assignment, and **🧩 Scaffolding** checkpoints for multi-day projects.
 
 ---
 
-## 📅 Python Pacing Guide
+## 📅 Python Pacing Guide — Year 1 (AP CSP Focus)
 
 `Aug 17 – Dec 18, 2026`
 
 | Week | Dates | Content Focus | Notebook Spread | Activities / Projects | PT / CPT In-Class Time | Weekly Min |
 |:---:|:---:|:---|:---:|:---|:---:|:---:|
 | 1 | Aug 17–21 | How Python Works; Style; Debugging; Variables & Data Types | Spreads 1 & 2 | — | — | 216 |
-| 2 | Aug 24–28 | Variables (cont.); Operators; Numeral Systems | Spread 3 | Movie Ticket Eligibility Checker | — | 216 |
+| 2 | Aug 24–28 | Variables (cont.); Operators | Spread 3 | Movie Ticket Eligibility Checker | — | 216 |
 | 3 | Aug 31–Sep 4 | Print Statements & Input/Output | Spread 4 | Hello, World! Variations | — | 216 |
 | 4 | Sep 7–11 | Conditional Statements | Spread 5 | Grade Calculator | — | 216 |
 | 5 | Sep 14–18 | Loops | Spread 6 | Nested Loop Pattern Design Studio | — | 216 |
@@ -28,24 +28,24 @@ This course is designed to prepare you for:
 | 9 | Oct 12–16 | Functions; Practice PT 1 in-class work | Spread 10 | Math Operations Calculator; Recursion Practice — Three Levels | 176 min (2×88) *Practice* | 216 |
 | 10 | Oct 19–23 | Functions (cont.); Modules and Packages; Practice PT 1 in-class work | — | **Project:** Random Trivia Quiz Generator | 176 min (2×88) *Practice* | 216 |
 | 11 | Oct 26–30 | Exception Handling; **Practice PT 1 Due (Fri)** | Spread 11 | Safe Calculator | 88 min (1×88) *Practice* | 216 |
-| 12 | Nov 2–6 | Data Structures Deep Dive; **Practice PT 2 Introduced** | Spread 12 | — | 176 min (2×88) *Practice* | 216 |
+| 12 | Nov 2–6 | File Operations; Data Structures (Sets, Stacks/Queues); **Practice PT 2 Introduced** | Spread 12 | Student Roster File Manager | 176 min (2×88) *Practice* | 216 |
 | 13 | Nov 9–13 | OOP | Spread 13 | OOP Zoo (3 options) | 128 min (88+40) *Practice* | 216 |
-| 14 | Nov 16–20 | **PCEP Exam Prep; Certification Review** (Mon/Wed); **Practice PT 2 Due (Fri)** | — | — | 40 min (Fri) *Practice* | 216 |
+| 14 | Nov 16–20 | **CPT Checklist Review & Practice PT 2 Workshop** (Mon/Wed); **Practice PT 2 Due (Fri)** | — | — | 40 min (Fri) *Practice* | 216 |
 | 15 | Nov 23–27 | **THANKSGIVING — No School** | — | — | — | — |
 | 16 | Nov 30–Dec 4 | AP CSP CPT — Brainstorming Workshop | Spread 15 | CPT Brainstorming: students develop an **original** program idea | 216 min **Official CPT** | 216 |
 | 17 | Dec 7–11 | AP CSP CPT — Writing Code, Recording Video, Developing PPR Responses | — | Official CPT Program (original idea, in progress) | 216 min **Official CPT** | 216 |
 | 18 | Dec 14–18 | AP CSP CPT — Final Coding/Submission; **CPT Due (Fri, Dec 18)**; End-of-Course Reflection | Spread 16 | Official CPT Program (original idea, due) | 216 min **Official CPT** | 216 |
 
-> **Practice PT 1 & 2** are formative — students write a full program to an actual College Board–style CPT prompt so they've rehearsed the task before the real one, but this time is **not counted** toward the AP CPT's official minimum. Practice PT 1 total ≈ 480 min (Weeks 8–11). Practice PT 2 total ≈ 344 min (Weeks 12–14).
+> **Practice PT 1 & 2** are formative — students write a full program to an actual College Board–style CPT prompt so they've rehearsed the task before the real one, but this time is **not counted** toward the AP CPT's official minimum. Practice PT 1 total ≈ 480 min (Weeks 8–11). Practice PT 2 total ≈ 344 min (Weeks 12–14). See **[AP CSP Performance Task Preparation](#ap-csp-performance-task-preparation)** below for idea lists for both.
 >
-> **Per AP College Board CPT requirements, the official CPT must be an original student idea.** Students may **not** submit Practice PT 1, Practice PT 2, or any other program they've already completed as their CPT — the program developed during Weeks 16–18 must be new. The Final Project Options (A/B/C) in the curriculum may still be offered as optional starting frameworks/scaffolds, but each student's actual CPT submission — the idea, the implementation, and the individual creative work behind it — must be their own original work developed within the official CPT window.
+> **Per AP College Board CPT requirements, the official CPT must be an original student idea.** Students may **not** submit Practice PT 1, Practice PT 2, or any other program they've already completed as their CPT — the program developed during Weeks 16–18 must be new. The Final Project Options (A/B/C) may still be offered as optional starting frameworks/scaffolds, but each student's actual CPT submission — the idea, the implementation, and the individual creative work behind it — must be their own original work developed within the official CPT window.
 >
 > **Official AP CSP CPT (the actual, submitted Create Performance Task) happens entirely in December**: Week 16 = brainstorming/planning an original idea, Week 17 = coding + video + PPR written responses, Week 18 = final coding, submission (due Fri, Dec 18), and course wrap-up — all three are full 5-day weeks.
 > **Total Official CPT Time: 216 + 216 + 216 = 648 min (≈10.8 hrs) — clears the 9-hour College Board minimum with room to spare, entirely within December, even after setting aside time on the last day for End-of-Course Reflection.**
-
+>
+> ⚠️ **What changed from the previous version:** The old Week 14 PCEP exam-prep cram day is gone. PCEP-specific exam content (numeral systems, bitwise operators, built-in functions, lambdas, frozensets, the full exception hierarchy) has been pulled out of Semester 1 entirely — see the note above the pacing table. That gives Weeks 1–14 room to slow down, add more worked examples, and add the CPT-checklist workshop in Week 14 instead of a PCEP cram session. PCEP prep now happens at a sustainable pace across Semester 2 (Jan–June) in **[PCEP Certification Path — Year 2](#pcep-certification-path-year-2)**, after the CPT is behind you.
 
 ---
-
 
 # Python Style Guidelines
 
@@ -197,7 +197,6 @@ Before asking for help, confirm:
 ---
 
 # Section 1 — Computer Programming and Python Fundamentals
-`🔖 PCEP Section 1 — 18% of exam (7 items)`
 `📋 AP CSP: CRD-2.A, CRD-2.B`
 
 ## How Python Works
@@ -217,11 +216,18 @@ Python is an **interpreted** language. Instead of being compiled into machine co
 
 > <mark>A **SyntaxError** means Python cannot understand your code structure. A **logic error** means Python understands it but does something you didn't intend.</mark>
 
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** Your program runs without crashing, but it prints the wrong total every time. Is this most likely a syntax error, a runtime error, or a logic error — and how do you know?
+
+**Answer:** A **logic error**. Python ran the code successfully (no crash, no error message), so the syntax was fine and nothing "broke" at runtime — the program just did something other than what you intended. You'd fix this by tracing your math/logic step by step, not by looking for a typo.
+</details>
+
 ## Python Keywords and Structure
 
 `🔖 PCEP 1.2` — Understand Python's logic and structure
 
-**Keywords** are reserved words that Python uses for specific purposes. You cannot use them as variable names.
+**Keywords** are reserved words that Python uses for specific purposes. You cannot use them as variable names. This is a reference table you'll come back to all year — bookmark it.
 
 ```
 False    None     True     and      as       assert
@@ -231,6 +237,30 @@ from     global   if       import   in       is
 lambda   nonlocal not      or       pass     raise
 return   try      while    with     yield
 ```
+
+**What each keyword does (quick-reference glossary):**
+
+| Keyword | Purpose |
+|---|---|
+| `True` / `False` | The two Boolean values |
+| `None` | Represents "no value" |
+| `and` / `or` / `not` | Logical operators for combining/reversing conditions |
+| `if` / `elif` / `else` | Conditional branching |
+| `for` / `while` | Loop constructs |
+| `break` / `continue` / `pass` | Loop control — exit early, skip an iteration, or do nothing |
+| `def` | Defines a function |
+| `return` | Sends a value back from a function |
+| `class` | Defines a class (blueprint for objects) |
+| `import` / `from` / `as` | Bring in code from modules |
+| `try` / `except` / `finally` / `raise` | Exception handling |
+| `in` | Membership test (`x in list`) or loop iteration (`for x in list`) |
+| `is` | Identity comparison (same object in memory, not just equal value) |
+| `global` / `nonlocal` | Change which variable scope a name refers to |
+| `lambda` | Defines a small anonymous function *(PCEP deep dive — see Year 2)* |
+| `del` | Deletes a variable, list item, or dictionary key |
+| `with` | Opens a resource (like a file) and guarantees it's closed afterward |
+| `assert` | Checks that a condition is true; raises an error if not (used in testing) |
+| `yield` / `async` / `await` | Advanced generator/async syntax — not used in this course |
 
 <mark>**Indentation** is not optional in Python — it defines code blocks. Incorrect indentation causes a `IndentationError`.</mark>
 
@@ -268,9 +298,16 @@ print(area_of_rectangle.__doc__)   # Calculate and return the area of a rectangl
 
 > <mark>**Rule of thumb:** a comment explains a line to a fellow programmer; a docstring is the instruction manual for someone who will never open the function's source code.</mark>
 
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** You write `if True print("hi")` and Python refuses to run it before ever touching the print statement. What's missing, and what category of error is this?
+
+**Answer:** The colon `:` after the condition is missing — every `if`, `for`, `while`, `def`, and `class` header needs one. This is a **syntax error**: Python can't even understand the structure of the line, so it never gets far enough to try running it.
+</details>
+
 ## Variables and Data Types
 
-`🔖 PCEP 1.3` — Introduce literals and variables; numeral systems
+`🔖 PCEP 1.3` — Introduce literals and variables
 `📋 AP CSP: DAT-1.A` — Explain how data can be represented using bits.
 
 A **variable** is a named location in memory that stores a value. <mark>Python uses **dynamic typing** — the data type is inferred from the assigned value, not declared in advance.</mark>
@@ -295,19 +332,6 @@ result = None       # NoneType
 | List | `list` | `colors = ["red", "blue"]` | ✅ |
 | Tuple | `tuple` | `coords = (10, 20)` | ✅ |
 | Dictionary | `dict` | `person = {"name": "Alice"}` | ✅ |
-
-**Numeral Systems** — `🔖 PCEP 1.3`
-
-Python supports writing integer literals in multiple bases:
-
-```python
-decimal     = 255        # base 10
-binary      = 0b11111111 # base 2  → 255
-octal       = 0o377      # base 8  → 255
-hexadecimal = 0xFF       # base 16 → 255
-
-print(binary, octal, hexadecimal)  # All print: 255 255 255
-```
 
 **Scientific Notation**
 
@@ -338,6 +362,15 @@ b = bool(0)          # int → bool (0 = False, anything else = True)
 print(0.1 + 0.2)        # 0.30000000000000004
 print(round(0.1 + 0.2, 2))  # 0.3
 ```
+
+> 🔖 **PCEP note:** binary/octal/hex numeral systems (writing integers in different bases) are a PCEP-only topic and are covered in depth in **[PCEP Certification Path — Year 2](#pcep-certification-path-year-2)**. You don't need them for the CPT.
+
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** `age = "25"` then later `total = age + 5`. What happens, and why?
+
+**Answer:** Python raises a `TypeError`, because `age` is a **string** `"25"`, not an integer — Python won't automatically add a string and an int together. You'd need `total = int(age) + 5` to cast the string to an int first. This exact bug is extremely common with `input()`, since `input()` always returns a string.
+</details>
 
 ## Operators
 
@@ -399,7 +432,7 @@ x **= 2  # x = x ** 2 → 36
 | `>=` | Greater or equal | `x >= 5` |
 | `<=` | Less or equal | `x <= 5` |
 
-**`==` vs. `is`** — `🔖 PCEP 1.4` `📋 AP CSP: AAP-2.F`
+**`==` vs. `is`**
 
 `==` and `is` are **not interchangeable**, even though both can return `True`/`False` in a comparison.
 
@@ -418,7 +451,7 @@ print(a is b)   # False — two different list objects
 print(a is c)   # True  — c points to the same object as a
 ```
 
-> <mark>**PCEP Exam Trap:** Use `is` / `is not` only for identity checks — most importantly `x is None` (the Python standard, preferred over `x == None`). Use `==` for comparing values (numbers, strings, list contents, etc.). Small integers and short strings may sometimes evaluate `is` as `True` due to CPython's internal caching — this is an implementation detail, not something to rely on in your own code.</mark>
+> <mark>**Rule of thumb:** use `is` / `is not` only for identity checks — most importantly `x is None` (the Python standard, preferred over `x == None`). Use `==` for comparing values (numbers, strings, list contents, etc.).</mark>
 
 **Boolean / Logical Operators**
 
@@ -449,9 +482,44 @@ gets_discount = (age > 25 or is_eligible) and not has_discount_coupon
 
 </details>
 
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** `age = 17` and `has_ticket = False`. Evaluate `age >= 18 or has_ticket` and `age >= 18 and has_ticket` by hand before running any code. Are they the same?
+
+**Answer:** No. `or` only needs **one** side to be `True`; here both sides are `False` (`17 >= 18` is `False`, `has_ticket` is `False`), so `or` evaluates to `False`. `and` needs **both** sides `True`, so it's also `False` here — but that's a coincidence of these particular values. Try `age = 20`: `or` → `True` (first side is true), `and` → `False` (second side is still false). The two operators behave very differently once one side is `True`.
+</details>
+
+> 📌 **Worked Example — before you start the Movie Ticket assignment below**
+>
+> ```python
+> age = int(input("Enter your age: "))
+> has_id = input("Do you have a student ID? (yes/no): ")
+>
+> # A ticket is discounted if age < 13 OR age > 65
+> is_child_or_senior = age < 13 or age > 65
+>
+> # A ticket is ALSO discounted if age is 13-25 AND they have a student ID
+> is_discounted_student = (13 <= age <= 25) and has_id == "yes"
+>
+> gets_discount = is_child_or_senior or is_discounted_student
+>
+> if gets_discount:
+>     print("Discount applies!")
+> else:
+>     print("Full price.")
+> ```
+> Notice how the assignment's rule was broken into two smaller boolean variables (`is_child_or_senior`, `is_discounted_student`) before combining them — this is the same "smaller pieces first" strategy you'll use on every complex condition this year.
+
 ### Activity: Movie Ticket Eligibility Checker
 
 Write a program that determines whether a person can buy a discounted movie ticket, using **compound boolean expressions** (`and`, `or`, `not`).
+
+**🧩 Scaffolding — build it in this order:**
+1. First, just get `age` and `has_id` from the user and `print()` them back to confirm your input works.
+2. Write and test the `is_child_or_senior` condition alone — print it and check against a few ages by hand.
+3. Write and test the `is_discounted_student` condition alone the same way.
+4. Combine them into `gets_discount` and print the correct message.
+5. Only then add the second theater/adult-present check from Requirement 4 below.
 
 **Requirements:**
 
@@ -461,15 +529,24 @@ Write a program that determines whether a person can buy a discounted movie tick
 4. Add a second check: the theater is closed to anyone under 6 with **no adult present** — ask a follow-up question and use `not` to write the condition for "an adult is NOT present."
 5. Print a trace of your boolean logic as a comment above each condition, explaining what it evaluates in plain English (this mirrors how you'll need to explain conditions in your AP CSP written responses).
 
+**Starter code:**
 ```python
-Use this header for your programs:
+#       Assignment:  Program 1: Movie Ticket Eligibility Checker
+#       Author:      [Your Name]
+#       Course Name: AP Computer Science Principles
+#       Description: Determines movie ticket discount eligibility using
+#                    compound boolean expressions.
+#       Language:    Python 3.x
 
-Name:          [Your Full Name]
-Partner:       [Partner's Full Name, or "None"]
-Course:        AP Computer Science A
-Instructor:    [Instructor Name]
-Assignment:    [Assignment Number — Assignment Title]
-Due Date:      [Month Day, Year]
+# TODO 1) Get age (as int) and has_id ("yes"/"no") from the user
+
+# TODO 2) Build is_child_or_senior
+
+# TODO 3) Build is_discounted_student
+
+# TODO 4) Combine into gets_discount and print the result
+
+# TODO 5) Add the under-6/no-adult-present check
 ```
 
 **Submit your .py file and test cases showing that your program worked as intended.**
@@ -478,138 +555,8 @@ Due Date:      [Month Day, Year]
 
 ---
 
-**Why Bitwise Operators Matter**
-
-Bitwise operators work directly on the **binary representation** of numbers — the individual `0`s and `1`s — rather than on the number's value as a whole. Most everyday Python code never needs them, but they matter for a few reasons worth knowing:
-
-- **They're on the PCEP exam** — you're expected to trace what `&`, `|`, `^`, `~`, `<<`, and `>>` do to binary values.
-- **They connect back to how computers actually store data** — ties directly to the binary/decimal/hex conversions you just learned.
-- **They show up in real systems programming**: setting individual permission flags (read/write/execute), working with network protocols, compressing data, and low-level graphics/hardware code all lean on bitwise operations because they're extremely fast and memory-efficient.
-- **Shifts are a fast way to multiply/divide by powers of 2**: `a << 1` doubles a number, `a >> 1` halves it (integer division) — a trick you'll sometimes see in performance-sensitive code.
-
-You won't use these daily as a beginner, but recognizing them — and knowing they operate on bits, not on the number's "everyday" value — will keep you from being caught off guard by `&` (bitwise AND) when you meant `and` (logical AND), which is a common bug even experienced programmers make.
-
-**Bitwise Operators in Python** — `🔖 PCEP 1.4`
-
-Python numbers can be written in **binary** (base 2) using the `0b` prefix. Each digit (called a *bit*) is worth a power of 2, reading right to left: 1, 2, 4, 8, 16...
-
-```python
-a = 0b1010   # decimal 10
-b = 0b1100   # decimal 12
-```
-
-```
-a = 1 0 1 0   →  8+0+2+0 = 10
-b = 1 1 0 0   →  8+4+0+0 = 12
-```
-
-Bitwise operators compare two numbers **column by column**, one bit at a time.
-
-**AND (`&`) — "both must be 1"**
-
-The result bit is `1` only if **both** bits in that column are `1`.
-
-```python
-print(a & b)   # 8
-```
-
-```
-  1010
-& 1100
-------
-  1000   → 8
-```
-
-**OR (`|`) — "at least one must be 1"**
-
-The result bit is `1` if **either** bit is `1`.
-
-```python
-print(a | b)   # 14
-```
-
-```
-  1010
-| 1100
-------
-  1110   → 14
-```
-
-**## **XOR (`^`) — "exactly one, not both"**
-
-The result bit is `1` if the two bits are **different**. Think of it as "OR, but if they're both `1`, that doesn't count."
-
-```python
-print(a ^ b)   # 6
-```
-
-```
-  1010
-^ 1100
-------
-  0110   → 6
-```
-
-**NOT (`~`) — flips every bit**
-
-Python integers aren't stored with a fixed number of bits — they act as if they have infinitely many leading `0`s. Flipping *all* of those bits sends the result negative. Rather than deriving this by hand, it's easiest to memorize the shortcut:
-
-```
-~a  =  -(a + 1)
-```
-
-```python
-print(~a)   # -11
-```
-
-**Left shift (`<<`) — slide bits left, fill with 0s**
-
-Every bit moves one spot to the left, and a `0` slides in on the right.
-
-```python
-print(a << 1)   # 20
-```
-
-```
-1010  →  10100
-```
-
-Each left shift by 1 is the same as **multiplying by 2** — similar to how adding a zero to a base-10 number multiplies it by 10.
-
-**Right shift (`>>`) — slide bits right, drop the end**
-
-Every bit moves one spot to the right, and whatever falls off the end is discarded.
-
-```python
-print(a >> 1)   # 5
-```
-
-```
-1010  →  101
-```
-
-Each right shift by 1 is the same as **integer division by 2** (rounding down).
-
-**Try it yourself**
-
-Before running the code, convert `a` and `b` to binary on paper and work out each operation by hand column by column. Then check your answers with `print()`.
-
-```python
-a = 0b1010   # 10
-b = 0b1100   # 12
-
-print(a & b)   # AND  → 8   (0b1000)
-print(a | b)   # OR   → 14  (0b1110)
-print(a ^ b)   # XOR  → 6   (0b0110)
-print(~a)      # NOT  → -11
-print(a << 1)  # Left shift → 20
-print(a >> 1)  # Right shift → 5
-```
-
-
 ### Assignment — Print Statements and Input/Output
 
-🔖 **PCEP 1.5** — Perform Input/Output console operations
 📋 **AP CSP: CRD-2.B** — Implement algorithms in a programming language.
 
 **What is an f-string?**
@@ -690,6 +637,13 @@ All three print the same thing, but notice:
 
 **NOTE:** f-strings became the preferred style starting in Python 3.6.
 
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** Why does `print(name + " is " + age + " years old.")` crash if `age` is an `int`, but `print(f"{name} is {age} years old.")` works fine with the exact same `age` variable?
+
+**Answer:** The `+` operator for strings requires **both sides to already be strings** — Python won't silently convert an `int` for you with `+`, so it raises a `TypeError`. An f-string's `{ }` braces run an implicit conversion to text for whatever value lands inside them, so `age` doesn't need to be pre-converted. This is one of the biggest practical advantages of f-strings.
+</details>
+
 **Overview**
 
 Python gives you several ways to build and display output. In this assignment
@@ -764,18 +718,17 @@ age  = int(input("Enter your age: "))      # convert to int
 price = float(input("Enter price: "))      # convert to float
 ```
 
-> <mark>**PCEP Exam Tip:** `input()` always returns a `str`. You must use `int()` or `float()` to convert it for math operations.</mark>
+> <mark>**Reminder:** `input()` always returns a `str`. You must use `int()` or `float()` to convert it for math operations.</mark>
 
 ### Activity: Hello, World! Variations
 
 Write a program that asks the user for their name, age, and favorite color. Print a formatted sentence using each of the three print methods (f-string, `format()`, concatenation). Include a header block.
 
-*AP CSP: CRD-2.B | PCEP: 1.5*
+*AP CSP: CRD-2.B*
 
 ---
 
 # Section 2 — Control Flow: Conditional Blocks and Loops
-`🔖 PCEP Section 2 — 29% of exam (8 items)`
 `📋 AP CSP: AAP-2.E` — Develop algorithms using sequencing, selection, and iteration.
 
 ## Conditional Statements
@@ -801,6 +754,22 @@ elif condition2:
 else:
     # fallback
 ```
+
+> 📌 **Worked Example — before you build the Grade Calculator below**
+>
+> ```python
+> temperature = int(input("Enter the temperature: "))
+>
+> if temperature >= 90:
+>     print("Heat warning!")
+> elif temperature >= 70:
+>     print("Nice day.")
+> elif temperature >= 50:
+>     print("A bit cool.")
+> else:
+>     print("Bundle up!")
+> ```
+> Trace it by hand: if `temperature` is `65`, Python checks `>= 90` (False), then `>= 70` (False), then `>= 50` (**True**) — so it prints `"A bit cool."` and skips every branch after. Only ONE branch of an `if-elif-else` chain ever runs.
 
 **Example: Grade Calculator**
 
@@ -833,6 +802,13 @@ else:
 
 > 💡 Prefer `elif` over deep nesting when possible — it keeps code readable.
 
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** In an `if-elif-else` chain ordered from highest score to lowest (like the Grade Calculator above), what would go wrong if you accidentally wrote the conditions from lowest to highest instead (`score >= 60`, then `score >= 70`, etc.)?
+
+**Answer:** Every score of 60 or above would immediately match the *first* branch (`score >= 60`) and print `"D"`, since Python stops at the first `True` condition in the chain and never checks the rest — a 95 would incorrectly get a "D" instead of an "A". Order matters in `elif` chains whenever the conditions overlap.
+</details>
+
 ### Activity: Grade Calculator
 
 Write a grade calculator that accepts a numerical score and outputs:
@@ -841,6 +817,27 @@ Write a grade calculator that accepts a numerical score and outputs:
 - A motivational message for scores below 70
 
 Use `if-elif-else` and at least one nested conditional.
+
+**🧩 Scaffolding — build it in this order:**
+1. Get the score and print just the letter grade using `if-elif-else`.
+2. Add the pass/fail message as a **separate** `if-else` (or nest it inside, per the requirements).
+3. Add the motivational message only for scores below 70 — test with a score of exactly 69 and exactly 70 to make sure your boundary is correct.
+
+**Starter code:**
+```python
+#       Assignment:  Program 2: Grade Calculator
+#       Description: Prints a letter grade, pass/fail status, and a
+#                    motivational message for low scores.
+#       Language:    Python 3.x
+
+score = int(input("Enter your score: "))
+
+# TODO 1) if-elif-else chain for letter grade A-F
+
+# TODO 2) pass/fail message (score >= 60 passes)
+
+# TODO 3) motivational message only if score < 70
+```
 
 *AP CSP: AAP-2.E | PCEP: 2.1*
 
@@ -882,7 +879,7 @@ while count < 5:
 | `pass` | Placeholder — does nothing | `if x == 2: pass` |
 | `else` | Runs if loop ends without `break` | `for..else:` |
 
-**`while-else` and `for-else`** — `🔖 PCEP 2.2`
+**`while-else` and `for-else`**
 
 ```python
 for i in range(5):
@@ -900,6 +897,13 @@ for i in range(1, 4):
         print(i * j, end="\t")
     print()
 ```
+
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** What's the difference between `break` and `continue` inside a loop that's printing only even numbers from a list?
+
+**Answer:** `continue` skips **just the current iteration** and moves on to the next item — the loop keeps going. `break` **exits the loop entirely**, even if there were more items left to check. If you used `break` instead of `continue` the moment you hit an odd number, the loop would stop checking the rest of the list entirely, missing any even numbers that came after it.
+</details>
 
 ### Activity: Nested Loop Pattern Design Studio
 
@@ -919,7 +923,18 @@ A single loop can only move in one direction. The moment a shape has **both rows
 * * * * *
 ```
 
-**Guided example — hollow rectangle:**
+> 📌 **Worked Example — solid right triangle (Tier 1 difficulty)**
+> ```python
+> rows = int(input("Enter the number of rows: "))
+>
+> for i in range(1, rows + 1):
+>     for j in range(i):
+>         print("*", end="")
+>     print()
+> ```
+> Trace it: when `i = 3`, the inner loop runs 3 times, printing `***`, then `print()` moves to a new line. The **outer loop variable (`i`) controls how many characters the inner loop prints** — that's the core trick behind every pattern in this activity.
+
+**Guided example — hollow rectangle (Tier 2 difficulty):**
 
 ```python
 rows = int(input("Enter the number of rows: "))
@@ -947,9 +962,9 @@ Design and code **4 original patterns**. "Original" means not shown in class, no
 | **Orientation** | Grows then stays / Grows then shrinks (diamond/hourglass) / Right-aligned / Shifts diagonally (parallelogram) |
 | **Input** | At least one of your 4 patterns must accept user input for size |
 
-**Suggested difficulty progression:**
-- Tier 1 — Solid, fixed growth (e.g., a solid right triangle)
-- Tier 2 — Hollow (border-only conditional logic)
+**🧩 Scaffolding — suggested difficulty progression (do them in this order):**
+- Tier 1 — Solid, fixed growth (e.g., a solid right triangle — see Worked Example above)
+- Tier 2 — Hollow (border-only conditional logic — see Guided Example above)
 - Tier 3 — Numeric (a value that changes per row)
 - Tier 4 — Your choice / mirrored or diagonal shape
 
@@ -972,7 +987,6 @@ Design and code **4 original patterns**. "Original" means not shown in class, no
 ---
 
 # Section 3 — Data Collections: Lists, Tuples, Dictionaries, and Strings
-`🔖 PCEP Section 3 — 25% of exam (7 items)`
 `📋 AP CSP: AAP-4.A` — Use data abstractions to manage complexity.
 
 ## Strings
@@ -1034,11 +1048,35 @@ Violets are blue.
 | `.isalpha()` | All letters? | `"abc".isalpha()` → `True` |
 | `.isdigit()` | All digits? | `"123".isdigit()` → `True` |
 
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** `name = "  Ada Lovelace  "`. What does `name.strip().upper()` return, and why does the order of the two method calls matter here?
+
+**Answer:** `"ADA LOVELACE"`. `.strip()` removes the leading/trailing whitespace first, then `.upper()` capitalizes the result. Because strings are immutable, each method returns a **new** string rather than modifying `name` in place — that's why you can "chain" methods like this, each one operating on the result of the one before it. Order rarely matters for `.strip()`/`.upper()` specifically, but it does for methods that depend on exact spacing, like `.startswith()`.
+</details>
+
+> 📌 **Worked Example — before the Receipt Formatter below**
+> ```python
+> item = "  blue notebook   "
+> price = 24.99
+>
+> clean_item = item.strip().title()   # "Blue Notebook"
+> print(f"{clean_item}\t${price:.2f}")
+> print("\"Thank you for shopping with us!\"")
+> ```
+> This shows the same pattern the assignment asks for at small scale: clean the input with `.strip()`, fix the capitalization with `.title()`, then use `\t` and an f-string to line things up.
+
 ---
 
 ### Activity: Receipt Formatter
 
 Write a program that formats a store receipt using string methods and escape characters.
+
+**🧩 Scaffolding — build it in this order:**
+1. Get store name, item name, and price from the user; print them raw (unformatted) first to confirm input works.
+2. Add `.upper()` for the store header and `.title()` for the item name.
+3. Add the `\t` / `\n` formatting and the quoted thank-you message.
+4. Add the `.strip()` demonstration and `.replace()` discount label last — these are the trickiest requirements.
 
 **Requirements:**
 
@@ -1072,7 +1110,7 @@ Blue Notebook	Sale Price: $24.99
 `🔖 PCEP 3.1` — Collect and process data using lists
 `📋 AP CSP: AAP-4.A` — Lists for data abstraction
 
-A **list** is an **ordered, mutable** sequence. It is the most versatile data collection in Python.
+A **list** is an **ordered, mutable** sequence. It is the most versatile data collection in Python — and the collection type the AP CSP CPT specifically requires you to use.
 
 ```python
 fruits = ["apple", "banana", "cherry"]
@@ -1171,6 +1209,13 @@ for row in grid:
     print()
 ```
 
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** `original = [1, 2, 3]` then `alias = original` then `alias.append(4)`. What does `print(original)` show, and why?
+
+**Answer:** `[1, 2, 3, 4]`. `alias = original` did **not** create a copy — it made `alias` point to the exact same list object in memory as `original`. Modifying `alias` (with `.append()`) modifies the one and only list both names refer to. To get an independent copy, you'd need `alias = original.copy()` or `alias = original[:]`. This is the same idea as the `is` vs `==` distinction from Section 1.
+</details>
+
 ---
 
 ## Tuples
@@ -1204,6 +1249,13 @@ print(len(rgb))     # 3
 mixed = ([1, 2, 3], [4, 5, 6])   # tuple of lists
 nested = [(1, "a"), (2, "b")]     # list of tuples
 ```
+
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** Would you store a student's GPA history (which changes every semester) in a list or a tuple? What about a single student's date of birth (month, day, year)?
+
+**Answer:** GPA history → **list**, because new entries get added over time (mutable data). Date of birth → **tuple**, because once set it never changes — the immutability of a tuple communicates "this is fixed data" to anyone reading your code.
+</details>
 
 ---
 
@@ -1265,6 +1317,26 @@ for s in students:
 count = sum(1 for s in students if s["age"] == 14)
 ```
 
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** Why is a "list of dictionaries" (like `students` above) usually a better data abstraction for the CPT than several separate parallel lists like `names = [...]`, `ages = [...]`?
+
+**Answer:** With parallel lists, `names[2]` and `ages[2]` only stay linked to the same student if you're extremely careful to keep every list in sync — one mistaken `.remove()` on just one list breaks the connection. A list of dictionaries keeps each student's data bundled together in one object, so there's no way for a name and age to get separated. This is exactly the kind of data abstraction the CPT written responses ask you to explain.
+</details>
+
+> 📌 **Worked Example — before the Student Contact Book below**
+> ```python
+> contacts = []
+>
+> new_contact = {"name": "Ava", "phone": "555-1234", "email": "ava@example.com"}
+> contacts.append(new_contact)
+>
+> for c in contacts:
+>     if c["name"] == "Ava":
+>         print(f"Found: {c['name']}, {c['phone']}, {c['email']}")
+> ```
+> This is the exact pattern (append a dict, search with a loop + `if`) you'll build into a full menu program below.
+
 ### Activity: Student Contact Book
 
 Build a program that stores a contact book as a **list of dictionaries**. Each contact has a name, phone number, and email. The user can:
@@ -1275,12 +1347,47 @@ Build a program that stores a contact book as a **list of dictionaries**. Each c
 
 Use a `while` loop for the menu and a `for` loop to search/display.
 
+**🧩 Scaffolding — build it in this order:**
+1. Hard-code one contact into the list and get "Display all" working first.
+2. Add "Add a new contact" (append to the list).
+3. Add "Search by name" (loop + `if`).
+4. Add "Delete a contact" last — it's the trickiest, since you must find the right item before removing it.
+
+**Starter code:**
+```python
+#       Assignment:  Program: Student Contact Book
+#       Description: Menu-driven contact book using a list of dictionaries.
+#       Language:    Python 3.x
+
+contacts = []
+
+while True:
+    print("\n1) Add  2) Search  3) Delete  4) Display All  5) Quit")
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        # TODO: build a dict from user input, append to contacts
+        pass
+    elif choice == "2":
+        # TODO: ask for a name, loop through contacts, print matches
+        pass
+    elif choice == "3":
+        # TODO: ask for a name, find and remove the matching contact
+        pass
+    elif choice == "4":
+        # TODO: print every contact
+        pass
+    elif choice == "5":
+        break
+    else:
+        print("Invalid option.")
+```
+
 *AP CSP: AAP-3.B, AAP-2.E | PCEP: 3.3*
 
 ---
 
 # Section 4 — Functions and Exceptions
-`🔖 PCEP Section 4 — 28% of exam (8 items)`
 `📋 AP CSP: AAP-3.B` — Use procedures/functions to manage complexity.
 
 ## Functions, Methods, and Procedures
@@ -1319,9 +1426,30 @@ def multiply(a, b):
 multiply(5, 3)
 ```
 
+> 📌 **Worked Example — before the Math Operations Calculator below**
+> ```python
+> def get_sum(num1, num2):
+>     return num1 + num2
+>
+> def main():
+>     a = int(input("Enter first number: "))
+>     b = int(input("Enter second number: "))
+>     total = get_sum(a, b)
+>     print(f"Sum = {total}")
+>
+> main()
+> ```
+> This is the exact shape the assignment wants, repeated five times (once per operation). Get this ONE function working end-to-end before writing the other four.
+
 ### Activity: Math Operations Calculator
 
 Write a Python program called `math_operations.py` that performs addition, subtraction, multiplication, division, and modulo on two numbers entered by the user — using a separate function for each operation.
+
+**🧩 Scaffolding — build it in this order:**
+1. Write `get_sum()` and call it from `main()` — confirm it prints correctly.
+2. Copy that pattern to write `get_difference()`, `get_product()`, `get_modulo()`.
+3. Write `get_quotient()` last — it needs the extra care described in Requirement 4 below.
+4. Only after everything works, add the stretch-challenge `try/except` for divide-by-zero.
 
 **Requirements:**
 
@@ -1344,7 +1472,7 @@ Write a Python program called `math_operations.py` that performs addition, subtr
 
 *PCEP: 1.4, 1.5, 4.1 | AP CSP: AAP-2.F, AAP-3.B*
 
-**Default Parameter Values** — `🔖 PCEP 4.2`
+**Default Parameter Values**
 
 ```python
 def greet(name, message="Hello"):
@@ -1379,7 +1507,7 @@ def do_nothing():
 print(do_nothing())  # None — functions without return give None
 ```
 
-**Variable Scope and `global`** — `🔖 PCEP 4.2`
+**Variable Scope and `global`**
 
 ```python
 counter = 0             # global variable
@@ -1392,7 +1520,7 @@ increment()
 print(counter)          # 1
 ```
 
-> <mark>**Name Hiding (Shadowing):** A local variable with the same name as a global hides (shadows) the global inside the function. This is a common PCEP exam trap.</mark>
+> <mark>**Name Hiding (Shadowing):** A local variable with the same name as a global hides (shadows) the global inside the function.</mark>
 
 ```python
 x = 10
@@ -1405,7 +1533,14 @@ show()       # 99
 print(x)     # 10 — global unchanged
 ```
 
-**Recursion** — `🔖 PCEP 4.1`
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** Why does the course style guide (Guideline #11 above) tell you to avoid global variables and use function parameters/return values instead?
+
+**Answer:** Functions that rely on `global` are harder to test and reason about in isolation — you have to know the current state of a variable defined somewhere else in the file to predict what the function will do, and any function can silently change that shared state. A function that takes parameters and returns a value is self-contained: give it the same inputs, and you always get the same output, regardless of what else is happening in the program. This "no hidden side effects" property is exactly what the CPT's Prompt 3c is asking you to explain about your own function.
+</details>
+
+**Recursion**
 
 A **recursive function** calls itself. Every recursion needs a **base case** to stop.
 
@@ -1428,6 +1563,13 @@ factorial(5)
           factorial(0)  ← base case: returns 1
 ```
 
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** What happens if you write a recursive function and forget the base case entirely?
+
+**Answer:** The function calls itself forever (or until Python hits its recursion limit and raises a `RecursionError`), because there's never a condition that tells it to stop and start returning values back up the call stack. Every recursive function you write should let you point to the exact line that is the base case, and explain why the recursive case is guaranteed to reach it eventually.
+</details>
+
 ### Activity: Recursion Practice — Three Levels
 
 Recursion clicks once you can identify two things in *any* recursive problem: the **base case** (when to stop) and the **recursive case** (how the problem gets smaller each call). Practice with three functions, in order:
@@ -1446,243 +1588,6 @@ Recursion clicks once you can identify two things in *any* recursive problem: th
 **Stretch challenge:** Add a `print()` inside each function showing the current call's argument and indenting one extra level per recursive call — this visually recreates the call stack diagram above, using your own code.
 
 *PCEP: 4.1*
-
----
-
-## Built-In Functions
-
-`📋 AP CSP: AAP-2.G, AAP-3.B` — Use existing abstractions to manage complexity.
-`🔖 PCEP-adjacent` — not a separately numbered PCEP-30-02 objective, but strengthens Section 4 (Functions) fluency and shows up throughout the certification exam's code-reading questions.
-
-**Explanation**
-
-A **built-in function** is a function Python provides for you automatically — no `import`, no `def`, it's just there the moment Python starts. You've already been using several (`print()`, `len()`, `int()`, `range()`) without thinking of them as a category. This section introduces the built-ins that let you *transform*, *filter*, and *summarize* data in a single line, instead of writing a `for` loop every time.
-
-**When Would You Use This?**
-
-Any time you need to apply the same operation to every item in a collection (`map`), keep only the items that meet a condition (`filter`), combine every item into one result (`reduce`), pair up two lists (`zip`), or ask a yes/no question about an entire collection (`any`, `all`) — reach for a built-in before you reach for a loop. They're faster to write, harder to get wrong, and instantly readable to anyone who knows Python.
-
-**Key Built-In Functions**
-
-| Function | What It Does | Example | Result |
-|---|---|---|---|
-| `map(func, iterable)` | Applies `func` to every item | `list(map(str.upper, ["hi","bye"]))` | `['HI', 'BYE']` |
-| `filter(func, iterable)` | Keeps items where `func` returns `True` | `list(filter(lambda x: x % 2 == 0, range(10)))` | `[0, 2, 4, 6, 8]` |
-| `reduce(func, iterable)` | Combines all items into one value (needs `from functools import reduce`) | `reduce(lambda a, b: a + b, [1,2,3,4])` | `10` |
-| `zip(iter1, iter2)` | Pairs up items from two+ iterables | `list(zip([1,2],["a","b"]))` | `[(1,'a'), (2,'b')]` |
-| `any(iterable)` | `True` if **at least one** item is truthy | `any([0, 0, 3])` | `True` |
-| `all(iterable)` | `True` if **every** item is truthy | `all([1, 1, 0])` | `False` |
-| `sorted(iterable, key=...)` | Returns a **new** sorted list | `sorted([3,1,2])` | `[1, 2, 3]` |
-| `chr(n)` | Converts a Unicode code point to a character | `chr(65)` | `'A'` |
-| `ord(c)` | Converts a character to its Unicode code point | `ord('A')` | `65` |
-| `globals()` | Returns a dict of the **global** namespace | `globals()['x']` | current value of `x` |
-| `locals()` | Returns a dict of the **local** namespace | `locals()` | current local variables |
-
-> <mark>**Exam-style trap:** `map()` and `filter()` return a **lazy iterator**, not a list — you must wrap them in `list(...)` to see or print the actual values. `sorted()` and `map()`/`filter()` never modify the original list; they hand you back a brand-new one.</mark>
-
-**Example**
-
-```python
-scores = [55, 82, 91, 40, 76, 88]
-
-passing = list(filter(lambda s: s >= 60, scores))     # keep passing scores
-curved  = list(map(lambda s: s + 5, scores))           # add 5 to every score
-top_3   = sorted(scores, reverse=True)[:3]             # highest 3 scores
-
-print("Passing:", passing)   # [82, 91, 76, 88]
-print("Curved:",  curved)    # [60, 87, 96, 45, 81, 93]
-print("Top 3:",   top_3)     # [91, 88, 82]
-```
-
-**Best Practices**
-
-- Wrap `map()`/`filter()` in `list()` before printing — otherwise you'll just see `<filter object at 0x...>`.
-- If the built-in version is harder to read than a plain `for` loop, use the `for` loop. Readability beats "clever," per PEP 8.
-- `sorted(iterable, key=func)` is the built-in most worth mastering — combined with `lambda` (next section), it lets you sort *anything* by *any* rule.
-- `reduce()` needs an explicit import (`from functools import reduce`) — it's the only one on this list that isn't automatically available.
-
-**Sample Program**
-
-```python
-# Convert a list of Celsius temps to Fahrenheit, then report which are "hot" (>= 85°F)
-
-celsius = [0, 20, 37, 30, 15, 40]
-
-fahrenheit = list(map(lambda c: c * 9/5 + 32, celsius))
-hot_days   = list(filter(lambda f: f >= 85, fahrenheit))
-
-print("Fahrenheit:", fahrenheit)
-print("Hot days (>=85°F):", hot_days)
-print("Any hot day?", any(f >= 85 for f in fahrenheit))
-print("All hot days?", all(f >= 85 for f in fahrenheit))
-```
-
-### Activity: Grade Report Refactor
-
-Take the **Grade Calculator** activity you built earlier (Section 2) and refactor part of it using built-in functions instead of a `for` loop.
-
-**Requirements:**
-1. Start with a list of at least 10 student scores (`int` values 0–100).
-2. Use `filter()` to build a list of students who **passed** (score ≥ 70).
-3. Use `map()` to build a list of the same scores **converted to a 4.0 GPA scale** (formula: `score / 25`, rounded to 2 decimal places with `round()`).
-4. Use `sorted()` with a `key=` and `reverse=True` to print the scores from highest to lowest **without changing the original list**.
-5. Use `any()` to check whether **any** student scored a perfect 100, and `all()` to check whether **every** student passed.
-6. Print all five results with clear labels.
-
-*AP CSP: AAP-2.G, CRD-2.B*
-
-**Actual Program with Test Samples**
-
-```python
-#       Assignment:  Built-In Functions — Grade Report Refactor
-#       Description: Analyzes a list of scores using map, filter, sorted, any, all.
-#       Language:    Python 3.x
-
-def analyze_scores(scores):
-    passing   = list(filter(lambda s: s >= 70, scores))
-    gpa_scale = list(map(lambda s: round(s / 25, 2), scores))
-    ranked    = sorted(scores, reverse=True)
-    perfect   = any(s == 100 for s in scores)
-    all_pass  = all(s >= 70 for s in scores)
-    return passing, gpa_scale, ranked, perfect, all_pass
-
-
-def main():
-    scores = [55, 82, 91, 40, 76, 88, 100, 63, 74, 59]
-    passing, gpa_scale, ranked, perfect, all_pass = analyze_scores(scores)
-
-    print("Passing scores:", passing)
-    print("GPA scale:", gpa_scale)
-    print("Ranked (high to low):", ranked)
-    print("Original list unchanged:", scores)
-    print("Any perfect score?", perfect)
-    print("Did everyone pass?", all_pass)
-
-
-if __name__ == "__main__":
-    main()
-```
-
-**Sample Test Cases**
-
-| Input `scores` | Passing (≥70) | Any 100? | All passed? |
-|---|---|---|---|
-| `[55, 82, 91, 40, 76, 88, 100, 63, 74, 59]` | `[82, 91, 76, 88, 100, 74]` | `True` | `False` |
-| `[70, 71, 72, 73]` | `[70, 71, 72, 73]` | `False` | `True` |
-| `[10, 20, 30]` | `[]` | `False` | `False` |
-
----
-
-## Lambda Functions
-
-`📋 AP CSP: AAP-2.G` — Use abstraction to manage complexity.
-`🔖 PCEP-adjacent` — not separately numbered, but a natural extension of Section 4 (Functions).
-
-**Explanation**
-
-A **lambda** is a small, unnamed ("anonymous") function written in a single line. It's Python's shorthand for a function you only need once — usually as an argument to another function like `sorted()`, `map()`, or `filter()`. A lambda can only contain **one expression** (no multiple lines, no `if/else` blocks, no loops) and it automatically `return`s the result of that expression.
-
-```python
-square = lambda x: x ** 2
-
-# Equivalent to:
-def square(x):
-    return x ** 2
-```
-
-**When Would You Use This?**
-
-Use a lambda when you need a quick, throwaway function to hand to another function — most commonly the `key=` argument of `sorted()`, or as the first argument to `map()`/`filter()`. If you find yourself calling the same lambda logic in more than one place, that's your signal to write a real `def` function instead and give it a name.
-
-**Key Words**
-
-| Term | Meaning |
-|---|---|
-| **Lambda / anonymous function** | A function with no name, defined inline with the `lambda` keyword |
-| **Expression** | A single computation that produces a value (what a lambda is limited to) |
-| **`key=` argument** | Tells `sorted()`/`min()`/`max()` *what to sort by*, instead of the raw values |
-| **First-class function** | A function that can be passed around like any other value (Python treats all functions this way) |
-
-**Example**
-
-```python
-students = [("Alice", 91), ("Bob", 76), ("Charlie", 88)]
-
-# Sort by score (the second item in each tuple) instead of by name
-by_score = sorted(students, key=lambda s: s[1], reverse=True)
-print(by_score)   # [('Alice', 91), ('Charlie', 88), ('Bob', 76)]
-```
-
-**Best Practices**
-
-- Keep lambdas **short** — one expression, ideally under one line of screen width. If it's getting hard to read, write a named `def` function instead.
-- Never assign a lambda to a variable just to call it later (`square = lambda x: x**2` then `square(4)`) — that's exactly what `def` is for. Lambdas earn their keep as **throwaway arguments**, not named functions.
-- The most common, most useful pattern by far is `sorted(iterable, key=lambda item: ...)` — master that one first.
-- A lambda **cannot** contain `print()` statements, loops, or multiple lines — if you need any of those, it's not a lambda job.
-
-**Sample Program**
-
-```python
-inventory = [
-    {"item": "Pencil", "price": 0.50},
-    {"item": "Notebook", "price": 2.75},
-    {"item": "Backpack", "price": 24.99},
-]
-
-cheapest_first = sorted(inventory, key=lambda x: x["price"])
-for entry in cheapest_first:
-    print(f"{entry['item']}: ${entry['price']:.2f}")
-```
-
-### Activity: Sort It Your Way
-
-Given a list of dictionaries representing books (`title`, `author`, `year`, `pages`), write **three separate `sorted()` calls**, each using a different `lambda` key:
-
-1. Sort by `year`, oldest first.
-2. Sort by `pages`, longest first (`reverse=True`).
-3. Sort by the **length of the title** (`len(title)`), shortest first.
-
-Print each sorted list with a clear label before it.
-
-*AP CSP: AAP-2.G*
-
-**Actual Program with Test Samples**
-
-```python
-#       Assignment:  Lambda Functions — Sort It Your Way
-#       Description: Sorts a list of book dictionaries three different ways using lambda keys.
-#       Language:    Python 3.x
-
-books = [
-    {"title": "Dune", "author": "Herbert", "year": 1965, "pages": 412},
-    {"title": "1984", "author": "Orwell", "year": 1949, "pages": 328},
-    {"title": "The Hobbit", "author": "Tolkien", "year": 1937, "pages": 310},
-]
-
-by_year      = sorted(books, key=lambda b: b["year"])
-by_pages     = sorted(books, key=lambda b: b["pages"], reverse=True)
-by_title_len = sorted(books, key=lambda b: len(b["title"]))
-
-print("By year (oldest first):")
-for b in by_year:
-    print(f"  {b['year']} — {b['title']}")
-
-print("By pages (longest first):")
-for b in by_pages:
-    print(f"  {b['pages']}pp — {b['title']}")
-
-print("By title length (shortest first):")
-for b in by_title_len:
-    print(f"  {len(b['title'])} chars — {b['title']}")
-```
-
-**Sample Test Cases**
-
-| Sort Key | First Result | Last Result |
-|---|---|---|
-| `year` (ascending) | *The Hobbit* (1937) | *Dune* (1965) |
-| `pages` (descending) | *Dune* (412pp) | *The Hobbit* (310pp) |
-| `len(title)` (ascending) | *1984* (4 chars) | *The Hobbit* (10 chars) |
 
 ---
 
@@ -1722,11 +1627,24 @@ import numpy as np            # alias
 | `json` | JSON data | `json.loads()`, `json.dumps()` |
 | `tkinter` | GUI windows | `tk.Tk()`, `tk.Button()` |
 
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** What's the practical difference between `import random` and `from random import randint`, in terms of how you'd call the function afterward?
+
+**Answer:** With `import random`, you must prefix every call with the module name: `random.randint(1, 10)`. With `from random import randint`, you import just that one function directly into your file's namespace, so you call it as `randint(1, 10)` with no prefix. The first style is safer in larger programs (it's always clear which module a function came from); the second is more convenient for one or two functions you'll use constantly.
+</details>
+
 ---
 
 ### Project: Random Trivia Quiz Generator
 
 Build a trivia quiz program that pulls together **modules, functions, lists, dictionaries, and string formatting** — everything you've learned so far — into one working project.
+
+**🧩 Scaffolding — build it across several days:**
+- **Day 1:** Hard-code your 8 questions as a list of dictionaries; write `ask_question()` and test it on ONE question.
+- **Day 2:** Write `run_quiz()` to loop through all questions and track score; get the raw score printing correctly.
+- **Day 3:** Add `random` (shuffle questions), `datetime` (timing), and the percentage-formatted score. Add the three import styles last.
+- **Day 4 (stretch):** Add the `json` save/load high-score feature.
 
 **Requirements:**
 
@@ -1760,7 +1678,6 @@ Build a trivia quiz program that pulls together **modules, functions, lists, dic
 
 ## Exception Handling
 
-`🔖 PCEP 4.3` — Python Built-In Exceptions Hierarchy
 `🔖 PCEP 4.4` — Basics of Python Exception Handling
 `📋 AP CSP: CRD-2.J` — Test and debug programs.
 
@@ -1781,6 +1698,23 @@ finally:
     # ALWAYS runs — cleanup code
 ```
 
+> 📌 **Worked Example — before the Safe Calculator below**
+> ```python
+> try:
+>     num1 = int(input("Enter first number: "))
+>     num2 = int(input("Enter second number: "))
+>     result = num1 / num2
+> except ValueError:
+>     print("Please enter valid numbers.")
+> except ZeroDivisionError:
+>     print("Can't divide by zero.")
+> else:
+>     print(f"Result: {result}")
+> finally:
+>     print("Calculation attempted.")
+> ```
+> Run this in your head with `num2 = "abc"`, then again with `num2 = 0`, then again with `num2 = 5` — three different paths through the same block.
+
 **Example: Safe Division**
 
 ```python
@@ -1796,34 +1730,6 @@ finally:
     print("Operation attempted.")
 ```
 
-**Exception Hierarchy** — `🔖 PCEP 4.3`
-
-```
-BaseException
-├── SystemExit
-├── KeyboardInterrupt
-└── Exception
-    ├── ArithmeticError
-    │   └── ZeroDivisionError
-    ├── LookupError
-    │   ├── IndexError
-    │   └── KeyError
-    ├── TypeError
-    ├── ValueError
-    └── FileNotFoundError
-```
-
-> <mark>**PCEP Exam Tip:** Order `except` blocks from **most specific to most general**. Python checks them in order and runs the first match.</mark>
-
-```python
-try:
-    x = int("abc")
-except ValueError:          # caught here — most specific
-    print("Value error")
-except Exception:           # broader fallback
-    print("Some error")
-```
-
 **Common Exceptions**
 
 | Exception | When it occurs |
@@ -1836,7 +1742,18 @@ except Exception:           # broader fallback
 | `FileNotFoundError` | File doesn't exist |
 | `NameError` | Variable not defined |
 
-**Propagating Exceptions** — `🔖 PCEP 4.4`
+> <mark>**Rule of thumb:** Order `except` blocks from **most specific to most general**. Python checks them in order and runs the first match.</mark>
+
+```python
+try:
+    x = int("abc")
+except ValueError:          # caught here — most specific
+    print("Value error")
+except Exception:           # broader fallback
+    print("Some error")
+```
+
+**Propagating Exceptions**
 
 ```python
 def divide(a, b):
@@ -1860,6 +1777,14 @@ except IOError:
     print("Error reading file.")
 ```
 
+> 🔖 **PCEP note:** the full `BaseException` → `Exception` hierarchy tree (PCEP 4.3, exam-level memorization) is covered in **[PCEP Certification Path — Year 2](#pcep-certification-path-year-2)**. For the CPT, knowing the common exceptions table above and how to order `except` blocks is enough.
+
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** Why does a well-designed program almost always use `try/except` instead of just trusting that user input will be valid?
+
+**Answer:** You can't control what a user types — they might enter letters where a number is expected, leave a field blank, or divide by zero by accident. `try/except` lets your program catch that bad input and respond gracefully (with a clear message) instead of crashing outright. For the CPT specifically, a program that crashes on unexpected input during your recorded video will hurt your score — exception handling is part of writing a robust, testable program.
+</details>
 
 ### Activity: Safe Calculator
 
@@ -1870,14 +1795,51 @@ Build a calculator program that:
 4. Uses a function for each operation
 5. Uses `try-except-else-finally`
 
-*AP CSP: CRD-2.J | PCEP: 4.3, 4.4*
+**🧩 Scaffolding — build it in this order:**
+1. Write the four operation functions (reuse them from Math Operations Calculator if you've already built that).
+2. Get ONE calculation working with `try/except` around it, no loop yet.
+3. Wrap it in a `while` loop that exits on `"quit"`.
+4. Add `else`/`finally` last.
+
+**Starter code:**
+```python
+#       Assignment:  Program: Safe Calculator
+#       Description: Menu-driven calculator with full exception handling.
+#       Language:    Python 3.x
+
+def add(a, b): return a + b
+def subtract(a, b): return a - b
+def multiply(a, b): return a * b
+def divide(a, b): return a / b
+
+while True:
+    op = input("Enter operator (+, -, *, /) or 'quit': ")
+    if op == "quit":
+        break
+
+    try:
+        num1 = float(input("First number: "))
+        num2 = float(input("Second number: "))
+        # TODO: call the right function based on `op`
+        # TODO: handle an unrecognized operator too
+    except ValueError:
+        print("Please enter valid numbers.")
+    except ZeroDivisionError:
+        print("Can't divide by zero.")
+    else:
+        # TODO: print the result
+        pass
+    finally:
+        print("Attempt complete.\n")
+```
+
+*AP CSP: CRD-2.J | PCEP: 4.4*
 
 ---
 
 # File Operations
 
 `📋 AP CSP: AAP-3.A, CRD-2.B, CRD-2.J` — Collect and represent data; implement and test programs.
-`🔖 PCEP-adjacent` — file I/O isn't a separately numbered PCEP-30-02 block (it's tested at the next certification level, PCAP), but it's essential real-world Python and a natural fit now that you know `try/except`.
 
 **Explanation**
 
@@ -1940,27 +1902,35 @@ with open("output.txt", "a") as file:
 
 **When Would You Use This?**
 
-Any time your program needs to **outlive a single run** — saving a high score, loading a roster of students from a `.csv`, writing a log of every calculation a user made, or building the kind of "save/load" feature the Random Trivia Quiz and Minesweeper projects hint at with their stretch challenges. File operations are also how real programs move data between each other: one program writes a file, another reads it.
+Any time your program needs to **outlive a single run** — saving a high score, loading a roster of students, or writing a log of every calculation a user made. File operations are also how real programs move data between each other: one program writes a file, another reads it.
 
 **Best Practices**
 
-- **Always use `with open(...) as file:`** — never call `open()` without it. A file opened without `with` can stay locked/open if your program crashes before you remember to call `.close()`.
-- **Always wrap file access in `try/except`**, catching `FileNotFoundError` at minimum — you have no guarantee the file exists (see Exception Handling above).
-- Double-check your **mode** before writing — `"w"` silently destroys existing content. When in doubt, use `"a"` or check `os.path.exists()` first.
+- **Always use `with open(...) as file:`** — never call `open()` without it.
+- **Always wrap file access in `try/except`**, catching `FileNotFoundError` at minimum.
+- Double-check your **mode** before writing — `"w"` silently destroys existing content.
 - Use `.strip()` on every line you read from a text file to remove the trailing `\n` before you use the value.
-- For structured data (comma-separated records), consider the `csv` module instead of manually splitting on commas — it correctly handles edge cases like commas *inside* quoted fields.
 
-**Example**
+<details><summary>🤔 Thinking Question — check your answer</summary>
 
-```python
-try:
-    with open("roster.txt", "r") as file:
-        names = [line.strip() for line in file]
-    print(f"Loaded {len(names)} students:", names)
-except FileNotFoundError:
-    print("roster.txt not found — starting with an empty roster.")
-    names = []
-```
+**Question:** You want to add a new high score to the end of an existing scores file without erasing the old scores. Which file mode do you use, and what would go wrong if you used `"w"` instead?
+
+**Answer:** Use `"a"` (append). `"w"` mode erases the entire existing file the moment you open it, so every previous score would be gone before you ever wrote the new one — you'd end up with a file containing only the newest score.
+</details>
+
+> 📌 **Worked Example — before the Roster Manager below**
+> ```python
+> def load_names(filename):
+>     try:
+>         with open(filename, "r") as file:
+>             return [line.strip() for line in file]
+>     except FileNotFoundError:
+>         return []
+>
+> names = load_names("roster.txt")
+> print(f"Loaded {len(names)} names:", names)
+> ```
+> This "try to load, fall back to an empty list" pattern is the backbone of every load function you'll write this year.
 
 **Sample Program**
 
@@ -1985,11 +1955,18 @@ log_score("Bob", 76)
 show_log()
 ```
 
-### Activity: Student Roster File Manager
+## Activity: Student Roster File Manager
 
 Write a program that manages a roster stored in a text file called `roster.txt` (one name per line).
 
+**🧩 Scaffolding — build it in this order:**
+1. Write `load_roster()` alone and test it (both with and without an existing `roster.txt`).
+2. Write `add_student()` and confirm names actually persist between separate runs of the program.
+3. Write `save_roster()` and wire it into the "remove" menu option.
+4. Build the `main()` menu loop last, once all three functions work independently.
+
 **Requirements:**
+
 1. Write a function `load_roster(filename)` that reads the file and returns a list of names. If the file doesn't exist, catch `FileNotFoundError` and return an empty list instead of crashing.
 2. Write a function `add_student(filename, name)` that **appends** a new name to the file (don't overwrite the existing roster!).
 3. Write a function `save_roster(filename, roster)` that **overwrites** the file with the current contents of a roster list (one name per line) — used after removing a student.
@@ -2091,134 +2068,12 @@ print(a & b)   # Intersection: {2, 3}
 print(a - b)   # Difference:   {1}
 ```
 
-**Frozensets**
+<details><summary>🤔 Thinking Question — check your answer</summary>
 
-`📋 AP CSP: AAP-3.A, AAP-3.B` — Collect, represent, and organize data using abstractions.
-`🔖 PCEP-adjacent` — sets/frozensets aren't separately numbered in the PCEP-30-02 blocks, but they build directly on Section 3 (Data Collections) fluency.
+**Question:** A teacher wants to know which students are enrolled in *both* Period 1 and Period 3. Would a `list` or a `set` make that check easier to write, and why?
 
-**Explanation**
-
-A **frozenset** is exactly what it sounds like: a `set` that's been frozen — **immutable**, just like a tuple is an immutable list. Once created, you cannot add, remove, or change its contents. Everything else about sets (unordered, no duplicates, supports `|`, `&`, `-`, `^`) still applies.
-
-```python
-colors = frozenset(["red", "green", "blue"])
-# colors.add("yellow")   # AttributeError — frozensets have no .add()
-```
-
-**When Would You Use This?**
-
-Use a `frozenset` any time you want the **uniqueness and fast-lookup** benefits of a set, but need the collection to be **unchangeable** — most often because it's being used as a **dictionary key** (regular sets can't be dict keys; frozensets can) or because you want to guarantee a function can't accidentally modify the data it's given.
-
-```python
-# A regular set CANNOT be a dictionary key:
-# schedule = {  {"Mon", "Wed"}: "Math"  }   # TypeError!
-
-# A frozenset CAN:
-schedule = {
-    frozenset(["Mon", "Wed", "Fri"]): "Math",
-    frozenset(["Tue", "Thu"]): "Science",
-}
-print(schedule[frozenset(["Tue", "Thu"])])   # Science
-```
-
-**Key Words**
-
-| Term | Meaning |
-|---|---|
-| **Immutable** | Cannot be changed after creation |
-| **Hashable** | Can be used as a dictionary key or set member (frozensets are hashable; sets are not) |
-| **Set operations** | `\|` union, `&` intersection, `-` difference, `^` symmetric difference — all work on frozensets too |
-
-**Example**
-
-```python
-required_tools    = frozenset(["hammer", "saw", "drill"])
-students_toolkit  = frozenset(["hammer", "saw", "wrench", "level"])
-
-missing = required_tools - students_toolkit
-print("Missing tools:", missing)   # frozenset({'drill'})
-```
-
-**Best Practices**
-
-- Use `set` for a collection you plan to **modify** during the program; use `frozenset` for a collection meant to stay **constant** (e.g., valid menu options, allowed file extensions).
-- Reach for a `frozenset` specifically when you need to use a collection as a **dictionary key** or store it *inside* another set (`set` of `set`s isn't legal; `set` of `frozenset`s is).
-- Set operations (`|`, `&`, `-`, `^`) return a **new** frozenset/set — they never modify the originals, which is exactly why frozensets are safe to share across functions.
-
-**Sample Program**
-
-```python
-VALID_EXTENSIONS = frozenset([".py", ".txt", ".csv", ".json"])
-
-def is_valid_file(filename):
-    for ext in VALID_EXTENSIONS:
-        if filename.endswith(ext):
-            return True
-    return False
-
-print(is_valid_file("data.csv"))    # True
-print(is_valid_file("image.png"))   # False
-```
-
-### Activity: Class Roster Overlap
-
-Two teachers each have a frozenset of student names in their AP CSP class:
-
-```python
-period_1 = frozenset(["Ava", "Liam", "Noah", "Emma", "Mia"])
-period_3 = frozenset(["Noah", "Emma", "Sofia", "Lucas"])
-```
-
-Write a program that prints:
-1. Students in **both** periods (`&`)
-2. Students in **either** period, with no duplicates (`|`)
-3. Students **only** in Period 1, not Period 3 (`-`)
-4. Students in **exactly one** of the two periods, not both (`^`)
-5. Whether the two rosters share **any** student at all (hint: check if the intersection is empty)
-
-*AP CSP: AAP-3.A, AAP-3.B*
-
-**Actual Program with Test Samples**
-
-```python
-#       Assignment:  Frozensets — Class Roster Overlap
-#       Description: Compares two class rosters using frozenset operations.
-#       Language:    Python 3.x
-
-def compare_rosters(period_1, period_3):
-    both        = period_1 & period_3
-    either      = period_1 | period_3
-    only_p1     = period_1 - period_3
-    exactly_one = period_1 ^ period_3
-    overlaps    = len(both) > 0
-    return both, either, only_p1, exactly_one, overlaps
-
-
-def main():
-    period_1 = frozenset(["Ava", "Liam", "Noah", "Emma", "Mia"])
-    period_3 = frozenset(["Noah", "Emma", "Sofia", "Lucas"])
-
-    both, either, only_p1, exactly_one, overlaps = compare_rosters(period_1, period_3)
-
-    print("In both periods:", both)
-    print("In either period:", either)
-    print("Only in Period 1:", only_p1)
-    print("In exactly one period:", exactly_one)
-    print("Do the rosters overlap?", overlaps)
-
-
-if __name__ == "__main__":
-    main()
-```
-
-**Sample Test Cases**
-
-| Operation | Result |
-|---|---|
-| `period_1 & period_3` | `frozenset({'Noah', 'Emma'})` |
-| `period_1 - period_3` | `frozenset({'Ava', 'Liam', 'Mia'})` |
-| `period_1 ^ period_3` | `frozenset({'Ava', 'Liam', 'Mia', 'Sofia', 'Lucas'})` |
-| overlap check | `True` |
+**Answer:** A `set`, because set intersection (`&`) does exactly that check in one operation: `period_1 & period_3`. With lists you'd have to manually loop through one list and check membership in the other, writing several lines of code to do what a set does in one.
+</details>
 
 ---
 
@@ -2247,111 +2102,7 @@ first = queue.popleft()    # remove from the front → "first" (first one in, fi
 
 > <mark>**Memory trick:** LIFO = last in, first out (a **stack** of trays). FIFO = first in, first out (a **line** at the store). Both use `.append()` to add, but stacks remove with `.pop()` (from the end) while queues remove with `.popleft()` (from the front).</mark>
 
----
-
-### Project: Library Catalog Analyzer
-
-Build a program that reads a small library catalog from a text file, analyzes it using built-in functions and lambdas, and uses frozensets to answer genre questions — pulling together **File Operations, Built-In Functions, Lambda Functions, and Frozensets** into one working project.
-
-**Setup — `catalog.txt` format:** one book per line, comma-separated: `title,author,year,genre1|genre2`
-
-```
-Dune,Frank Herbert,1965,Sci-Fi|Adventure
-1984,George Orwell,1949,Sci-Fi|Dystopian
-The Hobbit,J.R.R. Tolkien,1937,Fantasy|Adventure
-Klara and the Sun,Kazuo Ishiguro,2021,Sci-Fi|Drama
-```
-
-**Requirements:**
-
-1. Write `load_catalog(filename)` that reads `catalog.txt` line by line (using `with`, wrapped in `try/except FileNotFoundError`) and returns a **list of dictionaries**, each with keys `"title"`, `"author"`, `"year"` (as `int`), and `"genres"` (as a **frozenset** built by splitting on `|`).
-2. Use `sorted()` with a `lambda` key to print the catalog **sorted by year**, oldest first.
-3. Use `filter()` with a `lambda` to print only books published **after 2000**.
-4. Use `map()` with a `lambda` to print a list of just the **titles**, in upper case.
-5. Use frozenset operations to find and print:
-   - Every **unique genre** across the whole catalog (union `|` of all books' genre frozensets)
-   - All books that include **both** "Sci-Fi" and "Adventure" as genres
-6. Write `save_report(filename, catalog)` that writes a summary report to `report.txt` — total book count, oldest and newest year, and the full unique-genre list — using a `with` block in `"w"` mode.
-7. Include a full program header block.
-
-**Actual Program with Test Samples**
-
-```python
-#       Assignment:  Culminating Project — Library Catalog Analyzer
-#       Description: Reads a book catalog from file, analyzes it with map/filter/sorted/lambda,
-#                    and uses frozensets to compare genres, then writes a summary report.
-#       Language:    Python 3.x
-
-def load_catalog(filename):
-    catalog = []
-    try:
-        with open(filename, "r") as file:
-            for line in file:
-                title, author, year, genres = line.strip().split(",")
-                catalog.append({
-                    "title": title,
-                    "author": author,
-                    "year": int(year),
-                    "genres": frozenset(genres.split("|")),
-                })
-    except FileNotFoundError:
-        print(f"{filename} not found — starting with an empty catalog.")
-    return catalog
-
-
-def save_report(filename, catalog, all_genres):
-    years = [book["year"] for book in catalog]
-    with open(filename, "w") as file:
-        file.write(f"Total books: {len(catalog)}\n")
-        file.write(f"Oldest year: {min(years) if years else 'N/A'}\n")
-        file.write(f"Newest year: {max(years) if years else 'N/A'}\n")
-        file.write(f"Unique genres: {sorted(all_genres)}\n")
-
-
-def main():
-    catalog = load_catalog("catalog.txt")
-    if not catalog:
-        return
-
-    by_year   = sorted(catalog, key=lambda b: b["year"])
-    modern    = list(filter(lambda b: b["year"] > 2000, catalog))
-    titles    = list(map(lambda b: b["title"].upper(), catalog))
-
-    all_genres = frozenset()
-    for book in catalog:
-        all_genres = all_genres | book["genres"]
-
-    scifi_adventure = [
-        b["title"] for b in catalog
-        if frozenset(["Sci-Fi", "Adventure"]) <= b["genres"]
-    ]
-
-    print("Sorted by year:", [b["title"] for b in by_year])
-    print("Published after 2000:", [b["title"] for b in modern])
-    print("Titles (upper case):", titles)
-    print("All unique genres:", sorted(all_genres))
-    print("Sci-Fi AND Adventure:", scifi_adventure)
-
-    save_report("report.txt", catalog, all_genres)
-
-
-if __name__ == "__main__":
-    main()
-```
-
-**Sample Test Cases** *(using the four-book `catalog.txt` shown above)*
-
-| Check | Result |
-|---|---|
-| Sorted by year (oldest first) | `['The Hobbit', '1984', 'Dune', 'Klara and the Sun']` |
-| Published after 2000 | `['Klara and the Sun']` |
-| Unique genres (union of all frozensets) | `['Adventure', 'Drama', 'Dystopian', 'Fantasy', 'Sci-Fi']` |
-| Books with **both** Sci-Fi and Adventure | `['Dune']` |
-| `report.txt` after running | `Total books: 4`, `Oldest year: 1937`, `Newest year: 2021` |
-
-**Stretch challenge:** Add a `most_common_genre()` function that uses `max()` with a `key=lambda` to find which single genre appears in the most books — without importing any extra modules.
-
-*AP CSP: AAP-3.A, AAP-3.B, AAP-2.G, CRD-2.B, CRD-2.J*
+> 🔖 **PCEP note:** frozensets — an immutable version of `set` — are a PCEP-adjacent topic that build on this section. They're covered in **[PCEP Certification Path — Year 2](#pcep-certification-path-year-2)**, along with a capstone project that ties frozensets together with file operations, built-in functions, and lambdas.
 
 ---
 
@@ -2415,6 +2166,13 @@ print(car1.make)        # Toyota
 car1.year = 2023        # Modify an attribute
 ```
 
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** What is `self`, really — why does every instance method need it as the first parameter?
+
+**Answer:** `self` is how a method knows *which* object it's currently operating on. When you call `car1.start_engine()`, Python automatically passes `car1` in as `self`, so `self.make` inside the method refers to `car1`'s make specifically — not `car2`'s. Without `self`, a method would have no way to tell one object's data apart from another's.
+</details>
+
 ## Types of Methods
 
 ```python
@@ -2462,6 +2220,13 @@ for animal in animals:
     print(animal.speak())                # Polymorphism in action
 ```
 
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** In the `animals` loop above, every object calls `.speak()` the same way, but `Dog` objects and `Cat` objects print different things. What's this called, and why is it useful?
+
+**Answer:** This is **polymorphism** — different classes responding to the same method call in their own way. It's useful because the loop doesn't need to know or care whether each item is a `Dog` or a `Cat`; it just calls `.speak()` and trusts each object to know how to respond correctly. This lets you add a `Bird` class later without ever touching the loop.
+</details>
+
 ## Magic / Dunder Methods
 
 ```python
@@ -2499,6 +2264,27 @@ account.withdraw(200)
 account.withdraw(1500)     # Insufficient funds
 ```
 
+> 📌 **Worked Example — before the OOP Zoo activity below (mini version, Option 1 shape)**
+> ```python
+> class Animal:
+>     def __init__(self, name, species, age):
+>         self.name = name
+>         self.species = species
+>         self.age = age
+>
+>     def describe(self):
+>         return f"{self.name} is a {self.age}-year-old {self.species}."
+>
+> class Mammal(Animal):
+>     def speak(self):
+>         return f"{self.name} growls."
+>
+> lion = Mammal("Leo", "Lion", 4)
+> print(lion.describe())
+> print(lion.speak())
+> ```
+> This is the minimum skeleton — one base class, one subclass, one object. The full activity asks for a `Zoo` container class and at least 3 subclasses; add those one at a time from this starting point.
+
 ### Activity: OOP Zoo
 
 Design a `Zoo` simulation using OOP:
@@ -2512,6 +2298,12 @@ Design a `Zoo` simulation using OOP:
 4. Create at least 5 animal objects, add them to the zoo, and demonstrate all methods.
 
 Include `__str__` and proper docstrings.
+
+**🧩 Scaffolding — build it in this order:**
+1. Build `Animal` + one subclass + one object (see Worked Example above); confirm `.describe()` and `.speak()` both work.
+2. Add the remaining subclasses.
+3. Build `Zoo` with just `add_animal()` and `show_all()`; test with 2–3 animals.
+4. Add `find_by_species()` last.
 
 **Option 2 — Library Management System**
 
@@ -2556,7 +2348,7 @@ Design a role-playing game character system using OOP:
 
 `📋 AP CSP: CRD-2` — Program Design and Development
 
-> The **AP CSP Create Performance Task (CPT)** is 30% of your AP score. You write a program and submit written responses explaining it. This section helps you align your project to College Board requirements.
+> The **AP CSP Create Performance Task (CPT)** is 30% of your AP score. You write a program and submit written responses explaining it. Everything in Sections 1–4, File Operations, Data Structures, and OOP above was chosen and sequenced specifically to get you ready for this. This section ties it all together.
 
 ## CPT Requirements at a Glance
 
@@ -2591,6 +2383,28 @@ Design a role-playing game character system using OOP:
 
 ☐ A **second call** to the function with different arguments
 
+> 📌 **Worked Example — a minimal (but complete) CPT-checklist-passing program, annotated**
+> ```python
+> def calculate_discount(price, is_member):        # ← function WITH a parameter
+>     if is_member:                                # ← selection
+>         return price * 0.8
+>     return price
+>
+> prices = [12.99, 45.00, 8.50, 30.00]              # ← list (abstraction/collection)
+> member_status = [True, False, True, False]
+>
+> total = 0
+> for i in range(len(prices)):                      # ← iteration
+>     final_price = calculate_discount(prices[i], member_status[i])   # ← function CALLED
+>     print(f"Item {i+1}: ${final_price:.2f}")
+>     total += final_price
+>
+> print(f"Total: ${total:.2f}")                      # ← output
+>
+> print(calculate_discount(20.00, True))              # ← SECOND call, different arguments
+> ```
+> Checklist walk-through: purpose (calculate discounted checkout totals) ✅, input (the `prices`/`member_status` lists stand in for real input — a live CPT would use `input()` or a data file) ✅, sequencing/selection/iteration ✅ (the `for` loop + `if`), abstraction (the `prices` list) ✅, function with a parameter that's called twice with different arguments ✅, visible output ✅. This is intentionally small — your actual CPT program should be a full, original idea, but every one of these six boxes has to be checkable in it exactly like this.
+
 ## CPT Written Response Tips
 
 **Prompt 3a — Program Function and Purpose:**
@@ -2623,6 +2437,43 @@ With a partner, evaluate 3 program ideas against the CPT checklist. For each ide
 Select the strongest idea and create a one-page project proposal.
 
 *AP CSP: CRD-2.A, CRD-2.B*
+
+---
+
+## Practice PT 1 — Idea List
+
+Use these for the **Practice PT 1** window (Weeks 8–11). Each idea below already satisfies the CPT checklist — the point of Practice PT 1 is rehearsing the *process* (design → code → test → written responses) on a smaller, guided idea before the pressure of the real thing. Pick ONE, or propose your own and run it past your teacher.
+
+| # | Idea | Input | List/Collection | Function + Parameter | Output |
+|---|---|---|---|---|---|
+| 1 | **Grade Book Averager** | Scores typed in one at a time | List of scores | `letter_grade(score)` — converts a score to a letter | Class average + list of letter grades |
+| 2 | **Password Strength Checker** | A password string | List of the password's characters | `check_strength(password)` — returns a strength label | Strength rating + specific feedback |
+| 3 | **Tip Calculator for a Group** | Bill amounts for each person | List of bill amounts | `calculate_tip(amount, percent)` — computes tip for one bill | Per-person tip + group total |
+| 4 | **Word Frequency Counter** | A sentence or short paragraph | List of words (via `.split()`) | `count_word(word, word_list)` — counts occurrences | Most frequent word + its count |
+| 5 | **Simple To-Do List Manager** | Task names typed in a loop | List of tasks | `mark_done(task, task_list)` — updates a task's status | Printed to-do list with statuses |
+
+**🧩 Scaffolding for Practice PT 1 (Weeks 8–11):**
+- **Week 8 (intro):** Choose your idea; sketch input/output on paper; identify your list and your function-with-parameter *before* writing any code.
+- **Week 9:** Write the function alone and test it with at least 3 different inputs, by itself, before wiring it into the full program.
+- **Week 10:** Build the full program around the function — the loop, the list, the two function calls with different arguments.
+- **Week 11 (due Fri):** Test edge cases (empty input, unexpected input), then write your four written responses (3a–3d) using the CPT Written Response Tips above.
+
+## Practice PT 2 — Idea List
+
+Use these for the **Practice PT 2** window (Weeks 12–14). These are intentionally a step up from Practice PT 1 — most naturally pull in a **dictionary or list-of-dictionaries**, File Operations, or OOP (all covered by Week 12), which the official December CPT will likely also benefit from.
+
+| # | Idea | Input | List/Collection | Function + Parameter | Output |
+|---|---|---|---|---|---|
+| 1 | **Student Roster Analyzer** | Names + scores, one student at a time | List of dictionaries (`{"name":..., "score":...}`) | `pass_or_fail(score)` — returns a status string | Class roster with pass/fail flags + class average |
+| 2 | **Inventory Restock Alert** | Item names + current stock counts | List of dictionaries (`{"item":..., "stock":...}`) | `needs_restock(stock, threshold)` — returns True/False | List of items that need restocking |
+| 3 | **Simple Save/Load High Score Game** | A guessed number, repeated | List of past guesses (this run) | `check_guess(guess, target)` — returns a hint string | Feedback per guess + score saved to file with File Operations |
+| 4 | **Basic Animal Shelter Tracker** (OOP) | Animal name/species/age, one at a time | List of `Animal` objects | An `Animal` method or a function that takes an `Animal` as a parameter | Roster of animals + count by species |
+| 5 | **Movie Recommendation Filter** | A list of movies with genre/rating | List of dictionaries | `matches_preference(movie, genre)` — returns True/False | Filtered list of recommended movies |
+
+**🧩 Scaffolding for Practice PT 2 (Weeks 12–14):**
+- **Week 12 (intro):** Choose your idea; if it uses File Operations, get a working `load()`/`save()` pair *before* building the rest.
+- **Week 13:** Build the core loop and function; if it's the OOP option, get your class working standalone first (like the OOP Zoo Worked Example above).
+- **Week 14 (due Fri):** CPT-checklist self-review workshop in class, then submit code + written responses.
 
 ---
 
@@ -2774,33 +2625,670 @@ root.mainloop()
 
 ---
 
+# PCEP Certification Path — Year 2
+
+`🏅 Semester 2, Jan – June`
+
+> **What this section is:** everything that's specifically on the PCEP-30-02 exam but wasn't needed for the AP CSP CPT — pulled out of Semester 1 so it doesn't compete with CPT prep, and spread across Semester 2 at a pace that gives it room to actually stick. You already have a full year of general Python fluency (Sections 1–4, File Operations, OOP) under your belt by the time you start this section — that foundation is what makes this content approachable now instead of overwhelming back in the fall.
+
+## 📅 PCEP Pacing Guide — Semester 2 (Tentative)
+
+`Jan 5 – Jun (exam window TBD by district testing calendar)`
+
+| Weeks | Content Focus | Activities |
+|---|---|---|
+| 1–3 | Numeral Systems; Bitwise Operators | Bitwise "Try It Yourself" trace practice |
+| 4–6 | Built-In Functions (`map`, `filter`, `reduce`, `zip`, `any`, `all`) | Grade Report Refactor |
+| 7–8 | Lambda Functions | Sort It Your Way |
+| 9–10 | Frozensets | Class Roster Overlap |
+| 11 | Exception Hierarchy Deep Dive | Hierarchy trace practice |
+| 12–13 | Culminating Project: Library Catalog Analyzer | — |
+| 14+ | PCEP practice exams; targeted review by exam section | — |
+
+*(Remaining CSP Big Ideas not covered by the CPT continue in parallel per the department's existing January–April sequence — see [[cs-pathway-planning]].)*
+
+---
+
+## Numeral Systems
+
+`🔖 PCEP 1.3` — Introduce numeral systems
+
+Python supports writing integer literals in multiple bases:
+
+```python
+decimal     = 255        # base 10
+binary      = 0b11111111 # base 2  → 255
+octal       = 0o377      # base 8  → 255
+hexadecimal = 0xFF       # base 16 → 255
+
+print(binary, octal, hexadecimal)  # All print: 255 255 255
+```
+
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** `0b1010` — what decimal value does this represent, and how do you get there?
+
+**Answer:** `10`. Reading the binary digits right to left, each position is worth a power of 2: `1010` = `(1×8) + (0×4) + (1×2) + (0×1)` = `8 + 0 + 2 + 0` = `10`.
+</details>
+
+---
+
+## Bitwise Operators
+
+`🔖 PCEP 1.4`
+
+**Why Bitwise Operators Matter**
+
+Bitwise operators work directly on the **binary representation** of numbers — the individual `0`s and `1`s — rather than on the number's value as a whole. Most everyday Python code never needs them, but they matter for a few reasons worth knowing:
+
+- **They're on the PCEP exam** — you're expected to trace what `&`, `|`, `^`, `~`, `<<`, and `>>` do to binary values.
+- **They connect back to how computers actually store data** — ties directly to the binary/decimal/hex conversions you just learned.
+- **They show up in real systems programming**: setting individual permission flags (read/write/execute), working with network protocols, compressing data, and low-level graphics/hardware code all lean on bitwise operations because they're extremely fast and memory-efficient.
+- **Shifts are a fast way to multiply/divide by powers of 2**: `a << 1` doubles a number, `a >> 1` halves it (integer division) — a trick you'll sometimes see in performance-sensitive code.
+
+Python numbers can be written in **binary** (base 2) using the `0b` prefix. Each digit (called a *bit*) is worth a power of 2, reading right to left: 1, 2, 4, 8, 16...
+
+```python
+a = 0b1010   # decimal 10
+b = 0b1100   # decimal 12
+```
+
+```
+a = 1 0 1 0   →  8+0+2+0 = 10
+b = 1 1 0 0   →  8+4+0+0 = 12
+```
+
+Bitwise operators compare two numbers **column by column**, one bit at a time.
+
+**AND (`&`) — "both must be 1"**
+
+```python
+print(a & b)   # 8
+```
+```
+  1010
+& 1100
+------
+  1000   → 8
+```
+
+**OR (`|`) — "at least one must be 1"**
+
+```python
+print(a | b)   # 14
+```
+```
+  1010
+| 1100
+------
+  1110   → 14
+```
+
+**XOR (`^`) — "exactly one, not both"**
+
+```python
+print(a ^ b)   # 6
+```
+```
+  1010
+^ 1100
+------
+  0110   → 6
+```
+
+**NOT (`~`) — flips every bit**
+
+```
+~a  =  -(a + 1)
+```
+```python
+print(~a)   # -11
+```
+
+**Left shift (`<<`) — slide bits left, fill with 0s**
+
+```python
+print(a << 1)   # 20
+```
+```
+1010  →  10100
+```
+Each left shift by 1 is the same as **multiplying by 2**.
+
+**Right shift (`>>`) — slide bits right, drop the end**
+
+```python
+print(a >> 1)   # 5
+```
+```
+1010  →  101
+```
+Each right shift by 1 is the same as **integer division by 2** (rounding down).
+
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** A student meant to write `if is_valid and has_permission:` but accidentally typed `if is_valid & has_permission:`. Will this usually still work? Why is it still bad practice?
+
+**Answer:** With plain `True`/`False` booleans it will often *appear* to work, because `&` on booleans happens to behave like `and` in simple cases. But `&` is a **bitwise** operator, not a logical one — it doesn't short-circuit the way `and` does, and it behaves completely differently on non-boolean values (like actual integers). Mixing them up is a classic, hard-to-spot bug; always use `and`/`or`/`not` for logic and reserve `&`/`|`/`^`/`~` for actual bit manipulation.
+</details>
+
+**Try it yourself**
+
+Before running the code, convert `a` and `b` to binary on paper and work out each operation by hand column by column. Then check your answers with `print()`.
+
+```python
+a = 0b1010   # 10
+b = 0b1100   # 12
+
+print(a & b)   # AND  → 8   (0b1000)
+print(a | b)   # OR   → 14  (0b1110)
+print(a ^ b)   # XOR  → 6   (0b0110)
+print(~a)      # NOT  → -11
+print(a << 1)  # Left shift → 20
+print(a >> 1)  # Right shift → 5
+```
+
+---
+
+## Built-In Functions
+
+`📋 AP CSP: AAP-2.G, AAP-3.B` — Use existing abstractions to manage complexity.
+`🔖 PCEP-adjacent` — not a separately numbered PCEP-30-02 objective, but shows up throughout the certification exam's code-reading questions.
+
+**Explanation**
+
+A **built-in function** is a function Python provides for you automatically — no `import`, no `def`, it's just there the moment Python starts. You've already been using several (`print()`, `len()`, `int()`, `range()`) without thinking of them as a category. This section introduces the built-ins that let you *transform*, *filter*, and *summarize* data in a single line, instead of writing a `for` loop every time.
+
+**When Would You Use This?**
+
+Any time you need to apply the same operation to every item in a collection (`map`), keep only the items that meet a condition (`filter`), combine every item into one result (`reduce`), pair up two lists (`zip`), or ask a yes/no question about an entire collection (`any`, `all`) — reach for a built-in before you reach for a loop.
+
+**Key Built-In Functions**
+
+| Function | What It Does | Example | Result |
+|---|---|---|---|
+| `map(func, iterable)` | Applies `func` to every item | `list(map(str.upper, ["hi","bye"]))` | `['HI', 'BYE']` |
+| `filter(func, iterable)` | Keeps items where `func` returns `True` | `list(filter(lambda x: x % 2 == 0, range(10)))` | `[0, 2, 4, 6, 8]` |
+| `reduce(func, iterable)` | Combines all items into one value (needs `from functools import reduce`) | `reduce(lambda a, b: a + b, [1,2,3,4])` | `10` |
+| `zip(iter1, iter2)` | Pairs up items from two+ iterables | `list(zip([1,2],["a","b"]))` | `[(1,'a'), (2,'b')]` |
+| `any(iterable)` | `True` if **at least one** item is truthy | `any([0, 0, 3])` | `True` |
+| `all(iterable)` | `True` if **every** item is truthy | `all([1, 1, 0])` | `False` |
+| `sorted(iterable, key=...)` | Returns a **new** sorted list | `sorted([3,1,2])` | `[1, 2, 3]` |
+| `chr(n)` | Converts a Unicode code point to a character | `chr(65)` | `'A'` |
+| `ord(c)` | Converts a character to its Unicode code point | `ord('A')` | `65` |
+
+> <mark>**Exam-style trap:** `map()` and `filter()` return a **lazy iterator**, not a list — you must wrap them in `list(...)` to see or print the actual values. `sorted()` and `map()`/`filter()` never modify the original list; they hand you back a brand-new one.</mark>
+
+**Example**
+
+```python
+scores = [55, 82, 91, 40, 76, 88]
+
+passing = list(filter(lambda s: s >= 60, scores))     # keep passing scores
+curved  = list(map(lambda s: s + 5, scores))           # add 5 to every score
+top_3   = sorted(scores, reverse=True)[:3]             # highest 3 scores
+
+print("Passing:", passing)   # [82, 91, 76, 88]
+print("Curved:",  curved)    # [60, 87, 96, 45, 81, 93]
+print("Top 3:",   top_3)     # [91, 88, 82]
+```
+
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** `evens = filter(lambda x: x % 2 == 0, range(10))`. You immediately try `print(evens)` and it does NOT show `[0, 2, 4, 6, 8]`. What went wrong, and how do you fix it?
+
+**Answer:** `filter()` returns a **lazy filter object**, not a list — printing it directly shows something like `<filter object at 0x...>`. You need to wrap it: `print(list(evens))`. This is a classic PCEP exam trap that applies to `map()` too.
+</details>
+
+**Best Practices**
+
+- Wrap `map()`/`filter()` in `list()` before printing — otherwise you'll just see `<filter object at 0x...>`.
+- If the built-in version is harder to read than a plain `for` loop, use the `for` loop.
+- `sorted(iterable, key=func)` is the built-in most worth mastering.
+- `reduce()` needs an explicit import (`from functools import reduce`).
+
+### Activity: Grade Report Refactor
+
+Take the **Grade Calculator** activity you built earlier (Section 2) and refactor part of it using built-in functions instead of a `for` loop.
+
+**Requirements:**
+1. Start with a list of at least 10 student scores (`int` values 0–100).
+2. Use `filter()` to build a list of students who **passed** (score ≥ 70).
+3. Use `map()` to build a list of the same scores **converted to a 4.0 GPA scale** (formula: `score / 25`, rounded to 2 decimal places with `round()`).
+4. Use `sorted()` with a `key=` and `reverse=True` to print the scores from highest to lowest **without changing the original list**.
+5. Use `any()` to check whether **any** student scored a perfect 100, and `all()` to check whether **every** student passed.
+6. Print all five results with clear labels.
+
+*AP CSP: AAP-2.G, CRD-2.B*
+
+**Actual Program with Test Samples**
+
+```python
+#       Assignment:  Built-In Functions — Grade Report Refactor
+#       Description: Analyzes a list of scores using map, filter, sorted, any, all.
+#       Language:    Python 3.x
+
+def analyze_scores(scores):
+    passing   = list(filter(lambda s: s >= 70, scores))
+    gpa_scale = list(map(lambda s: round(s / 25, 2), scores))
+    ranked    = sorted(scores, reverse=True)
+    perfect   = any(s == 100 for s in scores)
+    all_pass  = all(s >= 70 for s in scores)
+    return passing, gpa_scale, ranked, perfect, all_pass
+
+
+def main():
+    scores = [55, 82, 91, 40, 76, 88, 100, 63, 74, 59]
+    passing, gpa_scale, ranked, perfect, all_pass = analyze_scores(scores)
+
+    print("Passing scores:", passing)
+    print("GPA scale:", gpa_scale)
+    print("Ranked (high to low):", ranked)
+    print("Original list unchanged:", scores)
+    print("Any perfect score?", perfect)
+    print("Did everyone pass?", all_pass)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+**Sample Test Cases**
+
+| Input `scores` | Passing (≥70) | Any 100? | All passed? |
+|---|---|---|---|
+| `[55, 82, 91, 40, 76, 88, 100, 63, 74, 59]` | `[82, 91, 76, 88, 100, 74]` | `True` | `False` |
+| `[70, 71, 72, 73]` | `[70, 71, 72, 73]` | `False` | `True` |
+| `[10, 20, 30]` | `[]` | `False` | `False` |
+
+---
+
+## Lambda Functions
+
+`📋 AP CSP: AAP-2.G` `🔖 PCEP-adjacent`
+
+**Explanation**
+
+A **lambda** is a small, unnamed ("anonymous") function written in a single line. It's Python's shorthand for a function you only need once — usually as an argument to another function like `sorted()`, `map()`, or `filter()`. A lambda can only contain **one expression** and it automatically `return`s the result of that expression.
+
+```python
+square = lambda x: x ** 2
+
+# Equivalent to:
+def square(x):
+    return x ** 2
+```
+
+**Key Words**
+
+| Term | Meaning |
+|---|---|
+| **Lambda / anonymous function** | A function with no name, defined inline with the `lambda` keyword |
+| **Expression** | A single computation that produces a value |
+| **`key=` argument** | Tells `sorted()`/`min()`/`max()` *what to sort by* |
+| **First-class function** | A function that can be passed around like any other value |
+
+**Example**
+
+```python
+students = [("Alice", 91), ("Bob", 76), ("Charlie", 88)]
+
+by_score = sorted(students, key=lambda s: s[1], reverse=True)
+print(by_score)   # [('Alice', 91), ('Charlie', 88), ('Bob', 76)]
+```
+
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** Why can't a lambda replace a `def` function that needs to print three different values and then return a result?
+
+**Answer:** A lambda is restricted to a single **expression** — no `print()` statements, no multiple lines, no loops, no `if/else` blocks (only a limited conditional expression). Anything that needs multiple steps or side effects belongs in a real `def` function.
+</details>
+
+**Best Practices**
+
+- Keep lambdas **short** — one expression.
+- Never assign a lambda to a variable just to call it later — that's what `def` is for.
+- The most common, most useful pattern is `sorted(iterable, key=lambda item: ...)`.
+
+### Activity: Sort It Your Way
+
+Given a list of dictionaries representing books (`title`, `author`, `year`, `pages`), write **three separate `sorted()` calls**, each using a different `lambda` key:
+
+1. Sort by `year`, oldest first.
+2. Sort by `pages`, longest first (`reverse=True`).
+3. Sort by the **length of the title** (`len(title)`), shortest first.
+
+Print each sorted list with a clear label before it.
+
+*AP CSP: AAP-2.G*
+
+**Actual Program with Test Samples**
+
+```python
+#       Assignment:  Lambda Functions — Sort It Your Way
+#       Description: Sorts a list of book dictionaries three different ways using lambda keys.
+#       Language:    Python 3.x
+
+books = [
+    {"title": "Dune", "author": "Herbert", "year": 1965, "pages": 412},
+    {"title": "1984", "author": "Orwell", "year": 1949, "pages": 328},
+    {"title": "The Hobbit", "author": "Tolkien", "year": 1937, "pages": 310},
+]
+
+by_year      = sorted(books, key=lambda b: b["year"])
+by_pages     = sorted(books, key=lambda b: b["pages"], reverse=True)
+by_title_len = sorted(books, key=lambda b: len(b["title"]))
+
+print("By year (oldest first):")
+for b in by_year:
+    print(f"  {b['year']} — {b['title']}")
+
+print("By pages (longest first):")
+for b in by_pages:
+    print(f"  {b['pages']}pp — {b['title']}")
+
+print("By title length (shortest first):")
+for b in by_title_len:
+    print(f"  {len(b['title'])} chars — {b['title']}")
+```
+
+**Sample Test Cases**
+
+| Sort Key | First Result | Last Result |
+|---|---|---|
+| `year` (ascending) | *The Hobbit* (1937) | *Dune* (1965) |
+| `pages` (descending) | *Dune* (412pp) | *The Hobbit* (310pp) |
+| `len(title)` (ascending) | *1984* (4 chars) | *The Hobbit* (10 chars) |
+
+---
+
+## Frozensets
+
+`📋 AP CSP: AAP-3.A, AAP-3.B` `🔖 PCEP-adjacent`
+
+**Explanation**
+
+A **frozenset** is exactly what it sounds like: a `set` that's been frozen — **immutable**, just like a tuple is an immutable list. Once created, you cannot add, remove, or change its contents.
+
+```python
+colors = frozenset(["red", "green", "blue"])
+# colors.add("yellow")   # AttributeError — frozensets have no .add()
+```
+
+**When Would You Use This?**
+
+Use a `frozenset` any time you want the **uniqueness and fast-lookup** benefits of a set, but need the collection to be **unchangeable** — most often because it's being used as a **dictionary key** (regular sets can't be dict keys; frozensets can).
+
+```python
+schedule = {
+    frozenset(["Mon", "Wed", "Fri"]): "Math",
+    frozenset(["Tue", "Thu"]): "Science",
+}
+print(schedule[frozenset(["Tue", "Thu"])])   # Science
+```
+
+**Key Words**
+
+| Term | Meaning |
+|---|---|
+| **Immutable** | Cannot be changed after creation |
+| **Hashable** | Can be used as a dictionary key or set member (frozensets are hashable; sets are not) |
+| **Set operations** | `\|` union, `&` intersection, `-` difference, `^` symmetric difference — all work on frozensets too |
+
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** Why can a `frozenset` be used as a dictionary key, but a regular `set` cannot?
+
+**Answer:** Dictionary keys must be **hashable** — Python needs to compute a stable hash value for a key that never changes for the life of the object. A regular `set` is mutable (you could `.add()` to it after using it as a key, which would break the hash), so Python disallows it as a key. A `frozenset` is guaranteed immutable, so its hash is stable, making it a legal dictionary key.
+</details>
+
+**Best Practices**
+
+- Use `set` for a collection you plan to **modify**; use `frozenset` for a collection meant to stay **constant**.
+- Reach for a `frozenset` specifically when you need to use a collection as a **dictionary key**.
+
+### Activity: Class Roster Overlap
+
+Two teachers each have a frozenset of student names in their AP CSP class:
+
+```python
+period_1 = frozenset(["Ava", "Liam", "Noah", "Emma", "Mia"])
+period_3 = frozenset(["Noah", "Emma", "Sofia", "Lucas"])
+```
+
+Write a program that prints:
+1. Students in **both** periods (`&`)
+2. Students in **either** period, with no duplicates (`|`)
+3. Students **only** in Period 1, not Period 3 (`-`)
+4. Students in **exactly one** of the two periods, not both (`^`)
+5. Whether the two rosters share **any** student at all
+
+*AP CSP: AAP-3.A, AAP-3.B*
+
+**Actual Program with Test Samples**
+
+```python
+#       Assignment:  Frozensets — Class Roster Overlap
+#       Description: Compares two class rosters using frozenset operations.
+#       Language:    Python 3.x
+
+def compare_rosters(period_1, period_3):
+    both        = period_1 & period_3
+    either      = period_1 | period_3
+    only_p1     = period_1 - period_3
+    exactly_one = period_1 ^ period_3
+    overlaps    = len(both) > 0
+    return both, either, only_p1, exactly_one, overlaps
+
+
+def main():
+    period_1 = frozenset(["Ava", "Liam", "Noah", "Emma", "Mia"])
+    period_3 = frozenset(["Noah", "Emma", "Sofia", "Lucas"])
+
+    both, either, only_p1, exactly_one, overlaps = compare_rosters(period_1, period_3)
+
+    print("In both periods:", both)
+    print("In either period:", either)
+    print("Only in Period 1:", only_p1)
+    print("In exactly one period:", exactly_one)
+    print("Do the rosters overlap?", overlaps)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+**Sample Test Cases**
+
+| Operation | Result |
+|---|---|
+| `period_1 & period_3` | `frozenset({'Noah', 'Emma'})` |
+| `period_1 - period_3` | `frozenset({'Ava', 'Liam', 'Mia'})` |
+| `period_1 ^ period_3` | `frozenset({'Ava', 'Liam', 'Mia', 'Sofia', 'Lucas'})` |
+| overlap check | `True` |
+
+---
+
+## Exception Hierarchy Deep Dive
+
+`🔖 PCEP 4.3` — Python Built-In Exceptions Hierarchy
+
+Section 4 back in the fall covered practical `try/except` and the common exceptions table — that's everything you needed for the CPT. The PCEP exam goes one level deeper and expects you to know the actual **class hierarchy** exceptions are organized into.
+
+```
+BaseException
+├── SystemExit
+├── KeyboardInterrupt
+└── Exception
+    ├── ArithmeticError
+    │   └── ZeroDivisionError
+    ├── LookupError
+    │   ├── IndexError
+    │   └── KeyError
+    ├── TypeError
+    ├── ValueError
+    └── FileNotFoundError
+```
+
+> <mark>**PCEP Exam Tip:** Order `except` blocks from **most specific to most general**. Python checks them in order and runs the first match — this is why `except ValueError` must come *before* `except Exception` in the same `try` block, never after.</mark>
+
+```python
+try:
+    x = int("abc")
+except ValueError:          # caught here — most specific
+    print("Value error")
+except Exception:           # broader fallback
+    print("Some error")
+```
+
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** `ZeroDivisionError` and `IndexError` are both subclasses of `Exception`, but they're not subclasses of *each other*. Looking at the hierarchy tree above, what's the closest common ancestor they share?
+
+**Answer:** `Exception` itself — `ZeroDivisionError` descends through `ArithmeticError`, and `IndexError` descends through `LookupError`, two separate branches that only reconnect at `Exception`. That means a single `except Exception:` block would catch both, but nothing more specific shared between them would.
+</details>
+
+---
+
+## Culminating Project: Library Catalog Analyzer
+
+Build a program that reads a small library catalog from a text file, analyzes it using built-in functions and lambdas, and uses frozensets to answer genre questions — pulling together **File Operations (Year 1), Built-In Functions, Lambda Functions, and Frozensets (all above)** into one working project. This is the natural capstone of the PCEP Certification Path.
+
+**Setup — `catalog.txt` format:** one book per line, comma-separated: `title,author,year,genre1|genre2`
+
+```
+Dune,Frank Herbert,1965,Sci-Fi|Adventure
+1984,George Orwell,1949,Sci-Fi|Dystopian
+The Hobbit,J.R.R. Tolkien,1937,Fantasy|Adventure
+Klara and the Sun,Kazuo Ishiguro,2021,Sci-Fi|Drama
+```
+
+**🧩 Scaffolding — build it in this order:**
+1. Write `load_catalog()` alone and print the raw list of dictionaries it produces.
+2. Add the `sorted()`/`filter()`/`map()` lines one at a time, printing after each.
+3. Add the frozenset union/intersection logic.
+4. Write `save_report()` last.
+
+**Requirements:**
+
+1. Write `load_catalog(filename)` that reads `catalog.txt` line by line (using `with`, wrapped in `try/except FileNotFoundError`) and returns a **list of dictionaries**, each with keys `"title"`, `"author"`, `"year"` (as `int`), and `"genres"` (as a **frozenset** built by splitting on `|`).
+2. Use `sorted()` with a `lambda` key to print the catalog **sorted by year**, oldest first.
+3. Use `filter()` with a `lambda` to print only books published **after 2000**.
+4. Use `map()` with a `lambda` to print a list of just the **titles**, in upper case.
+5. Use frozenset operations to find and print:
+   - Every **unique genre** across the whole catalog (union `|` of all books' genre frozensets)
+   - All books that include **both** "Sci-Fi" and "Adventure" as genres
+6. Write `save_report(filename, catalog)` that writes a summary report to `report.txt` — total book count, oldest and newest year, and the full unique-genre list — using a `with` block in `"w"` mode.
+7. Include a full program header block.
+
+**Actual Program with Test Samples**
+
+```python
+#       Assignment:  Culminating Project — Library Catalog Analyzer
+#       Description: Reads a book catalog from file, analyzes it with map/filter/sorted/lambda,
+#                    and uses frozensets to compare genres, then writes a summary report.
+#       Language:    Python 3.x
+
+def load_catalog(filename):
+    catalog = []
+    try:
+        with open(filename, "r") as file:
+            for line in file:
+                title, author, year, genres = line.strip().split(",")
+                catalog.append({
+                    "title": title,
+                    "author": author,
+                    "year": int(year),
+                    "genres": frozenset(genres.split("|")),
+                })
+    except FileNotFoundError:
+        print(f"{filename} not found — starting with an empty catalog.")
+    return catalog
+
+
+def save_report(filename, catalog, all_genres):
+    years = [book["year"] for book in catalog]
+    with open(filename, "w") as file:
+        file.write(f"Total books: {len(catalog)}\n")
+        file.write(f"Oldest year: {min(years) if years else 'N/A'}\n")
+        file.write(f"Newest year: {max(years) if years else 'N/A'}\n")
+        file.write(f"Unique genres: {sorted(all_genres)}\n")
+
+
+def main():
+    catalog = load_catalog("catalog.txt")
+    if not catalog:
+        return
+
+    by_year   = sorted(catalog, key=lambda b: b["year"])
+    modern    = list(filter(lambda b: b["year"] > 2000, catalog))
+    titles    = list(map(lambda b: b["title"].upper(), catalog))
+
+    all_genres = frozenset()
+    for book in catalog:
+        all_genres = all_genres | book["genres"]
+
+    scifi_adventure = [
+        b["title"] for b in catalog
+        if frozenset(["Sci-Fi", "Adventure"]) <= b["genres"]
+    ]
+
+    print("Sorted by year:", [b["title"] for b in by_year])
+    print("Published after 2000:", [b["title"] for b in modern])
+    print("Titles (upper case):", titles)
+    print("All unique genres:", sorted(all_genres))
+    print("Sci-Fi AND Adventure:", scifi_adventure)
+
+    save_report("report.txt", catalog, all_genres)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+**Sample Test Cases** *(using the four-book `catalog.txt` shown above)*
+
+| Check | Result |
+|---|---|
+| Sorted by year (oldest first) | `['The Hobbit', '1984', 'Dune', 'Klara and the Sun']` |
+| Published after 2000 | `['Klara and the Sun']` |
+| Unique genres (union of all frozensets) | `['Adventure', 'Drama', 'Dystopian', 'Fantasy', 'Sci-Fi']` |
+| Books with **both** Sci-Fi and Adventure | `['Dune']` |
+| `report.txt` after running | `Total books: 4`, `Oldest year: 1937`, `Newest year: 2021` |
+
+**Stretch challenge:** Add a `most_common_genre()` function that uses `max()` with a `key=lambda` to find which single genre appears in the most books — without importing any extra modules.
+
+*AP CSP: AAP-3.A, AAP-3.B, AAP-2.G, CRD-2.B, CRD-2.J*
+
+---
+
 # Certification Alignment Reference
 
 ## PCEP-30-02 Exam Topic Map
 
 | PCEP Objective | Topics | Covered In |
 |---|---|---|
-| **1.1** | Interpreter, compiler, lexis, syntax, semantics | Section 1 — How Python Works |
-| **1.2** | Keywords, indentation, comments | Section 1 — Python Structure |
-| **1.3** | Literals, variables, numeral systems, PEP-8 | Section 1 — Variables & Data Types |
-| **1.4** | Operators, precedence, Boolean, bitwise, type casting | Section 1 — Operators |
-| **1.5** | `print()`, `input()`, `sep=`, `end=`, `int()`, `float()` | Section 1 — I/O |
-| **2.1** | `if`, `if-else`, `if-elif-else`, nested conditionals | Section 2 — Conditionals |
-| **2.2** | `while`, `for`, `range()`, `break`, `continue`, `pass`, `else` | Section 2 — Loops |
-| **3.1** | Lists, indexing, slicing, methods, comprehensions, 2D lists | Section 3 — Lists |
-| **3.2** | Tuples, immutability, nesting | Section 3 — Tuples |
-| **3.3** | Dictionaries, keys/values/items, iteration | Section 3 — Dictionaries |
-| **3.4** | Strings, indexing, slicing, escaping, methods | Section 3 — Strings |
-| **4.1** | Functions, `return`, `None`, recursion | Section 4 — Functions |
-| **4.2** | Parameters, arguments, defaults, scope, `global`, shadowing | Section 4 — Functions |
-| **4.3** | Exception hierarchy: `BaseException`, `Exception`, `ValueError`, etc. | Section 4 — Exceptions |
-| **4.4** | `try-except`, ordering branches, propagation | Section 4 — Exceptions |
-| *Supplemental* | Built-in functions (`map`, `filter`, `sorted`, `zip`, `any`, `all`) | Section 4 — Built-In Functions |
-| *Supplemental* | Lambda (anonymous) functions | Section 4 — Lambda Functions |
-| *Supplemental* | Frozensets (immutable sets) | Data Structures Deep Dive — Frozensets |
-| *Supplemental* | File I/O (`open`, `with`, read/write/append modes) | File Operations |
+| **1.1** | Interpreter, compiler, lexis, syntax, semantics | Section 1 — How Python Works *(Year 1)* |
+| **1.2** | Keywords, indentation, comments | Section 1 — Python Structure *(Year 1)* |
+| **1.3** | Literals, variables, numeral systems, PEP-8 | Section 1 *(Year 1)*; Numeral Systems *(Year 2)* |
+| **1.4** | Operators, precedence, Boolean, bitwise, type casting | Section 1 — Operators *(Year 1)*; Bitwise Operators *(Year 2)* |
+| **1.5** | `print()`, `input()`, `sep=`, `end=`, `int()`, `float()` | Section 1 — I/O *(Year 1)* |
+| **2.1** | `if`, `if-else`, `if-elif-else`, nested conditionals | Section 2 — Conditionals *(Year 1)* |
+| **2.2** | `while`, `for`, `range()`, `break`, `continue`, `pass`, `else` | Section 2 — Loops *(Year 1)* |
+| **3.1** | Lists, indexing, slicing, methods, comprehensions, 2D lists | Section 3 — Lists *(Year 1)* |
+| **3.2** | Tuples, immutability, nesting | Section 3 — Tuples *(Year 1)* |
+| **3.3** | Dictionaries, keys/values/items, iteration | Section 3 — Dictionaries *(Year 1)* |
+| **3.4** | Strings, indexing, slicing, escaping, methods | Section 3 — Strings *(Year 1)* |
+| **4.1** | Functions, `return`, `None`, recursion | Section 4 — Functions *(Year 1)* |
+| **4.2** | Parameters, arguments, defaults, scope, `global`, shadowing | Section 4 — Functions *(Year 1)* |
+| **4.3** | Exception hierarchy: `BaseException`, `Exception`, `ValueError`, etc. | Exception Hierarchy Deep Dive *(Year 2)* |
+| **4.4** | `try-except`, ordering branches, propagation | Section 4 — Exceptions *(Year 1)* |
+| *Supplemental* | Built-in functions (`map`, `filter`, `sorted`, `zip`, `any`, `all`) | PCEP Certification Path — Built-In Functions *(Year 2)* |
+| *Supplemental* | Lambda (anonymous) functions | PCEP Certification Path — Lambda Functions *(Year 2)* |
+| *Supplemental* | Frozensets (immutable sets) | PCEP Certification Path — Frozensets *(Year 2)* |
+| *Supplemental* | File I/O (`open`, `with`, read/write/append modes) | File Operations *(Year 1)* |
 
-> <mark>Rows marked *Supplemental* aren't separately numbered objectives in the official PCEP-30-02 exam blocks (file I/O in particular is tested at the next certification level, PCAP) — they're included here because they're core Python fluency and directly support the AP CSP CPT.</mark>
+> <mark>Rows marked *Supplemental* aren't separately numbered objectives in the official PCEP-30-02 exam blocks (file I/O in particular is tested at the next certification level, PCAP) — they're included because they're core Python fluency and directly support both the CPT and the PCEP exam.</mark>
 
 ---
 
@@ -2814,14 +3302,14 @@ root.mainloop()
 | **CRD-2.J** | Test and debug | Debugging, Exception Handling, File Operations |
 | **AAP-2.E** | Sequencing, selection, iteration | Control Flow |
 | **AAP-2.F** | Mathematical operations | Operators |
-| **AAP-2.G** | Abstraction to manage complexity | Functions, Built-In Functions, Lambda Functions, Modules, OOP |
+| **AAP-2.G** | Abstraction to manage complexity | Functions, Modules, OOP, Built-In Functions *(Year 2)*, Lambda Functions *(Year 2)* |
 | **AAP-2.K** | List iteration | Lists |
-| **AAP-3.A** | Collect and represent data | Data Structures, Frozensets, File Operations |
-| **AAP-3.B** | Use abstractions to organize data | Dictionaries, OOP, Lists, Frozensets |
+| **AAP-3.A** | Collect and represent data | Data Structures, File Operations, Frozensets *(Year 2)* |
+| **AAP-3.B** | Use abstractions to organize data | Dictionaries, OOP, Lists, Frozensets *(Year 2)* |
 | **AAP-3.C** | Analyze data to draw conclusions | Data Structures |
 | **AAP-4.A** | Data abstractions for complexity | Lists, 2D Lists, Classes |
 
 ---
 
 *Document maintained for AP CSP and PCEP-30-02 certification alignment.*
-*Revised June 2026*
+*Reorganized August 2026 — CSP-first, PCEP-second-semester structure.*
