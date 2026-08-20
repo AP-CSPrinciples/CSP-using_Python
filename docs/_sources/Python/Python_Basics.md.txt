@@ -1,5 +1,5 @@
 # Python Basics
-```Revised August 2026 — Reorganized for CSP-First / PCEP-Second Semester```
+```Revised August 2026 — Reorganized for CSP-First / PCEP-Over-Two-Years```
 
 Python is an open-source, high-level programming language that is widely considered one of the best first languages to learn. It supports multiple programming paradigms — including **procedural**, **functional**, and **object-oriented programming (OOP)** — and is backed by an enormous standard library and community. As of 2024, it is one of the most in-demand languages in the job market, used in web development, data science, artificial intelligence, IoT, and cybersecurity.
 
@@ -7,11 +7,11 @@ This course is designed to prepare you for:
 - 🎯 **AP Computer Science Principles (AP CSP)** — College Board performance task and exam
 - 🏅 **PCEP™ – Certified Entry-Level Python Programmer** (Exam PCEP-30-02, OpenEDG Python Institute)
 
-> **How to use this document — READ THIS FIRST:** Topics are now organized around **when you need them for the AP CSP Create Performance Task (CPT)**, not around the PCEP exam blueprint. Everything you need to write, test, and explain your CPT program lives in the main body of this document (Sections 1–4, File Operations, Data Structures, OOP). PCEP-only exam content that isn't required for the CPT — numeral systems, bitwise operators, built-in functions like `map`/`filter`, lambda functions, frozensets, and the full exception hierarchy tree — has been moved to **[PCEP Certification -Second Semester](#pcep-certification-path-year-2)** at the end of this document, where you'll study it at a slower pace *after* the CPT is done, over the second half of the year. PCEP exam objectives are labeled `🔖 PCEP` and AP CSP standards are labeled `📋 AP CSP`. Activities and projects are marked with `###`. New this revision: **🤔 Thinking Question** checkpoints after every new concept, a **📌 Worked Example** before every assignment, and **🧩 Scaffolding** checkpoints for multi-day projects.
+> **How to use this document — READ THIS FIRST:** Topics are now organized around **when you need them for the AP CSP Create Performance Task (CPT)**, not around the PCEP exam blueprint. Everything you need to write, test, and explain your CPT program lives in the main body of this document (Sections 1–4, File Operations, Data Structures, OOP). PCEP-only exam content that isn't required for the CPT — numeral systems, bitwise operators, built-in functions like `map`/`filter`, lambda functions, frozensets, and the full exception hierarchy tree — has been moved to **[PCEP Certification Path — Semester 2](#pcep-certification-path-semester-2)** at the end of this document, where you'll study it at a slower pace *after* the CPT is done, over the second half of the year. PCEP exam objectives are labeled `🔖 PCEP` and AP CSP standards are labeled `📋 AP CSP`. Activities and projects are marked with `###`. New this revision: **🤔 Thinking Question** checkpoints after every new concept, a **📌 Worked Example** before every assignment, and **🧩 Scaffolding** checkpoints for multi-day projects.
 
 ---
 
-## 📅 Python Pacing Guide — Year 1 (AP CSP Focus)
+## 📅 Python Pacing Guide — Semester 1 (AP CSP Focus)
 
 `Aug 17 – Dec 18, 2026`
 
@@ -43,7 +43,7 @@ This course is designed to prepare you for:
 > **Official AP CSP CPT (the actual, submitted Create Performance Task) happens entirely in December**: Week 16 = brainstorming/planning an original idea, Week 17 = coding + video + PPR written responses, Week 18 = final coding, submission (due Fri, Dec 18), and course wrap-up — all three are full 5-day weeks.
 > **Total Official CPT Time: 216 + 216 + 216 = 648 min (≈10.8 hrs) — clears the 9-hour College Board minimum with room to spare, entirely within December, even after setting aside time on the last day for End-of-Course Reflection.**
 >
-> ⚠️ **What changed from the previous version:** The old Week 14 PCEP exam-prep cram day is gone. PCEP-specific exam content (numeral systems, bitwise operators, built-in functions, lambdas, frozensets, the full exception hierarchy) has been pulled out of Semester 1 entirely — see the note above the pacing table. That gives Weeks 1–14 room to slow down, add more worked examples, and add the CPT-checklist workshop in Week 14 instead of a PCEP cram session. PCEP prep now happens at a sustainable pace across Semester 2 (Jan–June) in **[PCEP Certification Path — Year 2](#pcep-certification-path-year-2)**, after the CPT is behind you.
+> ⚠️ **What changed from the previous version:** The old Week 14 PCEP exam-prep cram day is gone. PCEP-specific exam content (numeral systems, bitwise operators, built-in functions, lambdas, frozensets, the full exception hierarchy) has been pulled out of Semester 1 entirely — see the note above the pacing table. That gives Weeks 1–14 room to slow down, add more worked examples, and add the CPT-checklist workshop in Week 14 instead of a PCEP cram session. PCEP prep now happens at a sustainable pace across Semester 2 (Jan–June) in **[PCEP Certification Path — Semester 2](#pcep-certification-path-semester-2)**, after the CPT is behind you.
 
 ---
 
@@ -256,7 +256,7 @@ return   try      while    with     yield
 | `in` | Membership test (`x in list`) or loop iteration (`for x in list`) |
 | `is` | Identity comparison (same object in memory, not just equal value) |
 | `global` / `nonlocal` | Change which variable scope a name refers to |
-| `lambda` | Defines a small anonymous function *(PCEP deep dive — see Year 2)* |
+| `lambda` | Defines a small anonymous function *(PCEP deep dive — see Semester 2)* |
 | `del` | Deletes a variable, list item, or dictionary key |
 | `with` | Opens a resource (like a file) and guarantees it's closed afterward |
 | `assert` | Checks that a condition is true; raises an error if not (used in testing) |
@@ -363,7 +363,7 @@ print(0.1 + 0.2)        # 0.30000000000000004
 print(round(0.1 + 0.2, 2))  # 0.3
 ```
 
-> 🔖 **PCEP note:** binary/octal/hex numeral systems (writing integers in different bases) are a PCEP-only topic and are covered in depth in **[PCEP Certification Path — Year 2](#pcep-certification-path-year-2)**. You don't need them for the CPT.
+> 🔖 **PCEP note:** binary/octal/hex numeral systems (writing integers in different bases) are a PCEP-only topic and are covered in depth in **[PCEP Certification Path — Semester 2](#pcep-certification-path-semester-2)**. You don't need them for the CPT.
 
 <details><summary>🤔 Thinking Question — check your answer</summary>
 
@@ -489,26 +489,25 @@ gets_discount = (age > 25 or is_eligible) and not has_discount_coupon
 **Answer:** No. `or` only needs **one** side to be `True`; here both sides are `False` (`17 >= 18` is `False`, `has_ticket` is `False`), so `or` evaluates to `False`. `and` needs **both** sides `True`, so it's also `False` here — but that's a coincidence of these particular values. Try `age = 20`: `or` → `True` (first side is true), `and` → `False` (second side is still false). The two operators behave very differently once one side is `True`.
 </details>
 
-> 📌 **Worked Example — before you start the Movie Ticket assignment below**
+> 📌 **Worked Example — compound booleans in a different context (game achievement unlock)**
 >
 > ```python
-> age = int(input("Enter your age: "))
-> has_id = input("Do you have a student ID? (yes/no): ")
+> player_level = int(input("Enter player level: "))
+> completed_tutorial = input("Completed the tutorial? (yes/no): ")
+> difficulty = input("Difficulty (easy/normal/hard): ")
 >
-> # A ticket is discounted if age < 13 OR age > 65
-> is_child_or_senior = age < 13 or age > 65
+> # Unlocked if the player is high level, OR a beginner who finished the tutorial on easy
+> is_veteran = player_level >= 10
+> is_ready_beginner = completed_tutorial == "yes" and difficulty == "easy"
 >
-> # A ticket is ALSO discounted if age is 13-25 AND they have a student ID
-> is_discounted_student = (13 <= age <= 25) and has_id == "yes"
+> achievement_unlocked = is_veteran or is_ready_beginner
 >
-> gets_discount = is_child_or_senior or is_discounted_student
->
-> if gets_discount:
->     print("Discount applies!")
+> if achievement_unlocked:
+>     print("Achievement unlocked!")
 > else:
->     print("Full price.")
+>     print("Keep playing to unlock this achievement.")
 > ```
-> Notice how the assignment's rule was broken into two smaller boolean variables (`is_child_or_senior`, `is_discounted_student`) before combining them — this is the same "smaller pieces first" strategy you'll use on every complex condition this year.
+> Notice the strategy: break a complex rule into smaller boolean variables (`is_veteran`, `is_ready_beginner`) *before* combining them with `or`. That "smaller pieces first" approach is what you'll use to build the Movie Ticket assignment's own — different — discount rule below.
 
 ### Activity: Movie Ticket Eligibility Checker
 
@@ -923,16 +922,23 @@ A single loop can only move in one direction. The moment a shape has **both rows
 * * * * *
 ```
 
-> 📌 **Worked Example — solid right triangle (Tier 1 difficulty)**
+> 📌 **Worked Example — nested loops in a different context (seating chart labels)**
 > ```python
-> rows = int(input("Enter the number of rows: "))
+> rows = 3
+> seats_per_row = 4
 >
-> for i in range(1, rows + 1):
->     for j in range(i):
->         print("*", end="")
+> for row in range(1, rows + 1):
+>     for seat in range(1, seats_per_row + 1):
+>         print(f"R{row}S{seat}", end=" ")
 >     print()
 > ```
-> Trace it: when `i = 3`, the inner loop runs 3 times, printing `***`, then `print()` moves to a new line. The **outer loop variable (`i`) controls how many characters the inner loop prints** — that's the core trick behind every pattern in this activity.
+> Output:
+> ```
+> R1S1 R1S2 R1S3 R1S4
+> R2S1 R2S2 R2S3 R2S4
+> R3S1 R3S2 R3S3 R3S4
+> ```
+> Trace it: the **outer loop (`row`) picks which row you're on**, and the **inner loop (`seat`) does something once per column within that row** — the same outer/inner relationship you'll need for the shape patterns below, just applied to seat labels instead of a printed shape.
 
 **Guided example — hollow rectangle (Tier 2 difficulty):**
 
@@ -1055,16 +1061,20 @@ Violets are blue.
 **Answer:** `"ADA LOVELACE"`. `.strip()` removes the leading/trailing whitespace first, then `.upper()` capitalizes the result. Because strings are immutable, each method returns a **new** string rather than modifying `name` in place — that's why you can "chain" methods like this, each one operating on the result of the one before it. Order rarely matters for `.strip()`/`.upper()` specifically, but it does for methods that depend on exact spacing, like `.startswith()`.
 </details>
 
-> 📌 **Worked Example — before the Receipt Formatter below**
+> 📌 **Worked Example — string methods in a different context (library due-date slip)**
 > ```python
-> item = "  blue notebook   "
-> price = 24.99
+> book_title = "  the hobbit   "
+> library_name = "westview public library"
+> due_date = "09/15"
 >
-> clean_item = item.strip().title()   # "Blue Notebook"
-> print(f"{clean_item}\t${price:.2f}")
-> print("\"Thank you for shopping with us!\"")
+> clean_title = book_title.strip().title()      # "The Hobbit"
+> header = library_name.upper()                  # "WESTVIEW PUBLIC LIBRARY"
+>
+> print(header)
+> print(f"{clean_title}\tDue: {due_date}")
+> print("\"Please return on time to avoid fees.\"")
 > ```
-> This shows the same pattern the assignment asks for at small scale: clean the input with `.strip()`, fix the capitalization with `.title()`, then use `\t` and an f-string to line things up.
+> This shows the same *techniques* the Receipt Formatter asks for — `.strip()` to clean messy input, `.upper()`/`.title()` for capitalization, `\t` for column alignment, and a quoted message with `\"` — applied to a library slip instead of a receipt.
 
 ---
 
@@ -1324,18 +1334,18 @@ count = sum(1 for s in students if s["age"] == 14)
 **Answer:** With parallel lists, `names[2]` and `ages[2]` only stay linked to the same student if you're extremely careful to keep every list in sync — one mistaken `.remove()` on just one list breaks the connection. A list of dictionaries keeps each student's data bundled together in one object, so there's no way for a name and age to get separated. This is exactly the kind of data abstraction the CPT written responses ask you to explain.
 </details>
 
-> 📌 **Worked Example — before the Student Contact Book below**
+> 📌 **Worked Example — list of dictionaries in a different context (playlist)**
 > ```python
-> contacts = []
+> playlist = []
 >
-> new_contact = {"name": "Ava", "phone": "555-1234", "email": "ava@example.com"}
-> contacts.append(new_contact)
+> new_song = {"title": "Clair de Lune", "artist": "Debussy", "duration": "5:12"}
+> playlist.append(new_song)
 >
-> for c in contacts:
->     if c["name"] == "Ava":
->         print(f"Found: {c['name']}, {c['phone']}, {c['email']}")
+> for song in playlist:
+>     if song["title"] == "Clair de Lune":
+>         print(f"Found: {song['title']} by {song['artist']} ({song['duration']})")
 > ```
-> This is the exact pattern (append a dict, search with a loop + `if`) you'll build into a full menu program below.
+> This is the pattern (append a dict to a list, then search with a loop + `if`) you'll build into a full menu-driven program below — just applied to songs instead of contacts.
 
 ### Activity: Student Contact Book
 
@@ -1426,20 +1436,20 @@ def multiply(a, b):
 multiply(5, 3)
 ```
 
-> 📌 **Worked Example — before the Math Operations Calculator below**
+> 📌 **Worked Example — functions in a different context (rectangle area)**
 > ```python
-> def get_sum(num1, num2):
->     return num1 + num2
+> def calculate_area(length, width):
+>     return length * width
 >
 > def main():
->     a = int(input("Enter first number: "))
->     b = int(input("Enter second number: "))
->     total = get_sum(a, b)
->     print(f"Sum = {total}")
+>     l = float(input("Enter length: "))
+>     w = float(input("Enter width: "))
+>     area = calculate_area(l, w)
+>     print(f"Area = {area}")
 >
 > main()
 > ```
-> This is the exact shape the assignment wants, repeated five times (once per operation). Get this ONE function working end-to-end before writing the other four.
+> This shows the shape you'll reuse five times below: a function that takes parameters and `return`s a result (no `print()` inside it), called from `main()`, with the result stored in a variable and printed with an f-string. Get this pattern solid here before writing `get_sum()`, `get_difference()`, and the rest.
 
 ### Activity: Math Operations Calculator
 
@@ -1698,22 +1708,21 @@ finally:
     # ALWAYS runs — cleanup code
 ```
 
-> 📌 **Worked Example — before the Safe Calculator below**
+> 📌 **Worked Example — try/except in a different context (library checkout days)**
 > ```python
 > try:
->     num1 = int(input("Enter first number: "))
->     num2 = int(input("Enter second number: "))
->     result = num1 / num2
-> except ValueError:
->     print("Please enter valid numbers.")
-> except ZeroDivisionError:
->     print("Can't divide by zero.")
+>     days = int(input("How many days do you want to borrow this book? "))
+>     if days > 21:
+>         raise ValueError("Max borrow period is 21 days.")
+>     days_of_slack = 21 - days
+> except ValueError as e:
+>     print(f"Invalid entry: {e}")
 > else:
->     print(f"Result: {result}")
+>     print(f"Checked out. {days_of_slack} days of slack before the 21-day limit.")
 > finally:
->     print("Calculation attempted.")
+>     print("Checkout attempt logged.")
 > ```
-> Run this in your head with `num2 = "abc"`, then again with `num2 = 0`, then again with `num2 = 5` — three different paths through the same block.
+> Run this in your head with `days = "abc"`, then `days = 30`, then `days = 10` — three different paths through the same `try/except/else/finally` block, just like the calculator you're about to build will handle three different kinds of bad input.
 
 **Example: Safe Division**
 
@@ -1777,7 +1786,7 @@ except IOError:
     print("Error reading file.")
 ```
 
-> 🔖 **PCEP note:** the full `BaseException` → `Exception` hierarchy tree (PCEP 4.3, exam-level memorization) is covered in **[PCEP Certification Path — Year 2](#pcep-certification-path-year-2)**. For the CPT, knowing the common exceptions table above and how to order `except` blocks is enough.
+> 🔖 **PCEP note:** the full `BaseException` → `Exception` hierarchy tree (PCEP 4.3, exam-level memorization) is covered in **[PCEP Certification Path — Semester 2](#pcep-certification-path-semester-2)**. For the CPT, knowing the common exceptions table above and how to order `except` blocks is enough.
 
 <details><summary>🤔 Thinking Question — check your answer</summary>
 
@@ -1918,19 +1927,19 @@ Any time your program needs to **outlive a single run** — saving a high score,
 **Answer:** Use `"a"` (append). `"w"` mode erases the entire existing file the moment you open it, so every previous score would be gone before you ever wrote the new one — you'd end up with a file containing only the newest score.
 </details>
 
-> 📌 **Worked Example — before the Roster Manager below**
+> 📌 **Worked Example — file loading in a different context (favorite colors)**
 > ```python
-> def load_names(filename):
+> def load_colors(filename):
 >     try:
 >         with open(filename, "r") as file:
 >             return [line.strip() for line in file]
 >     except FileNotFoundError:
 >         return []
 >
-> names = load_names("roster.txt")
-> print(f"Loaded {len(names)} names:", names)
+> colors = load_colors("colors.txt")
+> print(f"Loaded {len(colors)} colors:", colors)
 > ```
-> This "try to load, fall back to an empty list" pattern is the backbone of every load function you'll write this year.
+> This "try to load, fall back to an empty list" pattern is the backbone of the roster-loading function you'll write below — same technique, different data.
 
 **Sample Program**
 
@@ -2102,7 +2111,7 @@ first = queue.popleft()    # remove from the front → "first" (first one in, fi
 
 > <mark>**Memory trick:** LIFO = last in, first out (a **stack** of trays). FIFO = first in, first out (a **line** at the store). Both use `.append()` to add, but stacks remove with `.pop()` (from the end) while queues remove with `.popleft()` (from the front).</mark>
 
-> 🔖 **PCEP note:** frozensets — an immutable version of `set` — are a PCEP-adjacent topic that build on this section. They're covered in **[PCEP Certification Path — Year 2](#pcep-certification-path-year-2)**, along with a capstone project that ties frozensets together with file operations, built-in functions, and lambdas.
+> 🔖 **PCEP note:** frozensets — an immutable version of `set` — are a PCEP-adjacent topic that build on this section. They're covered in **[PCEP Certification Path — Semester 2](#pcep-certification-path-semester-2)**, along with a capstone project that ties frozensets together with file operations, built-in functions, and lambdas.
 
 ---
 
@@ -2264,26 +2273,26 @@ account.withdraw(200)
 account.withdraw(1500)     # Insufficient funds
 ```
 
-> 📌 **Worked Example — before the OOP Zoo activity below (mini version, Option 1 shape)**
+> 📌 **Worked Example — inheritance in a different context (vehicles)**
 > ```python
-> class Animal:
->     def __init__(self, name, species, age):
->         self.name = name
->         self.species = species
->         self.age = age
+> class Vehicle:
+>     def __init__(self, brand, model, year):
+>         self.brand = brand
+>         self.model = model
+>         self.year = year
 >
 >     def describe(self):
->         return f"{self.name} is a {self.age}-year-old {self.species}."
+>         return f"{self.year} {self.brand} {self.model}"
 >
-> class Mammal(Animal):
->     def speak(self):
->         return f"{self.name} growls."
+> class Motorcycle(Vehicle):
+>     def sound(self):
+>         return f"The {self.model} roars to life."
 >
-> lion = Mammal("Leo", "Lion", 4)
-> print(lion.describe())
-> print(lion.speak())
+> bike = Motorcycle("Harley-Davidson", "Iron 883", 2023)
+> print(bike.describe())
+> print(bike.sound())
 > ```
-> This is the minimum skeleton — one base class, one subclass, one object. The full activity asks for a `Zoo` container class and at least 3 subclasses; add those one at a time from this starting point.
+> This is the minimum skeleton — one base class, one subclass, one object, with the subclass overriding/adding a method. Whichever OOP Zoo option you choose below (Zoo, Library, or RPG Party), you'll build that same base-class → subclass → container-class shape, just in your own domain.
 
 ### Activity: OOP Zoo
 
@@ -2625,7 +2634,7 @@ root.mainloop()
 
 ---
 
-# PCEP Certification Path — Year 2
+# PCEP Certification Path — Semester 2
 
 `🏅 Semester 2, Jan – June`
 
@@ -3152,7 +3161,7 @@ except Exception:           # broader fallback
 
 ## Culminating Project: Library Catalog Analyzer
 
-Build a program that reads a small library catalog from a text file, analyzes it using built-in functions and lambdas, and uses frozensets to answer genre questions — pulling together **File Operations (Year 1), Built-In Functions, Lambda Functions, and Frozensets (all above)** into one working project. This is the natural capstone of the PCEP Certification Path.
+Build a program that reads a small library catalog from a text file, analyzes it using built-in functions and lambdas, and uses frozensets to answer genre questions — pulling together **File Operations (Semester 1), Built-In Functions, Lambda Functions, and Frozensets (all above)** into one working project. This is the natural capstone of the PCEP Certification Path.
 
 **Setup — `catalog.txt` format:** one book per line, comma-separated: `title,author,year,genre1|genre2`
 
@@ -3268,25 +3277,25 @@ if __name__ == "__main__":
 
 | PCEP Objective | Topics | Covered In |
 |---|---|---|
-| **1.1** | Interpreter, compiler, lexis, syntax, semantics | Section 1 — How Python Works *(Year 1)* |
-| **1.2** | Keywords, indentation, comments | Section 1 — Python Structure *(Year 1)* |
-| **1.3** | Literals, variables, numeral systems, PEP-8 | Section 1 *(Year 1)*; Numeral Systems *(Year 2)* |
-| **1.4** | Operators, precedence, Boolean, bitwise, type casting | Section 1 — Operators *(Year 1)*; Bitwise Operators *(Year 2)* |
-| **1.5** | `print()`, `input()`, `sep=`, `end=`, `int()`, `float()` | Section 1 — I/O *(Year 1)* |
-| **2.1** | `if`, `if-else`, `if-elif-else`, nested conditionals | Section 2 — Conditionals *(Year 1)* |
-| **2.2** | `while`, `for`, `range()`, `break`, `continue`, `pass`, `else` | Section 2 — Loops *(Year 1)* |
-| **3.1** | Lists, indexing, slicing, methods, comprehensions, 2D lists | Section 3 — Lists *(Year 1)* |
-| **3.2** | Tuples, immutability, nesting | Section 3 — Tuples *(Year 1)* |
-| **3.3** | Dictionaries, keys/values/items, iteration | Section 3 — Dictionaries *(Year 1)* |
-| **3.4** | Strings, indexing, slicing, escaping, methods | Section 3 — Strings *(Year 1)* |
-| **4.1** | Functions, `return`, `None`, recursion | Section 4 — Functions *(Year 1)* |
-| **4.2** | Parameters, arguments, defaults, scope, `global`, shadowing | Section 4 — Functions *(Year 1)* |
-| **4.3** | Exception hierarchy: `BaseException`, `Exception`, `ValueError`, etc. | Exception Hierarchy Deep Dive *(Year 2)* |
-| **4.4** | `try-except`, ordering branches, propagation | Section 4 — Exceptions *(Year 1)* |
-| *Supplemental* | Built-in functions (`map`, `filter`, `sorted`, `zip`, `any`, `all`) | PCEP Certification Path — Built-In Functions *(Year 2)* |
-| *Supplemental* | Lambda (anonymous) functions | PCEP Certification Path — Lambda Functions *(Year 2)* |
-| *Supplemental* | Frozensets (immutable sets) | PCEP Certification Path — Frozensets *(Year 2)* |
-| *Supplemental* | File I/O (`open`, `with`, read/write/append modes) | File Operations *(Year 1)* |
+| **1.1** | Interpreter, compiler, lexis, syntax, semantics | Section 1 — How Python Works *(Semester 1)* |
+| **1.2** | Keywords, indentation, comments | Section 1 — Python Structure *(Semester 1)* |
+| **1.3** | Literals, variables, numeral systems, PEP-8 | Section 1 *(Semester 1)*; Numeral Systems *(Semester 2)* |
+| **1.4** | Operators, precedence, Boolean, bitwise, type casting | Section 1 — Operators *(Semester 1)*; Bitwise Operators *(Semester 2)* |
+| **1.5** | `print()`, `input()`, `sep=`, `end=`, `int()`, `float()` | Section 1 — I/O *(Semester 1)* |
+| **2.1** | `if`, `if-else`, `if-elif-else`, nested conditionals | Section 2 — Conditionals *(Semester 1)* |
+| **2.2** | `while`, `for`, `range()`, `break`, `continue`, `pass`, `else` | Section 2 — Loops *(Semester 1)* |
+| **3.1** | Lists, indexing, slicing, methods, comprehensions, 2D lists | Section 3 — Lists *(Semester 1)* |
+| **3.2** | Tuples, immutability, nesting | Section 3 — Tuples *(Semester 1)* |
+| **3.3** | Dictionaries, keys/values/items, iteration | Section 3 — Dictionaries *(Semester 1)* |
+| **3.4** | Strings, indexing, slicing, escaping, methods | Section 3 — Strings *(Semester 1)* |
+| **4.1** | Functions, `return`, `None`, recursion | Section 4 — Functions *(Semester 1)* |
+| **4.2** | Parameters, arguments, defaults, scope, `global`, shadowing | Section 4 — Functions *(Semester 1)* |
+| **4.3** | Exception hierarchy: `BaseException`, `Exception`, `ValueError`, etc. | Exception Hierarchy Deep Dive *(Semester 2)* |
+| **4.4** | `try-except`, ordering branches, propagation | Section 4 — Exceptions *(Semester 1)* |
+| *Supplemental* | Built-in functions (`map`, `filter`, `sorted`, `zip`, `any`, `all`) | PCEP Certification Path — Built-In Functions *(Semester 2)* |
+| *Supplemental* | Lambda (anonymous) functions | PCEP Certification Path — Lambda Functions *(Semester 2)* |
+| *Supplemental* | Frozensets (immutable sets) | PCEP Certification Path — Frozensets *(Semester 2)* |
+| *Supplemental* | File I/O (`open`, `with`, read/write/append modes) | File Operations *(Semester 1)* |
 
 > <mark>Rows marked *Supplemental* aren't separately numbered objectives in the official PCEP-30-02 exam blocks (file I/O in particular is tested at the next certification level, PCAP) — they're included because they're core Python fluency and directly support both the CPT and the PCEP exam.</mark>
 
@@ -3302,14 +3311,14 @@ if __name__ == "__main__":
 | **CRD-2.J** | Test and debug | Debugging, Exception Handling, File Operations |
 | **AAP-2.E** | Sequencing, selection, iteration | Control Flow |
 | **AAP-2.F** | Mathematical operations | Operators |
-| **AAP-2.G** | Abstraction to manage complexity | Functions, Modules, OOP, Built-In Functions *(Year 2)*, Lambda Functions *(Year 2)* |
+| **AAP-2.G** | Abstraction to manage complexity | Functions, Modules, OOP, Built-In Functions *(Semester 2)*, Lambda Functions *(Semester 2)* |
 | **AAP-2.K** | List iteration | Lists |
-| **AAP-3.A** | Collect and represent data | Data Structures, File Operations, Frozensets *(Year 2)* |
-| **AAP-3.B** | Use abstractions to organize data | Dictionaries, OOP, Lists, Frozensets *(Year 2)* |
+| **AAP-3.A** | Collect and represent data | Data Structures, File Operations, Frozensets *(Semester 2)* |
+| **AAP-3.B** | Use abstractions to organize data | Dictionaries, OOP, Lists, Frozensets *(Semester 2)* |
 | **AAP-3.C** | Analyze data to draw conclusions | Data Structures |
 | **AAP-4.A** | Data abstractions for complexity | Lists, 2D Lists, Classes |
 
 ---
 
 *Document maintained for AP CSP and PCEP-30-02 certification alignment.*
-*Reorganized August 2026 — CSP-first, PCEP-second-semester structure.*
+*Reorganized August 2026 — CSP-first, PCEP-Second Semester structure.*
