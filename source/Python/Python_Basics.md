@@ -777,9 +777,67 @@ modern Python?
 
 ---
 
-### Activity: Hello, World! Variations
+### Assignment: Mad Libs — String Formatting Showdown
 
-Write a program that asks the user for their name, age, and favorite color. Print a formatted sentence using each of the three print methods (f-string, `format()`, concatenation). Include a header block.
+> **Standards:** Output formatting — f-strings, string concatenation, `.format()`, `print()` `sep`/`end` parameters
+> 
+> ***Objective***
+> 
+> Students will build a **Mad Libs**–style story generator that collects user input and displays the finished story using **four different output-formatting techniques** in > > > Python: f-strings, string concatenation, the `.format()` method, and `print()`'s `sep`/`end` parameters. By the end of the assignment, students should be able to explain the > tradeoffs between each method and choose the right one for a given situation.
+> 
+> **Overview**
+> 
+> Students write a program that:
+> 1. Prompts the user for a series of words (nouns, verbs, adjectives, etc.) using `input()`
+> 2. Builds a **10-sentence story** using those words
+> 3. Prints the story back to the user — but each 2-3 sentence "block" of the story must use a *different* formatting method than the block before it
+> 
+> **Requirements**
+> 
+> | Sentences | Required Technique | Notes |
+> |---|---|---|
+> | 1–4 | f-strings | `f"You went to the {place}..."` |
+> | 1–2 | String concatenation (`+`) | Must convert non-strings with `str()` where needed |
+> | 1–4 | `.format()` method | Use either positional `{}` or named `{noun}` placeholders |
+> | 1–2 | `print()` with `sep` and `end` | Build the sentence from multiple `print()` arguments, not a single string |
+> 
+> - **10 sentences**, forming a single coherent(ish) story — silliness encouraged
+> - At least **8 different user inputs** collected (nouns, adjectives, verbs, adverbs, numbers, exclamations, etc.)
+> - Every input variable must be used **at least once**
+> - Story must include at least one number input, displayed correctly in all four formatting styles at some point (tests `str()`/type-awareness)
+> 
+> **Steps**
+> 
+> 1. Plan your story on paper first — write the 10 sentences with blanks, and decide which 8+ words you'll ask for.
+> 2. Write all your `input()` statements first and store them in clearly named variables.
+> 3. Build the story section by section, following the technique table above.
+> 4. Test by running the program and filling in silly words — does the story read correctly and grammatically?
+> 5. Add the required header block (below) to the top of your file.
+> 6. Submit your `.py` file with test cases.
+> 
+> **Grading Focus**
+> 
+> - Correct, working use of all four formatting techniques (not just syntactically present — actually executed correctly)
+> - Appropriate `str()` conversions where needed to avoid type errors
+> - Code comments marking each section
+> - Story is complete, coherent, and uses every collected input
+> - Header block present and filled out
+> 
+> 
+> **Header Block**
+> 
+> Place this at the top of your `.py` file before any code:
+> 
+> ```python
+> """
+> Activity:  Mad Libs using f-String
+> Author:      [Your Name]
+> Course Name: AP Computer Science Principles
+> Description: Mad Libs
+> Language:    Python 3.x
+> """
+> ```
+>
 
 *AP CSP: CRD-2.B*
 
