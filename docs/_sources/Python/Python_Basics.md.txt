@@ -152,7 +152,7 @@ This course is designed to prepare you for:
 
 ---
 
-# Debugging Strategies
+## Debugging Strategies
 
 `📋 AP CSP: CRD-2.J` — Identify and correct errors in algorithms and programs.
 
@@ -196,10 +196,10 @@ Before asking for help, confirm:
 
 ---
 
-# Section 1 — Computer Programming and Python Fundamentals
+## Section 1 — Computer Programming and Python Fundamentals
 `📋 AP CSP: CRD-2.A, CRD-2.B`
 
-## How Python Works
+### How Python Works
 
 `🔖 PCEP 1.1` — Understand fundamental terms and definitions
 
@@ -305,7 +305,7 @@ print(area_of_rectangle.__doc__)   # Calculate and return the area of a rectangl
 **Answer:** The colon `:` after the condition is missing — every `if`, `for`, `while`, `def`, and `class` header needs one. This is a **syntax error**: Python can't even understand the structure of the line, so it never gets far enough to try running it.
 </details>
 
-## Variables and Data Types
+### Variables and Data Types
 
 `🔖 PCEP 1.3` — Introduce literals and variables
 `📋 AP CSP: DAT-1.A` — Explain how data can be represented using bits.
@@ -843,10 +843,10 @@ modern Python?
 
 ---
 
-# Section 2 — Control Flow: Conditional Blocks and Loops
+## Section 2 — Control Flow: Conditional Blocks and Loops
 `📋 AP CSP: AAP-2.E` — Develop algorithms using sequencing, selection, and iteration.
 
-## Conditional Statements
+### Conditional Statements
 
 **Control flow** determines which code runs, when, and how often. Conditionals let the program **make decisions**.
 
