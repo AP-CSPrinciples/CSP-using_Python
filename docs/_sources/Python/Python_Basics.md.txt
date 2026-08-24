@@ -884,7 +884,13 @@ else:
 > else:
 >     print("Bundle up!")
 > ```
-> Trace it by hand: if `temperature` is `65`, Python checks `>= 90` (False), then `>= 70` (False), then `>= 50` (**True**) — so it prints `"A bit cool."` and skips every branch after. Only ONE branch of an `if-elif-else` chain ever runs.
+> 
+> Trace it by hand:
+> if `temperature` is `65`, Python checks `>= 90` (False),
+> then `>= 70` (False),
+> then `>= 50` (**True**) — so it prints `"A bit cool."` and skips every branch after.
+> Only ONE branch of an `if-elif-else` chain ever runs.
+> 
 
 **Example: Grade Calculator**
 
@@ -963,27 +969,138 @@ score = int(input("Enter your score: "))
 `🔖 PCEP 2.2` — Perform different types of iterations
 `📋 AP CSP: AAP-2.E` — Iteration; `AAP-2.K` — For loops
 
-**`for` Loop** — iterates over a sequence
+**The `for` Loop**
+
+**Structure**
 
 ```python
-for fruit in ["apple", "banana", "cherry"]:
-    print(fruit)
-
-for i in range(5):        # 0, 1, 2, 3, 4
-    print(i)
-
-for i in range(1, 6, 2):  # 1, 3, 5
-    print(i)
+for item in iterable:
+    # code block (loop body)
+    # runs once per item in the iterable
 ```
 
-**`while` Loop** — repeats while a condition is `True`
+- **`item`** — a variable created by the loop; holds the current value on each pass
+- **`iterable`** — any sequence or object you can step through: `range()`, a list, a string, a tuple, a dictionary, etc.
+- The body must be indented (4 spaces, PEP 8) — indentation defines the block
+
+**Common Forms**
 
 ```python
+# Iterate over a range of numbers
+for i in range(5):
+    print(i)          # 0, 1, 2, 3, 4
+
+# Iterate over a list
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+
+# Iterate with both index and value
+for index, fruit in enumerate(fruits):
+    print(index, fruit)
+
+# Iterate over a string, character by character
+for char in "hello":
+    print(char)
+
+# Iterate over dictionary keys, values, or both
+grades = {"Ana": 92, "Ben": 85}
+for name, score in grades.items():
+    print(name, score)
+```
+
+**When to Use a `for` Loop**
+
+Use `for` when you know **what you're iterating over** — a fixed collection, a range of numbers, or anything with a defined, countable set of items. The loop naturally stops when it runs out of items, so you don't have to manage a stopping condition yourself.
+
+**Reach for `for` when:**
+- You're processing every item in a list, string, tuple, or dictionary
+- You know (or can calculate) exactly how many times to repeat something
+- You're building a new collection from an existing one
+- You need a counter-controlled loop (`for i in range(n)`)
+
+**Rule of thumb:** if you can describe the task as "for each item in this collection..." — it's a `for` loop.
+
+**PCEP-30-02 / AP CSP Connection**
+
+- `for` loops map to the **Control Flow** exam block (iteration statements)
+- Understanding `range()` and `enumerate()` is directly tested on PCEP-30-02
+- AP CSP frames this as **iteration over a defined data set** (Big Idea: Algorithms and Programming)
+
+---
+
+
+**The `while` Loop**
+
+**Structure**
+
+```python
+while condition:
+    # code block (loop body)
+    # runs as long as condition is True
+    # something inside the loop must eventually make condition False
+```
+
+- **`condition`** — any expression that evaluates to `True` or `False`
+- The loop checks the condition **before** each pass; if it's `False` on the first check, the body never runs
+- The body must contain something that changes the condition's outcome, or the loop never ends (an **infinite loop**)
+
+**Common Forms**
+
+```python
+# Basic counter-controlled while loop
 count = 0
 while count < 5:
     print(count)
-    count += 1
+    count += 1        # without this line, the loop never ends
+
+# Sentinel-controlled loop (runs until a specific value appears)
+response = ""
+while response != "quit":
+    response = input("Type 'quit' to exit: ")
+
+# Flag-controlled loop
+running = True
+while running:
+    if some_condition:
+        running = False
+
+# Intentional infinite loop with a break
+while True:
+    user_input = input("Enter a number (or 'q' to stop): ")
+    if user_input == "q":
+        break
+    print(int(user_input) ** 2)
 ```
+
+**When to Use a `while` Loop**
+
+Use `while` when you **don't know in advance how many times** the loop needs to run — the loop depends on a condition that changes based on user input, external data, or logic evaluated during execution.
+
+**Reach for `while` when:**
+- You're waiting for a specific user input (validation loops, menus)
+- You're repeating until some condition in your program's state becomes true/false
+- You don't have a fixed collection to iterate over
+- You need to keep going until an event happens, not until you run out of items
+
+**Rule of thumb:** if you can describe the task as "keep doing this **until**..." — it's a `while` loop.
+
+## `for` vs. `while` — Quick Comparison
+
+| Situation | Use |
+|---|---|
+| Known number of repetitions | `for` |
+| Iterating over a collection | `for` |
+| Repeating until a condition changes | `while` |
+| Validating user input | `while` |
+| Counter-controlled with a fixed range | `for` |
+| Unknown/variable number of repetitions | `while` |
+
+**PCEP-30-02 / AP CSP Connection**
+
+- `while` loops fall under the **Control Flow** exam block, alongside conditional statements
+- PCEP-30-02 tests infinite loop recognition and `break`/`continue` interaction with `while`
+- AP CSP frames this as **iteration controlled by a Boolean condition** (Big Idea: Algorithms and Programming)
 
 **Loop Control Keywords**
 
@@ -994,24 +1111,200 @@ while count < 5:
 | `pass` | Placeholder — does nothing | `if x == 2: pass` |
 | `else` | Runs if loop ends without `break` | `for..else:` |
 
-**`while-else` and `for-else`**
+---
+
+
+**`for...else` and `while...else`**
+
+Python allows an `else` clause on both `for` and `while` loops — a feature many languages don't have. It's easy to misread, so this page focuses on exactly when the `else` block runs.
+
+**The Rule**
+
+> The `else` block runs **only if the loop completes normally** — that is, it runs to the end **without hitting a `break`**.
+
+If a `break` statement fires, the `else` block is **skipped**. If the loop finishes on its own (or never runs at all, in the case of `while`), the `else` block **executes**.
+
+**`for...else` Structure**
 
 ```python
-for i in range(5):
-    if i == 10:
+for item in iterable:
+    # loop body
+    if some_condition:
         break
 else:
-    print("Loop completed without break")   # This runs
+    # runs only if the loop never hit 'break'
+    pass
 ```
+
+**Example — Searching for a Value**
+
+```python
+numbers = [4, 7, 11, 2, 9]
+target = 15
+
+for n in numbers:
+    if n == target:
+        print("Found it!")
+        break
+else:
+    print("Target not found in the list.")
+```
+
+Here, the loop checks every number, never finds `15`, never breaks — so the `else` block runs and prints `"Target not found in the list."`
+
+**`while...else` Structure**
+
+```python
+while condition:
+    # loop body
+    if some_condition:
+        break
+else:
+    # runs only if the loop exited because condition became False
+    # (not because of a break)
+    pass
+```
+
+**Example — Countdown with a Cancel Option**
+
+```python
+count = 5
+while count > 0:
+    print(count)
+    if count == 3:
+        cancel = input("Type 'stop' to cancel: ")
+        if cancel == "stop":
+            break
+    count -= 1
+else:
+    print("Countdown finished normally!")
+```
+
+If the user types `"stop"`, the `break` fires and `"Countdown finished normally!"` never prints. If they don't, the loop runs its course and the `else` block executes.
+
+**Why This Trips People Up**
+
+The keyword `else` here does **not** mean "otherwise, if the condition was false" the way it does with `if`. It means:
+
+> **"Run this if the loop was *not* interrupted by a `break`."**
+
+A helpful mental rewrite: think of it as **`nobreak`** instead of `else` — that's literally what it checks for.
+
+**When to Use It**
+
+- **Searching** a collection for a match, where you want a "not found" message only if you never broke out early (classic `for...else` use case)
+- **Validating input in a loop**, where you want a success message only if the loop wasn't cancelled by a `break`
+- Anytime you'd otherwise use a separate flag variable (`found = False`) just to check afterward whether a `break` happened — the `else` clause replaces that flag
+
+**Rule of thumb:** if your instinct is to set a boolean flag before the loop and check it after, that's a strong sign a `for...else` or `while...else` could replace it.
+
+**PCEP-30-02 / AP CSP Connection**
+
+- The `for...else` / `while...else` construct is explicitly tested on PCEP-30-02 under the **Control Flow** block — expect questions asking whether the `else` block executes given a specific `break` placement
+- This is a Python-specific feature with no direct AP CSP pseudocode equivalent; frame it for students as "Python's built-in flag variable"
+
+---
+
 
 **Nested Loops**
 
+**Nested `for` Loops**
+
+**Structure**
+
 ```python
+for outer_item in outer_iterable:
+    # outer loop body
+    for inner_item in inner_iterable:
+        # inner loop body
+        # runs completely, start to finish, for EVERY pass of the outer loop
+```
+
+- The **outer loop** controls how many times the **entire inner loop** runs
+- The **inner loop** runs all the way through before the outer loop advances to its next item
+- Total iterations = `(outer iterations) × (inner iterations)`
+
+**Common Forms**
+
+```python
+# Basic nested loop — multiplication table
 for i in range(1, 4):
     for j in range(1, 4):
-        print(i * j, end="\t")
+        print(i * j, end=" ")
+    print()  # newline after each row
+
+# Nested loop over two lists — all combinations (pairs)
+colors = ["red", "blue"]
+sizes = ["S", "M", "L"]
+for color in colors:
+    for size in sizes:
+        print(f"{color} - {size}")
+
+# Nested loop over a 2D structure (list of lists / grid)
+grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+for row in grid:
+    for value in row:
+        print(value, end=" ")
+    print()
+
+# Nested loop building a pattern
+for row in range(5):
+    for col in range(row + 1):
+        print("*", end="")
     print()
 ```
+
+**Tracing Execution — Why Order Matters**
+
+```python
+for i in range(2):        # outer: runs 2 times
+    for j in range(3):    # inner: runs 3 times PER outer pass
+        print(i, j)
+```
+
+Output:
+```
+0 0
+0 1
+0 2
+1 0
+1 1
+1 2
+```
+
+The inner loop resets and runs fully **every time** the outer loop advances — this is the single most important thing to trace correctly when reading nested loop code.
+
+## `break` and `continue` in Nested Loops
+
+A `break` or `continue` inside the inner loop only affects the **inner loop** — it has no effect on the outer loop.
+
+```python
+for i in range(3):
+    for j in range(3):
+        if j == 1:
+            break      # exits only the inner loop
+        print(i, j)
+```
+
+There is no built-in way to break out of both loops at once; common workarounds are a flag variable, a function with `return`, or restructuring the logic.
+
+**When to Use Nested `for` Loops**
+
+**Reach for nested loops when:**
+- Working with **2D data**: grids, matrices, tables, game boards
+- Generating **all combinations/pairs** between two collections
+- Building **patterns** where each row depends on a repeated inner sequence
+- Comparing **every item to every other item** in a collection
+
+**Caution:** nested loops multiply your run time (`O(n²)` for two nested loops over `n` items). For large datasets, check whether a single loop, a dictionary lookup, or a library function (e.g. `itertools`) can replace one of the loops before defaulting to nesting.
+
+**PCEP-30-02 / AP CSP Connection**
+
+- Nested loops fall under **Control Flow**, and PCEP-30-02 frequently tests tracing nested loop output (predict-the-output questions)
+- AP CSP frames nested iteration in the context of **2D lists / data structures** (Big Idea: Algorithms and Programming) and in **image/grid manipulation** tasks
+
+---
+
 
 <details><summary>🤔 Thinking Question — check your answer</summary>
 

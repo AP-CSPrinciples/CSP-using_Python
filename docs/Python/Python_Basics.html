@@ -1464,7 +1464,11 @@ modern Python?</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Bundle up!"</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Trace it by hand: if <code class="docutils literal notranslate"><span class="pre">temperature</span></code> is <code class="docutils literal notranslate"><span class="pre">65</span></code>, Python checks <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">90</span></code> (False), then <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">70</span></code> (False), then <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">50</span></code> (<strong>True</strong>) — so it prints <code class="docutils literal notranslate"><span class="pre">&quot;A</span> <span class="pre">bit</span> <span class="pre">cool.&quot;</span></code> and skips every branch after. Only ONE branch of an <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> chain ever runs.</p>
+<p>Trace it by hand:
+if <code class="docutils literal notranslate"><span class="pre">temperature</span></code> is <code class="docutils literal notranslate"><span class="pre">65</span></code>, Python checks <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">90</span></code> (False),
+then <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">70</span></code> (False),
+then <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">50</span></code> (<strong>True</strong>) — so it prints <code class="docutils literal notranslate"><span class="pre">&quot;A</span> <span class="pre">bit</span> <span class="pre">cool.&quot;</span></code> and skips every branch after.
+Only ONE branch of an <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> chain ever runs.</p>
 </div></blockquote>
 <p><strong>Example: Grade Calculator</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your score: "</span><span class="p">))</span>
@@ -1537,24 +1541,146 @@ modern Python?</p>
 <h2>Loops<a class="headerlink" href="#loops" title="Link to this heading">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">2.2</span></code> — Perform different types of iterations
 <code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-2.E</span></code> — Iteration; <code class="docutils literal notranslate"><span class="pre">AAP-2.K</span></code> — For loops</p>
-<p><strong><code class="docutils literal notranslate"><span class="pre">for</span></code> Loop</strong> — iterates over a sequence</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"apple"</span><span class="p">,</span> <span class="s2">"banana"</span><span class="p">,</span> <span class="s2">"cherry"</span><span class="p">]:</span>
+<p><strong>The <code class="docutils literal notranslate"><span class="pre">for</span></code> Loop</strong></p>
+<p><strong>Structure</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+    <span class="c1"># code block (loop body)</span>
+    <span class="c1"># runs once per item in the iterable</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">item</span></code></strong> — a variable created by the loop; holds the current value on each pass</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">iterable</span></code></strong> — any sequence or object you can step through: <code class="docutils literal notranslate"><span class="pre">range()</span></code>, a list, a string, a tuple, a dictionary, etc.</p></li>
+<li><p>The body must be indented (4 spaces, PEP 8) — indentation defines the block</p></li>
+</ul>
+<p><strong>Common Forms</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Iterate over a range of numbers</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>          <span class="c1"># 0, 1, 2, 3, 4</span>
+
+<span class="c1"># Iterate over a list</span>
+<span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"apple"</span><span class="p">,</span> <span class="s2">"banana"</span><span class="p">,</span> <span class="s2">"cherry"</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>        <span class="c1"># 0, 1, 2, 3, 4</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="c1"># Iterate with both index and value</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fruits</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">fruit</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>  <span class="c1"># 1, 3, 5</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="c1"># Iterate over a string, character by character</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="s2">"hello"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+
+<span class="c1"># Iterate over dictionary keys, values, or both</span>
+<span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Ana"</span><span class="p">:</span> <span class="mi">92</span><span class="p">,</span> <span class="s2">"Ben"</span><span class="p">:</span> <span class="mi">85</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">grades</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">while</span></code> Loop</strong> — repeats while a condition is <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<p><strong>When to Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> Loop</strong></p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">for</span></code> when you know <strong>what you’re iterating over</strong> — a fixed collection, a range of numbers, or anything with a defined, countable set of items. The loop naturally stops when it runs out of items, so you don’t have to manage a stopping condition yourself.</p>
+<p><strong>Reach for <code class="docutils literal notranslate"><span class="pre">for</span></code> when:</strong></p>
+<ul class="simple">
+<li><p>You’re processing every item in a list, string, tuple, or dictionary</p></li>
+<li><p>You know (or can calculate) exactly how many times to repeat something</p></li>
+<li><p>You’re building a new collection from an existing one</p></li>
+<li><p>You need a counter-controlled loop (<code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(n)</span></code>)</p></li>
+</ul>
+<p><strong>Rule of thumb:</strong> if you can describe the task as “for each item in this collection…” — it’s a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<p><strong>PCEP-30-02 / AP CSP Connection</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops map to the <strong>Control Flow</strong> exam block (iteration statements)</p></li>
+<li><p>Understanding <code class="docutils literal notranslate"><span class="pre">range()</span></code> and <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> is directly tested on PCEP-30-02</p></li>
+<li><p>AP CSP frames this as <strong>iteration over a defined data set</strong> (Big Idea: Algorithms and Programming)</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>The <code class="docutils literal notranslate"><span class="pre">while</span></code> Loop</strong></p>
+<p><strong>Structure</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="c1"># code block (loop body)</span>
+    <span class="c1"># runs as long as condition is True</span>
+    <span class="c1"># something inside the loop must eventually make condition False</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">condition</span></code></strong> — any expression that evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>The loop checks the condition <strong>before</strong> each pass; if it’s <code class="docutils literal notranslate"><span class="pre">False</span></code> on the first check, the body never runs</p></li>
+<li><p>The body must contain something that changes the condition’s outcome, or the loop never ends (an <strong>infinite loop</strong>)</p></li>
+</ul>
+<p><strong>Common Forms</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basic counter-controlled while loop</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>        <span class="c1"># without this line, the loop never ends</span>
+
+<span class="c1"># Sentinel-controlled loop (runs until a specific value appears)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="s2">""</span>
+<span class="k">while</span> <span class="n">response</span> <span class="o">!=</span> <span class="s2">"quit"</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Type 'quit' to exit: "</span><span class="p">)</span>
+
+<span class="c1"># Flag-controlled loop</span>
+<span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">some_condition</span><span class="p">:</span>
+        <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Intentional infinite loop with a break</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a number (or 'q' to stop): "</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">user_input</span> <span class="o">==</span> <span class="s2">"q"</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><strong>When to Use a <code class="docutils literal notranslate"><span class="pre">while</span></code> Loop</strong></p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">while</span></code> when you <strong>don’t know in advance how many times</strong> the loop needs to run — the loop depends on a condition that changes based on user input, external data, or logic evaluated during execution.</p>
+<p><strong>Reach for <code class="docutils literal notranslate"><span class="pre">while</span></code> when:</strong></p>
+<ul class="simple">
+<li><p>You’re waiting for a specific user input (validation loops, menus)</p></li>
+<li><p>You’re repeating until some condition in your program’s state becomes true/false</p></li>
+<li><p>You don’t have a fixed collection to iterate over</p></li>
+<li><p>You need to keep going until an event happens, not until you run out of items</p></li>
+</ul>
+<p><strong>Rule of thumb:</strong> if you can describe the task as “keep doing this <strong>until</strong>…” — it’s a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
+</section>
+<section id="for-vs-while-quick-comparison">
+<h2><code class="docutils literal notranslate"><span class="pre">for</span></code> vs. <code class="docutils literal notranslate"><span class="pre">while</span></code> — Quick Comparison<a class="headerlink" href="#for-vs-while-quick-comparison" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Situation</p></th>
+<th class="head"><p>Use</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Known number of repetitions</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">for</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Iterating over a collection</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">for</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Repeating until a condition changes</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">while</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Validating user input</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">while</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Counter-controlled with a fixed range</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">for</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Unknown/variable number of repetitions</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">while</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>PCEP-30-02 / AP CSP Connection</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> loops fall under the <strong>Control Flow</strong> exam block, alongside conditional statements</p></li>
+<li><p>PCEP-30-02 tests infinite loop recognition and <code class="docutils literal notranslate"><span class="pre">break</span></code>/<code class="docutils literal notranslate"><span class="pre">continue</span></code> interaction with <code class="docutils literal notranslate"><span class="pre">while</span></code></p></li>
+<li><p>AP CSP frames this as <strong>iteration controlled by a Boolean condition</strong> (Big Idea: Algorithms and Programming)</p></li>
+</ul>
 <p><strong>Loop Control Keywords</strong></p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
@@ -1584,21 +1710,167 @@ modern Python?</p>
 </tbody>
 </table>
 </div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">while-else</span></code> and <code class="docutils literal notranslate"><span class="pre">for-else</span></code></strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+<hr class="docutils" />
+<p><strong><code class="docutils literal notranslate"><span class="pre">for...else</span></code> and <code class="docutils literal notranslate"><span class="pre">while...else</span></code></strong></p>
+<p>Python allows an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause on both <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops — a feature many languages don’t have. It’s easy to misread, so this page focuses on exactly when the <code class="docutils literal notranslate"><span class="pre">else</span></code> block runs.</p>
+<p><strong>The Rule</strong></p>
+<blockquote>
+<div><p>The <code class="docutils literal notranslate"><span class="pre">else</span></code> block runs <strong>only if the loop completes normally</strong> — that is, it runs to the end <strong>without hitting a <code class="docutils literal notranslate"><span class="pre">break</span></code></strong>.</p>
+</div></blockquote>
+<p>If a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement fires, the <code class="docutils literal notranslate"><span class="pre">else</span></code> block is <strong>skipped</strong>. If the loop finishes on its own (or never runs at all, in the case of <code class="docutils literal notranslate"><span class="pre">while</span></code>), the <code class="docutils literal notranslate"><span class="pre">else</span></code> block <strong>executes</strong>.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">for...else</span></code> Structure</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+    <span class="c1"># loop body</span>
+    <span class="k">if</span> <span class="n">some_condition</span><span class="p">:</span>
         <span class="k">break</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Loop completed without break"</span><span class="p">)</span>   <span class="c1"># This runs</span>
+    <span class="c1"># runs only if the loop never hit 'break'</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
+<p><strong>Example — Searching for a Value</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">target</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Found it!"</span><span class="p">)</span>
+        <span class="k">break</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Target not found in the list."</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, the loop checks every number, never finds <code class="docutils literal notranslate"><span class="pre">15</span></code>, never breaks — so the <code class="docutils literal notranslate"><span class="pre">else</span></code> block runs and prints <code class="docutils literal notranslate"><span class="pre">&quot;Target</span> <span class="pre">not</span> <span class="pre">found</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">list.&quot;</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">while...else</span></code> Structure</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="c1"># loop body</span>
+    <span class="k">if</span> <span class="n">some_condition</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># runs only if the loop exited because condition became False</span>
+    <span class="c1"># (not because of a break)</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p><strong>Example — Countdown with a Cancel Option</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">while</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">cancel</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Type 'stop' to cancel: "</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">cancel</span> <span class="o">==</span> <span class="s2">"stop"</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="n">count</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Countdown finished normally!"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If the user types <code class="docutils literal notranslate"><span class="pre">&quot;stop&quot;</span></code>, the <code class="docutils literal notranslate"><span class="pre">break</span></code> fires and <code class="docutils literal notranslate"><span class="pre">&quot;Countdown</span> <span class="pre">finished</span> <span class="pre">normally!&quot;</span></code> never prints. If they don’t, the loop runs its course and the <code class="docutils literal notranslate"><span class="pre">else</span></code> block executes.</p>
+<p><strong>Why This Trips People Up</strong></p>
+<p>The keyword <code class="docutils literal notranslate"><span class="pre">else</span></code> here does <strong>not</strong> mean “otherwise, if the condition was false” the way it does with <code class="docutils literal notranslate"><span class="pre">if</span></code>. It means:</p>
+<blockquote>
+<div><p><strong>“Run this if the loop was <em>not</em> interrupted by a <code class="docutils literal notranslate"><span class="pre">break</span></code>.”</strong></p>
+</div></blockquote>
+<p>A helpful mental rewrite: think of it as <strong><code class="docutils literal notranslate"><span class="pre">nobreak</span></code></strong> instead of <code class="docutils literal notranslate"><span class="pre">else</span></code> — that’s literally what it checks for.</p>
+<p><strong>When to Use It</strong></p>
+<ul class="simple">
+<li><p><strong>Searching</strong> a collection for a match, where you want a “not found” message only if you never broke out early (classic <code class="docutils literal notranslate"><span class="pre">for...else</span></code> use case)</p></li>
+<li><p><strong>Validating input in a loop</strong>, where you want a success message only if the loop wasn’t cancelled by a <code class="docutils literal notranslate"><span class="pre">break</span></code></p></li>
+<li><p>Anytime you’d otherwise use a separate flag variable (<code class="docutils literal notranslate"><span class="pre">found</span> <span class="pre">=</span> <span class="pre">False</span></code>) just to check afterward whether a <code class="docutils literal notranslate"><span class="pre">break</span></code> happened — the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause replaces that flag</p></li>
+</ul>
+<p><strong>Rule of thumb:</strong> if your instinct is to set a boolean flag before the loop and check it after, that’s a strong sign a <code class="docutils literal notranslate"><span class="pre">for...else</span></code> or <code class="docutils literal notranslate"><span class="pre">while...else</span></code> could replace it.</p>
+<p><strong>PCEP-30-02 / AP CSP Connection</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">for...else</span></code> / <code class="docutils literal notranslate"><span class="pre">while...else</span></code> construct is explicitly tested on PCEP-30-02 under the <strong>Control Flow</strong> block — expect questions asking whether the <code class="docutils literal notranslate"><span class="pre">else</span></code> block executes given a specific <code class="docutils literal notranslate"><span class="pre">break</span></code> placement</p></li>
+<li><p>This is a Python-specific feature with no direct AP CSP pseudocode equivalent; frame it for students as “Python’s built-in flag variable”</p></li>
+</ul>
+<hr class="docutils" />
 <p><strong>Nested Loops</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+<p><strong>Nested <code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</strong></p>
+<p><strong>Structure</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">outer_item</span> <span class="ow">in</span> <span class="n">outer_iterable</span><span class="p">:</span>
+    <span class="c1"># outer loop body</span>
+    <span class="k">for</span> <span class="n">inner_item</span> <span class="ow">in</span> <span class="n">inner_iterable</span><span class="p">:</span>
+        <span class="c1"># inner loop body</span>
+        <span class="c1"># runs completely, start to finish, for EVERY pass of the outer loop</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The <strong>outer loop</strong> controls how many times the <strong>entire inner loop</strong> runs</p></li>
+<li><p>The <strong>inner loop</strong> runs all the way through before the outer loop advances to its next item</p></li>
+<li><p>Total iterations = <code class="docutils literal notranslate"><span class="pre">(outer</span> <span class="pre">iterations)</span> <span class="pre">×</span> <span class="pre">(inner</span> <span class="pre">iterations)</span></code></p></li>
+</ul>
+<p><strong>Common Forms</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basic nested loop — multiplication table</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>  <span class="c1"># newline after each row</span>
+
+<span class="c1"># Nested loop over two lists — all combinations (pairs)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"red"</span><span class="p">,</span> <span class="s2">"blue"</span><span class="p">]</span>
+<span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"S"</span><span class="p">,</span> <span class="s2">"M"</span><span class="p">,</span> <span class="s2">"L"</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="n">sizes</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Nested loop over a 2D structure (list of lists / grid)</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># Nested loop building a pattern</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">()</span>
 </pre></div>
 </div>
+<p><strong>Tracing Execution — Why Order Matters</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>        <span class="c1"># outer: runs 2 times</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>    <span class="c1"># inner: runs 3 times PER outer pass</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">1</span>
+<span class="mi">0</span> <span class="mi">2</span>
+<span class="mi">1</span> <span class="mi">0</span>
+<span class="mi">1</span> <span class="mi">1</span>
+<span class="mi">1</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>The inner loop resets and runs fully <strong>every time</strong> the outer loop advances — this is the single most important thing to trace correctly when reading nested loop code.</p>
+</section>
+<section id="break-and-continue-in-nested-loops">
+<h2><code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> in Nested Loops<a class="headerlink" href="#break-and-continue-in-nested-loops" title="Link to this heading">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">break</span></code> or <code class="docutils literal notranslate"><span class="pre">continue</span></code> inside the inner loop only affects the <strong>inner loop</strong> — it has no effect on the outer loop.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">break</span>      <span class="c1"># exits only the inner loop</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There is no built-in way to break out of both loops at once; common workarounds are a flag variable, a function with <code class="docutils literal notranslate"><span class="pre">return</span></code>, or restructuring the logic.</p>
+<p><strong>When to Use Nested <code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</strong></p>
+<p><strong>Reach for nested loops when:</strong></p>
+<ul class="simple">
+<li><p>Working with <strong>2D data</strong>: grids, matrices, tables, game boards</p></li>
+<li><p>Generating <strong>all combinations/pairs</strong> between two collections</p></li>
+<li><p>Building <strong>patterns</strong> where each row depends on a repeated inner sequence</p></li>
+<li><p>Comparing <strong>every item to every other item</strong> in a collection</p></li>
+</ul>
+<p><strong>Caution:</strong> nested loops multiply your run time (<code class="docutils literal notranslate"><span class="pre">O(n²)</span></code> for two nested loops over <code class="docutils literal notranslate"><span class="pre">n</span></code> items). For large datasets, check whether a single loop, a dictionary lookup, or a library function (e.g. <code class="docutils literal notranslate"><span class="pre">itertools</span></code>) can replace one of the loops before defaulting to nesting.</p>
+<p><strong>PCEP-30-02 / AP CSP Connection</strong></p>
+<ul class="simple">
+<li><p>Nested loops fall under <strong>Control Flow</strong>, and PCEP-30-02 frequently tests tracing nested loop output (predict-the-output questions)</p></li>
+<li><p>AP CSP frames nested iteration in the context of <strong>2D lists / data structures</strong> (Big Idea: Algorithms and Programming) and in <strong>image/grid manipulation</strong> tasks</p></li>
+</ul>
+<hr class="docutils" />
 <details><summary>🤔 Thinking Question — check your answer</summary>
 <p><strong>Question:</strong> What’s the difference between <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> inside a loop that’s printing only even numbers from a list?</p>
 <p><strong>Answer:</strong> <code class="docutils literal notranslate"><span class="pre">continue</span></code> skips <strong>just the current iteration</strong> and moves on to the next item — the loop keeps going. <code class="docutils literal notranslate"><span class="pre">break</span></code> <strong>exits the loop entirely</strong>, even if there were more items left to check. If you used <code class="docutils literal notranslate"><span class="pre">break</span></code> instead of <code class="docutils literal notranslate"><span class="pre">continue</span></code> the moment you hit an odd number, the loop would stop checking the rest of the list entirely, missing any even numbers that came after it.</p>
@@ -4644,7 +4916,9 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <li><a class="reference internal" href="#activity-grade-calculator">Activity: Grade Calculator</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#loops">Loops</a><ul>
+<li><a class="reference internal" href="#loops">Loops</a></li>
+<li><a class="reference internal" href="#for-vs-while-quick-comparison"><code class="docutils literal notranslate"><span class="pre">for</span></code> vs. <code class="docutils literal notranslate"><span class="pre">while</span></code> — Quick Comparison</a></li>
+<li><a class="reference internal" href="#break-and-continue-in-nested-loops"><code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> in Nested Loops</a><ul>
 <li><a class="reference internal" href="#activity-nested-loop-pattern-design-studio">Activity: Nested Loop Pattern Design Studio</a></li>
 </ul>
 </li>
