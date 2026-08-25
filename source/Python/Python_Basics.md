@@ -790,7 +790,7 @@ modern Python?
 > Students write a program that:
 > 1. Prompts the user for a series of words (nouns, verbs, adjectives, etc.) using `input()`
 > 2. Builds a **10-sentence story** using those words
-> 3. Prints the story back to the user — but each 2-3 sentence "block" of the story must use a *different* formatting method than the block before it
+> 3. Prints the story back to the user — but very the "block" sequence of the story. You must use a *different* formatting method for each sentence.  Consecutive sentences cannot use the same format.  
 > 
 > **Requirements**
 > 
@@ -830,14 +830,129 @@ modern Python?
 > 
 > ```python
 > """
-> Activity:  Mad Libs using f-String
+> Activity:    Mad Libs using f-String
 > Author:      [Your Name]
 > Course Name: AP Computer Science Principles
+> Date:        M/D/Yr
 > Description: Mad Libs
 > Language:    Python 3.x
 > """
 > ```
 >
+
+<details><summary>MadLibs Example</summary>
+
+"""
+================================================================================
+Activity:     Mad Libs using f-String
+Author:       [EXEMPLAR — NOT A STUDENT SUBMISSION]
+Course Name:  AP Computer Science Principles
+Date:         2026-08-25
+Description:  Demonstrates f-strings, string concatenation, the .format()
+              method, and print() sep/end parameters within one Mad Libs
+              story. Built to model the REQUIRED FORMAT of the assignment —
+              not to be copied.
+Language:     Python 3.14
+================================================================================
+
+  ****************************  TEACHER NOTE  *********************************
+  This file is an EXEMPLAR only. Students must CANNOT submit this story, these
+  variable names, or this sentence structure as their own work. Copying this
+  story (with words swapped) or reusing this exact sentence pattern is a
+  violation of the assignment's originality requirement — students must write
+  their OWN 10-sentence story with their OWN chosen blanks. Use this only to
+  see how the four formatting techniques should look when executed correctly.
+  *******************************************************************************
+"""
+
+# -----------------------------------------------------------------------
+# SECTION 1: Collect user input
+# -----------------------------------------------------------------------
+name = input("Enter a person's name: ")
+place = input("Enter a place: ")
+adjective1 = input("Enter an adjective: ")
+noun1 = input("Enter a noun: ")
+verb1 = input("Enter a verb (past tense): ")
+animal = input("Enter an animal: ")
+food = input("Enter a food: ")
+adjective2 = input("Enter another adjective: ")
+number = int(input("Enter a number: "))
+exclamation = input("Enter an exclamation (e.g. Wow!): ")
+
+# -----------------------------------------------------------------------
+# SECTION 2: The story — technique VARIES every sentence.
+# No two consecutive sentences use the same formatting method:
+#   Sentence:   1  2  3  4  5  6  7  8  9  10
+#   Technique:  F  M  F  C  M  P  F  C  M  P
+#   (F = f-string, M = .format(), C = concatenation, P = print sep/end)
+# -----------------------------------------------------------------------
+
+# Sentence 1 — f-string
+print(f"Once upon a time, {name} went to {place}.")
+
+# Sentence 2 — .format()
+print("{} was feeling very {} that day, and carried a {}.".format(
+    name, adjective1, noun1))
+
+# Sentence 3 — f-string
+print(f"Suddenly, {name} {verb1} right past {number} {animal}s crossing the road!")
+
+# Sentence 4 — string concatenation (+)
+line4 = name + " skidded to a stop and shouted, " + '"' + exclamation + '"'
+print(line4)
+
+# Sentence 5 — .format()
+print("There were exactly {0} {1}s staring back.".format(number, animal))
+
+# Sentence 6 — print() with sep and end
+print(name, "reached into a bag and pulled out a", food, sep=" ", end=".\n")
+
+# Sentence 7 — f-string
+print(f"The {adjective2} {animal} sniffed the {food} suspiciously.")
+
+# Sentence 8 — string concatenation (+)
+line8 = name + " counted all " + str(number) + " of them twice, just to be sure."
+print(line8)
+
+# Sentence 9 — .format()
+print("{} laughed, dropped the {} and ran...".format(name, noun1))
+
+# Sentence 10 — print() with sep and end
+print("all", number, "the way back to", place, sep=" ", end="!\n")
+
+"""
+--------------------------------------------------------------------------
+SAMPLE RUN (inputs a student might type at each prompt, in order):
+--------------------------------------------------------------------------
+Enter a person's name: Priya
+Enter a place: the grocery store
+Enter an adjective: wobbly
+Enter a noun: kazoo
+Enter a verb (past tense): sprinted
+Enter an animal: goose
+Enter a food: burrito
+Enter another adjective: suspicious
+Enter a number: 7
+Enter an exclamation (e.g. Wow!): Yikes!
+
+--------------------------------------------------------------------------
+RESULTING OUTPUT:
+--------------------------------------------------------------------------
+Once upon a time, Priya went to the grocery store.
+Priya was feeling very wobbly that day, and carried a kazoo.
+Suddenly, Priya sprinted right past 7 gooses crossing the road!
+Priya skidded to a stop and shouted, "Yikes!"
+There were exactly 7 gooses staring back.
+Priya reached into a bag and pulled out a burrito.
+The suspicious goose sniffed the burrito suspiciously.
+Priya counted all 7 of them twice, just to be sure.
+Priya laughed, dropped the kazoo and ran...
+all 7 the way back to the grocery store!
+--------------------------------------------------------------------------
+"""
+
+</details>
+
 
 *AP CSP: CRD-2.B*
 
