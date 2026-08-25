@@ -718,6 +718,15 @@ A-B-C | D-E-F
 **Starter code**
 
 ```python
+"""
+Activity:    Print Statements and Input/Output
+Author:      [Your Name]
+Course Name: AP Computer Science Principles
+Date:        M/D/Yr
+Description: Practice using f-string, .format(), concatenation, & sep/ end
+Language:    Python 3.x
+"""
+
 # TODO 0) Use input() to ask the user for their name, and store it in a
 #         variable called name. Then use input() again to ask for their
 #         age, and store it in a variable called age.
