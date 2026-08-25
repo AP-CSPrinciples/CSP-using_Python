@@ -204,6 +204,36 @@
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Python Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#python-style-guidelines">Python Style Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id1">“””</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#activity-mad-libs-using-f-string-author-exemplar-not-a-student-submission-course-name-ap-computer-science-principles-date-2026-08-25-description-demonstrates-f-strings-string-concatenation-the-format-method-and-print-sep-end-parameters-within-one-mad-libs-story-built-to-model-the-required-format-of-the-assignment-not-to-be-copied-language-python-3-14">Activity:     Mad Libs using f-String
+Author:       [EXEMPLAR — NOT A STUDENT SUBMISSION]
+Course Name:  AP Computer Science Principles
+Date:         2026-08-25
+Description:  Demonstrates f-strings, string concatenation, the .format()
+method, and print() sep/end parameters within one Mad Libs
+story. Built to model the REQUIRED FORMAT of the assignment —
+not to be copied.
+Language:     Python 3.14</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id2">———————————————————————–</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#section-1-collect-user-input">SECTION 1: Collect user input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id3">———————————————————————–</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id4">———————————————————————–</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#section-2-the-story-technique-varies-every-sentence">SECTION 2: The story — technique VARIES every sentence.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#no-two-consecutive-sentences-use-the-same-formatting-method">No two consecutive sentences use the same formatting method:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sentence-1-2-3-4-5-6-7-8-9-10">Sentence:   1  2  3  4  5  6  7  8  9  10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#technique-f-m-f-c-m-p-f-c-m-p">Technique:  F  M  F  C  M  P  F  C  M  P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#f-f-string-m-format-c-concatenation-p-print-sep-end">(F = f-string, M = .format(), C = concatenation, P = print sep/end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id5">———————————————————————–</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sentence-1-f-string">Sentence 1 — f-string</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sentence-2-format">Sentence 2 — .format()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sentence-3-f-string">Sentence 3 — f-string</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sentence-4-string-concatenation">Sentence 4 — string concatenation (+)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sentence-5-format">Sentence 5 — .format()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sentence-6-print-with-sep-and-end">Sentence 6 — print() with sep and end</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sentence-7-f-string">Sentence 7 — f-string</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sentence-8-string-concatenation">Sentence 8 — string concatenation (+)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sentence-9-format">Sentence 9 — .format()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sentence-10-print-with-sep-and-end">Sentence 10 — print() with sep and end</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#section-3-data-collections-lists-tuples-dictionaries-and-strings">Section 3 — Data Collections: Lists, Tuples, Dictionaries, and Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#section-4-functions-and-exceptions">Section 4 — Functions and Exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#file-operations">File Operations</a></li>
@@ -1355,7 +1385,7 @@ modern Python?</p>
 <ol class="arabic simple">
 <li><p>Prompts the user for a series of words (nouns, verbs, adjectives, etc.) using <code class="docutils literal notranslate"><span class="pre">input()</span></code></p></li>
 <li><p>Builds a <strong>10-sentence story</strong> using those words</p></li>
-<li><p>Prints the story back to the user — but each 2-3 sentence “block” of the story must use a <em>different</em> formatting method than the block before it</p></li>
+<li><p>Prints the story back to the user — but very the “block” sequence of the story. You must use a <em>different</em> formatting method for each sentence.  Consecutive sentences cannot use the same format.</p></li>
 </ol>
 <p><strong>Requirements</strong></p>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -1412,17 +1442,159 @@ modern Python?</p>
 <p><strong>Header Block</strong></p>
 <p>Place this at the top of your <code class="docutils literal notranslate"><span class="pre">.py</span></code> file before any code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">"""</span>
-<span class="sd">Activity:  Mad Libs using f-String</span>
+<span class="sd">Activity:    Mad Libs using f-String</span>
 <span class="sd">Author:      [Your Name]</span>
 <span class="sd">Course Name: AP Computer Science Principles</span>
+<span class="sd">Date:        M/D/Yr</span>
 <span class="sd">Description: Mad Libs</span>
 <span class="sd">Language:    Python 3.x</span>
 <span class="sd">"""</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><em>AP CSP: CRD-2.B</em></p>
+<details><summary>MadLibs Example</summary>
 </section>
+</section>
+</section>
+<section id="id1">
+<h1>“””<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h1>
+</section>
+<section id="activity-mad-libs-using-f-string-author-exemplar-not-a-student-submission-course-name-ap-computer-science-principles-date-2026-08-25-description-demonstrates-f-strings-string-concatenation-the-format-method-and-print-sep-end-parameters-within-one-mad-libs-story-built-to-model-the-required-format-of-the-assignment-not-to-be-copied-language-python-3-14">
+<h1>Activity:     Mad Libs using f-String
+Author:       [EXEMPLAR — NOT A STUDENT SUBMISSION]
+Course Name:  AP Computer Science Principles
+Date:         2026-08-25
+Description:  Demonstrates f-strings, string concatenation, the .format()
+method, and print() sep/end parameters within one Mad Libs
+story. Built to model the REQUIRED FORMAT of the assignment —
+not to be copied.
+Language:     Python 3.14<a class="headerlink" href="#activity-mad-libs-using-f-string-author-exemplar-not-a-student-submission-course-name-ap-computer-science-principles-date-2026-08-25-description-demonstrates-f-strings-string-concatenation-the-format-method-and-print-sep-end-parameters-within-one-mad-libs-story-built-to-model-the-required-format-of-the-assignment-not-to-be-copied-language-python-3-14" title="Link to this heading">¶</a></h1>
+<p>****************************  TEACHER NOTE  *********************************
+This file is an EXEMPLAR only. Students must CANNOT submit this story, these
+variable names, or this sentence structure as their own work. Copying this
+story (with words swapped) or reusing this exact sentence pattern is a
+violation of the assignment’s originality requirement — students must write
+their OWN 10-sentence story with their OWN chosen blanks. Use this only to
+see how the four formatting techniques should look when executed correctly.</p>
+<hr class="docutils" />
+<p>“””</p>
+</section>
+<section id="id2">
+<h1>———————————————————————–<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h1>
+</section>
+<section id="section-1-collect-user-input">
+<h1>SECTION 1: Collect user input<a class="headerlink" href="#section-1-collect-user-input" title="Link to this heading">¶</a></h1>
+</section>
+<section id="id3">
+<h1>———————————————————————–<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h1>
+<p>name = input(“Enter a person’s name: “)
+place = input(“Enter a place: “)
+adjective1 = input(“Enter an adjective: “)
+noun1 = input(“Enter a noun: “)
+verb1 = input(“Enter a verb (past tense): “)
+animal = input(“Enter an animal: “)
+food = input(“Enter a food: “)
+adjective2 = input(“Enter another adjective: “)
+number = int(input(“Enter a number: “))
+exclamation = input(“Enter an exclamation (e.g. Wow!): “)</p>
+</section>
+<section id="id4">
+<h1>———————————————————————–<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h1>
+</section>
+<section id="section-2-the-story-technique-varies-every-sentence">
+<h1>SECTION 2: The story — technique VARIES every sentence.<a class="headerlink" href="#section-2-the-story-technique-varies-every-sentence" title="Link to this heading">¶</a></h1>
+</section>
+<section id="no-two-consecutive-sentences-use-the-same-formatting-method">
+<h1>No two consecutive sentences use the same formatting method:<a class="headerlink" href="#no-two-consecutive-sentences-use-the-same-formatting-method" title="Link to this heading">¶</a></h1>
+</section>
+<section id="sentence-1-2-3-4-5-6-7-8-9-10">
+<h1>Sentence:   1  2  3  4  5  6  7  8  9  10<a class="headerlink" href="#sentence-1-2-3-4-5-6-7-8-9-10" title="Link to this heading">¶</a></h1>
+</section>
+<section id="technique-f-m-f-c-m-p-f-c-m-p">
+<h1>Technique:  F  M  F  C  M  P  F  C  M  P<a class="headerlink" href="#technique-f-m-f-c-m-p-f-c-m-p" title="Link to this heading">¶</a></h1>
+</section>
+<section id="f-f-string-m-format-c-concatenation-p-print-sep-end">
+<h1>(F = f-string, M = .format(), C = concatenation, P = print sep/end)<a class="headerlink" href="#f-f-string-m-format-c-concatenation-p-print-sep-end" title="Link to this heading">¶</a></h1>
+</section>
+<section id="id5">
+<h1>———————————————————————–<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h1>
+</section>
+<section id="sentence-1-f-string">
+<h1>Sentence 1 — f-string<a class="headerlink" href="#sentence-1-f-string" title="Link to this heading">¶</a></h1>
+<p>print(f”Once upon a time, {name} went to {place}.”)</p>
+</section>
+<section id="sentence-2-format">
+<h1>Sentence 2 — .format()<a class="headerlink" href="#sentence-2-format" title="Link to this heading">¶</a></h1>
+<p>print(“{} was feeling very {} that day, and carried a {}.”.format(
+name, adjective1, noun1))</p>
+</section>
+<section id="sentence-3-f-string">
+<h1>Sentence 3 — f-string<a class="headerlink" href="#sentence-3-f-string" title="Link to this heading">¶</a></h1>
+<p>print(f”Suddenly, {name} {verb1} right past {number} {animal}s crossing the road!”)</p>
+</section>
+<section id="sentence-4-string-concatenation">
+<h1>Sentence 4 — string concatenation (+)<a class="headerlink" href="#sentence-4-string-concatenation" title="Link to this heading">¶</a></h1>
+<p>line4 = name + “ skidded to a stop and shouted, “ + ‘”’ + exclamation + ‘”’
+print(line4)</p>
+</section>
+<section id="sentence-5-format">
+<h1>Sentence 5 — .format()<a class="headerlink" href="#sentence-5-format" title="Link to this heading">¶</a></h1>
+<p>print(“There were exactly {0} {1}s staring back.”.format(number, animal))</p>
+</section>
+<section id="sentence-6-print-with-sep-and-end">
+<h1>Sentence 6 — print() with sep and end<a class="headerlink" href="#sentence-6-print-with-sep-and-end" title="Link to this heading">¶</a></h1>
+<p>print(name, “reached into a bag and pulled out a”, food, sep=” “, end=”.\n”)</p>
+</section>
+<section id="sentence-7-f-string">
+<h1>Sentence 7 — f-string<a class="headerlink" href="#sentence-7-f-string" title="Link to this heading">¶</a></h1>
+<p>print(f”The {adjective2} {animal} sniffed the {food} suspiciously.”)</p>
+</section>
+<section id="sentence-8-string-concatenation">
+<h1>Sentence 8 — string concatenation (+)<a class="headerlink" href="#sentence-8-string-concatenation" title="Link to this heading">¶</a></h1>
+<p>line8 = name + “ counted all “ + str(number) + “ of them twice, just to be sure.”
+print(line8)</p>
+</section>
+<section id="sentence-9-format">
+<h1>Sentence 9 — .format()<a class="headerlink" href="#sentence-9-format" title="Link to this heading">¶</a></h1>
+<p>print(“{} laughed, dropped the {} and ran…”.format(name, noun1))</p>
+</section>
+<section id="sentence-10-print-with-sep-and-end">
+<h1>Sentence 10 — print() with sep and end<a class="headerlink" href="#sentence-10-print-with-sep-and-end" title="Link to this heading">¶</a></h1>
+<p>print(“all”, number, “the way back to”, place, sep=” “, end=”!\n”)</p>
+<section id="id6">
+<h2>“””<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
+</section>
+<section id="sample-run-inputs-a-student-might-type-at-each-prompt-in-order">
+<h2>SAMPLE RUN (inputs a student might type at each prompt, in order):<a class="headerlink" href="#sample-run-inputs-a-student-might-type-at-each-prompt-in-order" title="Link to this heading">¶</a></h2>
+<p>Enter a person’s name: Priya
+Enter a place: the grocery store
+Enter an adjective: wobbly
+Enter a noun: kazoo
+Enter a verb (past tense): sprinted
+Enter an animal: goose
+Enter a food: burrito
+Enter another adjective: suspicious
+Enter a number: 7
+Enter an exclamation (e.g. Wow!): Yikes!</p>
+</section>
+<hr class="docutils" />
+<section id="resulting-output">
+<h2>RESULTING OUTPUT:<a class="headerlink" href="#resulting-output" title="Link to this heading">¶</a></h2>
+</section>
+<section id="once-upon-a-time-priya-went-to-the-grocery-store-priya-was-feeling-very-wobbly-that-day-and-carried-a-kazoo-suddenly-priya-sprinted-right-past-7-gooses-crossing-the-road-priya-skidded-to-a-stop-and-shouted-yikes-there-were-exactly-7-gooses-staring-back-priya-reached-into-a-bag-and-pulled-out-a-burrito-the-suspicious-goose-sniffed-the-burrito-suspiciously-priya-counted-all-7-of-them-twice-just-to-be-sure-priya-laughed-dropped-the-kazoo-and-ran-all-7-the-way-back-to-the-grocery-store">
+<h2>Once upon a time, Priya went to the grocery store.
+Priya was feeling very wobbly that day, and carried a kazoo.
+Suddenly, Priya sprinted right past 7 gooses crossing the road!
+Priya skidded to a stop and shouted, “Yikes!”
+There were exactly 7 gooses staring back.
+Priya reached into a bag and pulled out a burrito.
+The suspicious goose sniffed the burrito suspiciously.
+Priya counted all 7 of them twice, just to be sure.
+Priya laughed, dropped the kazoo and ran…
+all 7 the way back to the grocery store!<a class="headerlink" href="#once-upon-a-time-priya-went-to-the-grocery-store-priya-was-feeling-very-wobbly-that-day-and-carried-a-kazoo-suddenly-priya-sprinted-right-past-7-gooses-crossing-the-road-priya-skidded-to-a-stop-and-shouted-yikes-there-were-exactly-7-gooses-staring-back-priya-reached-into-a-bag-and-pulled-out-a-burrito-the-suspicious-goose-sniffed-the-burrito-suspiciously-priya-counted-all-7-of-them-twice-just-to-be-sure-priya-laughed-dropped-the-kazoo-and-ran-all-7-the-way-back-to-the-grocery-store" title="Link to this heading">¶</a></h2>
+<p>“””</p>
+</details>
+<p><em>AP CSP: CRD-2.B</em></p>
 </section>
 <hr class="docutils" />
 <section id="section-2-control-flow-conditional-blocks-and-loops">
@@ -4911,6 +5083,51 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <li><a class="reference internal" href="#assignment-mad-libs-string-formatting-showdown">Assignment: Mad Libs — String Formatting Showdown</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id1">“””</a></li>
+<li><a class="reference internal" href="#activity-mad-libs-using-f-string-author-exemplar-not-a-student-submission-course-name-ap-computer-science-principles-date-2026-08-25-description-demonstrates-f-strings-string-concatenation-the-format-method-and-print-sep-end-parameters-within-one-mad-libs-story-built-to-model-the-required-format-of-the-assignment-not-to-be-copied-language-python-3-14">Activity:     Mad Libs using f-String
+Author:       [EXEMPLAR — NOT A STUDENT SUBMISSION]
+Course Name:  AP Computer Science Principles
+Date:         2026-08-25
+Description:  Demonstrates f-strings, string concatenation, the .format()
+method, and print() sep/end parameters within one Mad Libs
+story. Built to model the REQUIRED FORMAT of the assignment —
+not to be copied.
+Language:     Python 3.14</a></li>
+<li><a class="reference internal" href="#id2">———————————————————————–</a></li>
+<li><a class="reference internal" href="#section-1-collect-user-input">SECTION 1: Collect user input</a></li>
+<li><a class="reference internal" href="#id3">———————————————————————–</a></li>
+<li><a class="reference internal" href="#id4">———————————————————————–</a></li>
+<li><a class="reference internal" href="#section-2-the-story-technique-varies-every-sentence">SECTION 2: The story — technique VARIES every sentence.</a></li>
+<li><a class="reference internal" href="#no-two-consecutive-sentences-use-the-same-formatting-method">No two consecutive sentences use the same formatting method:</a></li>
+<li><a class="reference internal" href="#sentence-1-2-3-4-5-6-7-8-9-10">Sentence:   1  2  3  4  5  6  7  8  9  10</a></li>
+<li><a class="reference internal" href="#technique-f-m-f-c-m-p-f-c-m-p">Technique:  F  M  F  C  M  P  F  C  M  P</a></li>
+<li><a class="reference internal" href="#f-f-string-m-format-c-concatenation-p-print-sep-end">(F = f-string, M = .format(), C = concatenation, P = print sep/end)</a></li>
+<li><a class="reference internal" href="#id5">———————————————————————–</a></li>
+<li><a class="reference internal" href="#sentence-1-f-string">Sentence 1 — f-string</a></li>
+<li><a class="reference internal" href="#sentence-2-format">Sentence 2 — .format()</a></li>
+<li><a class="reference internal" href="#sentence-3-f-string">Sentence 3 — f-string</a></li>
+<li><a class="reference internal" href="#sentence-4-string-concatenation">Sentence 4 — string concatenation (+)</a></li>
+<li><a class="reference internal" href="#sentence-5-format">Sentence 5 — .format()</a></li>
+<li><a class="reference internal" href="#sentence-6-print-with-sep-and-end">Sentence 6 — print() with sep and end</a></li>
+<li><a class="reference internal" href="#sentence-7-f-string">Sentence 7 — f-string</a></li>
+<li><a class="reference internal" href="#sentence-8-string-concatenation">Sentence 8 — string concatenation (+)</a></li>
+<li><a class="reference internal" href="#sentence-9-format">Sentence 9 — .format()</a></li>
+<li><a class="reference internal" href="#sentence-10-print-with-sep-and-end">Sentence 10 — print() with sep and end</a><ul>
+<li><a class="reference internal" href="#id6">“””</a></li>
+<li><a class="reference internal" href="#sample-run-inputs-a-student-might-type-at-each-prompt-in-order">SAMPLE RUN (inputs a student might type at each prompt, in order):</a></li>
+<li><a class="reference internal" href="#resulting-output">RESULTING OUTPUT:</a></li>
+<li><a class="reference internal" href="#once-upon-a-time-priya-went-to-the-grocery-store-priya-was-feeling-very-wobbly-that-day-and-carried-a-kazoo-suddenly-priya-sprinted-right-past-7-gooses-crossing-the-road-priya-skidded-to-a-stop-and-shouted-yikes-there-were-exactly-7-gooses-staring-back-priya-reached-into-a-bag-and-pulled-out-a-burrito-the-suspicious-goose-sniffed-the-burrito-suspiciously-priya-counted-all-7-of-them-twice-just-to-be-sure-priya-laughed-dropped-the-kazoo-and-ran-all-7-the-way-back-to-the-grocery-store">Once upon a time, Priya went to the grocery store.
+Priya was feeling very wobbly that day, and carried a kazoo.
+Suddenly, Priya sprinted right past 7 gooses crossing the road!
+Priya skidded to a stop and shouted, “Yikes!”
+There were exactly 7 gooses staring back.
+Priya reached into a bag and pulled out a burrito.
+The suspicious goose sniffed the burrito suspiciously.
+Priya counted all 7 of them twice, just to be sure.
+Priya laughed, dropped the kazoo and ran…
+all 7 the way back to the grocery store!</a></li>
 <li><a class="reference internal" href="#section-2-control-flow-conditional-blocks-and-loops">Section 2 — Control Flow: Conditional Blocks and Loops</a><ul>
 <li><a class="reference internal" href="#conditional-statements">Conditional Statements</a></li>
 <li><a class="reference internal" href="#activity-grade-calculator">Activity: Grade Calculator</a></li>
