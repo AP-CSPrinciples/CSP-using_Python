@@ -840,11 +840,14 @@ modern Python?
 > ```
 >
 
-<details><summary>MadLibs Example</summary>
+
+<details>
+  
+<summary>MadLibs Example</summary>
 
 
 
-"""
+```
 ================================================================================
 Activity:     Mad Libs using f-String
 Author:       [EXEMPLAR — NOT A STUDENT SUBMISSION]
@@ -865,8 +868,8 @@ Language:     Python 3.14
   their OWN 10-sentence story with their OWN chosen blanks. Use this only to
   see how the four formatting techniques should look when executed correctly.
   *******************************************************************************
-"""
-
+```
+```
 # -----------------------------------------------------------------------
 # SECTION 1: Collect user input
 # -----------------------------------------------------------------------
@@ -922,7 +925,7 @@ print("{} laughed, dropped the {} and ran...".format(name, noun1))
 # Sentence 10 — print() with sep and end
 print("all", number, "the way back to", place, sep=" ", end="!\n")
 
-"""
+
 --------------------------------------------------------------------------
 SAMPLE RUN (inputs a student might type at each prompt, in order):
 --------------------------------------------------------------------------
@@ -951,10 +954,9 @@ Priya counted all 7 of them twice, just to be sure.
 Priya laughed, dropped the kazoo and ran...
 all 7 the way back to the grocery store!
 --------------------------------------------------------------------------
-"""
+```
 
 </details>
-
 
 *AP CSP: CRD-2.B*
 
