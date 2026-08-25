@@ -842,6 +842,8 @@ modern Python?
 
 <details><summary>MadLibs Example</summary>
 
+
+
 """
 ================================================================================
 Activity:     Mad Libs using f-String
