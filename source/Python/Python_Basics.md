@@ -680,7 +680,7 @@ Each comma-separated item is a separate argument — **`sep`** only affects the 
 
 **`end`**= — controls what goes after the whole print call
 
-By default, print() ends every call with a newline ("\n"), which is why each print() normally starts a new line. end= replaces that trailing newline with whatever string you give it.
+By default, print() ends every call with a newline ("\n"), which is why each print() normally starts a new line. <mark>end= replaces that trailing newline with whatever string you give it.</mark>
 
 ```python
 print("Hello")
@@ -973,6 +973,34 @@ all 7 the way back to the grocery store!
 
 ## Section 2 — Control Flow: Conditional Blocks and Loops
 `📋 AP CSP: AAP-2.E` — Develop algorithms using sequencing, selection, and iteration.
+
+---
+
+
+### Python Tutor – Code Visualizer
+
+🔗 [Python Tutor Code Visualizer](https://pythontutor.com/visualize.html#mode=edit)
+
+Python Tutor lets you watch your code run one step at a time instead of just seeing the final output. Paste in your code, hit "Visualize Execution," and then step forward and backward through each line while a diagram shows exactly what's happening behind the scenes — variable values, list contents, function calls, and how they change on every pass through a loop.
+
+**Why it's useful:**
+- **See loops in action** – Watch a variable's value update on each iteration instead of guessing what it "should" be.
+- **Track variables visually** – Every variable appears in a box with its current value, updated live as the code executes.
+- **Understand function calls** – See a new "frame" appear on the call stack each time a function is called, and watch it disappear when the function returns.
+- **Debug faster** – When your code isn't doing what you expect, step through it to find the exact line where things go wrong.
+- **No installation needed** – Runs entirely in your browser.
+
+**How to use it:**
+1. Paste your Python code into the editor.
+2. Click **Visualize Execution**.
+3. Use **Next >** and **< Back** to step through your program line by line.
+4. Watch the variables and stack frames update in the visualization panel on the right.
+
+**Best for:** <mark>Debugging loops (`for`/`while`), tracing small recursive functions, understanding how variables change over time, and figuring out why your code isn't producing the output you expect.</mark>
+
+---
+
+Want me to tailor this further — e.g., shorter for a slide, or expanded with a specific example (like tracing a `for` loop) matched to a lesson in your PCEP/AP CSP curriculum?
 
 ### Conditional Statements
 
