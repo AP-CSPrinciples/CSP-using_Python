@@ -1258,7 +1258,7 @@ input from the console.</p>
 </div>
 <p>Each comma-separated item is a separate argument — <strong><code class="docutils literal notranslate"><span class="pre">sep</span></code></strong> only affects the space between them, not anything else about the string.</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">end</span></code></strong>= — controls what goes after the whole print call</p>
-<p>By default, print() ends every call with a newline (“\n”), which is why each print() normally starts a new line. end= replaces that trailing newline with whatever string you give it.</p>
+<p>By default, print() ends every call with a newline (“\n”), which is why each print() normally starts a new line. <mark>end= replaces that trailing newline with whatever string you give it.</mark></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"World"</span><span class="p">)</span>
 </pre></div>
@@ -1549,6 +1549,30 @@ all 7 the way back to the grocery store!
 <section id="section-2-control-flow-conditional-blocks-and-loops">
 <h2>Section 2 — Control Flow: Conditional Blocks and Loops<a class="headerlink" href="#section-2-control-flow-conditional-blocks-and-loops" title="Link to this heading">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-2.E</span></code> — Develop algorithms using sequencing, selection, and iteration.</p>
+<hr class="docutils" />
+<section id="python-tutor-code-visualizer">
+<h3>Python Tutor – Code Visualizer<a class="headerlink" href="#python-tutor-code-visualizer" title="Link to this heading">¶</a></h3>
+<p>🔗 <a class="reference external" href="https://pythontutor.com/visualize.html#mode=edit">Python Tutor Code Visualizer</a></p>
+<p>Python Tutor lets you watch your code run one step at a time instead of just seeing the final output. Paste in your code, hit “Visualize Execution,” and then step forward and backward through each line while a diagram shows exactly what’s happening behind the scenes — variable values, list contents, function calls, and how they change on every pass through a loop.</p>
+<p><strong>Why it’s useful:</strong></p>
+<ul class="simple">
+<li><p><strong>See loops in action</strong> – Watch a variable’s value update on each iteration instead of guessing what it “should” be.</p></li>
+<li><p><strong>Track variables visually</strong> – Every variable appears in a box with its current value, updated live as the code executes.</p></li>
+<li><p><strong>Understand function calls</strong> – See a new “frame” appear on the call stack each time a function is called, and watch it disappear when the function returns.</p></li>
+<li><p><strong>Debug faster</strong> – When your code isn’t doing what you expect, step through it to find the exact line where things go wrong.</p></li>
+<li><p><strong>No installation needed</strong> – Runs entirely in your browser.</p></li>
+</ul>
+<p><strong>How to use it:</strong></p>
+<ol class="arabic simple">
+<li><p>Paste your Python code into the editor.</p></li>
+<li><p>Click <strong>Visualize Execution</strong>.</p></li>
+<li><p>Use <strong>Next &gt;</strong> and <strong>&lt; Back</strong> to step through your program line by line.</p></li>
+<li><p>Watch the variables and stack frames update in the visualization panel on the right.</p></li>
+</ol>
+<p><strong>Best for:</strong> <mark>Debugging loops (<code class="docutils literal notranslate"><span class="pre">for</span></code>/<code class="docutils literal notranslate"><span class="pre">while</span></code>), tracing small recursive functions, understanding how variables change over time, and figuring out why your code isn’t producing the output you expect.</mark></p>
+<hr class="docutils" />
+<p>Want me to tailor this further — e.g., shorter for a slide, or expanded with a specific example (like tracing a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop) matched to a lesson in your PCEP/AP CSP curriculum?</p>
+</section>
 <section id="conditional-statements">
 <h3>Conditional Statements<a class="headerlink" href="#conditional-statements" title="Link to this heading">¶</a></h3>
 <p><strong>Control flow</strong> determines which code runs, when, and how often. Conditionals let the program <strong>make decisions</strong>.</p>
@@ -5033,6 +5057,7 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </ul>
 </li>
 <li><a class="reference internal" href="#section-2-control-flow-conditional-blocks-and-loops">Section 2 — Control Flow: Conditional Blocks and Loops</a><ul>
+<li><a class="reference internal" href="#python-tutor-code-visualizer">Python Tutor – Code Visualizer</a></li>
 <li><a class="reference internal" href="#conditional-statements">Conditional Statements</a></li>
 <li><a class="reference internal" href="#activity-grade-calculator">Activity: Grade Calculator</a></li>
 </ul>
