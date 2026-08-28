@@ -1561,7 +1561,7 @@ for i in range(1, rows + 1):
 
 ### Project: Loop Concepts Activity Project
 
-> These three activities, isolate each loop concept while layering `if`/`elif`/`else` for decision logic. Redundancy across activities is intentional — you will see the same control-flow ideas resurface in a new pathway context.
+> These three activities, isolate each loop concept while layering `if`/`elif`/`else` for decision logic. Redundancy across activities is intentional — you will see the same control-flow ideas resurface in a new pathway context.  Read through each project idea.  Choose **1** idea that you would like to develop. 
 > 
 > | Activity | Concept Focus | Pathway |
 > |---|---|---|
