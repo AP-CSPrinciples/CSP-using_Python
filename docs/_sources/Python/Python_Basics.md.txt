@@ -1522,46 +1522,46 @@ for i in range(1, rows + 1):
 
 **Discussion:** What single condition controls whether the shape is solid or hollow? *(The `if`/`else` inside the inner loop — remove it and the shape becomes solid.)*
 
-**The Studio Project — Design Your Own**
-
-Design and code **4 original patterns**. "Original" means not shown in class, not copied from a classmate. For each pattern, choose one option from each category below (no repeating the exact same combination twice):
-
-| Category | Options |
-|---|---|
-| **Fill type** | Solid / Hollow |
-| **Content** | ASCII character (your choice) / Sequential numbers / Repeating digit tied to row number |
-| **Orientation** | Grows then stays / Grows then shrinks (diamond/hourglass) / Right-aligned / Shifts diagonally (parallelogram) |
-| **Input** | At least one of your 4 patterns must accept user input for size |
-
-**🧩 Scaffolding — suggested difficulty progression (do them in this order):**
-- Tier 1 — Solid, fixed growth (e.g., a solid right triangle — see Worked Example above)
-- Tier 2 — Hollow (border-only conditional logic — see Guided Example above)
-- Tier 3 — Numeric (a value that changes per row)
-- Tier 4 — Your choice / mirrored or diagonal shape
-
-**Required process (before coding):** sketch each pattern on grid paper, answer the four warm-up questions for your own design, and write pseudocode for the outer loop, inner loop, and the row-vs-column relationship — *then* code it.
-
-**Deliverable:** 4 working programs, each with its grid-paper sketch, pseudocode, final code, and one paragraph explaining what the outer loop controls vs. what the inner loop controls.
-
-**Rubric (8 pts per pattern, 32 pts total):**
-
-| Criteria | Points |
-|---|---|
-| Sketch and pseudocode completed *before* code, and match the final output | 2 |
-| Pattern runs without errors and matches the intended design | 2 |
-| Nested loop logic is correct (not hard-coded repeated `print()` statements) | 2 |
-| At least one pattern correctly uses user input to control size | 1 |
-| Written explanation correctly identifies the role of outer vs. inner loop | 1 |
+> **The Studio Project — Design Your Own**
+> 
+> Design and code **4 original patterns**. "Original" means not shown in class, not copied from a classmate. > For each pattern, choose one option from each category below (no repeating the exact same combination twice):
+> 
+> | Category | Options |
+> |---|---|
+> | **Fill type** | Solid / Hollow |
+> | **Content** | ASCII character (your choice) / Sequential numbers / Repeating digit tied to row number |
+> | **Orientation** | Grows then stays / Grows then shrinks (diamond/hourglass) / Right-aligned / Shifts diagonally (parallelogram) |
+> | **Input** | At least one of your 4 patterns must accept user input for size |
+> 
+> **🧩 Scaffolding — suggested difficulty progression (do them in this order):**
+> - Tier 1 — Solid, fixed growth (e.g., a solid right triangle — see Worked Example above)
+> - Tier 2 — Hollow (border-only conditional logic — see Guided Example above)
+> - Tier 3 — Numeric (a value that changes per row)
+> - Tier 4 — Your choice / mirrored or diagonal shape
+> 
+> **Think through the process (before coding):** sketch the pattern on grid paper, answer the four warm-up questions for your own design, and write pseudocode for the outer loop, inner loop, and the row-vs-column relationship — *then* code it.
+> 
+> **Deliverable:** 4 working programs, final code, and one paragraph explaining what the outer loop controls vs. what the inner loop controls.
+> 
+> **Rubric (8 pts per pattern, 32 pts total):**
+> 
+> | Criteria | Points |
+> |---|---|
+> | Sketch and pseudocode completed *before* code, and match the final output | 2 |
+> | Pattern runs without errors and matches the intended design | 2 |
+> | Nested loop logic is correct (not hard-coded repeated `print()` statements) | 2 |
+> | At least one pattern correctly uses user input to control size | 1 |
+> | Written explanation correctly identifies the role of outer vs. inner loop | 1 |
+>
 
 *AP CSP: AAP-2.E | PCEP: 2.2*
 
 ---
 
 
-### Loop Concepts Activity Project
+### Project: Loop Concepts Activity Project
 
-> 
-These three activities, isolate each loop concept while layering `if`/`elif`/`else` for decision logic. Redundancy across activities is intentional — you will see the same control-flow ideas resurface in a new pathway context.
+> These three activities, isolate each loop concept while layering `if`/`elif`/`else` for decision logic. Redundancy across activities is intentional — you will see the same control-flow ideas resurface in a new pathway context.
 > 
 > | Activity | Concept Focus | Pathway |
 > |---|---|---|
@@ -1569,7 +1569,7 @@ These three activities, isolate each loop concept while layering `if`/`elif`/`el
 > | 2 — Network Intrusion Scanner | `for...else`, `while...else` | CS / Cybersecurity |
 > | 3 — Petri Dish Contamination Scan | nested `for`, `break`, `continue` | Bio-Technology |
 > 
-> = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+> = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 > 
 > **Activity 1: Bridge Load Capacity Simulator**
 > 
@@ -1649,7 +1649,7 @@ These three activities, isolate each loop concept while layering `if`/`elif`/`el
 > 
 > **Extension:** Can ***Part A*** be forced into a `while` loop but Part B *cannot* be written cleanly as a `for` loop without first calculating the answer? *i.e., why the tool > should match the problem.*
 > 
-> = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+> = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 > 
 > **Activity 2: Network Intrusion Scanner**
 > 
@@ -1734,7 +1734,7 @@ These three activities, isolate each loop concept while layering `if`/`elif`/`el
 > 
 > **Extension:** Change `fake_attempts` so all three guesses are wrong and predict — before running — which branch (`break` body or `else` body) will fire, then verify.
 > 
->  = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+>  = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 > 
 > **Activity 3: Petri Dish Contamination Scan**
 > 
