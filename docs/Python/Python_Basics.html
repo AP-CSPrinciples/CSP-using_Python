@@ -2133,6 +2133,256 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 </div>
 <p><em>AP CSP: AAP-2.E | PCEP: 2.2</em></p>
 </section>
+<hr class="docutils" />
+<section id="loop-concepts-activity-project">
+<h3>Loop Concepts Activity Project<a class="headerlink" href="#loop-concepts-activity-project" title="Link to this heading">¶</a></h3>
+<p>These three activities, isolate each loop concept while layering <code class="docutils literal notranslate"><span class="pre">if</span></code>/<code class="docutils literal notranslate"><span class="pre">elif</span></code>/<code class="docutils literal notranslate"><span class="pre">else</span></code> for decision logic. Redundancy across activities is intentional — you will see the same control-flow ideas resurface in a new pathway context.</p>
+<blockquote>
+<div><div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Activity</p></th>
+<th class="head"><p>Concept Focus</p></th>
+<th class="head"><p>Pathway</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1 — Bridge Load Capacity Simulator</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">for</span></code> loop, <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</p></td>
+<td><p>Engineering</p></td>
+</tr>
+<tr class="row-odd"><td><p>2 — Network Intrusion Scanner</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">for...else</span></code>, <code class="docutils literal notranslate"><span class="pre">while...else</span></code></p></td>
+<td><p>CS / Cybersecurity</p></td>
+</tr>
+<tr class="row-even"><td><p>3 — Petri Dish Contamination Scan</p></td>
+<td><p>nested <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code></p></td>
+<td><p>Bio-Technology</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =</p>
+<p><strong>Activity 1: Bridge Load Capacity Simulator</strong></p>
+<p><strong>Concept:</strong> <code class="docutils literal notranslate"><span class="pre">for</span></code> loop vs. <code class="docutils literal notranslate"><span class="pre">while</span></code> loop solving related problems, <code class="docutils literal notranslate"><span class="pre">if</span></code>/<code class="docutils literal notranslate"><span class="pre">elif</span></code>/<code class="docutils literal notranslate"><span class="pre">else</span></code></p>
+<p><strong>Scenario:</strong> Students are structural engineers running a virtual stress test on a bridge design. The bridge has a maximum rated capacity. Part A runs a <strong>fixed, known number</strong> of standardized load tests (a job for <code class="docutils literal notranslate"><span class="pre">for</span></code>). Part B keeps adding load <strong>until failure</strong>, an unknown number of steps (a job for <code class="docutils literal notranslate"><span class="pre">while</span></code>) — this contrast is the whole point of the activity.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">"""</span>
+<span class="sd">Activity:    Bridge Load Capacity Simulator</span>
+<span class="sd">Author:      [Your Name]</span>
+<span class="sd">Course Name: AP Computer Science Principles</span>
+<span class="sd">Date:        M/D/Yr</span>
+<span class="sd">Description: Simulate a structural stress test on a bridge design using</span>
+<span class="sd">             both a for loop (fixed round of standardized tests) and a</span>
+<span class="sd">             while loop (load applied until failure), classifying each</span>
+<span class="sd">             reading with if/elif/else.</span>
+<span class="sd">Language:    Python 3.x</span>
+<span class="sd">"""</span>
+
+<span class="n">MAX_CAPACITY_LBS</span> <span class="o">=</span> <span class="mi">10000</span>   <span class="c1"># bridge fails at or above this load</span>
+<span class="n">LOAD_STEP_LBS</span> <span class="o">=</span> <span class="mi">750</span>        <span class="c1"># how much load is added each round</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">classify_load</span><span class="p">(</span><span class="n">current_load</span><span class="p">,</span> <span class="n">max_capacity</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return a status string based on % of capacity used."""</span>
+    <span class="n">percent_used</span> <span class="o">=</span> <span class="p">(</span><span class="n">current_load</span> <span class="o">/</span> <span class="n">max_capacity</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+    <span class="c1"># TODO: use if/elif/else to return one of:</span>
+    <span class="c1">#   "SAFE"      -&gt; percent_used &lt; 60</span>
+    <span class="c1">#   "WARNING"   -&gt; 60 &lt;= percent_used &lt; 90</span>
+    <span class="c1">#   "CRITICAL"  -&gt; percent_used &gt;= 90</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">run_standardized_tests</span><span class="p">(</span><span class="n">num_tests</span><span class="p">,</span> <span class="n">max_capacity</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Part A - FOR loop</span>
+<span class="sd">    Run a FIXED number of standardized load tests (num_tests rounds),</span>
+<span class="sd">    increasing load by LOAD_STEP_LBS each round. Print the round number,</span>
+<span class="sd">    current load, and status (via classify_load) for each test.</span>
+<span class="sd">    """</span>
+    <span class="c1"># TODO: for loop, exactly num_tests iterations</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">run_to_failure</span><span class="p">(</span><span class="n">max_capacity</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Part B - WHILE loop</span>
+<span class="sd">    Keep adding LOAD_STEP_LBS until current load meets or exceeds</span>
+<span class="sd">    max_capacity. We don't know in advance how many rounds this takes —</span>
+<span class="sd">    that's why it can't be a for loop. Return the number of rounds it</span>
+<span class="sd">    took and the final load applied.</span>
+<span class="sd">    """</span>
+    <span class="c1"># TODO: while loop, condition based on max_capacity</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"=== PART A: Standardized Test Battery (for loop) ==="</span><span class="p">)</span>
+    <span class="n">run_standardized_tests</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">MAX_CAPACITY_LBS</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">=== PART B: Load-to-Failure Test (while loop) ==="</span><span class="p">)</span>
+    <span class="n">rounds</span><span class="p">,</span> <span class="n">final_load</span> <span class="o">=</span> <span class="n">run_to_failure</span><span class="p">(</span><span class="n">MAX_CAPACITY_LBS</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Bridge failed after </span><span class="si">{</span><span class="n">rounds</span><span class="si">}</span><span class="s2"> rounds at </span><span class="si">{</span><span class="n">final_load</span><span class="si">}</span><span class="s2"> lbs."</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+   <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Sample expected output (Part A, first 2 lines):</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Round</span> <span class="mi">1</span><span class="p">:</span> <span class="n">Load</span> <span class="o">=</span> <span class="mi">750</span> <span class="n">lbs</span> <span class="p">(</span><span class="mf">7.5</span><span class="o">%</span><span class="p">)</span>  <span class="o">-&gt;</span> <span class="n">SAFE</span>
+<span class="n">Round</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Load</span> <span class="o">=</span> <span class="mi">1500</span> <span class="n">lbs</span> <span class="p">(</span><span class="mf">15.0</span><span class="o">%</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SAFE</span>
+</pre></div>
+</div>
+<p><strong>Extension:</strong> Can <em><strong>Part A</strong></em> be forced into a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop but Part B <em>cannot</em> be written cleanly as a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop without first calculating the answer? <em>i.e., why the tool &gt; should match the problem.</em></p>
+<p>= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =</p>
+<p><strong>Activity 2: Network Intrusion Scanner</strong></p>
+<p><strong>Concept:</strong> <code class="docutils literal notranslate"><span class="pre">for...else</span></code>, <code class="docutils literal notranslate"><span class="pre">while...else</span></code>, nested <code class="docutils literal notranslate"><span class="pre">if</span></code></p>
+<p><strong>Scenario:</strong> Students act as security analysts. The <code class="docutils literal notranslate"><span class="pre">else</span></code> clause on a loop only runs if the loop finished <strong>without hitting a <code class="docutils literal notranslate"><span class="pre">break</span></code></strong> — that’s the exact semantics of “scan completed clean” vs. “scan interrupted because we found something.” This activity forces students to feel that distinction rather than memorize it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">"""</span>
+<span class="sd">Activity:    Network Intrusion Scanner</span>
+<span class="sd">Author:      [Your Name]</span>
+<span class="sd">Course Name: AP Computer Science Principles</span>
+<span class="sd">Date:        M/D/Yr</span>
+<span class="sd">Description: Use for...else to scan connection logs for a blacklisted IP,</span>
+<span class="sd">             and while...else to simulate a limited-attempt access code</span>
+<span class="sd">             check, demonstrating that the else clause only fires when</span>
+<span class="sd">             no break occurs.</span>
+<span class="sd">Language:    Python 3.x</span>
+<span class="sd">"""</span>
+
+<span class="n">BLACKLISTED_IPS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"10.0.0.13"</span><span class="p">,</span> <span class="s2">"192.168.1.66"</span><span class="p">,</span> <span class="s2">"172.16.0.99"</span><span class="p">]</span>
+<span class="n">CONNECTION_LOG</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"203.0.113.5"</span><span class="p">,</span> <span class="s2">"198.51.100.2"</span><span class="p">,</span> <span class="s2">"10.0.0.13"</span><span class="p">,</span> <span class="s2">"203.0.113.9"</span>
+<span class="p">]</span>
+
+<span class="n">VALID_ACCESS_CODE</span> <span class="o">=</span> <span class="s2">"7734"</span>
+<span class="n">MAX_ATTEMPTS</span> <span class="o">=</span> <span class="mi">3</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">scan_connection_log</span><span class="p">(</span><span class="n">log</span><span class="p">,</span> <span class="n">blacklist</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    FOR...ELSE</span>
+<span class="sd">    Walk through each IP in the log. If a blacklisted IP is found,</span>
+<span class="sd">    print an ALERT and break immediately (no need to keep scanning).</span>
+<span class="sd">    If the loop finishes without ever breaking, the else clause runs</span>
+<span class="sd">    and should print that the log is clean.</span>
+
+<span class="sd">    Bonus: use a nested if to classify severity -- if the matched IP</span>
+<span class="sd">    is the FIRST item in blacklist, treat it as "CRITICAL", otherwise</span>
+<span class="sd">    "HIGH".</span>
+<span class="sd">    """</span>
+    <span class="c1"># TODO: for ip in log: ... break ... else: ...</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">check_access_code</span><span class="p">(</span><span class="n">get_attempt_func</span><span class="p">,</span> <span class="n">valid_code</span><span class="p">,</span> <span class="n">max_attempts</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    WHILE...ELSE</span>
+<span class="sd">    Allow up to max_attempts guesses (get_attempt_func() returns the</span>
+<span class="sd">    next guess string -- already provided for you, don't rewrite it).</span>
+<span class="sd">    Break out as soon as the correct code is entered. If the while</span>
+<span class="sd">    condition becomes false (attempts run out) without ever finding</span>
+<span class="sd">    the right code, the else clause should print "ACCESS DENIED."</span>
+<span class="sd">    """</span>
+    <span class="c1"># TODO: while attempts_used &lt; max_attempts: ... break ... else: ...</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"=== Scanning connection log ==="</span><span class="p">)</span>
+    <span class="n">scan_connection_log</span><span class="p">(</span><span class="n">CONNECTION_LOG</span><span class="p">,</span> <span class="n">BLACKLISTED_IPS</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">=== Access code check ==="</span><span class="p">)</span>
+    <span class="n">fake_attempts</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">([</span><span class="s2">"1111"</span><span class="p">,</span> <span class="s2">"2222"</span><span class="p">,</span> <span class="s2">"7734"</span><span class="p">])</span>
+    <span class="n">check_access_code</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="nb">next</span><span class="p">(</span><span class="n">fake_attempts</span><span class="p">),</span> <span class="n">VALID_ACCESS_CODE</span><span class="p">,</span> <span class="n">MAX_ATTEMPTS</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Sample expected output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">===</span> <span class="n">Scanning</span> <span class="n">connection</span> <span class="n">log</span> <span class="o">===</span>
+<span class="n">ALERT</span><span class="p">:</span> <span class="n">Blacklisted</span> <span class="n">IP</span> <span class="n">detected</span> <span class="o">-&gt;</span> <span class="mf">10.0.0.13</span> <span class="p">(</span><span class="n">CRITICAL</span><span class="p">)</span>
+
+<span class="o">===</span> <span class="n">Access</span> <span class="n">code</span> <span class="n">check</span> <span class="o">===</span>
+<span class="n">Attempt</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1111</span> <span class="o">--</span> <span class="n">incorrect</span>
+<span class="n">Attempt</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">2222</span> <span class="o">--</span> <span class="n">incorrect</span>
+<span class="n">Attempt</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">7734</span> <span class="o">--</span> <span class="n">ACCESS</span> <span class="n">GRANTED</span>
+</pre></div>
+</div>
+<p><strong>Extension:</strong> Change <code class="docutils literal notranslate"><span class="pre">fake_attempts</span></code> so all three guesses are wrong and predict — before running — which branch (<code class="docutils literal notranslate"><span class="pre">break</span></code> body or <code class="docutils literal notranslate"><span class="pre">else</span></code> body) will fire, then verify.</p>
+<p>= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =</p>
+<p><strong>Activity 3: Petri Dish Contamination Scan</strong></p>
+<p><strong>Concept:</strong> nested <code class="docutils literal notranslate"><span class="pre">for</span></code> loops, <code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code></p>
+<p><strong>Scenario:</strong> Students act as lab techs scanning a grid of petri dish samples (rows x columns). Each cell holds a reading: <code class="docutils literal notranslate"><span class="pre">0</span></code> = clean, a positive number = contamination level. <code class="docutils literal notranslate"><span class="pre">continue</span></code> skips clean cells (nothing to report). <code class="docutils literal notranslate"><span class="pre">break</span></code> stops scanning the <strong>current row</strong> early once 2 contaminated cells are found in it (containment protocol — no need to keep checking that row).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">"""</span>
+<span class="sd">Activity:    Petri Dish Contamination Scan</span>
+<span class="sd">Author:      [Your Name]</span>
+<span class="sd">Course Name: AP Computer Science Principles</span>
+<span class="sd">Date:        M/D/Yr</span>
+<span class="sd">Description: Scan a 2D grid of petri dish sample readings with nested</span>
+<span class="sd">             for loops, using continue to skip clean cells and break to</span>
+<span class="sd">             halt a row early once a containment threshold is reached.</span>
+<span class="sd">Language:    Python 3.x</span>
+<span class="sd">"""</span>
+
+<span class="c1"># Each row is one sample strip; each value is a contamination reading.</span>
+<span class="c1"># 0 = clean. Positive values = contamination level.</span>
+<span class="n">SAMPLE_GRID</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="p">]</span>
+
+<span class="n">ROW_CONTAINMENT_LIMIT</span> <span class="o">=</span> <span class="mi">2</span>   <span class="c1"># stop scanning a row after this many hits</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">classify_reading</span><span class="p">(</span><span class="n">level</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Nested if/elif/else severity classification."""</span>
+    <span class="c1"># TODO:</span>
+    <span class="c1">#   level == 0        -&gt; "clean"</span>
+    <span class="c1">#   1 &lt;= level &lt;= 4    -&gt; "low"</span>
+    <span class="c1">#   5 &lt;= level &lt;= 8    -&gt; "moderate"</span>
+    <span class="c1">#   level &gt;= 9         -&gt; "severe"</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">scan_grid</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Outer for loop -&gt; each row (a sample strip)</span>
+<span class="sd">   Inner for loop -&gt; each cell in that row</span>
+
+<span class="sd">    - If a cell is clean (0), `continue` to the next cell immediately.</span>
+<span class="sd">    - Otherwise print row/col position and severity via classify_reading.</span>
+<span class="sd">    - Track how many contaminated cells found THIS row; once it hits</span>
+<span class="sd">      `limit`, print a containment message and `break` out of the</span>
+<span class="sd">      inner loop (stop scanning that row, move on to the next row).</span>
+<span class="sd">    """</span>
+    <span class="c1"># TODO: nested for loops with continue and break</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">scan_grid</span><span class="p">(</span><span class="n">SAMPLE_GRID</span><span class="p">,</span> <span class="n">ROW_CONTAINMENT_LIMIT</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Sample expected output (first row only):</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Row</span> <span class="mi">0</span><span class="p">:</span>
+  <span class="n">Col</span> <span class="mi">2</span><span class="p">:</span> <span class="n">level</span> <span class="mi">3</span> <span class="o">-&gt;</span> <span class="n">low</span>
+  <span class="n">Col</span> <span class="mi">4</span><span class="p">:</span> <span class="n">level</span> <span class="mi">6</span> <span class="o">-&gt;</span> <span class="n">moderate</span>
+  <span class="n">Containment</span> <span class="n">limit</span> <span class="n">reached</span> <span class="n">on</span> <span class="n">Row</span> <span class="mi">0</span> <span class="o">--</span> <span class="n">halting</span> <span class="n">scan</span> <span class="n">of</span> <span class="n">this</span> <span class="n">row</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><strong>Extension (harder):</strong> Add an <em>outer</em> <code class="docutils literal notranslate"><span class="pre">break</span></code> — if any single cell reads <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">9</span></code> (“severe”), halt the <strong>entire</strong> scan immediately (whole dish is compromised), not just the &gt; current row. This requires either a flag variable or restructuring into a function that <code class="docutils literal notranslate"><span class="pre">return</span></code>s early — a good bridge to why <code class="docutils literal notranslate"><span class="pre">break</span></code> alone can’t exit two loops at once.</p>
+</div></blockquote>
+</section>
 </section>
 </section>
 <hr class="docutils" />
@@ -5066,6 +5316,7 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <li><a class="reference internal" href="#for-vs-while-quick-comparison"><code class="docutils literal notranslate"><span class="pre">for</span></code> vs. <code class="docutils literal notranslate"><span class="pre">while</span></code> — Quick Comparison</a></li>
 <li><a class="reference internal" href="#break-and-continue-in-nested-loops"><code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> in Nested Loops</a><ul>
 <li><a class="reference internal" href="#activity-nested-loop-pattern-design-studio">Activity: Nested Loop Pattern Design Studio</a></li>
+<li><a class="reference internal" href="#loop-concepts-activity-project">Loop Concepts Activity Project</a></li>
 </ul>
 </li>
 </ul>

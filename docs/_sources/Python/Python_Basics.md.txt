@@ -1557,6 +1557,263 @@ Design and code **4 original patterns**. "Original" means not shown in class, no
 
 ---
 
+
+### Loop Concepts Activity Project
+
+> 
+These three activities, isolate each loop concept while layering `if`/`elif`/`else` for decision logic. Redundancy across activities is intentional — you will see the same control-flow ideas resurface in a new pathway context.
+> 
+> | Activity | Concept Focus | Pathway |
+> |---|---|---|
+> | 1 — Bridge Load Capacity Simulator | `for` loop, `while` loop | Engineering |
+> | 2 — Network Intrusion Scanner | `for...else`, `while...else` | CS / Cybersecurity |
+> | 3 — Petri Dish Contamination Scan | nested `for`, `break`, `continue` | Bio-Technology |
+> 
+> = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+> 
+> **Activity 1: Bridge Load Capacity Simulator**
+> 
+> **Concept:** `for` loop vs. `while` loop solving related problems, `if`/`elif`/`else`
+> 
+> **Scenario:** Students are structural engineers running a virtual stress test on a bridge design. The bridge has a maximum rated capacity. Part A runs a **fixed, known number** of standardized load tests (a job for `for`). Part B keeps adding load **until failure**, an unknown number of steps (a job for `while`) — this contrast is the whole point of the activity.
+> 
+> ```python
+> """
+> Activity:    Bridge Load Capacity Simulator
+> Author:      [Your Name]
+> Course Name: AP Computer Science Principles
+> Date:        M/D/Yr
+> Description: Simulate a structural stress test on a bridge design using
+>              both a for loop (fixed round of standardized tests) and a
+>              while loop (load applied until failure), classifying each
+>              reading with if/elif/else.
+> Language:    Python 3.x
+> """
+> 
+> MAX_CAPACITY_LBS = 10000   # bridge fails at or above this load
+> LOAD_STEP_LBS = 750        # how much load is added each round
+> 
+> 
+> def classify_load(current_load, max_capacity):
+>     """Return a status string based on % of capacity used."""
+>     percent_used = (current_load / max_capacity) * 100
+> 
+>     # TODO: use if/elif/else to return one of:
+>     #   "SAFE"      -> percent_used < 60
+>     #   "WARNING"   -> 60 <= percent_used < 90
+>     #   "CRITICAL"  -> percent_used >= 90
+>     pass
+> 
+> 
+> def run_standardized_tests(num_tests, max_capacity):
+>     """
+>     Part A - FOR loop
+>     Run a FIXED number of standardized load tests (num_tests rounds),
+>     increasing load by LOAD_STEP_LBS each round. Print the round number,
+>     current load, and status (via classify_load) for each test.
+>     """
+>     # TODO: for loop, exactly num_tests iterations
+>     pass
+> 
+> 
+> def run_to_failure(max_capacity):
+>     """
+>     Part B - WHILE loop
+>     Keep adding LOAD_STEP_LBS until current load meets or exceeds
+>     max_capacity. We don't know in advance how many rounds this takes —
+>     that's why it can't be a for loop. Return the number of rounds it
+>     took and the final load applied.
+>     """
+>     # TODO: while loop, condition based on max_capacity
+>     pass
+> 
+> 
+> def main():
+>     print("=== PART A: Standardized Test Battery (for loop) ===")
+>     run_standardized_tests(5, MAX_CAPACITY_LBS)
+> 
+>     print("\n=== PART B: Load-to-Failure Test (while loop) ===")
+>     rounds, final_load = run_to_failure(MAX_CAPACITY_LBS)
+>     print(f"Bridge failed after {rounds} rounds at {final_load} lbs.")
+> 
+> 
+> if __name__ == "__main__":
+>    main()
+> ```
+> 
+> **Sample expected output (Part A, first 2 lines):**
+> ```
+> Round 1: Load = 750 lbs (7.5%)  -> SAFE
+> Round 2: Load = 1500 lbs (15.0%) -> SAFE
+> ```
+> 
+> **Extension:** Can ***Part A*** be forced into a `while` loop but Part B *cannot* be written cleanly as a `for` loop without first calculating the answer? *i.e., why the tool > should match the problem.*
+> 
+> = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+> 
+> **Activity 2: Network Intrusion Scanner**
+> 
+> **Concept:** `for...else`, `while...else`, nested `if`
+> 
+> **Scenario:** Students act as security analysts. The `else` clause on a loop only runs if the loop finished **without hitting a `break`** — that's the exact semantics of "scan completed clean" vs. "scan interrupted because we found something." This activity forces students to feel that distinction rather than memorize it.
+> 
+> ```python
+> """
+> Activity:    Network Intrusion Scanner
+> Author:      [Your Name]
+> Course Name: AP Computer Science Principles
+> Date:        M/D/Yr
+> Description: Use for...else to scan connection logs for a blacklisted IP,
+>              and while...else to simulate a limited-attempt access code
+>              check, demonstrating that the else clause only fires when
+>              no break occurs.
+> Language:    Python 3.x
+> """
+> 
+> BLACKLISTED_IPS = ["10.0.0.13", "192.168.1.66", "172.16.0.99"]
+> CONNECTION_LOG = [
+>     "203.0.113.5", "198.51.100.2", "10.0.0.13", "203.0.113.9"
+> ]
+> 
+> VALID_ACCESS_CODE = "7734"
+> MAX_ATTEMPTS = 3
+> 
+> 
+> def scan_connection_log(log, blacklist):
+>     """
+>     FOR...ELSE
+>     Walk through each IP in the log. If a blacklisted IP is found,
+>     print an ALERT and break immediately (no need to keep scanning).
+>     If the loop finishes without ever breaking, the else clause runs
+>     and should print that the log is clean.
+> 
+>     Bonus: use a nested if to classify severity -- if the matched IP
+>     is the FIRST item in blacklist, treat it as "CRITICAL", otherwise
+>     "HIGH".
+>     """
+>     # TODO: for ip in log: ... break ... else: ...
+>     pass
+> 
+> 
+> def check_access_code(get_attempt_func, valid_code, max_attempts):
+>     """
+>     WHILE...ELSE
+>     Allow up to max_attempts guesses (get_attempt_func() returns the
+>     next guess string -- already provided for you, don't rewrite it).
+>     Break out as soon as the correct code is entered. If the while
+>     condition becomes false (attempts run out) without ever finding
+>     the right code, the else clause should print "ACCESS DENIED."
+>     """
+>     # TODO: while attempts_used < max_attempts: ... break ... else: ...
+>     pass
+> 
+> 
+> def main():
+>     print("=== Scanning connection log ===")
+>     scan_connection_log(CONNECTION_LOG, BLACKLISTED_IPS)
+> 
+>     print("\n=== Access code check ===")
+>     fake_attempts = iter(["1111", "2222", "7734"])
+>     check_access_code(lambda: next(fake_attempts), VALID_ACCESS_CODE, MAX_ATTEMPTS)
+> 
+> 
+> if __name__ == "__main__":
+>     main()
+> ```
+> 
+> **Sample expected output:**
+> ```
+> === Scanning connection log ===
+> ALERT: Blacklisted IP detected -> 10.0.0.13 (CRITICAL)
+> 
+> === Access code check ===
+> Attempt 1: 1111 -- incorrect
+> Attempt 2: 2222 -- incorrect
+> Attempt 3: 7734 -- ACCESS GRANTED
+> ```
+> 
+> **Extension:** Change `fake_attempts` so all three guesses are wrong and predict — before running — which branch (`break` body or `else` body) will fire, then verify.
+> 
+>  = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+> 
+> **Activity 3: Petri Dish Contamination Scan**
+> 
+> **Concept:** nested `for` loops, `break`, `continue`
+> 
+> **Scenario:** Students act as lab techs scanning a grid of petri dish samples (rows x columns). Each cell holds a reading: `0` = clean, a positive number = contamination level. `continue` skips clean cells (nothing to report). `break` stops scanning the **current row** early once 2 contaminated cells are found in it (containment protocol — no need to keep checking that row).
+> 
+> ```python
+> """
+> Activity:    Petri Dish Contamination Scan
+> Author:      [Your Name]
+> Course Name: AP Computer Science Principles
+> Date:        M/D/Yr
+> Description: Scan a 2D grid of petri dish sample readings with nested
+>              for loops, using continue to skip clean cells and break to
+>              halt a row early once a containment threshold is reached.
+> Language:    Python 3.x
+> """
+> 
+> # Each row is one sample strip; each value is a contamination reading.
+> # 0 = clean. Positive values = contamination level.
+> SAMPLE_GRID = [
+>     [0, 0, 3, 0, 6],
+>     [0, 2, 0, 5, 9],
+>     [0, 0, 0, 0, 0],
+>     [4, 0, 8, 1, 0],
+> ]
+> 
+> ROW_CONTAINMENT_LIMIT = 2   # stop scanning a row after this many hits
+> 
+> 
+> def classify_reading(level):
+>     """Nested if/elif/else severity classification."""
+>     # TODO:
+>     #   level == 0        -> "clean"
+>     #   1 <= level <= 4    -> "low"
+>     #   5 <= level <= 8    -> "moderate"
+>     #   level >= 9         -> "severe"
+>     pass
+> 
+> 
+> def scan_grid(grid, limit):
+>     """
+>     Outer for loop -> each row (a sample strip)
+>    Inner for loop -> each cell in that row
+> 
+>     - If a cell is clean (0), `continue` to the next cell immediately.
+>     - Otherwise print row/col position and severity via classify_reading.
+>     - Track how many contaminated cells found THIS row; once it hits
+>       `limit`, print a containment message and `break` out of the
+>       inner loop (stop scanning that row, move on to the next row).
+>     """
+>     # TODO: nested for loops with continue and break
+>     pass
+> 
+> 
+> def main():
+>     scan_grid(SAMPLE_GRID, ROW_CONTAINMENT_LIMIT)
+> 
+> 
+> if __name__ == "__main__":
+>     main()
+> ```
+> 
+> **Sample expected output (first row only):**
+> ```
+> Row 0:
+>   Col 2: level 3 -> low
+>   Col 4: level 6 -> moderate
+>   Containment limit reached on Row 0 -- halting scan of this row.
+> ```
+> 
+> **Extension (harder):** Add an *outer* `break` — if any single cell reads `>= 9` ("severe"), halt the **entire** scan immediately (whole dish is compromised), not just the > current row. This requires either a flag variable or restructuring into a function that `return`s early — a good bridge to why `break` alone can't exit two loops at once.
+>
+
+
+---
+
+
 # Section 3 — Data Collections: Lists, Tuples, Dictionaries, and Strings
 `📋 AP CSP: AAP-4.A` — Use data abstractions to manage complexity.
 
