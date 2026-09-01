@@ -204,15 +204,7 @@
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Python Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#python-style-guidelines">Python Style Guidelines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#section-3-data-collections-lists-tuples-dictionaries-and-strings">Section 3 — Data Collections: Lists, Tuples, Dictionaries, and Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#section-4-functions-and-exceptions">Section 4 — Functions and Exceptions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#file-operations">File Operations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#data-structures-deep-dive">Data Structures Deep Dive</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#object-oriented-programming-oop">Object-Oriented Programming (OOP)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#ap-csp-performance-task-preparation">AP CSP Performance Task Preparation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#final-project-options">Final Project Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#pcep-certification-path-semester-2">PCEP Certification Path — Semester 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#certification-alignment-reference">Certification Alignment Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PyGame.html">PyGame</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python_Turtle.html">Python_Turtle</a></li>
 </ul>
@@ -2384,15 +2376,207 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 </div>
 <p><strong>Extension (harder):</strong> Add an <em>outer</em> <code class="docutils literal notranslate"><span class="pre">break</span></code> — if any single cell reads <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">9</span></code> (“severe”), halt the <strong>entire</strong> scan immediately (whole dish is compromised), not just the &gt; current row. This requires either a flag variable or restructuring into a function that <code class="docutils literal notranslate"><span class="pre">return</span></code>s early — a good bridge to why <code class="docutils literal notranslate"><span class="pre">break</span></code> alone can’t exit two loops at once.</p>
 </div></blockquote>
-</section>
+<p><strong>Loop Concepts Activity Project — Grading Rubric</strong></p>
+<details>
+  <summary>Click Here for Project Rubric</summary>
+<hr class="docutils" />
+<p><strong>Standards Alignment Reference</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Standard</p></th>
+<th class="head"><p>Where it shows up in this project</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AP</span> <span class="pre">CSP</span> <span class="pre">AAP-2.E</span></code></p></td>
+<td><p>Develop algorithms using sequencing, selection, and iteration</p></td>
+<td><p>Core loop + <code class="docutils literal notranslate"><span class="pre">if/elif/else</span></code> logic in all three activities</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">AP</span> <span class="pre">CSP</span> <span class="pre">AAP-2.K</span></code></p></td>
+<td><p>For loops</p></td>
+<td><p>Activity 1 Part A; Activity 2 log scan; Activity 3 outer/inner loops</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AP</span> <span class="pre">CSP</span> <span class="pre">AAP-3.B</span></code></p></td>
+<td><p>Use procedures/functions to manage complexity</p></td>
+<td><p>Function decomposition (<code class="docutils literal notranslate"><span class="pre">classify_load</span></code>, <code class="docutils literal notranslate"><span class="pre">run_standardized_tests</span></code>, etc.)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">AP</span> <span class="pre">CSP</span> <span class="pre">CRD-2.B</span></code></p></td>
+<td><p>Implement algorithms in a programming language</p></td>
+<td><p>Overall program implementation</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AP</span> <span class="pre">CSP</span> <span class="pre">CRD-2.J</span></code></p></td>
+<td><p>Identify, test, and correct errors in algorithms and programs</p></td>
+<td><p>Test cases / sample runs; boundary conditions</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PCEP</span> <span class="pre">2.1</span></code></p></td>
+<td><p>Conditional statements</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">if/elif/else</span></code> classification functions</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PCEP</span> <span class="pre">2.2</span></code></p></td>
+<td><p>Perform different types of iterations</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">for...else</span></code>, <code class="docutils literal notranslate"><span class="pre">while...else</span></code>, nested loops, <code class="docutils literal notranslate"><span class="pre">break</span></code>/<code class="docutils literal notranslate"><span class="pre">continue</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PCEP</span> <span class="pre">4.1</span></code></p></td>
+<td><p>Decompose code using functions</p></td>
+<td><p>Functions with docstrings, single responsibility</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Applies to the following projects:</strong></p>
+<ul class="simple">
+<li><p>Activity 1 (Bridge Load Capacity Simulator)</p></li>
+<li><p>Activity 2 (Network Intrusion Scanner)</p></li>
+<li><p>Activity 3 (Petri Dish Contamination Scan)</p></li>
+</ul>
+<p><strong>Total: 40 points</strong> — 24 pts <em>Common Criteria</em> (all activities) + 16 pts <em>Concept-Specific Core Logic</em> (grade only the row matching the student’s chosen activity).</p>
+<hr class="docutils" />
+<p><strong>Common Criteria (24 pts — all activities)</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Criteria</p></th>
+<th class="head"><p>Points</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Header block complete (Assignment, Author, Description, etc.) and PEP 8 style followed</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Program runs without crashing on normal input</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>Logic correctly decomposed into functions (no core logic crammed into <code class="docutils literal notranslate"><span class="pre">main()</span></code>)</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Custom functions include docstrings describing their purpose</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">if/elif/else</span></code> classification function (<code class="docutils literal notranslate"><span class="pre">classify_load</span></code>, severity check, or <code class="docutils literal notranslate"><span class="pre">classify_reading</span></code>) returns correct category for all threshold boundaries, including edge values</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Output format matches the sample output shown for the chosen activity (spacing, labels, rounding)</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>Test cases / sample runs submitted, including at least one boundary or edge case (not just a “happy path” run)</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Code comments explain <em>what the loop is doing and why</em> at each key step, not just restating the code</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p><strong>Concept-Specific Core Logic (16 pts — score only the row that matches)</strong></p>
+<p><strong>Activity 1 — Bridge Load Capacity Simulator (<code class="docutils literal notranslate"><span class="pre">for</span></code> vs. <code class="docutils literal notranslate"><span class="pre">while</span></code>)</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Criteria</p></th>
+<th class="head"><p>Points</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">run_standardized_tests()</span></code> correctly uses a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop for a <strong>fixed</strong> number of iterations (<code class="docutils literal notranslate"><span class="pre">num_tests</span></code>)</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">run_to_failure()</span></code> correctly uses a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop that continues until load meets/exceeds capacity — condition-based, not counter-based</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>Both functions correctly call <code class="docutils literal notranslate"><span class="pre">classify_load()</span></code> and report round/load/status each iteration</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Extension question answered correctly: explains <em>why</em> Part A could be forced into <code class="docutils literal notranslate"><span class="pre">while</span></code> but Part B cannot cleanly become a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop without first computing the answer</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Activity 2 — Network Intrusion Scanner (<code class="docutils literal notranslate"><span class="pre">for...else</span></code>, <code class="docutils literal notranslate"><span class="pre">while...else</span></code>)</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Criteria</p></th>
+<th class="head"><p>Points</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">scan_connection_log()</span></code> correctly uses <code class="docutils literal notranslate"><span class="pre">for...else</span></code>: loop breaks on a blacklist match, <code class="docutils literal notranslate"><span class="pre">else</span></code> fires only when no match is ever found</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">check_access_code()</span></code> correctly uses <code class="docutils literal notranslate"><span class="pre">while...else</span></code> with an attempt counter: breaks on correct code, <code class="docutils literal notranslate"><span class="pre">else</span></code> fires only when attempts run out with no correct guess</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>Nested <code class="docutils literal notranslate"><span class="pre">if</span></code> correctly classifies severity (CRITICAL vs. HIGH based on blacklist position)</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Extension question answered correctly: predicts, before running, which branch (<code class="docutils literal notranslate"><span class="pre">break</span></code> body vs. <code class="docutils literal notranslate"><span class="pre">else</span></code> body) fires when all attempts are wrong</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Activity 3 — Petri Dish Contamination Scan (nested <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code>)</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Criteria</p></th>
+<th class="head"><p>Points</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">scan_grid()</span></code> correctly nests two <code class="docutils literal notranslate"><span class="pre">for</span></code> loops (outer = row, inner = cell) and tracks position accurately</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">continue</span></code> correctly skips clean (<code class="docutils literal notranslate"><span class="pre">0</span></code>) cells without printing or counting them</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">break</span></code> correctly halts only the <strong>inner</strong> loop once the row’s containment limit is reached, and scanning resumes on the next row</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">classify_reading()</span></code> correctly categorizes clean/low/moderate/severe at all boundary values</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Extension (harder) attempted: an outer break/flag or restructured function correctly halts the <em>entire</em> scan on a severe (<code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">9</span></code>) reading</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p><strong>Scoring Summary</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Section</p></th>
+<th class="head"><p>Points</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Common Criteria</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>Concept-Specific Core Logic (chosen activity only)</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Total</strong></p></td>
+<td><p><strong>40</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
 </section>
 </section>
 <hr class="docutils" />
 <section id="section-3-data-collections-lists-tuples-dictionaries-and-strings">
-<h1>Section 3 — Data Collections: Lists, Tuples, Dictionaries, and Strings<a class="headerlink" href="#section-3-data-collections-lists-tuples-dictionaries-and-strings" title="Link to this heading">¶</a></h1>
+<h2>Section 3 — Data Collections: Lists, Tuples, Dictionaries, and Strings<a class="headerlink" href="#section-3-data-collections-lists-tuples-dictionaries-and-strings" title="Link to this heading">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-4.A</span></code> — Use data abstractions to manage complexity.</p>
 <section id="strings">
-<h2>Strings<a class="headerlink" href="#strings" title="Link to this heading">¶</a></h2>
+<h3>Strings<a class="headerlink" href="#strings" title="Link to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.4</span></code> — Operate with strings
 <code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">DAT-1.A</span></code></p>
 <p>Strings are <strong>ordered, immutable</strong> sequences of characters.</p>
@@ -2505,6 +2689,7 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 </div>
 <p>This shows the same <em>techniques</em> the Receipt Formatter asks for — <code class="docutils literal notranslate"><span class="pre">.strip()</span></code> to clean messy input, <code class="docutils literal notranslate"><span class="pre">.upper()</span></code>/<code class="docutils literal notranslate"><span class="pre">.title()</span></code> for capitalization, <code class="docutils literal notranslate"><span class="pre">\t</span></code> for column alignment, and a quoted message with <code class="docutils literal notranslate"><span class="pre">\&quot;</span></code> — applied to a library slip instead of a receipt.</p>
 </div></blockquote>
+</section>
 <hr class="docutils" />
 <section id="activity-receipt-formatter">
 <h3>Activity: Receipt Formatter<a class="headerlink" href="#activity-receipt-formatter" title="Link to this heading">¶</a></h3>
@@ -2540,10 +2725,9 @@ Blue Notebook	Sale Price: $24.99
 </div>
 <p><em>PCEP: 3.4 | AP CSP: DAT-1.A</em></p>
 </section>
-</section>
 <hr class="docutils" />
 <section id="lists">
-<h2>Lists<a class="headerlink" href="#lists" title="Link to this heading">¶</a></h2>
+<h3>Lists<a class="headerlink" href="#lists" title="Link to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.1</span></code> — Collect and process data using lists
 <code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-4.A</span></code> — Lists for data abstraction</p>
 <p>A <strong>list</strong> is an <strong>ordered, mutable</strong> sequence. It is the most versatile data collection in Python — and the collection type the AP CSP CPT specifically requires you to use.</p>
@@ -2636,7 +2820,7 @@ Blue Notebook	Sale Price: $24.99
 </section>
 <hr class="docutils" />
 <section id="tuples">
-<h2>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">¶</a></h2>
+<h3>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.2</span></code> — Collect and process data using tuples</p>
 <p>A <strong>tuple</strong> is an <strong>ordered, immutable</strong> sequence — values cannot be changed after creation.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">coords</span>     <span class="o">=</span> <span class="p">(</span><span class="mf">40.7128</span><span class="p">,</span> <span class="o">-</span><span class="mf">74.0060</span><span class="p">)</span>    <span class="c1"># GPS: New York City</span>
@@ -2692,7 +2876,7 @@ Blue Notebook	Sale Price: $24.99
 </section>
 <hr class="docutils" />
 <section id="dictionaries">
-<h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">¶</a></h2>
+<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.3</span></code> — Collect and process data using dictionaries
 <code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-3.B</span></code> — Use abstractions to organize data.</p>
 <p>A <strong>dictionary</strong> stores <strong>key-value pairs</strong>. Keys must be unique and immutable. Dictionaries are <strong>ordered</strong> (Python 3.7+) and <strong>mutable</strong>.</p>
@@ -2739,6 +2923,7 @@ Blue Notebook	Sale Price: $24.99
 </pre></div>
 </div>
 <details><summary>🤔 Thinking Question — check your answer</summary>
+<hr class="docutils" />
 <p><strong>Question:</strong> Why is a “list of dictionaries” (like <code class="docutils literal notranslate"><span class="pre">students</span></code> above) usually a better data abstraction for the CPT than several separate parallel lists like <code class="docutils literal notranslate"><span class="pre">names</span> <span class="pre">=</span> <span class="pre">[...]</span></code>, <code class="docutils literal notranslate"><span class="pre">ages</span> <span class="pre">=</span> <span class="pre">[...]</span></code>?</p>
 <p><strong>Answer:</strong> With parallel lists, <code class="docutils literal notranslate"><span class="pre">names[2]</span></code> and <code class="docutils literal notranslate"><span class="pre">ages[2]</span></code> only stay linked to the same student if you’re extremely careful to keep every list in sync — one mistaken <code class="docutils literal notranslate"><span class="pre">.remove()</span></code> on just one list breaks the connection. A list of dictionaries keeps each student’s data bundled together in one object, so there’s no way for a name and age to get separated. This is exactly the kind of data abstraction the CPT written responses ask you to explain.</p>
 </details>
@@ -2756,6 +2941,7 @@ Blue Notebook	Sale Price: $24.99
 </div>
 <p>This is the pattern (append a dict to a list, then search with a loop + <code class="docutils literal notranslate"><span class="pre">if</span></code>) you’ll build into a full menu-driven program below — just applied to songs instead of contacts.</p>
 </div></blockquote>
+</section>
 <section id="activity-student-contact-book">
 <h3>Activity: Student Contact Book<a class="headerlink" href="#activity-student-contact-book" title="Link to this heading">¶</a></h3>
 <p>Build a program that stores a contact book as a <strong>list of dictionaries</strong>. Each contact has a name, phone number, and email. The user can:</p>
@@ -2805,13 +2991,12 @@ Blue Notebook	Sale Price: $24.99
 <p><em>AP CSP: AAP-3.B, AAP-2.E | PCEP: 3.3</em></p>
 </section>
 </section>
-</section>
 <hr class="docutils" />
 <section id="section-4-functions-and-exceptions">
-<h1>Section 4 — Functions and Exceptions<a class="headerlink" href="#section-4-functions-and-exceptions" title="Link to this heading">¶</a></h1>
+<h2>Section 4 — Functions and Exceptions<a class="headerlink" href="#section-4-functions-and-exceptions" title="Link to this heading">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-3.B</span></code> — Use procedures/functions to manage complexity.</p>
 <section id="functions-methods-and-procedures">
-<h2>Functions, Methods, and Procedures<a class="headerlink" href="#functions-methods-and-procedures" title="Link to this heading">¶</a></h2>
+<h3>Functions, Methods, and Procedures<a class="headerlink" href="#functions-methods-and-procedures" title="Link to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">4.1</span></code> — Decompose the code using functions
 <code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-3.B</span></code> — Abstractions; <code class="docutils literal notranslate"><span class="pre">CRD-2.G</span></code> — Call procedures.</p>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -2880,6 +3065,7 @@ Blue Notebook	Sale Price: $24.99
 </div>
 <p>This shows the shape you’ll reuse five times below: a function that takes parameters and <code class="docutils literal notranslate"><span class="pre">return</span></code>s a result (no <code class="docutils literal notranslate"><span class="pre">print()</span></code> inside it), called from <code class="docutils literal notranslate"><span class="pre">main()</span></code>, with the result stored in a variable and printed with an f-string. Get this pattern solid here before writing <code class="docutils literal notranslate"><span class="pre">get_sum()</span></code>, <code class="docutils literal notranslate"><span class="pre">get_difference()</span></code>, and the rest.</p>
 </div></blockquote>
+</section>
 <section id="activity-math-operations-calculator">
 <h3>Activity: Math Operations Calculator<a class="headerlink" href="#activity-math-operations-calculator" title="Link to this heading">¶</a></h3>
 <p>Write a Python program called <code class="docutils literal notranslate"><span class="pre">math_operations.py</span></code> that performs addition, subtraction, multiplication, division, and modulo on two numbers entered by the user — using a separate function for each operation.</p>
@@ -3302,10 +3488,9 @@ Blue Notebook	Sale Price: $24.99
 <p><em>AP CSP: CRD-2.J | PCEP: 4.4</em></p>
 </section>
 </section>
-</section>
 <hr class="docutils" />
 <section id="file-operations">
-<h1>File Operations<a class="headerlink" href="#file-operations" title="Link to this heading">¶</a></h1>
+<h2>File Operations<a class="headerlink" href="#file-operations" title="Link to this heading">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-3.A,</span> <span class="pre">CRD-2.B,</span> <span class="pre">CRD-2.J</span></code> — Collect and represent data; implement and test programs.</p>
 <p><strong>Explanation</strong></p>
 <p>So far, every program you’ve written loses all its data the moment it stops running. <strong>File operations</strong> let a program <strong>read</strong> data that already exists on disk and <strong>write</strong> data that survives after the program ends — the difference between a program that “remembers” and one that starts from zero every time.</p>
@@ -3453,7 +3638,7 @@ Blue Notebook	Sale Price: $24.99
 </pre></div>
 </div>
 <section id="activity-student-roster-file-manager">
-<h2>Activity: Student Roster File Manager<a class="headerlink" href="#activity-student-roster-file-manager" title="Link to this heading">¶</a></h2>
+<h3>Activity: Student Roster File Manager<a class="headerlink" href="#activity-student-roster-file-manager" title="Link to this heading">¶</a></h3>
 <p>Write a program that manages a roster stored in a text file called <code class="docutils literal notranslate"><span class="pre">roster.txt</span></code> (one name per line).</p>
 <p><strong>🧩 Scaffolding — build it in this order:</strong></p>
 <ol class="arabic simple">
@@ -3555,7 +3740,7 @@ Blue Notebook	Sale Price: $24.99
 </section>
 <hr class="docutils" />
 <section id="data-structures-deep-dive">
-<h1>Data Structures Deep Dive<a class="headerlink" href="#data-structures-deep-dive" title="Link to this heading">¶</a></h1>
+<h2>Data Structures Deep Dive<a class="headerlink" href="#data-structures-deep-dive" title="Link to this heading">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-3.A,</span> <span class="pre">AAP-3.B,</span> <span class="pre">AAP-3.C</span></code></p>
 <p>Python’s built-in data structures serve different organizational needs:</p>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -3643,13 +3828,13 @@ Blue Notebook	Sale Price: $24.99
 </section>
 <hr class="docutils" />
 <section id="object-oriented-programming-oop">
-<h1>Object-Oriented Programming (OOP)<a class="headerlink" href="#object-oriented-programming-oop" title="Link to this heading">¶</a></h1>
+<h2>Object-Oriented Programming (OOP)<a class="headerlink" href="#object-oriented-programming-oop" title="Link to this heading">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-3.B</span></code> — Abstractions; <code class="docutils literal notranslate"><span class="pre">CRD-2.B</span></code> — Implement in a language.</p>
 <blockquote>
 <div><p><strong>Why OOP?</strong> Real programs model real-world things — students, cars, bank accounts, game characters. OOP lets us <strong>group data and behavior</strong> together in reusable, organized units called <strong>classes</strong>.</p>
 </div></blockquote>
 <section id="core-oop-concepts">
-<h2>Core OOP Concepts<a class="headerlink" href="#core-oop-concepts" title="Link to this heading">¶</a></h2>
+<h3>Core OOP Concepts<a class="headerlink" href="#core-oop-concepts" title="Link to this heading">¶</a></h3>
 <p><strong>Key Vocabulary</strong></p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
@@ -3691,7 +3876,7 @@ Blue Notebook	Sale Price: $24.99
 </div>
 </section>
 <section id="building-a-class">
-<h2>Building a Class<a class="headerlink" href="#building-a-class" title="Link to this heading">¶</a></h2>
+<h3>Building a Class<a class="headerlink" href="#building-a-class" title="Link to this heading">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">"""Blueprint for a car object."""</span>
 
@@ -3731,7 +3916,7 @@ Blue Notebook	Sale Price: $24.99
 </details>
 </section>
 <section id="types-of-methods">
-<h2>Types of Methods<a class="headerlink" href="#types-of-methods" title="Link to this heading">¶</a></h2>
+<h3>Types of Methods<a class="headerlink" href="#types-of-methods" title="Link to this heading">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Dog</span><span class="p">:</span>
     <span class="n">species</span> <span class="o">=</span> <span class="s2">"Canis familiaris"</span>   <span class="c1"># CLASS attribute (shared by all instances)</span>
 
@@ -3753,7 +3938,7 @@ Blue Notebook	Sale Price: $24.99
 </div>
 </section>
 <section id="inheritance">
-<h2>Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading">¶</a></h2>
+<h3>Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading">¶</a></h3>
 <p><mark><strong>Inheritance</strong> allows a <strong>child class</strong> to reuse and extend the behavior of a <strong>parent class</strong>.</mark></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Animal</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
@@ -3781,7 +3966,7 @@ Blue Notebook	Sale Price: $24.99
 </details>
 </section>
 <section id="magic-dunder-methods">
-<h2>Magic / Dunder Methods<a class="headerlink" href="#magic-dunder-methods" title="Link to this heading">¶</a></h2>
+<h3>Magic / Dunder Methods<a class="headerlink" href="#magic-dunder-methods" title="Link to this heading">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">BankAccount</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">holder</span><span class="p">,</span> <span class="n">balance</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">holder</span>  <span class="o">=</span> <span class="n">holder</span>
@@ -3838,6 +4023,7 @@ Blue Notebook	Sale Price: $24.99
 </div>
 <p>This is the minimum skeleton — one base class, one subclass, one object, with the subclass overriding/adding a method. Whichever OOP Zoo option you choose below (Zoo, Library, or RPG Party), you’ll build that same base-class → subclass → container-class shape, just in your own domain.</p>
 </div></blockquote>
+</section>
 <section id="activity-oop-zoo">
 <h3>Activity: OOP Zoo<a class="headerlink" href="#activity-oop-zoo" title="Link to this heading">¶</a></h3>
 <p>Design a <code class="docutils literal notranslate"><span class="pre">Zoo</span></code> simulation using OOP:</p>
@@ -3920,16 +4106,15 @@ Blue Notebook	Sale Price: $24.99
 <p><em>AP CSP: AAP-3.B, CRD-2.B | Demonstrates: Abstraction, Inheritance, Polymorphism</em></p>
 </section>
 </section>
-</section>
 <hr class="docutils" />
 <section id="ap-csp-performance-task-preparation">
-<h1>AP CSP Performance Task Preparation<a class="headerlink" href="#ap-csp-performance-task-preparation" title="Link to this heading">¶</a></h1>
+<h2>AP CSP Performance Task Preparation<a class="headerlink" href="#ap-csp-performance-task-preparation" title="Link to this heading">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">CRD-2</span></code> — Program Design and Development</p>
 <blockquote>
 <div><p>The <strong>AP CSP Create Performance Task (CPT)</strong> is 30% of your AP score. You write a program and submit written responses explaining it. Everything in Sections 1–4, File Operations, Data Structures, and OOP above was chosen and sequenced specifically to get you ready for this. This section ties it all together.</p>
 </div></blockquote>
 <section id="cpt-requirements-at-a-glance">
-<h2>CPT Requirements at a Glance<a class="headerlink" href="#cpt-requirements-at-a-glance" title="Link to this heading">¶</a></h2>
+<h3>CPT Requirements at a Glance<a class="headerlink" href="#cpt-requirements-at-a-glance" title="Link to this heading">¶</a></h3>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -3958,7 +4143,7 @@ Blue Notebook	Sale Price: $24.99
 </div>
 </section>
 <section id="cpt-checklist-does-your-program-have">
-<h2>CPT Checklist — Does Your Program Have?<a class="headerlink" href="#cpt-checklist-does-your-program-have" title="Link to this heading">¶</a></h2>
+<h3>CPT Checklist — Does Your Program Have?<a class="headerlink" href="#cpt-checklist-does-your-program-have" title="Link to this heading">¶</a></h3>
 <p>☐ A clear <strong>purpose</strong> that solves a meaningful problem</p>
 <p>☐ <strong>Input</strong> from the user or a data source</p>
 <p>☐ <strong>Output</strong> that responds to the input</p>
@@ -4001,7 +4186,7 @@ Blue Notebook	Sale Price: $24.99
 </div></blockquote>
 </section>
 <section id="cpt-written-response-tips">
-<h2>CPT Written Response Tips<a class="headerlink" href="#cpt-written-response-tips" title="Link to this heading">¶</a></h2>
+<h3>CPT Written Response Tips<a class="headerlink" href="#cpt-written-response-tips" title="Link to this heading">¶</a></h3>
 <p><strong>Prompt 3a — Program Function and Purpose:</strong></p>
 <ul class="simple">
 <li><p>Describe what your program does and the <strong>problem it solves</strong></p></li>
@@ -4025,6 +4210,7 @@ Blue Notebook	Sale Price: $24.99
 <li><p>Identify the algorithm embedded in your function</p></li>
 <li><p>Describe the algorithm step-by-step in plain English</p></li>
 </ul>
+</section>
 <section id="activity-cpt-brainstorming-workshop">
 <h3>Activity: CPT Brainstorming Workshop<a class="headerlink" href="#activity-cpt-brainstorming-workshop" title="Link to this heading">¶</a></h3>
 <p>With a partner, evaluate 3 program ideas against the CPT checklist. For each idea, identify:</p>
@@ -4037,10 +4223,9 @@ Blue Notebook	Sale Price: $24.99
 <p>Select the strongest idea and create a one-page project proposal.</p>
 <p><em>AP CSP: CRD-2.A, CRD-2.B</em></p>
 </section>
-</section>
 <hr class="docutils" />
 <section id="practice-pt-1-idea-list">
-<h2>Practice PT 1 — Idea List<a class="headerlink" href="#practice-pt-1-idea-list" title="Link to this heading">¶</a></h2>
+<h3>Practice PT 1 — Idea List<a class="headerlink" href="#practice-pt-1-idea-list" title="Link to this heading">¶</a></h3>
 <p>Use these for the <strong>Practice PT 1</strong> window (Weeks 8–11). Each idea below already satisfies the CPT checklist — the point of Practice PT 1 is rehearsing the <em>process</em> (design → code → test → written responses) on a smaller, guided idea before the pressure of the real thing. Pick ONE, or propose your own and run it past your teacher.</p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
@@ -4101,7 +4286,7 @@ Blue Notebook	Sale Price: $24.99
 </ul>
 </section>
 <section id="practice-pt-2-idea-list">
-<h2>Practice PT 2 — Idea List<a class="headerlink" href="#practice-pt-2-idea-list" title="Link to this heading">¶</a></h2>
+<h3>Practice PT 2 — Idea List<a class="headerlink" href="#practice-pt-2-idea-list" title="Link to this heading">¶</a></h3>
 <p>Use these for the <strong>Practice PT 2</strong> window (Weeks 12–14). These are intentionally a step up from Practice PT 1 — most naturally pull in a <strong>dictionary or list-of-dictionaries</strong>, File Operations, or OOP (all covered by Week 12), which the official December CPT will likely also benefit from.</p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
@@ -4161,6 +4346,7 @@ Blue Notebook	Sale Price: $24.99
 </ul>
 </section>
 </section>
+</section>
 <hr class="docutils" />
 <section id="final-project-options">
 <h1>Final Project Options<a class="headerlink" href="#final-project-options" title="Link to this heading">¶</a></h1>
@@ -4177,8 +4363,8 @@ Blue Notebook	Sale Price: $24.99
 <li><p>A scoring system</p></li>
 </ul>
 <p><strong>AP CSP Alignment:</strong> CRD-2.B, AAP-2.E, AAP-3.B, AAP-4.A</p>
-</section>
 <hr class="docutils" />
+</section>
 <section id="option-b-student-data-tracker-intermediate">
 <h2>Option B — Student Data Tracker (Intermediate)<a class="headerlink" href="#option-b-student-data-tracker-intermediate" title="Link to this heading">¶</a></h2>
 <p>Build a command-line tracker that:</p>
@@ -4191,8 +4377,8 @@ Blue Notebook	Sale Price: $24.99
 <li><p>Optionally reads/writes to a <code class="docutils literal notranslate"><span class="pre">.json</span></code> file</p></li>
 </ul>
 <p><strong>AP CSP Alignment:</strong> CRD-2.B, AAP-3.A, AAP-3.B, AAP-3.C, AAP-4.A</p>
-</section>
 <hr class="docutils" />
+</section>
 <section id="option-c-mini-minesweeper-advanced">
 <h2>Option C — Mini Minesweeper (Advanced)<a class="headerlink" href="#option-c-mini-minesweeper-advanced" title="Link to this heading">¶</a></h2>
 <p>Build a simplified Minesweeper game using Python and Tkinter with OOP design.</p>
@@ -4329,16 +4515,15 @@ Blue Notebook	Sale Price: $24.99
 </div>
 <p><strong>Reflection (1 page):</strong> Explain your mine-counting algorithm, how recursion works in the reveal function, and how lists are used for data abstraction.</p>
 </section>
-</section>
 <hr class="docutils" />
 <section id="pcep-certification-path-semester-2">
-<h1>PCEP Certification Path — Semester 2<a class="headerlink" href="#pcep-certification-path-semester-2" title="Link to this heading">¶</a></h1>
+<h2>PCEP Certification Path — Semester 2<a class="headerlink" href="#pcep-certification-path-semester-2" title="Link to this heading">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">🏅</span> <span class="pre">Semester</span> <span class="pre">2,</span> <span class="pre">Jan</span> <span class="pre">–</span> <span class="pre">June</span></code></p>
 <blockquote>
 <div><p><strong>What this section is:</strong> everything that’s specifically on the PCEP-30-02 exam but wasn’t needed for the AP CSP CPT — pulled out of Semester 1 so it doesn’t compete with CPT prep, and spread across Semester 2 at a pace that gives it room to actually stick. You already have a full year of general Python fluency (Sections 1–4, File Operations, OOP) under your belt by the time you start this section — that foundation is what makes this content approachable now instead of overwhelming back in the fall.</p>
 </div></blockquote>
 <section id="pcep-pacing-guide-semester-2-tentative">
-<h2>📅 PCEP Pacing Guide — Semester 2 (Tentative)<a class="headerlink" href="#pcep-pacing-guide-semester-2-tentative" title="Link to this heading">¶</a></h2>
+<h3>📅 PCEP Pacing Guide — Semester 2 (Tentative)<a class="headerlink" href="#pcep-pacing-guide-semester-2-tentative" title="Link to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Jan</span> <span class="pre">5</span> <span class="pre">–</span> <span class="pre">Jun</span> <span class="pre">(exam</span> <span class="pre">window</span> <span class="pre">TBD</span> <span class="pre">by</span> <span class="pre">district</span> <span class="pre">testing</span> <span class="pre">calendar)</span></code></p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
@@ -4384,7 +4569,7 @@ Blue Notebook	Sale Price: $24.99
 </section>
 <hr class="docutils" />
 <section id="numeral-systems">
-<h2>Numeral Systems<a class="headerlink" href="#numeral-systems" title="Link to this heading">¶</a></h2>
+<h3>Numeral Systems<a class="headerlink" href="#numeral-systems" title="Link to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">1.3</span></code> — Introduce numeral systems</p>
 <p>Python supports writing integer literals in multiple bases:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">decimal</span>     <span class="o">=</span> <span class="mi">255</span>        <span class="c1"># base 10</span>
@@ -4402,7 +4587,7 @@ Blue Notebook	Sale Price: $24.99
 </section>
 <hr class="docutils" />
 <section id="bitwise-operators">
-<h2>Bitwise Operators<a class="headerlink" href="#bitwise-operators" title="Link to this heading">¶</a></h2>
+<h3>Bitwise Operators<a class="headerlink" href="#bitwise-operators" title="Link to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">1.4</span></code></p>
 <p><strong>Why Bitwise Operators Matter</strong></p>
 <p>Bitwise operators work directly on the <strong>binary representation</strong> of numbers — the individual <code class="docutils literal notranslate"><span class="pre">0</span></code>s and <code class="docutils literal notranslate"><span class="pre">1</span></code>s — rather than on the number’s value as a whole. Most everyday Python code never needs them, but they matter for a few reasons worth knowing:</p>
@@ -4495,7 +4680,7 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </section>
 <hr class="docutils" />
 <section id="built-in-functions">
-<h2>Built-In Functions<a class="headerlink" href="#built-in-functions" title="Link to this heading">¶</a></h2>
+<h3>Built-In Functions<a class="headerlink" href="#built-in-functions" title="Link to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-2.G,</span> <span class="pre">AAP-3.B</span></code> — Use existing abstractions to manage complexity.
 <code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP-adjacent</span></code> — not a separately numbered PCEP-30-02 objective, but shows up throughout the certification exam’s code-reading questions.</p>
 <p><strong>Explanation</strong></p>
@@ -4587,6 +4772,7 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <li><p><code class="docutils literal notranslate"><span class="pre">sorted(iterable,</span> <span class="pre">key=func)</span></code> is the built-in most worth mastering.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">reduce()</span></code> needs an explicit import (<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">functools</span> <span class="pre">import</span> <span class="pre">reduce</span></code>).</p></li>
 </ul>
+</section>
 <section id="activity-grade-report-refactor">
 <h3>Activity: Grade Report Refactor<a class="headerlink" href="#activity-grade-report-refactor" title="Link to this heading">¶</a></h3>
 <p>Take the <strong>Grade Calculator</strong> activity you built earlier (Section 2) and refactor part of it using built-in functions instead of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
@@ -4660,10 +4846,9 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </table>
 </div>
 </section>
-</section>
 <hr class="docutils" />
 <section id="lambda-functions">
-<h2>Lambda Functions<a class="headerlink" href="#lambda-functions" title="Link to this heading">¶</a></h2>
+<h3>Lambda Functions<a class="headerlink" href="#lambda-functions" title="Link to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-2.G</span></code> <code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP-adjacent</span></code></p>
 <p><strong>Explanation</strong></p>
 <p>A <strong>lambda</strong> is a small, unnamed (“anonymous”) function written in a single line. It’s Python’s shorthand for a function you only need once — usually as an argument to another function like <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>, <code class="docutils literal notranslate"><span class="pre">map()</span></code>, or <code class="docutils literal notranslate"><span class="pre">filter()</span></code>. A lambda can only contain <strong>one expression</strong> and it automatically <code class="docutils literal notranslate"><span class="pre">return</span></code>s the result of that expression.</p>
@@ -4715,6 +4900,7 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <li><p>Never assign a lambda to a variable just to call it later — that’s what <code class="docutils literal notranslate"><span class="pre">def</span></code> is for.</p></li>
 <li><p>The most common, most useful pattern is <code class="docutils literal notranslate"><span class="pre">sorted(iterable,</span> <span class="pre">key=lambda</span> <span class="pre">item:</span> <span class="pre">...)</span></code>.</p></li>
 </ul>
+</section>
 <section id="activity-sort-it-your-way">
 <h3>Activity: Sort It Your Way<a class="headerlink" href="#activity-sort-it-your-way" title="Link to this heading">¶</a></h3>
 <p>Given a list of dictionaries representing books (<code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">author</span></code>, <code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">pages</span></code>), write <strong>three separate <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> calls</strong>, each using a different <code class="docutils literal notranslate"><span class="pre">lambda</span></code> key:</p>
@@ -4779,10 +4965,9 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </table>
 </div>
 </section>
-</section>
 <hr class="docutils" />
 <section id="frozensets">
-<h2>Frozensets<a class="headerlink" href="#frozensets" title="Link to this heading">¶</a></h2>
+<h3>Frozensets<a class="headerlink" href="#frozensets" title="Link to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-3.A,</span> <span class="pre">AAP-3.B</span></code> <code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP-adjacent</span></code></p>
 <p><strong>Explanation</strong></p>
 <p>A <strong>frozenset</strong> is exactly what it sounds like: a <code class="docutils literal notranslate"><span class="pre">set</span></code> that’s been frozen — <strong>immutable</strong>, just like a tuple is an immutable list. Once created, you cannot add, remove, or change its contents.</p>
@@ -4829,6 +5014,7 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">set</span></code> for a collection you plan to <strong>modify</strong>; use <code class="docutils literal notranslate"><span class="pre">frozenset</span></code> for a collection meant to stay <strong>constant</strong>.</p></li>
 <li><p>Reach for a <code class="docutils literal notranslate"><span class="pre">frozenset</span></code> specifically when you need to use a collection as a <strong>dictionary key</strong>.</p></li>
 </ul>
+</section>
 <section id="activity-class-roster-overlap">
 <h3>Activity: Class Roster Overlap<a class="headerlink" href="#activity-class-roster-overlap" title="Link to this heading">¶</a></h3>
 <p>Two teachers each have a frozenset of student names in their AP CSP class:</p>
@@ -4901,10 +5087,9 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </table>
 </div>
 </section>
-</section>
 <hr class="docutils" />
 <section id="exception-hierarchy-deep-dive">
-<h2>Exception Hierarchy Deep Dive<a class="headerlink" href="#exception-hierarchy-deep-dive" title="Link to this heading">¶</a></h2>
+<h3>Exception Hierarchy Deep Dive<a class="headerlink" href="#exception-hierarchy-deep-dive" title="Link to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">4.3</span></code> — Python Built-In Exceptions Hierarchy</p>
 <p>Section 4 back in the fall covered practical <code class="docutils literal notranslate"><span class="pre">try/except</span></code> and the common exceptions table — that’s everything you needed for the CPT. The PCEP exam goes one level deeper and expects you to know the actual <strong>class hierarchy</strong> exceptions are organized into.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>BaseException
@@ -4939,7 +5124,7 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </section>
 <hr class="docutils" />
 <section id="culminating-project-library-catalog-analyzer">
-<h2>Culminating Project: Library Catalog Analyzer<a class="headerlink" href="#culminating-project-library-catalog-analyzer" title="Link to this heading">¶</a></h2>
+<h3>Culminating Project: Library Catalog Analyzer<a class="headerlink" href="#culminating-project-library-catalog-analyzer" title="Link to this heading">¶</a></h3>
 <p>Build a program that reads a small library catalog from a text file, analyzes it using built-in functions and lambdas, and uses frozensets to answer genre questions — pulling together <strong>File Operations (Semester 1), Built-In Functions, Lambda Functions, and Frozensets (all above)</strong> into one working project. This is the natural capstone of the PCEP Certification Path.</p>
 <p><strong>Setup — <code class="docutils literal notranslate"><span class="pre">catalog.txt</span></code> format:</strong> one book per line, comma-separated: <code class="docutils literal notranslate"><span class="pre">title,author,year,genre1|genre2</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dune</span><span class="p">,</span><span class="n">Frank</span> <span class="n">Herbert</span><span class="p">,</span><span class="mi">1965</span><span class="p">,</span><span class="n">Sci</span><span class="o">-</span><span class="n">Fi</span><span class="o">|</span><span class="n">Adventure</span>
@@ -5066,9 +5251,9 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </section>
 <hr class="docutils" />
 <section id="certification-alignment-reference">
-<h1>Certification Alignment Reference<a class="headerlink" href="#certification-alignment-reference" title="Link to this heading">¶</a></h1>
+<h2>Certification Alignment Reference<a class="headerlink" href="#certification-alignment-reference" title="Link to this heading">¶</a></h2>
 <section id="pcep-30-02-exam-topic-map">
-<h2>PCEP-30-02 Exam Topic Map<a class="headerlink" href="#pcep-30-02-exam-topic-map" title="Link to this heading">¶</a></h2>
+<h3>PCEP-30-02 Exam Topic Map<a class="headerlink" href="#pcep-30-02-exam-topic-map" title="Link to this heading">¶</a></h3>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -5163,7 +5348,7 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </section>
 <hr class="docutils" />
 <section id="ap-csp-standards-alignment">
-<h2>AP CSP Standards Alignment<a class="headerlink" href="#ap-csp-standards-alignment" title="Link to this heading">¶</a></h2>
+<h3>AP CSP Standards Alignment<a class="headerlink" href="#ap-csp-standards-alignment" title="Link to this heading">¶</a></h3>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -5227,6 +5412,7 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <hr class="docutils" />
 <p><em>Document maintained for AP CSP and PCEP-30-02 certification alignment.</em>
 <em>Reorganized August 2026 — CSP-first, PCEP-Second Semester structure.</em></p>
+</section>
 </section>
 </section>
 
@@ -5321,23 +5507,17 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <li><a class="reference internal" href="#project-loop-concepts-activity-project">Project: Loop Concepts Activity Project</a></li>
 </ul>
 </li>
-</ul>
-</li>
 <li><a class="reference internal" href="#section-3-data-collections-lists-tuples-dictionaries-and-strings">Section 3 — Data Collections: Lists, Tuples, Dictionaries, and Strings</a><ul>
-<li><a class="reference internal" href="#strings">Strings</a><ul>
+<li><a class="reference internal" href="#strings">Strings</a></li>
 <li><a class="reference internal" href="#activity-receipt-formatter">Activity: Receipt Formatter</a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#lists">Lists</a></li>
 <li><a class="reference internal" href="#tuples">Tuples</a></li>
-<li><a class="reference internal" href="#dictionaries">Dictionaries</a><ul>
+<li><a class="reference internal" href="#dictionaries">Dictionaries</a></li>
 <li><a class="reference internal" href="#activity-student-contact-book">Activity: Student Contact Book</a></li>
 </ul>
 </li>
-</ul>
-</li>
 <li><a class="reference internal" href="#section-4-functions-and-exceptions">Section 4 — Functions and Exceptions</a><ul>
-<li><a class="reference internal" href="#functions-methods-and-procedures">Functions, Methods, and Procedures</a><ul>
+<li><a class="reference internal" href="#functions-methods-and-procedures">Functions, Methods, and Procedures</a></li>
 <li><a class="reference internal" href="#activity-math-operations-calculator">Activity: Math Operations Calculator</a></li>
 <li><a class="reference internal" href="#activity-recursion-practice-three-levels">Activity: Recursion Practice — Three Levels</a></li>
 </ul>
@@ -5350,8 +5530,6 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <li><a class="reference internal" href="#activity-safe-calculator">Activity: Safe Calculator</a></li>
 </ul>
 </li>
-</ul>
-</li>
 <li><a class="reference internal" href="#file-operations">File Operations</a><ul>
 <li><a class="reference internal" href="#activity-student-roster-file-manager">Activity: Student Roster File Manager</a></li>
 </ul>
@@ -5362,45 +5540,35 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <li><a class="reference internal" href="#building-a-class">Building a Class</a></li>
 <li><a class="reference internal" href="#types-of-methods">Types of Methods</a></li>
 <li><a class="reference internal" href="#inheritance">Inheritance</a></li>
-<li><a class="reference internal" href="#magic-dunder-methods">Magic / Dunder Methods</a><ul>
+<li><a class="reference internal" href="#magic-dunder-methods">Magic / Dunder Methods</a></li>
 <li><a class="reference internal" href="#activity-oop-zoo">Activity: OOP Zoo</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#ap-csp-performance-task-preparation">AP CSP Performance Task Preparation</a><ul>
 <li><a class="reference internal" href="#cpt-requirements-at-a-glance">CPT Requirements at a Glance</a></li>
 <li><a class="reference internal" href="#cpt-checklist-does-your-program-have">CPT Checklist — Does Your Program Have?</a></li>
-<li><a class="reference internal" href="#cpt-written-response-tips">CPT Written Response Tips</a><ul>
+<li><a class="reference internal" href="#cpt-written-response-tips">CPT Written Response Tips</a></li>
 <li><a class="reference internal" href="#activity-cpt-brainstorming-workshop">Activity: CPT Brainstorming Workshop</a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#practice-pt-1-idea-list">Practice PT 1 — Idea List</a></li>
 <li><a class="reference internal" href="#practice-pt-2-idea-list">Practice PT 2 — Idea List</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#final-project-options">Final Project Options</a><ul>
 <li><a class="reference internal" href="#option-a-text-based-adventure-game-beginnerintermediate">Option A — Text-Based Adventure Game (Beginner–Intermediate)</a></li>
 <li><a class="reference internal" href="#option-b-student-data-tracker-intermediate">Option B — Student Data Tracker (Intermediate)</a></li>
 <li><a class="reference internal" href="#option-c-mini-minesweeper-advanced">Option C — Mini Minesweeper (Advanced)</a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#pcep-certification-path-semester-2">PCEP Certification Path — Semester 2</a><ul>
 <li><a class="reference internal" href="#pcep-pacing-guide-semester-2-tentative">📅 PCEP Pacing Guide — Semester 2 (Tentative)</a></li>
 <li><a class="reference internal" href="#numeral-systems">Numeral Systems</a></li>
 <li><a class="reference internal" href="#bitwise-operators">Bitwise Operators</a></li>
-<li><a class="reference internal" href="#built-in-functions">Built-In Functions</a><ul>
+<li><a class="reference internal" href="#built-in-functions">Built-In Functions</a></li>
 <li><a class="reference internal" href="#activity-grade-report-refactor">Activity: Grade Report Refactor</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#lambda-functions">Lambda Functions</a><ul>
+<li><a class="reference internal" href="#lambda-functions">Lambda Functions</a></li>
 <li><a class="reference internal" href="#activity-sort-it-your-way">Activity: Sort It Your Way</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#frozensets">Frozensets</a><ul>
+<li><a class="reference internal" href="#frozensets">Frozensets</a></li>
 <li><a class="reference internal" href="#activity-class-roster-overlap">Activity: Class Roster Overlap</a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#exception-hierarchy-deep-dive">Exception Hierarchy Deep Dive</a></li>
 <li><a class="reference internal" href="#culminating-project-library-catalog-analyzer">Culminating Project: Library Catalog Analyzer</a></li>
 </ul>
@@ -5408,6 +5576,8 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <li><a class="reference internal" href="#certification-alignment-reference">Certification Alignment Reference</a><ul>
 <li><a class="reference internal" href="#pcep-30-02-exam-topic-map">PCEP-30-02 Exam Topic Map</a></li>
 <li><a class="reference internal" href="#ap-csp-standards-alignment">AP CSP Standards Alignment</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

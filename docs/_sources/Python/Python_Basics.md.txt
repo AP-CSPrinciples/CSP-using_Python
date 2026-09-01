@@ -1810,14 +1810,102 @@ for i in range(1, rows + 1):
 > **Extension (harder):** Add an *outer* `break` — if any single cell reads `>= 9` ("severe"), halt the **entire** scan immediately (whole dish is compromised), not just the > current row. This requires either a flag variable or restructuring into a function that `return`s early — a good bridge to why `break` alone can't exit two loops at once.
 >
 
+**Loop Concepts Activity Project — Grading Rubric**
+
+
+<details>
+  <summary>Click Here for Project Rubric</summary>
+
+************************************************************************************
+
+**Standards Alignment Reference**
+
+| Code | Standard | Where it shows up in this project |
+| --- | --- | --- |
+| `AP CSP AAP-2.E` | Develop algorithms using sequencing, selection, and iteration | Core loop + `if/elif/else` logic in all three activities |
+| `AP CSP AAP-2.K` | For loops | Activity 1 Part A; Activity 2 log scan; Activity 3 outer/inner loops |
+| `AP CSP AAP-3.B` | Use procedures/functions to manage complexity | Function decomposition (`classify_load`, `run_standardized_tests`, etc.) |
+| `AP CSP CRD-2.B` | Implement algorithms in a programming language | Overall program implementation |
+| `AP CSP CRD-2.J` | Identify, test, and correct errors in algorithms and programs | Test cases / sample runs; boundary conditions |
+| `PCEP 2.1` | Conditional statements | `if/elif/else` classification functions |
+| `PCEP 2.2` | Perform different types of iterations | `for`, `while`, `for...else`, `while...else`, nested loops, `break`/`continue` |
+| `PCEP 4.1` | Decompose code using functions | Functions with docstrings, single responsibility |
+
+**Applies to the following projects:** 
+
+- Activity 1 (Bridge Load Capacity Simulator)
+- Activity 2 (Network Intrusion Scanner)
+- Activity 3 (Petri Dish Contamination Scan) 
+
+**Total: 40 points** — 24 pts *Common Criteria* (all activities) + 16 pts *Concept-Specific Core Logic* (grade only the row matching the student's chosen activity).
+
+************************************************************************************
+
+**Common Criteria (24 pts — all activities)**
+
+| Criteria | Points |
+| --- | --- |
+| Header block complete (Assignment, Author, Description, etc.) and PEP 8 style followed | 3 |
+| Program runs without crashing on normal input | 3 |
+| Logic correctly decomposed into functions (no core logic crammed into `main()`) | 3 |
+| Custom functions include docstrings describing their purpose | 2 |
+| `if/elif/else` classification function (`classify_load`, severity check, or `classify_reading`) returns correct category for all threshold boundaries, including edge values | 4 |
+| Output format matches the sample output shown for the chosen activity (spacing, labels, rounding) | 4 |
+| Test cases / sample runs submitted, including at least one boundary or edge case (not just a "happy path" run) | 4 |
+| Code comments explain *what the loop is doing and why* at each key step, not just restating the code | 1 |
+
+************************************************************************************
+
+**Concept-Specific Core Logic (16 pts — score only the row that matches)**
+
+**Activity 1 — Bridge Load Capacity Simulator (`for` vs. `while`)**
+
+| Criteria | Points |
+| --- | --- |
+| `run_standardized_tests()` correctly uses a `for` loop for a **fixed** number of iterations (`num_tests`) | 4 |
+| `run_to_failure()` correctly uses a `while` loop that continues until load meets/exceeds capacity — condition-based, not counter-based | 4 |
+| Both functions correctly call `classify_load()` and report round/load/status each iteration | 4 |
+| Extension question answered correctly: explains *why* Part A could be forced into `while` but Part B cannot cleanly become a `for` loop without first computing the answer | 4 |
+
+**Activity 2 — Network Intrusion Scanner (`for...else`, `while...else`)**
+
+| Criteria | Points |
+| --- | --- |
+| `scan_connection_log()` correctly uses `for...else`: loop breaks on a blacklist match, `else` fires only when no match is ever found | 6 |
+| `check_access_code()` correctly uses `while...else` with an attempt counter: breaks on correct code, `else` fires only when attempts run out with no correct guess | 6 |
+| Nested `if` correctly classifies severity (CRITICAL vs. HIGH based on blacklist position) | 2 |
+| Extension question answered correctly: predicts, before running, which branch (`break` body vs. `else` body) fires when all attempts are wrong | 2 |
+
+**Activity 3 — Petri Dish Contamination Scan (nested `for`, `break`, `continue`)**
+
+| Criteria | Points |
+| --- | --- |
+| `scan_grid()` correctly nests two `for` loops (outer = row, inner = cell) and tracks position accurately | 4 |
+| `continue` correctly skips clean (`0`) cells without printing or counting them | 4 |
+| `break` correctly halts only the **inner** loop once the row's containment limit is reached, and scanning resumes on the next row | 4 |
+| `classify_reading()` correctly categorizes clean/low/moderate/severe at all boundary values | 2 |
+| Extension (harder) attempted: an outer break/flag or restructured function correctly halts the *entire* scan on a severe (`>= 9`) reading | 2 |
+
+************************************************************************************
+
+**Scoring Summary**
+
+| Section | Points |
+| --- | --- |
+| Common Criteria | 24 |
+| Concept-Specific Core Logic (chosen activity only) | 16 |
+| **Total** | **40** |
+
+</details>
+
 
 ---
 
 
-# Section 3 — Data Collections: Lists, Tuples, Dictionaries, and Strings
+## Section 3 — Data Collections: Lists, Tuples, Dictionaries, and Strings
 `📋 AP CSP: AAP-4.A` — Use data abstractions to manage complexity.
 
-## Strings
+### Strings
 
 `🔖 PCEP 3.4` — Operate with strings
 `📋 AP CSP: DAT-1.A`
@@ -1937,7 +2025,7 @@ Blue Notebook	Sale Price: $24.99
 
 ---
 
-## Lists
+### Lists
 
 `🔖 PCEP 3.1` — Collect and process data using lists
 `📋 AP CSP: AAP-4.A` — Lists for data abstraction
@@ -2050,7 +2138,7 @@ for row in grid:
 
 ---
 
-## Tuples
+### Tuples
 
 `🔖 PCEP 3.2` — Collect and process data using tuples
 
@@ -2091,7 +2179,7 @@ nested = [(1, "a"), (2, "b")]     # list of tuples
 
 ---
 
-## Dictionaries
+### Dictionaries
 
 `🔖 PCEP 3.3` — Collect and process data using dictionaries
 `📋 AP CSP: AAP-3.B` — Use abstractions to organize data.
@@ -2149,7 +2237,10 @@ for s in students:
 count = sum(1 for s in students if s["age"] == 14)
 ```
 
+
 <details><summary>🤔 Thinking Question — check your answer</summary>
+
+************************************************************************************
 
 **Question:** Why is a "list of dictionaries" (like `students` above) usually a better data abstraction for the CPT than several separate parallel lists like `names = [...]`, `ages = [...]`?
 
@@ -2219,10 +2310,10 @@ while True:
 
 ---
 
-# Section 4 — Functions and Exceptions
+## Section 4 — Functions and Exceptions
 `📋 AP CSP: AAP-3.B` — Use procedures/functions to manage complexity.
 
-## Functions, Methods, and Procedures
+### Functions, Methods, and Procedures
 
 `🔖 PCEP 4.1` — Decompose the code using functions
 `📋 AP CSP: AAP-3.B` — Abstractions; `CRD-2.G` — Call procedures.
@@ -2668,7 +2759,7 @@ while True:
 
 ---
 
-# File Operations
+## File Operations
 
 `📋 AP CSP: AAP-3.A, CRD-2.B, CRD-2.J` — Collect and represent data; implement and test programs.
 
@@ -2786,7 +2877,7 @@ log_score("Bob", 76)
 show_log()
 ```
 
-## Activity: Student Roster File Manager
+### Activity: Student Roster File Manager
 
 Write a program that manages a roster stored in a text file called `roster.txt` (one name per line).
 
@@ -2873,7 +2964,7 @@ if __name__ == "__main__":
 
 ---
 
-# Data Structures Deep Dive
+## Data Structures Deep Dive
 
 `📋 AP CSP: AAP-3.A, AAP-3.B, AAP-3.C`
 
@@ -2937,13 +3028,13 @@ first = queue.popleft()    # remove from the front → "first" (first one in, fi
 
 ---
 
-# Object-Oriented Programming (OOP)
+## Object-Oriented Programming (OOP)
 
 `📋 AP CSP: AAP-3.B` — Abstractions; `CRD-2.B` — Implement in a language.
 
 > **Why OOP?** Real programs model real-world things — students, cars, bank accounts, game characters. OOP lets us **group data and behavior** together in reusable, organized units called **classes**.
 
-## Core OOP Concepts
+### Core OOP Concepts
 
 **Key Vocabulary**
 
@@ -2959,7 +3050,7 @@ first = queue.popleft()    # remove from the front → "first" (first one in, fi
 | **Inheritance** | A child class acquires attributes/methods from a parent |
 | **Polymorphism** | Different classes can share the same method name |
 
-## Building a Class
+### Building a Class
 
 ```python
 class Car:
@@ -3004,7 +3095,7 @@ car1.year = 2023        # Modify an attribute
 **Answer:** `self` is how a method knows *which* object it's currently operating on. When you call `car1.start_engine()`, Python automatically passes `car1` in as `self`, so `self.make` inside the method refers to `car1`'s make specifically — not `car2`'s. Without `self`, a method would have no way to tell one object's data apart from another's.
 </details>
 
-## Types of Methods
+### Types of Methods
 
 ```python
 class Dog:
@@ -3026,7 +3117,7 @@ class Dog:
         return True
 ```
 
-## Inheritance
+### Inheritance
 
 <mark>**Inheritance** allows a **child class** to reuse and extend the behavior of a **parent class**.</mark>
 
@@ -3058,7 +3149,7 @@ for animal in animals:
 **Answer:** This is **polymorphism** — different classes responding to the same method call in their own way. It's useful because the loop doesn't need to know or care whether each item is a `Dog` or a `Cat`; it just calls `.speak()` and trusts each object to know how to respond correctly. This lets you add a `Bird` class later without ever touching the loop.
 </details>
 
-## Magic / Dunder Methods
+### Magic / Dunder Methods
 
 ```python
 class BankAccount:
@@ -3175,13 +3266,13 @@ Design a role-playing game character system using OOP:
 
 ---
 
-# AP CSP Performance Task Preparation
+## AP CSP Performance Task Preparation
 
 `📋 AP CSP: CRD-2` — Program Design and Development
 
 > The **AP CSP Create Performance Task (CPT)** is 30% of your AP score. You write a program and submit written responses explaining it. Everything in Sections 1–4, File Operations, Data Structures, and OOP above was chosen and sequenced specifically to get you ready for this. This section ties it all together.
 
-## CPT Requirements at a Glance
+### CPT Requirements at a Glance
 
 | Requirement | Description |
 |---|---|
@@ -3191,7 +3282,7 @@ Design a role-playing game character system using OOP:
 | **Procedure with parameter** | A function that takes input and affects behavior |
 | **Output** | Must produce visible output based on input |
 
-## CPT Checklist — Does Your Program Have?
+### CPT Checklist — Does Your Program Have?
 
 ☐ A clear **purpose** that solves a meaningful problem
 
@@ -3236,7 +3327,7 @@ Design a role-playing game character system using OOP:
 > ```
 > Checklist walk-through: purpose (calculate discounted checkout totals) ✅, input (the `prices`/`member_status` lists stand in for real input — a live CPT would use `input()` or a data file) ✅, sequencing/selection/iteration ✅ (the `for` loop + `if`), abstraction (the `prices` list) ✅, function with a parameter that's called twice with different arguments ✅, visible output ✅. This is intentionally small — your actual CPT program should be a full, original idea, but every one of these six boxes has to be checkable in it exactly like this.
 
-## CPT Written Response Tips
+### CPT Written Response Tips
 
 **Prompt 3a — Program Function and Purpose:**
 - Describe what your program does and the **problem it solves**
@@ -3271,7 +3362,7 @@ Select the strongest idea and create a one-page project proposal.
 
 ---
 
-## Practice PT 1 — Idea List
+### Practice PT 1 — Idea List
 
 Use these for the **Practice PT 1** window (Weeks 8–11). Each idea below already satisfies the CPT checklist — the point of Practice PT 1 is rehearsing the *process* (design → code → test → written responses) on a smaller, guided idea before the pressure of the real thing. Pick ONE, or propose your own and run it past your teacher.
 
@@ -3289,7 +3380,7 @@ Use these for the **Practice PT 1** window (Weeks 8–11). Each idea below alrea
 - **Week 10:** Build the full program around the function — the loop, the list, the two function calls with different arguments.
 - **Week 11 (due Fri):** Test edge cases (empty input, unexpected input), then write your four written responses (3a–3d) using the CPT Written Response Tips above.
 
-## Practice PT 2 — Idea List
+### Practice PT 2 — Idea List
 
 Use these for the **Practice PT 2** window (Weeks 12–14). These are intentionally a step up from Practice PT 1 — most naturally pull in a **dictionary or list-of-dictionaries**, File Operations, or OOP (all covered by Week 12), which the official December CPT will likely also benefit from.
 
@@ -3310,7 +3401,7 @@ Use these for the **Practice PT 2** window (Weeks 12–14). These are intentiona
 
 # Final Project Options
 
-## Option A — Text-Based Adventure Game (Beginner–Intermediate)
+### Option A — Text-Based Adventure Game (Beginner–Intermediate)
 
 Build a multi-room text adventure with:
 - Classes for `Player`, `Room`, and `Item`
@@ -3325,7 +3416,7 @@ Build a multi-room text adventure with:
 
 ---
 
-## Option B — Student Data Tracker (Intermediate)
+### Option B — Student Data Tracker (Intermediate)
 
 Build a command-line tracker that:
 - Stores student records as a list of dictionaries
@@ -3339,7 +3430,7 @@ Build a command-line tracker that:
 
 ---
 
-## Option C — Mini Minesweeper (Advanced)
+### Option C — Mini Minesweeper (Advanced)
 
 Build a simplified Minesweeper game using Python and Tkinter with OOP design.
 
@@ -3456,13 +3547,13 @@ root.mainloop()
 
 ---
 
-# PCEP Certification Path — Semester 2
+## PCEP Certification Path — Semester 2
 
 `🏅 Semester 2, Jan – June`
 
 > **What this section is:** everything that's specifically on the PCEP-30-02 exam but wasn't needed for the AP CSP CPT — pulled out of Semester 1 so it doesn't compete with CPT prep, and spread across Semester 2 at a pace that gives it room to actually stick. You already have a full year of general Python fluency (Sections 1–4, File Operations, OOP) under your belt by the time you start this section — that foundation is what makes this content approachable now instead of overwhelming back in the fall.
 
-## 📅 PCEP Pacing Guide — Semester 2 (Tentative)
+### 📅 PCEP Pacing Guide — Semester 2 (Tentative)
 
 `Jan 5 – Jun (exam window TBD by district testing calendar)`
 
@@ -3480,7 +3571,7 @@ root.mainloop()
 
 ---
 
-## Numeral Systems
+### Numeral Systems
 
 `🔖 PCEP 1.3` — Introduce numeral systems
 
@@ -3504,7 +3595,7 @@ print(binary, octal, hexadecimal)  # All print: 255 255 255
 
 ---
 
-## Bitwise Operators
+### Bitwise Operators
 
 `🔖 PCEP 1.4`
 
@@ -3621,7 +3712,7 @@ print(a >> 1)  # Right shift → 5
 
 ---
 
-## Built-In Functions
+### Built-In Functions
 
 `📋 AP CSP: AAP-2.G, AAP-3.B` — Use existing abstractions to manage complexity.
 `🔖 PCEP-adjacent` — not a separately numbered PCEP-30-02 objective, but shows up throughout the certification exam's code-reading questions.
@@ -3734,7 +3825,7 @@ if __name__ == "__main__":
 
 ---
 
-## Lambda Functions
+### Lambda Functions
 
 `📋 AP CSP: AAP-2.G` `🔖 PCEP-adjacent`
 
@@ -3833,7 +3924,7 @@ for b in by_title_len:
 
 ---
 
-## Frozensets
+### Frozensets
 
 `📋 AP CSP: AAP-3.A, AAP-3.B` `🔖 PCEP-adjacent`
 
@@ -3940,7 +4031,7 @@ if __name__ == "__main__":
 
 ---
 
-## Exception Hierarchy Deep Dive
+### Exception Hierarchy Deep Dive
 
 `🔖 PCEP 4.3` — Python Built-In Exceptions Hierarchy
 
@@ -3981,7 +4072,7 @@ except Exception:           # broader fallback
 
 ---
 
-## Culminating Project: Library Catalog Analyzer
+### Culminating Project: Library Catalog Analyzer
 
 Build a program that reads a small library catalog from a text file, analyzes it using built-in functions and lambdas, and uses frozensets to answer genre questions — pulling together **File Operations (Semester 1), Built-In Functions, Lambda Functions, and Frozensets (all above)** into one working project. This is the natural capstone of the PCEP Certification Path.
 
@@ -4093,9 +4184,9 @@ if __name__ == "__main__":
 
 ---
 
-# Certification Alignment Reference
+## Certification Alignment Reference
 
-## PCEP-30-02 Exam Topic Map
+### PCEP-30-02 Exam Topic Map
 
 | PCEP Objective | Topics | Covered In |
 |---|---|---|
@@ -4123,7 +4214,7 @@ if __name__ == "__main__":
 
 ---
 
-## AP CSP Standards Alignment
+### AP CSP Standards Alignment
 
 | AP CSP Standard | Description | Covered In |
 |---|---|---|
