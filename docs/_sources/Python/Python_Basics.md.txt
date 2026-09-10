@@ -2063,6 +2063,18 @@ phrase = input("Enter a phrase: ")
 
 **Sample:** `"as soon as possible"` → `ASAP`
 
+
+**Submit your `.py` file and test cases showing that your program worked as intended.** 
+
+```python
+#       Assignment:  String Practice
+#       Author:      [Your Name]
+#       Course Name: AP Computer Science Principles
+#       Description: Using string methods to manipulate strings
+#       Language:    Python 3.x
+```
+
+
 *PCEP: 3.4 | AP CSP: DAT-1.A*
 
 ---
