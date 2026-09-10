@@ -2701,6 +2701,7 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 <span class="c1"># TODO 4) print every other character</span>
 </pre></div>
 </div>
+<p>#############################################################################</p>
 <p><strong>S2 — Name Formatter</strong></p>
 <p>Ask the user for their first and last name in <strong>one</strong> <code class="docutils literal notranslate"><span class="pre">input()</span></code> call (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;marco</span> <span class="pre">reyes&quot;</span></code>), typed messily (any case, extra spaces). Use <code class="docutils literal notranslate"><span class="pre">.strip()</span></code>, <code class="docutils literal notranslate"><span class="pre">.split()</span></code>, and <code class="docutils literal notranslate"><span class="pre">.title()</span></code> to print it cleanly as <code class="docutils literal notranslate"><span class="pre">&quot;Reyes,</span> <span class="pre">Marco&quot;</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">full_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your first and last name: "</span><span class="p">)</span>
@@ -2710,6 +2711,7 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 <span class="c1"># TODO 3) print as "Last, First" using .title()</span>
 </pre></div>
 </div>
+<p>#############################################################################</p>
 <p><strong>S3 — Palindrome Checker</strong></p>
 <p>Ask the user for a word. Using slicing (<code class="docutils literal notranslate"><span class="pre">[::-1]</span></code>) — no loops needed — check if it reads the same forwards and backwards. Ignore case.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a word: "</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
@@ -2717,6 +2719,7 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 <span class="c1"># TODO: compare word to its reversed slice, print True/False</span>
 </pre></div>
 </div>
+<p>#############################################################################</p>
 <p><strong>S4 — Vowel Counter</strong></p>
 <p>Ask for a sentence. Count how many vowels (<code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">e,</span> <span class="pre">i,</span> <span class="pre">o,</span> <span class="pre">u</span></code>, either case) it contains using <code class="docutils literal notranslate"><span class="pre">.count()</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a sentence: "</span><span class="p">)</span>
@@ -2724,6 +2727,7 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 <span class="c1"># TODO: count vowels using .count() for each vowel letter</span>
 </pre></div>
 </div>
+<p>#############################################################################</p>
 <p><strong>S5 — Find and Replace Censor</strong></p>
 <p>Ask for a sentence and a “banned word.” Use <code class="docutils literal notranslate"><span class="pre">.find()</span></code> to check if the word appears, then <code class="docutils literal notranslate"><span class="pre">.replace()</span></code> to swap every occurrence with asterisks matching its length (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;spam&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;****&quot;</span></code>).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a sentence: "</span><span class="p">)</span>
@@ -2733,6 +2737,7 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 <span class="c1"># TODO 2) if present, use .replace() to swap it with "*" * len(banned)</span>
 </pre></div>
 </div>
+<p>#############################################################################</p>
 <p><strong>S6 — Acronym Generator</strong></p>
 <p>Ask for a multi-word phrase (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;as</span> <span class="pre">soon</span> <span class="pre">as</span> <span class="pre">possible&quot;</span></code>). Use <code class="docutils literal notranslate"><span class="pre">.split()</span></code> to get the words, grab the first letter of each with a loop or comprehension, and <code class="docutils literal notranslate"><span class="pre">.join()</span></code> them into an uppercase acronym.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">phrase</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a phrase: "</span><span class="p">)</span>
@@ -2742,7 +2747,43 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 <p><strong>Sample:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;as</span> <span class="pre">soon</span> <span class="pre">as</span> <span class="pre">possible&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">ASAP</span></code></p>
-<p><strong>Submit your <code class="docutils literal notranslate"><span class="pre">.py</span></code> file and test cases showing that your program worked as intended.</strong></p>
+<p>#############################################################################</p>
+<p><strong>S7 — Pig Latin Translator</strong></p>
+<p>Pig Latin Translator**</p>
+<p>Ask the user for a full sentence. Use <code class="docutils literal notranslate"><span class="pre">.split()</span></code> to break it into words, translate <strong>each word</strong> to Pig Latin, then <code class="docutils literal notranslate"><span class="pre">.join()</span></code> them back into a sentence:</p>
+<ul class="simple">
+<li><p>If a word starts with a vowel, add <code class="docutils literal notranslate"><span class="pre">&quot;way&quot;</span></code> to the end.</p></li>
+<li><p>If a word starts with a consonant, move just the <strong>first letter</strong> to the end, then add <code class="docutils literal notranslate"><span class="pre">&quot;ay&quot;</span></code>.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a sentence: "</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">vowels</span> <span class="o">=</span> <span class="s2">"aeiou"</span>
+
+<span class="c1"># TODO 1) split the sentence into a list of words</span>
+<span class="c1"># TODO 2) loop through the words; for each word:</span>
+<span class="c1">#         - if word[0] is a vowel: translated = word + "way"</span>
+<span class="c1">#         - if word[0] is a consonant: translated = word[1:] + word[0] + "ay"</span>
+<span class="c1">#         - append translated to a new list</span>
+<span class="c1"># TODO 3) join the translated words back into a sentence with " "</span>
+<span class="c1"># TODO 4) print the translated sentence</span>
+</pre></div>
+</div>
+<p><strong>Sample:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;the</span> <span class="pre">pig</span> <span class="pre">ran&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;hetay</span> <span class="pre">igpay</span> <span class="pre">anray&quot;</span></code></p>
+<p><strong>Extension — Decode Pig Latin back to English:</strong> Given a Pig Latin sentence, translate it back to English. For each word: if it ends in <code class="docutils literal notranslate"><span class="pre">&quot;way&quot;</span></code>, strip <code class="docutils literal notranslate"><span class="pre">&quot;way&quot;</span></code> off (it started with a vowel). Otherwise, strip <code class="docutils literal notranslate"><span class="pre">&quot;ay&quot;</span></code> off the end, then move the <strong>last remaining letter</strong> back to the front (it was the consonant that got moved).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pig_sentence</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a Pig Latin sentence: "</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="c1"># TODO 1) split into words</span>
+<span class="c1"># TODO 2) loop through the words; for each word:</span>
+<span class="c1">#         - if it ends with "way": original = word without the "way"</span>
+<span class="c1">#         - otherwise: strip the "ay", then move the LAST letter of</span>
+<span class="c1">#           what's left back to the front:</span>
+<span class="c1">#           original = remainder[-1] + remainder[:-1]</span>
+<span class="c1"># TODO 3) join and print the decoded sentence</span>
+</pre></div>
+</div>
+<p><strong>Try it:</strong> decode <code class="docutils literal notranslate"><span class="pre">&quot;hetay</span> <span class="pre">igpay</span> <span class="pre">anray&quot;</span></code> — you should get back <code class="docutils literal notranslate"><span class="pre">&quot;the</span> <span class="pre">pig</span> <span class="pre">ran&quot;</span></code>.</p>
+<p><strong>🤔 Discussion:</strong> Try encoding a word that starts with the letter <strong>w</strong>, like <code class="docutils literal notranslate"><span class="pre">&quot;wave&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;aveway&quot;</span></code>. Now try decoding <code class="docutils literal notranslate"><span class="pre">&quot;aveway&quot;</span></code> — does it come back as <code class="docutils literal notranslate"><span class="pre">&quot;wave&quot;</span></code>? <em>(It won’t! The decoder sees it ends in <code class="docutils literal notranslate"><span class="pre">&quot;way&quot;</span></code> and assumes it started with a vowel, since that’s the exact same ending a consonant-<code class="docutils literal notranslate"><span class="pre">w</span></code> word produces. This is a nice bug to trace by hand: a single moved letter can accidentally recreate the “started with a vowel” signal. Real ciphers need to guarantee their encoding is unambiguous to decode — this is why, in the XOR cipher extension from the steganography lab, we cared about avoiding collisions too.)</em></p>
+<p>#############################################################################</p>
+<p><strong>Submit your .py file and test cases showing that your program worked as intended.</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#       Assignment:  String Practice</span>
 <span class="c1">#       Author:      [Your Name]</span>
 <span class="c1">#       Course Name: AP Computer Science Principles</span>
@@ -3279,7 +3320,7 @@ Blue Notebook	Sale Price: $24.99
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">AP</span> <span class="pre">CSP</span> <span class="pre">DAT-1.A</span></code></p></td>
 <td><p>Explain how data can be represented using bits</p></td>
-<td><p>Strings, Drills S1–S6, Receipt Formatter</p></td>
+<td><p>Strings, Drills S1–S7, Receipt Formatter</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AP</span> <span class="pre">CSP</span> <span class="pre">AAP-3.B</span></code></p></td>
 <td><p>Use abstractions to organize data</p></td>
@@ -3299,7 +3340,7 @@ Blue Notebook	Sale Price: $24.99
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PCEP</span> <span class="pre">3.4</span></code></p></td>
 <td><p>Operate with strings</p></td>
-<td><p>Strings, Drills S1–S6, Receipt Formatter</p></td>
+<td><p>Strings, Drills S1–S7, Receipt Formatter</p></td>
 </tr>
 </tbody>
 </table>
