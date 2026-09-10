@@ -2577,10 +2577,9 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 <p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-4.A</span></code> — Use data abstractions to manage complexity.</p>
 <section id="strings">
 <h3>Strings<a class="headerlink" href="#strings" title="Link to this heading">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.4</span></code> — Operate with strings
-<code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">DAT-1.A</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.4</span> <span class="pre">—</span> <span class="pre">Operate</span> <span class="pre">with</span> <span class="pre">strings</span></code> <code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">DAT-1.A</span></code></p>
 <p>Strings are <strong>ordered, immutable</strong> sequences of characters.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span> <span class="o">=</span> <span class="s2">"Hello, World!"</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span> <span class="o">=</span> <span class="s2">"Hello, World!"</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>       <span class="c1"># H      (indexing)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>      <span class="c1"># !      (negative index)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>     <span class="c1"># Hello  (slicing)</span>
@@ -2595,14 +2594,14 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 <p><strong>Escape Characters</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"She said </span><span class="se">\"</span><span class="s2">Hello</span><span class="se">\"</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># She said "Hello"</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"She said </span><span class="se">\"</span><span class="s2">Hello</span><span class="se">\"</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># She said "Hello"</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Line 1</span><span class="se">\n</span><span class="s2">Line 2"</span><span class="p">)</span>      <span class="c1"># newline</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Col1</span><span class="se">\t</span><span class="s2">Col2"</span><span class="p">)</span>          <span class="c1"># tab</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Backslash: </span><span class="se">\\</span><span class="s2">"</span><span class="p">)</span>       <span class="c1"># \</span>
 </pre></div>
 </div>
 <p><strong>Multi-line Strings</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">poem</span> <span class="o">=</span> <span class="s2">"""</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">poem</span> <span class="o">=</span> <span class="s2">"""</span>
 <span class="s2">Roses are red,</span>
 <span class="s2">Violets are blue.</span>
 <span class="s2">"""</span>
@@ -2669,13 +2668,12 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 </tbody>
 </table>
 </div>
-<details><summary>🤔 Thinking Question — check your answer</summary>
+<p><strong>🤔 Thinking Question — check your answer</strong></p>
 <p><strong>Question:</strong> <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">&quot;</span>&#160; <span class="pre">Ada</span> <span class="pre">Lovelace</span>&#160; <span class="pre">&quot;</span></code>. What does <code class="docutils literal notranslate"><span class="pre">name.strip().upper()</span></code> return, and why does the order of the two method calls matter here?</p>
 <p><strong>Answer:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;ADA</span> <span class="pre">LOVELACE&quot;</span></code>. <code class="docutils literal notranslate"><span class="pre">.strip()</span></code> removes the leading/trailing whitespace first, then <code class="docutils literal notranslate"><span class="pre">.upper()</span></code> capitalizes the result. Because strings are immutable, each method returns a <strong>new</strong> string rather than modifying <code class="docutils literal notranslate"><span class="pre">name</span></code> in place — that’s why you can “chain” methods like this, each one operating on the result of the one before it. Order rarely matters for <code class="docutils literal notranslate"><span class="pre">.strip()</span></code>/<code class="docutils literal notranslate"><span class="pre">.upper()</span></code> specifically, but it does for methods that depend on exact spacing, like <code class="docutils literal notranslate"><span class="pre">.startswith()</span></code>.</p>
-</details>
 <blockquote>
 <div><p>📌 <strong>Worked Example — string methods in a different context (library due-date slip)</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">book_title</span> <span class="o">=</span> <span class="s2">"  the hobbit   "</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">book_title</span> <span class="o">=</span> <span class="s2">"  the hobbit   "</span>
 <span class="n">library_name</span> <span class="o">=</span> <span class="s2">"westview public library"</span>
 <span class="n">due_date</span> <span class="o">=</span> <span class="s2">"09/15"</span>
 
@@ -2689,6 +2687,63 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 </div>
 <p>This shows the same <em>techniques</em> the Receipt Formatter asks for — <code class="docutils literal notranslate"><span class="pre">.strip()</span></code> to clean messy input, <code class="docutils literal notranslate"><span class="pre">.upper()</span></code>/<code class="docutils literal notranslate"><span class="pre">.title()</span></code> for capitalization, <code class="docutils literal notranslate"><span class="pre">\t</span></code> for column alignment, and a quoted message with <code class="docutils literal notranslate"><span class="pre">\&quot;</span></code> — applied to a library slip instead of a receipt.</p>
 </div></blockquote>
+<hr class="docutils" />
+<section id="practice-drills-strings">
+<h4>Practice Drills — Strings<a class="headerlink" href="#practice-drills-strings" title="Link to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">single-concept</span> <span class="pre">reps,</span> <span class="pre">10–15</span> <span class="pre">min</span> <span class="pre">each</span> <span class="pre">—</span> <span class="pre">do</span> <span class="pre">these</span> <span class="pre">before</span> <span class="pre">or</span> <span class="pre">alongside</span> <span class="pre">Receipt</span> <span class="pre">Formatter</span> <span class="pre">below.</span></code></p>
+<p><strong>S1 — String Slicer</strong></p>
+<p>Given <code class="docutils literal notranslate"><span class="pre">phrase</span> <span class="pre">=</span> <span class="pre">&quot;Computer</span> <span class="pre">Science</span> <span class="pre">Principles&quot;</span></code>, without hardcoding letters, use slicing/indexing to print: (1) just <code class="docutils literal notranslate"><span class="pre">&quot;Computer&quot;</span></code>, (2) just <code class="docutils literal notranslate"><span class="pre">&quot;Principles&quot;</span></code>, (3) the whole phrase reversed, (4) every other character.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">phrase</span> <span class="o">=</span> <span class="s2">"Computer Science Principles"</span>
+
+<span class="c1"># TODO 1) print "Computer" using slicing</span>
+<span class="c1"># TODO 2) print "Principles" using slicing</span>
+<span class="c1"># TODO 3) print the phrase reversed</span>
+<span class="c1"># TODO 4) print every other character</span>
+</pre></div>
+</div>
+<p><strong>S2 — Name Formatter</strong></p>
+<p>Ask the user for their first and last name in <strong>one</strong> <code class="docutils literal notranslate"><span class="pre">input()</span></code> call (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;marco</span> <span class="pre">reyes&quot;</span></code>), typed messily (any case, extra spaces). Use <code class="docutils literal notranslate"><span class="pre">.strip()</span></code>, <code class="docutils literal notranslate"><span class="pre">.split()</span></code>, and <code class="docutils literal notranslate"><span class="pre">.title()</span></code> to print it cleanly as <code class="docutils literal notranslate"><span class="pre">&quot;Reyes,</span> <span class="pre">Marco&quot;</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">full_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your first and last name: "</span><span class="p">)</span>
+
+<span class="c1"># TODO 1) strip() the input</span>
+<span class="c1"># TODO 2) split() into first and last</span>
+<span class="c1"># TODO 3) print as "Last, First" using .title()</span>
+</pre></div>
+</div>
+<p><strong>S3 — Palindrome Checker</strong></p>
+<p>Ask the user for a word. Using slicing (<code class="docutils literal notranslate"><span class="pre">[::-1]</span></code>) — no loops needed — check if it reads the same forwards and backwards. Ignore case.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a word: "</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="c1"># TODO: compare word to its reversed slice, print True/False</span>
+</pre></div>
+</div>
+<p><strong>S4 — Vowel Counter</strong></p>
+<p>Ask for a sentence. Count how many vowels (<code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">e,</span> <span class="pre">i,</span> <span class="pre">o,</span> <span class="pre">u</span></code>, either case) it contains using <code class="docutils literal notranslate"><span class="pre">.count()</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a sentence: "</span><span class="p">)</span>
+
+<span class="c1"># TODO: count vowels using .count() for each vowel letter</span>
+</pre></div>
+</div>
+<p><strong>S5 — Find and Replace Censor</strong></p>
+<p>Ask for a sentence and a “banned word.” Use <code class="docutils literal notranslate"><span class="pre">.find()</span></code> to check if the word appears, then <code class="docutils literal notranslate"><span class="pre">.replace()</span></code> to swap every occurrence with asterisks matching its length (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;spam&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;****&quot;</span></code>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a sentence: "</span><span class="p">)</span>
+<span class="n">banned</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a word to censor: "</span><span class="p">)</span>
+
+<span class="c1"># TODO 1) use .find() to check if banned word is present</span>
+<span class="c1"># TODO 2) if present, use .replace() to swap it with "*" * len(banned)</span>
+</pre></div>
+</div>
+<p><strong>S6 — Acronym Generator</strong></p>
+<p>Ask for a multi-word phrase (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;as</span> <span class="pre">soon</span> <span class="pre">as</span> <span class="pre">possible&quot;</span></code>). Use <code class="docutils literal notranslate"><span class="pre">.split()</span></code> to get the words, grab the first letter of each with a loop or comprehension, and <code class="docutils literal notranslate"><span class="pre">.join()</span></code> them into an uppercase acronym.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">phrase</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a phrase: "</span><span class="p">)</span>
+
+<span class="c1"># TODO: split the phrase into words, take the first letter of each,</span>
+<span class="c1">#       join them into an uppercase acronym</span>
+</pre></div>
+</div>
+<p><strong>Sample:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;as</span> <span class="pre">soon</span> <span class="pre">as</span> <span class="pre">possible&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">ASAP</span></code></p>
+<p><em>PCEP: 3.4 | AP CSP: DAT-1.A</em></p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="activity-receipt-formatter">
@@ -2714,7 +2769,7 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 </ol>
 <p><strong>Sample interaction:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Enter store name: target
-Enter item name:   blue notebook   
+Enter item name:   blue notebook  
 Enter price: 24.99
 
 TARGET
@@ -2728,17 +2783,16 @@ Blue Notebook	Sale Price: $24.99
 <hr class="docutils" />
 <section id="lists">
 <h3>Lists<a class="headerlink" href="#lists" title="Link to this heading">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.1</span></code> — Collect and process data using lists
-<code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-4.A</span></code> — Lists for data abstraction</p>
+<p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.1</span> <span class="pre">—</span> <span class="pre">Collect</span> <span class="pre">and</span> <span class="pre">process</span> <span class="pre">data</span> <span class="pre">using</span> <span class="pre">lists</span></code> <code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-4.A</span> <span class="pre">—</span> <span class="pre">Lists</span> <span class="pre">for</span> <span class="pre">data</span> <span class="pre">abstraction</span></code></p>
 <p>A <strong>list</strong> is an <strong>ordered, mutable</strong> sequence. It is the most versatile data collection in Python — and the collection type the AP CSP CPT specifically requires you to use.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"apple"</span><span class="p">,</span> <span class="s2">"banana"</span><span class="p">,</span> <span class="s2">"cherry"</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"apple"</span><span class="p">,</span> <span class="s2">"banana"</span><span class="p">,</span> <span class="s2">"cherry"</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>       <span class="c1"># apple</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>      <span class="c1"># cherry</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>     <span class="c1"># ['banana', 'cherry']</span>
 </pre></div>
 </div>
 <p><strong>Common List Methods</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"orange"</span><span class="p">)</span>        <span class="c1"># Add to end</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"orange"</span><span class="p">)</span>        <span class="c1"># Add to end</span>
 <span class="n">fruits</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"blueberry"</span><span class="p">)</span>  <span class="c1"># Insert at index</span>
 <span class="n">fruits</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">"banana"</span><span class="p">)</span>        <span class="c1"># Remove by value</span>
 <span class="n">popped</span> <span class="o">=</span> <span class="n">fruits</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>          <span class="c1"># Remove &amp; return last item</span>
@@ -2751,7 +2805,7 @@ Blue Notebook	Sale Price: $24.99
 </pre></div>
 </div>
 <p><strong>Iterating Through Lists</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fruits</span><span class="p">):</span>
@@ -2759,7 +2813,7 @@ Blue Notebook	Sale Price: $24.99
 </pre></div>
 </div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> Operators</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"apple"</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">)</span>       <span class="c1"># True</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"apple"</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">)</span>       <span class="c1"># True</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"grape"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">)</span>   <span class="c1"># True</span>
 </pre></div>
 </div>
@@ -2774,7 +2828,7 @@ Blue Notebook	Sale Price: $24.99
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">condition</span></code></strong> <em>(optional)</em> — only include the item if this is <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
 </ul>
 <p>The traditional loop version and the comprehension version produce the <em>exact same result</em> — the comprehension is just shorter:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Traditional loop</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Traditional loop</span>
 <span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
@@ -2783,23 +2837,23 @@ Blue Notebook	Sale Price: $24.99
 <span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span>     <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span>     <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 <span class="n">evens</span>       <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
 <span class="n">upper_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"hi"</span><span class="p">,</span> <span class="s2">"bye"</span><span class="p">]]</span>
 </pre></div>
 </div>
 <blockquote>
-<div><p><mark><strong>When to use which:</strong> list comprehensions are great for simple, one-line transformations. If your loop needs multiple steps, <code class="docutils literal notranslate"><span class="pre">print()</span></code> statements along the way, or complex logic, a traditional <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is usually more readable — don’t force a comprehension just because it’s shorter. Readability counts, per PEP 8.</mark></p>
+<div><p>==<strong>When to use which:</strong> list comprehensions are great for simple, one-line transformations. If your loop needs multiple steps, <code class="docutils literal notranslate"><span class="pre">print()</span></code> statements along the way, or complex logic, a traditional <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is usually more readable — don’t force a comprehension just because it’s shorter. Readability counts, per PEP 8.==</p>
 </div></blockquote>
 <p><strong>Copying vs. Cloning</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">original</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">original</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">alias</span>    <span class="o">=</span> <span class="n">original</span>        <span class="c1"># NOT a copy — both point to same list</span>
 <span class="n">clone</span>    <span class="o">=</span> <span class="n">original</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># Independent copy</span>
 <span class="n">clone2</span>   <span class="o">=</span> <span class="n">original</span><span class="p">[:]</span>     <span class="c1"># Also a copy (slicing)</span>
 </pre></div>
 </div>
 <p><strong>2D Lists (Matrices)</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
     <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
     <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
@@ -2813,17 +2867,88 @@ Blue Notebook	Sale Price: $24.99
     <span class="nb">print</span><span class="p">()</span>
 </pre></div>
 </div>
-<details><summary>🤔 Thinking Question — check your answer</summary>
+<p><strong>🤔 Thinking Question — check your answer</strong></p>
 <p><strong>Question:</strong> <code class="docutils literal notranslate"><span class="pre">original</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> then <code class="docutils literal notranslate"><span class="pre">alias</span> <span class="pre">=</span> <span class="pre">original</span></code> then <code class="docutils literal notranslate"><span class="pre">alias.append(4)</span></code>. What does <code class="docutils literal notranslate"><span class="pre">print(original)</span></code> show, and why?</p>
 <p><strong>Answer:</strong> <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code>. <code class="docutils literal notranslate"><span class="pre">alias</span> <span class="pre">=</span> <span class="pre">original</span></code> did <strong>not</strong> create a copy — it made <code class="docutils literal notranslate"><span class="pre">alias</span></code> point to the exact same list object in memory as <code class="docutils literal notranslate"><span class="pre">original</span></code>. Modifying <code class="docutils literal notranslate"><span class="pre">alias</span></code> (with <code class="docutils literal notranslate"><span class="pre">.append()</span></code>) modifies the one and only list both names refer to. To get an independent copy, you’d need <code class="docutils literal notranslate"><span class="pre">alias</span> <span class="pre">=</span> <span class="pre">original.copy()</span></code> or <code class="docutils literal notranslate"><span class="pre">alias</span> <span class="pre">=</span> <span class="pre">original[:]</span></code>. This is the same idea as the <code class="docutils literal notranslate"><span class="pre">is</span></code> vs <code class="docutils literal notranslate"><span class="pre">==</span></code> distinction from Section 1.</p>
-</details>
+<hr class="docutils" />
+<section id="practice-drills-lists">
+<h4>Practice Drills — Lists<a class="headerlink" href="#practice-drills-lists" title="Link to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">single-concept</span> <span class="pre">reps,</span> <span class="pre">10–15</span> <span class="pre">min</span> <span class="pre">each</span> <span class="pre">—</span> <span class="pre">this</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">Week</span> <span class="pre">7</span> <span class="pre">activity</span> <span class="pre">block.</span></code></p>
+<p><strong>L1 — Shopping List Builder</strong></p>
+<p>Start with an empty list. Use <code class="docutils literal notranslate"><span class="pre">.append()</span></code> to add 5 grocery items one at a time (hardcoded, not input). Then: <code class="docutils literal notranslate"><span class="pre">.insert()</span></code> a forgotten item at index 0, <code class="docutils literal notranslate"><span class="pre">.remove()</span></code> one item by name, and print the final list.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">groceries</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># TODO 1) append 5 items</span>
+<span class="c1"># TODO 2) insert a 6th item at the front</span>
+<span class="c1"># TODO 3) remove one item by name</span>
+<span class="c1"># TODO 4) print the final list</span>
+</pre></div>
+</div>
+<p><strong>L2 — List Stats (No Built-ins)</strong></p>
+<p>Given a hardcoded list of test scores, find the <strong>highest</strong>, <strong>lowest</strong>, and <strong>average</strong> score using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop and running variables — <strong>without</strong> using Python’s built-in <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">min()</span></code>, or <code class="docutils literal notranslate"><span class="pre">sum()</span></code> functions.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">88</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">91</span><span class="p">]</span>
+
+<span class="c1"># TODO 1) loop through scores to find the highest (no max())</span>
+<span class="c1"># TODO 2) loop through scores to find the lowest (no min())</span>
+<span class="c1"># TODO 3) loop through scores to compute the average (no sum())</span>
+</pre></div>
+</div>
+<p><strong>L3 — Duplicate Remover</strong></p>
+<p>Given a list with repeated values, build a <strong>new</strong> list containing only the first occurrence of each value (preserve original order — don’t just use <code class="docutils literal notranslate"><span class="pre">set()</span></code>, since sets don’t preserve order). Use <code class="docutils literal notranslate"><span class="pre">in</span></code>/<code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> to check membership as you build the new list.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">raw</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># TODO: build "unique" list containing each value only once, in</span>
+<span class="c1">#       first-seen order</span>
+</pre></div>
+</div>
+<p><strong>L4 — List Slicing Practice</strong></p>
+<p>Given <code class="docutils literal notranslate"><span class="pre">numbers</span> <span class="pre">=</span> <span class="pre">[10,</span> <span class="pre">20,</span> <span class="pre">30,</span> <span class="pre">40,</span> <span class="pre">50,</span> <span class="pre">60,</span> <span class="pre">70,</span> <span class="pre">80,</span> <span class="pre">90,</span> <span class="pre">100]</span></code>, use slicing (no loops) to print: (1) the first three numbers, (2) the last three numbers, (3) every other number starting from index 0, (4) the list reversed.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+
+<span class="c1"># TODO 1-4: four print statements, each using a different slice</span>
+</pre></div>
+</div>
+<p><strong>L5 — High Score Tracker</strong></p>
+<p>Start with a list of 5 hardcoded high scores. Add a new score with <code class="docutils literal notranslate"><span class="pre">.append()</span></code>, then use <code class="docutils literal notranslate"><span class="pre">.sort(reverse=True)</span></code> to rank them highest-to-lowest. Use <code class="docutils literal notranslate"><span class="pre">.pop()</span></code> to drop the lowest score off the list (keeping only the top 5), and print the final ranked list with placements (<code class="docutils literal notranslate"><span class="pre">&quot;1st:</span> <span class="pre">100&quot;</span></code>, etc.) using <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">high_scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">72</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">84</span><span class="p">]</span>
+
+<span class="c1"># TODO 1) append a new score (e.g., 90)</span>
+<span class="c1"># TODO 2) sort descending</span>
+<span class="c1"># TODO 3) pop the lowest score off the end</span>
+<span class="c1"># TODO 4) print ranked with enumerate() -- "1st: 95", "2nd: 90", etc.</span>
+</pre></div>
+</div>
+<p><strong>L6 — 2D List Grid Scanner</strong></p>
+<p>Given a 3x3 grid (list of lists) of numbers, use nested loops to find the <strong>total sum</strong> of all values and print each row on its own line.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="c1"># TODO 1) print each row on its own line</span>
+<span class="c1"># TODO 2) compute and print the total sum of every value in the grid</span>
+</pre></div>
+</div>
+<p><strong>L7 — Grade Curve Adjuster</strong></p>
+<p>Given a list of test scores, use a <strong>list comprehension</strong> to add 5 bonus points to every score — but cap any result at 100 (no score can exceed it). This combines list comprehensions with a conditional expression inside the expression part.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">78</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">62</span><span class="p">]</span>
+
+<span class="c1"># TODO: build a new list "curved" where each score gets +5,</span>
+<span class="c1">#       capped at 100 (hint: use "x if condition else y" inside</span>
+<span class="c1">#       the comprehension's expression)</span>
+</pre></div>
+</div>
+<p><strong>Sample:</strong> <code class="docutils literal notranslate"><span class="pre">[78,</span> <span class="pre">95,</span> <span class="pre">88,</span> <span class="pre">99,</span> <span class="pre">62]</span></code> → <code class="docutils literal notranslate"><span class="pre">[83,</span> <span class="pre">100,</span> <span class="pre">93,</span> <span class="pre">100,</span> <span class="pre">67]</span></code></p>
+<p><em>PCEP: 3.1 | AP CSP: AAP-4.A</em></p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="tuples">
 <h3>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.2</span></code> — Collect and process data using tuples</p>
+<p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.2</span> <span class="pre">—</span> <span class="pre">Collect</span> <span class="pre">and</span> <span class="pre">process</span> <span class="pre">data</span> <span class="pre">using</span> <span class="pre">tuples</span></code></p>
 <p>A <strong>tuple</strong> is an <strong>ordered, immutable</strong> sequence — values cannot be changed after creation.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">coords</span>     <span class="o">=</span> <span class="p">(</span><span class="mf">40.7128</span><span class="p">,</span> <span class="o">-</span><span class="mf">74.0060</span><span class="p">)</span>    <span class="c1"># GPS: New York City</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">coords</span>     <span class="o">=</span> <span class="p">(</span><span class="mf">40.7128</span><span class="p">,</span> <span class="o">-</span><span class="mf">74.0060</span><span class="p">)</span>    <span class="c1"># GPS: New York City</span>
 <span class="n">rgb</span>        <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">single</span>     <span class="o">=</span> <span class="p">(</span><span class="mi">42</span><span class="p">,)</span>                  <span class="c1"># Note the comma for single-element tuple</span>
 
@@ -2865,22 +2990,82 @@ Blue Notebook	Sale Price: $24.99
 </table>
 </div>
 <p><strong>Lists inside Tuples and Tuples inside Lists</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mixed</span> <span class="o">=</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>   <span class="c1"># tuple of lists</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mixed</span> <span class="o">=</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>   <span class="c1"># tuple of lists</span>
 <span class="n">nested</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">)]</span>     <span class="c1"># list of tuples</span>
 </pre></div>
 </div>
-<details><summary>🤔 Thinking Question — check your answer</summary>
+<p><strong>🤔 Thinking Question — check your answer</strong></p>
 <p><strong>Question:</strong> Would you store a student’s GPA history (which changes every semester) in a list or a tuple? What about a single student’s date of birth (month, day, year)?</p>
 <p><strong>Answer:</strong> GPA history → <strong>list</strong>, because new entries get added over time (mutable data). Date of birth → <strong>tuple</strong>, because once set it never changes — the immutability of a tuple communicates “this is fixed data” to anyone reading your code.</p>
-</details>
+<hr class="docutils" />
+<section id="practice-drills-tuples">
+<h4>Practice Drills — Tuples<a class="headerlink" href="#practice-drills-tuples" title="Link to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">single-concept</span> <span class="pre">reps,</span> <span class="pre">10–15</span> <span class="pre">min</span> <span class="pre">each</span> <span class="pre">—</span> <span class="pre">do</span> <span class="pre">these</span> <span class="pre">before</span> <span class="pre">Student</span> <span class="pre">Contact</span> <span class="pre">Book</span> <span class="pre">below.</span></code></p>
+<p><strong>T1 — Coordinate Pair Basics</strong></p>
+<p>Store a GPS coordinate as a tuple <code class="docutils literal notranslate"><span class="pre">(latitude,</span> <span class="pre">longitude)</span></code>. Unpack it into two separate variables in a single line and print a formatted sentence using them.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">location</span> <span class="o">=</span> <span class="p">(</span><span class="mf">34.0522</span><span class="p">,</span> <span class="o">-</span><span class="mf">118.2437</span><span class="p">)</span>
+
+<span class="c1"># TODO: unpack location into lat, lon in one line, then print</span>
+<span class="c1">#       f"Latitude: {lat}, Longitude: {lon}"</span>
+</pre></div>
+</div>
+<p><strong>T2 — RGB Color Mixer</strong></p>
+<p>Store two colors as RGB tuples, e.g. <code class="docutils literal notranslate"><span class="pre">red</span> <span class="pre">=</span> <span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>. Write a function <code class="docutils literal notranslate"><span class="pre">average_color(c1,</span> <span class="pre">c2)</span></code> that takes two RGB tuples and returns a <strong>new tuple</strong> representing their averaged color (average each channel, round to an int). Test it by mixing two colors.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">red</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">blue</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">average_color</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">):</span>
+    <span class="c1"># TODO: return a new tuple with each channel averaged (rounded)</span>
+    <span class="k">pass</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">average_color</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">blue</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>T3 — Proving Immutability</strong></p>
+<p>Create a tuple <code class="docutils literal notranslate"><span class="pre">dimensions</span> <span class="pre">=</span> <span class="pre">(12,</span> <span class="pre">24)</span></code>. Try to change the first value with <code class="docutils literal notranslate"><span class="pre">dimensions[0]</span> <span class="pre">=</span> <span class="pre">15</span></code> and run it — read the error Python gives you. Then write one sentence (as a comment) explaining, in your own words, what the error message means and why lists don’t have this problem.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+
+<span class="c1"># TODO 1) uncomment the line below, run it, and read the error</span>
+<span class="c1"># dimensions[0] = 15</span>
+
+<span class="c1"># TODO 2) add a comment explaining the error in your own words</span>
+</pre></div>
+</div>
+<p><strong>T4 — List of Tuples: Grade Records</strong></p>
+<p>Store 5 students as a <strong>list of tuples</strong>: <code class="docutils literal notranslate"><span class="pre">(name,</span> <span class="pre">grade)</span></code>. Loop through the list and print only the students with a grade of <code class="docutils literal notranslate"><span class="pre">90</span></code> or higher. This is a deliberate contrast to the “list of dictionaries” pattern used below in Student Contact Book — same idea (bundling related data), different structure.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">records</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">"Ava"</span><span class="p">,</span> <span class="mi">92</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Liam"</span><span class="p">,</span> <span class="mi">78</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Noah"</span><span class="p">,</span> <span class="mi">95</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Mia"</span><span class="p">,</span> <span class="mi">88</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Zoe"</span><span class="p">,</span> <span class="mi">91</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># TODO: loop through records, unpack each tuple, print names</span>
+<span class="c1">#       with grade &gt;= 90</span>
+</pre></div>
+</div>
+<p><strong>T5 — Swap and Min/Max Return</strong></p>
+<p>Two parts, both showing what tuples are <em>for</em>: (1) swap two variables’ values in one line using tuple packing — no temp variable; (2) write a function <code class="docutils literal notranslate"><span class="pre">min_max(numbers)</span></code> that returns <strong>both</strong> the smallest and largest value as a single tuple, then unpack the result at the call site.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span>
+
+<span class="c1"># TODO 1) swap a and b in one line using tuple packing/unpacking</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">min_max</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="c1"># TODO 2) return a tuple (smallest, largest)</span>
+    <span class="k">pass</span>
+
+<span class="n">low</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="n">min_max</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Sample output:</strong> <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">19</span></code></p>
+<p><em>PCEP: 3.2</em></p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="dictionaries">
 <h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.3</span></code> — Collect and process data using dictionaries
-<code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-3.B</span></code> — Use abstractions to organize data.</p>
+<p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.3</span> <span class="pre">—</span> <span class="pre">Collect</span> <span class="pre">and</span> <span class="pre">process</span> <span class="pre">data</span> <span class="pre">using</span> <span class="pre">dictionaries</span></code> <code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-3.B</span> <span class="pre">—</span> <span class="pre">Use</span> <span class="pre">abstractions</span> <span class="pre">to</span> <span class="pre">organize</span> <span class="pre">data.</span></code></p>
 <p>A <strong>dictionary</strong> stores <strong>key-value pairs</strong>. Keys must be unique and immutable. Dictionaries are <strong>ordered</strong> (Python 3.7+) and <strong>mutable</strong>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">student</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">student</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Alice"</span><span class="p">,</span>
     <span class="s2">"age"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
     <span class="s2">"grade"</span><span class="p">:</span> <span class="s2">"A"</span>
@@ -2893,23 +3078,23 @@ Blue Notebook	Sale Price: $24.99
 </pre></div>
 </div>
 <p><strong>Checking for Keys</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">"name"</span> <span class="ow">in</span> <span class="n">student</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">"name"</span> <span class="ow">in</span> <span class="n">student</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Key exists!"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Dictionary Methods</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">student</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>     <span class="c1"># dict_keys(['name', 'age', ...])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">student</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>     <span class="c1"># dict_keys(['name', 'age', ...])</span>
 <span class="n">student</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>   <span class="c1"># dict_values(['Alice', 17, ...])</span>
 <span class="n">student</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>    <span class="c1"># dict_items([('name','Alice'), ...])</span>
 </pre></div>
 </div>
 <p><strong>Iterating</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">student</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">student</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>List of Dictionaries (real-world pattern)</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Alice"</span><span class="p">,</span> <span class="s2">"age"</span><span class="p">:</span> <span class="mi">14</span><span class="p">},</span>
     <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Bob"</span><span class="p">,</span>   <span class="s2">"age"</span><span class="p">:</span> <span class="mi">15</span><span class="p">},</span>
     <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Charlie"</span><span class="p">,</span> <span class="s2">"age"</span><span class="p">:</span> <span class="mi">14</span><span class="p">}</span>
@@ -2922,14 +3107,12 @@ Blue Notebook	Sale Price: $24.99
 <span class="n">count</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">students</span> <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s2">"age"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">14</span><span class="p">)</span>
 </pre></div>
 </div>
-<details><summary>🤔 Thinking Question — check your answer</summary>
-<hr class="docutils" />
+<p><strong>🤔 Thinking Question — check your answer</strong></p>
 <p><strong>Question:</strong> Why is a “list of dictionaries” (like <code class="docutils literal notranslate"><span class="pre">students</span></code> above) usually a better data abstraction for the CPT than several separate parallel lists like <code class="docutils literal notranslate"><span class="pre">names</span> <span class="pre">=</span> <span class="pre">[...]</span></code>, <code class="docutils literal notranslate"><span class="pre">ages</span> <span class="pre">=</span> <span class="pre">[...]</span></code>?</p>
 <p><strong>Answer:</strong> With parallel lists, <code class="docutils literal notranslate"><span class="pre">names[2]</span></code> and <code class="docutils literal notranslate"><span class="pre">ages[2]</span></code> only stay linked to the same student if you’re extremely careful to keep every list in sync — one mistaken <code class="docutils literal notranslate"><span class="pre">.remove()</span></code> on just one list breaks the connection. A list of dictionaries keeps each student’s data bundled together in one object, so there’s no way for a name and age to get separated. This is exactly the kind of data abstraction the CPT written responses ask you to explain.</p>
-</details>
 <blockquote>
 <div><p>📌 <strong>Worked Example — list of dictionaries in a different context (playlist)</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">playlist</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">playlist</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="n">new_song</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"title"</span><span class="p">:</span> <span class="s2">"Clair de Lune"</span><span class="p">,</span> <span class="s2">"artist"</span><span class="p">:</span> <span class="s2">"Debussy"</span><span class="p">,</span> <span class="s2">"duration"</span><span class="p">:</span> <span class="s2">"5:12"</span><span class="p">}</span>
 <span class="n">playlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_song</span><span class="p">)</span>
@@ -2941,7 +3124,77 @@ Blue Notebook	Sale Price: $24.99
 </div>
 <p>This is the pattern (append a dict to a list, then search with a loop + <code class="docutils literal notranslate"><span class="pre">if</span></code>) you’ll build into a full menu-driven program below — just applied to songs instead of contacts.</p>
 </div></blockquote>
+<hr class="docutils" />
+<section id="practice-drills-dictionaries">
+<h4>Practice Drills — Dictionaries<a class="headerlink" href="#practice-drills-dictionaries" title="Link to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">single-concept</span> <span class="pre">reps,</span> <span class="pre">10–15</span> <span class="pre">min</span> <span class="pre">each</span> <span class="pre">—</span> <span class="pre">do</span> <span class="pre">these</span> <span class="pre">before</span> <span class="pre">Student</span> <span class="pre">Contact</span> <span class="pre">Book</span> <span class="pre">below.</span></code></p>
+<p><strong>D1 — Inventory Tracker</strong></p>
+<p>Start with a dictionary of 3 hardcoded inventory items and their quantities (<code class="docutils literal notranslate"><span class="pre">{&quot;pencils&quot;:</span> <span class="pre">30,</span> <span class="pre">...}</span></code>). Add a new item, update an existing quantity, remove one item with <code class="docutils literal notranslate"><span class="pre">del</span></code>, and print the final dictionary using a <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">key,</span> <span class="pre">value</span> <span class="pre">in</span> <span class="pre">...items()</span></code> loop.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">inventory</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"pencils"</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">"notebooks"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s2">"erasers"</span><span class="p">:</span> <span class="mi">20</span><span class="p">}</span>
+
+<span class="c1"># TODO 1) add a new item</span>
+<span class="c1"># TODO 2) update an existing item's quantity</span>
+<span class="c1"># TODO 3) delete one item</span>
+<span class="c1"># TODO 4) print every item with a for loop over .items()</span>
+</pre></div>
+</div>
+<p><strong>D2 — Word Frequency Counter</strong></p>
+<p>Given a sentence, build a dictionary counting how many times each word appears. Use <code class="docutils literal notranslate"><span class="pre">.split()</span></code> to get the words, and <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">word</span> <span class="pre">in</span> <span class="pre">freq:</span></code> to decide whether to add a new key or increment an existing one.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="s2">"the cat sat on the mat the cat ran"</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="n">freq</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># TODO: loop through words, building the freq dictionary</span>
+</pre></div>
+</div>
+<p><strong>D3 — Safe Key Lookup</strong></p>
+<p>Given a dictionary of student grades, ask the user for a name. If the name is a key <code class="docutils literal notranslate"><span class="pre">in</span></code> the dictionary, print their grade; if not, print <code class="docutils literal notranslate"><span class="pre">&quot;Student</span> <span class="pre">not</span> <span class="pre">found.&quot;</span></code> — without letting the program crash with a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>. Then repeat the same lookup using <code class="docutils literal notranslate"><span class="pre">.get()</span></code> with a default value instead of <code class="docutils literal notranslate"><span class="pre">in</span></code>, and compare the two approaches.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Ava"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"Liam"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span> <span class="s2">"Noah"</span><span class="p">:</span> <span class="s2">"B"</span><span class="p">}</span>
+<span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a student name: "</span><span class="p">)</span>
+
+<span class="c1"># TODO 1) look up name using "in" and if/else</span>
+<span class="c1"># TODO 2) look up the same name again using .get() with a default</span>
+<span class="c1">#         of "Student not found."</span>
+</pre></div>
+</div>
+<p><strong>D4 — Nested Dictionary Mini-Database</strong></p>
+<p>Build a dictionary of dictionaries representing a small class roster: each key is a student name, and each value is a dictionary with <code class="docutils literal notranslate"><span class="pre">&quot;grade&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;attendance&quot;</span></code>. Print a formatted line for each student by looping through <code class="docutils literal notranslate"><span class="pre">.items()</span></code> and accessing the nested values.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">roster</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"Ava"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"grade"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"attendance"</span><span class="p">:</span> <span class="mf">0.98</span><span class="p">},</span>
+    <span class="s2">"Liam"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"grade"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span> <span class="s2">"attendance"</span><span class="p">:</span> <span class="mf">0.85</span><span class="p">},</span>
+    <span class="s2">"Noah"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"grade"</span><span class="p">:</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"attendance"</span><span class="p">:</span> <span class="mf">0.92</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># TODO: loop through roster.items(), print each student's grade</span>
+<span class="c1">#       and attendance as a formatted f-string line</span>
+</pre></div>
+</div>
+<p><strong>D5 — Dictionary Comprehension Intro</strong></p>
+<p>Given a list of numbers, build a dictionary mapping each number to its square using a <strong>dictionary comprehension</strong> (parallel structure to the list comprehensions already covered). Then rewrite the same thing as a traditional loop, so you can see both side by side.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># TODO 1) build squares_dict using a dictionary comprehension</span>
+<span class="c1">#         {n: n**2 for n in numbers}</span>
+
+<span class="c1"># TODO 2) build the same dictionary again using a traditional</span>
+<span class="c1">#         for loop, storing it as squares_dict_loop</span>
+</pre></div>
+</div>
+<p><strong>D6 — Merge and Invert</strong></p>
+<p>Given two dictionaries of student scores from different quizzes, merge them into one using <code class="docutils literal notranslate"><span class="pre">.update()</span></code> (later quiz overwrites duplicates). Then build a second dictionary that’s <strong>inverted</strong> — scores as keys, names as values — using a dictionary comprehension.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quiz1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Ava"</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span> <span class="s2">"Liam"</span><span class="p">:</span> <span class="mi">91</span><span class="p">}</span>
+<span class="n">quiz2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Liam"</span><span class="p">:</span> <span class="mi">95</span><span class="p">,</span> <span class="s2">"Noah"</span><span class="p">:</span> <span class="mi">79</span><span class="p">}</span>
+
+<span class="c1"># TODO 1) merge quiz2 into quiz1 using .update()</span>
+<span class="c1"># TODO 2) build an inverted dict: {score: name for name, score in ...}</span>
+</pre></div>
+</div>
+<p><strong>Sample:</strong> merged → <code class="docutils literal notranslate"><span class="pre">{'Ava':</span> <span class="pre">88,</span> <span class="pre">'Liam':</span> <span class="pre">95,</span> <span class="pre">'Noah':</span> <span class="pre">79}</span></code>, inverted → <code class="docutils literal notranslate"><span class="pre">{88:</span> <span class="pre">'Ava',</span> <span class="pre">95:</span> <span class="pre">'Liam',</span> <span class="pre">79:</span> <span class="pre">'Noah'}</span></code></p>
+<p><em>PCEP: 3.3 | AP CSP: AAP-3.B</em></p>
 </section>
+</section>
+<hr class="docutils" />
 <section id="activity-student-contact-book">
 <h3>Activity: Student Contact Book<a class="headerlink" href="#activity-student-contact-book" title="Link to this heading">¶</a></h3>
 <p>Build a program that stores a contact book as a <strong>list of dictionaries</strong>. Each contact has a name, phone number, and email. The user can:</p>
@@ -2960,7 +3213,7 @@ Blue Notebook	Sale Price: $24.99
 <li><p>Add “Delete a contact” last — it’s the trickiest, since you must find the right item before removing it.</p></li>
 </ol>
 <p><strong>Starter code:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#       Assignment:  Program: Student Contact Book</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#       Assignment:  Program: Student Contact Book</span>
 <span class="c1">#       Description: Menu-driven contact book using a list of dictionaries.</span>
 <span class="c1">#       Language:    Python 3.x</span>
 
@@ -2989,6 +3242,60 @@ Blue Notebook	Sale Price: $24.99
 </pre></div>
 </div>
 <p><em>AP CSP: AAP-3.B, AAP-2.E | PCEP: 3.3</em></p>
+</section>
+<hr class="docutils" />
+<section id="mixed-review-quick-check-all-four-types">
+<h3>Mixed Review — Quick Check (all four types)<a class="headerlink" href="#mixed-review-quick-check-all-four-types" title="Link to this heading">¶</a></h3>
+<p>A 4-question exit ticket for wrapping up the section — one short question per data type, answerable in a sentence or two, no coding required.</p>
+<ol class="arabic simple">
+<li><p><strong>String:</strong> You have <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">&quot;</span>&#160; <span class="pre">DANA</span>&#160; <span class="pre">&quot;</span></code>. What does <code class="docutils literal notranslate"><span class="pre">name.strip().lower()</span></code> return?</p></li>
+<li><p><strong>List:</strong> What’s the difference between <code class="docutils literal notranslate"><span class="pre">.remove(&quot;apple&quot;)</span></code> and <code class="docutils literal notranslate"><span class="pre">.pop(0)</span></code> on a list?</p></li>
+<li><p><strong>Tuple:</strong> Why would you choose a tuple over a list to store a birthdate?</p></li>
+<li><p><strong>Dictionary:</strong> What error would <code class="docutils literal notranslate"><span class="pre">student[&quot;gpa&quot;]</span></code> raise if <code class="docutils literal notranslate"><span class="pre">&quot;gpa&quot;</span></code> isn’t a key — and what method avoids that crash?</p></li>
+</ol>
+<p><em>(Answer key: pull straight from the corresponding Thinking Questions above for Strings/Lists/Tuples/Dictionaries.)</em></p>
+<hr class="docutils" />
+<p><strong>Section 3 — Standards Alignment Reference</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Standard</p></th>
+<th class="head"><p>Where it shows up in this section</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AP</span> <span class="pre">CSP</span> <span class="pre">AAP-4.A</span></code></p></td>
+<td><p>Use data abstractions to manage complexity</p></td>
+<td><p>Section intro, Lists, Tuples (T4)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">AP</span> <span class="pre">CSP</span> <span class="pre">DAT-1.A</span></code></p></td>
+<td><p>Explain how data can be represented using bits</p></td>
+<td><p>Strings, Drills S1–S6, Receipt Formatter</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AP</span> <span class="pre">CSP</span> <span class="pre">AAP-3.B</span></code></p></td>
+<td><p>Use abstractions to organize data</p></td>
+<td><p>Dictionaries, Drills D1–D6, Student Contact Book</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PCEP</span> <span class="pre">3.1</span></code></p></td>
+<td><p>Collect and process data using lists</p></td>
+<td><p>Lists, Drills L1–L7</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PCEP</span> <span class="pre">3.2</span></code></p></td>
+<td><p>Collect and process data using tuples</p></td>
+<td><p>Tuples, Drills T1–T5</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PCEP</span> <span class="pre">3.3</span></code></p></td>
+<td><p>Collect and process data using dictionaries</p></td>
+<td><p>Dictionaries, Drills D1–D6, Student Contact Book</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PCEP</span> <span class="pre">3.4</span></code></p></td>
+<td><p>Operate with strings</p></td>
+<td><p>Strings, Drills S1–S6, Receipt Formatter</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 <hr class="docutils" />
@@ -5508,12 +5815,25 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </ul>
 </li>
 <li><a class="reference internal" href="#section-3-data-collections-lists-tuples-dictionaries-and-strings">Section 3 — Data Collections: Lists, Tuples, Dictionaries, and Strings</a><ul>
-<li><a class="reference internal" href="#strings">Strings</a></li>
+<li><a class="reference internal" href="#strings">Strings</a><ul>
+<li><a class="reference internal" href="#practice-drills-strings">Practice Drills — Strings</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#activity-receipt-formatter">Activity: Receipt Formatter</a></li>
-<li><a class="reference internal" href="#lists">Lists</a></li>
-<li><a class="reference internal" href="#tuples">Tuples</a></li>
-<li><a class="reference internal" href="#dictionaries">Dictionaries</a></li>
+<li><a class="reference internal" href="#lists">Lists</a><ul>
+<li><a class="reference internal" href="#practice-drills-lists">Practice Drills — Lists</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tuples">Tuples</a><ul>
+<li><a class="reference internal" href="#practice-drills-tuples">Practice Drills — Tuples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dictionaries">Dictionaries</a><ul>
+<li><a class="reference internal" href="#practice-drills-dictionaries">Practice Drills — Dictionaries</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#activity-student-contact-book">Activity: Student Contact Book</a></li>
+<li><a class="reference internal" href="#mixed-review-quick-check-all-four-types">Mixed Review — Quick Check (all four types)</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#section-4-functions-and-exceptions">Section 4 — Functions and Exceptions</a><ul>

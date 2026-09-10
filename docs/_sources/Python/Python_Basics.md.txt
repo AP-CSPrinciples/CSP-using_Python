@@ -1903,16 +1903,16 @@ for i in range(1, rows + 1):
 
 
 ## Section 3 — Data Collections: Lists, Tuples, Dictionaries, and Strings
+
 `📋 AP CSP: AAP-4.A` — Use data abstractions to manage complexity.
 
 ### Strings
 
-`🔖 PCEP 3.4` — Operate with strings
-`📋 AP CSP: DAT-1.A`
+`🔖 PCEP 3.4 — Operate with strings` `📋 AP CSP: DAT-1.A`
 
 Strings are **ordered, immutable** sequences of characters.
 
-```python
+```
 greeting = "Hello, World!"
 print(greeting[0])       # H      (indexing)
 print(greeting[-1])      # !      (negative index)
@@ -1931,7 +1931,7 @@ neg_index:   -6    -5    -4    -3    -2    -1
 
 **Escape Characters**
 
-```python
+```
 print("She said \"Hello\"")  # She said "Hello"
 print("Line 1\nLine 2")      # newline
 print("Col1\tCol2")          # tab
@@ -1940,7 +1940,7 @@ print("Backslash: \\")       # \
 
 **Multi-line Strings**
 
-```python
+```
 poem = """
 Roses are red,
 Violets are blue.
@@ -1949,30 +1949,30 @@ Violets are blue.
 
 **Beginner String Methods**
 
-| Method | Description | Example |
-|---|---|---|
-| `.lower()` | Lowercase | `"HELLO".lower()` → `"hello"` |
-| `.upper()` | Uppercase | `"hello".upper()` → `"HELLO"` |
-| `.strip()` | Remove whitespace | `"  hi  ".strip()` → `"hi"` |
-| `.replace(old, new)` | Replace text | `"cat".replace("c","b")` → `"bat"` |
-| `.split(sep)` | Split into list | `"a b c".split()` → `["a","b","c"]` |
-| `len()` | Length | `len("hello")` → `5` |
-| `.find(sub)` | Index of substring | `"apple".find("p")` → `1` |
-| `.count(sub)` | Count occurrences | `"banana".count("a")` → `3` |
-| `.startswith(text)` | Starts with? | `"hello".startswith("he")` → `True` |
-| `.endswith(text)` | Ends with? | `"file.txt".endswith(".txt")` → `True` |
-| `.isalpha()` | All letters? | `"abc".isalpha()` → `True` |
-| `.isdigit()` | All digits? | `"123".isdigit()` → `True` |
+| Method               | Description        | Example                                |
+| -------------------- | ------------------- | --------------------------------------- |
+| `.lower()`           | Lowercase           | `"HELLO".lower()` → `"hello"`           |
+| `.upper()`           | Uppercase           | `"hello".upper()` → `"HELLO"`           |
+| `.strip()`           | Remove whitespace   | `"  hi  ".strip()` → `"hi"`             |
+| `.replace(old, new)` | Replace text        | `"cat".replace("c","b")` → `"bat"`      |
+| `.split(sep)`        | Split into list     | `"a b c".split()` → `["a","b","c"]`     |
+| `len()`               | Length              | `len("hello")` → `5`                    |
+| `.find(sub)`         | Index of substring  | `"apple".find("p")` → `1`               |
+| `.count(sub)`        | Count occurrences   | `"banana".count("a")` → `3`             |
+| `.startswith(text)`  | Starts with?        | `"hello".startswith("he")` → `True`     |
+| `.endswith(text)`    | Ends with?          | `"file.txt".endswith(".txt")` → `True`  |
+| `.isalpha()`         | All letters?        | `"abc".isalpha()` → `True`              |
+| `.isdigit()`         | All digits?         | `"123".isdigit()` → `True`              |
 
-<details><summary>🤔 Thinking Question — check your answer</summary>
+**🤔 Thinking Question — check your answer**
 
 **Question:** `name = "  Ada Lovelace  "`. What does `name.strip().upper()` return, and why does the order of the two method calls matter here?
 
 **Answer:** `"ADA LOVELACE"`. `.strip()` removes the leading/trailing whitespace first, then `.upper()` capitalizes the result. Because strings are immutable, each method returns a **new** string rather than modifying `name` in place — that's why you can "chain" methods like this, each one operating on the result of the one before it. Order rarely matters for `.strip()`/`.upper()` specifically, but it does for methods that depend on exact spacing, like `.startswith()`.
-</details>
 
 > 📌 **Worked Example — string methods in a different context (library due-date slip)**
-> ```python
+>
+> ```
 > book_title = "  the hobbit   "
 > library_name = "westview public library"
 > due_date = "09/15"
@@ -1984,7 +1984,86 @@ Violets are blue.
 > print(f"{clean_title}\tDue: {due_date}")
 > print("\"Please return on time to avoid fees.\"")
 > ```
+>
 > This shows the same *techniques* the Receipt Formatter asks for — `.strip()` to clean messy input, `.upper()`/`.title()` for capitalization, `\t` for column alignment, and a quoted message with `\"` — applied to a library slip instead of a receipt.
+
+---
+
+#### Practice Drills — Strings
+
+`Quick single-concept reps, 10–15 min each — do these before or alongside Receipt Formatter below.`
+
+**S1 — String Slicer**
+
+Given `phrase = "Computer Science Principles"`, without hardcoding letters, use slicing/indexing to print: (1) just `"Computer"`, (2) just `"Principles"`, (3) the whole phrase reversed, (4) every other character.
+
+```
+phrase = "Computer Science Principles"
+
+# TODO 1) print "Computer" using slicing
+# TODO 2) print "Principles" using slicing
+# TODO 3) print the phrase reversed
+# TODO 4) print every other character
+```
+
+**S2 — Name Formatter**
+
+Ask the user for their first and last name in **one** `input()` call (e.g. `"marco reyes"`), typed messily (any case, extra spaces). Use `.strip()`, `.split()`, and `.title()` to print it cleanly as `"Reyes, Marco"`.
+
+```
+full_name = input("Enter your first and last name: ")
+
+# TODO 1) strip() the input
+# TODO 2) split() into first and last
+# TODO 3) print as "Last, First" using .title()
+```
+
+**S3 — Palindrome Checker**
+
+Ask the user for a word. Using slicing (`[::-1]`) — no loops needed — check if it reads the same forwards and backwards. Ignore case.
+
+```
+word = input("Enter a word: ").lower()
+
+# TODO: compare word to its reversed slice, print True/False
+```
+
+**S4 — Vowel Counter**
+
+Ask for a sentence. Count how many vowels (`a, e, i, o, u`, either case) it contains using `.count()`.
+
+```
+sentence = input("Enter a sentence: ")
+
+# TODO: count vowels using .count() for each vowel letter
+```
+
+**S5 — Find and Replace Censor**
+
+Ask for a sentence and a "banned word." Use `.find()` to check if the word appears, then `.replace()` to swap every occurrence with asterisks matching its length (e.g., `"spam"` → `"****"`).
+
+```
+sentence = input("Enter a sentence: ")
+banned = input("Enter a word to censor: ")
+
+# TODO 1) use .find() to check if banned word is present
+# TODO 2) if present, use .replace() to swap it with "*" * len(banned)
+```
+
+**S6 — Acronym Generator**
+
+Ask for a multi-word phrase (e.g., `"as soon as possible"`). Use `.split()` to get the words, grab the first letter of each with a loop or comprehension, and `.join()` them into an uppercase acronym.
+
+```
+phrase = input("Enter a phrase: ")
+
+# TODO: split the phrase into words, take the first letter of each,
+#       join them into an uppercase acronym
+```
+
+**Sample:** `"as soon as possible"` → `ASAP`
+
+*PCEP: 3.4 | AP CSP: DAT-1.A*
 
 ---
 
@@ -1993,6 +2072,7 @@ Violets are blue.
 Write a program that formats a store receipt using string methods and escape characters.
 
 **🧩 Scaffolding — build it in this order:**
+
 1. Get store name, item name, and price from the user; print them raw (unformatted) first to confirm input works.
 2. Add `.upper()` for the store header and `.title()` for the item name.
 3. Add the `\t` / `\n` formatting and the quoted thank-you message.
@@ -2010,9 +2090,10 @@ Write a program that formats a store receipt using string methods and escape cha
 8. Bonus: use `.startswith()` or `.endswith()` to check if the item name starts with a vowel, and print a fun fact if it does.
 
 **Sample interaction:**
+
 ```
 Enter store name: target
-Enter item name:   blue notebook   
+Enter item name:   blue notebook  
 Enter price: 24.99
 
 TARGET
@@ -2027,12 +2108,11 @@ Blue Notebook	Sale Price: $24.99
 
 ### Lists
 
-`🔖 PCEP 3.1` — Collect and process data using lists
-`📋 AP CSP: AAP-4.A` — Lists for data abstraction
+`🔖 PCEP 3.1 — Collect and process data using lists` `📋 AP CSP: AAP-4.A — Lists for data abstraction`
 
 A **list** is an **ordered, mutable** sequence. It is the most versatile data collection in Python — and the collection type the AP CSP CPT specifically requires you to use.
 
-```python
+```
 fruits = ["apple", "banana", "cherry"]
 print(fruits[0])       # apple
 print(fruits[-1])      # cherry
@@ -2041,7 +2121,7 @@ print(fruits[1:3])     # ['banana', 'cherry']
 
 **Common List Methods**
 
-```python
+```
 fruits.append("orange")        # Add to end
 fruits.insert(1, "blueberry")  # Insert at index
 fruits.remove("banana")        # Remove by value
@@ -2056,7 +2136,7 @@ fruits.clear()                 # Remove all items
 
 **Iterating Through Lists**
 
-```python
+```
 for item in fruits:
     print(item)
 
@@ -2066,7 +2146,7 @@ for i, item in enumerate(fruits):
 
 **`in` and `not in` Operators**
 
-```python
+```
 print("apple" in fruits)       # True
 print("grape" not in fruits)   # True
 ```
@@ -2085,7 +2165,7 @@ new_list = [expression for item in sequence if condition]
 
 The traditional loop version and the comprehension version produce the *exact same result* — the comprehension is just shorter:
 
-```python
+```
 # Traditional loop
 squares = []
 for x in range(10):
@@ -2095,17 +2175,17 @@ for x in range(10):
 squares = [x ** 2 for x in range(10)]
 ```
 
-```python
+```
 squares     = [x ** 2 for x in range(10)]
 evens       = [x for x in range(20) if x % 2 == 0]
 upper_words = [word.upper() for word in ["hi", "bye"]]
 ```
 
-> <mark>**When to use which:** list comprehensions are great for simple, one-line transformations. If your loop needs multiple steps, `print()` statements along the way, or complex logic, a traditional `for` loop is usually more readable — don't force a comprehension just because it's shorter. Readability counts, per PEP 8.</mark>
+> ==**When to use which:** list comprehensions are great for simple, one-line transformations. If your loop needs multiple steps, `print()` statements along the way, or complex logic, a traditional `for` loop is usually more readable — don't force a comprehension just because it's shorter. Readability counts, per PEP 8.==
 
 **Copying vs. Cloning**
 
-```python
+```
 original = [1, 2, 3]
 alias    = original        # NOT a copy — both point to same list
 clone    = original.copy() # Independent copy
@@ -2114,7 +2194,7 @@ clone2   = original[:]     # Also a copy (slicing)
 
 **2D Lists (Matrices)**
 
-```python
+```
 grid = [
     [1, 2, 3],
     [4, 5, 6],
@@ -2129,22 +2209,117 @@ for row in grid:
     print()
 ```
 
-<details><summary>🤔 Thinking Question — check your answer</summary>
+**🤔 Thinking Question — check your answer**
 
 **Question:** `original = [1, 2, 3]` then `alias = original` then `alias.append(4)`. What does `print(original)` show, and why?
 
 **Answer:** `[1, 2, 3, 4]`. `alias = original` did **not** create a copy — it made `alias` point to the exact same list object in memory as `original`. Modifying `alias` (with `.append()`) modifies the one and only list both names refer to. To get an independent copy, you'd need `alias = original.copy()` or `alias = original[:]`. This is the same idea as the `is` vs `==` distinction from Section 1.
-</details>
+
+---
+
+#### Practice Drills — Lists
+
+`Quick single-concept reps, 10–15 min each — this is the Week 7 activity block.`
+
+**L1 — Shopping List Builder**
+
+Start with an empty list. Use `.append()` to add 5 grocery items one at a time (hardcoded, not input). Then: `.insert()` a forgotten item at index 0, `.remove()` one item by name, and print the final list.
+
+```
+groceries = []
+
+# TODO 1) append 5 items
+# TODO 2) insert a 6th item at the front
+# TODO 3) remove one item by name
+# TODO 4) print the final list
+```
+
+**L2 — List Stats (No Built-ins)**
+
+Given a hardcoded list of test scores, find the **highest**, **lowest**, and **average** score using a `for` loop and running variables — **without** using Python's built-in `max()`, `min()`, or `sum()` functions.
+
+```
+scores = [88, 95, 72, 100, 64, 91]
+
+# TODO 1) loop through scores to find the highest (no max())
+# TODO 2) loop through scores to find the lowest (no min())
+# TODO 3) loop through scores to compute the average (no sum())
+```
+
+**L3 — Duplicate Remover**
+
+Given a list with repeated values, build a **new** list containing only the first occurrence of each value (preserve original order — don't just use `set()`, since sets don't preserve order). Use `in`/`not in` to check membership as you build the new list.
+
+```
+raw = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+
+# TODO: build "unique" list containing each value only once, in
+#       first-seen order
+```
+
+**L4 — List Slicing Practice**
+
+Given `numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]`, use slicing (no loops) to print: (1) the first three numbers, (2) the last three numbers, (3) every other number starting from index 0, (4) the list reversed.
+
+```
+numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+# TODO 1-4: four print statements, each using a different slice
+```
+
+**L5 — High Score Tracker**
+
+Start with a list of 5 hardcoded high scores. Add a new score with `.append()`, then use `.sort(reverse=True)` to rank them highest-to-lowest. Use `.pop()` to drop the lowest score off the list (keeping only the top 5), and print the final ranked list with placements (`"1st: 100"`, etc.) using `enumerate()`.
+
+```
+high_scores = [72, 88, 95, 61, 84]
+
+# TODO 1) append a new score (e.g., 90)
+# TODO 2) sort descending
+# TODO 3) pop the lowest score off the end
+# TODO 4) print ranked with enumerate() -- "1st: 95", "2nd: 90", etc.
+```
+
+**L6 — 2D List Grid Scanner**
+
+Given a 3x3 grid (list of lists) of numbers, use nested loops to find the **total sum** of all values and print each row on its own line.
+
+```
+grid = [
+    [4, 8, 1],
+    [6, 2, 9],
+    [3, 5, 7]
+]
+
+# TODO 1) print each row on its own line
+# TODO 2) compute and print the total sum of every value in the grid
+```
+
+**L7 — Grade Curve Adjuster**
+
+Given a list of test scores, use a **list comprehension** to add 5 bonus points to every score — but cap any result at 100 (no score can exceed it). This combines list comprehensions with a conditional expression inside the expression part.
+
+```
+scores = [78, 95, 88, 99, 62]
+
+# TODO: build a new list "curved" where each score gets +5,
+#       capped at 100 (hint: use "x if condition else y" inside
+#       the comprehension's expression)
+```
+
+**Sample:** `[78, 95, 88, 99, 62]` → `[83, 100, 93, 100, 67]`
+
+*PCEP: 3.1 | AP CSP: AAP-4.A*
 
 ---
 
 ### Tuples
 
-`🔖 PCEP 3.2` — Collect and process data using tuples
+`🔖 PCEP 3.2 — Collect and process data using tuples`
 
 A **tuple** is an **ordered, immutable** sequence — values cannot be changed after creation.
 
-```python
+```
 coords     = (40.7128, -74.0060)    # GPS: New York City
 rgb        = (255, 128, 0)
 single     = (42,)                  # Note the comma for single-element tuple
@@ -2155,38 +2330,116 @@ print(len(rgb))     # 3
 
 **Tuples vs. Lists**
 
-| Feature | List | Tuple |
-|---|---|---|
-| Ordered | ✅ | ✅ |
-| Indexed | ✅ | ✅ |
-| Mutable | ✅ | ❌ |
-| Duplicates | ✅ | ✅ |
-| Use when | Data changes | Data is fixed |
+| Feature    | List          | Tuple          |
+| ---------- | ------------- | -------------- |
+| Ordered    | ✅            | ✅             |
+| Indexed    | ✅            | ✅             |
+| Mutable    | ✅            | ❌             |
+| Duplicates | ✅            | ✅             |
+| Use when   | Data changes  | Data is fixed  |
 
 **Lists inside Tuples and Tuples inside Lists**
 
-```python
+```
 mixed = ([1, 2, 3], [4, 5, 6])   # tuple of lists
 nested = [(1, "a"), (2, "b")]     # list of tuples
 ```
 
-<details><summary>🤔 Thinking Question — check your answer</summary>
+**🤔 Thinking Question — check your answer**
 
 **Question:** Would you store a student's GPA history (which changes every semester) in a list or a tuple? What about a single student's date of birth (month, day, year)?
 
 **Answer:** GPA history → **list**, because new entries get added over time (mutable data). Date of birth → **tuple**, because once set it never changes — the immutability of a tuple communicates "this is fixed data" to anyone reading your code.
-</details>
+
+---
+
+#### Practice Drills — Tuples
+
+`Quick single-concept reps, 10–15 min each — do these before Student Contact Book below.`
+
+**T1 — Coordinate Pair Basics**
+
+Store a GPS coordinate as a tuple `(latitude, longitude)`. Unpack it into two separate variables in a single line and print a formatted sentence using them.
+
+```
+location = (34.0522, -118.2437)
+
+# TODO: unpack location into lat, lon in one line, then print
+#       f"Latitude: {lat}, Longitude: {lon}"
+```
+
+**T2 — RGB Color Mixer**
+
+Store two colors as RGB tuples, e.g. `red = (255, 0, 0)`. Write a function `average_color(c1, c2)` that takes two RGB tuples and returns a **new tuple** representing their averaged color (average each channel, round to an int). Test it by mixing two colors.
+
+```
+red = (255, 0, 0)
+blue = (0, 0, 255)
+
+def average_color(c1, c2):
+    # TODO: return a new tuple with each channel averaged (rounded)
+    pass
+
+print(average_color(red, blue))
+```
+
+**T3 — Proving Immutability**
+
+Create a tuple `dimensions = (12, 24)`. Try to change the first value with `dimensions[0] = 15` and run it — read the error Python gives you. Then write one sentence (as a comment) explaining, in your own words, what the error message means and why lists don't have this problem.
+
+```
+dimensions = (12, 24)
+
+# TODO 1) uncomment the line below, run it, and read the error
+# dimensions[0] = 15
+
+# TODO 2) add a comment explaining the error in your own words
+```
+
+**T4 — List of Tuples: Grade Records**
+
+Store 5 students as a **list of tuples**: `(name, grade)`. Loop through the list and print only the students with a grade of `90` or higher. This is a deliberate contrast to the "list of dictionaries" pattern used below in Student Contact Book — same idea (bundling related data), different structure.
+
+```
+records = [
+    ("Ava", 92), ("Liam", 78), ("Noah", 95),
+    ("Mia", 88), ("Zoe", 91)
+]
+
+# TODO: loop through records, unpack each tuple, print names
+#       with grade >= 90
+```
+
+**T5 — Swap and Min/Max Return**
+
+Two parts, both showing what tuples are *for*: (1) swap two variables' values in one line using tuple packing — no temp variable; (2) write a function `min_max(numbers)` that returns **both** the smallest and largest value as a single tuple, then unpack the result at the call site.
+
+```
+a, b = 5, 12
+
+# TODO 1) swap a and b in one line using tuple packing/unpacking
+
+def min_max(numbers):
+    # TODO 2) return a tuple (smallest, largest)
+    pass
+
+low, high = min_max([4, 19, 2, 8, 11])
+print(low, high)
+```
+
+**Sample output:** `2 19`
+
+*PCEP: 3.2*
 
 ---
 
 ### Dictionaries
 
-`🔖 PCEP 3.3` — Collect and process data using dictionaries
-`📋 AP CSP: AAP-3.B` — Use abstractions to organize data.
+`🔖 PCEP 3.3 — Collect and process data using dictionaries` `📋 AP CSP: AAP-3.B — Use abstractions to organize data.`
 
 A **dictionary** stores **key-value pairs**. Keys must be unique and immutable. Dictionaries are **ordered** (Python 3.7+) and **mutable**.
 
-```python
+```
 student = {
     "name": "Alice",
     "age": 16,
@@ -2201,14 +2454,14 @@ del student["grade"]         # Remove key
 
 **Checking for Keys**
 
-```python
+```
 if "name" in student:
     print("Key exists!")
 ```
 
 **Dictionary Methods**
 
-```python
+```
 student.keys()     # dict_keys(['name', 'age', ...])
 student.values()   # dict_values(['Alice', 17, ...])
 student.items()    # dict_items([('name','Alice'), ...])
@@ -2216,14 +2469,14 @@ student.items()    # dict_items([('name','Alice'), ...])
 
 **Iterating**
 
-```python
+```
 for key, value in student.items():
     print(f"{key}: {value}")
 ```
 
 **List of Dictionaries (real-world pattern)**
 
-```python
+```
 students = [
     {"name": "Alice", "age": 14},
     {"name": "Bob",   "age": 15},
@@ -2237,18 +2490,15 @@ for s in students:
 count = sum(1 for s in students if s["age"] == 14)
 ```
 
-
-<details><summary>🤔 Thinking Question — check your answer</summary>
-
-************************************************************************************
+**🤔 Thinking Question — check your answer**
 
 **Question:** Why is a "list of dictionaries" (like `students` above) usually a better data abstraction for the CPT than several separate parallel lists like `names = [...]`, `ages = [...]`?
 
 **Answer:** With parallel lists, `names[2]` and `ages[2]` only stay linked to the same student if you're extremely careful to keep every list in sync — one mistaken `.remove()` on just one list breaks the connection. A list of dictionaries keeps each student's data bundled together in one object, so there's no way for a name and age to get separated. This is exactly the kind of data abstraction the CPT written responses ask you to explain.
-</details>
 
 > 📌 **Worked Example — list of dictionaries in a different context (playlist)**
-> ```python
+>
+> ```
 > playlist = []
 >
 > new_song = {"title": "Clair de Lune", "artist": "Debussy", "duration": "5:12"}
@@ -2258,11 +2508,105 @@ count = sum(1 for s in students if s["age"] == 14)
 >     if song["title"] == "Clair de Lune":
 >         print(f"Found: {song['title']} by {song['artist']} ({song['duration']})")
 > ```
+>
 > This is the pattern (append a dict to a list, then search with a loop + `if`) you'll build into a full menu-driven program below — just applied to songs instead of contacts.
+
+---
+
+#### Practice Drills — Dictionaries
+
+`Quick single-concept reps, 10–15 min each — do these before Student Contact Book below.`
+
+**D1 — Inventory Tracker**
+
+Start with a dictionary of 3 hardcoded inventory items and their quantities (`{"pencils": 30, ...}`). Add a new item, update an existing quantity, remove one item with `del`, and print the final dictionary using a `for key, value in ...items()` loop.
+
+```
+inventory = {"pencils": 30, "notebooks": 12, "erasers": 20}
+
+# TODO 1) add a new item
+# TODO 2) update an existing item's quantity
+# TODO 3) delete one item
+# TODO 4) print every item with a for loop over .items()
+```
+
+**D2 — Word Frequency Counter**
+
+Given a sentence, build a dictionary counting how many times each word appears. Use `.split()` to get the words, and `if word in freq:` to decide whether to add a new key or increment an existing one.
+
+```
+sentence = "the cat sat on the mat the cat ran"
+words = sentence.split()
+
+freq = {}
+
+# TODO: loop through words, building the freq dictionary
+```
+
+**D3 — Safe Key Lookup**
+
+Given a dictionary of student grades, ask the user for a name. If the name is a key `in` the dictionary, print their grade; if not, print `"Student not found."` — without letting the program crash with a `KeyError`. Then repeat the same lookup using `.get()` with a default value instead of `in`, and compare the two approaches.
+
+```
+grades = {"Ava": "A", "Liam": "C", "Noah": "B"}
+name = input("Enter a student name: ")
+
+# TODO 1) look up name using "in" and if/else
+# TODO 2) look up the same name again using .get() with a default
+#         of "Student not found."
+```
+
+**D4 — Nested Dictionary Mini-Database**
+
+Build a dictionary of dictionaries representing a small class roster: each key is a student name, and each value is a dictionary with `"grade"` and `"attendance"`. Print a formatted line for each student by looping through `.items()` and accessing the nested values.
+
+```
+roster = {
+    "Ava": {"grade": "A", "attendance": 0.98},
+    "Liam": {"grade": "C", "attendance": 0.85},
+    "Noah": {"grade": "B", "attendance": 0.92}
+}
+
+# TODO: loop through roster.items(), print each student's grade
+#       and attendance as a formatted f-string line
+```
+
+**D5 — Dictionary Comprehension Intro**
+
+Given a list of numbers, build a dictionary mapping each number to its square using a **dictionary comprehension** (parallel structure to the list comprehensions already covered). Then rewrite the same thing as a traditional loop, so you can see both side by side.
+
+```
+numbers = [1, 2, 3, 4, 5]
+
+# TODO 1) build squares_dict using a dictionary comprehension
+#         {n: n**2 for n in numbers}
+
+# TODO 2) build the same dictionary again using a traditional
+#         for loop, storing it as squares_dict_loop
+```
+
+**D6 — Merge and Invert**
+
+Given two dictionaries of student scores from different quizzes, merge them into one using `.update()` (later quiz overwrites duplicates). Then build a second dictionary that's **inverted** — scores as keys, names as values — using a dictionary comprehension.
+
+```
+quiz1 = {"Ava": 88, "Liam": 91}
+quiz2 = {"Liam": 95, "Noah": 79}
+
+# TODO 1) merge quiz2 into quiz1 using .update()
+# TODO 2) build an inverted dict: {score: name for name, score in ...}
+```
+
+**Sample:** merged → `{'Ava': 88, 'Liam': 95, 'Noah': 79}`, inverted → `{88: 'Ava', 95: 'Liam', 79: 'Noah'}`
+
+*PCEP: 3.3 | AP CSP: AAP-3.B*
+
+---
 
 ### Activity: Student Contact Book
 
 Build a program that stores a contact book as a **list of dictionaries**. Each contact has a name, phone number, and email. The user can:
+
 1. Add a new contact
 2. Search by name
 3. Delete a contact
@@ -2271,13 +2615,15 @@ Build a program that stores a contact book as a **list of dictionaries**. Each c
 Use a `while` loop for the menu and a `for` loop to search/display.
 
 **🧩 Scaffolding — build it in this order:**
+
 1. Hard-code one contact into the list and get "Display all" working first.
 2. Add "Add a new contact" (append to the list).
 3. Add "Search by name" (loop + `if`).
 4. Add "Delete a contact" last — it's the trickiest, since you must find the right item before removing it.
 
 **Starter code:**
-```python
+
+```
 #       Assignment:  Program: Student Contact Book
 #       Description: Menu-driven contact book using a list of dictionaries.
 #       Language:    Python 3.x
@@ -2307,6 +2653,35 @@ while True:
 ```
 
 *AP CSP: AAP-3.B, AAP-2.E | PCEP: 3.3*
+
+---
+
+### Mixed Review — Quick Check (all four types)
+
+A 4-question exit ticket for wrapping up the section — one short question per data type, answerable in a sentence or two, no coding required.
+
+1. **String:** You have `name = "  DANA  "`. What does `name.strip().lower()` return?
+2. **List:** What's the difference between `.remove("apple")` and `.pop(0)` on a list?
+3. **Tuple:** Why would you choose a tuple over a list to store a birthdate?
+4. **Dictionary:** What error would `student["gpa"]` raise if `"gpa"` isn't a key — and what method avoids that crash?
+
+*(Answer key: pull straight from the corresponding Thinking Questions above for Strings/Lists/Tuples/Dictionaries.)*
+
+---
+
+**Section 3 — Standards Alignment Reference**
+
+| Code             | Standard                                       | Where it shows up in this section            |
+| ---------------- | ----------------------------------------------- | ---------------------------------------------- |
+| `AP CSP AAP-4.A` | Use data abstractions to manage complexity      | Section intro, Lists, Tuples (T4)              |
+| `AP CSP DAT-1.A` | Explain how data can be represented using bits  | Strings, Drills S1–S6, Receipt Formatter       |
+| `AP CSP AAP-3.B` | Use abstractions to organize data                | Dictionaries, Drills D1–D6, Student Contact Book |
+| `PCEP 3.1`       | Collect and process data using lists             | Lists, Drills L1–L7                             |
+| `PCEP 3.2`       | Collect and process data using tuples            | Tuples, Drills T1–T5                            |
+| `PCEP 3.3`       | Collect and process data using dictionaries      | Dictionaries, Drills D1–D6, Student Contact Book |
+| `PCEP 3.4`       | Operate with strings                             | Strings, Drills S1–S6, Receipt Formatter        |
+
+
 
 ---
 
