@@ -1993,6 +1993,8 @@ Violets are blue.
 
 `Quick single-concept reps, 10–15 min each — do these before or alongside Receipt Formatter below.`
 
+
+
 **S1 — String Slicer**
 
 Given `phrase = "Computer Science Principles"`, without hardcoding letters, use slicing/indexing to print: (1) just `"Computer"`, (2) just `"Principles"`, (3) the whole phrase reversed, (4) every other character.
@@ -2006,6 +2008,9 @@ phrase = "Computer Science Principles"
 # TODO 4) print every other character
 ```
 
+#############################################################################
+
+
 **S2 — Name Formatter**
 
 Ask the user for their first and last name in **one** `input()` call (e.g. `"marco reyes"`), typed messily (any case, extra spaces). Use `.strip()`, `.split()`, and `.title()` to print it cleanly as `"Reyes, Marco"`.
@@ -2018,6 +2023,9 @@ full_name = input("Enter your first and last name: ")
 # TODO 3) print as "Last, First" using .title()
 ```
 
+#############################################################################
+
+
 **S3 — Palindrome Checker**
 
 Ask the user for a word. Using slicing (`[::-1]`) — no loops needed — check if it reads the same forwards and backwards. Ignore case.
@@ -2028,6 +2036,9 @@ word = input("Enter a word: ").lower()
 # TODO: compare word to its reversed slice, print True/False
 ```
 
+#############################################################################
+
+
 **S4 — Vowel Counter**
 
 Ask for a sentence. Count how many vowels (`a, e, i, o, u`, either case) it contains using `.count()`.
@@ -2037,6 +2048,9 @@ sentence = input("Enter a sentence: ")
 
 # TODO: count vowels using .count() for each vowel letter
 ```
+
+#############################################################################
+
 
 **S5 — Find and Replace Censor**
 
@@ -2049,6 +2063,9 @@ banned = input("Enter a word to censor: ")
 # TODO 1) use .find() to check if banned word is present
 # TODO 2) if present, use .replace() to swap it with "*" * len(banned)
 ```
+
+#############################################################################
+
 
 **S6 — Acronym Generator**
 
@@ -2063,8 +2080,54 @@ phrase = input("Enter a phrase: ")
 
 **Sample:** `"as soon as possible"` → `ASAP`
 
+#############################################################################
 
-**Submit your `.py` file and test cases showing that your program worked as intended.** 
+
+**S7 — Pig Latin Translator**
+
+Pig Latin Translator**
+
+Ask the user for a full sentence. Use `.split()` to break it into words, translate **each word** to Pig Latin, then `.join()` them back into a sentence:
+- If a word starts with a vowel, add `"way"` to the end.
+- If a word starts with a consonant, move just the **first letter** to the end, then add `"ay"`.
+
+```
+sentence = input("Enter a sentence: ").lower()
+vowels = "aeiou"
+
+# TODO 1) split the sentence into a list of words
+# TODO 2) loop through the words; for each word:
+#         - if word[0] is a vowel: translated = word + "way"
+#         - if word[0] is a consonant: translated = word[1:] + word[0] + "ay"
+#         - append translated to a new list
+# TODO 3) join the translated words back into a sentence with " "
+# TODO 4) print the translated sentence
+```
+
+**Sample:** `"the pig ran"` → `"hetay igpay anray"`
+
+**Extension — Decode Pig Latin back to English:** Given a Pig Latin sentence, translate it back to English. For each word: if it ends in `"way"`, strip `"way"` off (it started with a vowel). Otherwise, strip `"ay"` off the end, then move the **last remaining letter** back to the front (it was the consonant that got moved).
+
+```
+pig_sentence = input("Enter a Pig Latin sentence: ").lower()
+
+# TODO 1) split into words
+# TODO 2) loop through the words; for each word:
+#         - if it ends with "way": original = word without the "way"
+#         - otherwise: strip the "ay", then move the LAST letter of
+#           what's left back to the front:
+#           original = remainder[-1] + remainder[:-1]
+# TODO 3) join and print the decoded sentence
+```
+
+**Try it:** decode `"hetay igpay anray"` — you should get back `"the pig ran"`.
+
+**🤔 Discussion:** Try encoding a word that starts with the letter **w**, like `"wave"` → `"aveway"`. Now try decoding `"aveway"` — does it come back as `"wave"`? *(It won't! The decoder sees it ends in `"way"` and assumes it started with a vowel, since that's the exact same ending a consonant-`w` word produces. This is a nice bug to trace by hand: a single moved letter can accidentally recreate the "started with a vowel" signal. Real ciphers need to guarantee their encoding is unambiguous to decode — this is why, in the XOR cipher extension from the steganography lab, we cared about avoiding collisions too.)*
+
+#############################################################################
+
+
+**Submit your .py file and test cases showing that your program worked as intended.**
 
 ```python
 #       Assignment:  String Practice
@@ -2073,7 +2136,6 @@ phrase = input("Enter a phrase: ")
 #       Description: Using string methods to manipulate strings
 #       Language:    Python 3.x
 ```
-
 
 *PCEP: 3.4 | AP CSP: DAT-1.A*
 
@@ -2686,12 +2748,13 @@ A 4-question exit ticket for wrapping up the section — one short question per 
 | Code             | Standard                                       | Where it shows up in this section            |
 | ---------------- | ----------------------------------------------- | ---------------------------------------------- |
 | `AP CSP AAP-4.A` | Use data abstractions to manage complexity      | Section intro, Lists, Tuples (T4)              |
-| `AP CSP DAT-1.A` | Explain how data can be represented using bits  | Strings, Drills S1–S6, Receipt Formatter       |
+| `AP CSP DAT-1.A` | Explain how data can be represented using bits  | Strings, Drills S1–S7, Receipt Formatter       |
 | `AP CSP AAP-3.B` | Use abstractions to organize data                | Dictionaries, Drills D1–D6, Student Contact Book |
 | `PCEP 3.1`       | Collect and process data using lists             | Lists, Drills L1–L7                             |
 | `PCEP 3.2`       | Collect and process data using tuples            | Tuples, Drills T1–T5                            |
 | `PCEP 3.3`       | Collect and process data using dictionaries      | Dictionaries, Drills D1–D6, Student Contact Book |
-| `PCEP 3.4`       | Operate with strings                             | Strings, Drills S1–S6, Receipt Formatter        |
+| `PCEP 3.4`       | Operate with strings                             | Strings, Drills S1–S7, Receipt Formatter        |
+
 
 
 
