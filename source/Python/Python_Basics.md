@@ -1963,6 +1963,7 @@ Violets are blue.
 | `.endswith(text)`    | Ends with?          | `"file.txt".endswith(".txt")` → `True`  |
 | `.isalpha()`         | All letters?        | `"abc".isalpha()` → `True`              |
 | `.isdigit()`         | All digits?         | `"123".isdigit()` → `True`              |
+| `.title()`           | Capitalize the first letter of each word |	"marco reyes".title() → "Marco Reyes" |
 
 **🤔 Thinking Question — check your answer**
 
