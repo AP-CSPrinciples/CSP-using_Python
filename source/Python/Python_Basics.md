@@ -2386,7 +2386,120 @@ scores = [78, 95, 88, 99, 62]
 
 *PCEP: 3.1 | AP CSP: AAP-4.A*
 
----
+
+#############################################################################
+
+### Activity: Playlist Manager
+
+**Unit:** Data Collections (Lists) — PCEP-30-02 Block 3 / AP CSP Big Idea 3
+**Prerequisite:** Strings unit / Receipt Formatter activity
+
+Write a program that manipulates a premade list of songs using list methods and slicing.
+
+**Starter list (give this to students — don't let them type it in):**
+```python
+playlist = ["Blinding Lights", "Levitating", "As It Was", "Flowers", "Anti-Hero",
+            "Unholy", "Cruel Summer", "Vampire", "Espresso", "Paint The Town Red",
+            "Snooze", "Lovin On Me", "Fortnight", "Please Please Please", "Birds Of A Feather",
+            "Not Like Us", "Texas Hold Em", "I Had Some Help", "Good Luck Babe!", "Beautiful Things"]
+```
+
+#############################################################################
+
+## 🧩 Scaffolding — build it in this order
+
+1. Print the raw list, its `len()`, and the first/last song using indexing — confirm the list loads and indexing works before doing anything fancy.
+2. Use slicing to print the "Top 5" (`playlist[:5]`) and the "Bottom 5" (`playlist[-5:]`).
+3. Add songs with `.append()` and `.insert()` — one at the end, one at a specific chart position.
+4. Add `.remove()` and `.pop()` — one that removes by name, one that removes by position and *keeps* the removed value in a variable to print ("Removed from playlist: ...").
+5. Add `.sort()` (alphabetical) and `.sort(reverse=True)`, printing the list each time so students see it mutate in place.
+6. Add `.index()`, `.count()`, and the `in` keyword last — these require the trickiest thinking (what happens if the song isn't there?).
+
+#############################################################################
+
+## Requirements
+
+1. Start from the given `playlist` list. Print it, its length, and the song at index `0` and index `-1`.
+2. Use slicing to display a "Top 5" and a "Bottom 5" sublist without modifying the original list.
+3. Ask the user for a new song to add. Use `.append()` to add it to the end, then use `.insert()` to add a *second* new song at position `3` (like inserting it into the #4 chart slot).
+4. Ask the user which song to remove. Use `.remove()` to take it out by name — wrap it so the program doesn't crash if the song isn't in the list (`if song in playlist:`).
+5. Use `.pop(0)` to remove the current #1 song, store it in a variable, and print `"Dropped from #1: <song>"`.
+6. Use `.sort()` to alphabetize the list and print it, then use `.sort(reverse=True)` and print it again — label each printout so it's clear which order is which.
+7. Ask the user for a song title and use `.index()` to report its chart position (add 1 so it reads as a human rank, not a 0-based index) — handle the case where it isn't found instead of crashing.
+8. Use `.count()` to check whether the user accidentally added a duplicate song, and print a warning if `count > 1`.
+9. Use `len()` one more time at the end to print the final total number of songs on the playlist.
+10. **Bonus:** Use `.reverse()` to flip the current order in place (different from `sort(reverse=True)` — ask them to explain the difference in a comment).
+11. **Bonus:** Use a list comprehension to print only the songs that contain the word "Love" (case-insensitive) or another keyword of their choice.
+
+#############################################################################
+
+## Sample interaction
+
+```
+--- Current Playlist ---
+['Blinding Lights', 'Levitating', 'As It Was', ... ]
+Total songs: 20
+#1: Blinding Lights
+Last song: Beautiful Things
+
+Top 5: ['Blinding Lights', 'Levitating', 'As It Was', 'Flowers', 'Anti-Hero']
+Bottom 5: ['Not Like Us', 'Texas Hold Em', 'I Had Some Help', 'Good Luck Babe!', 'Beautiful Things']
+
+Enter a new song to add: Golden
+Enter another new song to insert at #4: Die With A Smile
+
+Enter a song to remove: Snooze
+Removed "Snooze" from the playlist.
+
+Dropped from #1: Blinding Lights
+
+--- Alphabetical Order ---
+[...]
+--- Reverse Alphabetical Order ---
+[...]
+
+Enter a song to look up: Espresso
+"Espresso" is currently ranked #7
+
+Final playlist total: 21 songs
+```
+
+#############################################################################
+
+## Grading Rubric (1 pt per standard)
+
+| Requirement | Points |
+|---|---|
+| Raw list, `len()`, indexing (`[0]`, `[-1]`) | 1 |
+| Slicing — Top 5 / Bottom 5 | 1 |
+| `.append()` | 1 |
+| `.insert()` at a specific position | 1 |
+| `.remove()` with `in` safety check | 1 |
+| `.pop()` storing removed value | 1 |
+| `.sort()` and `.sort(reverse=True)` | 1 |
+| `.index()` with not-found handling | 1 |
+| `.count()` duplicate check | 1 |
+| Final `len()` output | 1 |
+| Bonus: `.reverse()` with explanatory comment | +1 |
+| Bonus: list comprehension keyword filter | +1 |
+
+**Total: 10 pts (12 with bonus)**
+
+
+<details>
+<summary>▶ Common student errors to watch for</summary>
+
+- **`.remove()` without an `in` check** → `ValueError` crash if the song isn't spelled exactly as in the list (case-sensitive).
+- **Confusing `.pop()` and `.remove()`** → `.pop()` takes an *index*, `.remove()` takes a *value*. Students often pass a song name to `.pop()`.
+- **Forgetting `.sort()` and `.reverse()` return `None`** → `playlist = playlist.sort()` silently sets `playlist` to `None`. Emphasize these mutate in place and don't need reassignment.
+- **Off-by-one on `.index()`** → `.index()` is 0-based, so remind them to `+1` when displaying a "rank" to the user.
+- **Slicing confusion** → `playlist[:5]` vs `playlist[5:]` — walk through this on the board if Top 5 / Bottom 5 come out wrong.
+
+</details>
+
+
+#############################################################################
+
 
 ### Tuples
 
