@@ -2218,10 +2218,10 @@ for item in fruits:
 for i, item in enumerate(fruits):
     print(f"{i}: {item}")
 ```
+
+
 <details><summary>Enumerate Explained</summary>
 
-
-Here's a breakdown of what that code does:
 
 **`enumerate(fruits)`**
 `fruits` is a list, like `["apple", "banana", "cherry"]`. Normally when you loop through a list, you just get each item — you don't automatically know its position (index). `enumerate()` fixes that: it goes through the list and gives you **two things at once** for each item — its position number and the value itself.
