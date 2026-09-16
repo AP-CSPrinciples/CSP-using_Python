@@ -2994,9 +2994,146 @@ Blue Notebook	Sale Price: $24.99
 </div>
 <p><strong>Sample:</strong> <code class="docutils literal notranslate"><span class="pre">[78,</span> <span class="pre">95,</span> <span class="pre">88,</span> <span class="pre">99,</span> <span class="pre">62]</span></code> → <code class="docutils literal notranslate"><span class="pre">[83,</span> <span class="pre">100,</span> <span class="pre">93,</span> <span class="pre">100,</span> <span class="pre">67]</span></code></p>
 <p><em>PCEP: 3.1 | AP CSP: AAP-4.A</em></p>
+<p>#############################################################################</p>
 </section>
 </section>
-<hr class="docutils" />
+<section id="activity-playlist-manager">
+<h3>Activity: Playlist Manager<a class="headerlink" href="#activity-playlist-manager" title="Link to this heading">¶</a></h3>
+<p><strong>Unit:</strong> Data Collections (Lists) — PCEP-30-02 Block 3 / AP CSP Big Idea 3
+<strong>Prerequisite:</strong> Strings unit / Receipt Formatter activity</p>
+<p>Write a program that manipulates a premade list of songs using list methods and slicing.</p>
+<p><strong>Starter list (give this to students — don’t let them type it in):</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">playlist</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Blinding Lights"</span><span class="p">,</span> <span class="s2">"Levitating"</span><span class="p">,</span> <span class="s2">"As It Was"</span><span class="p">,</span> <span class="s2">"Flowers"</span><span class="p">,</span> <span class="s2">"Anti-Hero"</span><span class="p">,</span>
+            <span class="s2">"Unholy"</span><span class="p">,</span> <span class="s2">"Cruel Summer"</span><span class="p">,</span> <span class="s2">"Vampire"</span><span class="p">,</span> <span class="s2">"Espresso"</span><span class="p">,</span> <span class="s2">"Paint The Town Red"</span><span class="p">,</span>
+            <span class="s2">"Snooze"</span><span class="p">,</span> <span class="s2">"Lovin On Me"</span><span class="p">,</span> <span class="s2">"Fortnight"</span><span class="p">,</span> <span class="s2">"Please Please Please"</span><span class="p">,</span> <span class="s2">"Birds Of A Feather"</span><span class="p">,</span>
+            <span class="s2">"Not Like Us"</span><span class="p">,</span> <span class="s2">"Texas Hold Em"</span><span class="p">,</span> <span class="s2">"I Had Some Help"</span><span class="p">,</span> <span class="s2">"Good Luck Babe!"</span><span class="p">,</span> <span class="s2">"Beautiful Things"</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>#############################################################################</p>
+</section>
+</section>
+<section id="scaffolding-build-it-in-this-order">
+<h2>🧩 Scaffolding — build it in this order<a class="headerlink" href="#scaffolding-build-it-in-this-order" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Print the raw list, its <code class="docutils literal notranslate"><span class="pre">len()</span></code>, and the first/last song using indexing — confirm the list loads and indexing works before doing anything fancy.</p></li>
+<li><p>Use slicing to print the “Top 5” (<code class="docutils literal notranslate"><span class="pre">playlist[:5]</span></code>) and the “Bottom 5” (<code class="docutils literal notranslate"><span class="pre">playlist[-5:]</span></code>).</p></li>
+<li><p>Add songs with <code class="docutils literal notranslate"><span class="pre">.append()</span></code> and <code class="docutils literal notranslate"><span class="pre">.insert()</span></code> — one at the end, one at a specific chart position.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">.remove()</span></code> and <code class="docutils literal notranslate"><span class="pre">.pop()</span></code> — one that removes by name, one that removes by position and <em>keeps</em> the removed value in a variable to print (“Removed from playlist: …”).</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">.sort()</span></code> (alphabetical) and <code class="docutils literal notranslate"><span class="pre">.sort(reverse=True)</span></code>, printing the list each time so students see it mutate in place.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">.index()</span></code>, <code class="docutils literal notranslate"><span class="pre">.count()</span></code>, and the <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword last — these require the trickiest thinking (what happens if the song isn’t there?).</p></li>
+</ol>
+<p>#############################################################################</p>
+</section>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Start from the given <code class="docutils literal notranslate"><span class="pre">playlist</span></code> list. Print it, its length, and the song at index <code class="docutils literal notranslate"><span class="pre">0</span></code> and index <code class="docutils literal notranslate"><span class="pre">-1</span></code>.</p></li>
+<li><p>Use slicing to display a “Top 5” and a “Bottom 5” sublist without modifying the original list.</p></li>
+<li><p>Ask the user for a new song to add. Use <code class="docutils literal notranslate"><span class="pre">.append()</span></code> to add it to the end, then use <code class="docutils literal notranslate"><span class="pre">.insert()</span></code> to add a <em>second</em> new song at position <code class="docutils literal notranslate"><span class="pre">3</span></code> (like inserting it into the #4 chart slot).</p></li>
+<li><p>Ask the user which song to remove. Use <code class="docutils literal notranslate"><span class="pre">.remove()</span></code> to take it out by name — wrap it so the program doesn’t crash if the song isn’t in the list (<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">song</span> <span class="pre">in</span> <span class="pre">playlist:</span></code>).</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">.pop(0)</span></code> to remove the current #1 song, store it in a variable, and print <code class="docutils literal notranslate"><span class="pre">&quot;Dropped</span> <span class="pre">from</span> <span class="pre">#1:</span> <span class="pre">&lt;song&gt;&quot;</span></code>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">.sort()</span></code> to alphabetize the list and print it, then use <code class="docutils literal notranslate"><span class="pre">.sort(reverse=True)</span></code> and print it again — label each printout so it’s clear which order is which.</p></li>
+<li><p>Ask the user for a song title and use <code class="docutils literal notranslate"><span class="pre">.index()</span></code> to report its chart position (add 1 so it reads as a human rank, not a 0-based index) — handle the case where it isn’t found instead of crashing.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">.count()</span></code> to check whether the user accidentally added a duplicate song, and print a warning if <code class="docutils literal notranslate"><span class="pre">count</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">len()</span></code> one more time at the end to print the final total number of songs on the playlist.</p></li>
+<li><p><strong>Bonus:</strong> Use <code class="docutils literal notranslate"><span class="pre">.reverse()</span></code> to flip the current order in place (different from <code class="docutils literal notranslate"><span class="pre">sort(reverse=True)</span></code> — ask them to explain the difference in a comment).</p></li>
+<li><p><strong>Bonus:</strong> Use a list comprehension to print only the songs that contain the word “Love” (case-insensitive) or another keyword of their choice.</p></li>
+</ol>
+<p>#############################################################################</p>
+</section>
+<section id="sample-interaction">
+<h2>Sample interaction<a class="headerlink" href="#sample-interaction" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span> <span class="n">Current</span> <span class="n">Playlist</span> <span class="o">---</span>
+<span class="p">[</span><span class="s1">'Blinding Lights'</span><span class="p">,</span> <span class="s1">'Levitating'</span><span class="p">,</span> <span class="s1">'As It Was'</span><span class="p">,</span> <span class="o">...</span> <span class="p">]</span>
+<span class="n">Total</span> <span class="n">songs</span><span class="p">:</span> <span class="mi">20</span>
+<span class="c1">#1: Blinding Lights</span>
+<span class="n">Last</span> <span class="n">song</span><span class="p">:</span> <span class="n">Beautiful</span> <span class="n">Things</span>
+
+<span class="n">Top</span> <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Blinding Lights'</span><span class="p">,</span> <span class="s1">'Levitating'</span><span class="p">,</span> <span class="s1">'As It Was'</span><span class="p">,</span> <span class="s1">'Flowers'</span><span class="p">,</span> <span class="s1">'Anti-Hero'</span><span class="p">]</span>
+<span class="n">Bottom</span> <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Not Like Us'</span><span class="p">,</span> <span class="s1">'Texas Hold Em'</span><span class="p">,</span> <span class="s1">'I Had Some Help'</span><span class="p">,</span> <span class="s1">'Good Luck Babe!'</span><span class="p">,</span> <span class="s1">'Beautiful Things'</span><span class="p">]</span>
+
+<span class="n">Enter</span> <span class="n">a</span> <span class="n">new</span> <span class="n">song</span> <span class="n">to</span> <span class="n">add</span><span class="p">:</span> <span class="n">Golden</span>
+<span class="n">Enter</span> <span class="n">another</span> <span class="n">new</span> <span class="n">song</span> <span class="n">to</span> <span class="n">insert</span> <span class="n">at</span> <span class="c1">#4: Die With A Smile</span>
+
+<span class="n">Enter</span> <span class="n">a</span> <span class="n">song</span> <span class="n">to</span> <span class="n">remove</span><span class="p">:</span> <span class="n">Snooze</span>
+<span class="n">Removed</span> <span class="s2">"Snooze"</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">playlist</span><span class="o">.</span>
+
+<span class="n">Dropped</span> <span class="kn">from</span><span class="w"> </span><span class="c1">#1: Blinding Lights</span>
+
+<span class="o">---</span> <span class="n">Alphabetical</span> <span class="n">Order</span> <span class="o">---</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="o">---</span> <span class="n">Reverse</span> <span class="n">Alphabetical</span> <span class="n">Order</span> <span class="o">---</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+
+<span class="n">Enter</span> <span class="n">a</span> <span class="n">song</span> <span class="n">to</span> <span class="n">look</span> <span class="n">up</span><span class="p">:</span> <span class="n">Espresso</span>
+<span class="s2">"Espresso"</span> <span class="ow">is</span> <span class="n">currently</span> <span class="n">ranked</span> <span class="c1">#7</span>
+
+<span class="n">Final</span> <span class="n">playlist</span> <span class="n">total</span><span class="p">:</span> <span class="mi">21</span> <span class="n">songs</span>
+</pre></div>
+</div>
+<p>#############################################################################</p>
+</section>
+<section id="grading-rubric-1-pt-per-standard">
+<h2>Grading Rubric (1 pt per standard)<a class="headerlink" href="#grading-rubric-1-pt-per-standard" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Requirement</p></th>
+<th class="head"><p>Points</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Raw list, <code class="docutils literal notranslate"><span class="pre">len()</span></code>, indexing (<code class="docutils literal notranslate"><span class="pre">[0]</span></code>, <code class="docutils literal notranslate"><span class="pre">[-1]</span></code>)</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Slicing — Top 5 / Bottom 5</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.append()</span></code></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.insert()</span></code> at a specific position</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.remove()</span></code> with <code class="docutils literal notranslate"><span class="pre">in</span></code> safety check</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.pop()</span></code> storing removed value</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.sort()</span></code> and <code class="docutils literal notranslate"><span class="pre">.sort(reverse=True)</span></code></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.index()</span></code> with not-found handling</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.count()</span></code> duplicate check</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Final <code class="docutils literal notranslate"><span class="pre">len()</span></code> output</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Bonus: <code class="docutils literal notranslate"><span class="pre">.reverse()</span></code> with explanatory comment</p></td>
+<td><p>+1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bonus: list comprehension keyword filter</p></td>
+<td><p>+1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Total: 10 pts (12 with bonus)</strong></p>
+<details>
+<summary>▶ Common student errors to watch for</summary>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">.remove()</span></code> without an <code class="docutils literal notranslate"><span class="pre">in</span></code> check</strong> → <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> crash if the song isn’t spelled exactly as in the list (case-sensitive).</p></li>
+<li><p><strong>Confusing <code class="docutils literal notranslate"><span class="pre">.pop()</span></code> and <code class="docutils literal notranslate"><span class="pre">.remove()</span></code></strong> → <code class="docutils literal notranslate"><span class="pre">.pop()</span></code> takes an <em>index</em>, <code class="docutils literal notranslate"><span class="pre">.remove()</span></code> takes a <em>value</em>. Students often pass a song name to <code class="docutils literal notranslate"><span class="pre">.pop()</span></code>.</p></li>
+<li><p><strong>Forgetting <code class="docutils literal notranslate"><span class="pre">.sort()</span></code> and <code class="docutils literal notranslate"><span class="pre">.reverse()</span></code> return <code class="docutils literal notranslate"><span class="pre">None</span></code></strong> → <code class="docutils literal notranslate"><span class="pre">playlist</span> <span class="pre">=</span> <span class="pre">playlist.sort()</span></code> silently sets <code class="docutils literal notranslate"><span class="pre">playlist</span></code> to <code class="docutils literal notranslate"><span class="pre">None</span></code>. Emphasize these mutate in place and don’t need reassignment.</p></li>
+<li><p><strong>Off-by-one on <code class="docutils literal notranslate"><span class="pre">.index()</span></code></strong> → <code class="docutils literal notranslate"><span class="pre">.index()</span></code> is 0-based, so remind them to <code class="docutils literal notranslate"><span class="pre">+1</span></code> when displaying a “rank” to the user.</p></li>
+<li><p><strong>Slicing confusion</strong> → <code class="docutils literal notranslate"><span class="pre">playlist[:5]</span></code> vs <code class="docutils literal notranslate"><span class="pre">playlist[5:]</span></code> — walk through this on the board if Top 5 / Bottom 5 come out wrong.</p></li>
+</ul>
+</details>
+<p>#############################################################################</p>
 <section id="tuples">
 <h3>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.2</span> <span class="pre">—</span> <span class="pre">Collect</span> <span class="pre">and</span> <span class="pre">process</span> <span class="pre">data</span> <span class="pre">using</span> <span class="pre">tuples</span></code></p>
@@ -5877,6 +6014,13 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <li><a class="reference internal" href="#practice-drills-lists">Practice Drills — Lists</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#activity-playlist-manager">Activity: Playlist Manager</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scaffolding-build-it-in-this-order">🧩 Scaffolding — build it in this order</a></li>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#sample-interaction">Sample interaction</a></li>
+<li><a class="reference internal" href="#grading-rubric-1-pt-per-standard">Grading Rubric (1 pt per standard)</a><ul>
 <li><a class="reference internal" href="#tuples">Tuples</a><ul>
 <li><a class="reference internal" href="#practice-drills-tuples">Practice Drills — Tuples</a></li>
 </ul>
