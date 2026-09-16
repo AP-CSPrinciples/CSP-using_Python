@@ -2865,6 +2865,49 @@ Blue Notebook	Sale Price: $24.99
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
+<details><summary>Enumerate Explained</summary>
+<p>Here’s a breakdown of what that code does:</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">enumerate(fruits)</span></code></strong>
+<code class="docutils literal notranslate"><span class="pre">fruits</span></code> is a list, like <code class="docutils literal notranslate"><span class="pre">[&quot;apple&quot;,</span> <span class="pre">&quot;banana&quot;,</span> <span class="pre">&quot;cherry&quot;]</span></code>. Normally when you loop through a list, you just get each item — you don’t automatically know its position (index). <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> fixes that: it goes through the list and gives you <strong>two things at once</strong> for each item — its position number and the value itself.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i,</span> <span class="pre">item</span> <span class="pre">in</span> <span class="pre">enumerate(fruits):</span></code></strong>
+This loop grabs both of those things each time around:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code> = the index (position), starting at 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">item</span></code> = the actual fruit at that position</p></li>
+</ul>
+<p>So for <code class="docutils literal notranslate"><span class="pre">[&quot;apple&quot;,</span> <span class="pre">&quot;banana&quot;,</span> <span class="pre">&quot;cherry&quot;]</span></code>, the loop runs three times:</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>i</p></th>
+<th class="head"><p>item</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>apple</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>banana</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>cherry</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">print(f&quot;{i}:</span> <span class="pre">{item}&quot;)</span></code></strong>
+This is an <code class="docutils literal notranslate"><span class="pre">f-string</span></code> — a way to insert variables directly into a string. It prints the index, a colon, then the item.</p>
+<p><strong>Putting it together</strong>, the output would be:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="p">:</span> <span class="n">apple</span>
+<span class="mi">1</span><span class="p">:</span> <span class="n">banana</span>
+<span class="mi">2</span><span class="p">:</span> <span class="n">cherry</span>
+</pre></div>
+</div>
+<p><strong>Why use <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> instead of just <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">item</span> <span class="pre">in</span> <span class="pre">fruits</span></code>?</strong>
+Sometimes you need the position too — like if you want to number a list for students, or you need to know “this is the 3rd item” while also using its value. Without <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>, you’d have to manually track a counter variable yourself (<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">0</span></code>, then <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">+=</span> <span class="pre">1</span></code> each loop) — <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> does that bookkeeping for you.</p>
+<p><code class="docutils literal notranslate"><span class="pre">enumerate</span></code> hands you a stack of index cards, each one labeled with a number and taped to a fruit — you just read off both labels as you go through the stack.</p>
+</details>
 <p><strong><code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> Operators</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"apple"</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">)</span>       <span class="c1"># True</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"grape"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">)</span>   <span class="c1"># True</span>
