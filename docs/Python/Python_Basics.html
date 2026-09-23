@@ -204,7 +204,6 @@
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Python Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#python-style-guidelines">Python Style Guidelines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#f-latitude-lat-longitude-lon">f”Latitude: {lat}, Longitude: {lon}”</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#final-project-options">Final Project Options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PyGame.html">PyGame</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python_Turtle.html">Python_Turtle</a></li>
@@ -3250,12 +3249,9 @@ Sometimes you need the position too — like if you want to number a list for st
 </pre></div>
 </div>
 <p><strong>TODO: unpack location into lat, lon in one line, then print</strong></p>
-</section>
-</section>
-</section>
-</section>
-<section id="f-latitude-lat-longitude-lon">
-<h1>f”Latitude: {lat}, Longitude: {lon}”<a class="headerlink" href="#f-latitude-lat-longitude-lon" title="Link to this heading">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s2">"Latitude: </span><span class="si">{</span><span class="n">lat</span><span class="si">}</span><span class="s2">, Longitude: </span><span class="si">{</span><span class="n">lon</span><span class="si">}</span><span class="s2">"</span>
+</pre></div>
+</div>
 <p>Store a GPS coordinate as a tuple <code class="docutils literal notranslate"><span class="pre">(latitude,</span> <span class="pre">longitude)</span></code>. Unpack it into two separate variables in a single line and print a formatted sentence using them.</p>
 <p><strong>T2 — RGB Color Mixer</strong></p>
 <p>Store two colors as RGB tuples, e.g. <code class="docutils literal notranslate"><span class="pre">red</span> <span class="pre">=</span> <span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>. Write a function <code class="docutils literal notranslate"><span class="pre">average_color(c1,</span> <span class="pre">c2)</span></code> that takes two RGB tuples and returns a <strong>new tuple</strong> representing their averaged color (average each channel, round to an int). Test it by mixing two colors.</p>
@@ -3306,9 +3302,11 @@ Sometimes you need the position too — like if you want to number a list for st
 </div>
 <p><strong>Sample output:</strong> <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">19</span></code></p>
 <p><em>PCEP: 3.2</em></p>
+</section>
+</section>
 <hr class="docutils" />
 <section id="dictionaries">
-<h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">¶</a></h2>
+<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.3</span> <span class="pre">—</span> <span class="pre">Collect</span> <span class="pre">and</span> <span class="pre">process</span> <span class="pre">data</span> <span class="pre">using</span> <span class="pre">dictionaries</span></code> <code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-3.B</span> <span class="pre">—</span> <span class="pre">Use</span> <span class="pre">abstractions</span> <span class="pre">to</span> <span class="pre">organize</span> <span class="pre">data.</span></code></p>
 <p>A <strong>dictionary</strong> stores <strong>key-value pairs</strong>. Keys must be unique and immutable. Dictionaries are <strong>ordered</strong> (Python 3.7+) and <strong>mutable</strong>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">student</span> <span class="o">=</span> <span class="p">{</span>
@@ -3372,7 +3370,7 @@ Sometimes you need the position too — like if you want to number a list for st
 </div></blockquote>
 <hr class="docutils" />
 <section id="practice-drills-dictionaries">
-<h3>Practice Drills — Dictionaries<a class="headerlink" href="#practice-drills-dictionaries" title="Link to this heading">¶</a></h3>
+<h4>Practice Drills — Dictionaries<a class="headerlink" href="#practice-drills-dictionaries" title="Link to this heading">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">single-concept</span> <span class="pre">reps,</span> <span class="pre">10–15</span> <span class="pre">min</span> <span class="pre">each</span> <span class="pre">—</span> <span class="pre">do</span> <span class="pre">these</span> <span class="pre">before</span> <span class="pre">Student</span> <span class="pre">Contact</span> <span class="pre">Book</span> <span class="pre">below.</span></code></p>
 <p><strong>D1 — Inventory Tracker</strong></p>
 <p>Start with a dictionary of 3 hardcoded inventory items and their quantities (<code class="docutils literal notranslate"><span class="pre">{&quot;pencils&quot;:</span> <span class="pre">30,</span> <span class="pre">...}</span></code>). Add a new item, update an existing quantity, remove one item with <code class="docutils literal notranslate"><span class="pre">del</span></code>, and print the final dictionary using a <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">key,</span> <span class="pre">value</span> <span class="pre">in</span> <span class="pre">...items()</span></code> loop.</p>
@@ -3438,11 +3436,11 @@ Sometimes you need the position too — like if you want to number a list for st
 </div>
 <p><strong>Sample:</strong> merged → <code class="docutils literal notranslate"><span class="pre">{'Ava':</span> <span class="pre">88,</span> <span class="pre">'Liam':</span> <span class="pre">95,</span> <span class="pre">'Noah':</span> <span class="pre">79}</span></code>, inverted → <code class="docutils literal notranslate"><span class="pre">{88:</span> <span class="pre">'Ava',</span> <span class="pre">95:</span> <span class="pre">'Liam',</span> <span class="pre">79:</span> <span class="pre">'Noah'}</span></code></p>
 <p><em>PCEP: 3.3 | AP CSP: AAP-3.B</em></p>
+</section>
+</section>
 <hr class="docutils" />
-</section>
-</section>
 <section id="activity-student-contact-book">
-<h2>Activity: Student Contact Book<a class="headerlink" href="#activity-student-contact-book" title="Link to this heading">¶</a></h2>
+<h3>Activity: Student Contact Book<a class="headerlink" href="#activity-student-contact-book" title="Link to this heading">¶</a></h3>
 <p>Build a program that stores a contact book as a <strong>list of dictionaries</strong>. Each contact has a name, phone number, and email. The user can:</p>
 <ol class="arabic simple">
 <li><p>Add a new contact</p></li>
@@ -3488,10 +3486,10 @@ Sometimes you need the position too — like if you want to number a list for st
 </pre></div>
 </div>
 <p><em>AP CSP: AAP-3.B, AAP-2.E | PCEP: 3.3</em></p>
-<hr class="docutils" />
 </section>
+<hr class="docutils" />
 <section id="mixed-review-quick-check-all-four-types">
-<h2>Mixed Review — Quick Check (all four types)<a class="headerlink" href="#mixed-review-quick-check-all-four-types" title="Link to this heading">¶</a></h2>
+<h3>Mixed Review — Quick Check (all four types)<a class="headerlink" href="#mixed-review-quick-check-all-four-types" title="Link to this heading">¶</a></h3>
 <p>A 4-question exit ticket for wrapping up the section — one short question per data type, answerable in a sentence or two, no coding required.</p>
 <ol class="arabic simple">
 <li><p><strong>String:</strong> You have <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">&quot;</span>&#160; <span class="pre">DANA</span>&#160; <span class="pre">&quot;</span></code>. What does <code class="docutils literal notranslate"><span class="pre">name.strip().lower()</span></code> return?</p></li>
@@ -3542,6 +3540,7 @@ Sometimes you need the position too — like if you want to number a list for st
 </tbody>
 </table>
 </div>
+</section>
 </section>
 <hr class="docutils" />
 <section id="section-4-functions-and-exceptions">
@@ -6080,17 +6079,14 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <li><a class="reference internal" href="#practice-drills-tuples">Practice Drills — Tuples</a></li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#f-latitude-lat-longitude-lon">f”Latitude: {lat}, Longitude: {lon}”</a><ul>
 <li><a class="reference internal" href="#dictionaries">Dictionaries</a><ul>
 <li><a class="reference internal" href="#practice-drills-dictionaries">Practice Drills — Dictionaries</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#activity-student-contact-book">Activity: Student Contact Book</a></li>
 <li><a class="reference internal" href="#mixed-review-quick-check-all-four-types">Mixed Review — Quick Check (all four types)</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#section-4-functions-and-exceptions">Section 4 — Functions and Exceptions</a><ul>
 <li><a class="reference internal" href="#functions-methods-and-procedures">Functions, Methods, and Procedures</a></li>
 <li><a class="reference internal" href="#activity-math-operations-calculator">Activity: Math Operations Calculator</a></li>
