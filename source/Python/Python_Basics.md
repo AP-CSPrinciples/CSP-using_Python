@@ -2602,7 +2602,11 @@ location = (34.0522, -118.2437)
 ```
 
 **TODO: unpack location into lat, lon in one line, then print**
-#       f"Latitude: {lat}, Longitude: {lon}"
+      
+```python
+f"Latitude: {lat}, Longitude: {lon}"
+```
+
 Store a GPS coordinate as a tuple `(latitude, longitude)`. Unpack it into two separate variables in a single line and print a formatted sentence using them.
 
 
