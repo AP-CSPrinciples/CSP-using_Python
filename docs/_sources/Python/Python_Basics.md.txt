@@ -2585,14 +2585,26 @@ nested = [(1, "a"), (2, "b")]     # list of tuples
 
 **T1 — Coordinate Pair Basics**
 
+Unpacking: when a tuple has N items, you can assign them to N variables in one line. The first variable gets the first item, the second gets the second, and so on.
+
+**Example:**
+```python
+student = ("Sam", 16)
+name, age = student
+print(name)   # Sam
+print(age)    # 16
+```
+
+> The number of variables on the left must match the number of items in the tuple, or Python raises a ValueError.
+
+```python
+location = (34.0522, -118.2437)
+```
+
+**TODO: unpack location into lat, lon in one line, then print**
+#       f"Latitude: {lat}, Longitude: {lon}"
 Store a GPS coordinate as a tuple `(latitude, longitude)`. Unpack it into two separate variables in a single line and print a formatted sentence using them.
 
-```
-location = (34.0522, -118.2437)
-
-# TODO: unpack location into lat, lon in one line, then print
-#       f"Latitude: {lat}, Longitude: {lon}"
-```
 
 **T2 — RGB Color Mixer**
 
