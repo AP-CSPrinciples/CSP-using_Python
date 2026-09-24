@@ -3229,17 +3229,37 @@ Sometimes you need the position too — like if you want to number a list for st
 <p><strong>🤔 Thinking Question — check your answer</strong></p>
 <p><strong>Question:</strong> Would you store a student’s GPA history (which changes every semester) in a list or a tuple? What about a single student’s date of birth (month, day, year)?</p>
 <p><strong>Answer:</strong> GPA history → <strong>list</strong>, because new entries get added over time (mutable data). Date of birth → <strong>tuple</strong>, because once set it never changes — the immutability of a tuple communicates “this is fixed data” to anyone reading your code.</p>
-<hr class="docutils" />
-<section id="practice-drills-tuples">
-<h4>Practice Drills — Tuples<a class="headerlink" href="#practice-drills-tuples" title="Link to this heading">¶</a></h4>
+<p><strong>Practice Drills — Tuples</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">single-concept</span> <span class="pre">reps,</span> <span class="pre">10–15</span> <span class="pre">min</span> <span class="pre">each</span> <span class="pre">—</span> <span class="pre">do</span> <span class="pre">these</span> <span class="pre">before</span> <span class="pre">Student</span> <span class="pre">Contact</span> <span class="pre">Book</span> <span class="pre">below.</span></code></p>
 <p><strong>T1 — Coordinate Pair Basics</strong></p>
-<p>Unpacking: when a tuple has N items, you can assign them to N variables in one line. The first variable gets the first item, the second gets the second, and so on.</p>
-<p><strong>Example:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">student</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"Sam"</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="n">student</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>   <span class="c1"># Sam</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>    <span class="c1"># 16</span>
+<p><strong>Packing</strong> means putting several values into one tuple. Python does this automatically when you list values separated by commas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">point</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>        <span class="c1"># packing: 3 and 7 are packed into one tuple</span>
+<span class="n">point</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span>          <span class="c1"># same thing; the parentheses are optional</span>
+</pre></div>
+</div>
+<p><strong>Unpacking</strong> is the reverse: taking the values out of a tuple and storing each one in its own variable, all in one line. The variables on the left get matched to the values on the right <strong>by position</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">point</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">point</span>          <span class="c1"># unpacking: x gets point[0], y gets point[1]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>              <span class="c1"># 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>              <span class="c1"># 7</span>
+</pre></div>
+</div>
+<p>That one line does the same job as these two:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>⚠️ The number of variables must match the number of values in the tuple. <code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">(3,</span> <span class="pre">7,</span> <span class="pre">9)</span></code> causes a <code class="docutils literal notranslate"><span class="pre">ValueError:</span> <span class="pre">too</span> <span class="pre">many</span> <span class="pre">values</span> <span class="pre">to</span> <span class="pre">unpack</span></code>.</p>
+<p><strong>Your task:</strong> Store a GPS coordinate as a tuple <code class="docutils literal notranslate"><span class="pre">(latitude,</span> <span class="pre">longitude)</span></code>. Unpack it into two separate variables in a single line and print a formatted sentence using them.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">location</span> <span class="o">=</span> <span class="p">(</span><span class="mf">34.0522</span><span class="p">,</span> <span class="o">-</span><span class="mf">118.2437</span><span class="p">)</span>
+
+<span class="c1"># TODO: unpack location into lat, lon in one line, then print</span>
+<span class="c1">#       f"Latitude: {lat}, Longitude: {lon}"</span>
+</pre></div>
+</div>
+<p><strong>Sample output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Latitude</span><span class="p">:</span> <span class="mf">34.0522</span><span class="p">,</span> <span class="n">Longitude</span><span class="p">:</span> <span class="o">-</span><span class="mf">118.2437</span>
 </pre></div>
 </div>
 <blockquote>
@@ -3302,7 +3322,6 @@ Sometimes you need the position too — like if you want to number a list for st
 </div>
 <p><strong>Sample output:</strong> <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">19</span></code></p>
 <p><em>PCEP: 3.2</em></p>
-</section>
 </section>
 <hr class="docutils" />
 <section id="dictionaries">
@@ -6075,10 +6094,7 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <li><a class="reference internal" href="#requirements">Requirements</a></li>
 <li><a class="reference internal" href="#sample-interaction">Sample interaction</a></li>
 <li><a class="reference internal" href="#grading-rubric-1-pt-per-standard">Grading Rubric (1 pt per standard)</a><ul>
-<li><a class="reference internal" href="#tuples">Tuples</a><ul>
-<li><a class="reference internal" href="#practice-drills-tuples">Practice Drills — Tuples</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#tuples">Tuples</a></li>
 <li><a class="reference internal" href="#dictionaries">Dictionaries</a><ul>
 <li><a class="reference internal" href="#practice-drills-dictionaries">Practice Drills — Dictionaries</a></li>
 </ul>
