@@ -2577,23 +2577,54 @@ nested = [(1, "a"), (2, "b")]     # list of tuples
 
 **Answer:** GPA history → **list**, because new entries get added over time (mutable data). Date of birth → **tuple**, because once set it never changes — the immutability of a tuple communicates "this is fixed data" to anyone reading your code.
 
----
 
-#### Practice Drills — Tuples
+**Practice Drills — Tuples**
 
 `Quick single-concept reps, 10–15 min each — do these before Student Contact Book below.`
 
 **T1 — Coordinate Pair Basics**
 
-Unpacking: when a tuple has N items, you can assign them to N variables in one line. The first variable gets the first item, the second gets the second, and so on.
+**Packing** means putting several values into one tuple. Python does this automatically when you list values separated by commas:
 
-**Example:**
-```python
-student = ("Sam", 16)
-name, age = student
-print(name)   # Sam
-print(age)    # 16
 ```
+point = (3, 7)        # packing: 3 and 7 are packed into one tuple
+point = 3, 7          # same thing; the parentheses are optional
+```
+
+**Unpacking** is the reverse: taking the values out of a tuple and storing each one in its own variable, all in one line. The variables on the left get matched to the values on the right **by position**:
+
+```
+point = (3, 7)
+x, y = point          # unpacking: x gets point[0], y gets point[1]
+
+print(x)              # 3
+print(y)              # 7
+```
+
+That one line does the same job as these two:
+
+```
+x = point[0]
+y = point[1]
+```
+
+⚠️ The number of variables must match the number of values in the tuple. `x, y = (3, 7, 9)` causes a `ValueError: too many values to unpack`.
+
+**Your task:** Store a GPS coordinate as a tuple `(latitude, longitude)`. Unpack it into two separate variables in a single line and print a formatted sentence using them.
+
+```
+location = (34.0522, -118.2437)
+
+# TODO: unpack location into lat, lon in one line, then print
+#       f"Latitude: {lat}, Longitude: {lon}"
+```
+
+**Sample output:**
+
+```
+Latitude: 34.0522, Longitude: -118.2437
+```
+
 
 > The number of variables on the left must match the number of items in the tuple, or Python raises a ValueError.
 
