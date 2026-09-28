@@ -3202,6 +3202,233 @@ A 4-question exit ticket to wrap up the section — one short question per data 
 
 #############################################################################
 
+
+### Project: Pop-Up Shop Kiosk
+
+`🔖 PCEP 3.1, 3.2, 3.3, 3.4` `📋 AP CSP: AAP-1.C, AAP-1.D, AAP-2.D, AAP-2.H, AAP-2.K, AAP-2.N, AAP-2.O, CRD-2.J`
+
+You're building the self-order kiosk for a pop-up shop — **your** shop, **your** theme. A customer should be able to browse the menu, add and remove items, and check out with a formatted receipt. Every Section 3 data type has a real job in this program:
+
+| Data type      | Its job in your kiosk                                                      |
+| -------------- | -------------------------------------------------------------------------- |
+| **Dictionary** | The **catalog** — look up any item by name to get its price and category    |
+| **Tuple**      | Each item's **fixed info** `(price, category)`, and each cart line `(item, quantity)` |
+| **List**       | The **cart** — it grows and shrinks as the customer shops                  |
+| **String**     | Cleaning what the customer types, and building the **receipt** and **order code** |
+
+**Pick a theme (must be different from the worked example below):** sneaker drop, school spirit store, game item shop, boba shop, concert merch table, bakery, plant nursery, bike shop… or pitch your own.
+
+**📌 Worked Example — a food truck catalog (different theme, just the starting pieces)**
+
+```
+catalog = {
+    "burrito":  (8.50, "Entrees"),     # key: item name → value: (price, category)
+    "elote":    (4.00, "Sides"),
+    "horchata": (3.25, "Drinks"),
+}
+
+cart = []                              # list of (item, quantity) tuples
+
+# Display the catalog: .items() gives key + value, then unpack the tuple
+for name, info in catalog.items():
+    price, category = info
+    print(f"{name.title():<12}{category:<10}${price:>6.2f}")
+
+# Add to the cart: clean the input, check the dictionary, store a tuple
+item = input("Item name: ").strip().lower()
+if item in catalog:
+    cart.append((item, 1))
+```
+
+Output of the display loop:
+
+```
+Burrito     Entrees   $  8.50
+Elote       Sides     $  4.00
+Horchata    Drinks    $  3.25
+```
+
+> 💡 `:<12` means "left-align in 12 spaces," and `:>6.2f` means "right-align in 6 spaces with 2 decimal places." This is how you line up columns on a receipt.
+
+---
+
+**Requirements**
+
+**Setup**
+1. A **catalog dictionary** with at least **6 items** across at least **3 categories**. Keys are lowercase item names (strings); values are `(price, category)` **tuples**.
+2. An empty **cart list** that will hold `(item, quantity)` **tuples**.
+3. Ask for the customer's name at the start and clean it with `.strip()` and `.title()`.
+
+**Menu loop** — a `while` loop that repeats until checkout, with these options:
+
+4. **View Menu** — loop over `catalog.items()`, unpack each tuple, and print aligned columns (name, category, price) using f-string formatting.
+5. **Add Item**
+   - Clean the item name with `.strip().lower()` so `"  BURRITO "` still works.
+   - Use `in` to check the item exists; print a friendly message if it doesn't.
+   - Ask for a quantity and validate it with `.isdigit()` **before** converting with `int()` — `"abc"` and `"0"` must be rejected, not crash.
+   - If the item is **already in the cart**, update its quantity. ⚠️ Tuples can't be changed — you must **replace** the old tuple with a new one: `cart[i] = (name, old_qty + qty)`.
+   - Otherwise, `.append()` a new `(item, quantity)` tuple.
+6. **Remove Item** — find the matching tuple with a loop, then `.remove()` it **after** the loop. Print a message if it isn't in the cart.
+7. **View Cart** — print each line as `quantity x Item Name   $line_total`. If the cart is empty (`len(cart) == 0`), say so.
+8. **Checkout** — refuse to check out an empty cart. Otherwise print a receipt and end the program (see below).
+
+**Receipt (checkout)**
+
+9. Loop through the cart to calculate the **subtotal**; use a constant like `TAX_RATE = 0.0775` for tax, then print **subtotal, tax, and total**, all with `:.2f`.
+10. Build an **order code** string from the customer's name: the first 3 letters in uppercase + `"-"` + the number of lines in the cart (e.g., `"MAR-2"`). Use slicing and `.upper()`.
+11. Build a **category count dictionary** during checkout — how many items of each category were bought — using the same add-or-update pattern as Drill D2. Print it at the bottom of the receipt.
+
+**⭐ Bonus (+2):** Accept a promo code like `SAVE10`. Use `.startswith("SAVE")`, slice off the number with `[4:]`, check it with `.isdigit()`, and apply that percent discount (cap it at 50%). Unrecognized codes print a message.
+
+---
+
+**🧩 Scaffolding — build it across 3 class periods:**
+
+- **Day 1:** Build your catalog dictionary, the menu loop skeleton (all 5 options printing "coming soon"), and a working **View Menu** with aligned columns.
+- **Day 2:** **Add Item** (basic version first — then input cleaning, validation, and the replace-the-tuple update), **Remove Item**, and **View Cart**.
+- **Day 3:** **Checkout** — subtotal/tax/total, order code, category counts. Then run your test cases, and attempt the bonus if you have time.
+
+**Sample interaction** *(food truck theme — yours will be different)*
+
+```
+Welcome! What's your name?   marco reyes
+
+1) View Menu  2) Add Item  3) Remove Item  4) View Cart  5) Checkout
+Choose an option: 2
+Item name:  Horchata
+Quantity: 3
+Added 3 x Horchata.
+
+Choose an option: 2
+Item name: pizza
+Sorry, 'pizza' isn't on the menu.
+
+Choose an option: 2
+Item name: chips and salsa
+Quantity: abc
+Quantity must be a whole number greater than 0.
+
+Choose an option: 2
+Item name: chips and salsa
+Quantity: 1
+Added 1 x Chips And Salsa.
+
+Choose an option: 5
+Promo code (or press Enter to skip): save10
+
+====================================
+              RECEIPT
+Customer: Marco Reyes
+Order code: MAR-2
+------------------------------------
+3 x Horchata          $    9.75
+1 x Chips And Salsa   $    3.50
+------------------------------------
+Subtotal                  $   13.25
+Discount (10%)            -$   1.32
+Tax                       $    0.92
+TOTAL                     $   12.85
+------------------------------------
+Items by category:
+  Drinks: 3
+  Sides: 1
+====================================
+```
+
+**Required test cases** — submit a screenshot or pasted run for each:
+
+| # | Test                                           | Expected result                          |
+| - | ---------------------------------------------- | ---------------------------------------- |
+| 1 | Add an item typed with extra spaces and capitals | Item is found and added                  |
+| 2 | Add an item that isn't in the catalog          | Friendly message, no crash               |
+| 3 | Enter `abc` and `0` as quantities              | Both rejected, no crash                  |
+| 4 | Add the same item twice                        | ONE cart line with the combined quantity |
+| 5 | Remove an item that isn't in the cart          | Friendly message, no crash               |
+| 6 | Check out with an empty cart                   | Refused with a message                   |
+| 7 | Full checkout with 3+ different items          | Correct math on the receipt              |
+
+**Reflection (3–5 sentences, as a comment at the bottom of your file):** Why did you store each item's info as a **tuple** instead of a list? Why is the catalog a **dictionary** instead of a list? What would have been harder if you'd used separate lists like `names = [...]` and `prices = [...]`?
+
+**Header block** — use the course header at the top of your file:
+
+```
+#       Assignment:  Section 3 Project: Pop-Up Shop Kiosk
+#       Author:      [Your Name]
+#       Course Name: AP Computer Science Principles
+#       Description: [Your shop theme and what the kiosk does]
+#       Language:    Python 3.x
+#       Deficiencies: [Known problems, or state there are none]
+```
+
+---
+
+**Pop-Up Shop Kiosk — Grading Rubric (50 points + 2 bonus)**
+
+**Strings — 10 pts** `🔖 PCEP 3.4` `📋 AP CSP: AAP-1.C, AAP-2.D`
+
+| Criteria                                                                                       | Points |
+| ---------------------------------------------------------------------------------------------- | ------ |
+| User input cleaned with `.strip()` / `.lower()` / `.title()` so casing and spaces don't break lookups | 3      |
+| Quantity validated with `.isdigit()` before `int()` — bad input never crashes                   | 2      |
+| Order code built with slicing + `.upper()` + concatenation                                      | 2      |
+| Menu, cart, and receipt use f-string alignment (`:<`, `:>`) and `:.2f` money formatting          | 3      |
+
+**Lists — 10 pts** `🔖 PCEP 3.1` `📋 AP CSP: AAP-1.D, AAP-2.N, AAP-2.O`
+
+| Criteria                                                                            | Points |
+| ----------------------------------------------------------------------------------- | ------ |
+| Cart is a list that grows with `.append()` and shrinks with `.remove()`              | 3      |
+| Remove finds the match with a loop first, then removes it **after** the loop         | 2      |
+| Cart is traversed with a `for` loop to display lines and calculate the subtotal      | 3      |
+| Empty cart handled with `len()` for both View Cart and Checkout                      | 2      |
+
+**Tuples — 10 pts** `🔖 PCEP 3.2` `📋 AP CSP: AAP-1.D`
+
+| Criteria                                                                                    | Points |
+| ------------------------------------------------------------------------------------------- | ------ |
+| Catalog values are `(price, category)` tuples                                                | 2      |
+| Cart lines are `(item, quantity)` tuples                                                     | 2      |
+| Tuples are **unpacked** in `for` loops (e.g., `for name, qty in cart:`)                      | 3      |
+| Adding a duplicate item **replaces** the tuple with a new one — shows understanding of immutability | 3      |
+
+**Dictionaries — 10 pts** `🔖 PCEP 3.3` `📋 AP CSP: AAP-1.D`
+
+| Criteria                                                                                 | Points |
+| ---------------------------------------------------------------------------------------- | ------ |
+| Catalog dictionary with 6+ items in 3+ categories, looked up by key                       | 2      |
+| `in` (or `.get()`) prevents a `KeyError` on items not in the catalog                      | 2      |
+| Menu displayed by looping over `.items()`                                                 | 3      |
+| Category count dictionary built at checkout with the add-or-update pattern               | 3      |
+
+**Program Design & Testing — 10 pts** `📋 AP CSP: AAP-2.H, AAP-2.K, CRD-2.J`
+
+| Criteria                                                                       | Points |
+| ------------------------------------------------------------------------------ | ------ |
+| `while` menu loop with `if/elif/else` for each option and an invalid-option message | 2      |
+| Subtotal, tax (constant), and total calculated correctly                        | 2      |
+| All 7 required test cases submitted and passing                                 | 3      |
+| Reflection answers all three questions                                          | 2      |
+| Header block complete; PEP 8 naming; original theme (not the worked example)    | 1      |
+
+**Bonus — +2:** Promo code parsed with `.startswith()`, slicing, and `.isdigit()`, with the discount applied and capped.
+
+| Section                  | Points  |
+| ------------------------ | ------- |
+| Strings                  | 10      |
+| Lists                    | 10      |
+| Tuples                   | 10      |
+| Dictionaries             | 10      |
+| Program Design & Testing | 10      |
+| **Total**                | **50** (+2 bonus) |
+
+> 💡 **CSP Performance Task connection:** this project already has most of what the Create Task scores — input, output, a list that manages complexity, selection, and iteration. It is missing the **student-developed procedure with a parameter**. In Section 4, you will learn how to break this program into functions.
+
+*PCEP: 3.1, 3.2, 3.3, 3.4 | AP CSP: AAP-1.C, AAP-1.D, AAP-2.D, AAP-2.H, AAP-2.K, AAP-2.N, AAP-2.O, CRD-2.J*
+
+
+#############################################################################
+
+
 **Section 3 — Standards Alignment Reference**
 
 | Code             | Standard                                                        | Where it shows up in this section                   |
@@ -3213,6 +3440,8 @@ A 4-question exit ticket to wrap up the section — one short question per data 
 | `PCEP 3.2`       | Collect and process data using tuples                           | Tuples, Drills T1–T5                                |
 | `PCEP 3.3`       | Collect and process data using dictionaries                     | Dictionaries, Drills D1–D6, Student Contact Book    |
 | `PCEP 3.4`       | Operate with strings                                            | Strings, Drills S1–S7, Receipt Formatter            |
+
+
 
 
 #############################################################################

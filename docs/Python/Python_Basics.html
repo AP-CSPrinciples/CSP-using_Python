@@ -3764,6 +3764,358 @@ Noah — Grade: B, Attendance: 92%
 <li><p>A <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>. Use <code class="docutils literal notranslate"><span class="pre">.get()</span></code> — e.g., <code class="docutils literal notranslate"><span class="pre">student.get(&quot;gpa&quot;,</span> <span class="pre">0.0)</span></code> — or check with <code class="docutils literal notranslate"><span class="pre">&quot;gpa&quot;</span> <span class="pre">in</span> <span class="pre">student</span></code> first.</p></li>
 </ol>
 <p>#############################################################################</p>
+</section>
+<section id="project-pop-up-shop-kiosk">
+<h3>Project: Pop-Up Shop Kiosk<a class="headerlink" href="#project-pop-up-shop-kiosk" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.1,</span> <span class="pre">3.2,</span> <span class="pre">3.3,</span> <span class="pre">3.4</span></code> <code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-1.C,</span> <span class="pre">AAP-1.D,</span> <span class="pre">AAP-2.D,</span> <span class="pre">AAP-2.H,</span> <span class="pre">AAP-2.K,</span> <span class="pre">AAP-2.N,</span> <span class="pre">AAP-2.O,</span> <span class="pre">CRD-2.J</span></code></p>
+<p>You’re building the self-order kiosk for a pop-up shop — <strong>your</strong> shop, <strong>your</strong> theme. A customer should be able to browse the menu, add and remove items, and check out with a formatted receipt. Every Section 3 data type has a real job in this program:</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data type</p></th>
+<th class="head"><p>Its job in your kiosk</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Dictionary</strong></p></td>
+<td><p>The <strong>catalog</strong> — look up any item by name to get its price and category</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Tuple</strong></p></td>
+<td><p>Each item’s <strong>fixed info</strong> <code class="docutils literal notranslate"><span class="pre">(price,</span> <span class="pre">category)</span></code>, and each cart line <code class="docutils literal notranslate"><span class="pre">(item,</span> <span class="pre">quantity)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>List</strong></p></td>
+<td><p>The <strong>cart</strong> — it grows and shrinks as the customer shops</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>String</strong></p></td>
+<td><p>Cleaning what the customer types, and building the <strong>receipt</strong> and <strong>order code</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Pick a theme (must be different from the worked example below):</strong> sneaker drop, school spirit store, game item shop, boba shop, concert merch table, bakery, plant nursery, bike shop… or pitch your own.</p>
+<p><strong>📌 Worked Example — a food truck catalog (different theme, just the starting pieces)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">catalog</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"burrito"</span><span class="p">:</span>  <span class="p">(</span><span class="mf">8.50</span><span class="p">,</span> <span class="s2">"Entrees"</span><span class="p">),</span>     <span class="c1"># key: item name → value: (price, category)</span>
+    <span class="s2">"elote"</span><span class="p">:</span>    <span class="p">(</span><span class="mf">4.00</span><span class="p">,</span> <span class="s2">"Sides"</span><span class="p">),</span>
+    <span class="s2">"horchata"</span><span class="p">:</span> <span class="p">(</span><span class="mf">3.25</span><span class="p">,</span> <span class="s2">"Drinks"</span><span class="p">),</span>
+<span class="p">}</span>
+
+<span class="n">cart</span> <span class="o">=</span> <span class="p">[]</span>                              <span class="c1"># list of (item, quantity) tuples</span>
+
+<span class="c1"># Display the catalog: .items() gives key + value, then unpack the tuple</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">catalog</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">price</span><span class="p">,</span> <span class="n">category</span> <span class="o">=</span> <span class="n">info</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;12</span><span class="si">}{</span><span class="n">category</span><span class="si">:</span><span class="s2">&lt;10</span><span class="si">}</span><span class="s2">$</span><span class="si">{</span><span class="n">price</span><span class="si">:</span><span class="s2">&gt;6.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Add to the cart: clean the input, check the dictionary, store a tuple</span>
+<span class="n">item</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Item name: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">catalog</span><span class="p">:</span>
+    <span class="n">cart</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">item</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Output of the display loop:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Burrito     Entrees   $  8.50
+Elote       Sides     $  4.00
+Horchata    Drinks    $  3.25
+</pre></div>
+</div>
+<blockquote>
+<div><p>💡 <code class="docutils literal notranslate"><span class="pre">:&lt;12</span></code> means “left-align in 12 spaces,” and <code class="docutils literal notranslate"><span class="pre">:&gt;6.2f</span></code> means “right-align in 6 spaces with 2 decimal places.” This is how you line up columns on a receipt.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p><strong>Requirements</strong></p>
+<p><strong>Setup</strong></p>
+<ol class="arabic simple">
+<li><p>A <strong>catalog dictionary</strong> with at least <strong>6 items</strong> across at least <strong>3 categories</strong>. Keys are lowercase item names (strings); values are <code class="docutils literal notranslate"><span class="pre">(price,</span> <span class="pre">category)</span></code> <strong>tuples</strong>.</p></li>
+<li><p>An empty <strong>cart list</strong> that will hold <code class="docutils literal notranslate"><span class="pre">(item,</span> <span class="pre">quantity)</span></code> <strong>tuples</strong>.</p></li>
+<li><p>Ask for the customer’s name at the start and clean it with <code class="docutils literal notranslate"><span class="pre">.strip()</span></code> and <code class="docutils literal notranslate"><span class="pre">.title()</span></code>.</p></li>
+</ol>
+<p><strong>Menu loop</strong> — a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop that repeats until checkout, with these options:</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>View Menu</strong> — loop over <code class="docutils literal notranslate"><span class="pre">catalog.items()</span></code>, unpack each tuple, and print aligned columns (name, category, price) using f-string formatting.</p></li>
+<li><p><strong>Add Item</strong></p>
+<ul class="simple">
+<li><p>Clean the item name with <code class="docutils literal notranslate"><span class="pre">.strip().lower()</span></code> so <code class="docutils literal notranslate"><span class="pre">&quot;</span>&#160; <span class="pre">BURRITO</span> <span class="pre">&quot;</span></code> still works.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">in</span></code> to check the item exists; print a friendly message if it doesn’t.</p></li>
+<li><p>Ask for a quantity and validate it with <code class="docutils literal notranslate"><span class="pre">.isdigit()</span></code> <strong>before</strong> converting with <code class="docutils literal notranslate"><span class="pre">int()</span></code> — <code class="docutils literal notranslate"><span class="pre">&quot;abc&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;0&quot;</span></code> must be rejected, not crash.</p></li>
+<li><p>If the item is <strong>already in the cart</strong>, update its quantity. ⚠️ Tuples can’t be changed — you must <strong>replace</strong> the old tuple with a new one: <code class="docutils literal notranslate"><span class="pre">cart[i]</span> <span class="pre">=</span> <span class="pre">(name,</span> <span class="pre">old_qty</span> <span class="pre">+</span> <span class="pre">qty)</span></code>.</p></li>
+<li><p>Otherwise, <code class="docutils literal notranslate"><span class="pre">.append()</span></code> a new <code class="docutils literal notranslate"><span class="pre">(item,</span> <span class="pre">quantity)</span></code> tuple.</p></li>
+</ul>
+</li>
+<li><p><strong>Remove Item</strong> — find the matching tuple with a loop, then <code class="docutils literal notranslate"><span class="pre">.remove()</span></code> it <strong>after</strong> the loop. Print a message if it isn’t in the cart.</p></li>
+<li><p><strong>View Cart</strong> — print each line as <code class="docutils literal notranslate"><span class="pre">quantity</span> <span class="pre">x</span> <span class="pre">Item</span> <span class="pre">Name</span>&#160;&#160; <span class="pre">$line_total</span></code>. If the cart is empty (<code class="docutils literal notranslate"><span class="pre">len(cart)</span> <span class="pre">==</span> <span class="pre">0</span></code>), say so.</p></li>
+<li><p><strong>Checkout</strong> — refuse to check out an empty cart. Otherwise print a receipt and end the program (see below).</p></li>
+</ol>
+<p><strong>Receipt (checkout)</strong></p>
+<ol class="arabic simple" start="9">
+<li><p>Loop through the cart to calculate the <strong>subtotal</strong>; use a constant like <code class="docutils literal notranslate"><span class="pre">TAX_RATE</span> <span class="pre">=</span> <span class="pre">0.0775</span></code> for tax, then print <strong>subtotal, tax, and total</strong>, all with <code class="docutils literal notranslate"><span class="pre">:.2f</span></code>.</p></li>
+<li><p>Build an <strong>order code</strong> string from the customer’s name: the first 3 letters in uppercase + <code class="docutils literal notranslate"><span class="pre">&quot;-&quot;</span></code> + the number of lines in the cart (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;MAR-2&quot;</span></code>). Use slicing and <code class="docutils literal notranslate"><span class="pre">.upper()</span></code>.</p></li>
+<li><p>Build a <strong>category count dictionary</strong> during checkout — how many items of each category were bought — using the same add-or-update pattern as Drill D2. Print it at the bottom of the receipt.</p></li>
+</ol>
+<p><strong>⭐ Bonus (+2):</strong> Accept a promo code like <code class="docutils literal notranslate"><span class="pre">SAVE10</span></code>. Use <code class="docutils literal notranslate"><span class="pre">.startswith(&quot;SAVE&quot;)</span></code>, slice off the number with <code class="docutils literal notranslate"><span class="pre">[4:]</span></code>, check it with <code class="docutils literal notranslate"><span class="pre">.isdigit()</span></code>, and apply that percent discount (cap it at 50%). Unrecognized codes print a message.</p>
+<hr class="docutils" />
+<p><strong>🧩 Scaffolding — build it across 3 class periods:</strong></p>
+<ul class="simple">
+<li><p><strong>Day 1:</strong> Build your catalog dictionary, the menu loop skeleton (all 5 options printing “coming soon”), and a working <strong>View Menu</strong> with aligned columns.</p></li>
+<li><p><strong>Day 2:</strong> <strong>Add Item</strong> (basic version first — then input cleaning, validation, and the replace-the-tuple update), <strong>Remove Item</strong>, and <strong>View Cart</strong>.</p></li>
+<li><p><strong>Day 3:</strong> <strong>Checkout</strong> — subtotal/tax/total, order code, category counts. Then run your test cases, and attempt the bonus if you have time.</p></li>
+</ul>
+<p><strong>Sample interaction</strong> <em>(food truck theme — yours will be different)</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Welcome! What's your name?   marco reyes
+
+1) View Menu  2) Add Item  3) Remove Item  4) View Cart  5) Checkout
+Choose an option: 2
+Item name:  Horchata
+Quantity: 3
+Added 3 x Horchata.
+
+Choose an option: 2
+Item name: pizza
+Sorry, 'pizza' isn't on the menu.
+
+Choose an option: 2
+Item name: chips and salsa
+Quantity: abc
+Quantity must be a whole number greater than 0.
+
+Choose an option: 2
+Item name: chips and salsa
+Quantity: 1
+Added 1 x Chips And Salsa.
+
+Choose an option: 5
+Promo code (or press Enter to skip): save10
+
+====================================
+              RECEIPT
+Customer: Marco Reyes
+Order code: MAR-2
+------------------------------------
+3 x Horchata          $    9.75
+1 x Chips And Salsa   $    3.50
+------------------------------------
+Subtotal                  $   13.25
+Discount (10%)            -$   1.32
+Tax                       $    0.92
+TOTAL                     $   12.85
+------------------------------------
+Items by category:
+  Drinks: 3
+  Sides: 1
+====================================
+</pre></div>
+</div>
+<p><strong>Required test cases</strong> — submit a screenshot or pasted run for each:</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Test</p></th>
+<th class="head"><p>Expected result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Add an item typed with extra spaces and capitals</p></td>
+<td><p>Item is found and added</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Add an item that isn’t in the catalog</p></td>
+<td><p>Friendly message, no crash</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Enter <code class="docutils literal notranslate"><span class="pre">abc</span></code> and <code class="docutils literal notranslate"><span class="pre">0</span></code> as quantities</p></td>
+<td><p>Both rejected, no crash</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Add the same item twice</p></td>
+<td><p>ONE cart line with the combined quantity</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Remove an item that isn’t in the cart</p></td>
+<td><p>Friendly message, no crash</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Check out with an empty cart</p></td>
+<td><p>Refused with a message</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Full checkout with 3+ different items</p></td>
+<td><p>Correct math on the receipt</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Reflection (3–5 sentences, as a comment at the bottom of your file):</strong> Why did you store each item’s info as a <strong>tuple</strong> instead of a list? Why is the catalog a <strong>dictionary</strong> instead of a list? What would have been harder if you’d used separate lists like <code class="docutils literal notranslate"><span class="pre">names</span> <span class="pre">=</span> <span class="pre">[...]</span></code> and <code class="docutils literal notranslate"><span class="pre">prices</span> <span class="pre">=</span> <span class="pre">[...]</span></code>?</p>
+<p><strong>Header block</strong> — use the course header at the top of your file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#       Assignment:  Section 3 Project: Pop-Up Shop Kiosk</span>
+<span class="c1">#       Author:      [Your Name]</span>
+<span class="c1">#       Course Name: AP Computer Science Principles</span>
+<span class="c1">#       Description: [Your shop theme and what the kiosk does]</span>
+<span class="c1">#       Language:    Python 3.x</span>
+<span class="c1">#       Deficiencies: [Known problems, or state there are none]</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Pop-Up Shop Kiosk — Grading Rubric (50 points + 2 bonus)</strong></p>
+<p><strong>Strings — 10 pts</strong> <code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.4</span></code> <code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-1.C,</span> <span class="pre">AAP-2.D</span></code></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Criteria</p></th>
+<th class="head"><p>Points</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>User input cleaned with <code class="docutils literal notranslate"><span class="pre">.strip()</span></code> / <code class="docutils literal notranslate"><span class="pre">.lower()</span></code> / <code class="docutils literal notranslate"><span class="pre">.title()</span></code> so casing and spaces don’t break lookups</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Quantity validated with <code class="docutils literal notranslate"><span class="pre">.isdigit()</span></code> before <code class="docutils literal notranslate"><span class="pre">int()</span></code> — bad input never crashes</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Order code built with slicing + <code class="docutils literal notranslate"><span class="pre">.upper()</span></code> + concatenation</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Menu, cart, and receipt use f-string alignment (<code class="docutils literal notranslate"><span class="pre">:&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">:&gt;</span></code>) and <code class="docutils literal notranslate"><span class="pre">:.2f</span></code> money formatting</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Lists — 10 pts</strong> <code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.1</span></code> <code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-1.D,</span> <span class="pre">AAP-2.N,</span> <span class="pre">AAP-2.O</span></code></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Criteria</p></th>
+<th class="head"><p>Points</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Cart is a list that grows with <code class="docutils literal notranslate"><span class="pre">.append()</span></code> and shrinks with <code class="docutils literal notranslate"><span class="pre">.remove()</span></code></p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Remove finds the match with a loop first, then removes it <strong>after</strong> the loop</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Cart is traversed with a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to display lines and calculate the subtotal</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Empty cart handled with <code class="docutils literal notranslate"><span class="pre">len()</span></code> for both View Cart and Checkout</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Tuples — 10 pts</strong> <code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.2</span></code> <code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-1.D</span></code></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Criteria</p></th>
+<th class="head"><p>Points</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Catalog values are <code class="docutils literal notranslate"><span class="pre">(price,</span> <span class="pre">category)</span></code> tuples</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cart lines are <code class="docutils literal notranslate"><span class="pre">(item,</span> <span class="pre">quantity)</span></code> tuples</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Tuples are <strong>unpacked</strong> in <code class="docutils literal notranslate"><span class="pre">for</span></code> loops (e.g., <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">name,</span> <span class="pre">qty</span> <span class="pre">in</span> <span class="pre">cart:</span></code>)</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Adding a duplicate item <strong>replaces</strong> the tuple with a new one — shows understanding of immutability</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Dictionaries — 10 pts</strong> <code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.3</span></code> <code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-1.D</span></code></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Criteria</p></th>
+<th class="head"><p>Points</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Catalog dictionary with 6+ items in 3+ categories, looked up by key</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">in</span></code> (or <code class="docutils literal notranslate"><span class="pre">.get()</span></code>) prevents a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> on items not in the catalog</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Menu displayed by looping over <code class="docutils literal notranslate"><span class="pre">.items()</span></code></p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Category count dictionary built at checkout with the add-or-update pattern</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Program Design &amp; Testing — 10 pts</strong> <code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-2.H,</span> <span class="pre">AAP-2.K,</span> <span class="pre">CRD-2.J</span></code></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Criteria</p></th>
+<th class="head"><p>Points</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">while</span></code> menu loop with <code class="docutils literal notranslate"><span class="pre">if/elif/else</span></code> for each option and an invalid-option message</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Subtotal, tax (constant), and total calculated correctly</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>All 7 required test cases submitted and passing</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reflection answers all three questions</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Header block complete; PEP 8 naming; original theme (not the worked example)</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Bonus — +2:</strong> Promo code parsed with <code class="docutils literal notranslate"><span class="pre">.startswith()</span></code>, slicing, and <code class="docutils literal notranslate"><span class="pre">.isdigit()</span></code>, with the discount applied and capped.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Section</p></th>
+<th class="head"><p>Points</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Strings</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lists</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>Tuples</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dictionaries</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>Program Design &amp; Testing</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Total</strong></p></td>
+<td><p><strong>50</strong> (+2 bonus)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p>💡 <strong>CSP Performance Task connection:</strong> this project already has most of what the Create Task scores — input, output, a list that manages complexity, selection, and iteration. It is missing the <strong>student-developed procedure with a parameter</strong>. In Section 4, you will learn how to break this program into functions.</p>
+</div></blockquote>
+<p><em>PCEP: 3.1, 3.2, 3.3, 3.4 | AP CSP: AAP-1.C, AAP-1.D, AAP-2.D, AAP-2.H, AAP-2.K, AAP-2.N, AAP-2.O, CRD-2.J</em></p>
+<p>#############################################################################</p>
 <p><strong>Section 3 — Standards Alignment Reference</strong></p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
@@ -6350,6 +6702,7 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </li>
 <li><a class="reference internal" href="#activity-student-contact-book">Activity: Student Contact Book</a></li>
 <li><a class="reference internal" href="#mixed-review-quick-check-all-four-types">Mixed Review — Quick Check (all four types)</a></li>
+<li><a class="reference internal" href="#project-pop-up-shop-kiosk">Project: Pop-Up Shop Kiosk</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#section-4-functions-and-exceptions">Section 4 — Functions and Exceptions</a><ul>
