@@ -2541,61 +2541,76 @@ Final playlist total: 21 songs
 
 ### Tuples
 
-`🔖 PCEP 3.2 — Collect and process data using tuples`
+`🔖 PCEP 3.2 — Collect and process data using tuples` `📋 AP CSP: AAP-1.D — Develop data abstraction using lists (or other collections)`
 
-A **tuple** is an **ordered, immutable** sequence — values cannot be changed after creation.
+A **tuple** is an **ordered** sequence, just like a list — you can index it, slice it, and loop over it. The difference is that a tuple is **immutable**: once it's created, you can't add, remove, or change any of its items.
 
-```
-coords     = (40.7128, -74.0060)    # GPS: New York City
-rgb        = (255, 128, 0)
-single     = (42,)                  # Note the comma for single-element tuple
+Think of it as the difference between writing in **pencil** and writing in **pen**. A list is written in pencil — you can erase and rewrite. A tuple is written in pen — what's there stays there.
 
-print(coords[0])    # 40.7128
-print(len(rgb))     # 3
-```
-
-**Tuples vs. Lists**
-
-| Feature    | List          | Tuple          |
-| ---------- | ------------- | -------------- |
-| Ordered    | ✅            | ✅             |
-| Indexed    | ✅            | ✅             |
-| Mutable    | ✅            | ❌             |
-| Duplicates | ✅            | ✅             |
-| Use when   | Data changes  | Data is fixed  |
-
-**Lists inside Tuples and Tuples inside Lists**
+**Creating and Reading a Tuple**
 
 ```
-mixed = ([1, 2, 3], [4, 5, 6])   # tuple of lists
-nested = [(1, "a"), (2, "b")]     # list of tuples
+coords = (40.7128, -74.0060)    # GPS: New York City
+rgb    = (255, 128, 0)          # a color: (red, green, blue)
+empty  = ()                     # an empty tuple
+
+print(coords[0])     # 40.7128      indexing works just like a list
+print(rgb[-1])       # 0            negative indexes work too
+print(rgb[0:2])      # (255, 128)   slicing gives you a NEW tuple
+print(len(rgb))      # 3
 ```
 
-**🤔 Thinking Question — check your answer**
+**The One-Item Trap**
 
-**Question:** Would you store a student's GPA history (which changes every semester) in a list or a tuple? What about a single student's date of birth (month, day, year)?
+```
+not_a_tuple = (42)     # just the number 42 inside parentheses
+single      = (42,)    # the trailing comma makes it a tuple
 
-**Answer:** GPA history → **list**, because new entries get added over time (mutable data). Date of birth → **tuple**, because once set it never changes — the immutability of a tuple communicates "this is fixed data" to anyone reading your code.
+print(type(not_a_tuple))   # <class 'int'>
+print(type(single))        # <class 'tuple'>
+```
 
+> ==It's the **comma** that makes a tuple, not the parentheses. `(42)` is just math-style grouping, the same as `(2 + 3)`.==
 
-**Practice Drills — Tuples**
+**What "Immutable" Looks Like**
 
-`Quick single-concept reps, 10–15 min each — do these before Student Contact Book below.`
+```
+rgb = (255, 128, 0)
+rgb[0] = 100
+# TypeError: 'tuple' object does not support item assignment
+```
 
-**T1 — Coordinate Pair Basics**
+Because tuples can't change, they have **no** `.append()`, `.remove()`, `.sort()`, or `.pop()`. They have only two methods, and neither one changes the tuple:
 
-**Packing** means putting several values into one tuple. Python does this automatically when you list values separated by commas:
+```
+grades = ("A", "B", "A", "C")
+print(grades.count("A"))   # 2    how many times "A" appears
+print(grades.index("C"))   # 3    position of the first "C"
+```
+
+If you need a "changed" version, you build a **brand-new** tuple:
+
+```
+rgb = (255, 128, 0)
+new_rgb = (100,) + rgb[1:]    # glue a 1-item tuple onto a slice
+print(new_rgb)                # (100, 128, 0)
+print(rgb)                    # (255, 128, 0)  ← the original is untouched
+```
+
+**Packing and Unpacking**
+
+**Packing** means putting several values into one tuple. Python does this automatically any time you list values separated by commas:
 
 ```
 point = (3, 7)        # packing: 3 and 7 are packed into one tuple
-point = 3, 7          # same thing; the parentheses are optional
+point = 3, 7          # same thing — the parentheses are optional
 ```
 
-**Unpacking** is the reverse: taking the values out of a tuple and storing each one in its own variable, all in one line. The variables on the left get matched to the values on the right **by position**:
+**Unpacking** is the reverse: pulling the values out of a tuple and storing each one in its own variable, all in one line. Variables on the left are matched to values on the right **by position**:
 
 ```
 point = (3, 7)
-x, y = point          # unpacking: x gets point[0], y gets point[1]
+x, y = point          # x gets point[0], y gets point[1]
 
 print(x)              # 3
 print(y)              # 7
@@ -2608,9 +2623,66 @@ x = point[0]
 y = point[1]
 ```
 
-⚠️ The number of variables must match the number of values in the tuple. `x, y = (3, 7, 9)` causes a `ValueError: too many values to unpack`.
+⚠️ The number of variables must match the number of values. `x, y = (3, 7, 9)` raises `ValueError: too many values to unpack`.
 
-**Your task:** Store a GPS coordinate as a tuple `(latitude, longitude)`. Unpack it into two separate variables in a single line and print a formatted sentence using them.
+**Unpacking inside a `for` loop** — you'll use this constantly, including with dictionaries in the next section:
+
+```
+records = [("Ava", 92), ("Liam", 78)]    # a list of tuples
+
+for name, score in records:              # each tuple is unpacked as the loop runs
+    print(f"{name}: {score}")
+```
+
+Output:
+
+```
+Ava: 92
+Liam: 78
+```
+
+**Tuples vs. Lists**
+
+| Feature                   | List                               | Tuple                         |
+| ------------------------- | ---------------------------------- | ----------------------------- |
+| Ordered                   | ✅                                 | ✅                            |
+| Indexed / sliceable       | ✅                                 | ✅                            |
+| Mutable (can change)      | ✅                                 | ❌                            |
+| Duplicates allowed        | ✅                                 | ✅                            |
+| Methods                   | Many (`append`, `sort`, `pop`, …)  | Only `.count()` and `.index()` |
+| Can be a dictionary key   | ❌                                 | ✅ *(see Dictionaries below)* |
+| Use when                  | Data changes                       | Data is fixed                 |
+
+**Lists inside Tuples and Tuples inside Lists**
+
+```
+mixed  = ([1, 2, 3], [4, 5, 6])   # tuple of lists
+nested = [(1, "a"), (2, "b")]     # list of tuples
+```
+
+> 🔖 **PCEP trap:** a tuple can't change *which* items it holds, but if one of those items is a list, that list can still change: `mixed[0].append(4)` works and gives `([1, 2, 3, 4], [4, 5, 6])`. `mixed[0] = [9]` does **not** work.
+
+**🤔 Thinking Question — check your answer**
+
+**Question:** Would you store a student's GPA history (which changes every semester) in a list or a tuple? What about a single student's date of birth (month, day, year)?
+
+**Answer:** GPA history → **list**, because new entries get added over time (mutable data). Date of birth → **tuple**, because once set it never changes — the immutability of a tuple tells anyone reading your code "this is fixed data."
+
+**🤔 Thinking Question — check your answer**
+
+**Question:** You write `sizes = ("small")` and then `print(len(sizes))`. You expected `1`, but Python printed `5`. What happened?
+
+**Answer:** Without a trailing comma, `("small")` is just the **string** `"small"` in parentheses — not a tuple. `len()` counted the 5 characters in the string. Writing `("small",)` creates a one-item tuple, and `len()` would return `1`.
+
+---
+
+#### Practice Drills — Tuples
+
+`Quick single-concept reps, 10–15 min each — do these before the Dictionaries section below.`
+
+**T1 — Coordinate Pair Basics**
+
+Store a GPS coordinate as a tuple `(latitude, longitude)`. Unpack it into two separate variables in a **single line**, then print a formatted sentence using them.
 
 ```
 location = (34.0522, -118.2437)
@@ -2625,40 +2697,30 @@ location = (34.0522, -118.2437)
 Latitude: 34.0522, Longitude: -118.2437
 ```
 
-
-> The number of variables on the left must match the number of items in the tuple, or Python raises a ValueError.
-
-```python
-location = (34.0522, -118.2437)
-```
-
-**TODO: unpack location into lat, lon in one line, then print**
-      
-```python
-f"Latitude: {lat}, Longitude: {lon}"
-```
-
-Store a GPS coordinate as a tuple `(latitude, longitude)`. Unpack it into two separate variables in a single line and print a formatted sentence using them.
-
+#############################################################################
 
 **T2 — RGB Color Mixer**
 
-Store two colors as RGB tuples, e.g. `red = (255, 0, 0)`. Write a function `average_color(c1, c2)` that takes two RGB tuples and returns a **new tuple** representing their averaged color (average each channel, round to an int). Test it by mixing two colors.
+Colors on a screen are stored as three numbers from 0–255: **(red, green, blue)**. Mix two colors by averaging each channel, and store the result as a **new tuple**.
 
 ```
-red = (255, 0, 0)
+red  = (255, 0, 0)
 blue = (0, 0, 255)
 
-def average_color(c1, c2):
-    # TODO: return a new tuple with each channel averaged (rounded)
-    pass
+# TODO: build a new tuple called mixed, where each channel is the
+#       average of the two colors, rounded to an int.
+#       Hint: the red channel is round((red[0] + blue[0]) / 2)
 
-print(average_color(red, blue))
+print(mixed)
 ```
+
+**Sample output:** `(128, 0, 128)` — purple!
+
+#############################################################################
 
 **T3 — Proving Immutability**
 
-Create a tuple `dimensions = (12, 24)`. Try to change the first value with `dimensions[0] = 15` and run it — read the error Python gives you. Then write one sentence (as a comment) explaining, in your own words, what the error message means and why lists don't have this problem.
+Create a tuple `dimensions = (12, 24)`. Try to change the first value and read the error Python gives you. Then build a **new** tuple with the change you wanted.
 
 ```
 dimensions = (12, 24)
@@ -2666,12 +2728,18 @@ dimensions = (12, 24)
 # TODO 1) uncomment the line below, run it, and read the error
 # dimensions[0] = 15
 
-# TODO 2) add a comment explaining the error in your own words
+# TODO 2) add a comment explaining the error in your own words,
+#         and why a list would NOT give this error
+
+# TODO 3) build a new tuple new_dimensions = (15, 24) using
+#         (15,) + a slice of dimensions — then print both tuples
 ```
+
+#############################################################################
 
 **T4 — List of Tuples: Grade Records**
 
-Store 5 students as a **list of tuples**: `(name, grade)`. Loop through the list and print only the students with a grade of `90` or higher. This is a deliberate contrast to the "list of dictionaries" pattern used below in Student Contact Book — same idea (bundling related data), different structure.
+Store 5 students as a **list of tuples**: `(name, grade)`. Loop through the list, unpack each tuple in the `for` line, and print only the students with a grade of `90` or higher. *(Compare this with the "list of dictionaries" pattern in the next section — same idea, bundling related data, different structure.)*
 
 ```
 records = [
@@ -2679,110 +2747,249 @@ records = [
     ("Mia", 88), ("Zoe", 91)
 ]
 
-# TODO: loop through records, unpack each tuple, print names
-#       with grade >= 90
+# TODO: for name, grade in records: ... print names with grade >= 90
 ```
 
-**T5 — Swap and Min/Max Return**
+**Sample output:**
 
-Two parts, both showing what tuples are *for*: (1) swap two variables' values in one line using tuple packing — no temp variable; (2) write a function `min_max(numbers)` that returns **both** the smallest and largest value as a single tuple, then unpack the result at the call site.
+```
+Ava
+Noah
+Zoe
+```
+
+#############################################################################
+
+**T5 — Swap and Min/Max**
+
+Two quick parts, both showing what tuples are *for*:
 
 ```
 a, b = 5, 12
 
-# TODO 1) swap a and b in one line using tuple packing/unpacking
+# TODO 1) swap a and b in ONE line — no temp variable.
+#         Hint: pack on the right side, unpack on the left side.
+print(a, b)          # should print: 12 5
 
-def min_max(numbers):
-    # TODO 2) return a tuple (smallest, largest)
-    pass
+numbers = [4, 19, 2, 8, 11]
 
-low, high = min_max([4, 19, 2, 8, 11])
-print(low, high)
+# TODO 2) build a tuple called result that holds (smallest, largest)
+#         using min() and max(), then unpack result into low and high
+#         in one line
+print(low, high)     # should print: 2 19
 ```
 
-**Sample output:** `2 19`
+> 💡 **Looking ahead:** in Week 9 you'll turn Part 2 into a function that `return`s a tuple. That's how Python functions return more than one value.
 
-*PCEP: 3.2*
+*PCEP: 3.2 | AP CSP: AAP-1.D*
 
----
+#############################################################################
 
 ### Dictionaries
 
-`🔖 PCEP 3.3 — Collect and process data using dictionaries` `📋 AP CSP: AAP-3.B — Use abstractions to organize data.`
+`🔖 PCEP 3.3 — Collect and process data using dictionaries` `📋 AP CSP: AAP-1.D — Develop data abstraction using lists (or other collections)`
 
-A **dictionary** stores **key-value pairs**. Keys must be unique and immutable. Dictionaries are **ordered** (Python 3.7+) and **mutable**.
+Think about the contacts app on your phone. You never scroll to "contact #37" — you search for a **name** and get back a **phone number**. That's exactly how a **dictionary** works: you look up a **key** to get its **value**.
+
+**List vs. Dictionary — why bother?**
+
+```
+# List: look things up by POSITION
+student_list = ["Alice", 16, "A"]
+print(student_list[0])      # Alice — but you have to remember that 0 means "name"
+
+# Dictionary: look things up by NAME (the key)
+student = {"name": "Alice", "age": 16, "grade": "A"}
+print(student["name"])      # Alice — the key tells you exactly what it is
+```
+
+> ==**Rule of thumb:** use a **list** when you care about *order* ("the 3rd song"). Use a **dictionary** when you care about *looking something up by name* ("Alice's grade").==
+
+**Anatomy of a Dictionary**
 
 ```
 student = {
-    "name": "Alice",
-    "age": 16,
-    "grade": "A"
+    "name": "Alice",     # key "name"  → value "Alice"
+    "age": 16,           # key "age"   → value 16
+    "grade": "A"         # key "grade" → value "A"
 }
-
-print(student["name"])       # Alice
-student["age"] = 17          # Update value
-student["school"] = "CAMS"   # Add new key
-del student["grade"]         # Remove key
 ```
 
-**Checking for Keys**
+- Curly braces `{ }` hold the dictionary; each entry is written `key: value`, separated by commas.
+- **Keys must be unique.** If you repeat a key, the last one wins: `{"a": 1, "a": 2}` becomes `{"a": 2}`.
+- **Keys must be immutable** — strings, numbers, and tuples are fine; lists are not.
+- **Values can be anything** — numbers, strings, lists, even other dictionaries.
+
+Because tuples are immutable, they make great keys:
 
 ```
-if "name" in student:
-    print("Key exists!")
+seats = {(1, 3): "Maya", (2, 5): "Jordan"}   # key = (row, seat)
+print(seats[(1, 3)])                          # Maya
 ```
 
-**Dictionary Methods**
+**Reading, Adding, Updating, and Removing**
 
 ```
-student.keys()     # dict_keys(['name', 'age', ...])
-student.values()   # dict_values(['Alice', 17, ...])
-student.items()    # dict_items([('name','Alice'), ...])
+student = {"name": "Alice", "age": 16, "grade": "A"}
+
+print(student["name"])       # Alice     READ a value
+
+student["age"] = 17          # "age" already exists → UPDATE it
+student["school"] = "CAMS"   # "school" is new      → ADD it
+
+del student["grade"]         # REMOVE a key (and its value)
+
+print(student)               # {'name': 'Alice', 'age': 17, 'school': 'CAMS'}
+print(len(student))          # 3  — number of key-value pairs
 ```
 
-**Iterating**
+> ==**Adding and updating use the exact same syntax:** `dict[key] = value`. If the key already exists, its value is replaced. If it doesn't, a new key is created. Python never warns you which one happened.==
+
+**When the Key Isn't There**
 
 ```
+print(student["gpa"])            # KeyError: 'gpa' — program crashes!
+```
+
+Two ways to avoid the crash:
+
+```
+# Option 1: check first with "in"
+if "gpa" in student:
+    print(student["gpa"])
+else:
+    print("No GPA on file.")
+
+# Option 2: use .get() — returns a default instead of crashing
+print(student.get("gpa"))          # None
+print(student.get("gpa", 0.0))     # 0.0   (your own default)
+```
+
+> ==Use `[ ]` when you're **sure** the key exists. Use `.get()` or an `in` check when it **might not**.==
+
+⚠️ **Ordered does *not* mean indexed.** Dictionaries remember the order you added keys (Python 3.7+), but you still can't look things up by position:
+
+```
+print(student[0])     # KeyError: 0 — Python looks for a KEY named 0
+```
+
+**Looping Through a Dictionary**
+
+```
+# Looping over a dictionary gives you the KEYS
+for key in student:
+    print(key)                     # name, age, school
+
+# .items() gives you (key, value) tuples — unpack them, just like in Tuples!
 for key, value in student.items():
     print(f"{key}: {value}")
 ```
 
-**List of Dictionaries (real-world pattern)**
+Output of the second loop:
+
+```
+name: Alice
+age: 17
+school: CAMS
+```
+
+**Dictionary Methods**
+
+| Method              | What it gives you                     | Example result (using `student` above)                   |
+| ------------------- | ------------------------------------- | -------------------------------------------------------- |
+| `.keys()`           | All the keys                          | `dict_keys(['name', 'age', 'school'])`                   |
+| `.values()`         | All the values                        | `dict_values(['Alice', 17, 'CAMS'])`                     |
+| `.items()`          | All the pairs, as tuples              | `dict_items([('name', 'Alice'), ('age', 17), ('school', 'CAMS')])` |
+| `.get(key, default)`| The value, or `default` if missing    | `student.get("gpa", 0.0)` → `0.0`                       |
+| `.pop(key)`         | Removes the key **and returns** its value | `student.pop("school")` → `'CAMS'`                  |
+| `.update(other)`    | Adds/overwrites keys from another dict | `student.update({"age": 18, "club": "Robotics"})`       |
+
+> 💡 `dict_keys([...])` looks strange, but you can loop over it like a list. If you need an actual list, wrap it: `list(student.keys())` → `['name', 'age', 'school']`.
+
+**Dictionary Comprehensions**
+
+Same idea as the list comprehensions you already know — just with curly braces and a `key: value` pair:
+
+```
+numbers = [1, 2, 3, 4]
+squares = {n: n ** 2 for n in numbers}
+print(squares)       # {1: 1, 2: 4, 3: 9, 4: 16}
+```
+
+**List of Dictionaries (the most useful real-world pattern)**
+
+Each dictionary is one "record"; the list holds all the records.
 
 ```
 students = [
-    {"name": "Alice", "age": 14},
-    {"name": "Bob",   "age": 15},
+    {"name": "Alice",   "age": 14},
+    {"name": "Bob",     "age": 15},
     {"name": "Charlie", "age": 14}
 ]
 
 for s in students:
     print(s["name"])
 
-# Count students age 14
-count = sum(1 for s in students if s["age"] == 14)
+# Count how many students are 14
+count = 0
+for s in students:
+    if s["age"] == 14:
+        count += 1
+print(count)         # 2
 ```
+
+**Dictionary of Dictionaries (nested)**
+
+The outer key finds the student; the inner key finds the detail. Read the brackets **left to right**:
+
+```
+roster = {
+    "Ava":  {"grade": "A", "attendance": 0.98},
+    "Liam": {"grade": "C", "attendance": 0.85}
+}
+
+print(roster["Ava"])              # {'grade': 'A', 'attendance': 0.98}
+print(roster["Ava"]["grade"])     # A   ← roster["Ava"] first, then ["grade"]
+```
+
+> 📋 **AP CSP note:** dictionaries are **not** part of the AP exam reference sheet — the multiple-choice exam only uses lists. They're still a great tool for your programs; a **list of dictionaries** is a strong way to organize the data in your CPT.
 
 **🤔 Thinking Question — check your answer**
 
 **Question:** Why is a "list of dictionaries" (like `students` above) usually a better data abstraction for the CPT than several separate parallel lists like `names = [...]`, `ages = [...]`?
 
-**Answer:** With parallel lists, `names[2]` and `ages[2]` only stay linked to the same student if you're extremely careful to keep every list in sync — one mistaken `.remove()` on just one list breaks the connection. A list of dictionaries keeps each student's data bundled together in one object, so there's no way for a name and age to get separated. This is exactly the kind of data abstraction the CPT written responses ask you to explain.
+**Answer:** With parallel lists, `names[2]` and `ages[2]` only stay linked to the same student if you keep every list perfectly in sync — one mistaken `.remove()` on just one list breaks the connection. A list of dictionaries keeps each student's data bundled together in one object, so a name and age can't get separated. This is exactly the kind of data abstraction the CPT written responses ask you to explain.
 
-> 📌 **Worked Example — list of dictionaries in a different context (playlist)**
->
-> ```
-> playlist = []
->
-> new_song = {"title": "Clair de Lune", "artist": "Debussy", "duration": "5:12"}
-> playlist.append(new_song)
->
-> for song in playlist:
->     if song["title"] == "Clair de Lune":
->         print(f"Found: {song['title']} by {song['artist']} ({song['duration']})")
-> ```
->
-> This is the pattern (append a dict to a list, then search with a loop + `if`) you'll build into a full menu-driven program below — just applied to songs instead of contacts.
+**🤔 Thinking Question — check your answer**
+
+**Question:** `student = {"name": "Alice", "age": 16}`. What happens when you run `print(student["gpa"])`? How could you rewrite the line so the program doesn't crash?
+
+**Answer:** Python raises a `KeyError`, because `"gpa"` isn't a key in the dictionary. Either check first with `if "gpa" in student:`, or use `student.get("gpa", "No GPA on file")`, which returns the default instead of crashing.
+
+**🤔 Thinking Question — check your answer**
+
+**Question:** You run `student["age"] = 17` on a dictionary that has no `"age"` key. Does Python raise an error?
+
+**Answer:** No. Assigning to a key that doesn't exist **creates** it. Only **reading** a missing key (`student["age"]`) raises a `KeyError`. This is why a typo like `student["agee"] = 17` is sneaky — it silently adds a brand-new key instead of updating the one you meant.
+
+#############################################################################
+
+**📌 Worked Example — list of dictionaries in a different context (playlist)**
+
+```
+playlist = []
+
+new_song = {"title": "Clair de Lune", "artist": "Debussy", "duration": "5:12"}
+playlist.append(new_song)
+
+for song in playlist:
+    if song["title"] == "Clair de Lune":
+        print(f"Found: {song['title']} by {song['artist']} ({song['duration']})")
+```
+
+This is the pattern — append a dictionary to a list, then search it with a loop + `if` — that you'll build into a full menu-driven program in Student Contact Book below, just applied to songs instead of contacts.
+
+> 💡 **Why single quotes inside the f-string?** The f-string itself is wrapped in double quotes `"..."`, so the keys inside the braces use single quotes `'title'`. Mixing them keeps Python from thinking the string ended early.
 
 ---
 
@@ -2792,7 +2999,7 @@ count = sum(1 for s in students if s["age"] == 14)
 
 **D1 — Inventory Tracker**
 
-Start with a dictionary of 3 hardcoded inventory items and their quantities (`{"pencils": 30, ...}`). Add a new item, update an existing quantity, remove one item with `del`, and print the final dictionary using a `for key, value in ...items()` loop.
+Start with a dictionary of 3 inventory items and their quantities. Add a new item, update an existing quantity, remove one item with `del`, and print the final dictionary using a `for key, value in ... .items()` loop.
 
 ```
 inventory = {"pencils": 30, "notebooks": 12, "erasers": 20}
@@ -2803,9 +3010,11 @@ inventory = {"pencils": 30, "notebooks": 12, "erasers": 20}
 # TODO 4) print every item with a for loop over .items()
 ```
 
+#############################################################################
+
 **D2 — Word Frequency Counter**
 
-Given a sentence, build a dictionary counting how many times each word appears. Use `.split()` to get the words, and `if word in freq:` to decide whether to add a new key or increment an existing one.
+Given a sentence, build a dictionary counting how many times each word appears. Use `.split()` to get the words, and `if word in freq:` to decide whether to **add** a new key (set it to 1) or **update** an existing one (add 1).
 
 ```
 sentence = "the cat sat on the mat the cat ran"
@@ -2816,9 +3025,13 @@ freq = {}
 # TODO: loop through words, building the freq dictionary
 ```
 
+**Sample output:** `{'the': 3, 'cat': 2, 'sat': 1, 'on': 1, 'mat': 1, 'ran': 1}`
+
+#############################################################################
+
 **D3 — Safe Key Lookup**
 
-Given a dictionary of student grades, ask the user for a name. If the name is a key `in` the dictionary, print their grade; if not, print `"Student not found."` — without letting the program crash with a `KeyError`. Then repeat the same lookup using `.get()` with a default value instead of `in`, and compare the two approaches.
+Ask the user for a student name. Look it up **two different ways** without ever letting the program crash with a `KeyError`. Then add a comment: which approach do you prefer, and why?
 
 ```
 grades = {"Ava": "A", "Liam": "C", "Noah": "B"}
@@ -2829,52 +3042,70 @@ name = input("Enter a student name: ")
 #         of "Student not found."
 ```
 
+#############################################################################
+
 **D4 — Nested Dictionary Mini-Database**
 
-Build a dictionary of dictionaries representing a small class roster: each key is a student name, and each value is a dictionary with `"grade"` and `"attendance"`. Print a formatted line for each student by looping through `.items()` and accessing the nested values.
+Each key is a student name; each value is **another dictionary** with `"grade"` and `"attendance"`. Loop through `.items()` and print one formatted line per student. *(Hint: inside the loop, `info` is the inner dictionary, so use `info["grade"]`.)*
 
 ```
 roster = {
-    "Ava": {"grade": "A", "attendance": 0.98},
+    "Ava":  {"grade": "A", "attendance": 0.98},
     "Liam": {"grade": "C", "attendance": 0.85},
     "Noah": {"grade": "B", "attendance": 0.92}
 }
 
-# TODO: loop through roster.items(), print each student's grade
-#       and attendance as a formatted f-string line
+# TODO: for name, info in roster.items(): ... print each student's
+#       grade and attendance as a formatted f-string line
 ```
 
-**D5 — Dictionary Comprehension Intro**
+**Sample output:**
 
-Given a list of numbers, build a dictionary mapping each number to its square using a **dictionary comprehension** (parallel structure to the list comprehensions already covered). Then rewrite the same thing as a traditional loop, so you can see both side by side.
+```
+Ava — Grade: A, Attendance: 98%
+Liam — Grade: C, Attendance: 85%
+Noah — Grade: B, Attendance: 92%
+```
+
+*(Hint: `{0.98:.0%}` in an f-string displays `98%`.)*
+
+#############################################################################
+
+**D5 — Dictionary Comprehension**
+
+Build a dictionary mapping each number to its square — once with a **dictionary comprehension**, and once with a traditional `for` loop — then print both to prove they match.
 
 ```
 numbers = [1, 2, 3, 4, 5]
 
 # TODO 1) build squares_dict using a dictionary comprehension
-#         {n: n**2 for n in numbers}
 
-# TODO 2) build the same dictionary again using a traditional
-#         for loop, storing it as squares_dict_loop
+# TODO 2) build squares_dict_loop using an empty {} and a for loop
+
+# TODO 3) print both, and print squares_dict == squares_dict_loop
 ```
+
+#############################################################################
 
 **D6 — Merge and Invert**
 
-Given two dictionaries of student scores from different quizzes, merge them into one using `.update()` (later quiz overwrites duplicates). Then build a second dictionary that's **inverted** — scores as keys, names as values — using a dictionary comprehension.
+Merge two quiz dictionaries into one using `.update()` (the later quiz overwrites duplicates). Then build an **inverted** dictionary — scores as keys, names as values — using a dictionary comprehension.
 
 ```
 quiz1 = {"Ava": 88, "Liam": 91}
 quiz2 = {"Liam": 95, "Noah": 79}
 
 # TODO 1) merge quiz2 into quiz1 using .update()
-# TODO 2) build an inverted dict: {score: name for name, score in ...}
+# TODO 2) build inverted = {score: name for name, score in quiz1.items()}
 ```
 
 **Sample:** merged → `{'Ava': 88, 'Liam': 95, 'Noah': 79}`, inverted → `{88: 'Ava', 95: 'Liam', 79: 'Noah'}`
 
-*PCEP: 3.3 | AP CSP: AAP-3.B*
+**🤔 Discussion:** Change Noah's score in `quiz2` to `88` and run it again. Who disappears from the inverted dictionary, and why? *(Two students now share the score 88, but keys must be unique — so the last one wins and Ava is overwritten.)*
 
----
+*PCEP: 3.3 | AP CSP: AAP-1.D*
+
+#############################################################################
 
 ### Activity: Student Contact Book
 
@@ -2889,35 +3120,41 @@ Use a `while` loop for the menu and a `for` loop to search/display.
 
 **🧩 Scaffolding — build it in this order:**
 
-1. Hard-code one contact into the list and get "Display all" working first.
-2. Add "Add a new contact" (append to the list).
-3. Add "Search by name" (loop + `if`).
-4. Add "Delete a contact" last — it's the trickiest, since you must find the right item before removing it.
+1. Hard-code one contact into the list and get "Display All" working first.
+2. Add "Add a new contact" (build a dictionary from `input()`, then `.append()` it).
+3. Add "Search by name" (loop + `if`, like the playlist worked example).
+4. Add "Delete a contact" last — it's the trickiest. **Find** the matching dictionary first, **then** remove it *after* the loop. Removing items from a list while you're looping over it causes skipped items.
 
 **Starter code:**
 
 ```
 #       Assignment:  Program: Student Contact Book
+#       Author:      [Your Name]
+#       Course Name: AP Computer Science Principles
 #       Description: Menu-driven contact book using a list of dictionaries.
 #       Language:    Python 3.x
 
-contacts = []
+contacts = [
+    {"name": "Sample Contact", "phone": "555-0100", "email": "sample@example.com"}
+]
 
 while True:
     print("\n1) Add  2) Search  3) Delete  4) Display All  5) Quit")
     choice = input("Choose an option: ")
 
     if choice == "1":
-        # TODO: build a dict from user input, append to contacts
+        # TODO: ask for name, phone, email; build a dict; append to contacts
         pass
     elif choice == "2":
-        # TODO: ask for a name, loop through contacts, print matches
+        # TODO: ask for a name, loop through contacts, print any match
+        #       (bonus: print "Not found." if nothing matched — for...else!)
         pass
     elif choice == "3":
-        # TODO: ask for a name, find and remove the matching contact
+        # TODO: ask for a name; loop to FIND the matching dict and save it
+        #       in a variable; AFTER the loop, contacts.remove(that_dict)
         pass
     elif choice == "4":
-        # TODO: print every contact
+        # TODO: print every contact on one formatted line
         pass
     elif choice == "5":
         break
@@ -2925,39 +3162,61 @@ while True:
         print("Invalid option.")
 ```
 
-*AP CSP: AAP-3.B, AAP-2.E | PCEP: 3.3*
+**Sample interaction:**
 
----
+```
+1) Add  2) Search  3) Delete  4) Display All  5) Quit
+Choose an option: 1
+Name: Jordan Lee
+Phone: 555-0142
+Email: jlee@example.com
+Contact added.
+
+1) Add  2) Search  3) Delete  4) Display All  5) Quit
+Choose an option: 4
+Sample Contact | 555-0100 | sample@example.com
+Jordan Lee | 555-0142 | jlee@example.com
+```
+
+**Submit your .py file and test cases showing that your program worked as intended** — include at least one search for a name that **isn't** in the book.
+
+*AP CSP: AAP-1.D, AAP-2.E | PCEP: 3.3*
+
+#############################################################################
 
 ### Mixed Review — Quick Check (all four types)
 
-A 4-question exit ticket for wrapping up the section — one short question per data type, answerable in a sentence or two, no coding required.
+A 4-question exit ticket to wrap up the section — one short question per data type, answerable in a sentence or two, no coding required.
 
 1. **String:** You have `name = "  DANA  "`. What does `name.strip().lower()` return?
 2. **List:** What's the difference between `.remove("apple")` and `.pop(0)` on a list?
 3. **Tuple:** Why would you choose a tuple over a list to store a birthdate?
 4. **Dictionary:** What error would `student["gpa"]` raise if `"gpa"` isn't a key — and what method avoids that crash?
 
-*(Answer key: pull straight from the corresponding Thinking Questions above for Strings/Lists/Tuples/Dictionaries.)*
+**Answer key:**
 
----
+1. `"dana"` — `.strip()` removes the outside spaces, then `.lower()` lowercases the result.
+2. `.remove("apple")` removes by **value** (the first `"apple"` it finds). `.pop(0)` removes by **position** (index 0) and **returns** the removed item.
+3. A birthdate never changes, and a tuple's immutability signals "fixed data" and prevents accidental changes.
+4. A `KeyError`. Use `.get()` — e.g., `student.get("gpa", 0.0)` — or check with `"gpa" in student` first.
+
+#############################################################################
 
 **Section 3 — Standards Alignment Reference**
 
-| Code             | Standard                                       | Where it shows up in this section            |
-| ---------------- | ----------------------------------------------- | ---------------------------------------------- |
-| `AP CSP AAP-4.A` | Use data abstractions to manage complexity      | Section intro, Lists, Tuples (T4)              |
-| `AP CSP DAT-1.A` | Explain how data can be represented using bits  | Strings, Drills S1–S7, Receipt Formatter       |
-| `AP CSP AAP-3.B` | Use abstractions to organize data                | Dictionaries, Drills D1–D6, Student Contact Book |
-| `PCEP 3.1`       | Collect and process data using lists             | Lists, Drills L1–L7                             |
-| `PCEP 3.2`       | Collect and process data using tuples            | Tuples, Drills T1–T5                            |
-| `PCEP 3.3`       | Collect and process data using dictionaries      | Dictionaries, Drills D1–D6, Student Contact Book |
-| `PCEP 3.4`       | Operate with strings                             | Strings, Drills S1–S7, Receipt Formatter        |
+| Code             | Standard                                                        | Where it shows up in this section                   |
+| ---------------- | --------------------------------------------------------------- | --------------------------------------------------- |
+| `AP CSP AAP-1.D` | Develop data abstraction using lists (or other collections)     | Lists, Tuples, Dictionaries, Student Contact Book   |
+| `AP CSP AAP-2.E` | Sequencing, selection, and iteration                            | Drills, Playlist Manager, Student Contact Book menu |
+| `AP CSP DAT-1.A` | Explain how data can be represented using bits                  | Strings, Drills S1–S7, Receipt Formatter            |
+| `PCEP 3.1`       | Collect and process data using lists                            | Lists, Drills L1–L7                                 |
+| `PCEP 3.2`       | Collect and process data using tuples                           | Tuples, Drills T1–T5                                |
+| `PCEP 3.3`       | Collect and process data using dictionaries                     | Dictionaries, Drills D1–D6, Student Contact Book    |
+| `PCEP 3.4`       | Operate with strings                                            | Strings, Drills S1–S7, Receipt Formatter            |
 
 
+#############################################################################
 
-
----
 
 ## Section 4 — Functions and Exceptions
 `📋 AP CSP: AAP-3.B` — Use procedures/functions to manage complexity.
