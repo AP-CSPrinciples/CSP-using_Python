@@ -2326,7 +2326,11 @@ for row in grid:
 
 **Question:** `original = [1, 2, 3]` then `alias = original` then `alias.append(4)`. What does `print(original)` show, and why?
 
+<details><summary>Answer:</summary>
+
 **Answer:** `[1, 2, 3, 4]`. `alias = original` did **not** create a copy — it made `alias` point to the exact same list object in memory as `original`. Modifying `alias` (with `.append()`) modifies the one and only list both names refer to. To get an independent copy, you'd need `alias = original.copy()` or `alias = original[:]`. This is the same idea as the `is` vs `==` distinction from Section 1.
+
+</details>
 
 ---
 
@@ -3193,12 +3197,15 @@ A 4-question exit ticket to wrap up the section — one short question per data 
 3. **Tuple:** Why would you choose a tuple over a list to store a birthdate?
 4. **Dictionary:** What error would `student["gpa"]` raise if `"gpa"` isn't a key — and what method avoids that crash?
 
-**Answer key:**
+<details><summary>Answer Key:</summary>
 
 1. `"dana"` — `.strip()` removes the outside spaces, then `.lower()` lowercases the result.
 2. `.remove("apple")` removes by **value** (the first `"apple"` it finds). `.pop(0)` removes by **position** (index 0) and **returns** the removed item.
 3. A birthdate never changes, and a tuple's immutability signals "fixed data" and prevents accidental changes.
 4. A `KeyError`. Use `.get()` — e.g., `student.get("gpa", 0.0)` — or check with `"gpa" in student` first.
+
+</details>
+
 
 #############################################################################
 
