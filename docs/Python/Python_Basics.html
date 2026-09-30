@@ -2964,7 +2964,9 @@ Sometimes you need the position too — like if you want to number a list for st
 </div>
 <p><strong>🤔 Thinking Question — check your answer</strong></p>
 <p><strong>Question:</strong> <code class="docutils literal notranslate"><span class="pre">original</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> then <code class="docutils literal notranslate"><span class="pre">alias</span> <span class="pre">=</span> <span class="pre">original</span></code> then <code class="docutils literal notranslate"><span class="pre">alias.append(4)</span></code>. What does <code class="docutils literal notranslate"><span class="pre">print(original)</span></code> show, and why?</p>
+<details><summary>Answer:</summary>
 <p><strong>Answer:</strong> <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code>. <code class="docutils literal notranslate"><span class="pre">alias</span> <span class="pre">=</span> <span class="pre">original</span></code> did <strong>not</strong> create a copy — it made <code class="docutils literal notranslate"><span class="pre">alias</span></code> point to the exact same list object in memory as <code class="docutils literal notranslate"><span class="pre">original</span></code>. Modifying <code class="docutils literal notranslate"><span class="pre">alias</span></code> (with <code class="docutils literal notranslate"><span class="pre">.append()</span></code>) modifies the one and only list both names refer to. To get an independent copy, you’d need <code class="docutils literal notranslate"><span class="pre">alias</span> <span class="pre">=</span> <span class="pre">original.copy()</span></code> or <code class="docutils literal notranslate"><span class="pre">alias</span> <span class="pre">=</span> <span class="pre">original[:]</span></code>. This is the same idea as the <code class="docutils literal notranslate"><span class="pre">is</span></code> vs <code class="docutils literal notranslate"><span class="pre">==</span></code> distinction from Section 1.</p>
+</details>
 <hr class="docutils" />
 <section id="practice-drills-lists">
 <h4>Practice Drills — Lists<a class="headerlink" href="#practice-drills-lists" title="Link to this heading">¶</a></h4>
@@ -3756,13 +3758,14 @@ Noah — Grade: B, Attendance: 92%
 <li><p><strong>Tuple:</strong> Why would you choose a tuple over a list to store a birthdate?</p></li>
 <li><p><strong>Dictionary:</strong> What error would <code class="docutils literal notranslate"><span class="pre">student[&quot;gpa&quot;]</span></code> raise if <code class="docutils literal notranslate"><span class="pre">&quot;gpa&quot;</span></code> isn’t a key — and what method avoids that crash?</p></li>
 </ol>
-<p><strong>Answer key:</strong></p>
+<details><summary>Answer Key:</summary>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;dana&quot;</span></code> — <code class="docutils literal notranslate"><span class="pre">.strip()</span></code> removes the outside spaces, then <code class="docutils literal notranslate"><span class="pre">.lower()</span></code> lowercases the result.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.remove(&quot;apple&quot;)</span></code> removes by <strong>value</strong> (the first <code class="docutils literal notranslate"><span class="pre">&quot;apple&quot;</span></code> it finds). <code class="docutils literal notranslate"><span class="pre">.pop(0)</span></code> removes by <strong>position</strong> (index 0) and <strong>returns</strong> the removed item.</p></li>
 <li><p>A birthdate never changes, and a tuple’s immutability signals “fixed data” and prevents accidental changes.</p></li>
 <li><p>A <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>. Use <code class="docutils literal notranslate"><span class="pre">.get()</span></code> — e.g., <code class="docutils literal notranslate"><span class="pre">student.get(&quot;gpa&quot;,</span> <span class="pre">0.0)</span></code> — or check with <code class="docutils literal notranslate"><span class="pre">&quot;gpa&quot;</span> <span class="pre">in</span> <span class="pre">student</span></code> first.</p></li>
 </ol>
+</details>
 <p>#############################################################################</p>
 </section>
 <section id="project-pop-up-shop-kiosk">
