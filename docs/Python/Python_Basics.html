@@ -457,12 +457,72 @@
 <hr class="docutils" />
 <section id="python-style-guidelines">
 <h1>Python Style Guidelines<a class="headerlink" href="#python-style-guidelines" title="Link to this heading">¶</a></h1>
-<details><summary>📐 Click to expand PEP 8 Guidelines</summary>
-<p><a class="reference external" href="https://peps.python.org/pep-0008/"><strong>PEP 8 Guidelines</strong></a> is the official style guide for Python code. Following these standards is required on all assignments and is tested on the PCEP exam.</p>
-<p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">1.2</span></code> — Python’s logic and structure; indentation; PEP-8 recommendations
-<code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">1.3</span></code> — Naming conventions; implementing PEP-8</p>
-<p><strong>All <em>Projects</em> Must Include a Header Block:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#       Assignment:  Program [number]:  [Assignment Title]</span>
+<p><a class="reference external" href="https://peps.python.org/pep-0008/"><strong>PEP 8</strong></a> is the official style guide for Python code. Following it is <strong>required on all assignments</strong> and is tested on the PCEP exam.</p>
+<p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">1.2</span></code> — Python’s logic and structure; indentation; PEP 8 recommendations
+<code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">1.3</span></code> — Naming conventions; implementing PEP 8</p>
+<section id="why-style-matters">
+<h2>Why Style Matters<a class="headerlink" href="#why-style-matters" title="Link to this heading">¶</a></h2>
+<p>Your program has two audiences: the <strong>computer</strong>, which only cares whether the code runs, and <strong>people</strong>, who have to read it, fix it, and add to it later. Style is for people. One of the main ideas behind PEP 8 is that code is read far more often than it is written. You write a line once, but you, your partner, your teacher, and anyone who reuses your code will read it many times.</p>
+<p><strong>How this helps you in industry:</strong></p>
+<ul class="simple">
+<li><p><strong>Every professional team has a style guide.</strong> Many Python teams use PEP 8 directly; others, like Google, publish their own guide built on top of it. Learning PEP 8 now means you already know the “house rules” when you join a team.</p></li>
+<li><p><strong>Style is checked automatically.</strong> Companies run tools like <strong>Ruff</strong>, <strong>Flake8</strong>, <strong>pycodestyle</strong>, and <strong>Black</strong> every time someone submits code. If the style check fails, the code is not allowed into the project until it’s fixed. Our PEP 8 Checker works the same way.</p></li>
+<li><p><strong>Code review goes faster.</strong> When everyone’s code looks the same, reviewers spend their time on <em>what the code does</em>, not on arguing about spacing.</p></li>
+<li><p><strong>Consistent code hides fewer bugs.</strong> Messy indentation and crowded lines make mistakes harder to see. Clean, predictable code makes errors stand out.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="how-your-style-is-graded">
+<h2>How Your Style Is Graded<a class="headerlink" href="#how-your-style-is-graded" title="Link to this heading">¶</a></h2>
+<p>Your <code class="docutils literal notranslate"><span class="pre">.py</span></code> files are scored by the <strong>PEP 8 Checker</strong>. It looks for style mistakes in <strong>8 categories</strong>, each explained in the next section.</p>
+<p><strong>The rules:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Every unique mistake type adds 0.5 points.</strong> <em>Example:</em> missing a space after a comma is one mistake type.</p></li>
+<li><p><strong>Repeats are free.</strong> If you forget the space after a comma 20 times, it still counts as <strong>one</strong> mistake type (0.5 points). The checker will still show you all 20 places so you can fix them.</p></li>
+<li><p><strong>Your header block is not style-checked.</strong> The checker skips it.</p></li>
+<li><p><strong>A missing header block costs 1 point</strong> off your final score.</p></li>
+</ol>
+<p><strong>Your style score:</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Score</p></th>
+<th class="head"><p>Mistake points</p></th>
+<th class="head"><p>Roughly means…</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>5</strong></p></td>
+<td><p>0</p></td>
+<td><p>No style mistakes at all</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>4</strong></p></td>
+<td><p>0.5 – 3</p></td>
+<td><p>1 to 6 different mistake types</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>3</strong></p></td>
+<td><p>3.5 – 5</p></td>
+<td><p>7 to 10 different mistake types</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>2</strong></p></td>
+<td><p>5.5 – 7</p></td>
+<td><p>11 to 14 different mistake types</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>1</strong></p></td>
+<td><p>more than 7</p></td>
+<td><p>15 or more different mistake types</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Then <strong>−1</strong> if the header block is missing.</p>
+<blockquote>
+<div><p><strong>The fastest way to raise your score:</strong> fix one <em>type</em> of mistake everywhere it appears. Fixing every missing comma-space in the file removes a whole 0.5, while fixing only some of them removes nothing.</p>
+</div></blockquote>
+<section id="required-header-block">
+<h3>Required Header Block<a class="headerlink" href="#required-header-block" title="Link to this heading">¶</a></h3>
+<p>Every project must start with this header, filled in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#       Assignment:  Program [number]:  [Assignment Title]</span>
 <span class="c1">#</span>
 <span class="c1">#       Author:  [Your Name]</span>
 <span class="c1">#       Partner:  [Partner's Name]</span>
@@ -479,77 +539,355 @@
 <span class="c1">#       Deficiencies:  [Known problems, or state there are none.]</span>
 </pre></div>
 </div>
+<p><strong>Why?</strong> In industry, files often begin with a header naming the author, the purpose, and known issues, and many companies require a copyright or license header in every file. “Deficiencies” is how professionals document known bugs honestly, so the next person isn’t surprised.</p>
+</section>
 <hr class="docutils" />
-<p><strong>1. Use Descriptive Variable and Function Names</strong></p>
-<ul>
-<li><p><strong>Guideline</strong>: Use <code class="docutils literal notranslate"><span class="pre">snake_case</span></code> names that clearly describe their purpose.</p></li>
-<li><p><strong>Example</strong>:</p>
+<section id="graded-by-the-pep-8-checker">
+<h3>Graded by the PEP 8 Checker<a class="headerlink" href="#graded-by-the-pep-8-checker" title="Link to this heading">¶</a></h3>
+<p><strong>1. Indentation</strong></p>
+<ul class="simple">
+<li><p>Use <strong>4 spaces</strong> per indentation level.</p></li>
+<li><p><strong>Never use tabs.</strong> Set your editor to insert spaces when you press Tab.</p></li>
+<li><p>When a statement continues onto the next line, line the continuation up with the opening bracket, or indent it 4 more spaces.</p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">3.14159</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
+
+
+<span class="n">total</span> <span class="o">=</span> <span class="n">calculate_total</span><span class="p">(</span><span class="n">price</span><span class="p">,</span> <span class="n">quantity</span><span class="p">,</span>
+                        <span class="n">tax_rate</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bad</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+  <span class="k">return</span> <span class="mf">3.14159</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>       <span class="c1"># 2 spaces, not 4</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="n">calculate_total</span><span class="p">(</span><span class="n">price</span><span class="p">,</span> <span class="n">quantity</span><span class="p">,</span>
+    <span class="n">tax_rate</span><span class="p">)</span>                        <span class="c1"># doesn't line up with "("</span>
+</pre></div>
+</div>
+<p><strong>Why?</strong> In Python, indentation is not decoration. It <em>is</em> the structure of your program. Consistent indentation makes it obvious which lines belong to which <code class="docutils literal notranslate"><span class="pre">if</span></code>, loop, or function.</p>
+<hr class="docutils" />
+<p><strong>2. Whitespace</strong></p>
+<p><strong>Use one space:</strong></p>
+<ul class="simple">
+<li><p>around assignment and comparison operators: <code class="docutils literal notranslate"><span class="pre">=</span></code>, <code class="docutils literal notranslate"><span class="pre">+=</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">and</span></code>, …</p></li>
+<li><p>around math operators: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">y</span></code></p></li>
+<li><p><strong>after</strong> a comma: <code class="docutils literal notranslate"><span class="pre">print(a,</span> <span class="pre">b,</span> <span class="pre">c)</span></code></p></li>
+<li><p>after the <code class="docutils literal notranslate"><span class="pre">#</span></code> in a comment, and <strong>two</strong> spaces before an inline comment</p></li>
+</ul>
+<p><strong>Do not put spaces:</strong></p>
+<ul class="simple">
+<li><p>just inside brackets: <code class="docutils literal notranslate"><span class="pre">print(x)</span></code>, not <code class="docutils literal notranslate"><span class="pre">print(</span> <span class="pre">x</span> <span class="pre">)</span></code></p></li>
+<li><p>before an opening bracket: <code class="docutils literal notranslate"><span class="pre">print(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">scores[0]</span></code>, not <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">(x)</span></code> or <code class="docutils literal notranslate"><span class="pre">scores</span> <span class="pre">[0]</span></code></p></li>
+<li><p>around <code class="docutils literal notranslate"><span class="pre">=</span></code> in a keyword argument: <code class="docutils literal notranslate"><span class="pre">print(a,</span> <span class="pre">sep=&quot;-&quot;)</span></code>, not <code class="docutils literal notranslate"><span class="pre">sep</span> <span class="pre">=</span> <span class="pre">&quot;-&quot;</span></code></p></li>
+<li><p>at the end of a line (trailing spaces)</p></li>
+</ul>
+<p><strong>And end every file with exactly one newline</strong>, with no blank lines after your last line of code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">c</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Ava"</span><span class="p">,</span> <span class="s2">"Ben"</span><span class="p">,</span> <span class="s2">"Cy"</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sep</span><span class="o">=</span><span class="s2">" | "</span><span class="p">)</span>  <span class="c1"># show both values</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bad</span>
+<span class="n">result</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">c</span><span class="o">-</span><span class="n">d</span><span class="p">)</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">"Ava"</span><span class="p">,</span><span class="s2">"Ben"</span><span class="p">,</span><span class="s2">"Cy"</span> <span class="p">]</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="n">names</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">" | "</span><span class="p">)</span> <span class="c1">#show both values</span>
+</pre></div>
+</div>
+<p><strong>Why?</strong> Spaces work like punctuation in writing. They separate ideas so your eye can read a line in one pass, and every Python programmer expects them in the same places.</p>
+<hr class="docutils" />
+<p><strong>3. Blank Lines</strong></p>
+<ul class="simple">
+<li><p><strong>Two</strong> blank lines before and after each top-level function or class.</p></li>
+<li><p><strong>One</strong> blank line between methods inside a class.</p></li>
+<li><p>Use single blank lines inside a function to separate logical steps, but sparingly. Never use more than one blank line in a row inside a function, or more than two anywhere.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="n">TAX_RATE</span> <span class="o">=</span> <span class="mf">0.0925</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">add_tax</span><span class="p">(</span><span class="n">price</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return the price with sales tax added."""</span>
+    <span class="k">return</span> <span class="n">price</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">TAX_RATE</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""A student with a name and a list of scores."""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">average</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Return the student's average score."""</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scores</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scores</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">add_tax</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bad</span>
+<span class="n">TAX_RATE</span> <span class="o">=</span> <span class="mf">0.0925</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add_tax</span><span class="p">(</span><span class="n">price</span><span class="p">):</span>                 <span class="c1"># needs 2 blank lines above</span>
+    <span class="k">return</span> <span class="n">price</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">TAX_RATE</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">add_tax</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>                  <span class="c1"># needs 2 blank lines above</span>
+</pre></div>
+</div>
+<p><strong>Why?</strong> Blank lines are the paragraph breaks of code. Two blank lines tell the reader “a new, separate piece starts here,” so they can find each function at a glance.</p>
+<hr class="docutils" />
+<p><strong>4. Imports</strong></p>
+<ul class="simple">
+<li><p>Put <strong>one import per line</strong>.</p></li>
+<li><p>Put <strong>all imports at the top</strong> of the file, right after the header block and before any other code.</p></li>
+<li><p>Group them in this order, with a blank line between groups: <strong>standard library</strong> (<code class="docutils literal notranslate"><span class="pre">math</span></code>, <code class="docutils literal notranslate"><span class="pre">random</span></code>) → <strong>third-party</strong> (<code class="docutils literal notranslate"><span class="pre">pygame</span></code>) → <strong>your own files</strong>.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">helpers</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bad</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="o">,</span><span class="w"> </span><span class="nn">random</span>                 <span class="c1"># two imports on one line</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Starting game..."</span><span class="p">)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>                       <span class="c1"># import not at the top</span>
+</pre></div>
+</div>
+<p><strong>Why?</strong> Imports list everything your program depends on. When they’re all at the top, a reader (or another programmer installing your project) can see in a few seconds what’s needed to run it.</p>
+<hr class="docutils" />
+<p><strong>5. Line Length</strong></p>
+<ul class="simple">
+<li><p>Keep every line at <strong>79 characters or fewer</strong>, including indentation and comments.</p></li>
+<li><p>To wrap a long line, break it <strong>inside parentheses</strong>. Python lets the line continue until the bracket closes. Avoid the backslash <code class="docutils literal notranslate"><span class="pre">\</span></code>.</p></li>
+<li><p>A long string can be split into two strings side by side inside the parentheses. Python joins them automatically.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Suddenly, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">verb</span><span class="si">}</span><span class="s2"> right past "</span>
+      <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">animal</span><span class="si">}</span><span class="s2">s crossing the road!"</span><span class="p">)</span>
+
+<span class="n">is_eligible</span> <span class="o">=</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">13</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">&lt;=</span> <span class="mi">25</span>
+               <span class="ow">and</span> <span class="n">has_student_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bad (too long)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Suddenly, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">verb</span><span class="si">}</span><span class="s2"> right past </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">animal</span><span class="si">}</span><span class="s2">s crossing the road!"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Why?</strong> Short lines fit side by side on a split screen, in a code review, on a laptop, or on a phone without sideways scrolling. Professionals often have two files open next to each other, and long lines break that.</p>
+<hr class="docutils" />
+<p><strong>6. Statements</strong></p>
+<ul class="simple">
+<li><p>Put <strong>one statement per line</strong>. No semicolons <code class="docutils literal notranslate"><span class="pre">;</span></code>.</p></li>
+<li><p>The body of an <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">def</span></code>, or <code class="docutils literal notranslate"><span class="pre">class</span></code> goes on its <strong>own indented line</strong>, even when it’s short.</p></li>
+<li><p>Compare to <code class="docutils literal notranslate"><span class="pre">None</span></code> with <code class="docutils literal notranslate"><span class="pre">is</span></code> / <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code>, never <code class="docutils literal notranslate"><span class="pre">==</span></code> / <code class="docutils literal notranslate"><span class="pre">!=</span></code>.</p></li>
+<li><p>Don’t compare to <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. Use the value directly: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">is_valid:</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">not</span> <span class="pre">is_valid:</span></code>.</p></li>
+<li><p>Never use a bare <code class="docutils literal notranslate"><span class="pre">except:</span></code>. Name the error you expect: <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">ValueError:</span></code>.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"A"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No value yet"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">is_valid</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Valid!"</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Please enter a whole number."</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bad</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"A"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No value yet"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">is_valid</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Valid!"</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Please enter a whole number."</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Why?</strong> One idea per line makes code easy to step through, debug, and comment out. A bare <code class="docutils literal notranslate"><span class="pre">except:</span></code> catches <em>every</em> error, including typos and bugs you need to see, so it hides problems instead of handling them.</p>
+<hr class="docutils" />
+<p><strong>7. Naming</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>What</p></th>
+<th class="head"><p>Style</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Variables</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">snake_case</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">total_cost</span></code>, <code class="docutils literal notranslate"><span class="pre">player_name</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Functions</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">snake_case</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">calculate_area()</span></code>, <code class="docutils literal notranslate"><span class="pre">get_input()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Constants (values that never change)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">UPPER_CASE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TAX_RATE</span></code>, <code class="docutils literal notranslate"><span class="pre">MAX_LIVES</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Classes</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">CapWords</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Student</span></code>, <code class="docutils literal notranslate"><span class="pre">BankAccount</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Modules / file names</p></td>
+<td><p>short <code class="docutils literal notranslate"><span class="pre">snake_case</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">grade_calculator.py</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Names should <strong>describe their purpose</strong>: <code class="docutils literal notranslate"><span class="pre">total_cost</span></code>, not <code class="docutils literal notranslate"><span class="pre">x</span></code> or <code class="docutils literal notranslate"><span class="pre">tc</span></code>.</p></li>
+<li><p>Never use <code class="docutils literal notranslate"><span class="pre">l</span></code> (lowercase L), <code class="docutils literal notranslate"><span class="pre">O</span></code> (uppercase o), or <code class="docutils literal notranslate"><span class="pre">I</span></code> (uppercase i) as a single-letter name. They look like the numbers <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p>Short loop counters like <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">j</span></code>, <code class="docutils literal notranslate"><span class="pre">row</span></code>, <code class="docutils literal notranslate"><span class="pre">col</span></code> are fine.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="n">MAX_LIVES</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">total_cost</span> <span class="o">=</span> <span class="n">price</span> <span class="o">*</span> <span class="n">quantity</span>
 
-<span class="c1"># Bad</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">q</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BankAccount</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""A simple bank account."""</span>
 </pre></div>
 </div>
-</li>
-</ul>
-<p><strong>2. Use Consistent Indentation (4 Spaces)</strong></p>
-<ul>
-<li><p><strong>Guideline</strong>: Use four spaces per indentation level; do not use tabs.</p></li>
-<li><p><strong>Example</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculate_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bad</span>
+<span class="n">maxLives</span> <span class="o">=</span> <span class="mi">3</span>                        <span class="c1"># constant should be UPPER_CASE</span>
+<span class="n">TotalCost</span> <span class="o">=</span> <span class="n">price</span> <span class="o">*</span> <span class="n">quantity</span>        <span class="c1"># variable should be snake_case</span>
+<span class="n">l</span> <span class="o">=</span> <span class="mi">1</span>                               <span class="c1"># looks like the number 1</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">bank_account</span><span class="p">:</span>                 <span class="c1"># class should be CapWords</span>
+<span class="w">    </span><span class="sd">"""A simple bank account."""</span>
 </pre></div>
 </div>
-</li>
-</ul>
-<p><strong>3. Limit Line Length to 79 Characters</strong></p>
+<p><strong>Why?</strong> A name’s style tells the reader what kind of thing it is before they read any other code: <code class="docutils literal notranslate"><span class="pre">MAX_LIVES</span></code> is a constant, <code class="docutils literal notranslate"><span class="pre">Student</span></code> is a class, <code class="docutils literal notranslate"><span class="pre">get_score()</span></code> is a function. This shared code-language lets programmers on a team read each other’s work instantly.</p>
+<hr class="docutils" />
+<p><strong>8. Other</strong></p>
+<p>Anything that doesn’t fit the categories above. The most common:</p>
 <ul class="simple">
-<li><p>Improves readability on all devices and screen sizes.</p></li>
+<li><p><strong>Invalid escape sequences in strings.</strong> A backslash must start a real escape like <code class="docutils literal notranslate"><span class="pre">\n</span></code>, <code class="docutils literal notranslate"><span class="pre">\t</span></code>, <code class="docutils literal notranslate"><span class="pre">\&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">\\</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">&quot;C:\new\data&quot;</span></code> doesn’t mean what you think. Use <code class="docutils literal notranslate"><span class="pre">&quot;C:\\new\\data&quot;</span></code>.</p></li>
+<li><p><strong>Syntax errors.</strong> If Python can’t read the file, the checker can’t check it.</p></li>
 </ul>
-<p><strong>4. Use Blank Lines to Separate Code Sections</strong></p>
-<ul class="simple">
-<li><p>Two blank lines between top-level functions/classes; one blank line between class methods.</p></li>
-</ul>
-<p><strong>5. Use Docstrings to Document Functions and Classes</strong></p>
-<ul>
-<li><p><strong>Example</strong>:</p>
+<blockquote>
+<div><p><strong>Tip:</strong> Run your program before you submit. If it doesn’t run, fix that first. Style comes second, but both are graded.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="quick-pre-submit-checklist">
+<h3>Quick Pre-Submit Checklist<a class="headerlink" href="#quick-pre-submit-checklist" title="Link to this heading">¶</a></h3>
+<p>Before you submit, confirm:</p>
+<p>☐ Header block is at the top and completely filled in</p>
+<p>☐ 4 spaces per indent, no tabs</p>
+<p>☐ Spaces around operators and after commas; none inside brackets or at line ends</p>
+<p>☐ 2 blank lines around functions/classes; 1 between methods</p>
+<p>☐ Imports one per line, at the top</p>
+<p>☐ No line longer than 79 characters</p>
+<p>☐ One statement per line; <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">None</span></code>; no bare <code class="docutils literal notranslate"><span class="pre">except:</span></code></p>
+<p>☐ <code class="docutils literal notranslate"><span class="pre">snake_case</span></code> variables/functions, <code class="docutils literal notranslate"><span class="pre">UPPER_CASE</span></code> constants, <code class="docutils literal notranslate"><span class="pre">CapWords</span></code> classes</p>
+<p>☐ File ends with one newline</p>
+<hr class="docutils" />
+<p><strong>General Habits of Good Programmers</strong></p>
+<p>The habits below are <strong>not scored by the PEP 8 Checker</strong>. Some of them may still appear as rows in a project’s rubric. They are what separates code that merely <em>works</em> from code that is <strong>easy to understand, test, and change</strong>, and professional reviewers expect them.</p>
+<p><strong>Write Docstrings for Functions and Classes</strong></p>
+<p>Put a short <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;docstring&quot;&quot;&quot;</span></code> as the first line inside every function and class, saying <strong>what it does</strong>, not how.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculate_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Calculate the area of a circle given its radius."""</span>
-    <span class="k">return</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="w">    </span><span class="sd">"""Return the area of a circle with the given radius."""</span>
+    <span class="k">return</span> <span class="mf">3.14159</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
 </pre></div>
 </div>
-</li>
-</ul>
-<p><strong>6. Use Spaces Around Operators</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">c</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span>   <span class="c1"># Good</span>
-<span class="n">result</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">c</span><span class="o">-</span><span class="n">d</span><span class="p">)</span>           <span class="c1"># Bad</span>
+<p><strong>Why?</strong> A docstring is the instruction manual for someone who wants to <em>use</em> your function without reading its code. Python can show it with <code class="docutils literal notranslate"><span class="pre">help(calculate_area)</span></code>.</p>
+<p><strong>In industry:</strong> Documentation tools (like Sphinx, which builds this course website) read docstrings automatically to generate a project’s reference pages. Teams often reject code that adds a function without one.</p>
+<p><strong>Keep Functions Small and Avoid Deep Nesting</strong></p>
+<p>If your code has an <code class="docutils literal notranslate"><span class="pre">if</span></code> inside a loop inside an <code class="docutils literal notranslate"><span class="pre">if</span></code> inside another loop, break part of it into a separate function with a clear name. Aim for each function to do <strong>one job</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_passing</span><span class="p">(</span><span class="n">score</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return True if the score is a passing grade."""</span>
+    <span class="k">return</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span>
+
+
+<span class="k">for</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_passing</span><span class="p">(</span><span class="n">score</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Pass"</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>7. Avoid Excessive Nesting</strong> — break complex logic into smaller functions.</p>
-<p><strong>8. Use List Comprehensions for Simple Operations</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>  <span class="c1"># Good</span>
+<p><strong>Why?</strong> Every level of nesting is one more thing to keep track of in your head. Small, well-named functions read like a list of steps, and each one can be tested on its own. This is the same <strong>procedural abstraction</strong> idea you’ll explain in the AP CSP Create Performance Task.</p>
+<p><strong>In industry:</strong> Many teams run tools that measure “complexity” and flag functions that are too long or too nested. Small functions are also easier to test with automated unit tests.</p>
+<p><strong>Use Named Constants Instead of Magic Numbers</strong></p>
+<p>A “magic number” is an unexplained value in your code, like <code class="docutils literal notranslate"><span class="pre">price</span> <span class="pre">*</span> <span class="pre">1.0925</span></code>. Give it a name instead.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">TAX_RATE</span> <span class="o">=</span> <span class="mf">0.0925</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">price</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">TAX_RATE</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>9. Handle Exceptions Properly</strong> — use specific exception types, never bare <code class="docutils literal notranslate"><span class="pre">except</span></code>.</p>
-<p><strong>10. Use Meaningful Constants Instead of Magic Numbers</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">TAX_RATE</span> <span class="o">=</span> <span class="mf">0.15</span>
-<span class="n">total_cost</span> <span class="o">=</span> <span class="n">price</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">TAX_RATE</span><span class="p">)</span>
+<p><strong>Why?</strong> <code class="docutils literal notranslate"><span class="pre">TAX_RATE</span></code> explains <em>what</em> the number means. If the tax rate changes, you update it in one place instead of hunting for every <code class="docutils literal notranslate"><span class="pre">1.0925</span></code>.</p>
+<p><strong>In industry:</strong> Values like prices, limits, and timeouts change all the time. Named constants (or settings files) let a team change them safely without searching the whole codebase.</p>
+<p><strong>Avoid Global Variables</strong></p>
+<p>Pass values into functions as <strong>parameters</strong> and send results back with <strong><code class="docutils literal notranslate"><span class="pre">return</span></code></strong>, instead of having functions read and change variables defined outside them.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_points</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">points</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return the new score after adding points."""</span>
+    <span class="k">return</span> <span class="n">score</span> <span class="o">+</span> <span class="n">points</span>
+
+
+<span class="n">score</span> <span class="o">=</span> <span class="n">add_points</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>11. Avoid Global Variables</strong> — use function parameters or class attributes.</p>
-<p><strong>12. Use <code class="docutils literal notranslate"><span class="pre">is</span></code> for Comparison to <code class="docutils literal notranslate"><span class="pre">None</span></code></strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>    <span class="c1"># Good</span>
-<span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>    <span class="c1"># Bad</span>
+<p><strong>Why?</strong> When any function can change a global variable, a bug in one place can show up somewhere completely different, and that’s very hard to trace. Parameters and return values make it clear exactly what goes into and comes out of each function.</p>
+<p><strong>In industry:</strong> Large programs may have thousands of functions written by different people. Code that avoids globals can be tested, reused, and changed without breaking something on the other side of the project.</p>
+<p><strong>Handle Specific Exceptions</strong></p>
+<p>When you use <code class="docutils literal notranslate"><span class="pre">try</span></code>/<code class="docutils literal notranslate"><span class="pre">except</span></code>, catch only the error you expect (<code class="docutils literal notranslate"><span class="pre">ValueError</span></code>, <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code>, <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code>) and give the user a helpful message.</p>
+<p><strong>Why?</strong> Catching everything hides real bugs. Catching specific errors means your program recovers from the problems you planned for and still shows you the ones you didn’t.</p>
+<p><strong>In industry:</strong> Hidden errors are among the costliest problems in real software because they let a program keep running with bad data. Reviewers routinely flag overly broad <code class="docutils literal notranslate"><span class="pre">except</span></code> blocks.</p>
+<p>**Use List Comprehensions for Simple Transformations</p>
+<p>For a simple “build a new list from an old one,” a comprehension is shorter and clear:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 </pre></div>
 </div>
-<p><strong>13. Organize Imports Properly</strong> — standard library → third-party → local modules.</p>
-<p><strong>14. Use Type Annotations (Python 3.5+)</strong></p>
+<p>But if the logic needs several steps or <code class="docutils literal notranslate"><span class="pre">print()</span></code> statements, use a regular <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. <strong>Readability beats cleverness.</strong></p>
+<p><strong>In industry:</strong> Comprehensions are common in professional Python, so you need to be able to read them. Overly clever one-liners get sent back in code review.</p>
+<p><strong>Add Type Hints (Optional)</strong></p>
+<p>Type hints label what kind of data a function expects and returns:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculate_total</span><span class="p">(</span><span class="n">cost</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">tax_rate</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Return the cost with tax added."""</span>
     <span class="k">return</span> <span class="n">cost</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">tax_rate</span><span class="p">)</span>
 </pre></div>
 </div>
-</details>
+<p><strong>Why?</strong> They make a function’s inputs and outputs obvious at a glance. Python doesn’t enforce them, so they’re optional in this course.</p>
+<p><strong>In industry:</strong> Many companies require type hints in their Python code and run tools (like <strong>mypy</strong>) that use them to catch bugs before the program ever runs.</p>
+<p><strong>Write Comments That Explain <em>Why</em>, Not <em>What</em></strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good: explains the reason</span>
+<span class="n">total</span> <span class="o">+=</span> <span class="mi">5</span>  <span class="c1"># bonus points for turning it in early</span>
+
+<span class="c1"># Not useful: repeats the code</span>
+<span class="n">total</span> <span class="o">+=</span> <span class="mi">5</span>  <span class="c1"># add 5 to total</span>
+</pre></div>
+</div>
+<p><strong>Why?</strong> The code already says <em>what</em> it does. A good comment explains the <em>reason</em>, which the code alone can’t. This is also the kind of explanation you’ll need for your AP CSP written responses.</p>
+<p><strong>In industry:</strong> Code outlives the memory of the person who wrote it. Six months later, “why did we do this?” comments are often the only explanation left.</p>
+</section>
+</section>
 <hr class="docutils" />
 <section id="debugging-strategies">
 <h2>Debugging Strategies<a class="headerlink" href="#debugging-strategies" title="Link to this heading">¶</a></h2>
@@ -6647,6 +6985,13 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </ul>
 </li>
 <li><a class="reference internal" href="#python-style-guidelines">Python Style Guidelines</a><ul>
+<li><a class="reference internal" href="#why-style-matters">Why Style Matters</a></li>
+<li><a class="reference internal" href="#how-your-style-is-graded">How Your Style Is Graded</a><ul>
+<li><a class="reference internal" href="#required-header-block">Required Header Block</a></li>
+<li><a class="reference internal" href="#graded-by-the-pep-8-checker">Graded by the PEP 8 Checker</a></li>
+<li><a class="reference internal" href="#quick-pre-submit-checklist">Quick Pre-Submit Checklist</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#debugging-strategies">Debugging Strategies</a><ul>
 <li><a class="reference internal" href="#student-debugging-checklist">Student Debugging Checklist</a></li>
 </ul>
