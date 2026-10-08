@@ -49,16 +49,54 @@ This course is designed to prepare you for:
 
 # Python Style Guidelines
 
-<details><summary>📐 Click to expand PEP 8 Guidelines</summary>
+[**PEP 8**](https://peps.python.org/pep-0008/) is the official style guide for Python code. Following it is **required on all assignments** and is tested on the PCEP exam.
 
-[**PEP 8 Guidelines**](https://peps.python.org/pep-0008/) is the official style guide for Python code. Following these standards is required on all assignments and is tested on the PCEP exam.
+`🔖 PCEP 1.2` — Python's logic and structure; indentation; PEP 8 recommendations
+`🔖 PCEP 1.3` — Naming conventions; implementing PEP 8
 
-`🔖 PCEP 1.2` — Python's logic and structure; indentation; PEP-8 recommendations
-`🔖 PCEP 1.3` — Naming conventions; implementing PEP-8
+## Why Style Matters
 
-**All *Projects* Must Include a Header Block:**
+Your program has two audiences: the **computer**, which only cares whether the code runs, and **people**, who have to read it, fix it, and add to it later. Style is for people. One of the main ideas behind PEP 8 is that code is read far more often than it is written. You write a line once, but you, your partner, your teacher, and anyone who reuses your code will read it many times.
 
-```python
+**How this helps you in industry:**
+
+- **Every professional team has a style guide.** Many Python teams use PEP 8 directly; others, like Google, publish their own guide built on top of it. Learning PEP 8 now means you already know the "house rules" when you join a team.
+- **Style is checked automatically.** Companies run tools like **Ruff**, **Flake8**, **pycodestyle**, and **Black** every time someone submits code. If the style check fails, the code is not allowed into the project until it's fixed. Our PEP 8 Checker works the same way.
+- **Code review goes faster.** When everyone's code looks the same, reviewers spend their time on *what the code does*, not on arguing about spacing.
+- **Consistent code hides fewer bugs.** Messy indentation and crowded lines make mistakes harder to see. Clean, predictable code makes errors stand out.
+
+---
+
+## How Your Style Is Graded
+
+Your `.py` files are scored by the **PEP 8 Checker**. It looks for style mistakes in **8 categories**, each explained in the next section.
+
+**The rules:**
+
+1. **Every unique mistake type adds 0.5 points.** *Example:* missing a space after a comma is one mistake type.
+2. **Repeats are free.** If you forget the space after a comma 20 times, it still counts as **one** mistake type (0.5 points). The checker will still show you all 20 places so you can fix them.
+3. **Your header block is not style-checked.** The checker skips it.
+4. **A missing header block costs 1 point** off your final score.
+
+**Your style score:**
+
+| Score | Mistake points | Roughly means… |
+| :---: | -------------- | -------------- |
+| **5** | 0 | No style mistakes at all |
+| **4** | 0.5 – 3 | 1 to 6 different mistake types |
+| **3** | 3.5 – 5 | 7 to 10 different mistake types |
+| **2** | 5.5 – 7 | 11 to 14 different mistake types |
+| **1** | more than 7 | 15 or more different mistake types |
+
+Then **−1** if the header block is missing.
+
+> **The fastest way to raise your score:** fix one *type* of mistake everywhere it appears. Fixing every missing comma-space in the file removes a whole 0.5, while fixing only some of them removes nothing.
+
+### Required Header Block
+
+Every project must start with this header, filled in:
+
+```
 #       Assignment:  Program [number]:  [Assignment Title]
 #
 #       Author:  [Your Name]
@@ -76,81 +114,414 @@ This course is designed to prepare you for:
 #       Deficiencies:  [Known problems, or state there are none.]
 ```
 
----
-
-**1. Use Descriptive Variable and Function Names**
-- **Guideline**: Use `snake_case` names that clearly describe their purpose.
-- **Example**:
-  ```python
-  # Good
-  total_cost = price * quantity
-
-  # Bad
-  x = p * q
-  ```
-
-**2. Use Consistent Indentation (4 Spaces)**
-- **Guideline**: Use four spaces per indentation level; do not use tabs.
-- **Example**:
-  ```python
-  def calculate_area(radius):
-      return 3.14 * radius ** 2
-  ```
-
-**3. Limit Line Length to 79 Characters**
-- Improves readability on all devices and screen sizes.
-
-**4. Use Blank Lines to Separate Code Sections**
-- Two blank lines between top-level functions/classes; one blank line between class methods.
-
-**5. Use Docstrings to Document Functions and Classes**
-- **Example**:
-  ```python
-  def calculate_area(radius):
-      """Calculate the area of a circle given its radius."""
-      return 3.14 * radius ** 2
-  ```
-
-**6. Use Spaces Around Operators**
-  ```python
-  result = (a + b) * (c - d)   # Good
-  result=(a+b)*(c-d)           # Bad
-  ```
-
-**7. Avoid Excessive Nesting** — break complex logic into smaller functions.
-
-**8. Use List Comprehensions for Simple Operations**
-  ```python
-  squares = [x ** 2 for x in range(10)]  # Good
-  ```
-
-**9. Handle Exceptions Properly** — use specific exception types, never bare `except`.
-
-**10. Use Meaningful Constants Instead of Magic Numbers**
-  ```python
-  TAX_RATE = 0.15
-  total_cost = price * (1 + TAX_RATE)
-  ```
-
-**11. Avoid Global Variables** — use function parameters or class attributes.
-
-**12. Use `is` for Comparison to `None`**
-  ```python
-  if value is None:    # Good
-  if value == None:    # Bad
-  ```
-
-**13. Organize Imports Properly** — standard library → third-party → local modules.
-
-**14. Use Type Annotations (Python 3.5+)**
-  ```python
-  def calculate_total(cost: float, tax_rate: float) -> float:
-      return cost * (1 + tax_rate)
-  ```
-
-</details>
+**Why?** In industry, files often begin with a header naming the author, the purpose, and known issues, and many companies require a copyright or license header in every file. "Deficiencies" is how professionals document known bugs honestly, so the next person isn't surprised.
 
 ---
+
+### Graded by the PEP 8 Checker
+
+**1. Indentation**
+
+- Use **4 spaces** per indentation level.
+- **Never use tabs.** Set your editor to insert spaces when you press Tab.
+- When a statement continues onto the next line, line the continuation up with the opening bracket, or indent it 4 more spaces.
+
+```python
+# Good
+def calculate_area(radius):
+    return 3.14159 * radius ** 2
+
+
+total = calculate_total(price, quantity,
+                        tax_rate)
+```
+
+```python
+# Bad
+def calculate_area(radius):
+  return 3.14159 * radius ** 2       # 2 spaces, not 4
+
+total = calculate_total(price, quantity,
+    tax_rate)                        # doesn't line up with "("
+```
+
+**Why?** In Python, indentation is not decoration. It *is* the structure of your program. Consistent indentation makes it obvious which lines belong to which `if`, loop, or function.
+
+---
+
+**2. Whitespace**
+
+**Use one space:**
+
+- around assignment and comparison operators: `=`, `+=`, `==`, `<`, `and`, …
+- around math operators: `a + b`, `x * y`
+- **after** a comma: `print(a, b, c)`
+- after the `#` in a comment, and **two** spaces before an inline comment
+
+**Do not put spaces:**
+
+- just inside brackets: `print(x)`, not `print( x )`
+- before an opening bracket: `print(x)` and `scores[0]`, not `print (x)` or `scores [0]`
+- around `=` in a keyword argument: `print(a, sep="-")`, not `sep = "-"`
+- at the end of a line (trailing spaces)
+
+**And end every file with exactly one newline**, with no blank lines after your last line of code.
+
+```python
+# Good
+result = (a + b) * (c - d)
+names = ["Ava", "Ben", "Cy"]
+print(result, names[0], sep=" | ")  # show both values
+```
+
+```python
+# Bad
+result=(a+b)*(c-d)
+names = [ "Ava","Ben","Cy" ]
+print (result,names [0], sep = " | ") #show both values
+```
+
+**Why?** Spaces work like punctuation in writing. They separate ideas so your eye can read a line in one pass, and every Python programmer expects them in the same places.
+
+---
+
+**3. Blank Lines**
+
+- **Two** blank lines before and after each top-level function or class.
+- **One** blank line between methods inside a class.
+- Use single blank lines inside a function to separate logical steps, but sparingly. Never use more than one blank line in a row inside a function, or more than two anywhere.
+
+```python
+# Good
+TAX_RATE = 0.0925
+
+
+def add_tax(price):
+    """Return the price with sales tax added."""
+    return price * (1 + TAX_RATE)
+
+
+class Student:
+    """A student with a name and a list of scores."""
+
+    def __init__(self, name):
+        self.name = name
+        self.scores = []
+
+    def average(self):
+        """Return the student's average score."""
+        return sum(self.scores) / len(self.scores)
+
+
+print(add_tax(20))
+```
+
+```python
+# Bad
+TAX_RATE = 0.0925
+def add_tax(price):                 # needs 2 blank lines above
+    return price * (1 + TAX_RATE)
+print(add_tax(20))                  # needs 2 blank lines above
+```
+
+**Why?** Blank lines are the paragraph breaks of code. Two blank lines tell the reader "a new, separate piece starts here," so they can find each function at a glance.
+
+---
+
+**4. Imports**
+
+- Put **one import per line**.
+- Put **all imports at the top** of the file, right after the header block and before any other code.
+- Group them in this order, with a blank line between groups: **standard library** (`math`, `random`) → **third-party** (`pygame`) → **your own files**.
+
+```python
+# Good
+import math
+import random
+
+import pygame
+
+import helpers
+```
+
+```python
+# Bad
+import math, random                 # two imports on one line
+
+print("Starting game...")
+import pygame                       # import not at the top
+```
+
+**Why?** Imports list everything your program depends on. When they're all at the top, a reader (or another programmer installing your project) can see in a few seconds what's needed to run it.
+
+---
+
+**5. Line Length**
+
+- Keep every line at **79 characters or fewer**, including indentation and comments.
+- To wrap a long line, break it **inside parentheses**. Python lets the line continue until the bracket closes. Avoid the backslash `\`.
+- A long string can be split into two strings side by side inside the parentheses. Python joins them automatically.
+
+```python
+# Good
+print(f"Suddenly, {name} {verb} right past "
+      f"{number} {animal}s crossing the road!")
+
+is_eligible = (age >= 13 and age <= 25
+               and has_student_id)
+```
+
+```python
+# Bad (too long)
+print(f"Suddenly, {name} {verb} right past {number} {animal}s crossing the road!")
+```
+
+**Why?** Short lines fit side by side on a split screen, in a code review, on a laptop, or on a phone without sideways scrolling. Professionals often have two files open next to each other, and long lines break that.
+
+---
+
+**6. Statements**
+
+- Put **one statement per line**. No semicolons `;`.
+- The body of an `if`, `for`, `while`, `def`, or `class` goes on its **own indented line**, even when it's short.
+- Compare to `None` with `is` / `is not`, never `==` / `!=`.
+- Don't compare to `True` or `False`. Use the value directly: `if is_valid:`, `if not is_valid:`.
+- Never use a bare `except:`. Name the error you expect: `except ValueError:`.
+
+```python
+# Good
+x = 5
+y = 10
+
+if score > 90:
+    print("A")
+
+if value is None:
+    print("No value yet")
+
+if is_valid:
+    print("Valid!")
+
+try:
+    age = int(text)
+except ValueError:
+    print("Please enter a whole number.")
+```
+
+```python
+# Bad
+x = 5; y = 10
+
+if score > 90: print("A")
+
+if value == None:
+    print("No value yet")
+
+if is_valid == True:
+    print("Valid!")
+
+try:
+    age = int(text)
+except:
+    print("Please enter a whole number.")
+```
+
+**Why?** One idea per line makes code easy to step through, debug, and comment out. A bare `except:` catches *every* error, including typos and bugs you need to see, so it hides problems instead of handling them.
+
+---
+
+**7. Naming**
+
+| What | Style | Example |
+| ---- | ----- | ------- |
+| Variables | `snake_case` | `total_cost`, `player_name` |
+| Functions | `snake_case` | `calculate_area()`, `get_input()` |
+| Constants (values that never change) | `UPPER_CASE` | `TAX_RATE`, `MAX_LIVES` |
+| Classes | `CapWords` | `Student`, `BankAccount` |
+| Modules / file names | short `snake_case` | `grade_calculator.py` |
+
+- Names should **describe their purpose**: `total_cost`, not `x` or `tc`.
+- Never use `l` (lowercase L), `O` (uppercase o), or `I` (uppercase i) as a single-letter name. They look like the numbers `1` and `0`.
+- Short loop counters like `i`, `j`, `row`, `col` are fine.
+
+```python
+# Good
+MAX_LIVES = 3
+total_cost = price * quantity
+
+
+class BankAccount:
+    """A simple bank account."""
+```
+
+```python
+# Bad
+maxLives = 3                        # constant should be UPPER_CASE
+TotalCost = price * quantity        # variable should be snake_case
+l = 1                               # looks like the number 1
+
+
+class bank_account:                 # class should be CapWords
+    """A simple bank account."""
+```
+
+**Why?** A name's style tells the reader what kind of thing it is before they read any other code: `MAX_LIVES` is a constant, `Student` is a class, `get_score()` is a function. This shared code-language lets programmers on a team read each other's work instantly.
+
+---
+
+**8. Other**
+
+Anything that doesn't fit the categories above. The most common:
+
+- **Invalid escape sequences in strings.** A backslash must start a real escape like `\n`, `\t`, `\"`, or `\\`. For example, `"C:\new\data"` doesn't mean what you think. Use `"C:\\new\\data"`.
+- **Syntax errors.** If Python can't read the file, the checker can't check it.
+
+> **Tip:** Run your program before you submit. If it doesn't run, fix that first. Style comes second, but both are graded.
+
+---
+
+### Quick Pre-Submit Checklist
+
+Before you submit, confirm:
+
+☐ Header block is at the top and completely filled in
+
+☐ 4 spaces per indent, no tabs
+
+☐ Spaces around operators and after commas; none inside brackets or at line ends
+
+☐ 2 blank lines around functions/classes; 1 between methods
+
+☐ Imports one per line, at the top
+
+☐ No line longer than 79 characters
+
+☐ One statement per line; `is None`; no bare `except:`
+
+☐ `snake_case` variables/functions, `UPPER_CASE` constants, `CapWords` classes
+
+☐ File ends with one newline
+
+---
+
+**General Habits of Good Programmers**
+
+The habits below are **not scored by the PEP 8 Checker**. Some of them may still appear as rows in a project's rubric. They are what separates code that merely *works* from code that is **easy to understand, test, and change**, and professional reviewers expect them.
+
+**Write Docstrings for Functions and Classes**
+
+Put a short `"""docstring"""` as the first line inside every function and class, saying **what it does**, not how.
+
+```python
+def calculate_area(radius):
+    """Return the area of a circle with the given radius."""
+    return 3.14159 * radius ** 2
+```
+
+**Why?** A docstring is the instruction manual for someone who wants to *use* your function without reading its code. Python can show it with `help(calculate_area)`.
+
+**In industry:** Documentation tools (like Sphinx, which builds this course website) read docstrings automatically to generate a project's reference pages. Teams often reject code that adds a function without one.
+
+**Keep Functions Small and Avoid Deep Nesting**
+
+If your code has an `if` inside a loop inside an `if` inside another loop, break part of it into a separate function with a clear name. Aim for each function to do **one job**.
+
+```python
+def is_passing(score):
+    """Return True if the score is a passing grade."""
+    return score >= 60
+
+
+for score in scores:
+    if is_passing(score):
+        print("Pass")
+```
+
+**Why?** Every level of nesting is one more thing to keep track of in your head. Small, well-named functions read like a list of steps, and each one can be tested on its own. This is the same **procedural abstraction** idea you'll explain in the AP CSP Create Performance Task.
+
+**In industry:** Many teams run tools that measure "complexity" and flag functions that are too long or too nested. Small functions are also easier to test with automated unit tests.
+
+**Use Named Constants Instead of Magic Numbers**
+
+A "magic number" is an unexplained value in your code, like `price * 1.0925`. Give it a name instead.
+
+```python
+TAX_RATE = 0.0925
+total = price * (1 + TAX_RATE)
+```
+
+**Why?** `TAX_RATE` explains *what* the number means. If the tax rate changes, you update it in one place instead of hunting for every `1.0925`.
+
+**In industry:** Values like prices, limits, and timeouts change all the time. Named constants (or settings files) let a team change them safely without searching the whole codebase.
+
+**Avoid Global Variables**
+
+Pass values into functions as **parameters** and send results back with **`return`**, instead of having functions read and change variables defined outside them.
+
+```python
+def add_points(score, points):
+    """Return the new score after adding points."""
+    return score + points
+
+
+score = add_points(score, 10)
+```
+
+**Why?** When any function can change a global variable, a bug in one place can show up somewhere completely different, and that's very hard to trace. Parameters and return values make it clear exactly what goes into and comes out of each function.
+
+**In industry:** Large programs may have thousands of functions written by different people. Code that avoids globals can be tested, reused, and changed without breaking something on the other side of the project.
+
+**Handle Specific Exceptions**
+
+When you use `try`/`except`, catch only the error you expect (`ValueError`, `ZeroDivisionError`, `FileNotFoundError`) and give the user a helpful message.
+
+**Why?** Catching everything hides real bugs. Catching specific errors means your program recovers from the problems you planned for and still shows you the ones you didn't.
+
+**In industry:** Hidden errors are among the costliest problems in real software because they let a program keep running with bad data. Reviewers routinely flag overly broad `except` blocks.
+
+**Use List Comprehensions for Simple Transformations
+
+For a simple "build a new list from an old one," a comprehension is shorter and clear:
+
+```python
+squares = [x ** 2 for x in range(10)]
+```
+
+But if the logic needs several steps or `print()` statements, use a regular `for` loop. **Readability beats cleverness.**
+
+**In industry:** Comprehensions are common in professional Python, so you need to be able to read them. Overly clever one-liners get sent back in code review.
+
+**Add Type Hints (Optional)**
+
+Type hints label what kind of data a function expects and returns:
+
+```python
+def calculate_total(cost: float, tax_rate: float) -> float:
+    """Return the cost with tax added."""
+    return cost * (1 + tax_rate)
+```
+
+**Why?** They make a function's inputs and outputs obvious at a glance. Python doesn't enforce them, so they're optional in this course.
+
+**In industry:** Many companies require type hints in their Python code and run tools (like **mypy**) that use them to catch bugs before the program ever runs.
+
+**Write Comments That Explain *Why*, Not *What***
+
+```python
+# Good: explains the reason
+total += 5  # bonus points for turning it in early
+
+# Not useful: repeats the code
+total += 5  # add 5 to total
+```
+
+**Why?** The code already says *what* it does. A good comment explains the *reason*, which the code alone can't. This is also the kind of explanation you'll need for your AP CSP written responses.
+
+**In industry:** Code outlives the memory of the person who wrote it. Six months later, "why did we do this?" comments are often the only explanation left.
+
+
+---
+
 
 ## Debugging Strategies
 
