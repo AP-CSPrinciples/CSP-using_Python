@@ -567,10 +567,10 @@ Before asking for help, confirm:
 
 ---
 
-## Section 1 — Computer Programming and Python Fundamentals
+# Section 1 — Computer Programming and Python Fundamentals
 `📋 AP CSP: CRD-2.A, CRD-2.B`
 
-### How Python Works
+## How Python Works
 
 `🔖 PCEP 1.1` — Understand fundamental terms and definitions
 
@@ -1342,7 +1342,7 @@ all 7 the way back to the grocery store!
 
 ---
 
-## Section 2 — Control Flow: Conditional Blocks and Loops
+# Section 2 — Control Flow: Conditional Blocks and Loops
 `📋 AP CSP: AAP-2.E` — Develop algorithms using sequencing, selection, and iteration.
 
 ---
@@ -2273,7 +2273,7 @@ for i in range(1, rows + 1):
 ---
 
 
-## Section 3 — Data Collections: Lists, Tuples, Dictionaries, and Strings
+# Section 3 — Data Collections: Lists, Tuples, Dictionaries, and Strings
 
 `📋 AP CSP: AAP-4.A` — Use data abstractions to manage complexity.
 
@@ -3825,7 +3825,7 @@ Items by category:
 #############################################################################
 
 
-## Section 4 — Functions and Exceptions
+# Section 4 — Functions and Exceptions
 `📋 AP CSP: AAP-3.B` — Use procedures/functions to manage complexity.
 
 ### Functions, Methods, and Procedures
