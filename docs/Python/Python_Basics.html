@@ -4710,65 +4710,702 @@ Items by category:
 <hr class="docutils" />
 <section id="modules-and-packages">
 <h2>Modules and Packages<a class="headerlink" href="#modules-and-packages" title="Link to this heading">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-2.G</span></code> — Use abstraction to manage complexity.</p>
-<p>A <strong>module</strong> is a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file containing reusable code. A <strong>package</strong> is a directory of related modules.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>          <span class="c1"># 4.0</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>  <span class="c1"># random int 1–10</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">())</span>   <span class="c1"># today's date</span>
-</pre></div>
-</div>
-<p><strong>Import Styles</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>                   <span class="c1"># access as math.sqrt()</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span>         <span class="c1"># access as sqrt()</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">pi</span>     <span class="c1"># import multiple</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>            <span class="c1"># alias</span>
-</pre></div>
-</div>
-<p><strong>Common Standard Library Modules</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-3.D</span></code> — Select appropriate libraries or existing code segments to use in creating new programs.
+<code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-3.E</span></code> — Generate random values in programs.</p>
+<blockquote>
+<div><p>🔖 <strong>PCEP note:</strong> Importing modules is <strong>not</strong> an objective on PCEP-30-02 (Blocks 1–4 stop at functions and exceptions). It <em>is</em> a core topic on the next certification, <strong>PCAP</strong>. Learn it here because you need it for real programs, the Random Trivia Quiz Generator, and very likely your CPT.</p>
+</div></blockquote>
+<p>A <strong>module</strong> is a single <code class="docutils literal notranslate"><span class="pre">.py</span></code> file full of prewritten code (functions, constants, classes) that you can bring into your own program with <code class="docutils literal notranslate"><span class="pre">import</span></code>. A <strong>package</strong> is a folder that groups related modules together. Python ships with hundreds of modules called the <strong>standard library</strong>, and thousands more are available to download.</p>
+<p><mark>Using a module is <strong>procedural abstraction</strong> in action: you call <code class="docutils literal notranslate"><span class="pre">random.randint(1,</span> <span class="pre">6)</span></code> without ever seeing the code inside it. You only need to know <em>what</em> it does, not <em>how</em>.</mark></p>
+<hr class="docutils" />
+<p><strong>The Vocabulary Ladder</strong></p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>Module</p></th>
-<th class="head"><p>Purpose</p></th>
+<tr class="row-odd"><th class="head"><p>Term</p></th>
+<th class="head"><p>What it is</p></th>
 <th class="head"><p>Example</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">math</span></code></p></td>
-<td><p>Math functions</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code>, <code class="docutils literal notranslate"><span class="pre">math.pi</span></code></p></td>
+<tr class="row-even"><td><p><strong>Function</strong></p></td>
+<td><p>A named block of code</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">randint()</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">random</span></code></p></td>
-<td><p>Random numbers</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">random.randint()</span></code>, <code class="docutils literal notranslate"><span class="pre">random.choice()</span></code></p></td>
+<tr class="row-odd"><td><p><strong>Module</strong></p></td>
+<td><p>One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file of related code</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">random.py</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">datetime</span></code></p></td>
-<td><p>Date/time</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">datetime.date.today()</span></code></p></td>
+<tr class="row-even"><td><p><strong>Package</strong></p></td>
+<td><p>A folder of modules</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tkinter/</span></code> (contains <code class="docutils literal notranslate"><span class="pre">messagebox</span></code>, <code class="docutils literal notranslate"><span class="pre">ttk</span></code>, …)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">os</span></code></p></td>
-<td><p>Operating system</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">os.getcwd()</span></code></p></td>
+<tr class="row-odd"><td><p><strong>Library</strong></p></td>
+<td><p>A collection of modules/packages you can reuse</p></td>
+<td><p>the standard library, <code class="docutils literal notranslate"><span class="pre">pygame</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">json</span></code></p></td>
-<td><p>JSON data</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">json.loads()</span></code>, <code class="docutils literal notranslate"><span class="pre">json.dumps()</span></code></p></td>
+<tr class="row-even"><td><p><strong>Standard library</strong></p></td>
+<td><p>Comes installed with Python</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">math</span></code>, <code class="docutils literal notranslate"><span class="pre">random</span></code>, <code class="docutils literal notranslate"><span class="pre">json</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tkinter</span></code></p></td>
-<td><p>GUI windows</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">tk.Tk()</span></code>, <code class="docutils literal notranslate"><span class="pre">tk.Button()</span></code></p></td>
+<tr class="row-odd"><td><p><strong>Third-party package</strong></p></td>
+<td><p>Written by others; you must install it</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pygame</span></code>, <code class="docutils literal notranslate"><span class="pre">faker</span></code>, <code class="docutils literal notranslate"><span class="pre">pillow</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>PyPI</strong></p></td>
+<td><p>The online “app store” for Python packages</p></td>
+<td><p>pypi.org</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pip</strong></p></td>
+<td><p>The tool that downloads/installs from PyPI</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pygame</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>API</strong></p></td>
+<td><p>The documented list of what a module’s functions do and how to call them</p></td>
+<td><p>the <code class="docutils literal notranslate"><span class="pre">random</span></code> docs page</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<hr class="docutils" />
+<p><strong>Three Ways to Import</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1) Import the whole module — call things with the module name in front</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="n">roll</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># 2) Import specific names — call them directly</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randint</span><span class="p">,</span> <span class="n">choice</span>
+<span class="n">roll</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># 3) Import with an alias (a nickname)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Style</p></th>
+<th class="head"><p>You write</p></th>
+<th class="head"><p>Pros</p></th>
+<th class="head"><p>Cons</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">random.randint()</span></code></p></td>
+<td><p>Always clear where a name came from</p></td>
+<td><p>More typing</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">random</span> <span class="pre">import</span> <span class="pre">randint</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">randint()</span></code></p></td>
+<td><p>Short</p></td>
+<td><p>Reader must scroll up to see where <code class="docutils literal notranslate"><span class="pre">randint</span></code> came from</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">tkinter</span> <span class="pre">as</span> <span class="pre">tk</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tk.Tk()</span></code></p></td>
+<td><p>Short <em>and</em> clear</p></td>
+<td><p>Only use <strong>standard</strong> aliases (see PEP 8 below)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p><mark><strong>Default for this course:</strong> use <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_name</span></code>. The prefix (<code class="docutils literal notranslate"><span class="pre">random.</span></code>, <code class="docutils literal notranslate"><span class="pre">math.</span></code>) tells every reader exactly where a function lives.</mark></p>
+</div></blockquote>
+<p><strong>Exploring a module you don’t know yet</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">random</span><span class="p">))</span>        <span class="c1"># lists every name inside the module</span>
+<span class="n">help</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">)</span>       <span class="c1"># prints the docstring for one function</span>
+</pre></div>
+</div>
+<p>The official reference for every standard-library module is at <strong>docs.python.org/3/library</strong>. Reading documentation is a real professional skill: it is how programmers learn an API without reading its source code.</p>
 <details><summary>🤔 Thinking Question — check your answer</summary>
-<p><strong>Question:</strong> What’s the practical difference between <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code> and <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">random</span> <span class="pre">import</span> <span class="pre">randint</span></code>, in terms of how you’d call the function afterward?</p>
-<p><strong>Answer:</strong> With <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code>, you must prefix every call with the module name: <code class="docutils literal notranslate"><span class="pre">random.randint(1,</span> <span class="pre">10)</span></code>. With <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">random</span> <span class="pre">import</span> <span class="pre">randint</span></code>, you import just that one function directly into your file’s namespace, so you call it as <code class="docutils literal notranslate"><span class="pre">randint(1,</span> <span class="pre">10)</span></code> with no prefix. The first style is safer in larger programs (it’s always clear which module a function came from); the second is more convenient for one or two functions you’ll use constantly.</p>
+<p><strong>Question:</strong> A program starts with <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math</span></code>. Later it calls <code class="docutils literal notranslate"><span class="pre">sqrt(25)</span></code> and crashes. What error appears, and what are two different ways to fix it?</p>
+<p><strong>Answer:</strong> <code class="docutils literal notranslate"><span class="pre">NameError:</span> <span class="pre">name</span> <span class="pre">'sqrt'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code>. <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math</span></code> only creates the name <code class="docutils literal notranslate"><span class="pre">math</span></code>; the function lives <em>inside</em> it. Fix it by calling <code class="docutils literal notranslate"><span class="pre">math.sqrt(25)</span></code>, <strong>or</strong> change the import to <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">math</span> <span class="pre">import</span> <span class="pre">sqrt</span></code>. Either works; just don’t mix the two styles for the same function.</p>
 </details>
+<hr class="docutils" />
+<section id="standard-library-tour">
+<h3>Standard Library Tour<a class="headerlink" href="#standard-library-tour" title="Link to this heading">¶</a></h3>
+<p>The six modules below cover most AP CSP project needs. You do <strong>not</strong> need all six in one program.</p>
+<p><strong>1. <code class="docutils literal notranslate"><span class="pre">math</span></code> — Mathematical Calculations</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>What it does</p></th>
+<th class="head"><p>Returns</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">math.pi</span></code></p></td>
+<td><p>The constant π (a value, not a function — no parentheses)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3.141592653589793</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">math.sqrt(x)</span></code></p></td>
+<td><p>Square root</p></td>
+<td><p>always a <code class="docutils literal notranslate"><span class="pre">float</span></code>: <code class="docutils literal notranslate"><span class="pre">math.sqrt(16)</span></code> → <code class="docutils literal notranslate"><span class="pre">4.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">math.ceil(x)</span></code></p></td>
+<td><p>Round <strong>up</strong> to an integer</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">math.floor(x)</span></code></p></td>
+<td><p>Round <strong>down</strong> to an integer</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">math.pow(x,</span> <span class="pre">y)</span></code></p></td>
+<td><p>x to the power y</p></td>
+<td><p>always a <code class="docutils literal notranslate"><span class="pre">float</span></code>; <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**</span> <span class="pre">y</span></code> is usually preferred</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="n">radius</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Area: </span><span class="si">{</span><span class="n">area</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>       <span class="c1"># Area: 78.54</span>
+</pre></div>
+</div>
+<p><strong>Project idea:</strong> circle/geometry calculator, distance between two points.</p>
+<hr class="docutils" />
+<p><strong>2. <code class="docutils literal notranslate"><span class="pre">random</span></code> — Random Numbers and Selections</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>What it does</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">random.randint(a,</span> <span class="pre">b)</span></code></p></td>
+<td><p>Random integer from <code class="docutils literal notranslate"><span class="pre">a</span></code> to <code class="docutils literal notranslate"><span class="pre">b</span></code>, <strong>including both ends</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">random.randrange(a,</span> <span class="pre">b)</span></code></p></td>
+<td><p>Random integer from <code class="docutils literal notranslate"><span class="pre">a</span></code> up to <strong>but not including</strong> <code class="docutils literal notranslate"><span class="pre">b</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">random.choice(seq)</span></code></p></td>
+<td><p>One random item from a list/string/tuple</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">random.sample(seq,</span> <span class="pre">k)</span></code></p></td>
+<td><p>A new list of <code class="docutils literal notranslate"><span class="pre">k</span></code> items with <strong>no repeats</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">random.shuffle(lst)</span></code></p></td>
+<td><p>Shuffles a list <strong>in place</strong> — returns <code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">random.random()</span></code></p></td>
+<td><p>Float from <code class="docutils literal notranslate"><span class="pre">0.0</span></code> up to (not including) <code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">random.seed(n)</span></code></p></td>
+<td><p>Makes the “random” sequence repeat exactly — great for testing</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">roll</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"You rolled:"</span><span class="p">,</span> <span class="n">roll</span><span class="p">)</span>
+
+<span class="n">topics</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Math"</span><span class="p">,</span> <span class="s2">"Science"</span><span class="p">,</span> <span class="s2">"History"</span><span class="p">,</span> <span class="s2">"Art"</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">topics</span><span class="p">))</span>         <span class="c1"># one topic</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">topics</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>      <span class="c1"># two different topics, no repeats</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><mark><strong>AP Exam connection:</strong> <code class="docutils literal notranslate"><span class="pre">RANDOM(a,</span> <span class="pre">b)</span></code> on the AP CSP Exam Reference Sheet includes <strong>both</strong> <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>, exactly like <code class="docutils literal notranslate"><span class="pre">random.randint(a,</span> <span class="pre">b)</span></code>. It does <em>not</em> match <code class="docutils literal notranslate"><span class="pre">randrange</span></code>.</mark></p>
+</div></blockquote>
+<p><strong>Project idea:</strong> dice game, number guessing, the <strong>Random Trivia Quiz Generator</strong> this week.</p>
+<hr class="docutils" />
+<p><strong>3. <code class="docutils literal notranslate"><span class="pre">datetime</span></code> — Dates and Times</strong></p>
+<p>The module and its most-used class have the <strong>same name</strong>, which confuses everyone at first. Pick one import style and stick with it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Style A: import the module</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+<span class="c1"># Style B: import the classes</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">datetime</span>
+<span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>What it does</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">date.today()</span></code></p></td>
+<td><p>Today’s date</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">datetime.now()</span></code></p></td>
+<td><p>Current local date <strong>and</strong> time</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">timedelta(days=7)</span></code></p></td>
+<td><p>A length of time you can add/subtract</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.year</span></code>, <code class="docutils literal notranslate"><span class="pre">.month</span></code>, <code class="docutils literal notranslate"><span class="pre">.day</span></code></p></td>
+<td><p>Parts of a date</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+
+<span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="n">due</span> <span class="o">=</span> <span class="n">today</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">days_left</span> <span class="o">=</span> <span class="p">(</span><span class="n">due</span> <span class="o">-</span> <span class="n">today</span><span class="p">)</span><span class="o">.</span><span class="n">days</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Due </span><span class="si">{</span><span class="n">due</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">days_left</span><span class="si">}</span><span class="s2"> days from now)"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Project idea:</strong> countdown timer, assignment tracker, habit tracker.</p>
+<hr class="docutils" />
+<p><strong>4. <code class="docutils literal notranslate"><span class="pre">os</span></code> — Operating System and Files</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>What it does</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">os.getcwd()</span></code></p></td>
+<td><p>The <strong>current working directory</strong> (the folder Python is running <em>from</em>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">os.listdir()</span></code></p></td>
+<td><p>Files and folders in the current directory</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">os.mkdir(&quot;saves&quot;)</span></code></p></td>
+<td><p>Create a folder (needs a name; errors if it already exists)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">os.path.exists(path)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code>/<code class="docutils literal notranslate"><span class="pre">False</span></code> — does this file or folder exist?</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">"scores.json"</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Found saved scores."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No save file yet. Starting fresh."</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>⚠️ The “current folder” is wherever Python was <em>launched</em>, which is not always the folder your <code class="docutils literal notranslate"><span class="pre">.py</span></code> file is in. If a file “definitely exists” but you get <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code>, print <code class="docutils literal notranslate"><span class="pre">os.getcwd()</span></code> first. You’ll use this again in <strong>File Operations</strong>.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p><strong>5. <code class="docutils literal notranslate"><span class="pre">json</span></code> — Saving and Sharing Structured Data</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>What it does</p></th>
+<th class="head"><p>Memory trick</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">json.dumps(data)</span></code></p></td>
+<td><p>Python → JSON <strong>s</strong>tring</p></td>
+<td><p><strong>s</strong> = string</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">json.loads(text)</span></code></p></td>
+<td><p>JSON <strong>s</strong>tring → Python</p></td>
+<td><p><strong>s</strong> = string</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">json.dump(data,</span> <span class="pre">file)</span></code></p></td>
+<td><p>Python → JSON <strong>file</strong></p></td>
+<td><p>no <strong>s</strong> = file</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">json.load(file)</span></code></p></td>
+<td><p>JSON <strong>file</strong> → Python</p></td>
+<td><p>no <strong>s</strong> = file</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="n">player</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Alex"</span><span class="p">,</span> <span class="s2">"score"</span><span class="p">:</span> <span class="mi">95</span><span class="p">,</span> <span class="s2">"badges"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"speedy"</span><span class="p">,</span> <span class="s2">"streak"</span><span class="p">]}</span>
+
+<span class="n">saved_text</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">saved_text</span><span class="p">)</span>
+
+<span class="n">loaded</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">saved_text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">loaded</span><span class="p">[</span><span class="s2">"score"</span><span class="p">])</span>        <span class="c1"># 95</span>
+</pre></div>
+</div>
+<p><strong>JSON doesn’t store everything exactly the way Python does:</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Python value</p></th>
+<th class="head"><p>After a save/load round trip</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{1:</span> <span class="pre">&quot;a&quot;}</span></code> (int key)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{&quot;1&quot;:</span> <span class="pre">&quot;a&quot;}</span></code> — keys <strong>always</strong> become strings</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">7)</span></code> (tuple)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">7]</span></code> — tuples come back as lists</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{1,</span> <span class="pre">2,</span> <span class="pre">3}</span></code> (set)</p></td>
+<td><p>❌ <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> — sets can’t be saved at all</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Project idea:</strong> save quiz scores, game progress, a to-do list.</p>
+<hr class="docutils" />
+<p><strong>6. <code class="docutils literal notranslate"><span class="pre">tkinter</span></code> — Graphical User Interfaces (GUIs)</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">on_click</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""Change the label text when the button is clicked."""</span>
+    <span class="n">label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"Great job!"</span><span class="p">)</span>
+
+
+<span class="n">window</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">window</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"My First App"</span><span class="p">)</span>
+
+<span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Hello, AP CSP!"</span><span class="p">)</span>
+<span class="n">label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">button</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Click Me"</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">on_click</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">window</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>⚠️ Notice <code class="docutils literal notranslate"><span class="pre">command=on_click</span></code> has <strong>no parentheses</strong>. You are handing the button the function to call <em>later</em>. Writing <code class="docutils literal notranslate"><span class="pre">command=on_click()</span></code> runs it once immediately and gives the button <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</div></blockquote>
+<blockquote>
+<div><p>⚠️ <code class="docutils literal notranslate"><span class="pre">tkinter</span></code> needs a desktop Python with GUI support. Many browser-based coding sites can’t open windows. See the <strong>Tkinter</strong> page for the full unit.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p><strong>Quick Comparison</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Module</p></th>
+<th class="head"><p>Main purpose</p></th>
+<th class="head"><p>Example use</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">math</span></code></p></td>
+<td><p>Math functions and constants</p></td>
+<td><p>Circle area calculator</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">random</span></code></p></td>
+<td><p>Random values and selections</p></td>
+<td><p>Dice game, trivia quiz</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">datetime</span></code></p></td>
+<td><p>Dates, times, durations</p></td>
+<td><p>Assignment countdown</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">os</span></code></p></td>
+<td><p>Files, folders, environment</p></td>
+<td><p>Check for a save file</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">json</span></code></p></td>
+<td><p>Structured data as text</p></td>
+<td><p>Save quiz scores</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tkinter</span></code></p></td>
+<td><p>Windows, buttons, labels</p></td>
+<td><p>Interactive quiz app</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+</section>
+<section id="writing-your-own-module">
+<h3>Writing Your Own Module<a class="headerlink" href="#writing-your-own-module" title="Link to this heading">¶</a></h3>
+<p>Any <code class="docutils literal notranslate"><span class="pre">.py</span></code> file you write is already a module. Put it in the <strong>same folder</strong> as your main program:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># helpers.py</span>
+<span class="sd">"""Reusable helper functions for my quiz game."""</span>
+
+<span class="n">PASSING_SCORE</span> <span class="o">=</span> <span class="mi">70</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">percent</span><span class="p">(</span><span class="n">correct</span><span class="p">,</span> <span class="n">total</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return the percentage of correct answers."""</span>
+    <span class="k">return</span> <span class="n">correct</span> <span class="o">/</span> <span class="n">total</span> <span class="o">*</span> <span class="mi">100</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># main.py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">helpers</span>
+
+<span class="n">score</span> <span class="o">=</span> <span class="n">helpers</span><span class="o">.</span><span class="n">percent</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="n">helpers</span><span class="o">.</span><span class="n">PASSING_SCORE</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Passed with </span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Why <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;:</span></code> exists</strong></p>
+<p><mark>When Python imports a file, it <strong>runs every top-level line</strong> in that file.</mark> If <code class="docutils literal notranslate"><span class="pre">helpers.py</span></code> had a stray <code class="docutils literal notranslate"><span class="pre">print(&quot;testing...&quot;)</span></code> or an <code class="docutils literal notranslate"><span class="pre">input()</span></code> at the bottom, it would run the moment <code class="docutils literal notranslate"><span class="pre">main.py</span></code> imports it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># helpers.py</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">percent</span><span class="p">(</span><span class="n">correct</span><span class="p">,</span> <span class="n">total</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return the percentage of correct answers."""</span>
+    <span class="k">return</span> <span class="n">correct</span> <span class="o">/</span> <span class="n">total</span> <span class="o">*</span> <span class="mi">100</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="c1"># Runs ONLY when you run helpers.py directly — not when imported.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">percent</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>   <span class="c1"># quick self-test: should print 80.0</span>
+</pre></div>
+</div>
+<p>Python sets <code class="docutils literal notranslate"><span class="pre">__name__</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;__main__&quot;</span></code> for the file you actually ran, and to the module’s name (<code class="docutils literal notranslate"><span class="pre">&quot;helpers&quot;</span></code>) for files that were imported. This is why the starter code in our projects ends with <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;:</span> <span class="pre">main()</span></code>.</p>
+<details><summary>🤔 Thinking Question — check your answer</summary>
+<p><strong>Question:</strong> Maya’s <code class="docutils literal notranslate"><span class="pre">main.py</span></code> imports her <code class="docutils literal notranslate"><span class="pre">scoring.py</span></code>. Every time she runs <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, it unexpectedly asks “Enter a test score:” before her game even starts. What’s the most likely cause, and how should she fix it?</p>
+<p><strong>Answer:</strong> <code class="docutils literal notranslate"><span class="pre">scoring.py</span></code> has an <code class="docutils literal notranslate"><span class="pre">input()</span></code> call at the top level (outside any function), and importing a module runs all of its top-level code. She should move that test code inside an <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;:</span></code> block in <code class="docutils literal notranslate"><span class="pre">scoring.py</span></code>, so it only runs when she runs <code class="docutils literal notranslate"><span class="pre">scoring.py</span></code> by itself.</p>
+</details>
+</section>
+<hr class="docutils" />
+<section id="packages">
+<h3>Packages<a class="headerlink" href="#packages" title="Link to this heading">¶</a></h3>
+<p>A <strong>package</strong> is a folder of modules. The folder usually contains a file named <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> (it can be empty), which marks it as a regular package.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>quiz_project/
+├── main.py
+└── quiz/
+    ├── __init__.py
+    ├── questions.py
+    └── scoring.py
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># main.py</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">quiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">scoring</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">quiz.questions</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_questions</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">scoring</span><span class="o">.</span><span class="n">percent</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The dots (<code class="docutils literal notranslate"><span class="pre">quiz.questions</span></code>) are a <strong>path</strong> through the package: folder → module → name.</p>
+<p><strong>Submodules must be imported on their own</strong></p>
+<p>Big packages don’t automatically load all of their pieces:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+<span class="n">tk</span><span class="o">.</span><span class="n">messagebox</span><span class="o">.</span><span class="n">showinfo</span><span class="p">(</span><span class="s2">"Hi"</span><span class="p">,</span> <span class="s2">"Hello!"</span><span class="p">)</span>
+<span class="c1"># Often: AttributeError: module 'tkinter' has no attribute 'messagebox'</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="kn">import</span> <span class="n">messagebox</span>        <span class="c1"># import the submodule explicitly</span>
+
+<span class="n">messagebox</span><span class="o">.</span><span class="n">showinfo</span><span class="p">(</span><span class="s2">"Hi"</span><span class="p">,</span> <span class="s2">"Hello!"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Installing third-party packages</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pygame</span>
+</pre></div>
+</div>
+<p>On Windows, use <code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pygame</span></code>. Using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span></code> (instead of just <code class="docutils literal notranslate"><span class="pre">pip</span></code>) guarantees the package installs into the <strong>same Python</strong> that will run your program. If you install a package and still get <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError</span></code>, your editor is probably running a different Python interpreter. In VS Code, check the interpreter shown in the bottom-right corner.</p>
+<p><strong>The install name is not always the import name:</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>You install…</p></th>
+<th class="head"><p>You import…</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pygame</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pygame</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">faker</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">faker</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pillow</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PIL</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bs4</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">opencv-python</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cv2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sklearn</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p>🔐 <strong>Install carefully.</strong> Anyone can upload to PyPI, and attackers publish packages with names one typo away from popular ones, hoping someone mistypes. Copy the exact name from the project’s official page, and check that it’s widely used before installing. This is a real-world <strong>software supply chain</strong> risk (Big Idea 5: Impact of Computing).</p>
+</div></blockquote>
+<details><summary>🤔 Thinking Question — check your answer</summary>
+<p><strong>Question:</strong> Jordan runs <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pillow</span></code>, sees “Successfully installed,” then writes <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pillow</span></code> and gets <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError</span></code>. What went wrong?</p>
+<p><strong>Answer:</strong> The install worked; the import name is different. Pillow is installed as <code class="docutils literal notranslate"><span class="pre">pillow</span></code> but imported as <code class="docutils literal notranslate"><span class="pre">PIL</span></code> (<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">PIL</span> <span class="pre">import</span> <span class="pre">Image</span></code>). Always check a package’s documentation for its import name.</p>
+</details>
+<hr class="docutils" />
+<section id="common-errors-that-break-programs">
+<h4>⚠️ Common Errors That Break Programs<a class="headerlink" href="#common-errors-that-break-programs" title="Link to this heading">¶</a></h4>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Symptom</p></th>
+<th class="head"><p>Cause</p></th>
+<th class="head"><p>Fix</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AttributeError:</span> <span class="pre">module</span> <span class="pre">'random'</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">attribute</span> <span class="pre">'randint'</span></code> (Python 3.13+ adds <em>“consider renaming…”</em>; older versions say <em>“partially initialized module”</em>)</p></td>
+<td><p>You named <strong>your own file</strong> <code class="docutils literal notranslate"><span class="pre">random.py</span></code>, so <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code> imported <em>your</em> file instead of Python’s</p></td>
+<td><p>Rename your file (<code class="docutils literal notranslate"><span class="pre">dice_game.py</span></code>). Never name files <code class="docutils literal notranslate"><span class="pre">random.py</span></code>, <code class="docutils literal notranslate"><span class="pre">math.py</span></code>, <code class="docutils literal notranslate"><span class="pre">json.py</span></code>, <code class="docutils literal notranslate"><span class="pre">turtle.py</span></code>, <code class="docutils literal notranslate"><span class="pre">pygame.py</span></code>, <code class="docutils literal notranslate"><span class="pre">tkinter.py</span></code>, etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">AttributeError:</span> <span class="pre">'int'</span> <span class="pre">object</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">attribute</span> <span class="pre">'randint'</span></code> (on the <em>second</em> roll)</p></td>
+<td><p>You reused the module name as a variable: <code class="docutils literal notranslate"><span class="pre">random</span> <span class="pre">=</span> <span class="pre">random.randint(1,</span> <span class="pre">6)</span></code></p></td>
+<td><p>Use a different variable name: <code class="docutils literal notranslate"><span class="pre">roll</span> <span class="pre">=</span> <span class="pre">random.randint(1,</span> <span class="pre">6)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NameError:</span> <span class="pre">name</span> <span class="pre">'randint'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code></p></td>
+<td><p>Used <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code> but called <code class="docutils literal notranslate"><span class="pre">randint()</span></code> with no prefix</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">random.randint()</span></code> — or <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">random</span> <span class="pre">import</span> <span class="pre">randint</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">'Random'</span></code></p></td>
+<td><p>Module names are <strong>case-sensitive</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code> (all lowercase)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">'pygame'</span></code></p></td>
+<td><p>Third-party package not installed, or installed into a different Python</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pygame</span></code>; check your editor’s interpreter</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">IndexError:</span> <span class="pre">list</span> <span class="pre">index</span> <span class="pre">out</span> <span class="pre">of</span> <span class="pre">range</span></code> — but <strong>only sometimes</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">random.randint(0,</span> <span class="pre">len(items))</span></code> can return <code class="docutils literal notranslate"><span class="pre">len(items)</span></code>, one past the last index</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">random.choice(items)</span></code>, or <code class="docutils literal notranslate"><span class="pre">random.randint(0,</span> <span class="pre">len(items)</span> <span class="pre">-</span> <span class="pre">1)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">'NoneType'</span> <span class="pre">object</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">subscriptable</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deck</span> <span class="pre">=</span> <span class="pre">random.shuffle(deck)</span></code> — <code class="docutils literal notranslate"><span class="pre">shuffle</span></code> changes the list in place and returns <code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>Just call <code class="docutils literal notranslate"><span class="pre">random.shuffle(deck)</span></code> on its own line</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">AttributeError:</span> <span class="pre">module</span> <span class="pre">'datetime'</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">attribute</span> <span class="pre">'now'</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">datetime</span></code> then <code class="docutils literal notranslate"><span class="pre">datetime.now()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">datetime.datetime.now()</span></code> — or <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">datetime</span> <span class="pre">import</span> <span class="pre">datetime</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ValueError:</span> <span class="pre">math</span> <span class="pre">domain</span> <span class="pre">error</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code> of a negative number</p></td>
+<td><p>Validate input before calling</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">open()</span> <span class="pre">missing</span> <span class="pre">required</span> <span class="pre">argument</span> <span class="pre">'flags'</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">os</span> <span class="pre">import</span> <span class="pre">*</span></code> replaced the built-in <code class="docutils literal notranslate"><span class="pre">open()</span></code> with <code class="docutils literal notranslate"><span class="pre">os.open()</span></code></p></td>
+<td><p>Don’t use <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">*</span></code>. Use <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">os</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Saved dict keys come back as <code class="docutils literal notranslate"><span class="pre">&quot;1&quot;</span></code> instead of <code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td><p>JSON keys are always strings</p></td>
+<td><p>Convert on load: <code class="docutils literal notranslate"><span class="pre">int(key)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> for a file that’s right there</p></td>
+<td><p>Python is running from a different folder</p></td>
+<td><p>Check <code class="docutils literal notranslate"><span class="pre">os.getcwd()</span></code>; run from your project folder</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p><mark><strong>Testing random programs:</strong> a bug that shows up “only sometimes” is still a bug. Put <code class="docutils literal notranslate"><span class="pre">random.seed(1)</span></code> at the top while testing so every run produces the same “random” results, then remove it when you’re done.</mark></p>
+</div></blockquote>
+<details><summary>🤔 Thinking Question — check your answer</summary>
+<p><strong>Question:</strong> A student’s quiz picks a question with <code class="docutils literal notranslate"><span class="pre">questions[random.randint(0,</span> <span class="pre">len(questions))]</span></code>. It works for ten test runs in a row, so they submit it. Why might it crash during grading?</p>
+<p><strong>Answer:</strong> <code class="docutils literal notranslate"><span class="pre">randint</span></code> includes <strong>both</strong> endpoints, so it can return <code class="docutils literal notranslate"><span class="pre">len(questions)</span></code>, an index one past the end of the list. With 10 questions, that happens about 1 time in 11. Ten lucky test runs don’t prove the code is correct. Use <code class="docutils literal notranslate"><span class="pre">random.choice(questions)</span></code>, which can never pick an invalid index.</p>
+</details>
+</section>
+<hr class="docutils" />
+<section id="professional-practice-imports-and-pep-8">
+<h4>Professional Practice: Imports and PEP 8<a class="headerlink" href="#professional-practice-imports-and-pep-8" title="Link to this heading">¶</a></h4>
+<p>The PEP 8 Checker already grades import <strong>placement and grouping</strong> (see <strong>Python Style Guidelines → 4. Imports</strong>). These additional rules come from PEP 8 and from how professional teams work:</p>
+<p><strong>1. Never use wildcard imports.</strong> PEP 8 says to avoid <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module</span> <span class="pre">import</span> <span class="pre">*</span></code>. It dumps every name into your program, can silently overwrite your own names or built-ins (see the <code class="docutils literal notranslate"><span class="pre">os</span></code>/<code class="docutils literal notranslate"><span class="pre">open</span></code> error above), and hides where anything came from.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">choice</span><span class="p">,</span> <span class="n">randint</span>     <span class="c1"># several names from ONE module: OK</span>
+
+<span class="c1"># Bad</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>                         <span class="c1"># several MODULES on one line: not OK</span>
+</pre></div>
+</div>
+<p><strong>2. Use only standard aliases.</strong> Some aliases are universal, and every Python programmer recognizes them: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">tkinter</span> <span class="pre">as</span> <span class="pre">tk</span></code>, <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code>, <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code>, <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">matplotlib.pyplot</span> <span class="pre">as</span> <span class="pre">plt</span></code>. Don’t invent your own (<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span> <span class="pre">as</span> <span class="pre">r</span></code>); it only makes your code harder for others to read.</p>
+<p><strong>3. Import only what you use.</strong> Delete imports you no longer need. Tools like <strong>Ruff</strong> and <strong>Flake8</strong> flag unused imports automatically, because every import is a claim that your program depends on that code.</p>
+<p><strong>4. Name your modules well.</strong> PEP 8: modules get short, all-lowercase names (underscores allowed if they help readability); packages get short, all-lowercase names, preferably without underscores. And never reuse a standard-library name.</p>
+<p><strong>5. Prefer the standard library.</strong> Before installing a package, check whether Python already has the tool built in. Every third-party package is something every user of your program must also install, trust, and keep updated.</p>
+<p><strong>6. List your dependencies.</strong> Your header block’s <strong>Ex. Packages</strong> line is the course version of this. Professional projects list exact package versions in a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file so anyone can recreate the setup:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">freeze</span> <span class="o">&gt;</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>      <span class="c1"># record what's installed</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>    <span class="c1"># install it all on another computer</span>
+</pre></div>
+</div>
+<p>Professionals also use a <strong>virtual environment</strong> (<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">.venv</span></code>) so each project gets its own isolated set of packages. You won’t need either for the CPT, but you’ll see them in every real Python project.</p>
+<p><strong>7. Respect licenses.</strong> Open-source packages come with licenses that state how you may use them. Most allow use in school projects, but professionals check the license before adding a dependency to a product (Big Idea 5: open source and intellectual property).</p>
+</section>
+<hr class="docutils" />
+<section id="modules-and-the-create-performance-task">
+<h4>📋 Modules and the Create Performance Task<a class="headerlink" href="#modules-and-the-create-performance-task" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Importing is allowed</strong>, and modules like <code class="docutils literal notranslate"><span class="pre">random</span></code> can make your program more interesting.</p></li>
+<li><p><strong>A library function is not your procedure.</strong> Your student-developed procedure, with its parameter, selection, and iteration, must be code <strong>you wrote</strong>. Calling <code class="docutils literal notranslate"><span class="pre">random.choice()</span></code> or <code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code> does not count as that procedure, although your procedure may <em>call</em> them.</p></li>
+<li><p><strong>Your list must be yours, too.</strong> Using a list returned by a module is fine, but your own code must store, access, and process the list in a meaningful way.</p></li>
+<li><p><strong>Acknowledge code you didn’t write.</strong> If any code segment came from someone else (a tutorial, documentation example, or a classmate’s helper module), cite it in a comment next to the code.</p></li>
+<li><p>Simply importing a module does <strong>not</strong>, by itself, demonstrate input/output, sequencing, selection, iteration, procedures, or lists. Those must come from your own logic.</p></li>
+</ul>
+<hr class="docutils" />
+<blockquote>
+<div><p>📌 <strong>Worked Example — modules in a different context (Daily Workout Picker)</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">EXERCISES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"push-ups"</span><span class="p">,</span> <span class="s2">"squats"</span><span class="p">,</span> <span class="s2">"lunges"</span><span class="p">,</span> <span class="s2">"planks"</span><span class="p">,</span> <span class="s2">"burpees"</span><span class="p">,</span>
+             <span class="s2">"jumping jacks"</span><span class="p">,</span> <span class="s2">"sit-ups"</span><span class="p">]</span>
+<span class="n">REST_DAY</span> <span class="o">=</span> <span class="mi">6</span>    <span class="c1"># Sunday (Monday is 0)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">build_workout</span><span class="p">(</span><span class="n">exercise_list</span><span class="p">,</span> <span class="n">how_many</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return a list of different exercises, each paired with a rep count."""</span>
+    <span class="n">chosen</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">exercise_list</span><span class="p">,</span> <span class="n">how_many</span><span class="p">)</span>    <span class="c1"># no repeats</span>
+    <span class="n">workout</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">exercise</span> <span class="ow">in</span> <span class="n">chosen</span><span class="p">:</span>
+        <span class="n">reps</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>                  <span class="c1"># 10 and 20 both possible</span>
+        <span class="n">workout</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">reps</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">exercise</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">workout</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">today</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span> <span class="o">==</span> <span class="n">REST_DAY</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Rest day. Recover and stretch!"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Workout for </span><span class="si">{</span><span class="n">today</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">step</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">build_workout</span><span class="p">(</span><span class="n">EXERCISES</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">step</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Notice the pattern: <strong>modules supply the tools</strong> (<code class="docutils literal notranslate"><span class="pre">random.sample</span></code>, <code class="docutils literal notranslate"><span class="pre">random.randint</span></code>, <code class="docutils literal notranslate"><span class="pre">datetime.date.today</span></code>), while <strong>your own procedure</strong> (<code class="docutils literal notranslate"><span class="pre">build_workout</span></code>) supplies the logic — a parameter, a list, iteration, and a return value. <code class="docutils literal notranslate"><span class="pre">random.sample</span></code> guarantees no exercise repeats, which a loop of <code class="docutils literal notranslate"><span class="pre">random.choice</span></code> calls would not. The Random Trivia Quiz Generator needs the same kind of thinking: which module tool prevents a question from being asked twice?</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="before-you-import-checklist">
+<h3>✅ Before You Import — Checklist<a class="headerlink" href="#before-you-import-checklist" title="Link to this heading">¶</a></h3>
+<p>☐ All imports at the top, grouped: standard library → third-party → your own files
+☐ One module per <code class="docutils literal notranslate"><span class="pre">import</span></code> line; no <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">...</span> <span class="pre">import</span> <span class="pre">*</span></code>
+☐ None of my file names match a module name (<code class="docutils literal notranslate"><span class="pre">random.py</span></code>, <code class="docutils literal notranslate"><span class="pre">math.py</span></code>, …)
+☐ No variable reuses a module name (<code class="docutils literal notranslate"><span class="pre">random</span> <span class="pre">=</span> <span class="pre">...</span></code>)
+☐ Every import is actually used
+☐ Third-party packages are listed in my header’s <strong>Ex. Packages</strong> line
+☐ Random behavior tested with <code class="docutils literal notranslate"><span class="pre">random.seed()</span></code>, then the seed removed
+☐ Any code I didn’t write is acknowledged in a comment</p>
+<p><em>AP CSP: AAP-3.D, AAP-3.E | PCAP preview (not on PCEP-30-02)</em></p>
+</section>
 <hr class="docutils" />
 <section id="project-random-trivia-quiz-generator">
 <h3>Project: Random Trivia Quiz Generator<a class="headerlink" href="#project-random-trivia-quiz-generator" title="Link to this heading">¶</a></h3>
@@ -7064,6 +7701,15 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <li><a class="reference internal" href="#activity-math-operations-calculator">Activity: Math Operations Calculator</a></li>
 <li><a class="reference internal" href="#activity-recursion-practice-three-levels">Activity: Recursion Practice — Three Levels</a></li>
 <li><a class="reference internal" href="#modules-and-packages">Modules and Packages</a><ul>
+<li><a class="reference internal" href="#standard-library-tour">Standard Library Tour</a></li>
+<li><a class="reference internal" href="#writing-your-own-module">Writing Your Own Module</a></li>
+<li><a class="reference internal" href="#packages">Packages</a><ul>
+<li><a class="reference internal" href="#common-errors-that-break-programs">⚠️ Common Errors That Break Programs</a></li>
+<li><a class="reference internal" href="#professional-practice-imports-and-pep-8">Professional Practice: Imports and PEP 8</a></li>
+<li><a class="reference internal" href="#modules-and-the-create-performance-task">📋 Modules and the Create Performance Task</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#before-you-import-checklist">✅ Before You Import — Checklist</a></li>
 <li><a class="reference internal" href="#project-random-trivia-quiz-generator">Project: Random Trivia Quiz Generator</a></li>
 </ul>
 </li>

@@ -4031,46 +4031,513 @@ Recursion clicks once you can identify two things in *any* recursive problem: th
 
 ## Modules and Packages
 
-`📋 AP CSP: AAP-2.G` — Use abstraction to manage complexity.
+`📋 AP CSP: AAP-3.D` — Select appropriate libraries or existing code segments to use in creating new programs.
+`📋 AP CSP: AAP-3.E` — Generate random values in programs.
 
-A **module** is a `.py` file containing reusable code. A **package** is a directory of related modules.
+> 🔖 **PCEP note:** Importing modules is **not** an objective on PCEP-30-02 (Blocks 1–4 stop at functions and exceptions). It *is* a core topic on the next certification, **PCAP**. Learn it here because you need it for real programs, the Random Trivia Quiz Generator, and very likely your CPT.
 
-```python
-import math
-import random
-import datetime
+A **module** is a single `.py` file full of prewritten code (functions, constants, classes) that you can bring into your own program with `import`. A **package** is a folder that groups related modules together. Python ships with hundreds of modules called the **standard library**, and thousands more are available to download.
 
-print(math.sqrt(16))          # 4.0
-print(random.randint(1, 10))  # random int 1–10
-print(datetime.date.today())   # today's date
-```
+<mark>Using a module is **procedural abstraction** in action: you call `random.randint(1, 6)` without ever seeing the code inside it. You only need to know *what* it does, not *how*.</mark>
 
-**Import Styles**
+---
 
-```python
-import math                   # access as math.sqrt()
-from math import sqrt         # access as sqrt()
-from math import sqrt, pi     # import multiple
-import numpy as np            # alias
-```
+**The Vocabulary Ladder**
 
-**Common Standard Library Modules**
-
-| Module | Purpose | Example |
+| Term | What it is | Example |
 |---|---|---|
-| `math` | Math functions | `math.sqrt()`, `math.pi` |
-| `random` | Random numbers | `random.randint()`, `random.choice()` |
-| `datetime` | Date/time | `datetime.date.today()` |
-| `os` | Operating system | `os.getcwd()` |
-| `json` | JSON data | `json.loads()`, `json.dumps()` |
-| `tkinter` | GUI windows | `tk.Tk()`, `tk.Button()` |
+| **Function** | A named block of code | `randint()` |
+| **Module** | One `.py` file of related code | `random.py` |
+| **Package** | A folder of modules | `tkinter/` (contains `messagebox`, `ttk`, …) |
+| **Library** | A collection of modules/packages you can reuse | the standard library, `pygame` |
+| **Standard library** | Comes installed with Python | `math`, `random`, `json` |
+| **Third-party package** | Written by others; you must install it | `pygame`, `faker`, `pillow` |
+| **PyPI** | The online “app store” for Python packages | pypi.org |
+| **pip** | The tool that downloads/installs from PyPI | `python -m pip install pygame` |
+| **API** | The documented list of what a module’s functions do and how to call them | the `random` docs page |
+
+---
+
+**Three Ways to Import**
+
+```python
+# 1) Import the whole module — call things with the module name in front
+import random
+roll = random.randint(1, 6)
+
+# 2) Import specific names — call them directly
+from random import randint, choice
+roll = randint(1, 6)
+
+# 3) Import with an alias (a nickname)
+import tkinter as tk
+window = tk.Tk()
+```
+
+| Style | You write | Pros | Cons |
+|---|---|---|---|
+| `import random` | `random.randint()` | Always clear where a name came from | More typing |
+| `from random import randint` | `randint()` | Short | Reader must scroll up to see where `randint` came from |
+| `import tkinter as tk` | `tk.Tk()` | Short *and* clear | Only use **standard** aliases (see PEP 8 below) |
+
+> <mark>**Default for this course:** use `import module_name`. The prefix (`random.`, `math.`) tells every reader exactly where a function lives.</mark>
+
+**Exploring a module you don’t know yet**
+
+```python
+import random
+
+print(dir(random))        # lists every name inside the module
+help(random.choice)       # prints the docstring for one function
+```
+
+The official reference for every standard-library module is at **docs.python.org/3/library**. Reading documentation is a real professional skill: it is how programmers learn an API without reading its source code.
 
 <details><summary>🤔 Thinking Question — check your answer</summary>
 
-**Question:** What's the practical difference between `import random` and `from random import randint`, in terms of how you'd call the function afterward?
+**Question:** A program starts with `import math`. Later it calls `sqrt(25)` and crashes. What error appears, and what are two different ways to fix it?
 
-**Answer:** With `import random`, you must prefix every call with the module name: `random.randint(1, 10)`. With `from random import randint`, you import just that one function directly into your file's namespace, so you call it as `randint(1, 10)` with no prefix. The first style is safer in larger programs (it's always clear which module a function came from); the second is more convenient for one or two functions you'll use constantly.
+**Answer:** `NameError: name 'sqrt' is not defined`. `import math` only creates the name `math`; the function lives *inside* it. Fix it by calling `math.sqrt(25)`, **or** change the import to `from math import sqrt`. Either works; just don’t mix the two styles for the same function.
 </details>
+
+---
+
+#### Standard Library Tour
+
+The six modules below cover most AP CSP project needs. You do **not** need all six in one program.
+
+**1. `math` — Mathematical Calculations**
+
+| Name | What it does | Returns |
+|---|---|---|
+| `math.pi` | The constant π (a value, not a function — no parentheses) | `3.141592653589793` |
+| `math.sqrt(x)` | Square root | always a `float`: `math.sqrt(16)` → `4.0` |
+| `math.ceil(x)` | Round **up** to an integer | `int` |
+| `math.floor(x)` | Round **down** to an integer | `int` |
+| `math.pow(x, y)` | x to the power y | always a `float`; `x ** y` is usually preferred |
+
+```python
+import math
+
+radius = 5
+area = math.pi * radius ** 2
+print(f"Area: {area:.2f}")       # Area: 78.54
+```
+
+**Project idea:** circle/geometry calculator, distance between two points.
+
+---
+
+**2. `random` — Random Numbers and Selections**
+
+| Name | What it does |
+|---|---|
+| `random.randint(a, b)` | Random integer from `a` to `b`, **including both ends** |
+| `random.randrange(a, b)` | Random integer from `a` up to **but not including** `b` |
+| `random.choice(seq)` | One random item from a list/string/tuple |
+| `random.sample(seq, k)` | A new list of `k` items with **no repeats** |
+| `random.shuffle(lst)` | Shuffles a list **in place** — returns `None` |
+| `random.random()` | Float from `0.0` up to (not including) `1.0` |
+| `random.seed(n)` | Makes the “random” sequence repeat exactly — great for testing |
+
+```python
+import random
+
+roll = random.randint(1, 6)
+print("You rolled:", roll)
+
+topics = ["Math", "Science", "History", "Art"]
+print(random.choice(topics))         # one topic
+print(random.sample(topics, 2))      # two different topics, no repeats
+```
+
+> <mark>**AP Exam connection:** `RANDOM(a, b)` on the AP CSP Exam Reference Sheet includes **both** `a` and `b`, exactly like `random.randint(a, b)`. It does *not* match `randrange`.</mark>
+
+**Project idea:** dice game, number guessing, the **Random Trivia Quiz Generator** this week.
+
+---
+
+**3. `datetime` — Dates and Times**
+
+The module and its most-used class have the **same name**, which confuses everyone at first. Pick one import style and stick with it:
+
+```python
+# Style A: import the module
+import datetime
+today = datetime.date.today()
+now = datetime.datetime.now()
+
+# Style B: import the classes
+from datetime import date, datetime
+today = date.today()
+now = datetime.now()
+```
+
+| Name | What it does |
+|---|---|
+| `date.today()` | Today’s date |
+| `datetime.now()` | Current local date **and** time |
+| `timedelta(days=7)` | A length of time you can add/subtract |
+| `.year`, `.month`, `.day` | Parts of a date |
+
+```python
+import datetime
+
+today = datetime.date.today()
+due = today + datetime.timedelta(days=7)
+days_left = (due - today).days
+print(f"Due {due} ({days_left} days from now)")
+```
+
+**Project idea:** countdown timer, assignment tracker, habit tracker.
+
+---
+
+**4. `os` — Operating System and Files**
+
+| Name | What it does |
+|---|---|
+| `os.getcwd()` | The **current working directory** (the folder Python is running *from*) |
+| `os.listdir()` | Files and folders in the current directory |
+| `os.mkdir("saves")` | Create a folder (needs a name; errors if it already exists) |
+| `os.path.exists(path)` | `True`/`False` — does this file or folder exist? |
+
+```python
+import os
+
+if os.path.exists("scores.json"):
+    print("Found saved scores.")
+else:
+    print("No save file yet. Starting fresh.")
+```
+
+> ⚠️ The “current folder” is wherever Python was *launched*, which is not always the folder your `.py` file is in. If a file “definitely exists” but you get `FileNotFoundError`, print `os.getcwd()` first. You’ll use this again in **File Operations**.
+
+---
+
+**5. `json` — Saving and Sharing Structured Data**
+
+| Name | What it does | Memory trick |
+|---|---|---|
+| `json.dumps(data)` | Python → JSON **s**tring | **s** = string |
+| `json.loads(text)` | JSON **s**tring → Python | **s** = string |
+| `json.dump(data, file)` | Python → JSON **file** | no **s** = file |
+| `json.load(file)` | JSON **file** → Python | no **s** = file |
+
+```python
+import json
+
+player = {"name": "Alex", "score": 95, "badges": ["speedy", "streak"]}
+
+saved_text = json.dumps(player)
+print(saved_text)
+
+loaded = json.loads(saved_text)
+print(loaded["score"])        # 95
+```
+
+**JSON doesn’t store everything exactly the way Python does:**
+
+| Python value | After a save/load round trip |
+|---|---|
+| `{1: "a"}` (int key) | `{"1": "a"}` — keys **always** become strings |
+| `(3, 7)` (tuple) | `[3, 7]` — tuples come back as lists |
+| `{1, 2, 3}` (set) | ❌ `TypeError` — sets can’t be saved at all |
+
+**Project idea:** save quiz scores, game progress, a to-do list.
+
+---
+
+**6. `tkinter` — Graphical User Interfaces (GUIs)**
+
+```python
+import tkinter as tk
+
+
+def on_click():
+    """Change the label text when the button is clicked."""
+    label.config(text="Great job!")
+
+
+window = tk.Tk()
+window.title("My First App")
+
+label = tk.Label(window, text="Hello, AP CSP!")
+label.pack()
+
+button = tk.Button(window, text="Click Me", command=on_click)
+button.pack()
+
+window.mainloop()
+```
+
+> ⚠️ Notice `command=on_click` has **no parentheses**. You are handing the button the function to call *later*. Writing `command=on_click()` runs it once immediately and gives the button `None`.
+
+> ⚠️ `tkinter` needs a desktop Python with GUI support. Many browser-based coding sites can’t open windows. See the **Tkinter** page for the full unit.
+
+---
+
+**Quick Comparison**
+
+| Module | Main purpose | Example use |
+|---|---|---|
+| `math` | Math functions and constants | Circle area calculator |
+| `random` | Random values and selections | Dice game, trivia quiz |
+| `datetime` | Dates, times, durations | Assignment countdown |
+| `os` | Files, folders, environment | Check for a save file |
+| `json` | Structured data as text | Save quiz scores |
+| `tkinter` | Windows, buttons, labels | Interactive quiz app |
+
+---
+
+#### Writing Your Own Module
+
+Any `.py` file you write is already a module. Put it in the **same folder** as your main program:
+
+```python
+# helpers.py
+"""Reusable helper functions for my quiz game."""
+
+PASSING_SCORE = 70
+
+
+def percent(correct, total):
+    """Return the percentage of correct answers."""
+    return correct / total * 100
+```
+
+```python
+# main.py
+import helpers
+
+score = helpers.percent(8, 10)
+if score >= helpers.PASSING_SCORE:
+    print(f"Passed with {score:.0f}%")
+```
+
+**Why `if __name__ == "__main__":` exists**
+
+<mark>When Python imports a file, it **runs every top-level line** in that file.</mark> If `helpers.py` had a stray `print("testing...")` or an `input()` at the bottom, it would run the moment `main.py` imports it.
+
+```python
+# helpers.py
+def percent(correct, total):
+    """Return the percentage of correct answers."""
+    return correct / total * 100
+
+
+if __name__ == "__main__":
+    # Runs ONLY when you run helpers.py directly — not when imported.
+    print(percent(8, 10))   # quick self-test: should print 80.0
+```
+
+Python sets `__name__` to `"__main__"` for the file you actually ran, and to the module’s name (`"helpers"`) for files that were imported. This is why the starter code in our projects ends with `if __name__ == "__main__": main()`.
+
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** Maya’s `main.py` imports her `scoring.py`. Every time she runs `main.py`, it unexpectedly asks “Enter a test score:” before her game even starts. What’s the most likely cause, and how should she fix it?
+
+**Answer:** `scoring.py` has an `input()` call at the top level (outside any function), and importing a module runs all of its top-level code. She should move that test code inside an `if __name__ == "__main__":` block in `scoring.py`, so it only runs when she runs `scoring.py` by itself.
+</details>
+
+---
+
+### Packages
+
+A **package** is a folder of modules. The folder usually contains a file named `__init__.py` (it can be empty), which marks it as a regular package.
+
+```
+quiz_project/
+├── main.py
+└── quiz/
+    ├── __init__.py
+    ├── questions.py
+    └── scoring.py
+```
+
+```python
+# main.py
+from quiz import scoring
+from quiz.questions import load_questions
+
+print(scoring.percent(8, 10))
+```
+
+The dots (`quiz.questions`) are a **path** through the package: folder → module → name.
+
+**Submodules must be imported on their own**
+
+Big packages don’t automatically load all of their pieces:
+
+```python
+import tkinter as tk
+tk.messagebox.showinfo("Hi", "Hello!")
+# Often: AttributeError: module 'tkinter' has no attribute 'messagebox'
+```
+
+```python
+import tkinter as tk
+from tkinter import messagebox        # import the submodule explicitly
+
+messagebox.showinfo("Hi", "Hello!")
+```
+
+**Installing third-party packages**
+
+```
+python -m pip install pygame
+```
+
+On Windows, use `py -m pip install pygame`. Using `python -m pip` (instead of just `pip`) guarantees the package installs into the **same Python** that will run your program. If you install a package and still get `ModuleNotFoundError`, your editor is probably running a different Python interpreter. In VS Code, check the interpreter shown in the bottom-right corner.
+
+**The install name is not always the import name:**
+
+| You install… | You import… |
+|---|---|
+| `pygame` | `pygame` |
+| `faker` | `faker` |
+| `pillow` | `PIL` |
+| `beautifulsoup4` | `bs4` |
+| `opencv-python` | `cv2` |
+| `scikit-learn` | `sklearn` |
+
+> 🔐 **Install carefully.** Anyone can upload to PyPI, and attackers publish packages with names one typo away from popular ones, hoping someone mistypes. Copy the exact name from the project’s official page, and check that it’s widely used before installing. This is a real-world **software supply chain** risk (Big Idea 5: Impact of Computing).
+
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** Jordan runs `python -m pip install pillow`, sees “Successfully installed,” then writes `import pillow` and gets `ModuleNotFoundError`. What went wrong?
+
+**Answer:** The install worked; the import name is different. Pillow is installed as `pillow` but imported as `PIL` (`from PIL import Image`). Always check a package’s documentation for its import name.
+</details>
+
+---
+
+#### ⚠️ Common Errors That Break Programs
+
+| Symptom | Cause | Fix |
+|---|---|---|
+| `AttributeError: module 'random' has no attribute 'randint'` (Python 3.13+ adds *“consider renaming…”*; older versions say *“partially initialized module”*) | You named **your own file** `random.py`, so `import random` imported *your* file instead of Python’s | Rename your file (`dice_game.py`). Never name files `random.py`, `math.py`, `json.py`, `turtle.py`, `pygame.py`, `tkinter.py`, etc. |
+| `AttributeError: 'int' object has no attribute 'randint'` (on the *second* roll) | You reused the module name as a variable: `random = random.randint(1, 6)` | Use a different variable name: `roll = random.randint(1, 6)` |
+| `NameError: name 'randint' is not defined` | Used `import random` but called `randint()` with no prefix | `random.randint()` — or `from random import randint` |
+| `ModuleNotFoundError: No module named 'Random'` | Module names are **case-sensitive** | `import random` (all lowercase) |
+| `ModuleNotFoundError: No module named 'pygame'` | Third-party package not installed, or installed into a different Python | `python -m pip install pygame`; check your editor’s interpreter |
+| `IndexError: list index out of range` — but **only sometimes** | `random.randint(0, len(items))` can return `len(items)`, one past the last index | `random.choice(items)`, or `random.randint(0, len(items) - 1)` |
+| `TypeError: 'NoneType' object is not subscriptable` | `deck = random.shuffle(deck)` — `shuffle` changes the list in place and returns `None` | Just call `random.shuffle(deck)` on its own line |
+| `AttributeError: module 'datetime' has no attribute 'now'` | `import datetime` then `datetime.now()` | `datetime.datetime.now()` — or `from datetime import datetime` |
+| `ValueError: math domain error` | `math.sqrt()` of a negative number | Validate input before calling |
+| `TypeError: open() missing required argument 'flags'` | `from os import *` replaced the built-in `open()` with `os.open()` | Don’t use `import *`. Use `import os` |
+| Saved dict keys come back as `"1"` instead of `1` | JSON keys are always strings | Convert on load: `int(key)` |
+| `FileNotFoundError` for a file that’s right there | Python is running from a different folder | Check `os.getcwd()`; run from your project folder |
+
+> <mark>**Testing random programs:** a bug that shows up “only sometimes” is still a bug. Put `random.seed(1)` at the top while testing so every run produces the same “random” results, then remove it when you’re done.</mark>
+
+<details><summary>🤔 Thinking Question — check your answer</summary>
+
+**Question:** A student’s quiz picks a question with `questions[random.randint(0, len(questions))]`. It works for ten test runs in a row, so they submit it. Why might it crash during grading?
+
+**Answer:** `randint` includes **both** endpoints, so it can return `len(questions)`, an index one past the end of the list. With 10 questions, that happens about 1 time in 11. Ten lucky test runs don’t prove the code is correct. Use `random.choice(questions)`, which can never pick an invalid index.
+</details>
+
+---
+
+#### Professional Practice: Imports and PEP 8
+
+The PEP 8 Checker already grades import **placement and grouping** (see **Python Style Guidelines → 4. Imports**). These additional rules come from PEP 8 and from how professional teams work:
+
+**1. Never use wildcard imports.** PEP 8 says to avoid `from module import *`. It dumps every name into your program, can silently overwrite your own names or built-ins (see the `os`/`open` error above), and hides where anything came from.
+
+```python
+# Good
+import math
+from random import choice, randint     # several names from ONE module: OK
+
+# Bad
+from math import *
+import os, sys                         # several MODULES on one line: not OK
+```
+
+**2. Use only standard aliases.** Some aliases are universal, and every Python programmer recognizes them: `import tkinter as tk`, `import numpy as np`, `import pandas as pd`, `import matplotlib.pyplot as plt`. Don’t invent your own (`import random as r`); it only makes your code harder for others to read.
+
+**3. Import only what you use.** Delete imports you no longer need. Tools like **Ruff** and **Flake8** flag unused imports automatically, because every import is a claim that your program depends on that code.
+
+**4. Name your modules well.** PEP 8: modules get short, all-lowercase names (underscores allowed if they help readability); packages get short, all-lowercase names, preferably without underscores. And never reuse a standard-library name.
+
+**5. Prefer the standard library.** Before installing a package, check whether Python already has the tool built in. Every third-party package is something every user of your program must also install, trust, and keep updated.
+
+**6. List your dependencies.** Your header block’s **Ex. Packages** line is the course version of this. Professional projects list exact package versions in a `requirements.txt` file so anyone can recreate the setup:
+
+```
+python -m pip freeze > requirements.txt      # record what's installed
+python -m pip install -r requirements.txt    # install it all on another computer
+```
+
+Professionals also use a **virtual environment** (`python -m venv .venv`) so each project gets its own isolated set of packages. You won’t need either for the CPT, but you’ll see them in every real Python project.
+
+**7. Respect licenses.** Open-source packages come with licenses that state how you may use them. Most allow use in school projects, but professionals check the license before adding a dependency to a product (Big Idea 5: open source and intellectual property).
+
+---
+
+#### 📋 Modules and the Create Performance Task
+
+- **Importing is allowed**, and modules like `random` can make your program more interesting.
+- **A library function is not your procedure.** Your student-developed procedure, with its parameter, selection, and iteration, must be code **you wrote**. Calling `random.choice()` or `math.sqrt()` does not count as that procedure, although your procedure may *call* them.
+- **Your list must be yours, too.** Using a list returned by a module is fine, but your own code must store, access, and process the list in a meaningful way.
+- **Acknowledge code you didn’t write.** If any code segment came from someone else (a tutorial, documentation example, or a classmate’s helper module), cite it in a comment next to the code.
+- Simply importing a module does **not**, by itself, demonstrate input/output, sequencing, selection, iteration, procedures, or lists. Those must come from your own logic.
+
+---
+
+> 📌 **Worked Example — modules in a different context (Daily Workout Picker)**
+>
+> ```python
+> import datetime
+> import random
+>
+> EXERCISES = ["push-ups", "squats", "lunges", "planks", "burpees",
+>              "jumping jacks", "sit-ups"]
+> REST_DAY = 6    # Sunday (Monday is 0)
+>
+>
+> def build_workout(exercise_list, how_many):
+>     """Return a list of different exercises, each paired with a rep count."""
+>     chosen = random.sample(exercise_list, how_many)    # no repeats
+>     workout = []
+>     for exercise in chosen:
+>         reps = random.randint(10, 20)                  # 10 and 20 both possible
+>         workout.append(f"{reps} {exercise}")
+>     return workout
+>
+>
+> def main():
+>     today = datetime.date.today()
+>     if today.weekday() == REST_DAY:
+>         print("Rest day. Recover and stretch!")
+>     else:
+>         print(f"Workout for {today}:")
+>         for step, item in enumerate(build_workout(EXERCISES, 3), start=1):
+>             print(f"  {step}. {item}")
+>
+>
+> if __name__ == "__main__":
+>     main()
+> ```
+>
+> Notice the pattern: **modules supply the tools** (`random.sample`, `random.randint`, `datetime.date.today`), while **your own procedure** (`build_workout`) supplies the logic — a parameter, a list, iteration, and a return value. `random.sample` guarantees no exercise repeats, which a loop of `random.choice` calls would not. The Random Trivia Quiz Generator needs the same kind of thinking: which module tool prevents a question from being asked twice?
+
+---
+
+### ✅ Before You Import — Checklist
+
+☐ All imports at the top, grouped: standard library → third-party → your own files
+☐ One module per `import` line; no `from ... import *`
+☐ None of my file names match a module name (`random.py`, `math.py`, …)
+☐ No variable reuses a module name (`random = ...`)
+☐ Every import is actually used
+☐ Third-party packages are listed in my header’s **Ex. Packages** line
+☐ Random behavior tested with `random.seed()`, then the seed removed
+☐ Any code I didn’t write is acknowledged in a comment
+
+*AP CSP: AAP-3.D, AAP-3.E | PCAP preview (not on PCEP-30-02)*
 
 ---
 
