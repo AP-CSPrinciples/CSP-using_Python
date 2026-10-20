@@ -529,7 +529,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#       Assignment:  Program [number]:  [Assignment Title]</span>
 <span class="c1">#</span>
 <span class="c1">#       Author:  [Your Name]</span>
-<span class="c1">#       Partner:  [Partner's Name (if you are not partnering with anyone remove this line.)]</span>
+<span class="c1">#       Partner:  [Partner's Name]</span>
 <span class="c1">#</span>
 <span class="c1">#       Course Name:  [Course Name]</span>
 <span class="c1">#       Instructor:  [Instructor Name]</span>
@@ -537,7 +537,7 @@
 <span class="c1">#</span>
 <span class="c1">#       Description:  [Describe the program's goal, IN DETAIL.]</span>
 <span class="c1">#</span>
-<span class="c1">#       Language:  Python 3.x &lt;-- Knowing your version is important when running your program</span>
+<span class="c1">#       Language:  Python 3.x</span>
 <span class="c1">#       Ex. Packages:  [List any external packages used]</span>
 <span class="c1">#</span>
 <span class="c1">#       Deficiencies:  [Known problems, or state there are none.]</span>
@@ -814,6 +814,88 @@
 <p>☐ One statement per line; <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">None</span></code>; no bare <code class="docutils literal notranslate"><span class="pre">except:</span></code></p>
 <p>☐ <code class="docutils literal notranslate"><span class="pre">snake_case</span></code> variables/functions, <code class="docutils literal notranslate"><span class="pre">UPPER_CASE</span></code> constants, <code class="docutils literal notranslate"><span class="pre">CapWords</span></code> classes</p>
 <p>☐ File ends with one newline</p>
+<p>☐ TEST CASES are at the bottom of the file (see <strong>What to Submit</strong> below)</p>
+<blockquote>
+<div><p>💡 <strong>Let VS Code fix three common mistakes for you.</strong> Open Settings (<code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">,</span></code> on Windows, <code class="docutils literal notranslate"><span class="pre">Cmd</span> <span class="pre">+</span> <span class="pre">,</span></code> on Mac), search for each of these, and turn it on: <strong>Files: Insert Final Newline</strong>, <strong>Files: Trim Trailing Whitespace</strong>, and <strong>Files: Trim Final Newlines</strong>. Your file will then end with exactly one newline and have no spaces hiding at the ends of lines.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="what-to-submit-every-assignment">
+<h2>📦 What to Submit — Every Assignment<a class="headerlink" href="#what-to-submit-every-assignment" title="Link to this heading">¶</a></h2>
+<p>Every assignment is turned in on Canvas as <strong>one <code class="docutils literal notranslate"><span class="pre">.py</span></code> file</strong>. That file must have:</p>
+<ol class="arabic simple">
+<li><p><strong>The header block</strong> at the top, completely filled in (missing = −1 point).</p></li>
+<li><p><strong>Your working program.</strong></p></li>
+<li><p><strong>TEST CASES</strong> written as comments at the <strong>very bottom</strong> of the file.</p></li>
+</ol>
+<p>No screenshots unless the assignment asks for them. The TEST CASES in your file <em>are</em> your proof that the program works. Every assignment below ends with a <strong>✅ Submit</strong> box that tells you exactly how many TEST CASES to write and what each one should test.</p>
+<section id="how-your-score-is-figured">
+<h3>How Your Score Is Figured<a class="headerlink" href="#how-your-score-is-figured" title="Link to this heading">¶</a></h3>
+<p>The PEP 8 Checker gives you a score from 1 to 5 in three columns, then averages them:</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>What it checks</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Program &amp; Output</strong></p></td>
+<td><p>Your program runs all the way to the end using the answers in your TEST CASES, and does what the assignment asks</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Style</strong></p></td>
+<td><p>PEP 8 mistakes (see <strong>How Your Style Is Graded</strong> above)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Submission</strong></p></td>
+<td><p>Your <code class="docutils literal notranslate"><span class="pre">.py</span></code> file is turned in complete and on time</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The average is rounded to the nearest whole number, then <strong>−1</strong> if the header block is missing.</p>
+<p><em>Example:</em> Program &amp; Output <strong>5</strong>, Style <strong>4</strong>, Submission <strong>5</strong> → average 4.67 → <strong>5</strong>.</p>
+<blockquote>
+<div><p>⚠️ <strong>Why TEST CASES matter:</strong> the checker runs your program for real. When your program calls <code class="docutils literal notranslate"><span class="pre">input()</span></code>, the checker types in the next <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> answer from your TEST CASE. If you have <strong>no TEST CASES</strong>, the checker has nothing to type. Your program stops at the first question and <strong>Program &amp; Output can’t go above 4</strong>, even if your code is perfect.</p>
+</div></blockquote>
+</section>
+<section id="how-to-write-a-test-case">
+<h3>How to Write a TEST CASE<a class="headerlink" href="#how-to-write-a-test-case" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Start with <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">TEST</span> <span class="pre">CASE</span> <span class="pre">1:</span></code> followed by a short description of what you are testing.</p></li>
+<li><p>Write one <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> line for <strong>each</strong> answer you type, <strong>in the order your program asks</strong>.</p></li>
+<li><p>End with one <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">EXPECTED:</span></code> line saying what should happen.</p></li>
+<li><p>Write up to <strong>4</strong> test cases, numbered 1, 2, 3, 4.</p></li>
+<li><p>Every line starts with <code class="docutils literal notranslate"><span class="pre">#</span> </code> (pound sign + space) and stays under 79 characters, so your TEST CASES never cost you style points.</p></li>
+<li><p><strong>Do not</strong> paste your whole terminal output. Only the inputs and the expected result.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TEST CASE 1: normal bill</span>
+<span class="c1"># INPUT: 48.50</span>
+<span class="c1"># INPUT: 20</span>
+<span class="c1"># EXPECTED: Tip: $9.70, Total: $58.20</span>
+
+<span class="c1"># TEST CASE 2: tip typed as a word instead of a number</span>
+<span class="c1"># INPUT: 48.50</span>
+<span class="c1"># INPUT: twenty</span>
+<span class="c1"># EXPECTED: "Please enter a number." and the program does not crash</span>
+</pre></div>
+</div>
+<p><strong>Two special cases:</strong></p>
+<ul>
+<li><p><strong>Your program has a menu loop</strong> (<code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True:</span></code>). Your <strong>last</strong> <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> line must be the choice that quits. Otherwise the checker runs out of answers while your program is still waiting.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TEST CASE 1: deposit, then try to withdraw too much, then quit</span>
+<span class="c1"># INPUT: 1</span>
+<span class="c1"># INPUT: 100</span>
+<span class="c1"># INPUT: 2</span>
+<span class="c1"># INPUT: 500</span>
+<span class="c1"># INPUT: 3</span>
+<span class="c1"># EXPECTED: balance 100.00, then "Insufficient funds", then goodbye</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Your program has no <code class="docutils literal notranslate"><span class="pre">input()</span></code> at all.</strong> Write one line, <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span> <span class="pre">none</span></code>, and use <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">EXPECTED:</span></code> to describe the output.</p></li>
+</ul>
+<p><strong>Good test cases test different things.</strong> Write one normal run, and at least one that tries to break your program: a value that doesn’t exist, a word typed where a number belongs, a boundary like exactly 70, or an empty answer.</p>
 <hr class="docutils" />
 <p><strong>General Habits of Good Programmers</strong></p>
 <p>The habits below are <strong>not scored by the PEP 8 Checker</strong>. Some of them may still appear as rows in a project’s rubric. They are what separates code that merely <em>works</em> from code that is <strong>easy to understand, test, and change</strong>, and professional reviewers expect them.</p>
@@ -1460,6 +1542,9 @@
 </div></blockquote>
 <section id="activity-movie-ticket-eligibility-checker">
 <h3>Activity: Movie Ticket Eligibility Checker<a class="headerlink" href="#activity-movie-ticket-eligibility-checker" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Movie Ticket Eligibility Checker</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p>Write a program that determines whether a person can buy a discounted movie ticket, using <strong>compound boolean expressions</strong> (<code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>).</p>
 <p><strong>🧩 Scaffolding — build it in this order:</strong></p>
 <ol class="arabic simple">
@@ -1496,12 +1581,26 @@
 <span class="c1"># TODO 5) Add the under-6/no-adult-present check</span>
 </pre></div>
 </div>
-<p><strong>Submit your .py file and test cases showing that your program worked as intended.</strong></p>
+<p><strong>✅ Submit — Movie Ticket Eligibility Checker</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>4 TEST CASES</strong> at the bottom of the file, with one <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> line for each question your program asks in that run</p>
+<ul>
+<li><p>TEST CASE 1: a senior (e.g., age 70) → discount</p></li>
+<li><p>TEST CASE 2: age 13–25 <strong>with</strong> a student ID → discount</p></li>
+<li><p>TEST CASE 3: age 13–25 <strong>without</strong> a student ID → full price</p></li>
+<li><p>TEST CASE 4: under 6 with <strong>no</strong> adult present → not allowed in</p></li>
+</ul>
+</li>
+</ul>
 <p><em>PCEP: 1.4 | AP CSP: AAP-2.F</em></p>
 </section>
 <hr class="docutils" />
 <section id="assignment-print-statements-and-input-output">
 <h3>Assignment — Print Statements and Input/Output<a class="headerlink" href="#assignment-print-statements-and-input-output" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Print Statements and Input/Output</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p>📋 <strong>AP CSP: CRD-2.B</strong> — Implement algorithms in a programming language.</p>
 <p><strong>What is an f-string?</strong></p>
 <p>An f-string (“formatted string literal”) lets you embed variables and expressions directly inside a string, instead of gluing pieces together with <code class="docutils literal notranslate"><span class="pre">+</span></code> or placeholders. You create one by putting the letter <code class="docutils literal notranslate"><span class="pre">f</span></code> right before the opening quote:</p>
@@ -1675,13 +1774,23 @@ A-B-C | D-E-F</p>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> TODO 3) Print the same sentence using string concatenation (<code class="docutils literal notranslate"><span class="pre">+</span></code>), converting <code class="docutils literal notranslate"><span class="pre">age</span></code> with <code class="docutils literal notranslate"><span class="pre">str()</span></code></p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> TODO 4) Print <code class="docutils literal notranslate"><span class="pre">&quot;A&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;B&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;C&quot;</span></code> as separate arguments with <code class="docutils literal notranslate"><span class="pre">sep=&quot;-&quot;</span></code> so the output reads <code class="docutils literal notranslate"><span class="pre">A-B-C</span></code></p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> TODO 5) Print <code class="docutils literal notranslate"><span class="pre">&quot;Hello&quot;</span></code> with <code class="docutils literal notranslate"><span class="pre">end=&quot;!</span> <span class="pre">&quot;</span></code>, then print <code class="docutils literal notranslate"><span class="pre">&quot;World&quot;</span></code> so the output reads <code class="docutils literal notranslate"><span class="pre">Hello!</span> <span class="pre">World</span></code> on one line</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Submit your .py file and test cases showing that your program worked as intended.</strong></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Submit</strong> one <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with <strong>2 TEST CASES</strong> at the bottom, each with <strong>2 <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> lines</strong> (name, age) — see <strong>✅ Submit</strong> below</p></li>
 </ul>
 <p><strong>Reflection question</strong></p>
 <p>All three of TODO 1–3 produce the <em>same</em> sentence on screen, but they’re
 written three different ways. Which method did you find easiest to read and
 write, and why do you think f-strings are considered the preferred method in
 modern Python?</p>
+<p><strong>✅ Submit — Print Statements and Input/Output</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>2 TEST CASES</strong> at the bottom of the file, each with <strong>2 <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> lines</strong> (name, then age)</p>
+<ul>
+<li><p>TEST CASE 1: your own name and age</p></li>
+<li><p>TEST CASE 2: a name with two words (e.g., <code class="docutils literal notranslate"><span class="pre">Mary</span> <span class="pre">Ann</span></code>) and a different age</p></li>
+</ul>
+</li>
+</ul>
 <blockquote>
 <div><p><mark><strong>Reminder:</strong> <code class="docutils literal notranslate"><span class="pre">input()</span></code> always returns a <code class="docutils literal notranslate"><span class="pre">str</span></code>. You must use <code class="docutils literal notranslate"><span class="pre">int()</span></code> or <code class="docutils literal notranslate"><span class="pre">float()</span></code> to convert it for math operations.</mark></p>
 </div></blockquote>
@@ -1689,6 +1798,9 @@ modern Python?</p>
 <hr class="docutils" />
 <section id="assignment-mad-libs-string-formatting-showdown">
 <h3>Assignment: Mad Libs — String Formatting Showdown<a class="headerlink" href="#assignment-mad-libs-string-formatting-showdown" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Mad Libs</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <blockquote>
 <div><p><strong>Standards:</strong> Output formatting — f-strings, string concatenation, <code class="docutils literal notranslate"><span class="pre">.format()</span></code>, <code class="docutils literal notranslate"><span class="pre">print()</span></code> <code class="docutils literal notranslate"><span class="pre">sep</span></code>/<code class="docutils literal notranslate"><span class="pre">end</span></code> parameters</p>
 <p><em><strong>Objective</strong></em></p>
@@ -1742,7 +1854,7 @@ modern Python?</p>
 <li><p>Build the story section by section, following the technique table above.</p></li>
 <li><p>Test by running the program and filling in silly words — does the story read correctly and grammatically?</p></li>
 <li><p>Add the required header block (below) to the top of your file.</p></li>
-<li><p>Submit your <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with test cases.</p></li>
+<li><p>Submit your <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with TEST CASES at the bottom (see <strong>✅ Submit</strong> below).</p></li>
 </ol>
 <p><strong>Grading Focus</strong></p>
 <ul class="simple">
@@ -1876,6 +1988,16 @@ all 7 the way back to the grocery store!
 </pre></div>
 </div>
 </details>
+<p><strong>✅ Submit — Mad Libs</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>2 TEST CASES</strong> at the bottom of the file, each with one <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> line for <strong>every</strong> word your program asks for (8 or more), in order</p>
+<ul>
+<li><p>TEST CASE 1: one set of silly words</p></li>
+<li><p>TEST CASE 2: a completely different set, including a different number</p></li>
+</ul>
+</li>
+</ul>
 <p><em>AP CSP: CRD-2.B</em></p>
 </section>
 </section>
@@ -1985,6 +2107,9 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 </section>
 <section id="activity-grade-calculator">
 <h2>Activity: Grade Calculator<a class="headerlink" href="#activity-grade-calculator" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Grade Calculator</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p>Write a grade calculator that accepts a numerical score and outputs:</p>
 <ul class="simple">
 <li><p>The letter grade (A–F)</p></li>
@@ -2013,6 +2138,18 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 <span class="c1"># TODO 3) motivational message only if score &lt; 70</span>
 </pre></div>
 </div>
+<p><strong>✅ Submit — Grade Calculator</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>4 TEST CASES</strong> at the bottom of the file, each with <strong>1 <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> line</strong> (the score). Test the boundaries:</p>
+<ul>
+<li><p>TEST CASE 1: <code class="docutils literal notranslate"><span class="pre">95</span></code> → A, passed, no motivational message</p></li>
+<li><p>TEST CASE 2: <code class="docutils literal notranslate"><span class="pre">70</span></code> → C, passed, no motivational message</p></li>
+<li><p>TEST CASE 3: <code class="docutils literal notranslate"><span class="pre">69</span></code> → D, passed, motivational message</p></li>
+<li><p>TEST CASE 4: <code class="docutils literal notranslate"><span class="pre">59</span></code> → F, failed, motivational message</p></li>
+</ul>
+</li>
+</ul>
 <p><em>AP CSP: AAP-2.E | PCEP: 2.1</em></p>
 </section>
 <hr class="docutils" />
@@ -2356,6 +2493,9 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 </details>
 <section id="activity-nested-loop-pattern-design-studio">
 <h3>Activity: Nested Loop Pattern Design Studio<a class="headerlink" href="#activity-nested-loop-pattern-design-studio" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Nested Loop Pattern Design Studio</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p>A single loop can only move in one direction. The moment a shape has <strong>both rows and columns</strong> — a triangle, a diamond, a hollow box — you need a loop <em>inside</em> a loop. The outer loop picks the row; the inner loop decides what happens across that row.</p>
 <p><strong>Warm-up — reading a pattern like a programmer.</strong> Before writing code, answer these for the pattern below:</p>
 <ol class="arabic simple">
@@ -2467,11 +2607,25 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 </table>
 </div>
 </div></blockquote>
+<p><strong>✅ Submit — Nested Loop Pattern Design Studio</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>One</strong> <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block, holding all 4 patterns in order, each under a comment like <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Pattern</span> <span class="pre">1:</span> <span class="pre">hollow</span> <span class="pre">diamond</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Your outer/inner loop paragraph as a comment at the bottom, above your TEST CASES</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>2 TEST CASES</strong> at the bottom of the file, with one <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> line for each size your program asks for</p>
+<ul>
+<li><p>TEST CASE 1: a normal size (e.g., <code class="docutils literal notranslate"><span class="pre">5</span></code>)</p></li>
+<li><p>TEST CASE 2: the smallest size that still makes sense (e.g., <code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">2</span></code>)</p></li>
+</ul>
+</li>
+</ul>
 <p><em>AP CSP: AAP-2.E | PCEP: 2.2</em></p>
 </section>
 <hr class="docutils" />
 <section id="project-loop-concepts-activity-project">
 <h3>Project: Loop Concepts Activity Project<a class="headerlink" href="#project-loop-concepts-activity-project" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Loop Concepts Activity Project</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <blockquote>
 <div><p>These three activities, isolate each loop concept while layering <code class="docutils literal notranslate"><span class="pre">if</span></code>/<code class="docutils literal notranslate"><span class="pre">elif</span></code>/<code class="docutils literal notranslate"><span class="pre">else</span></code> for decision logic. Redundancy across activities is intentional — you will see the same control-flow ideas resurface in a new pathway context.  Read through each project idea.  Choose <strong>1</strong> idea that you would like to develop.</p>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -2631,7 +2785,8 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 
     <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">=== Access code check ==="</span><span class="p">)</span>
     <span class="n">fake_attempts</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">([</span><span class="s2">"1111"</span><span class="p">,</span> <span class="s2">"2222"</span><span class="p">,</span> <span class="s2">"7734"</span><span class="p">])</span>
-    <span class="n">check_access_code</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="nb">next</span><span class="p">(</span><span class="n">fake_attempts</span><span class="p">),</span> <span class="n">VALID_ACCESS_CODE</span><span class="p">,</span> <span class="n">MAX_ATTEMPTS</span><span class="p">)</span>
+    <span class="n">check_access_code</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="nb">next</span><span class="p">(</span><span class="n">fake_attempts</span><span class="p">),</span> <span class="n">VALID_ACCESS_CODE</span><span class="p">,</span>
+                      <span class="n">MAX_ATTEMPTS</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
@@ -2718,6 +2873,16 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 </div>
 <p><strong>Extension (harder):</strong> Add an <em>outer</em> <code class="docutils literal notranslate"><span class="pre">break</span></code> — if any single cell reads <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">9</span></code> (“severe”), halt the <strong>entire</strong> scan immediately (whole dish is compromised), not just the &gt; current row. This requires either a flag variable or restructuring into a function that <code class="docutils literal notranslate"><span class="pre">return</span></code>s early — a good bridge to why <code class="docutils literal notranslate"><span class="pre">break</span></code> alone can’t exit two loops at once.</p>
 </div></blockquote>
+<p><strong>✅ Submit — Loop Concepts Activity Project</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block, for the <strong>one</strong> activity you chose</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>2 TEST CASES</strong> at the bottom of the file. These programs have no <code class="docutils literal notranslate"><span class="pre">input()</span></code>, so each one uses <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span> <span class="pre">none</span></code></p>
+<ul>
+<li><p>TEST CASE 1: the normal run → <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">EXPECTED:</span></code> matches the sample output for your activity</p></li>
+<li><p>TEST CASE 2: a boundary or edge case. Add a few extra calls in <code class="docutils literal notranslate"><span class="pre">main()</span></code> that test it (e.g., <code class="docutils literal notranslate"><span class="pre">classify_load(6000,</span> <span class="pre">10000)</span></code> is exactly 60%, or all three access codes wrong), then describe what they should print</p></li>
+</ul>
+</li>
+</ul>
 <p><strong>Loop Concepts Activity Project — Grading Rubric</strong></p>
 <details>
   <summary>Click Here for Project Rubric</summary>
@@ -3037,6 +3202,9 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 <hr class="docutils" />
 <section id="practice-drills-strings">
 <h3>Practice Drills — Strings<a class="headerlink" href="#practice-drills-strings" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — String Practice Drills</strong> after the last drill. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">single-concept</span> <span class="pre">reps,</span> <span class="pre">10–15</span> <span class="pre">min</span> <span class="pre">each</span> <span class="pre">—</span> <span class="pre">do</span> <span class="pre">these</span> <span class="pre">before</span> <span class="pre">or</span> <span class="pre">alongside</span> <span class="pre">Receipt</span> <span class="pre">Formatter</span> <span class="pre">below.</span></code></p>
 <p><strong>S1 — String Slicer</strong></p>
 <p>Given <code class="docutils literal notranslate"><span class="pre">phrase</span> <span class="pre">=</span> <span class="pre">&quot;Computer</span> <span class="pre">Science</span> <span class="pre">Principles&quot;</span></code>, without hardcoding letters, use slicing/indexing to print: (1) just <code class="docutils literal notranslate"><span class="pre">&quot;Computer&quot;</span></code>, (2) just <code class="docutils literal notranslate"><span class="pre">&quot;Principles&quot;</span></code>, (3) the whole phrase reversed, (4) every other character.</p>
@@ -3130,7 +3298,16 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 <p><strong>Try it:</strong> decode <code class="docutils literal notranslate"><span class="pre">&quot;hetay</span> <span class="pre">igpay</span> <span class="pre">anray&quot;</span></code> — you should get back <code class="docutils literal notranslate"><span class="pre">&quot;the</span> <span class="pre">pig</span> <span class="pre">ran&quot;</span></code>.</p>
 <p><strong>🤔 Discussion:</strong> Try encoding a word that starts with the letter <strong>w</strong>, like <code class="docutils literal notranslate"><span class="pre">&quot;wave&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;aveway&quot;</span></code>. Now try decoding <code class="docutils literal notranslate"><span class="pre">&quot;aveway&quot;</span></code> — does it come back as <code class="docutils literal notranslate"><span class="pre">&quot;wave&quot;</span></code>? <em>(It won’t! The decoder sees it ends in <code class="docutils literal notranslate"><span class="pre">&quot;way&quot;</span></code> and assumes it started with a vowel, since that’s the exact same ending a consonant-<code class="docutils literal notranslate"><span class="pre">w</span></code> word produces. This is a nice bug to trace by hand: a single moved letter can accidentally recreate the “started with a vowel” signal. Real ciphers need to guarantee their encoding is unambiguous to decode — this is why, in the XOR cipher extension from the steganography lab, we cared about avoiding collisions too.)</em></p>
 <p>#############################################################################</p>
-<p><strong>Submit your .py file and test cases showing that your program worked as intended.</strong></p>
+<p><strong>✅ Submit — String Practice Drills</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>One</strong> <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block below, holding S1–S7 in order, each under a comment like <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">S3</span> <span class="pre">—</span> <span class="pre">Palindrome</span> <span class="pre">Checker</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>2 TEST CASES</strong> at the bottom of the file, each with <strong>7 <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> lines</strong> in this order: (1) S2 full name, (2) S3 word, (3) S4 sentence, (4) S5 sentence, (5) S5 banned word, (6) S6 phrase, (7) S7 sentence. Add an 8th line, the Pig Latin sentence to decode, if you did the Extension.</p>
+<ul>
+<li><p>TEST CASE 1: messy name (<code class="docutils literal notranslate"> <span class="pre">marco</span> <span class="pre">REYES</span></code>), a palindrome (<code class="docutils literal notranslate"><span class="pre">Racecar</span></code>), a banned word that <strong>is</strong> in the sentence</p></li>
+<li><p>TEST CASE 2: a word that is <strong>not</strong> a palindrome, and a banned word that is <strong>not</strong> in the sentence</p></li>
+</ul>
+</li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#       Assignment:  String Practice</span>
 <span class="c1">#       Author:      [Your Name]</span>
 <span class="c1">#       Course Name: AP Computer Science Principles</span>
@@ -3144,6 +3321,9 @@ Only ONE branch of an <code class="docutils literal notranslate"><span class="pr
 </section>
 <section id="activity-receipt-formatter">
 <h2>Activity: Receipt Formatter<a class="headerlink" href="#activity-receipt-formatter" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Receipt Formatter</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p>Write a program that formats a store receipt using string methods and escape characters.</p>
 <p><strong>🧩 Scaffolding — build it in this order:</strong></p>
 <ol class="arabic simple">
@@ -3174,6 +3354,16 @@ Blue Notebook	Sale Price: $24.99
 "Thank you for shopping with us!"
 </pre></div>
 </div>
+<p><strong>✅ Submit — Receipt Formatter</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>2 TEST CASES</strong> at the bottom of the file, each with <strong>4 <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> lines</strong> (store name, item name, price, item name re-typed with extra spaces)</p>
+<ul>
+<li><p>TEST CASE 1: a price <strong>over</strong> $20 → <code class="docutils literal notranslate"><span class="pre">Sale</span> <span class="pre">Price:</span></code> label</p></li>
+<li><p>TEST CASE 2: a price <strong>under</strong> $20 → plain <code class="docutils literal notranslate"><span class="pre">Price:</span></code> label</p></li>
+</ul>
+</li>
+</ul>
 <p><em>PCEP: 3.4 | AP CSP: DAT-1.A</em></p>
 <hr class="docutils" />
 </section>
@@ -3313,6 +3503,9 @@ Sometimes you need the position too — like if you want to number a list for st
 <hr class="docutils" />
 <section id="practice-drills-lists">
 <h3>Practice Drills — Lists<a class="headerlink" href="#practice-drills-lists" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — List Practice Drills</strong> after the last drill. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">single-concept</span> <span class="pre">reps,</span> <span class="pre">10–15</span> <span class="pre">min</span> <span class="pre">each</span> <span class="pre">—</span> <span class="pre">this</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">Week</span> <span class="pre">7</span> <span class="pre">activity</span> <span class="pre">block.</span></code></p>
 <p><strong>L1 — Shopping List Builder</strong></p>
 <p>Start with an empty list. Use <code class="docutils literal notranslate"><span class="pre">.append()</span></code> to add 5 grocery items one at a time (hardcoded, not input). Then: <code class="docutils literal notranslate"><span class="pre">.insert()</span></code> a forgotten item at index 0, <code class="docutils literal notranslate"><span class="pre">.remove()</span></code> one item by name, and print the final list.</p>
@@ -3380,22 +3573,35 @@ Sometimes you need the position too — like if you want to number a list for st
 </pre></div>
 </div>
 <p><strong>Sample:</strong> <code class="docutils literal notranslate"><span class="pre">[78,</span> <span class="pre">95,</span> <span class="pre">88,</span> <span class="pre">99,</span> <span class="pre">62]</span></code> → <code class="docutils literal notranslate"><span class="pre">[83,</span> <span class="pre">100,</span> <span class="pre">93,</span> <span class="pre">100,</span> <span class="pre">67]</span></code></p>
+<p><strong>✅ Submit — List Practice Drills</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>One</strong> <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block, holding L1–L7 in order, each under a comment like <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">L2</span> <span class="pre">—</span> <span class="pre">List</span> <span class="pre">Stats</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>1 TEST CASE</strong> at the bottom of the file. These drills have no <code class="docutils literal notranslate"><span class="pre">input()</span></code>, so use <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span> <span class="pre">none</span></code>, with <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">EXPECTED:</span></code> giving at least the L2 highest/lowest/average and the L7 curved list</p></li>
+</ul>
 <p><em>PCEP: 3.1 | AP CSP: AAP-4.A</em></p>
 <p>#############################################################################</p>
 </section>
 </section>
 <section id="activity-playlist-manager">
 <h2>Activity: Playlist Manager<a class="headerlink" href="#activity-playlist-manager" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Playlist Manager</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p><strong>Unit:</strong> Data Collections (Lists) — PCEP-30-02 Block 3 / AP CSP Big Idea 3
 <strong>Prerequisite:</strong> Strings unit / Receipt Formatter activity</p>
 <p>Write a program that manipulates a premade list of songs using list methods and slicing.</p>
 <p><strong>Starter list (give this to students — don’t let them type it in):</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">playlist</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Blinding Lights"</span><span class="p">,</span> <span class="s2">"Levitating"</span><span class="p">,</span> <span class="s2">"As It Was"</span><span class="p">,</span> <span class="s2">"Flowers"</span><span class="p">,</span> <span class="s2">"Anti-Hero"</span><span class="p">,</span>
-            <span class="s2">"Unholy"</span><span class="p">,</span> <span class="s2">"Cruel Summer"</span><span class="p">,</span> <span class="s2">"Vampire"</span><span class="p">,</span> <span class="s2">"Espresso"</span><span class="p">,</span> <span class="s2">"Paint The Town Red"</span><span class="p">,</span>
-            <span class="s2">"Snooze"</span><span class="p">,</span> <span class="s2">"Lovin On Me"</span><span class="p">,</span> <span class="s2">"Fortnight"</span><span class="p">,</span> <span class="s2">"Please Please Please"</span><span class="p">,</span> <span class="s2">"Birds Of A Feather"</span><span class="p">,</span>
-            <span class="s2">"Not Like Us"</span><span class="p">,</span> <span class="s2">"Texas Hold Em"</span><span class="p">,</span> <span class="s2">"I Had Some Help"</span><span class="p">,</span> <span class="s2">"Good Luck Babe!"</span><span class="p">,</span> <span class="s2">"Beautiful Things"</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">playlist</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Blinding Lights"</span><span class="p">,</span> <span class="s2">"Levitating"</span><span class="p">,</span> <span class="s2">"As It Was"</span><span class="p">,</span> <span class="s2">"Flowers"</span><span class="p">,</span>
+            <span class="s2">"Anti-Hero"</span><span class="p">,</span> <span class="s2">"Unholy"</span><span class="p">,</span> <span class="s2">"Cruel Summer"</span><span class="p">,</span> <span class="s2">"Vampire"</span><span class="p">,</span> <span class="s2">"Espresso"</span><span class="p">,</span>
+            <span class="s2">"Paint The Town Red"</span><span class="p">,</span> <span class="s2">"Snooze"</span><span class="p">,</span> <span class="s2">"Lovin On Me"</span><span class="p">,</span> <span class="s2">"Fortnight"</span><span class="p">,</span>
+            <span class="s2">"Please Please Please"</span><span class="p">,</span> <span class="s2">"Birds Of A Feather"</span><span class="p">,</span> <span class="s2">"Not Like Us"</span><span class="p">,</span>
+            <span class="s2">"Texas Hold Em"</span><span class="p">,</span> <span class="s2">"I Had Some Help"</span><span class="p">,</span> <span class="s2">"Good Luck Babe!"</span><span class="p">,</span>
+            <span class="s2">"Beautiful Things"</span><span class="p">]</span>
 </pre></div>
 </div>
+<blockquote>
+<div><p>💡 Copy this list exactly as shown. It is already wrapped so every line fits in 79 characters.</p>
+</div></blockquote>
 <p>#############################################################################</p>
 </section>
 <section id="scaffolding-build-it-in-this-order">
@@ -3519,6 +3725,17 @@ Sometimes you need the position too — like if you want to number a list for st
 <li><p><strong>Slicing confusion</strong> → <code class="docutils literal notranslate"><span class="pre">playlist[:5]</span></code> vs <code class="docutils literal notranslate"><span class="pre">playlist[5:]</span></code> — walk through this on the board if Top 5 / Bottom 5 come out wrong.</p></li>
 </ul>
 </details>
+<p><strong>✅ Submit — Playlist Manager</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Starter list kept exactly as given above</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>2 TEST CASES</strong> at the bottom of the file, each with <strong>4 <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> lines</strong> (new song, song to insert at #4, song to remove, song to look up)</p>
+<ul>
+<li><p>TEST CASE 1: the song to remove and the song to look up <strong>are</strong> in the playlist</p></li>
+<li><p>TEST CASE 2: the song to remove and the song to look up are <strong>not</strong> in the playlist → “not found” messages, no crash</p></li>
+</ul>
+</li>
+</ul>
 <p>#############################################################################</p>
 <section id="tuples">
 <h3>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">¶</a></h3>
@@ -3656,6 +3873,9 @@ Sometimes you need the position too — like if you want to number a list for st
 <hr class="docutils" />
 <section id="practice-drills-tuples">
 <h4>Practice Drills — Tuples<a class="headerlink" href="#practice-drills-tuples" title="Link to this heading">¶</a></h4>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Tuple Practice Drills</strong> after the last drill. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">single-concept</span> <span class="pre">reps,</span> <span class="pre">10–15</span> <span class="pre">min</span> <span class="pre">each</span> <span class="pre">—</span> <span class="pre">do</span> <span class="pre">these</span> <span class="pre">before</span> <span class="pre">the</span> <span class="pre">Dictionaries</span> <span class="pre">section</span> <span class="pre">below.</span></code></p>
 <p><strong>T1 — Coordinate Pair Basics</strong></p>
 <p>Store a GPS coordinate as a tuple <code class="docutils literal notranslate"><span class="pre">(latitude,</span> <span class="pre">longitude)</span></code>. Unpack it into two separate variables in a <strong>single line</strong>, then print a formatted sentence using them.</p>
@@ -3735,6 +3955,12 @@ Sometimes you need the position too — like if you want to number a list for st
 <blockquote>
 <div><p>💡 <strong>Looking ahead:</strong> in Week 9 you’ll turn Part 2 into a function that <code class="docutils literal notranslate"><span class="pre">return</span></code>s a tuple. That’s how Python functions return more than one value.</p>
 </div></blockquote>
+<p><strong>✅ Submit — Tuple Practice Drills</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>One</strong> <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block, holding T1–T5 in order, each under a comment like <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">T2</span> <span class="pre">—</span> <span class="pre">RGB</span> <span class="pre">Color</span> <span class="pre">Mixer</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Leave the T3 line <code class="docutils literal notranslate"><span class="pre">dimensions[0]</span> <span class="pre">=</span> <span class="pre">15</span></code> <strong>commented out</strong> after you’ve read the error, so the rest of the file still runs</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>1 TEST CASE</strong> at the bottom of the file. These drills have no <code class="docutils literal notranslate"><span class="pre">input()</span></code>, so use <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span> <span class="pre">none</span></code>, with <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">EXPECTED:</span></code> giving the T2 mixed color and the T5 swap result</p></li>
+</ul>
 <p><em>PCEP: 3.2 | AP CSP: AAP-1.D</em></p>
 <p>#############################################################################</p>
 </section>
@@ -3939,6 +4165,9 @@ Sometimes you need the position too — like if you want to number a list for st
 <hr class="docutils" />
 <section id="practice-drills-dictionaries">
 <h4>Practice Drills — Dictionaries<a class="headerlink" href="#practice-drills-dictionaries" title="Link to this heading">¶</a></h4>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Dictionary Practice Drills</strong> after the last drill. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">single-concept</span> <span class="pre">reps,</span> <span class="pre">10–15</span> <span class="pre">min</span> <span class="pre">each</span> <span class="pre">—</span> <span class="pre">do</span> <span class="pre">these</span> <span class="pre">before</span> <span class="pre">Student</span> <span class="pre">Contact</span> <span class="pre">Book</span> <span class="pre">below.</span></code></p>
 <p><strong>D1 — Inventory Tracker</strong></p>
 <p>Start with a dictionary of 3 inventory items and their quantities. Add a new item, update an existing quantity, remove one item with <code class="docutils literal notranslate"><span class="pre">del</span></code>, and print the final dictionary using a <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">key,</span> <span class="pre">value</span> <span class="pre">in</span> <span class="pre">...</span> <span class="pre">.items()</span></code> loop.</p>
@@ -4017,12 +4246,25 @@ Noah — Grade: B, Attendance: 92%
 </div>
 <p><strong>Sample:</strong> merged → <code class="docutils literal notranslate"><span class="pre">{'Ava':</span> <span class="pre">88,</span> <span class="pre">'Liam':</span> <span class="pre">95,</span> <span class="pre">'Noah':</span> <span class="pre">79}</span></code>, inverted → <code class="docutils literal notranslate"><span class="pre">{88:</span> <span class="pre">'Ava',</span> <span class="pre">95:</span> <span class="pre">'Liam',</span> <span class="pre">79:</span> <span class="pre">'Noah'}</span></code></p>
 <p><strong>🤔 Discussion:</strong> Change Noah’s score in <code class="docutils literal notranslate"><span class="pre">quiz2</span></code> to <code class="docutils literal notranslate"><span class="pre">88</span></code> and run it again. Who disappears from the inverted dictionary, and why? <em>(Two students now share the score 88, but keys must be unique — so the last one wins and Ava is overwritten.)</em></p>
+<p><strong>✅ Submit — Dictionary Practice Drills</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>One</strong> <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block, holding D1–D6 in order, each under a comment like <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">D3</span> <span class="pre">—</span> <span class="pre">Safe</span> <span class="pre">Key</span> <span class="pre">Lookup</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>2 TEST CASES</strong> at the bottom of the file, each with <strong>1 <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> line</strong> (the D3 student name)</p>
+<ul>
+<li><p>TEST CASE 1: a name that <strong>is</strong> in <code class="docutils literal notranslate"><span class="pre">grades</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">Liam</span></code>)</p></li>
+<li><p>TEST CASE 2: a name that is <strong>not</strong> (e.g., <code class="docutils literal notranslate"><span class="pre">Zoe</span></code>) → “Student not found.” both ways, no crash</p></li>
+</ul>
+</li>
+</ul>
 <p><em>PCEP: 3.3 | AP CSP: AAP-1.D</em></p>
 <p>#############################################################################</p>
 </section>
 </section>
 <section id="activity-student-contact-book">
 <h3>Activity: Student Contact Book<a class="headerlink" href="#activity-student-contact-book" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Student Contact Book</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p>Build a program that stores a contact book as a <strong>list of dictionaries</strong>. Each contact has a name, phone number, and email. The user can:</p>
 <ol class="arabic simple">
 <li><p>Add a new contact</p></li>
@@ -4046,7 +4288,8 @@ Noah — Grade: B, Attendance: 92%
 <span class="c1">#       Language:    Python 3.x</span>
 
 <span class="n">contacts</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Sample Contact"</span><span class="p">,</span> <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"555-0100"</span><span class="p">,</span> <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"sample@example.com"</span><span class="p">}</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Sample Contact"</span><span class="p">,</span> <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"555-0100"</span><span class="p">,</span>
+     <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"sample@example.com"</span><span class="p">}</span>
 <span class="p">]</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
@@ -4087,7 +4330,16 @@ Noah — Grade: B, Attendance: 92%
 <span class="n">Jordan</span> <span class="n">Lee</span> <span class="o">|</span> <span class="mi">555</span><span class="o">-</span><span class="mi">0142</span> <span class="o">|</span> <span class="n">jlee</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
 </pre></div>
 </div>
-<p><strong>Submit your .py file and test cases showing that your program worked as intended</strong> — include at least one search for a name that <strong>isn’t</strong> in the book.</p>
+<p><strong>✅ Submit — Student Contact Book</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>2 TEST CASES</strong> at the bottom of the file. Write one <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> line for every menu choice <strong>and</strong> every answer after it, and make the <strong>last</strong> <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> line <code class="docutils literal notranslate"><span class="pre">5</span></code> (Quit)</p>
+<ul>
+<li><p>TEST CASE 1: add a contact → display all → search for that contact → quit</p></li>
+<li><p>TEST CASE 2: search for a name that <strong>isn’t</strong> in the book → delete a name that isn’t there → type an invalid option like <code class="docutils literal notranslate"><span class="pre">9</span></code> → quit</p></li>
+</ul>
+</li>
+</ul>
 <p><em>AP CSP: AAP-1.D, AAP-2.E | PCEP: 3.3</em></p>
 <p>#############################################################################</p>
 </section>
@@ -4112,6 +4364,9 @@ Noah — Grade: B, Attendance: 92%
 </section>
 <section id="project-pop-up-shop-kiosk">
 <h3>Project: Pop-Up Shop Kiosk<a class="headerlink" href="#project-pop-up-shop-kiosk" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Pop-Up Shop Kiosk</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.1,</span> <span class="pre">3.2,</span> <span class="pre">3.3,</span> <span class="pre">3.4</span></code> <code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-1.C,</span> <span class="pre">AAP-1.D,</span> <span class="pre">AAP-2.D,</span> <span class="pre">AAP-2.H,</span> <span class="pre">AAP-2.K,</span> <span class="pre">AAP-2.N,</span> <span class="pre">AAP-2.O,</span> <span class="pre">CRD-2.J</span></code></p>
 <p>You’re building the self-order kiosk for a pop-up shop — <strong>your</strong> shop, <strong>your</strong> theme. A customer should be able to browse the menu, add and remove items, and check out with a formatted receipt. Every Section 3 data type has a real job in this program:</p>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -4250,7 +4505,7 @@ Items by category:
 ====================================
 </pre></div>
 </div>
-<p><strong>Required test cases</strong> — submit a screenshot or pasted run for each:</p>
+<p><strong>Required tests</strong> — all 7 must be covered by the TEST CASES at the bottom of your file (see <strong>✅ Submit</strong> below):</p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -4301,6 +4556,18 @@ Items by category:
 <span class="c1">#       Deficiencies: [Known problems, or state there are none]</span>
 </pre></div>
 </div>
+<p><strong>✅ Submit — Pop-Up Shop Kiosk</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Reflection as a comment at the bottom of the file, <strong>above</strong> your TEST CASES</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>3 TEST CASES</strong> that together cover all 7 required tests. One run can test several things. Write one <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> line for <strong>every</strong> answer in order: your customer name first, then each menu choice, item name, quantity, and promo code. <strong>Every TEST CASE must end with a checkout that succeeds</strong>, so the program finishes.</p>
+<ul>
+<li><p>TEST CASE 1 (tests 1, 4, 7): add an item typed with extra spaces and capitals → add the same item again → add 2 more different items → check out</p></li>
+<li><p>TEST CASE 2 (tests 2, 3, 5): add an item that isn’t in the catalog → enter <code class="docutils literal notranslate"><span class="pre">abc</span></code>, then <code class="docutils literal notranslate"><span class="pre">0</span></code>, as quantities → remove an item that isn’t in the cart → add one real item → check out</p></li>
+<li><p>TEST CASE 3 (test 6): check out with an empty cart (refused) → add one item → check out</p></li>
+</ul>
+</li>
+</ul>
 <hr class="docutils" />
 <p><strong>Pop-Up Shop Kiosk — Grading Rubric (50 points + 2 bonus)</strong></p>
 <p><strong>Strings — 10 pts</strong> <code class="docutils literal notranslate"><span class="pre">🔖</span> <span class="pre">PCEP</span> <span class="pre">3.4</span></code> <code class="docutils literal notranslate"><span class="pre">📋</span> <span class="pre">AP</span> <span class="pre">CSP:</span> <span class="pre">AAP-1.C,</span> <span class="pre">AAP-2.D</span></code></p>
@@ -4414,7 +4681,7 @@ Items by category:
 <tr class="row-odd"><td><p>Subtotal, tax (constant), and total calculated correctly</p></td>
 <td><p>2</p></td>
 </tr>
-<tr class="row-even"><td><p>All 7 required test cases submitted and passing</p></td>
+<tr class="row-even"><td><p>All 7 required tests covered by the TEST CASES in the file, and passing</p></td>
 <td><p>3</p></td>
 </tr>
 <tr class="row-odd"><td><p>Reflection answers all three questions</p></td>
@@ -4582,6 +4849,9 @@ Items by category:
 </section>
 <section id="activity-math-operations-calculator">
 <h2>Activity: Math Operations Calculator<a class="headerlink" href="#activity-math-operations-calculator" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Math Operations Calculator</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p>Write a Python program called <code class="docutils literal notranslate"><span class="pre">math_operations.py</span></code> that performs addition, subtraction, multiplication, division, and modulo on two numbers entered by the user — using a separate function for each operation.</p>
 <p><strong>🧩 Scaffolding — build it in this order:</strong></p>
 <ol class="arabic simple">
@@ -4610,6 +4880,17 @@ Items by category:
 <blockquote>
 <div><p><strong>Teaching note:</strong> This activity mirrors a classic C-language exercise (functions returning <code class="docutils literal notranslate"><span class="pre">int</span></code>/<code class="docutils literal notranslate"><span class="pre">float</span></code>, separate function per operation) — a good one to point out explicitly if any students are also in a C/C++ or Java course, since the <em>logic</em> is identical even though the syntax (no semicolons, no type declarations, no <code class="docutils literal notranslate"><span class="pre">#include</span></code>) is different.</p>
 </div></blockquote>
+<p><strong>✅ Submit — Math Operations Calculator</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file named <code class="docutils literal notranslate"><span class="pre">math_operations.py</span></code> with the header block</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>2 TEST CASES</strong> at the bottom of the file (3 if you did the stretch challenge), each with <strong>2 <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> lines</strong> (first number, second number)</p>
+<ul>
+<li><p>TEST CASE 1: <code class="docutils literal notranslate"><span class="pre">10</span></code> and <code class="docutils literal notranslate"><span class="pre">5</span></code> → the five results shown above</p></li>
+<li><p>TEST CASE 2: numbers that don’t divide evenly (e.g., <code class="docutils literal notranslate"><span class="pre">17</span></code> and <code class="docutils literal notranslate"><span class="pre">5</span></code>) → quotient <code class="docutils literal notranslate"><span class="pre">3.40</span></code>, remainder <code class="docutils literal notranslate"><span class="pre">2</span></code></p></li>
+<li><p>TEST CASE 3 (stretch): <code class="docutils literal notranslate"><span class="pre">0</span></code> as the second number → friendly message, no crash</p></li>
+</ul>
+</li>
+</ul>
 <p><em>PCEP: 1.4, 1.5, 4.1 | AP CSP: AAP-2.F, AAP-3.B</em></p>
 <p><strong>Default Parameter Values</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">"Hello"</span><span class="p">):</span>
@@ -4694,6 +4975,9 @@ Items by category:
 </section>
 <section id="activity-recursion-practice-three-levels">
 <h2>Activity: Recursion Practice — Three Levels<a class="headerlink" href="#activity-recursion-practice-three-levels" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Recursion Practice</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p>Recursion clicks once you can identify two things in <em>any</em> recursive problem: the <strong>base case</strong> (when to stop) and the <strong>recursive case</strong> (how the problem gets smaller each call). Practice with three functions, in order:</p>
 <p><strong>Level 1 — Countdown.</strong> Write <code class="docutils literal notranslate"><span class="pre">countdown(n)</span></code> that prints every number from <code class="docutils literal notranslate"><span class="pre">n</span></code> down to <code class="docutils literal notranslate"><span class="pre">1</span></code>, then prints <code class="docutils literal notranslate"><span class="pre">&quot;Liftoff!&quot;</span></code> — using recursion, not a loop. Identify: what is the base case? What gets smaller with each call?</p>
 <p><strong>Level 2 — Sum of a list.</strong> Write <code class="docutils literal notranslate"><span class="pre">list_sum(numbers)</span></code> that returns the sum of all numbers in a list using recursion (hint: the base case is an empty list, which sums to <code class="docutils literal notranslate"><span class="pre">0</span></code>; the recursive case is <code class="docutils literal notranslate"><span class="pre">numbers[0]</span> <span class="pre">+</span> <span class="pre">list_sum(numbers[1:])</span></code>).</p>
@@ -4705,6 +4989,12 @@ Items by category:
 <li><p>Trace through one full call by hand (like the <code class="docutils literal notranslate"><span class="pre">factorial(5)</span></code> call stack above) and predict the output.</p></li>
 </ol>
 <p><strong>Stretch challenge:</strong> Add a <code class="docutils literal notranslate"><span class="pre">print()</span></code> inside each function showing the current call’s argument and indenting one extra level per recursive call — this visually recreates the call stack diagram above, using your own code.</p>
+<p><strong>✅ Submit — Recursion Practice</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block, holding all three functions and a <code class="docutils literal notranslate"><span class="pre">main()</span></code> that calls each one</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Your paper answers (base case, recursive case) as a comment above each function</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>1 TEST CASE</strong> at the bottom of the file with <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span> <span class="pre">none</span></code>. In <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">EXPECTED:</span></code>, give the results of <code class="docutils literal notranslate"><span class="pre">countdown(3)</span></code>, <code class="docutils literal notranslate"><span class="pre">list_sum([2,</span> <span class="pre">4,</span> <span class="pre">6])</span></code> and <code class="docutils literal notranslate"><span class="pre">power(2,</span> <span class="pre">5)</span></code></p></li>
+</ul>
 <p><em>PCEP: 4.1</em></p>
 </section>
 <hr class="docutils" />
@@ -5409,6 +5699,9 @@ Items by category:
 <hr class="docutils" />
 <section id="project-random-trivia-quiz-generator">
 <h3>Project: Random Trivia Quiz Generator<a class="headerlink" href="#project-random-trivia-quiz-generator" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Random Trivia Quiz Generator</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p>Build a trivia quiz program that pulls together <strong>modules, functions, lists, dictionaries, and string formatting</strong> — everything you’ve learned so far — into one working project.</p>
 <p><strong>🧩 Scaffolding — build it across several days:</strong></p>
 <ul class="simple">
@@ -5465,6 +5758,16 @@ Items by category:
 </table>
 </div>
 <p><strong>Stretch challenge:</strong> Add a fourth import — <code class="docutils literal notranslate"><span class="pre">json</span></code> — to save the student’s score to a <code class="docutils literal notranslate"><span class="pre">scores.json</span></code> file after each run, and load/display their best score at the start of the next run.</p>
+<p><strong>✅ Submit — Random Trivia Quiz Generator</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>2 TEST CASES</strong> at the bottom of the file, each with <strong>8 <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> lines</strong>, one answer per question. The questions are shuffled, so <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">EXPECTED:</span></code> describes the result instead of exact output.</p>
+<ul>
+<li><p>TEST CASE 1: 8 answers in the right format (e.g., <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>…) → score printed as <code class="docutils literal notranslate"><span class="pre">x/8</span> <span class="pre">correct</span></code> and a percentage, plus the time taken</p></li>
+<li><p>TEST CASE 2: some answers typed in lowercase or with extra spaces → still graded correctly, no crash</p></li>
+</ul>
+</li>
+</ul>
 <p><em>AP CSP: AAP-2.G, CRD-2.B</em></p>
 </section>
 </section>
@@ -5589,6 +5892,9 @@ Items by category:
 </details>
 <section id="activity-safe-calculator">
 <h3>Activity: Safe Calculator<a class="headerlink" href="#activity-safe-calculator" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Safe Calculator</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p>Build a calculator program that:</p>
 <ol class="arabic simple">
 <li><p>Accepts two numbers and an operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>)</p></li>
@@ -5635,6 +5941,16 @@ Items by category:
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Attempt complete.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><strong>✅ Submit — Safe Calculator</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>2 TEST CASES</strong> at the bottom of the file. Write one <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> line per answer (operator, first number, second number, repeated), and make the <strong>last</strong> <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> line <code class="docutils literal notranslate"><span class="pre">quit</span></code></p>
+<ul>
+<li><p>TEST CASE 1: two good calculations (e.g., <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">8</span> <span class="pre">2</span></code>, then <code class="docutils literal notranslate"><span class="pre">/</span> <span class="pre">9</span> <span class="pre">3</span></code>) → quit</p></li>
+<li><p>TEST CASE 2: divide by zero → a letter typed as a number → an unknown operator like <code class="docutils literal notranslate"><span class="pre">%</span></code> → quit. Every one prints a message, nothing crashes</p></li>
+</ul>
+</li>
+</ul>
 <p><em>AP CSP: CRD-2.J | PCEP: 4.4</em></p>
 </section>
 </section>
@@ -5789,6 +6105,9 @@ Items by category:
 </div>
 <section id="activity-student-roster-file-manager">
 <h3>Activity: Student Roster File Manager<a class="headerlink" href="#activity-student-roster-file-manager" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Student Roster File Manager</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p>Write a program that manages a roster stored in a text file called <code class="docutils literal notranslate"><span class="pre">roster.txt</span></code> (one name per line).</p>
 <p><strong>🧩 Scaffolding — build it in this order:</strong></p>
 <ol class="arabic simple">
@@ -5886,6 +6205,16 @@ Items by category:
 </tbody>
 </table>
 </div>
+<p><strong>✅ Submit — Student Roster File Manager</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>2 TEST CASES</strong> at the bottom of the file. Write one <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> line per menu choice and per name, and make the <strong>last</strong> <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> line <code class="docutils literal notranslate"><span class="pre">4</span></code> (Quit). The checker starts with <strong>no</strong> <code class="docutils literal notranslate"><span class="pre">roster.txt</span></code>, so your program must handle a missing file</p>
+<ul>
+<li><p>TEST CASE 1: view (empty roster, no crash) → add <code class="docutils literal notranslate"><span class="pre">Ava</span></code> → add <code class="docutils literal notranslate"><span class="pre">Liam</span></code> → view → remove <code class="docutils literal notranslate"><span class="pre">Liam</span></code> → view → quit</p></li>
+<li><p>TEST CASE 2: remove a name that isn’t on the roster → type an invalid option like <code class="docutils literal notranslate"><span class="pre">7</span></code> → quit</p></li>
+</ul>
+</li>
+</ul>
 </section>
 </section>
 <hr class="docutils" />
@@ -6176,6 +6505,9 @@ Items by category:
 </section>
 <section id="activity-oop-zoo">
 <h3>Activity: OOP Zoo<a class="headerlink" href="#activity-oop-zoo" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — OOP Zoo (any option)</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p>Design a <code class="docutils literal notranslate"><span class="pre">Zoo</span></code> simulation using OOP:</p>
 <ol class="arabic simple">
 <li><p>Create a base class <code class="docutils literal notranslate"><span class="pre">Animal</span></code> with attributes <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">species</span></code>, <code class="docutils literal notranslate"><span class="pre">age</span></code>, and a method <code class="docutils literal notranslate"><span class="pre">describe()</span></code>.</p></li>
@@ -6253,6 +6585,16 @@ Items by category:
 </tbody>
 </table>
 </div>
+<p><strong>✅ Submit — OOP Zoo (any option)</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block, for the <strong>one</strong> option you chose</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>2 TEST CASES</strong> at the bottom of the file. Your demonstration code has no <code class="docutils literal notranslate"><span class="pre">input()</span></code>, so each uses <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span> <span class="pre">none</span></code></p>
+<ul>
+<li><p>TEST CASE 1: the normal demonstration → describe what <code class="docutils literal notranslate"><span class="pre">show_all()</span></code> / <code class="docutils literal notranslate"><span class="pre">list_available()</span></code> / <code class="docutils literal notranslate"><span class="pre">show_party()</span></code> prints</p></li>
+<li><p>TEST CASE 2: an edge case your demo code also runs, such as searching for a species no animal has, checking out an item that’s already out, or a character whose health hits 0</p></li>
+</ul>
+</li>
+</ul>
 <p><em>AP CSP: AAP-3.B, CRD-2.B | Demonstrates: Abstraction, Inheritance, Polymorphism</em></p>
 </section>
 </section>
@@ -6500,6 +6842,9 @@ Items by category:
 <hr class="docutils" />
 <section id="final-project-options">
 <h1>Final Project Options<a class="headerlink" href="#final-project-options" title="Link to this heading">¶</a></h1>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Final Project (all options)</strong> after Option C. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <section id="option-a-text-based-adventure-game-beginnerintermediate">
 <h2>Option A — Text-Based Adventure Game (Beginner–Intermediate)<a class="headerlink" href="#option-a-text-based-adventure-game-beginnerintermediate" title="Link to this heading">¶</a></h2>
 <p>Build a multi-room text adventure with:</p>
@@ -6664,6 +7009,16 @@ Items by category:
 </table>
 </div>
 <p><strong>Reflection (1 page):</strong> Explain your mine-counting algorithm, how recursion works in the reveal function, and how lists are used for data abstraction.</p>
+<p><strong>✅ Submit — Final Project (all options)</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block. Fill in <strong>Deficiencies</strong> honestly</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>3–4 TEST CASES</strong> at the bottom of the file</p>
+<ul>
+<li><p><strong>Option A or B:</strong> one <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> line per answer, in order, and the <strong>last</strong> <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span></code> line must quit the game or menu. Include one normal run, one with invalid input (a direction or menu choice that doesn’t exist, a letter where a number belongs), and one edge case (empty list, record not found, losing the game)</p></li>
+<li><p><strong>Option C (Tkinter):</strong> the checker can’t click buttons, so your teacher will run this one by hand. Use <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span> <span class="pre">none</span></code> and describe each test in <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">EXPECTED:</span></code> (e.g., “right-click flags a cell; flags stop at the number of mines”)</p></li>
+</ul>
+</li>
+</ul>
 </section>
 <hr class="docutils" />
 <section id="pcep-certification-path-semester-2">
@@ -6925,6 +7280,9 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </section>
 <section id="activity-grade-report-refactor">
 <h3>Activity: Grade Report Refactor<a class="headerlink" href="#activity-grade-report-refactor" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Grade Report Refactor</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p>Take the <strong>Grade Calculator</strong> activity you built earlier (Section 2) and refactor part of it using built-in functions instead of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 <p><strong>Requirements:</strong></p>
 <ol class="arabic simple">
@@ -6995,6 +7353,11 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </tbody>
 </table>
 </div>
+<p><strong>✅ Submit — Grade Report Refactor</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>3 TEST CASES</strong> at the bottom of the file, matching the three rows above. The program has no <code class="docutils literal notranslate"><span class="pre">input()</span></code>, so each uses <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span> <span class="pre">none</span></code>. Have <code class="docutils literal notranslate"><span class="pre">main()</span></code> run your report on all three lists, and give the expected results in <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">EXPECTED:</span></code></p></li>
+</ul>
 </section>
 <hr class="docutils" />
 <section id="lambda-functions">
@@ -7053,6 +7416,9 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </section>
 <section id="activity-sort-it-your-way">
 <h3>Activity: Sort It Your Way<a class="headerlink" href="#activity-sort-it-your-way" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Sort It Your Way</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p>Given a list of dictionaries representing books (<code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">author</span></code>, <code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">pages</span></code>), write <strong>three separate <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> calls</strong>, each using a different <code class="docutils literal notranslate"><span class="pre">lambda</span></code> key:</p>
 <ol class="arabic simple">
 <li><p>Sort by <code class="docutils literal notranslate"><span class="pre">year</span></code>, oldest first.</p></li>
@@ -7114,6 +7480,11 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </tbody>
 </table>
 </div>
+<p><strong>✅ Submit — Sort It Your Way</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>3 TEST CASES</strong> at the bottom of the file, one per sort key above. The program has no <code class="docutils literal notranslate"><span class="pre">input()</span></code>, so each uses <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span> <span class="pre">none</span></code>, with the first and last book of that sort in <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">EXPECTED:</span></code></p></li>
+</ul>
 </section>
 <hr class="docutils" />
 <section id="frozensets">
@@ -7167,6 +7538,9 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </section>
 <section id="activity-class-roster-overlap">
 <h3>Activity: Class Roster Overlap<a class="headerlink" href="#activity-class-roster-overlap" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Class Roster Overlap</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p>Two teachers each have a frozenset of student names in their AP CSP class:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">period_1</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">([</span><span class="s2">"Ava"</span><span class="p">,</span> <span class="s2">"Liam"</span><span class="p">,</span> <span class="s2">"Noah"</span><span class="p">,</span> <span class="s2">"Emma"</span><span class="p">,</span> <span class="s2">"Mia"</span><span class="p">])</span>
 <span class="n">period_3</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">([</span><span class="s2">"Noah"</span><span class="p">,</span> <span class="s2">"Emma"</span><span class="p">,</span> <span class="s2">"Sofia"</span><span class="p">,</span> <span class="s2">"Lucas"</span><span class="p">])</span>
@@ -7236,6 +7610,16 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </tbody>
 </table>
 </div>
+<p><strong>✅ Submit — Class Roster Overlap</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> One <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>2 TEST CASES</strong> at the bottom of the file. The program has no <code class="docutils literal notranslate"><span class="pre">input()</span></code>, so each uses <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span> <span class="pre">none</span></code></p>
+<ul>
+<li><p>TEST CASE 1: the results in the table above</p></li>
+<li><p>TEST CASE 2: two rosters with <strong>no</strong> names in common (add a second comparison to <code class="docutils literal notranslate"><span class="pre">main()</span></code>) → empty intersection, overlap check <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+</ul>
 </section>
 <hr class="docutils" />
 <section id="exception-hierarchy-deep-dive">
@@ -7275,6 +7659,9 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <hr class="docutils" />
 <section id="culminating-project-library-catalog-analyzer">
 <h3>Culminating Project: Library Catalog Analyzer<a class="headerlink" href="#culminating-project-library-catalog-analyzer" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>📦 <strong>Before you start:</strong> read <strong>✅ Submit — Library Catalog Analyzer</strong> at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.</p>
+</div></blockquote>
 <p>Build a program that reads a small library catalog from a text file, analyzes it using built-in functions and lambdas, and uses frozensets to answer genre questions — pulling together <strong>File Operations (Semester 1), Built-In Functions, Lambda Functions, and Frozensets (all above)</strong> into one working project. This is the natural capstone of the PCEP Certification Path.</p>
 <p><strong>Setup — <code class="docutils literal notranslate"><span class="pre">catalog.txt</span></code> format:</strong> one book per line, comma-separated: <code class="docutils literal notranslate"><span class="pre">title,author,year,genre1|genre2</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dune</span><span class="p">,</span><span class="n">Frank</span> <span class="n">Herbert</span><span class="p">,</span><span class="mi">1965</span><span class="p">,</span><span class="n">Sci</span><span class="o">-</span><span class="n">Fi</span><span class="o">|</span><span class="n">Adventure</span>
@@ -7396,6 +7783,16 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 </table>
 </div>
 <p><strong>Stretch challenge:</strong> Add a <code class="docutils literal notranslate"><span class="pre">most_common_genre()</span></code> function that uses <code class="docutils literal notranslate"><span class="pre">max()</span></code> with a <code class="docutils literal notranslate"><span class="pre">key=lambda</span></code> to find which single genre appears in the most books — without importing any extra modules.</p>
+<p><strong>✅ Submit — Library Catalog Analyzer</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Your <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with the header block, <strong>and</strong> your <code class="docutils literal notranslate"><span class="pre">catalog.txt</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>2 TEST CASES</strong> at the bottom of the <code class="docutils literal notranslate"><span class="pre">.py</span></code> file. The program has no <code class="docutils literal notranslate"><span class="pre">input()</span></code>, so each uses <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">INPUT:</span> <span class="pre">none</span></code></p>
+<ul>
+<li><p>TEST CASE 1: the four-book <code class="docutils literal notranslate"><span class="pre">catalog.txt</span></code> above → the first four results in the table</p></li>
+<li><p>TEST CASE 2: the same run → what <code class="docutils literal notranslate"><span class="pre">report.txt</span></code> should contain afterward</p></li>
+</ul>
+</li>
+</ul>
 <p><em>AP CSP: AAP-3.A, AAP-3.B, AAP-2.G, CRD-2.B, CRD-2.J</em></p>
 </section>
 </section>
@@ -7631,6 +8028,11 @@ b = 1 1 0 0   →  8+4+0+0 = 12
 <li><a class="reference internal" href="#required-header-block">Required Header Block</a></li>
 <li><a class="reference internal" href="#graded-by-the-pep-8-checker">Graded by the PEP 8 Checker</a></li>
 <li><a class="reference internal" href="#quick-pre-submit-checklist">Quick Pre-Submit Checklist</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#what-to-submit-every-assignment">📦 What to Submit — Every Assignment</a><ul>
+<li><a class="reference internal" href="#how-your-score-is-figured">How Your Score Is Figured</a></li>
+<li><a class="reference internal" href="#how-to-write-a-test-case">How to Write a TEST CASE</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#debugging-strategies">Debugging Strategies</a><ul>
