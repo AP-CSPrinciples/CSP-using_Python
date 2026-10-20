@@ -1,5 +1,5 @@
 # Python Basics
-```Revised August 2026 — Reorganized for CSP-First-Semester / PCEP-Second-Semester```
+```Revised August 2026```
 
 Python is an open-source, high-level programming language that is widely considered one of the best first languages to learn. It supports multiple programming paradigms — including **procedural**, **functional**, and **object-oriented programming (OOP)** — and is backed by an enormous standard library and community. As of 2024, it is one of the most in-demand languages in the job market, used in web development, data science, artificial intelligence, IoT, and cybersecurity.
 
@@ -100,7 +100,7 @@ Every project must start with this header, filled in:
 #       Assignment:  Program [number]:  [Assignment Title]
 #
 #       Author:  [Your Name]
-#       Partner:  [Partner's Name]
+#       Partner:  [Partner's Name (if you are not partnering with anyone remove this line.)]
 #
 #       Course Name:  [Course Name]
 #       Instructor:  [Instructor Name]
@@ -108,7 +108,7 @@ Every project must start with this header, filled in:
 #
 #       Description:  [Describe the program's goal, IN DETAIL.]
 #
-#       Language:  Python 3.x
+#       Language:  Python 3.x <-- Knowing your version is important when running your program
 #       Ex. Packages:  [List any external packages used]
 #
 #       Deficiencies:  [Known problems, or state there are none.]
