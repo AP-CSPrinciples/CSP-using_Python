@@ -100,7 +100,7 @@ Every project must start with this header, filled in:
 #       Assignment:  Program [number]:  [Assignment Title]
 #
 #       Author:  [Your Name]
-#       Partner:  [Partner's Name (if you are not partnering with anyone remove this line.)]
+#       Partner:  [Partner's Name]
 #
 #       Course Name:  [Course Name]
 #       Instructor:  [Instructor Name]
@@ -108,7 +108,7 @@ Every project must start with this header, filled in:
 #
 #       Description:  [Describe the program's goal, IN DETAIL.]
 #
-#       Language:  Python 3.x <-- Knowing your version is important when running your program
+#       Language:  Python 3.x
 #       Ex. Packages:  [List any external packages used]
 #
 #       Deficiencies:  [Known problems, or state there are none.]
@@ -401,6 +401,77 @@ Before you submit, confirm:
 ☐ `snake_case` variables/functions, `UPPER_CASE` constants, `CapWords` classes
 
 ☐ File ends with one newline
+
+☐ TEST CASES are at the bottom of the file (see **What to Submit** below)
+
+> 💡 **Let VS Code fix three common mistakes for you.** Open Settings (`Ctrl + ,` on Windows, `Cmd + ,` on Mac), search for each of these, and turn it on: **Files: Insert Final Newline**, **Files: Trim Trailing Whitespace**, and **Files: Trim Final Newlines**. Your file will then end with exactly one newline and have no spaces hiding at the ends of lines.
+
+---
+
+## 📦 What to Submit — Every Assignment
+
+Every assignment is turned in on Canvas as **one `.py` file**. That file must have:
+
+1. **The header block** at the top, completely filled in (missing = −1 point).
+2. **Your working program.**
+3. **TEST CASES** written as comments at the **very bottom** of the file.
+
+No screenshots unless the assignment asks for them. The TEST CASES in your file *are* your proof that the program works. Every assignment below ends with a **✅ Submit** box that tells you exactly how many TEST CASES to write and what each one should test.
+
+### How Your Score Is Figured
+
+The PEP 8 Checker gives you a score from 1 to 5 in three columns, then averages them:
+
+| Column | What it checks |
+| --- | --- |
+| **Program & Output** | Your program runs all the way to the end using the answers in your TEST CASES, and does what the assignment asks |
+| **Style** | PEP 8 mistakes (see **How Your Style Is Graded** above) |
+| **Submission** | Your `.py` file is turned in complete and on time |
+
+The average is rounded to the nearest whole number, then **−1** if the header block is missing.
+
+*Example:* Program & Output **5**, Style **4**, Submission **5** → average 4.67 → **5**.
+
+> ⚠️ **Why TEST CASES matter:** the checker runs your program for real. When your program calls `input()`, the checker types in the next `# INPUT:` answer from your TEST CASE. If you have **no TEST CASES**, the checker has nothing to type. Your program stops at the first question and **Program & Output can't go above 4**, even if your code is perfect.
+
+### How to Write a TEST CASE
+
+- Start with `# TEST CASE 1:` followed by a short description of what you are testing.
+- Write one `# INPUT:` line for **each** answer you type, **in the order your program asks**.
+- End with one `# EXPECTED:` line saying what should happen.
+- Write up to **4** test cases, numbered 1, 2, 3, 4.
+- Every line starts with `# ` (pound sign + space) and stays under 79 characters, so your TEST CASES never cost you style points.
+- **Do not** paste your whole terminal output. Only the inputs and the expected result.
+
+```python
+# TEST CASE 1: normal bill
+# INPUT: 48.50
+# INPUT: 20
+# EXPECTED: Tip: $9.70, Total: $58.20
+
+# TEST CASE 2: tip typed as a word instead of a number
+# INPUT: 48.50
+# INPUT: twenty
+# EXPECTED: "Please enter a number." and the program does not crash
+```
+
+**Two special cases:**
+
+- **Your program has a menu loop** (`while True:`). Your **last** `# INPUT:` line must be the choice that quits. Otherwise the checker runs out of answers while your program is still waiting.
+
+  ```python
+  # TEST CASE 1: deposit, then try to withdraw too much, then quit
+  # INPUT: 1
+  # INPUT: 100
+  # INPUT: 2
+  # INPUT: 500
+  # INPUT: 3
+  # EXPECTED: balance 100.00, then "Insufficient funds", then goodbye
+  ```
+
+- **Your program has no `input()` at all.** Write one line, `# INPUT: none`, and use `# EXPECTED:` to describe the output.
+
+**Good test cases test different things.** Write one normal run, and at least one that tries to break your program: a value that doesn't exist, a word typed where a number belongs, a boundary like exactly 70, or an empty answer.
 
 ---
 
@@ -882,6 +953,8 @@ gets_discount = (age > 25 or is_eligible) and not has_discount_coupon
 
 ### Activity: Movie Ticket Eligibility Checker
 
+> 📦 **Before you start:** read **✅ Submit — Movie Ticket Eligibility Checker** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
+
 Write a program that determines whether a person can buy a discounted movie ticket, using **compound boolean expressions** (`and`, `or`, `not`).
 
 **🧩 Scaffolding — build it in this order:**
@@ -919,13 +992,22 @@ Write a program that determines whether a person can buy a discounted movie tick
 # TODO 5) Add the under-6/no-adult-present check
 ```
 
-**Submit your .py file and test cases showing that your program worked as intended.**
+**✅ Submit — Movie Ticket Eligibility Checker**
+
+- [ ] One `.py` file with the header block
+- [ ] **4 TEST CASES** at the bottom of the file, with one `# INPUT:` line for each question your program asks in that run
+  - TEST CASE 1: a senior (e.g., age 70) → discount
+  - TEST CASE 2: age 13–25 **with** a student ID → discount
+  - TEST CASE 3: age 13–25 **without** a student ID → full price
+  - TEST CASE 4: under 6 with **no** adult present → not allowed in
 
 *PCEP: 1.4 | AP CSP: AAP-2.F*
 
 ---
 
 ### Assignment — Print Statements and Input/Output
+
+> 📦 **Before you start:** read **✅ Submit — Print Statements and Input/Output** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
 
 📋 **AP CSP: CRD-2.B** — Implement algorithms in a programming language.
 
@@ -1144,7 +1226,7 @@ Language:    Python 3.x
 - [ ] TODO 3) Print the same sentence using string concatenation (`+`), converting `age` with `str()`
 - [ ] TODO 4) Print `"A"`, `"B"`, `"C"` as separate arguments with `sep="-"` so the output reads `A-B-C`
 - [ ] TODO 5) Print `"Hello"` with `end="! "`, then print `"World"` so the output reads `Hello! World` on one line
-- [ ] **Submit your .py file and test cases showing that your program worked as intended.**
+- [ ] **Submit** one `.py` file with **2 TEST CASES** at the bottom, each with **2 `# INPUT:` lines** (name, age) — see **✅ Submit** below
 
 **Reflection question**
 
@@ -1153,11 +1235,20 @@ written three different ways. Which method did you find easiest to read and
 write, and why do you think f-strings are considered the preferred method in
 modern Python?
 
+**✅ Submit — Print Statements and Input/Output**
+
+- [ ] One `.py` file with the header block
+- [ ] **2 TEST CASES** at the bottom of the file, each with **2 `# INPUT:` lines** (name, then age)
+  - TEST CASE 1: your own name and age
+  - TEST CASE 2: a name with two words (e.g., `Mary Ann`) and a different age
+
 > <mark>**Reminder:** `input()` always returns a `str`. You must use `int()` or `float()` to convert it for math operations.</mark>
 
 ---
 
 ### Assignment: Mad Libs — String Formatting Showdown
+
+> 📦 **Before you start:** read **✅ Submit — Mad Libs** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
 
 > **Standards:** Output formatting — f-strings, string concatenation, `.format()`, `print()` `sep`/`end` parameters
 > 
@@ -1193,7 +1284,7 @@ modern Python?
 > 3. Build the story section by section, following the technique table above.
 > 4. Test by running the program and filling in silly words — does the story read correctly and grammatically?
 > 5. Add the required header block (below) to the top of your file.
-> 6. Submit your `.py` file with test cases.
+> 6. Submit your `.py` file with TEST CASES at the bottom (see **✅ Submit** below).
 > 
 > **Grading Focus**
 > 
@@ -1338,6 +1429,13 @@ all 7 the way back to the grocery store!
 
 </details>
 
+**✅ Submit — Mad Libs**
+
+- [ ] One `.py` file with the header block
+- [ ] **2 TEST CASES** at the bottom of the file, each with one `# INPUT:` line for **every** word your program asks for (8 or more), in order
+  - TEST CASE 1: one set of silly words
+  - TEST CASE 2: a completely different set, including a different number
+
 *AP CSP: CRD-2.B*
 
 ---
@@ -1459,6 +1557,8 @@ else:
 
 ### Activity: Grade Calculator
 
+> 📦 **Before you start:** read **✅ Submit — Grade Calculator** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
+
 Write a grade calculator that accepts a numerical score and outputs:
 - The letter grade (A–F)
 - Whether the student passed or failed
@@ -1486,6 +1586,15 @@ score = int(input("Enter your score: "))
 
 # TODO 3) motivational message only if score < 70
 ```
+
+**✅ Submit — Grade Calculator**
+
+- [ ] One `.py` file with the header block
+- [ ] **4 TEST CASES** at the bottom of the file, each with **1 `# INPUT:` line** (the score). Test the boundaries:
+  - TEST CASE 1: `95` → A, passed, no motivational message
+  - TEST CASE 2: `70` → C, passed, no motivational message
+  - TEST CASE 3: `69` → D, passed, motivational message
+  - TEST CASE 4: `59` → F, failed, motivational message
 
 *AP CSP: AAP-2.E | PCEP: 2.1*
 
@@ -1842,6 +1951,8 @@ There is no built-in way to break out of both loops at once; common workarounds 
 
 ### Activity: Nested Loop Pattern Design Studio
 
+> 📦 **Before you start:** read **✅ Submit — Nested Loop Pattern Design Studio** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
+
 A single loop can only move in one direction. The moment a shape has **both rows and columns** — a triangle, a diamond, a hollow box — you need a loop *inside* a loop. The outer loop picks the row; the inner loop decides what happens across that row.
 
 **Warm-up — reading a pattern like a programmer.** Before writing code, answer these for the pattern below:
@@ -1925,12 +2036,22 @@ for i in range(1, rows + 1):
 > | Written explanation correctly identifies the role of outer vs. inner loop | 1 |
 >
 
+**✅ Submit — Nested Loop Pattern Design Studio**
+
+- [ ] **One** `.py` file with the header block, holding all 4 patterns in order, each under a comment like `# Pattern 1: hollow diamond`
+- [ ] Your outer/inner loop paragraph as a comment at the bottom, above your TEST CASES
+- [ ] **2 TEST CASES** at the bottom of the file, with one `# INPUT:` line for each size your program asks for
+  - TEST CASE 1: a normal size (e.g., `5`)
+  - TEST CASE 2: the smallest size that still makes sense (e.g., `1` or `2`)
+
 *AP CSP: AAP-2.E | PCEP: 2.2*
 
 ---
 
 
 ### Project: Loop Concepts Activity Project
+
+> 📦 **Before you start:** read **✅ Submit — Loop Concepts Activity Project** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
 
 > These three activities, isolate each loop concept while layering `if`/`elif`/`else` for decision logic. Redundancy across activities is intentional — you will see the same control-flow ideas resurface in a new pathway context.  Read through each project idea.  Choose **1** idea that you would like to develop. 
 > 
@@ -2085,7 +2206,8 @@ for i in range(1, rows + 1):
 > 
 >     print("\n=== Access code check ===")
 >     fake_attempts = iter(["1111", "2222", "7734"])
->     check_access_code(lambda: next(fake_attempts), VALID_ACCESS_CODE, MAX_ATTEMPTS)
+>     check_access_code(lambda: next(fake_attempts), VALID_ACCESS_CODE,
+>                       MAX_ATTEMPTS)
 > 
 > 
 > if __name__ == "__main__":
@@ -2180,6 +2302,13 @@ for i in range(1, rows + 1):
 > 
 > **Extension (harder):** Add an *outer* `break` — if any single cell reads `>= 9` ("severe"), halt the **entire** scan immediately (whole dish is compromised), not just the > current row. This requires either a flag variable or restructuring into a function that `return`s early — a good bridge to why `break` alone can't exit two loops at once.
 >
+
+**✅ Submit — Loop Concepts Activity Project**
+
+- [ ] One `.py` file with the header block, for the **one** activity you chose
+- [ ] **2 TEST CASES** at the bottom of the file. These programs have no `input()`, so each one uses `# INPUT: none`
+  - TEST CASE 1: the normal run → `# EXPECTED:` matches the sample output for your activity
+  - TEST CASE 2: a boundary or edge case. Add a few extra calls in `main()` that test it (e.g., `classify_load(6000, 10000)` is exactly 60%, or all three access codes wrong), then describe what they should print
 
 **Loop Concepts Activity Project — Grading Rubric**
 
@@ -2363,6 +2492,8 @@ Violets are blue.
 
 #### Practice Drills — Strings
 
+> 📦 **Before you start:** read **✅ Submit — String Practice Drills** after the last drill. It tells you what goes in your file and which TEST CASES to write.
+
 `Quick single-concept reps, 10–15 min each — do these before or alongside Receipt Formatter below.`
 
 
@@ -2499,7 +2630,12 @@ pig_sentence = input("Enter a Pig Latin sentence: ").lower()
 #############################################################################
 
 
-**Submit your .py file and test cases showing that your program worked as intended.**
+**✅ Submit — String Practice Drills**
+
+- [ ] **One** `.py` file with the header block below, holding S1–S7 in order, each under a comment like `# S3 — Palindrome Checker`
+- [ ] **2 TEST CASES** at the bottom of the file, each with **7 `# INPUT:` lines** in this order: (1) S2 full name, (2) S3 word, (3) S4 sentence, (4) S5 sentence, (5) S5 banned word, (6) S6 phrase, (7) S7 sentence. Add an 8th line, the Pig Latin sentence to decode, if you did the Extension.
+  - TEST CASE 1: messy name (`  marco REYES `), a palindrome (`Racecar`), a banned word that **is** in the sentence
+  - TEST CASE 2: a word that is **not** a palindrome, and a banned word that is **not** in the sentence
 
 ```python
 #       Assignment:  String Practice
@@ -2514,6 +2650,8 @@ pig_sentence = input("Enter a Pig Latin sentence: ").lower()
 ---
 
 ### Activity: Receipt Formatter
+
+> 📦 **Before you start:** read **✅ Submit — Receipt Formatter** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
 
 Write a program that formats a store receipt using string methods and escape characters.
 
@@ -2547,6 +2685,13 @@ Blue Notebook	Sale Price: $24.99
 
 "Thank you for shopping with us!"
 ```
+
+**✅ Submit — Receipt Formatter**
+
+- [ ] One `.py` file with the header block
+- [ ] **2 TEST CASES** at the bottom of the file, each with **4 `# INPUT:` lines** (store name, item name, price, item name re-typed with extra spaces)
+  - TEST CASE 1: a price **over** $20 → `Sale Price:` label
+  - TEST CASE 2: a price **under** $20 → plain `Price:` label
 
 *PCEP: 3.4 | AP CSP: DAT-1.A*
 
@@ -2707,6 +2852,8 @@ for row in grid:
 
 #### Practice Drills — Lists
 
+> 📦 **Before you start:** read **✅ Submit — List Practice Drills** after the last drill. It tells you what goes in your file and which TEST CASES to write.
+
 `Quick single-concept reps, 10–15 min each — this is the Week 7 activity block.`
 
 **L1 — Shopping List Builder**
@@ -2797,12 +2944,19 @@ scores = [78, 95, 88, 99, 62]
 
 **Sample:** `[78, 95, 88, 99, 62]` → `[83, 100, 93, 100, 67]`
 
+**✅ Submit — List Practice Drills**
+
+- [ ] **One** `.py` file with the header block, holding L1–L7 in order, each under a comment like `# L2 — List Stats`
+- [ ] **1 TEST CASE** at the bottom of the file. These drills have no `input()`, so use `# INPUT: none`, with `# EXPECTED:` giving at least the L2 highest/lowest/average and the L7 curved list
+
 *PCEP: 3.1 | AP CSP: AAP-4.A*
 
 
 #############################################################################
 
 ### Activity: Playlist Manager
+
+> 📦 **Before you start:** read **✅ Submit — Playlist Manager** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
 
 **Unit:** Data Collections (Lists) — PCEP-30-02 Block 3 / AP CSP Big Idea 3
 **Prerequisite:** Strings unit / Receipt Formatter activity
@@ -2811,11 +2965,15 @@ Write a program that manipulates a premade list of songs using list methods and 
 
 **Starter list (give this to students — don't let them type it in):**
 ```python
-playlist = ["Blinding Lights", "Levitating", "As It Was", "Flowers", "Anti-Hero",
-            "Unholy", "Cruel Summer", "Vampire", "Espresso", "Paint The Town Red",
-            "Snooze", "Lovin On Me", "Fortnight", "Please Please Please", "Birds Of A Feather",
-            "Not Like Us", "Texas Hold Em", "I Had Some Help", "Good Luck Babe!", "Beautiful Things"]
+playlist = ["Blinding Lights", "Levitating", "As It Was", "Flowers",
+            "Anti-Hero", "Unholy", "Cruel Summer", "Vampire", "Espresso",
+            "Paint The Town Red", "Snooze", "Lovin On Me", "Fortnight",
+            "Please Please Please", "Birds Of A Feather", "Not Like Us",
+            "Texas Hold Em", "I Had Some Help", "Good Luck Babe!",
+            "Beautiful Things"]
 ```
+
+> 💡 Copy this list exactly as shown. It is already wrapped so every line fits in 79 characters.
 
 #############################################################################
 
@@ -2909,6 +3067,14 @@ Final playlist total: 21 songs
 - **Slicing confusion** → `playlist[:5]` vs `playlist[5:]` — walk through this on the board if Top 5 / Bottom 5 come out wrong.
 
 </details>
+
+**✅ Submit — Playlist Manager**
+
+- [ ] One `.py` file with the header block
+- [ ] Starter list kept exactly as given above
+- [ ] **2 TEST CASES** at the bottom of the file, each with **4 `# INPUT:` lines** (new song, song to insert at #4, song to remove, song to look up)
+  - TEST CASE 1: the song to remove and the song to look up **are** in the playlist
+  - TEST CASE 2: the song to remove and the song to look up are **not** in the playlist → "not found" messages, no crash
 
 
 #############################################################################
@@ -3053,6 +3219,8 @@ nested = [(1, "a"), (2, "b")]     # list of tuples
 
 #### Practice Drills — Tuples
 
+> 📦 **Before you start:** read **✅ Submit — Tuple Practice Drills** after the last drill. It tells you what goes in your file and which TEST CASES to write.
+
 `Quick single-concept reps, 10–15 min each — do these before the Dictionaries section below.`
 
 **T1 — Coordinate Pair Basics**
@@ -3155,6 +3323,12 @@ print(low, high)     # should print: 2 19
 ```
 
 > 💡 **Looking ahead:** in Week 9 you'll turn Part 2 into a function that `return`s a tuple. That's how Python functions return more than one value.
+
+**✅ Submit — Tuple Practice Drills**
+
+- [ ] **One** `.py` file with the header block, holding T1–T5 in order, each under a comment like `# T2 — RGB Color Mixer`
+- [ ] Leave the T3 line `dimensions[0] = 15` **commented out** after you've read the error, so the rest of the file still runs
+- [ ] **1 TEST CASE** at the bottom of the file. These drills have no `input()`, so use `# INPUT: none`, with `# EXPECTED:` giving the T2 mixed color and the T5 swap result
 
 *PCEP: 3.2 | AP CSP: AAP-1.D*
 
@@ -3370,6 +3544,8 @@ This is the pattern — append a dictionary to a list, then search it with a loo
 
 #### Practice Drills — Dictionaries
 
+> 📦 **Before you start:** read **✅ Submit — Dictionary Practice Drills** after the last drill. It tells you what goes in your file and which TEST CASES to write.
+
 `Quick single-concept reps, 10–15 min each — do these before Student Contact Book below.`
 
 **D1 — Inventory Tracker**
@@ -3478,11 +3654,20 @@ quiz2 = {"Liam": 95, "Noah": 79}
 
 **🤔 Discussion:** Change Noah's score in `quiz2` to `88` and run it again. Who disappears from the inverted dictionary, and why? *(Two students now share the score 88, but keys must be unique — so the last one wins and Ava is overwritten.)*
 
+**✅ Submit — Dictionary Practice Drills**
+
+- [ ] **One** `.py` file with the header block, holding D1–D6 in order, each under a comment like `# D3 — Safe Key Lookup`
+- [ ] **2 TEST CASES** at the bottom of the file, each with **1 `# INPUT:` line** (the D3 student name)
+  - TEST CASE 1: a name that **is** in `grades` (e.g., `Liam`)
+  - TEST CASE 2: a name that is **not** (e.g., `Zoe`) → "Student not found." both ways, no crash
+
 *PCEP: 3.3 | AP CSP: AAP-1.D*
 
 #############################################################################
 
 ### Activity: Student Contact Book
+
+> 📦 **Before you start:** read **✅ Submit — Student Contact Book** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
 
 Build a program that stores a contact book as a **list of dictionaries**. Each contact has a name, phone number, and email. The user can:
 
@@ -3510,7 +3695,8 @@ Use a `while` loop for the menu and a `for` loop to search/display.
 #       Language:    Python 3.x
 
 contacts = [
-    {"name": "Sample Contact", "phone": "555-0100", "email": "sample@example.com"}
+    {"name": "Sample Contact", "phone": "555-0100",
+     "email": "sample@example.com"}
 ]
 
 while True:
@@ -3553,7 +3739,12 @@ Sample Contact | 555-0100 | sample@example.com
 Jordan Lee | 555-0142 | jlee@example.com
 ```
 
-**Submit your .py file and test cases showing that your program worked as intended** — include at least one search for a name that **isn't** in the book.
+**✅ Submit — Student Contact Book**
+
+- [ ] One `.py` file with the header block
+- [ ] **2 TEST CASES** at the bottom of the file. Write one `# INPUT:` line for every menu choice **and** every answer after it, and make the **last** `# INPUT:` line `5` (Quit)
+  - TEST CASE 1: add a contact → display all → search for that contact → quit
+  - TEST CASE 2: search for a name that **isn't** in the book → delete a name that isn't there → type an invalid option like `9` → quit
 
 *AP CSP: AAP-1.D, AAP-2.E | PCEP: 3.3*
 
@@ -3582,6 +3773,8 @@ A 4-question exit ticket to wrap up the section — one short question per data 
 
 
 ### Project: Pop-Up Shop Kiosk
+
+> 📦 **Before you start:** read **✅ Submit — Pop-Up Shop Kiosk** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
 
 `🔖 PCEP 3.1, 3.2, 3.3, 3.4` `📋 AP CSP: AAP-1.C, AAP-1.D, AAP-2.D, AAP-2.H, AAP-2.K, AAP-2.N, AAP-2.O, CRD-2.J`
 
@@ -3713,7 +3906,7 @@ Items by category:
 ====================================
 ```
 
-**Required test cases** — submit a screenshot or pasted run for each:
+**Required tests** — all 7 must be covered by the TEST CASES at the bottom of your file (see **✅ Submit** below):
 
 | # | Test                                           | Expected result                          |
 | - | ---------------------------------------------- | ---------------------------------------- |
@@ -3737,6 +3930,15 @@ Items by category:
 #       Language:    Python 3.x
 #       Deficiencies: [Known problems, or state there are none]
 ```
+
+**✅ Submit — Pop-Up Shop Kiosk**
+
+- [ ] One `.py` file with the header block
+- [ ] Reflection as a comment at the bottom of the file, **above** your TEST CASES
+- [ ] **3 TEST CASES** that together cover all 7 required tests. One run can test several things. Write one `# INPUT:` line for **every** answer in order: your customer name first, then each menu choice, item name, quantity, and promo code. **Every TEST CASE must end with a checkout that succeeds**, so the program finishes.
+  - TEST CASE 1 (tests 1, 4, 7): add an item typed with extra spaces and capitals → add the same item again → add 2 more different items → check out
+  - TEST CASE 2 (tests 2, 3, 5): add an item that isn't in the catalog → enter `abc`, then `0`, as quantities → remove an item that isn't in the cart → add one real item → check out
+  - TEST CASE 3 (test 6): check out with an empty cart (refused) → add one item → check out
 
 ---
 
@@ -3784,7 +3986,7 @@ Items by category:
 | ------------------------------------------------------------------------------ | ------ |
 | `while` menu loop with `if/elif/else` for each option and an invalid-option message | 2      |
 | Subtotal, tax (constant), and total calculated correctly                        | 2      |
-| All 7 required test cases submitted and passing                                 | 3      |
+| All 7 required tests covered by the TEST CASES in the file, and passing         | 3      |
 | Reflection answers all three questions                                          | 2      |
 | Header block complete; PEP 8 naming; original theme (not the worked example)    | 1      |
 
@@ -3881,6 +4083,8 @@ multiply(5, 3)
 
 ### Activity: Math Operations Calculator
 
+> 📦 **Before you start:** read **✅ Submit — Math Operations Calculator** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
+
 Write a Python program called `math_operations.py` that performs addition, subtraction, multiplication, division, and modulo on two numbers entered by the user — using a separate function for each operation.
 
 **🧩 Scaffolding — build it in this order:**
@@ -3907,6 +4111,14 @@ Write a Python program called `math_operations.py` that performs addition, subtr
 **Stretch challenge:** What happens if the user enters `0` as the second number for division or modulo? Add a `try/except` block (or an `if` check) so the program doesn't crash — print a friendly error message instead.
 
 > **Teaching note:** This activity mirrors a classic C-language exercise (functions returning `int`/`float`, separate function per operation) — a good one to point out explicitly if any students are also in a C/C++ or Java course, since the *logic* is identical even though the syntax (no semicolons, no type declarations, no `#include`) is different.
+
+**✅ Submit — Math Operations Calculator**
+
+- [ ] One `.py` file named `math_operations.py` with the header block
+- [ ] **2 TEST CASES** at the bottom of the file (3 if you did the stretch challenge), each with **2 `# INPUT:` lines** (first number, second number)
+  - TEST CASE 1: `10` and `5` → the five results shown above
+  - TEST CASE 2: numbers that don't divide evenly (e.g., `17` and `5`) → quotient `3.40`, remainder `2`
+  - TEST CASE 3 (stretch): `0` as the second number → friendly message, no crash
 
 *PCEP: 1.4, 1.5, 4.1 | AP CSP: AAP-2.F, AAP-3.B*
 
@@ -4010,6 +4222,8 @@ factorial(5)
 
 ### Activity: Recursion Practice — Three Levels
 
+> 📦 **Before you start:** read **✅ Submit — Recursion Practice** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
+
 Recursion clicks once you can identify two things in *any* recursive problem: the **base case** (when to stop) and the **recursive case** (how the problem gets smaller each call). Practice with three functions, in order:
 
 **Level 1 — Countdown.** Write `countdown(n)` that prints every number from `n` down to `1`, then prints `"Liftoff!"` — using recursion, not a loop. Identify: what is the base case? What gets smaller with each call?
@@ -4024,6 +4238,12 @@ Recursion clicks once you can identify two things in *any* recursive problem: th
 3. Trace through one full call by hand (like the `factorial(5)` call stack above) and predict the output.
 
 **Stretch challenge:** Add a `print()` inside each function showing the current call's argument and indenting one extra level per recursive call — this visually recreates the call stack diagram above, using your own code.
+
+**✅ Submit — Recursion Practice**
+
+- [ ] One `.py` file with the header block, holding all three functions and a `main()` that calls each one
+- [ ] Your paper answers (base case, recursive case) as a comment above each function
+- [ ] **1 TEST CASE** at the bottom of the file with `# INPUT: none`. In `# EXPECTED:`, give the results of `countdown(3)`, `list_sum([2, 4, 6])` and `power(2, 5)`
 
 *PCEP: 4.1*
 
@@ -4543,6 +4763,8 @@ Professionals also use a **virtual environment** (`python -m venv .venv`) so eac
 
 ### Project: Random Trivia Quiz Generator
 
+> 📦 **Before you start:** read **✅ Submit — Random Trivia Quiz Generator** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
+
 Build a trivia quiz program that pulls together **modules, functions, lists, dictionaries, and string formatting** — everything you've learned so far — into one working project.
 
 **🧩 Scaffolding — build it across several days:**
@@ -4576,6 +4798,13 @@ Build a trivia quiz program that pulls together **modules, functions, lists, dic
 | Program header block, PEP 8 style, and no crashes on normal input | 1 |
 
 **Stretch challenge:** Add a fourth import — `json` — to save the student's score to a `scores.json` file after each run, and load/display their best score at the start of the next run.
+
+**✅ Submit — Random Trivia Quiz Generator**
+
+- [ ] One `.py` file with the header block
+- [ ] **2 TEST CASES** at the bottom of the file, each with **8 `# INPUT:` lines**, one answer per question. The questions are shuffled, so `# EXPECTED:` describes the result instead of exact output.
+  - TEST CASE 1: 8 answers in the right format (e.g., `A`, `C`, `B`…) → score printed as `x/8 correct` and a percentage, plus the time taken
+  - TEST CASE 2: some answers typed in lowercase or with extra spaces → still graded correctly, no crash
 
 *AP CSP: AAP-2.G, CRD-2.B*
 
@@ -4692,6 +4921,8 @@ except IOError:
 
 ### Activity: Safe Calculator
 
+> 📦 **Before you start:** read **✅ Submit — Safe Calculator** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
+
 Build a calculator program that:
 1. Accepts two numbers and an operator (`+`, `-`, `*`, `/`)
 2. Handles `ZeroDivisionError` and `ValueError`
@@ -4736,6 +4967,13 @@ while True:
     finally:
         print("Attempt complete.\n")
 ```
+
+**✅ Submit — Safe Calculator**
+
+- [ ] One `.py` file with the header block
+- [ ] **2 TEST CASES** at the bottom of the file. Write one `# INPUT:` line per answer (operator, first number, second number, repeated), and make the **last** `# INPUT:` line `quit`
+  - TEST CASE 1: two good calculations (e.g., `+ 8 2`, then `/ 9 3`) → quit
+  - TEST CASE 2: divide by zero → a letter typed as a number → an unknown operator like `%` → quit. Every one prints a message, nothing crashes
 
 *AP CSP: CRD-2.J | PCEP: 4.4*
 
@@ -4861,6 +5099,8 @@ show_log()
 
 ### Activity: Student Roster File Manager
 
+> 📦 **Before you start:** read **✅ Submit — Student Roster File Manager** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
+
 Write a program that manages a roster stored in a text file called `roster.txt` (one name per line).
 
 **🧩 Scaffolding — build it in this order:**
@@ -4943,6 +5183,13 @@ if __name__ == "__main__":
 | *(file doesn't exist)* | `load_roster()` | `[]` (no crash) |
 | `["Ava", "Liam"]` | `add_student("Noah")` | `["Ava", "Liam", "Noah"]` |
 | `["Ava", "Liam", "Noah"]` | remove `"Liam"` → `save_roster()` | `["Ava", "Noah"]` |
+
+**✅ Submit — Student Roster File Manager**
+
+- [ ] One `.py` file with the header block
+- [ ] **2 TEST CASES** at the bottom of the file. Write one `# INPUT:` line per menu choice and per name, and make the **last** `# INPUT:` line `4` (Quit). The checker starts with **no** `roster.txt`, so your program must handle a missing file
+  - TEST CASE 1: view (empty roster, no crash) → add `Ava` → add `Liam` → view → remove `Liam` → view → quit
+  - TEST CASE 2: remove a name that isn't on the roster → type an invalid option like `7` → quit
 
 ---
 
@@ -5191,6 +5438,8 @@ account.withdraw(1500)     # Insufficient funds
 
 ### Activity: OOP Zoo
 
+> 📦 **Before you start:** read **✅ Submit — OOP Zoo (any option)** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
+
 Design a `Zoo` simulation using OOP:
 
 1. Create a base class `Animal` with attributes `name`, `species`, `age`, and a method `describe()`.
@@ -5243,6 +5492,13 @@ Design a role-playing game character system using OOP:
 | Each subclass overrides the specified method with genuinely different behavior (not just a copy/paste) | 2 |
 | Container class (`Zoo`/`Library`/`Party`) correctly manages a list of objects with all required methods | 2 |
 | Program includes `__str__` and docstrings, follows PEP 8, and runs without errors on the demonstration code | 2 |
+
+**✅ Submit — OOP Zoo (any option)**
+
+- [ ] One `.py` file with the header block, for the **one** option you chose
+- [ ] **2 TEST CASES** at the bottom of the file. Your demonstration code has no `input()`, so each uses `# INPUT: none`
+  - TEST CASE 1: the normal demonstration → describe what `show_all()` / `list_available()` / `show_party()` prints
+  - TEST CASE 2: an edge case your demo code also runs, such as searching for a species no animal has, checking out an item that's already out, or a character whose health hits 0
 
 *AP CSP: AAP-3.B, CRD-2.B | Demonstrates: Abstraction, Inheritance, Polymorphism*
 
@@ -5382,6 +5638,8 @@ Use these for the **Practice PT 2** window (Weeks 12–14). These are intentiona
 ---
 
 # Final Project Options
+
+> 📦 **Before you start:** read **✅ Submit — Final Project (all options)** after Option C. It tells you what goes in your file and which TEST CASES to write.
 
 ### Option A — Text-Based Adventure Game (Beginner–Intermediate)
 
@@ -5526,6 +5784,13 @@ root.mainloop()
 | **Total** | **10** |
 
 **Reflection (1 page):** Explain your mine-counting algorithm, how recursion works in the reveal function, and how lists are used for data abstraction.
+
+**✅ Submit — Final Project (all options)**
+
+- [ ] One `.py` file with the header block. Fill in **Deficiencies** honestly
+- [ ] **3–4 TEST CASES** at the bottom of the file
+  - **Option A or B:** one `# INPUT:` line per answer, in order, and the **last** `# INPUT:` line must quit the game or menu. Include one normal run, one with invalid input (a direction or menu choice that doesn't exist, a letter where a number belongs), and one edge case (empty list, record not found, losing the game)
+  - **Option C (Tkinter):** the checker can't click buttons, so your teacher will run this one by hand. Use `# INPUT: none` and describe each test in `# EXPECTED:` (e.g., "right-click flags a cell; flags stop at the number of mines")
 
 ---
 
@@ -5753,6 +6018,8 @@ print("Top 3:",   top_3)     # [91, 88, 82]
 
 ### Activity: Grade Report Refactor
 
+> 📦 **Before you start:** read **✅ Submit — Grade Report Refactor** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
+
 Take the **Grade Calculator** activity you built earlier (Section 2) and refactor part of it using built-in functions instead of a `for` loop.
 
 **Requirements:**
@@ -5805,6 +6072,11 @@ if __name__ == "__main__":
 | `[70, 71, 72, 73]` | `[70, 71, 72, 73]` | `False` | `True` |
 | `[10, 20, 30]` | `[]` | `False` | `False` |
 
+**✅ Submit — Grade Report Refactor**
+
+- [ ] One `.py` file with the header block
+- [ ] **3 TEST CASES** at the bottom of the file, matching the three rows above. The program has no `input()`, so each uses `# INPUT: none`. Have `main()` run your report on all three lists, and give the expected results in `# EXPECTED:`
+
 ---
 
 ### Lambda Functions
@@ -5856,6 +6128,8 @@ print(by_score)   # [('Alice', 91), ('Charlie', 88), ('Bob', 76)]
 
 ### Activity: Sort It Your Way
 
+> 📦 **Before you start:** read **✅ Submit — Sort It Your Way** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
+
 Given a list of dictionaries representing books (`title`, `author`, `year`, `pages`), write **three separate `sorted()` calls**, each using a different `lambda` key:
 
 1. Sort by `year`, oldest first.
@@ -5903,6 +6177,11 @@ for b in by_title_len:
 | `year` (ascending) | *The Hobbit* (1937) | *Dune* (1965) |
 | `pages` (descending) | *Dune* (412pp) | *The Hobbit* (310pp) |
 | `len(title)` (ascending) | *1984* (4 chars) | *The Hobbit* (10 chars) |
+
+**✅ Submit — Sort It Your Way**
+
+- [ ] One `.py` file with the header block
+- [ ] **3 TEST CASES** at the bottom of the file, one per sort key above. The program has no `input()`, so each uses `# INPUT: none`, with the first and last book of that sort in `# EXPECTED:`
 
 ---
 
@@ -5952,6 +6231,8 @@ print(schedule[frozenset(["Tue", "Thu"])])   # Science
 - Reach for a `frozenset` specifically when you need to use a collection as a **dictionary key**.
 
 ### Activity: Class Roster Overlap
+
+> 📦 **Before you start:** read **✅ Submit — Class Roster Overlap** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
 
 Two teachers each have a frozenset of student names in their AP CSP class:
 
@@ -6011,6 +6292,13 @@ if __name__ == "__main__":
 | `period_1 ^ period_3` | `frozenset({'Ava', 'Liam', 'Mia', 'Sofia', 'Lucas'})` |
 | overlap check | `True` |
 
+**✅ Submit — Class Roster Overlap**
+
+- [ ] One `.py` file with the header block
+- [ ] **2 TEST CASES** at the bottom of the file. The program has no `input()`, so each uses `# INPUT: none`
+  - TEST CASE 1: the results in the table above
+  - TEST CASE 2: two rosters with **no** names in common (add a second comparison to `main()`) → empty intersection, overlap check `False`
+
 ---
 
 ### Exception Hierarchy Deep Dive
@@ -6055,6 +6343,8 @@ except Exception:           # broader fallback
 ---
 
 ### Culminating Project: Library Catalog Analyzer
+
+> 📦 **Before you start:** read **✅ Submit — Library Catalog Analyzer** at the end of this assignment. It tells you what goes in your file and which TEST CASES to write.
 
 Build a program that reads a small library catalog from a text file, analyzes it using built-in functions and lambdas, and uses frozensets to answer genre questions — pulling together **File Operations (Semester 1), Built-In Functions, Lambda Functions, and Frozensets (all above)** into one working project. This is the natural capstone of the PCEP Certification Path.
 
@@ -6161,6 +6451,13 @@ if __name__ == "__main__":
 | `report.txt` after running | `Total books: 4`, `Oldest year: 1937`, `Newest year: 2021` |
 
 **Stretch challenge:** Add a `most_common_genre()` function that uses `max()` with a `key=lambda` to find which single genre appears in the most books — without importing any extra modules.
+
+**✅ Submit — Library Catalog Analyzer**
+
+- [ ] Your `.py` file with the header block, **and** your `catalog.txt`
+- [ ] **2 TEST CASES** at the bottom of the `.py` file. The program has no `input()`, so each uses `# INPUT: none`
+  - TEST CASE 1: the four-book `catalog.txt` above → the first four results in the table
+  - TEST CASE 2: the same run → what `report.txt` should contain afterward
 
 *AP CSP: AAP-3.A, AAP-3.B, AAP-2.G, CRD-2.B, CRD-2.J*
 
