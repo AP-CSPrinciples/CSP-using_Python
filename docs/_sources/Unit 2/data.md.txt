@@ -1,5 +1,24 @@
 # Data
 
+#### AP CSP Standards for this Unit
+
+This unit covers **Big Idea 2: Data** and part of **Big Idea 5: Impact of Computing** (safe computing). Each row shows where you practice the skill.
+
+| Learning Objective | Students will be able to... | Where in this unit |
+| ------------------ | --------------------------- | ------------------ |
+| **DAT-1.A** | Explain how data can be represented using bits, and how the same bits can mean different things (a number, a letter, a color) | Project 1, Parts 1–7 |
+| **DAT-1.B** | Explain the consequences of using bits to represent data (limited values, overflow, and round-off errors) | Project 1, Part 2 (bit combinations) and Part 5 (Overflow and Round-Off) |
+| **DAT-1.C** | Convert between binary and decimal, and compare and order binary numbers | Project 1, Parts 2 and 5 (binary math) |
+| **DAT-1.D** | Compare data compression algorithms (lossless vs. lossy) to decide which is best in a situation | Project 1, Parts 1 and 6; Vocabulary 3 |
+| **DAT-2.A – DAT-2.E** | Extract information from data and metadata, identify challenges in processing data, and use programs to gain insight from data | Project 2 (Data Detectives) |
+| **IOC-2.A** | Describe the risks to privacy from collecting and storing personal data | Project 3 (Phishing) |
+| **IOC-2.B** | Explain how computing resources can be protected and can be misused (encryption, passwords, multifactor authentication) | Projects 4 and 5 |
+| **IOC-2.C** | Explain how unauthorized access to computing resources is gained (phishing, malware, rogue access points) | Projects 3 and Final Project |
+| **CRD-2.I, CRD-2.J** | Identify and correct errors in a program, and test it with a range of inputs | Project 6 and Final Project |
+
+> **Big question for the unit:** A computer only stores `0`s and `1`s. How can those same bits become a letter, a number, a color, a picture, or a secret message?
+
+---
 
 #### Unit 2 Vocabulary
 
@@ -138,7 +157,18 @@
 | Personally Identifiable Information (PII) | Any data that could be used to identify an individual (e.g., name, address, SSN).                              |
 | Privacy                                   | The protection of individuals' personal information, ensuring responsible collection and sharing (e.g., GDPR). |
 
+---
 
+**11. Other Encodings**
+
+| **Term**              | **Definition**                                                                                                  |
+| --------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Morse Code            | An encoding that represents letters and digits as patterns of short signals (dots) and long signals (dashes).   |
+| Telegraph             | A system that sends coded messages over wires using electrical pulses; the first long-distance electronic network. |
+| Variable-Length Code  | A code where some symbols use fewer signals than others; common letters get the shortest codes (like Huffman coding). |
+| Color Code            | A system that assigns a color to each digit 0–9; used to mark the value of electronic resistors.               |
+| Latitude              | How far north or south of the equator a location is, in degrees.                                               |
+| Longitude             | How far east or west of the Prime Meridian a location is, in degrees; negative in the Western Hemisphere.      |
 
 
 </details>
@@ -158,6 +188,7 @@ The project will simulate a "Data Communication and Compression" system where yo
 
 Students will be able to:
 
+* Explain how Morse code and color codes represent information, and write Python programs to encode and decode them
 * Understand the binary number system (base-2)
 * Convert decimal numbers to binary (and vice versa)
 * Understand how text is represented in binary using ASCII
@@ -165,18 +196,467 @@ Students will be able to:
 
 ---
 
+#### Part 1: Morse Code and Color Codes
+
+**Why start here?**
+
+Before computers used `0`s and `1`s, people were already turning messages into simple signals. Morse code and color codes are easy to see, hear, and touch, and they work on the same idea as binary: **agree on a code, encode the message, send it, decode it.**
+
+---
+
+**1. A Short History of Morse Code**
+
+* **1830s–1840s:** Samuel F. B. Morse, a painter turned inventor, worked with machinist **Alfred Vail** to build an electric telegraph. Pressing a key sent pulses of electricity down a wire; short pulses were **dots** and long pulses were **dashes**.
+* **May 24, 1844:** Morse sent the first long-distance telegraph message, *"What hath God wrought,"* from the U.S. Capitol in Washington, D.C., to Baltimore.
+* **Efficient by design:** The most common English letters got the shortest codes. **E** is a single dot and **T** is a single dash, while rare letters like **Q** (`--.-`) are long. This is the same idea behind **Huffman coding** in data compression (see section 7 below).
+* **1865:** A revised version, now called **International Morse Code**, became the world standard. It is the version on this page.
+* **1906:** `... --- ...` (**SOS**) was adopted as the international distress signal. It was chosen because it is easy to send and recognize, not because the letters stand for words.
+* **Today:** Ships replaced Morse distress calls with satellite systems in 1999, but Morse is still used by amateur radio operators and by aviation navigation beacons, which identify themselves in Morse.
+
+> **Discussion:** The telegraph was the first electronic network. What did people need to agree on before a message could travel from one city to another? (Hint: that agreement is called a **protocol**.)
+
+---
+
+**2. The International Morse Code Chart**
+
+| Letter | Code | Letter | Code | Letter | Code | Letter | Code |
+| ------ | ---- | ------ | ---- | ------ | ---- | ------ | ---- |
+| A | `.-` | H | `....` | O | `---` | V | `...-` |
+| B | `-...` | I | `..` | P | `.--.` | W | `.--` |
+| C | `-.-.` | J | `.---` | Q | `--.-` | X | `-..-` |
+| D | `-..` | K | `-.-` | R | `.-.` | Y | `-.--` |
+| E | `.` | L | `.-..` | S | `...` | Z | `--..` |
+| F | `..-.` | M | `--` | T | `-` |  |  |
+| G | `--.` | N | `-.` | U | `..-` |  |  |
+
+**Numbers and Symbols**
+
+Every digit is exactly **5 signals** long, which makes numbers easy to check.
+
+| Digit | Code | Digit | Code |
+| ----- | ---- | ----- | ---- |
+| 0 | `-----` | 5 | `.....` |
+| 1 | `.----` | 6 | `-....` |
+| 2 | `..---` | 7 | `--...` |
+| 3 | `...--` | 8 | `---..` |
+| 4 | `....-` | 9 | `----.` |
+| `.` (decimal point) | `.-.-.-` | `-` (minus sign) | `-....-` |
+
+**Timing Rules**
+
+Morse is sent with time, not just symbols. Everything is measured in **units**:
+
+| Signal | Length |
+| ------ | ------ |
+| Dot | 1 unit on |
+| Dash | 3 units on |
+| Gap between dots and dashes in a letter | 1 unit off |
+| Gap between letters | 3 units off |
+| Gap between words | 7 units off |
+
+In writing, we show a gap between letters with a **space** and a gap between words with a **slash** (`/`).
+
+**Example:** `.... .. / -.-. ... .--.` decodes to `HI CSP`.
+
+> **Think about it:** A telegraph wire is either **on** or **off**, just like a bit. Is Morse code binary? What extra information does Morse use that a single bit does not?
+
+---
+
+**3. The Color Code**
+
+Electronics engineers needed a way to print numbers on parts too tiny to label, so they used **colored bands**. Each color stands for one digit. This **resistor color code** is still used on almost every circuit board.
+
+| Digit | Color | Digit | Color |
+| ----- | ----- | ----- | ----- |
+| 0 | Black | 5 | Green |
+| 1 | Brown | 6 | Blue |
+| 2 | Red | 7 | Violet |
+| 3 | Orange | 8 | Gray |
+| 4 | Yellow | 9 | White |
+
+**Example:** Red, Violet, Black, Blue → `2`, `7`, `0`, `6` → `2706`
+
+Notice that the colors from Brown to Violet follow the rainbow (ROYGBIV) in order.
+
+> **Compare:** In Part 6, you will see how computers store color as **numbers** (RGB). Here, it is the opposite: a **color stands for a number**.
+
+---
+
+**4. Activities**
+
+**Activity A: Decode by Hand**
+
+1. Decode: `-.. .- - .-` → ?
+2. Decode: `.--. -.-- - .... --- -.` → ?
+3. Encode your first name in Morse code.
+4. Decode these colors: Orange, Orange, Gray, Brown → ?
+
+<details><summary>Check your answers</summary>
+
+1. `DATA`
+2. `PYTHON`
+3. Answers will vary.
+4. `3381`
+
+</details>
+
+**Activity B: Bead Strings**
+
+Use short beads for **dots**, long beads for **dashes**, and a spacer bead between letters. Build a three-letter word and trade with a partner to decode it.
+
+**Activity C: Send a Signal**
+
+With a partner, send a short word using a flashlight, a tap on the desk, or a beep. Use the timing rules above. Then answer: Which was harder, sending or receiving? What happened when the timing was off?
+
+**Activity D: Decode a Location**
+
+Latitude and longitude describe any place on Earth. Decode this latitude: `...-- ....- .-.-.- .---- .---- ---.. ....-`
+
+Then decode this longitude. The minus sign is sent in Morse, and the digits are in color: `-....-` then **Brown, Brown, Gray, Decimal Point, Orange, Black, Black, Yellow**
+
+<details><summary>Check your answer</summary>
+
+Latitude: `34.1184`
+Longitude: `-118.3004`
+
+Use **Google Maps**: type `34.1184, -118.3004` in the search bar to see where it is. (It is a famous Los Angeles landmark.)
+
+</details>
+
+---
+
+**5. Programming: Morse Code Translator**
+
+**Objective:** Write a program that encodes text into Morse code and decodes Morse code back into text.
+
+This works just like the binary programs in Parts 4 and 5. The difference is that Morse codes are not math, so we use a **dictionary** to look them up.
+
+---
+
+**Step 1: Create the Morse code dictionary**
+
+Each key is a character, and each value is its Morse code.
+
+```python
+MORSE_CODE = {
+    "A": ".-",    "B": "-...",  "C": "-.-.",  "D": "-..",   "E": ".",
+    "F": "..-.",  "G": "--.",   "H": "....",  "I": "..",    "J": ".---",
+    "K": "-.-",   "L": ".-..",  "M": "--",    "N": "-.",    "O": "---",
+    "P": ".--.",  "Q": "--.-",  "R": ".-.",   "S": "...",   "T": "-",
+    "U": "..-",   "V": "...-",  "W": ".--",   "X": "-..-",  "Y": "-.--",
+    "Z": "--..",
+    "0": "-----", "1": ".----", "2": "..---", "3": "...--", "4": "....-",
+    "5": ".....", "6": "-....", "7": "--...", "8": "---..", "9": "----.",
+    ".": ".-.-.-", "-": "-....-",
+}
+```
+
+---
+
+**Step 2: Encode text into Morse**
+
+This follows the same pattern as `text_to_binary()` in Part 4: loop, look up, append, join.
+
+```python
+def text_to_morse(message):
+    morse_list = []
+    for char in message.upper():
+        if char == " ":
+            morse_list.append("/")
+        elif char in MORSE_CODE:
+            morse_list.append(MORSE_CODE[char])
+    final_morse = " ".join(morse_list)
+    return final_morse
+```
+
+---
+
+**Step 3: Decode Morse into text**
+
+To decode, we need the dictionary flipped around, so we build a second dictionary where each **code** is the key.
+
+```python
+def morse_to_text(morse):
+    code_to_char = {}
+    for char, code in MORSE_CODE.items():
+        code_to_char[code] = char
+
+    text = ""
+    for code in morse.split():
+        if code == "/":
+            text += " "
+        elif code in code_to_char:
+            text += code_to_char[code]
+        else:
+            text += "?"
+    return text
+```
+
+---
+
+**Step 4: Call the functions and show the results**
+
+```python
+print(text_to_morse("Hi CSP"))
+print(morse_to_text("... --- ..."))
+```
+
+**Output:**
+
+```
+.... .. / -.-. ... .--.
+SOS
+```
+
+---
+
+**6. Programming: Color Code Translator**
+
+A **list** works perfectly here, because each color's **index** is its digit: `COLOR_CODE[2]` is `"red"`.
+
+```python
+COLOR_CODE = ["black", "brown", "red", "orange", "yellow",
+              "green", "blue", "violet", "gray", "white"]
+
+
+def colors_to_number(colors):
+    digits = ""
+    for color in colors:
+        digit = COLOR_CODE.index(color.lower())
+        digits += str(digit)
+    return digits
+
+
+def number_to_colors(number):
+    colors = []
+    for digit in str(number):
+        colors.append(COLOR_CODE[int(digit)])
+    return colors
+
+
+print(colors_to_number(["red", "violet", "black", "blue"]))
+print(number_to_colors(2706))
+```
+
+**Output:**
+
+```
+2706
+['red', 'violet', 'black', 'blue']
+```
+
+---
+
+**Extensions**
+
+* Add an **error check**: what should `colors_to_number()` do if a color is misspelled? (Hint: `if color in COLOR_CODE:`)
+* Combine both programs into one **menu** that encodes or decodes Morse or color.
+* Write a function that counts how many **signals** (dots and dashes) a message needs. Which is shorter to send: `EAT` or `QUIZ`? Why?
+
+---
+
+**7. From Morse to Huffman Coding**
+
+Alfred Vail gave common letters short codes **by hand**. In 1952, MIT student **David Huffman** found a way to do the same thing **with math**, for any message. **Huffman coding** is a **lossless compression** algorithm: it makes data smaller without losing any information.
+
+**The Big Idea**
+
+ASCII uses **8 bits for every character**, whether the letter is common or rare. Huffman coding gives **frequent characters short codes** and **rare characters longer codes**, so the whole message uses fewer bits.
+
+---
+
+**Worked Example: `MISSISSIPPI` (11 letters)**
+
+**Step 1: Count each letter**
+
+| Letter | Count |
+| ------ | ----- |
+| S | 4 |
+| I | 4 |
+| P | 2 |
+| M | 1 |
+
+**Step 2: Give the most common letters the shortest codes**
+
+| Letter | Count | Code | Bits used |
+| ------ | ----- | ---- | --------- |
+| S | 4 | `0` | 4 × 1 = 4 |
+| I | 4 | `10` | 4 × 2 = 8 |
+| P | 2 | `110` | 2 × 3 = 6 |
+| M | 1 | `111` | 1 × 3 = 3 |
+| **Total** | | | **21 bits** |
+
+**Step 3: Compare the sizes**
+
+| Method | How it works | Size |
+| ------ | ------------ | ---- |
+| ASCII | 11 letters × 8 bits | **88 bits** |
+| Fixed-length code | 4 different letters need 2 bits each: 11 × 2 | **22 bits** |
+| Huffman code | Short codes for common letters | **21 bits** |
+
+> **Why no letter gets confused:** No code is the beginning of another code (`0` is S, and no other code starts with `0`). So `100110` can only be read one way: `10` `0` `110` = **I S P**. This is called a **prefix-free** code. Morse needs gaps between letters to avoid confusion; Huffman does not.
+
+> **Notice:** Most of the savings over ASCII came from using fewer bits per letter. Huffman beat the fixed-length code by only 1 bit here, because the letters are fairly even. Huffman wins big when some letters are **much** more common than others, which is exactly why Morse gave **E** a single dot.
+
+---
+
+**Activity: Huffman by Hand**
+
+1. Decode `0010110` using the `MISSISSIPPI` codes above.
+2. Count the letters in `ABRACADABRA`. Which letter should get the shortest code?
+3. How many bits does `ABRACADABRA` take in ASCII? With a fixed-length code? (Hint: count the different letters first.)
+
+<details><summary>Check your answers</summary>
+
+1. `0` `0` `10` `110` = **S S I P**
+2. **A** appears 5 times, so it gets the shortest code. (B = 2, R = 2, C = 1, D = 1)
+3. ASCII: 11 × 8 = **88 bits**. Fixed-length: 5 different letters need 3 bits each (2² = 4 is too few, 2³ = 8 is enough), so 11 × 3 = **33 bits**. A Huffman code needs only **23 bits**, which is a much bigger win than `MISSISSIPPI` because A is so common.
+
+</details>
+
+---
+
+**Programming: Compare the Sizes**
+
+This program counts the letters in a word, the same way the **Letter Frequency Analyzer** in Project 4 does, then compares the three sizes.
+
+```python
+def count_letters(word):
+    counts = {}
+    for char in word.upper():
+        if char in counts:
+            counts[char] += 1
+        else:
+            counts[char] = 1
+    return counts
+
+
+def fixed_length_bits(counts):
+    unique = len(counts)
+    bits = 1
+    while 2 ** bits < unique:
+        bits += 1
+    return bits
+
+
+word = "MISSISSIPPI"
+counts = count_letters(word)
+print("Letter counts:", counts)
+
+ascii_size = len(word) * 8
+fixed_size = len(word) * fixed_length_bits(counts)
+print("ASCII size:", ascii_size, "bits")
+print("Fixed-length size:", fixed_size, "bits")
+
+codes = {"S": "0", "I": "10", "P": "110", "M": "111"}
+huffman_size = 0
+for char in word:
+    huffman_size += len(codes[char])
+print("Huffman size:", huffman_size, "bits")
+```
+
+**Output:**
+
+```
+Letter counts: {'M': 1, 'I': 4, 'S': 4, 'P': 2}
+ASCII size: 88 bits
+Fixed-length size: 22 bits
+Huffman size: 21 bits
+```
+
+> **Try it:** Change `word` to your own name. Which method gives the smallest size? (You will need to make your own `codes` dictionary, or use the extension below.)
+
+<details><summary>Extension: Let Python build the Huffman codes</summary>
+
+This version builds the codes automatically. It repeatedly joins the two **least common** groups of letters, adding a `0` to one group's codes and a `1` to the other's. The `heapq` module keeps the smallest counts at the front of the list.
+
+```python
+import heapq
+
+
+def build_huffman_codes(word):
+    counts = {}
+    for char in word.upper():
+        counts[char] = counts.get(char, 0) + 1
+
+    # Each item: [count, tie_breaker, {char: code}]
+    heap = []
+    tie = 0
+    for char, count in counts.items():
+        heap.append([count, tie, {char: ""}])
+        tie += 1
+    heapq.heapify(heap)
+
+    if len(heap) == 1:
+        only = heap[0][2]
+        return {char: "0" for char in only}
+
+    while len(heap) > 1:
+        low = heapq.heappop(heap)
+        high = heapq.heappop(heap)
+        merged = {}
+        for char, code in low[2].items():
+            merged[char] = "0" + code
+        for char, code in high[2].items():
+            merged[char] = "1" + code
+        heapq.heappush(heap, [low[0] + high[0], tie, merged])
+        tie += 1
+
+    return heap[0][2]
+
+
+def huffman_size(word):
+    codes = build_huffman_codes(word)
+    total = 0
+    for char in word.upper():
+        total += len(codes[char])
+    return total
+
+
+codes = build_huffman_codes("MISSISSIPPI")
+for char in sorted(codes, key=lambda c: len(codes[c])):
+    print(char, codes[char])
+print("Total bits:", huffman_size("MISSISSIPPI"))
+```
+
+**Output:**
+
+```
+S 0
+I 11
+M 100
+P 101
+Total bits: 21
+```
+
+> **Notice:** Python's codes are different from the ones in the worked example, but the total is still **21 bits**. There can be more than one correct Huffman code for the same message, and they are always the same size.
+
+</details>
+
+---
+
+**Reflection Questions**
+
+1. How are Morse code, the color code, and binary alike? How are they different?
+2. Why did Morse give the most common letters the shortest codes? How does Huffman coding use the same idea to save storage space?
+3. Why did you need a **dictionary** for Morse but only a **list** for the color code?
+
+---
+
+#### Part 2: Binary Number System
+
 **Introduction**
 
 
 > What is the smallest piece of data a computer can understand?
 > 
-> Why do you think this computer engineers used this idea?
+> Why do you think computer engineers used this idea?
 >  
 
 
 **Binary Exploration**
 
-> How many combination of numbers can we make using just one bit?
+> How many combinations of values can we make using just one bit?
 > 
 > Each bit will double the number of possible values.
 > 
@@ -199,8 +679,6 @@ Students will be able to:
 The binary number of `130` is `10000010`.
 
 ---
-
-#### Part 1: Binary Number System
 
 **1. Decimal vs. Binary**
 
@@ -230,7 +708,7 @@ Binary (base-2) uses **powers of 2**.
 
 ---
 
-#### Part 2: How Text Becomes Binary
+#### Part 3: How Text Becomes Binary
 
 **1. ASCII Encoding**
 
@@ -293,7 +771,7 @@ Use the handout to practice binary and ASCII.
 
 ---
 
-#### Part 3: Programming - Convert Text to Binary
+#### Part 4: Programming - Convert Text to Binary
 
 
 **Objective:**
@@ -399,7 +877,7 @@ print(result)
 
 **Example Output:**
 
-```python
+```
 01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001
 ```
 
@@ -413,7 +891,7 @@ print(result)
 
 ---
 
-#### Part 4: Programming - Convert Binary to Text
+#### Part 5: Programming - Convert Binary to Text
 
 **Learning Objectives**
 
@@ -479,12 +957,22 @@ Output: `HI`
 
 ---
 
-**Step 4: Call the function and show the result**
+**Step 4: Put it in a function and call it**
 
+Wrap Step 3 in a function so you can reuse it with any message.
 
 ```python
-binary_to_ascii()
+def binary_to_ascii(binary_string):
+    binaries = binary_string.split()
+    ascii_text = "".join([chr(int(b, 2)) for b in binaries])
+    return ascii_text
+
+
+result = binary_to_ascii("01001000 01001001")
+print(result)
 ```
+
+Output: `HI`
 
 ---
 
@@ -546,7 +1034,7 @@ By the end of this lesson, students will be able to:
 
 **Step 1: Binary Addition Rules**
 
-Binary has 4 possible single-bit addition cases:
+Binary has 4 possible single-bit addition cases, plus a fifth row for when a carry is added in:
 
 | Binary | Result                             |
 | ------ | ---------------------------------- |
@@ -657,10 +1145,63 @@ print("Subtraction result:", result)  # Output: 1110
   * Asks whether they want to **add** or **subtract**.
   * Returns the binary result.
 
+---
+
+**When Bits Run Out: Overflow and Round-Off Errors**
+
+Computers store numbers in a **fixed number of bits**. That limit causes two kinds of errors that show up on the AP exam.
+
+**1. Overflow Error**
+
+With 8 bits, the largest number you can store is `11111111` = **255**. Adding 1 needs a ninth bit:
+
+```
+   11111111   (decimal 255)
++  00000001   (decimal 1)
+-----------
+  100000000   (decimal 256, needs 9 bits)
+```
+
+If only 8 bits are kept, the leading `1` is lost and the result becomes `00000000`, which is **0**. That is an **overflow error**: the answer is too big for the bits available.
+
+> **Real world:** Old arcade games, scoreboards, and odometers "roll over" to zero for the same reason.
+
+**2. Round-Off Error**
+
+Some decimal numbers, like `0.1`, cannot be stored exactly in binary, the same way `1/3` cannot be written exactly in decimal (`0.3333...`). The computer stores the closest value it can.
+
+```python
+print(0.1 + 0.2)
+print(0.1 + 0.2 == 0.3)
+```
+
+**Output:**
+
+```
+0.30000000000000004
+False
+```
+
+> **Tip:** When comparing decimals in Python, round first: `round(0.1 + 0.2, 2) == 0.3` is `True`.
+
+**Practice**
+
+1. What is the largest number you can store with 4 bits? With 6 bits?
+2. With 4 bits, what happens when you add `1111 + 0001`?
+3. Why should a banking program avoid checking `if balance == 0.3:`?
+
+<details><summary>Check your answers</summary>
+
+1. 4 bits: `1111` = 15. 6 bits: `111111` = 63. (The pattern is 2ⁿ − 1.)
+2. The true answer `10000` needs 5 bits. With only 4 bits, it becomes `0000` (overflow).
+3. Round-off error can make the stored value slightly off, so the comparison may be `False` even when the math says it should be `True`.
+
+</details>
+
 
 ---
 
-#### Part 5: Bitmaps & Binary
+#### Part 6: Bitmaps & Binary
 
 **Part 1: What is a Bitmap?**
 
@@ -727,7 +1268,7 @@ Below is an **8×8 binary picture**.
 
 ---
 
-**Color Bitmaps**
+**Grayscale Bitmaps**
 
 Below is a 4×4 grid with **grayscale values (0–9)**, where `0 = black` and `9 = white`.
 Example: `5` would be gray.
@@ -799,7 +1340,7 @@ Example: `5` would be gray.
 ---
 
 
-#### Part 6: Hexidecimal
+#### Part 7: Hexadecimal
 
 **Introduction**
 
@@ -1140,25 +1681,25 @@ Summary Table
 | Government   | OPM (2015), TxDOT (2025), SSA cloud exposure                              | Millions to hundreds of millions      | SSNs, IDs, addresses, crash/health data   |
 
 
-* [TechRadar](https://www.techradar.com/pro/security/transunion-data-breach-may-have-affected-4-4-million-users-heres-what-we-know-and-how-to-stay-safe?utm_source=chatgpt.com)
-* [Tom's Guide](https://www.tomsguide.com/computing/online-security/major-us-delivery-company-hit-in-data-breach-with-full-names-ssns-and-medical-info-of-thousands-exposed-online?utm_source=chatgpt.com)
-* [Reuters](https://www.reuters.com/legal/government/hack-allianz-life-impacts-11-million-customers-breach-notification-site-says-2025-08-18/?utm_source=chatgpt.com)
-* [The Washington Post](https://www.washingtonpost.com/politics/2025/08/29/social-security-data-doge/?utm_source=chatgpt.com)
+* [TechRadar](https://www.techradar.com/pro/security/transunion-data-breach-may-have-affected-4-4-million-users-heres-what-we-know-and-how-to-stay-safe)
+* [Tom's Guide](https://www.tomsguide.com/computing/online-security/major-us-delivery-company-hit-in-data-breach-with-full-names-ssns-and-medical-info-of-thousands-exposed-online)
+* [Reuters](https://www.reuters.com/legal/government/hack-allianz-life-impacts-11-million-customers-breach-notification-site-says-2025-08-18/)
+* [The Washington Post](https://www.washingtonpost.com/politics/2025/08/29/social-security-data-doge/)
 
-[1]: https://www.techradar.com/pro/security/transunion-data-breach-may-have-affected-4-4-million-users-heres-what-we-know-and-how-to-stay-safe?utm_source=chatgpt.com "TransUnion data breach may have affected 4.4 million users - here's what we know, and how to stay safe"
-[2]: https://www.itpro.com/security/data-breaches/transunion-breach-what-can-customers-do?utm_source=chatgpt.com "4.5 million people just had their data exposed in the TransUnion breach - here's what customers need to know"
-[3]: https://www.reuters.com/legal/government/hack-allianz-life-impacts-11-million-customers-breach-notification-site-says-2025-08-18/?utm_source=chatgpt.com "Hack at Allianz Life impacts 1.1 million customers, breach notification site says"
-[4]: https://www.tomsguide.com/computing/online-security/major-us-delivery-company-hit-in-data-breach-with-full-names-ssns-and-medical-info-of-thousands-exposed-online?utm_source=chatgpt.com "Major US delivery company hit in data breach with full names, SSNs and medical info of thousands exposed online"
-[5]: https://www.tomsguide.com/news/live/16-billion-passwords-data-breach?utm_source=chatgpt.com "16 billion password data breach hits Apple, Google, Facebook and more - LIVE updates and how to stay safe"
-[6]: https://techcrunch.com/2024/10/24/unitedhealth-change-healthcare-hacked-millions-health-records-ransomware/?utm_source=chatgpt.com "UnitedHealth says Change Healthcare hack affects over 100 million, the largest-ever US healthcare data breach | TechCrunch"
-[7]: https://www.techtarget.com/healthtechsecurity/feature/Biggest-healthcare-data-breaches-reported-in-2025-so-far?utm_source=chatgpt.com "Biggest healthcare data breaches reported in 2025, so far | TechTarget"
-[8]: https://www.healthcaredive.com/news/tracking-healthcare-data-breaches-cybersecurity-hacking-hospitals/696184/?utm_source=chatgpt.com "Tracking healthcare data breaches | Healthcare Dive"
-[9]: https://www.breachsense.com/blog/largest-healthcare-data-breaches/?utm_source=chatgpt.com "15 Biggest Healthcare Data Breaches Today"
-[10]: https://www.digitalguardian.com/resources/knowledge-base/top-10-biggest-healthcare-data-breaches-all-time?utm_source=chatgpt.com "Top 10 Biggest Healthcare Data Breaches of All Time | Fortra's Digital Guardian"
-[11]: https://en.wikipedia.org/wiki/Office_of_Personnel_Management_data_breach?utm_source=chatgpt.com "Office of Personnel Management data breach"
-[12]: https://www.expressnews.com/business/article/texas-data-breaches-txdot-iheartmedia-cps-energy-20351758.php?utm_source=chatgpt.com "Hackers target TxDOT, download thousands of crash records"
-[13]: https://www.washingtonpost.com/politics/2025/08/29/social-security-data-doge/?utm_source=chatgpt.com "Social Security whistleblower quits after saying Americans' data was compromised"
-[14]: https://timesofindia.indiatimes.com/technology/tech-news/ssa-data-chief-charles-borges-resigns-involuntarily-days-after-claims-doge-putting-citizen-info-at-risk-it-is-never-wrong-to-be-/articleshow/123599695.cms?utm_source=chatgpt.com "SSA data chief Charles Borges resigns 'involuntarily' days after claims DOGE putting citizen info at risk: 'It is never wrong to be....'"
+[1]: https://www.techradar.com/pro/security/transunion-data-breach-may-have-affected-4-4-million-users-heres-what-we-know-and-how-to-stay-safe "TransUnion data breach may have affected 4.4 million users - here's what we know, and how to stay safe"
+[2]: https://www.itpro.com/security/data-breaches/transunion-breach-what-can-customers-do "4.5 million people just had their data exposed in the TransUnion breach - here's what customers need to know"
+[3]: https://www.reuters.com/legal/government/hack-allianz-life-impacts-11-million-customers-breach-notification-site-says-2025-08-18/ "Hack at Allianz Life impacts 1.1 million customers, breach notification site says"
+[4]: https://www.tomsguide.com/computing/online-security/major-us-delivery-company-hit-in-data-breach-with-full-names-ssns-and-medical-info-of-thousands-exposed-online "Major US delivery company hit in data breach with full names, SSNs and medical info of thousands exposed online"
+[5]: https://www.tomsguide.com/news/live/16-billion-passwords-data-breach "16 billion password data breach hits Apple, Google, Facebook and more - LIVE updates and how to stay safe"
+[6]: https://techcrunch.com/2024/10/24/unitedhealth-change-healthcare-hacked-millions-health-records-ransomware/ "UnitedHealth says Change Healthcare hack affects over 100 million, the largest-ever US healthcare data breach | TechCrunch"
+[7]: https://www.techtarget.com/healthtechsecurity/feature/Biggest-healthcare-data-breaches-reported-in-2025-so-far "Biggest healthcare data breaches reported in 2025, so far | TechTarget"
+[8]: https://www.healthcaredive.com/news/tracking-healthcare-data-breaches-cybersecurity-hacking-hospitals/696184/ "Tracking healthcare data breaches | Healthcare Dive"
+[9]: https://www.breachsense.com/blog/largest-healthcare-data-breaches/ "15 Biggest Healthcare Data Breaches Today"
+[10]: https://www.digitalguardian.com/resources/knowledge-base/top-10-biggest-healthcare-data-breaches-all-time "Top 10 Biggest Healthcare Data Breaches of All Time | Fortra's Digital Guardian"
+[11]: https://en.wikipedia.org/wiki/Office_of_Personnel_Management_data_breach "Office of Personnel Management data breach"
+[12]: https://www.expressnews.com/business/article/texas-data-breaches-txdot-iheartmedia-cps-energy-20351758.php "Hackers target TxDOT, download thousands of crash records"
+[13]: https://www.washingtonpost.com/politics/2025/08/29/social-security-data-doge/ "Social Security whistleblower quits after saying Americans' data was compromised"
+[14]: https://timesofindia.indiatimes.com/technology/tech-news/ssa-data-chief-charles-borges-resigns-involuntarily-days-after-claims-doge-putting-citizen-info-at-risk-it-is-never-wrong-to-be-/articleshow/123599695.cms "SSA data chief Charles Borges resigns 'involuntarily' days after claims DOGE putting citizen info at risk: 'It is never wrong to be....'"
 
 
 
@@ -1191,7 +1732,7 @@ Summary Table
   * **Rootkits** – Hide malicious activities from detection.
 
 **How It Spreads:**
-How does it affect your computer.  Click on the link to learn more about [Malware](https://www.youtube.com/watch?v=N1qdvQVke0s). 
+How does malware spread, and how does it affect your computer? Click on the link to learn more about [Malware](https://www.youtube.com/watch?v=N1qdvQVke0s). 
 
 
 **Protection Measures**
@@ -1596,8 +2137,8 @@ else:
 
 RSA uses **two keys**:
 
-* A **private key** for **encryption**
-* A **public key** for **decryption**
+* A **public key** for **encryption** (shared with everyone)
+* A **private key** for **decryption** (kept secret)
 
 These keys are mathematically related, but knowing the public key does not make it feasible to compute the private key (assuming large enough primes).
 
@@ -1620,7 +2161,7 @@ n = p x q
 This n is a core part of the public and private keys.
 It defines the arithmetic space in which all encryption, decryption, and key generation operations occur.
 All RSA operations are performed modulo n — that is, within the set range of integers {0, 1, ..., n−1}.
-So RSA, is a number used to define a finite mathematical field for secure computation.
+So in RSA, the modulus sets the range of numbers that all of the math stays inside.
 
 **b. Compute Euler’s totient function:**
 
@@ -1643,9 +2184,9 @@ $$
 
 **The keys:**
 
-* **Public key**: `(d)`
-* **Private key**: `(e)`
-* **Modulus key**: `(n)`
+* **Public key**: `(e, n)` (shared)
+* **Private key**: `(d, n)` (kept secret)
+* **Modulus**: `n` (part of both keys)
 
 ---
 
@@ -1691,6 +2232,9 @@ RSA is **foundational** to modern cryptography but often used in practice to enc
 
 
 ```python
+import ast
+
+
 def gcd(a, b):
     while b != 0:
         a, b = b, a % b
@@ -1735,9 +2279,9 @@ def generate_keys():
 
     d = modinv(e, phi)
 
-    print(f"\n Private Key: ({e})")
+    print(f"\n Public Key (share this): e = {e}")
     print(f" Modulus: ({n})")
-    print(f" Public Key: {d}")
+    print(f" Private Key (keep secret): d = {d}")
     return e, d, n
 
 
@@ -1766,7 +2310,7 @@ def main():
 
         elif choice == "2":
             msg = input("Enter your message: ")
-            e = int(input("Enter recipient's private key: "))
+            e = int(input("Enter recipient's public key (e): "))
             n = int(input("Enter recipient's modulus key: "))
             encrypted_msg = encrypt(msg, e, n)
             print("Encrypted message:", encrypted_msg)
@@ -1774,8 +2318,8 @@ def main():
         elif choice == "3":
             try:
                 cipher_input = input("Paste the encrypted message list (e.g. [123, 456]): ")
-                cipher = eval(cipher_input)
-                d = int(input("Enter your public key: "))
+                cipher = ast.literal_eval(cipher_input)  # safely reads a list like [123, 456]
+                d = int(input("Enter your private key (d): "))
                 n = int(input("Enter your modulus: "))
                 decrypted_msg = decrypt(cipher, d, n)
                 print("Decrypted message:", decrypted_msg)
@@ -1855,7 +2399,7 @@ import time
 import random
 import string
 
-# Simulated dictionary of 10,000 words (for example purposes)
+# Simulated dictionary of 1,000 words (for example purposes)
 word_list = [f"word{i}" for i in range(1000)]
 
 def brute_force_simulation(password, candidates):
@@ -1915,25 +2459,23 @@ for wc, desc, digit in [
 
 ---
 
-**Example Output (depending on system performance):**
+**Example Output (one run; results change every time):**
 
-```python
+```
 One-word password:
-  Average Time: 0.0023 seconds
-  Average Attempts: 4521
+  Average Time: 0.0000 seconds
+  Average Attempts: 691
 
 Two-word password:
-  Average Time: 0.3876 seconds
-  Average Attempts: 49230221
+  Average Time: 0.0230 seconds
+  Average Attempts: 108519
 
 Two-word with digit password:
-  Average Time: 1.0542 seconds
-  Average Attempts: 69811022
+  Average Time: 2.0039 seconds
+  Average Attempts: 5805155
 ```
 
----
-
-Great question — and an important one. Let’s go deep into **Two-Factor Authentication (2FA)** in a way that’s clear and practical.
+> **Note:** The two-word-with-digit test builds a list of 10 million guesses and uses about 700 MB of memory. On a Chromebook or an online Python editor, run only the first two tests, or shrink `word_list` to 300 words.
 
 ---
 
@@ -2237,7 +2779,7 @@ You’ve been contacted by a small business with a fish tank monitoring system.
 > They stated, "A few days ago, we updated our fish tank monitoring system using the updates that were
 > provided in our email. Yesterday, one of our fish died unexpectedly. The monitoring system reports
 > everything is okay, but we suspect it might not be working properly. We reset the monitoring
-> system and now more fish are not be doing well.  Can you please check our monitoring system and
+> system and now more fish are not doing well.  Can you please check our monitoring system and
 > check that the software is running properly? We are worried about our fish!"
 
 

@@ -275,6 +275,62 @@
         <article role="main" id="furo-main-content">
           <section id="data">
 <h1>Data<a class="headerlink" href="#data" title="Link to this heading">¶</a></h1>
+<section id="ap-csp-standards-for-this-unit">
+<h2>AP CSP Standards for this Unit<a class="headerlink" href="#ap-csp-standards-for-this-unit" title="Link to this heading">¶</a></h2>
+<p>This unit covers <strong>Big Idea 2: Data</strong> and part of <strong>Big Idea 5: Impact of Computing</strong> (safe computing). Each row shows where you practice the skill.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Learning Objective</p></th>
+<th class="head"><p>Students will be able to…</p></th>
+<th class="head"><p>Where in this unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>DAT-1.A</strong></p></td>
+<td><p>Explain how data can be represented using bits, and how the same bits can mean different things (a number, a letter, a color)</p></td>
+<td><p>Project 1, Parts 1–7</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>DAT-1.B</strong></p></td>
+<td><p>Explain the consequences of using bits to represent data (limited values, overflow, and round-off errors)</p></td>
+<td><p>Project 1, Part 2 (bit combinations) and Part 5 (Overflow and Round-Off)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>DAT-1.C</strong></p></td>
+<td><p>Convert between binary and decimal, and compare and order binary numbers</p></td>
+<td><p>Project 1, Parts 2 and 5 (binary math)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>DAT-1.D</strong></p></td>
+<td><p>Compare data compression algorithms (lossless vs. lossy) to decide which is best in a situation</p></td>
+<td><p>Project 1, Parts 1 and 6; Vocabulary 3</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>DAT-2.A – DAT-2.E</strong></p></td>
+<td><p>Extract information from data and metadata, identify challenges in processing data, and use programs to gain insight from data</p></td>
+<td><p>Project 2 (Data Detectives)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>IOC-2.A</strong></p></td>
+<td><p>Describe the risks to privacy from collecting and storing personal data</p></td>
+<td><p>Project 3 (Phishing)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>IOC-2.B</strong></p></td>
+<td><p>Explain how computing resources can be protected and can be misused (encryption, passwords, multifactor authentication)</p></td>
+<td><p>Projects 4 and 5</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>IOC-2.C</strong></p></td>
+<td><p>Explain how unauthorized access to computing resources is gained (phishing, malware, rogue access points)</p></td>
+<td><p>Projects 3 and Final Project</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>CRD-2.I, CRD-2.J</strong></p></td>
+<td><p>Identify and correct errors in a program, and test it with a range of inputs</p></td>
+<td><p>Project 6 and Final Project</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p><strong>Big question for the unit:</strong> A computer only stores <code class="docutils literal notranslate"><span class="pre">0</span></code>s and <code class="docutils literal notranslate"><span class="pre">1</span></code>s. How can those same bits become a letter, a number, a color, a picture, or a secret message?</p>
+</div></blockquote>
+<hr class="docutils" />
+</section>
 <section id="unit-2-vocabulary">
 <h2>Unit 2 Vocabulary<a class="headerlink" href="#unit-2-vocabulary" title="Link to this heading">¶</a></h2>
 <details><summary>Click Here</summary>
@@ -594,6 +650,37 @@
 </tbody>
 </table>
 </div>
+<hr class="docutils" />
+<p><strong>11. Other Encodings</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Term</strong></p></th>
+<th class="head"><p><strong>Definition</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Morse Code</p></td>
+<td><p>An encoding that represents letters and digits as patterns of short signals (dots) and long signals (dashes).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Telegraph</p></td>
+<td><p>A system that sends coded messages over wires using electrical pulses; the first long-distance electronic network.</p></td>
+</tr>
+<tr class="row-even"><td><p>Variable-Length Code</p></td>
+<td><p>A code where some symbols use fewer signals than others; common letters get the shortest codes (like Huffman coding).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Color Code</p></td>
+<td><p>A system that assigns a color to each digit 0–9; used to mark the value of electronic resistors.</p></td>
+</tr>
+<tr class="row-even"><td><p>Latitude</p></td>
+<td><p>How far north or south of the equator a location is, in degrees.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Longitude</p></td>
+<td><p>How far east or west of the Prime Meridian a location is, in degrees; negative in the Western Hemisphere.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </details>
 <hr class="docutils" />
 </section>
@@ -604,20 +691,610 @@
 <p><strong>Objectives</strong></p>
 <p>Students will be able to:</p>
 <ul class="simple">
+<li><p>Explain how Morse code and color codes represent information, and write Python programs to encode and decode them</p></li>
 <li><p>Understand the binary number system (base-2)</p></li>
 <li><p>Convert decimal numbers to binary (and vice versa)</p></li>
 <li><p>Understand how text is represented in binary using ASCII</p></li>
 <li><p>Write a Python program to convert text into binary</p></li>
 </ul>
 <hr class="docutils" />
+<section id="part-1-morse-code-and-color-codes">
+<h3>Part 1: Morse Code and Color Codes<a class="headerlink" href="#part-1-morse-code-and-color-codes" title="Link to this heading">¶</a></h3>
+<p><strong>Why start here?</strong></p>
+<p>Before computers used <code class="docutils literal notranslate"><span class="pre">0</span></code>s and <code class="docutils literal notranslate"><span class="pre">1</span></code>s, people were already turning messages into simple signals. Morse code and color codes are easy to see, hear, and touch, and they work on the same idea as binary: <strong>agree on a code, encode the message, send it, decode it.</strong></p>
+<hr class="docutils" />
+<p><strong>1. A Short History of Morse Code</strong></p>
+<ul class="simple">
+<li><p><strong>1830s–1840s:</strong> Samuel F. B. Morse, a painter turned inventor, worked with machinist <strong>Alfred Vail</strong> to build an electric telegraph. Pressing a key sent pulses of electricity down a wire; short pulses were <strong>dots</strong> and long pulses were <strong>dashes</strong>.</p></li>
+<li><p><strong>May 24, 1844:</strong> Morse sent the first long-distance telegraph message, <em>“What hath God wrought,”</em> from the U.S. Capitol in Washington, D.C., to Baltimore.</p></li>
+<li><p><strong>Efficient by design:</strong> The most common English letters got the shortest codes. <strong>E</strong> is a single dot and <strong>T</strong> is a single dash, while rare letters like <strong>Q</strong> (<code class="docutils literal notranslate"><span class="pre">--.-</span></code>) are long. This is the same idea behind <strong>Huffman coding</strong> in data compression (see section 7 below).</p></li>
+<li><p><strong>1865:</strong> A revised version, now called <strong>International Morse Code</strong>, became the world standard. It is the version on this page.</p></li>
+<li><p><strong>1906:</strong> <code class="docutils literal notranslate"><span class="pre">...</span> <span class="pre">---</span> <span class="pre">...</span></code> (<strong>SOS</strong>) was adopted as the international distress signal. It was chosen because it is easy to send and recognize, not because the letters stand for words.</p></li>
+<li><p><strong>Today:</strong> Ships replaced Morse distress calls with satellite systems in 1999, but Morse is still used by amateur radio operators and by aviation navigation beacons, which identify themselves in Morse.</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Discussion:</strong> The telegraph was the first electronic network. What did people need to agree on before a message could travel from one city to another? (Hint: that agreement is called a <strong>protocol</strong>.)</p>
+</div></blockquote>
+<hr class="docutils" />
+<p><strong>2. The International Morse Code Chart</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Letter</p></th>
+<th class="head"><p>Code</p></th>
+<th class="head"><p>Letter</p></th>
+<th class="head"><p>Code</p></th>
+<th class="head"><p>Letter</p></th>
+<th class="head"><p>Code</p></th>
+<th class="head"><p>Letter</p></th>
+<th class="head"><p>Code</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.-</span></code></p></td>
+<td><p>H</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">....</span></code></p></td>
+<td><p>O</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">---</span></code></p></td>
+<td><p>V</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">...-</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-...</span></code></p></td>
+<td><p>I</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td><p>P</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.--.</span></code></p></td>
+<td><p>W</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.--</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-.-.</span></code></p></td>
+<td><p>J</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.---</span></code></p></td>
+<td><p>Q</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--.-</span></code></p></td>
+<td><p>X</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-..-</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-..</span></code></p></td>
+<td><p>K</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-.-</span></code></p></td>
+<td><p>R</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.-.</span></code></p></td>
+<td><p>Y</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-.--</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>E</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.</span></code></p></td>
+<td><p>L</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.-..</span></code></p></td>
+<td><p>S</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">...</span></code></p></td>
+<td><p>Z</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--..</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..-.</span></code></p></td>
+<td><p>M</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--</span></code></p></td>
+<td><p>T</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>G</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--.</span></code></p></td>
+<td><p>N</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-.</span></code></p></td>
+<td><p>U</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..-</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Numbers and Symbols</strong></p>
+<p>Every digit is exactly <strong>5 signals</strong> long, which makes numbers easy to check.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Digit</p></th>
+<th class="head"><p>Code</p></th>
+<th class="head"><p>Digit</p></th>
+<th class="head"><p>Code</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-----</span></code></p></td>
+<td><p>5</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.....</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.----</span></code></p></td>
+<td><p>6</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-....</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..---</span></code></p></td>
+<td><p>7</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--...</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">...--</span></code></p></td>
+<td><p>8</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">---..</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">....-</span></code></p></td>
+<td><p>9</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">----.</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.</span></code> (decimal point)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.-.-.-</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span></code> (minus sign)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-....-</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Timing Rules</strong></p>
+<p>Morse is sent with time, not just symbols. Everything is measured in <strong>units</strong>:</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Signal</p></th>
+<th class="head"><p>Length</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Dot</p></td>
+<td><p>1 unit on</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dash</p></td>
+<td><p>3 units on</p></td>
+</tr>
+<tr class="row-even"><td><p>Gap between dots and dashes in a letter</p></td>
+<td><p>1 unit off</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gap between letters</p></td>
+<td><p>3 units off</p></td>
+</tr>
+<tr class="row-even"><td><p>Gap between words</p></td>
+<td><p>7 units off</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In writing, we show a gap between letters with a <strong>space</strong> and a gap between words with a <strong>slash</strong> (<code class="docutils literal notranslate"><span class="pre">/</span></code>).</p>
+<p><strong>Example:</strong> <code class="docutils literal notranslate"><span class="pre">....</span> <span class="pre">..</span> <span class="pre">/</span> <span class="pre">-.-.</span> <span class="pre">...</span> <span class="pre">.--.</span></code> decodes to <code class="docutils literal notranslate"><span class="pre">HI</span> <span class="pre">CSP</span></code>.</p>
+<blockquote>
+<div><p><strong>Think about it:</strong> A telegraph wire is either <strong>on</strong> or <strong>off</strong>, just like a bit. Is Morse code binary? What extra information does Morse use that a single bit does not?</p>
+</div></blockquote>
+<hr class="docutils" />
+<p><strong>3. The Color Code</strong></p>
+<p>Electronics engineers needed a way to print numbers on parts too tiny to label, so they used <strong>colored bands</strong>. Each color stands for one digit. This <strong>resistor color code</strong> is still used on almost every circuit board.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Digit</p></th>
+<th class="head"><p>Color</p></th>
+<th class="head"><p>Digit</p></th>
+<th class="head"><p>Color</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>Black</p></td>
+<td><p>5</p></td>
+<td><p>Green</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Brown</p></td>
+<td><p>6</p></td>
+<td><p>Blue</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Red</p></td>
+<td><p>7</p></td>
+<td><p>Violet</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Orange</p></td>
+<td><p>8</p></td>
+<td><p>Gray</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Yellow</p></td>
+<td><p>9</p></td>
+<td><p>White</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Example:</strong> Red, Violet, Black, Blue → <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">7</span></code>, <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">6</span></code> → <code class="docutils literal notranslate"><span class="pre">2706</span></code></p>
+<p>Notice that the colors from Brown to Violet follow the rainbow (ROYGBIV) in order.</p>
+<blockquote>
+<div><p><strong>Compare:</strong> In Part 6, you will see how computers store color as <strong>numbers</strong> (RGB). Here, it is the opposite: a <strong>color stands for a number</strong>.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p><strong>4. Activities</strong></p>
+<p><strong>Activity A: Decode by Hand</strong></p>
+<ol class="arabic simple">
+<li><p>Decode: <code class="docutils literal notranslate"><span class="pre">-..</span> <span class="pre">.-</span> <span class="pre">-</span> <span class="pre">.-</span></code> → ?</p></li>
+<li><p>Decode: <code class="docutils literal notranslate"><span class="pre">.--.</span> <span class="pre">-.--</span> <span class="pre">-</span> <span class="pre">....</span> <span class="pre">---</span> <span class="pre">-.</span></code> → ?</p></li>
+<li><p>Encode your first name in Morse code.</p></li>
+<li><p>Decode these colors: Orange, Orange, Gray, Brown → ?</p></li>
+</ol>
+<details><summary>Check your answers</summary>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DATA</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PYTHON</span></code></p></li>
+<li><p>Answers will vary.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3381</span></code></p></li>
+</ol>
+</details>
+<p><strong>Activity B: Bead Strings</strong></p>
+<p>Use short beads for <strong>dots</strong>, long beads for <strong>dashes</strong>, and a spacer bead between letters. Build a three-letter word and trade with a partner to decode it.</p>
+<p><strong>Activity C: Send a Signal</strong></p>
+<p>With a partner, send a short word using a flashlight, a tap on the desk, or a beep. Use the timing rules above. Then answer: Which was harder, sending or receiving? What happened when the timing was off?</p>
+<p><strong>Activity D: Decode a Location</strong></p>
+<p>Latitude and longitude describe any place on Earth. Decode this latitude: <code class="docutils literal notranslate"><span class="pre">...--</span> <span class="pre">....-</span> <span class="pre">.-.-.-</span> <span class="pre">.----</span> <span class="pre">.----</span> <span class="pre">---..</span> <span class="pre">....-</span></code></p>
+<p>Then decode this longitude. The minus sign is sent in Morse, and the digits are in color: <code class="docutils literal notranslate"><span class="pre">-....-</span></code> then <strong>Brown, Brown, Gray, Decimal Point, Orange, Black, Black, Yellow</strong></p>
+<details><summary>Check your answer</summary>
+<p>Latitude: <code class="docutils literal notranslate"><span class="pre">34.1184</span></code>
+Longitude: <code class="docutils literal notranslate"><span class="pre">-118.3004</span></code></p>
+<p>Use <strong>Google Maps</strong>: type <code class="docutils literal notranslate"><span class="pre">34.1184,</span> <span class="pre">-118.3004</span></code> in the search bar to see where it is. (It is a famous Los Angeles landmark.)</p>
+</details>
+<hr class="docutils" />
+<p><strong>5. Programming: Morse Code Translator</strong></p>
+<p><strong>Objective:</strong> Write a program that encodes text into Morse code and decodes Morse code back into text.</p>
+<p>This works just like the binary programs in Parts 4 and 5. The difference is that Morse codes are not math, so we use a <strong>dictionary</strong> to look them up.</p>
+<hr class="docutils" />
+<p><strong>Step 1: Create the Morse code dictionary</strong></p>
+<p>Each key is a character, and each value is its Morse code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MORSE_CODE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"A"</span><span class="p">:</span> <span class="s2">".-"</span><span class="p">,</span>    <span class="s2">"B"</span><span class="p">:</span> <span class="s2">"-..."</span><span class="p">,</span>  <span class="s2">"C"</span><span class="p">:</span> <span class="s2">"-.-."</span><span class="p">,</span>  <span class="s2">"D"</span><span class="p">:</span> <span class="s2">"-.."</span><span class="p">,</span>   <span class="s2">"E"</span><span class="p">:</span> <span class="s2">"."</span><span class="p">,</span>
+    <span class="s2">"F"</span><span class="p">:</span> <span class="s2">"..-."</span><span class="p">,</span>  <span class="s2">"G"</span><span class="p">:</span> <span class="s2">"--."</span><span class="p">,</span>   <span class="s2">"H"</span><span class="p">:</span> <span class="s2">"...."</span><span class="p">,</span>  <span class="s2">"I"</span><span class="p">:</span> <span class="s2">".."</span><span class="p">,</span>    <span class="s2">"J"</span><span class="p">:</span> <span class="s2">".---"</span><span class="p">,</span>
+    <span class="s2">"K"</span><span class="p">:</span> <span class="s2">"-.-"</span><span class="p">,</span>   <span class="s2">"L"</span><span class="p">:</span> <span class="s2">".-.."</span><span class="p">,</span>  <span class="s2">"M"</span><span class="p">:</span> <span class="s2">"--"</span><span class="p">,</span>    <span class="s2">"N"</span><span class="p">:</span> <span class="s2">"-."</span><span class="p">,</span>    <span class="s2">"O"</span><span class="p">:</span> <span class="s2">"---"</span><span class="p">,</span>
+    <span class="s2">"P"</span><span class="p">:</span> <span class="s2">".--."</span><span class="p">,</span>  <span class="s2">"Q"</span><span class="p">:</span> <span class="s2">"--.-"</span><span class="p">,</span>  <span class="s2">"R"</span><span class="p">:</span> <span class="s2">".-."</span><span class="p">,</span>   <span class="s2">"S"</span><span class="p">:</span> <span class="s2">"..."</span><span class="p">,</span>   <span class="s2">"T"</span><span class="p">:</span> <span class="s2">"-"</span><span class="p">,</span>
+    <span class="s2">"U"</span><span class="p">:</span> <span class="s2">"..-"</span><span class="p">,</span>   <span class="s2">"V"</span><span class="p">:</span> <span class="s2">"...-"</span><span class="p">,</span>  <span class="s2">"W"</span><span class="p">:</span> <span class="s2">".--"</span><span class="p">,</span>   <span class="s2">"X"</span><span class="p">:</span> <span class="s2">"-..-"</span><span class="p">,</span>  <span class="s2">"Y"</span><span class="p">:</span> <span class="s2">"-.--"</span><span class="p">,</span>
+    <span class="s2">"Z"</span><span class="p">:</span> <span class="s2">"--.."</span><span class="p">,</span>
+    <span class="s2">"0"</span><span class="p">:</span> <span class="s2">"-----"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">:</span> <span class="s2">".----"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">:</span> <span class="s2">"..---"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">:</span> <span class="s2">"...--"</span><span class="p">,</span> <span class="s2">"4"</span><span class="p">:</span> <span class="s2">"....-"</span><span class="p">,</span>
+    <span class="s2">"5"</span><span class="p">:</span> <span class="s2">"....."</span><span class="p">,</span> <span class="s2">"6"</span><span class="p">:</span> <span class="s2">"-...."</span><span class="p">,</span> <span class="s2">"7"</span><span class="p">:</span> <span class="s2">"--..."</span><span class="p">,</span> <span class="s2">"8"</span><span class="p">:</span> <span class="s2">"---.."</span><span class="p">,</span> <span class="s2">"9"</span><span class="p">:</span> <span class="s2">"----."</span><span class="p">,</span>
+    <span class="s2">"."</span><span class="p">:</span> <span class="s2">".-.-.-"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">:</span> <span class="s2">"-....-"</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Step 2: Encode text into Morse</strong></p>
+<p>This follows the same pattern as <code class="docutils literal notranslate"><span class="pre">text_to_binary()</span></code> in Part 4: loop, look up, append, join.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">text_to_morse</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="n">morse_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">message</span><span class="o">.</span><span class="n">upper</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s2">" "</span><span class="p">:</span>
+            <span class="n">morse_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">MORSE_CODE</span><span class="p">:</span>
+            <span class="n">morse_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">MORSE_CODE</span><span class="p">[</span><span class="n">char</span><span class="p">])</span>
+    <span class="n">final_morse</span> <span class="o">=</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">morse_list</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">final_morse</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Step 3: Decode Morse into text</strong></p>
+<p>To decode, we need the dictionary flipped around, so we build a second dictionary where each <strong>code</strong> is the key.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">morse_to_text</span><span class="p">(</span><span class="n">morse</span><span class="p">):</span>
+    <span class="n">code_to_char</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">char</span><span class="p">,</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">MORSE_CODE</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">code_to_char</span><span class="p">[</span><span class="n">code</span><span class="p">]</span> <span class="o">=</span> <span class="n">char</span>
+
+    <span class="n">text</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">for</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">morse</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">code</span> <span class="o">==</span> <span class="s2">"/"</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">+=</span> <span class="s2">" "</span>
+        <span class="k">elif</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">code_to_char</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">+=</span> <span class="n">code_to_char</span><span class="p">[</span><span class="n">code</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">+=</span> <span class="s2">"?"</span>
+    <span class="k">return</span> <span class="n">text</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Step 4: Call the functions and show the results</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">text_to_morse</span><span class="p">(</span><span class="s2">"Hi CSP"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">morse_to_text</span><span class="p">(</span><span class="s2">"... --- ..."</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">....</span> <span class="o">..</span> <span class="o">/</span> <span class="o">-.-.</span> <span class="o">...</span> <span class="o">.--.</span>
+<span class="n">SOS</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>6. Programming: Color Code Translator</strong></p>
+<p>A <strong>list</strong> works perfectly here, because each color’s <strong>index</strong> is its digit: <code class="docutils literal notranslate"><span class="pre">COLOR_CODE[2]</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;red&quot;</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">COLOR_CODE</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"black"</span><span class="p">,</span> <span class="s2">"brown"</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">,</span> <span class="s2">"orange"</span><span class="p">,</span> <span class="s2">"yellow"</span><span class="p">,</span>
+              <span class="s2">"green"</span><span class="p">,</span> <span class="s2">"blue"</span><span class="p">,</span> <span class="s2">"violet"</span><span class="p">,</span> <span class="s2">"gray"</span><span class="p">,</span> <span class="s2">"white"</span><span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">colors_to_number</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
+    <span class="n">digits</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">:</span>
+        <span class="n">digit</span> <span class="o">=</span> <span class="n">COLOR_CODE</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">color</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+        <span class="n">digits</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">digit</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">digits</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">number_to_colors</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">digit</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+        <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">COLOR_CODE</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">digit</span><span class="p">)])</span>
+    <span class="k">return</span> <span class="n">colors</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">colors_to_number</span><span class="p">([</span><span class="s2">"red"</span><span class="p">,</span> <span class="s2">"violet"</span><span class="p">,</span> <span class="s2">"black"</span><span class="p">,</span> <span class="s2">"blue"</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number_to_colors</span><span class="p">(</span><span class="mi">2706</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2706</span>
+<span class="p">[</span><span class="s1">'red'</span><span class="p">,</span> <span class="s1">'violet'</span><span class="p">,</span> <span class="s1">'black'</span><span class="p">,</span> <span class="s1">'blue'</span><span class="p">]</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Extensions</strong></p>
+<ul class="simple">
+<li><p>Add an <strong>error check</strong>: what should <code class="docutils literal notranslate"><span class="pre">colors_to_number()</span></code> do if a color is misspelled? (Hint: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">color</span> <span class="pre">in</span> <span class="pre">COLOR_CODE:</span></code>)</p></li>
+<li><p>Combine both programs into one <strong>menu</strong> that encodes or decodes Morse or color.</p></li>
+<li><p>Write a function that counts how many <strong>signals</strong> (dots and dashes) a message needs. Which is shorter to send: <code class="docutils literal notranslate"><span class="pre">EAT</span></code> or <code class="docutils literal notranslate"><span class="pre">QUIZ</span></code>? Why?</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>7. From Morse to Huffman Coding</strong></p>
+<p>Alfred Vail gave common letters short codes <strong>by hand</strong>. In 1952, MIT student <strong>David Huffman</strong> found a way to do the same thing <strong>with math</strong>, for any message. <strong>Huffman coding</strong> is a <strong>lossless compression</strong> algorithm: it makes data smaller without losing any information.</p>
+<p><strong>The Big Idea</strong></p>
+<p>ASCII uses <strong>8 bits for every character</strong>, whether the letter is common or rare. Huffman coding gives <strong>frequent characters short codes</strong> and <strong>rare characters longer codes</strong>, so the whole message uses fewer bits.</p>
+<hr class="docutils" />
+<p><strong>Worked Example: <code class="docutils literal notranslate"><span class="pre">MISSISSIPPI</span></code> (11 letters)</strong></p>
+<p><strong>Step 1: Count each letter</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Letter</p></th>
+<th class="head"><p>Count</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>S</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>I</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>P</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>M</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Step 2: Give the most common letters the shortest codes</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Letter</p></th>
+<th class="head"><p>Count</p></th>
+<th class="head"><p>Code</p></th>
+<th class="head"><p>Bits used</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>S</p></td>
+<td><p>4</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td><p>4 × 1 = 4</p></td>
+</tr>
+<tr class="row-odd"><td><p>I</p></td>
+<td><p>4</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10</span></code></p></td>
+<td><p>4 × 2 = 8</p></td>
+</tr>
+<tr class="row-even"><td><p>P</p></td>
+<td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">110</span></code></p></td>
+<td><p>2 × 3 = 6</p></td>
+</tr>
+<tr class="row-odd"><td><p>M</p></td>
+<td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">111</span></code></p></td>
+<td><p>1 × 3 = 3</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Total</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><strong>21 bits</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Step 3: Compare the sizes</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>How it works</p></th>
+<th class="head"><p>Size</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ASCII</p></td>
+<td><p>11 letters × 8 bits</p></td>
+<td><p><strong>88 bits</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Fixed-length code</p></td>
+<td><p>4 different letters need 2 bits each: 11 × 2</p></td>
+<td><p><strong>22 bits</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Huffman code</p></td>
+<td><p>Short codes for common letters</p></td>
+<td><p><strong>21 bits</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p><strong>Why no letter gets confused:</strong> No code is the beginning of another code (<code class="docutils literal notranslate"><span class="pre">0</span></code> is S, and no other code starts with <code class="docutils literal notranslate"><span class="pre">0</span></code>). So <code class="docutils literal notranslate"><span class="pre">100110</span></code> can only be read one way: <code class="docutils literal notranslate"><span class="pre">10</span></code> <code class="docutils literal notranslate"><span class="pre">0</span></code> <code class="docutils literal notranslate"><span class="pre">110</span></code> = <strong>I S P</strong>. This is called a <strong>prefix-free</strong> code. Morse needs gaps between letters to avoid confusion; Huffman does not.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Notice:</strong> Most of the savings over ASCII came from using fewer bits per letter. Huffman beat the fixed-length code by only 1 bit here, because the letters are fairly even. Huffman wins big when some letters are <strong>much</strong> more common than others, which is exactly why Morse gave <strong>E</strong> a single dot.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p><strong>Activity: Huffman by Hand</strong></p>
+<ol class="arabic simple">
+<li><p>Decode <code class="docutils literal notranslate"><span class="pre">0010110</span></code> using the <code class="docutils literal notranslate"><span class="pre">MISSISSIPPI</span></code> codes above.</p></li>
+<li><p>Count the letters in <code class="docutils literal notranslate"><span class="pre">ABRACADABRA</span></code>. Which letter should get the shortest code?</p></li>
+<li><p>How many bits does <code class="docutils literal notranslate"><span class="pre">ABRACADABRA</span></code> take in ASCII? With a fixed-length code? (Hint: count the different letters first.)</p></li>
+</ol>
+<details><summary>Check your answers</summary>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> <code class="docutils literal notranslate"><span class="pre">0</span></code> <code class="docutils literal notranslate"><span class="pre">10</span></code> <code class="docutils literal notranslate"><span class="pre">110</span></code> = <strong>S S I P</strong></p></li>
+<li><p><strong>A</strong> appears 5 times, so it gets the shortest code. (B = 2, R = 2, C = 1, D = 1)</p></li>
+<li><p>ASCII: 11 × 8 = <strong>88 bits</strong>. Fixed-length: 5 different letters need 3 bits each (2² = 4 is too few, 2³ = 8 is enough), so 11 × 3 = <strong>33 bits</strong>. A Huffman code needs only <strong>23 bits</strong>, which is a much bigger win than <code class="docutils literal notranslate"><span class="pre">MISSISSIPPI</span></code> because A is so common.</p></li>
+</ol>
+</details>
+<hr class="docutils" />
+<p><strong>Programming: Compare the Sizes</strong></p>
+<p>This program counts the letters in a word, the same way the <strong>Letter Frequency Analyzer</strong> in Project 4 does, then compares the three sizes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">count_letters</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">word</span><span class="o">.</span><span class="n">upper</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">:</span>
+            <span class="n">counts</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">counts</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">counts</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fixed_length_bits</span><span class="p">(</span><span class="n">counts</span><span class="p">):</span>
+    <span class="n">unique</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+    <span class="n">bits</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="mi">2</span> <span class="o">**</span> <span class="n">bits</span> <span class="o">&lt;</span> <span class="n">unique</span><span class="p">:</span>
+        <span class="n">bits</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">bits</span>
+
+
+<span class="n">word</span> <span class="o">=</span> <span class="s2">"MISSISSIPPI"</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="n">count_letters</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Letter counts:"</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
+
+<span class="n">ascii_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">*</span> <span class="mi">8</span>
+<span class="n">fixed_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">*</span> <span class="n">fixed_length_bits</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"ASCII size:"</span><span class="p">,</span> <span class="n">ascii_size</span><span class="p">,</span> <span class="s2">"bits"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Fixed-length size:"</span><span class="p">,</span> <span class="n">fixed_size</span><span class="p">,</span> <span class="s2">"bits"</span><span class="p">)</span>
+
+<span class="n">codes</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"S"</span><span class="p">:</span> <span class="s2">"0"</span><span class="p">,</span> <span class="s2">"I"</span><span class="p">:</span> <span class="s2">"10"</span><span class="p">,</span> <span class="s2">"P"</span><span class="p">:</span> <span class="s2">"110"</span><span class="p">,</span> <span class="s2">"M"</span><span class="p">:</span> <span class="s2">"111"</span><span class="p">}</span>
+<span class="n">huffman_size</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+    <span class="n">huffman_size</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">codes</span><span class="p">[</span><span class="n">char</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Huffman size:"</span><span class="p">,</span> <span class="n">huffman_size</span><span class="p">,</span> <span class="s2">"bits"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Letter</span> <span class="n">counts</span><span class="p">:</span> <span class="p">{</span><span class="s1">'M'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'I'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">'S'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">'P'</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">ASCII</span> <span class="n">size</span><span class="p">:</span> <span class="mi">88</span> <span class="n">bits</span>
+<span class="n">Fixed</span><span class="o">-</span><span class="n">length</span> <span class="n">size</span><span class="p">:</span> <span class="mi">22</span> <span class="n">bits</span>
+<span class="n">Huffman</span> <span class="n">size</span><span class="p">:</span> <span class="mi">21</span> <span class="n">bits</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Try it:</strong> Change <code class="docutils literal notranslate"><span class="pre">word</span></code> to your own name. Which method gives the smallest size? (You will need to make your own <code class="docutils literal notranslate"><span class="pre">codes</span></code> dictionary, or use the extension below.)</p>
+</div></blockquote>
+<details><summary>Extension: Let Python build the Huffman codes</summary>
+<p>This version builds the codes automatically. It repeatedly joins the two <strong>least common</strong> groups of letters, adding a <code class="docutils literal notranslate"><span class="pre">0</span></code> to one group’s codes and a <code class="docutils literal notranslate"><span class="pre">1</span></code> to the other’s. The <code class="docutils literal notranslate"><span class="pre">heapq</span></code> module keeps the smallest counts at the front of the list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">heapq</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">build_huffman_codes</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">word</span><span class="o">.</span><span class="n">upper</span><span class="p">():</span>
+        <span class="n">counts</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="c1"># Each item: [count, tie_breaker, {char: code}]</span>
+    <span class="n">heap</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">tie</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">char</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">heap</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">count</span><span class="p">,</span> <span class="n">tie</span><span class="p">,</span> <span class="p">{</span><span class="n">char</span><span class="p">:</span> <span class="s2">""</span><span class="p">}])</span>
+        <span class="n">tie</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">heapq</span><span class="o">.</span><span class="n">heapify</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">only</span> <span class="o">=</span> <span class="n">heap</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">char</span><span class="p">:</span> <span class="s2">"0"</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">only</span><span class="p">}</span>
+
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">low</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span>
+        <span class="n">high</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span>
+        <span class="n">merged</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">char</span><span class="p">,</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">low</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">merged</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"0"</span> <span class="o">+</span> <span class="n">code</span>
+        <span class="k">for</span> <span class="n">char</span><span class="p">,</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">high</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">merged</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"1"</span> <span class="o">+</span> <span class="n">code</span>
+        <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="p">[</span><span class="n">low</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">high</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">tie</span><span class="p">,</span> <span class="n">merged</span><span class="p">])</span>
+        <span class="n">tie</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">heap</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">huffman_size</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="n">codes</span> <span class="o">=</span> <span class="n">build_huffman_codes</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">word</span><span class="o">.</span><span class="n">upper</span><span class="p">():</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">codes</span><span class="p">[</span><span class="n">char</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">total</span>
+
+
+<span class="n">codes</span> <span class="o">=</span> <span class="n">build_huffman_codes</span><span class="p">(</span><span class="s2">"MISSISSIPPI"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">codes</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">codes</span><span class="p">[</span><span class="n">c</span><span class="p">])):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">codes</span><span class="p">[</span><span class="n">char</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Total bits:"</span><span class="p">,</span> <span class="n">huffman_size</span><span class="p">(</span><span class="s2">"MISSISSIPPI"</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="mi">0</span>
+<span class="n">I</span> <span class="mi">11</span>
+<span class="n">M</span> <span class="mi">100</span>
+<span class="n">P</span> <span class="mi">101</span>
+<span class="n">Total</span> <span class="n">bits</span><span class="p">:</span> <span class="mi">21</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Notice:</strong> Python’s codes are different from the ones in the worked example, but the total is still <strong>21 bits</strong>. There can be more than one correct Huffman code for the same message, and they are always the same size.</p>
+</div></blockquote>
+</details>
+<hr class="docutils" />
+<p><strong>Reflection Questions</strong></p>
+<ol class="arabic simple">
+<li><p>How are Morse code, the color code, and binary alike? How are they different?</p></li>
+<li><p>Why did Morse give the most common letters the shortest codes? How does Huffman coding use the same idea to save storage space?</p></li>
+<li><p>Why did you need a <strong>dictionary</strong> for Morse but only a <strong>list</strong> for the color code?</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="part-2-binary-number-system">
+<h3>Part 2: Binary Number System<a class="headerlink" href="#part-2-binary-number-system" title="Link to this heading">¶</a></h3>
 <p><strong>Introduction</strong></p>
 <blockquote>
 <div><p>What is the smallest piece of data a computer can understand?</p>
-<p>Why do you think this computer engineers used this idea?</p>
+<p>Why do you think computer engineers used this idea?</p>
 </div></blockquote>
 <p><strong>Binary Exploration</strong></p>
 <blockquote>
-<div><p>How many combination of numbers can we make using just one bit?</p>
+<div><p>How many combinations of values can we make using just one bit?</p>
 <p>Each bit will double the number of possible values.</p>
 </div></blockquote>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -683,8 +1360,6 @@
 </div>
 <p>The binary number of <code class="docutils literal notranslate"><span class="pre">130</span></code> is <code class="docutils literal notranslate"><span class="pre">10000010</span></code>.</p>
 <hr class="docutils" />
-<section id="part-1-binary-number-system">
-<h3>Part 1: Binary Number System<a class="headerlink" href="#part-1-binary-number-system" title="Link to this heading">¶</a></h3>
 <p><strong>1. Decimal vs. Binary</strong></p>
 <p>Decimal (base-10) are made using place values (ones, tens, hundreds…).</p>
 <p>Binary (base-2) uses <strong>powers of 2</strong>.</p>
@@ -729,8 +1404,8 @@
 </ul>
 </section>
 <hr class="docutils" />
-<section id="part-2-how-text-becomes-binary">
-<h3>Part 2: How Text Becomes Binary<a class="headerlink" href="#part-2-how-text-becomes-binary" title="Link to this heading">¶</a></h3>
+<section id="part-3-how-text-becomes-binary">
+<h3>Part 3: How Text Becomes Binary<a class="headerlink" href="#part-3-how-text-becomes-binary" title="Link to this heading">¶</a></h3>
 <p><strong>1. ASCII Encoding</strong></p>
 <p>Explain that each character (like “A” or “!”) has a number assigned by ASCII.</p>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -1070,8 +1745,8 @@
 <p>Use the handout to practice binary and ASCII.</p>
 </section>
 <hr class="docutils" />
-<section id="part-3-programming-convert-text-to-binary">
-<h3>Part 3: Programming - Convert Text to Binary<a class="headerlink" href="#part-3-programming-convert-text-to-binary" title="Link to this heading">¶</a></h3>
+<section id="part-4-programming-convert-text-to-binary">
+<h3>Part 4: Programming - Convert Text to Binary<a class="headerlink" href="#part-4-programming-convert-text-to-binary" title="Link to this heading">¶</a></h3>
 <p><strong>Objective:</strong></p>
 <ul class="simple">
 <li><p>Takes a message as input</p></li>
@@ -1136,7 +1811,7 @@
 </div>
 <hr class="docutils" />
 <p><strong>Example Output:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">01001000</span> <span class="mi">01100101</span> <span class="mi">01101100</span> <span class="mi">01101100</span> <span class="mi">01101111</span> <span class="mi">00101100</span> <span class="mi">00100000</span> <span class="mi">01010111</span> <span class="mi">01101111</span> <span class="mi">01110010</span> <span class="mi">01101100</span> <span class="mi">01100100</span> <span class="mi">00100001</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">01001000</span> <span class="mi">01100101</span> <span class="mi">01101100</span> <span class="mi">01101100</span> <span class="mi">01101111</span> <span class="mi">00101100</span> <span class="mi">00100000</span> <span class="mi">01010111</span> <span class="mi">01101111</span> <span class="mi">01110010</span> <span class="mi">01101100</span> <span class="mi">01100100</span> <span class="mi">00100001</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -1147,8 +1822,8 @@
 </ul>
 </section>
 <hr class="docutils" />
-<section id="part-4-programming-convert-binary-to-text">
-<h3>Part 4: Programming - Convert Binary to Text<a class="headerlink" href="#part-4-programming-convert-binary-to-text" title="Link to this heading">¶</a></h3>
+<section id="part-5-programming-convert-binary-to-text">
+<h3>Part 5: Programming - Convert Binary to Text<a class="headerlink" href="#part-5-programming-convert-binary-to-text" title="Link to this heading">¶</a></h3>
 <p><strong>Learning Objectives</strong></p>
 <p>Students will be able to:</p>
 <ol class="arabic simple">
@@ -1203,10 +1878,19 @@
 </div>
 <p>Output: <code class="docutils literal notranslate"><span class="pre">HI</span></code></p>
 <hr class="docutils" />
-<p><strong>Step 4: Call the function and show the result</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">binary_to_ascii</span><span class="p">()</span>
+<p><strong>Step 4: Put it in a function and call it</strong></p>
+<p>Wrap Step 3 in a function so you can reuse it with any message.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">binary_to_ascii</span><span class="p">(</span><span class="n">binary_string</span><span class="p">):</span>
+    <span class="n">binaries</span> <span class="o">=</span> <span class="n">binary_string</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">ascii_text</span> <span class="o">=</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">binaries</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">ascii_text</span>
+
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">binary_to_ascii</span><span class="p">(</span><span class="s2">"01001000 01001001"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Output: <code class="docutils literal notranslate"><span class="pre">HI</span></code></p>
 <hr class="docutils" />
 <p><strong>Practice Activities</strong></p>
 <ol class="arabic">
@@ -1254,7 +1938,7 @@ Ask for the broken version (e.g., missing <code class="docutils literal notransl
 </ul>
 <hr class="docutils" />
 <p><strong>Step 1: Binary Addition Rules</strong></p>
-<p>Binary has 4 possible single-bit addition cases:</p>
+<p>Binary has 4 possible single-bit addition cases, plus a fifth row for when a carry is added in:</p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -1385,10 +2069,52 @@ Ask for the broken version (e.g., missing <code class="docutils literal notransl
 </ul>
 </li>
 </ul>
+<hr class="docutils" />
+<p><strong>When Bits Run Out: Overflow and Round-Off Errors</strong></p>
+<p>Computers store numbers in a <strong>fixed number of bits</strong>. That limit causes two kinds of errors that show up on the AP exam.</p>
+<p><strong>1. Overflow Error</strong></p>
+<p>With 8 bits, the largest number you can store is <code class="docutils literal notranslate"><span class="pre">11111111</span></code> = <strong>255</strong>. Adding 1 needs a ninth bit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="mi">11111111</span>   <span class="p">(</span><span class="n">decimal</span> <span class="mi">255</span><span class="p">)</span>
+<span class="o">+</span>  <span class="mi">00000001</span>   <span class="p">(</span><span class="n">decimal</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">-----------</span>
+  <span class="mi">100000000</span>   <span class="p">(</span><span class="n">decimal</span> <span class="mi">256</span><span class="p">,</span> <span class="n">needs</span> <span class="mi">9</span> <span class="n">bits</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If only 8 bits are kept, the leading <code class="docutils literal notranslate"><span class="pre">1</span></code> is lost and the result becomes <code class="docutils literal notranslate"><span class="pre">00000000</span></code>, which is <strong>0</strong>. That is an <strong>overflow error</strong>: the answer is too big for the bits available.</p>
+<blockquote>
+<div><p><strong>Real world:</strong> Old arcade games, scoreboards, and odometers “roll over” to zero for the same reason.</p>
+</div></blockquote>
+<p><strong>2. Round-Off Error</strong></p>
+<p>Some decimal numbers, like <code class="docutils literal notranslate"><span class="pre">0.1</span></code>, cannot be stored exactly in binary, the same way <code class="docutils literal notranslate"><span class="pre">1/3</span></code> cannot be written exactly in decimal (<code class="docutils literal notranslate"><span class="pre">0.3333...</span></code>). The computer stores the closest value it can.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span> <span class="o">==</span> <span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.30000000000000004</span>
+<span class="kc">False</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Tip:</strong> When comparing decimals in Python, round first: <code class="docutils literal notranslate"><span class="pre">round(0.1</span> <span class="pre">+</span> <span class="pre">0.2,</span> <span class="pre">2)</span> <span class="pre">==</span> <span class="pre">0.3</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</div></blockquote>
+<p><strong>Practice</strong></p>
+<ol class="arabic simple">
+<li><p>What is the largest number you can store with 4 bits? With 6 bits?</p></li>
+<li><p>With 4 bits, what happens when you add <code class="docutils literal notranslate"><span class="pre">1111</span> <span class="pre">+</span> <span class="pre">0001</span></code>?</p></li>
+<li><p>Why should a banking program avoid checking <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">balance</span> <span class="pre">==</span> <span class="pre">0.3:</span></code>?</p></li>
+</ol>
+<details><summary>Check your answers</summary>
+<ol class="arabic simple">
+<li><p>4 bits: <code class="docutils literal notranslate"><span class="pre">1111</span></code> = 15. 6 bits: <code class="docutils literal notranslate"><span class="pre">111111</span></code> = 63. (The pattern is 2ⁿ − 1.)</p></li>
+<li><p>The true answer <code class="docutils literal notranslate"><span class="pre">10000</span></code> needs 5 bits. With only 4 bits, it becomes <code class="docutils literal notranslate"><span class="pre">0000</span></code> (overflow).</p></li>
+<li><p>Round-off error can make the stored value slightly off, so the comparison may be <code class="docutils literal notranslate"><span class="pre">False</span></code> even when the math says it should be <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ol>
+</details>
 </section>
 <hr class="docutils" />
-<section id="part-5-bitmaps-binary">
-<h3>Part 5: Bitmaps &amp; Binary<a class="headerlink" href="#part-5-bitmaps-binary" title="Link to this heading">¶</a></h3>
+<section id="part-6-bitmaps-binary">
+<h3>Part 6: Bitmaps &amp; Binary<a class="headerlink" href="#part-6-bitmaps-binary" title="Link to this heading">¶</a></h3>
 <p><strong>Part 1: What is a Bitmap?</strong></p>
 <ul class="simple">
 <li><p>A <strong>bitmap</strong> is a type of digital image made of small squares called <strong>pixels</strong>.</p></li>
@@ -1624,7 +2350,7 @@ Ask for the broken version (e.g., missing <code class="docutils literal notransl
 </table>
 </div>
 <hr class="docutils" />
-<p><strong>Color Bitmaps</strong></p>
+<p><strong>Grayscale Bitmaps</strong></p>
 <p>Below is a 4×4 grid with <strong>grayscale values (0–9)</strong>, where <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">=</span> <span class="pre">black</span></code> and <code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">=</span> <span class="pre">white</span></code>.
 Example: <code class="docutils literal notranslate"><span class="pre">5</span></code> would be gray.</p>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -1760,8 +2486,8 @@ Example: <code class="docutils literal notranslate"><span class="pre">5</span></
 </ol>
 </section>
 <hr class="docutils" />
-<section id="part-6-hexidecimal">
-<h3>Part 6: Hexidecimal<a class="headerlink" href="#part-6-hexidecimal" title="Link to this heading">¶</a></h3>
+<section id="part-7-hexadecimal">
+<h3>Part 7: Hexadecimal<a class="headerlink" href="#part-7-hexadecimal" title="Link to this heading">¶</a></h3>
 <p><strong>Introduction</strong></p>
 <p><strong>Hexadecimal (base-16)</strong> is a number system that uses 16 symbols: <strong>0–9 for values zero to nine, and A–F for values ten to fifteen</strong>. It’s widely used in computing because it maps neatly onto binary, which is the fundamental language of computers.  <em>Created in the 1960s</em>: Hexadecimal began being widely used in the early days of digital computing.  Early computer engineers and mathematicians needed a way to <em>represent long strings of binary digits more compactly</em>. Binary numbers are long and hard for humans to read. Hexadecimal offers a shorthand: <em>each hex digit represents 4 binary bits</em>.  Hexadecimal simplifies reading, writing, and debugging <em>memory addresses</em>, machine code, and low-level data.</p>
 <p><strong>Milestones</strong></p>
@@ -2090,33 +2816,33 @@ Example: <code class="docutils literal notranslate"><span class="pre">5</span></
 <hr class="docutils" />
 <p><strong>Big Business Breaches</strong></p>
 <p><strong>TransUnion (Credit Reporting Giant)</strong></p>
-<p>In July 2025, TransUnion suffered a breach affecting over 4.4 million Americans, including Social Security numbers, names, birth dates, email addresses, and more—despite initial claims downplaying the severity. The breach was linked to a compromised Salesforce account. Affected individuals are being offered 24 months of free identity theft protection. (<a class="reference external" href="https://www.techradar.com/pro/security/transunion-data-breach-may-have-affected-4-4-million-users-heres-what-we-know-and-how-to-stay-safe?utm_source=chatgpt.com" title="TransUnion data breach may have affected 4.4 million users - here's what we know, and how to stay safe">TechRadar</a>, <a class="reference external" href="https://www.itpro.com/security/data-breaches/transunion-breach-what-can-customers-do?utm_source=chatgpt.com" title="4.5 million people just had their data exposed in the TransUnion breach - here's what customers need to know">IT Pro</a>)</p>
+<p>In July 2025, TransUnion suffered a breach affecting over 4.4 million Americans, including Social Security numbers, names, birth dates, email addresses, and more—despite initial claims downplaying the severity. The breach was linked to a compromised Salesforce account. Affected individuals are being offered 24 months of free identity theft protection. (<a class="reference external" href="https://www.techradar.com/pro/security/transunion-data-breach-may-have-affected-4-4-million-users-heres-what-we-know-and-how-to-stay-safe" title="TransUnion data breach may have affected 4.4 million users - here's what we know, and how to stay safe">TechRadar</a>, <a class="reference external" href="https://www.itpro.com/security/data-breaches/transunion-breach-what-can-customers-do" title="4.5 million people just had their data exposed in the TransUnion breach - here's what customers need to know">IT Pro</a>)</p>
 <p><strong>Allianz Life (Insurance Firm)</strong></p>
-<p>In late July 2025, about 1.1 million U.S. customers had their personal information—including names, addresses, phone numbers, and emails—compromised in a cyberattack. The company plans to offer two years of identity monitoring to those affected. (<a class="reference external" href="https://www.reuters.com/legal/government/hack-allianz-life-impacts-11-million-customers-breach-notification-site-says-2025-08-18/?utm_source=chatgpt.com" title="Hack at Allianz Life impacts 1.1 million customers, breach notification site says">Reuters</a>)</p>
+<p>In late July 2025, about 1.1 million U.S. customers had their personal information—including names, addresses, phone numbers, and emails—compromised in a cyberattack. The company plans to offer two years of identity monitoring to those affected. (<a class="reference external" href="https://www.reuters.com/legal/government/hack-allianz-life-impacts-11-million-customers-breach-notification-site-says-2025-08-18/" title="Hack at Allianz Life impacts 1.1 million customers, breach notification site says">Reuters</a>)</p>
 <p><strong>OnTrac (Delivery Service)</strong></p>
-<p>Between April 13–15, 2025, OnTrac had sensitive data from over 40,000 individuals exposed, including full names, birth dates, Social Security numbers, driver’s license or state ID numbers, and even medical or health insurance details. (<a class="reference external" href="https://www.tomsguide.com/computing/online-security/major-us-delivery-company-hit-in-data-breach-with-full-names-ssns-and-medical-info-of-thousands-exposed-online?utm_source=chatgpt.com" title="Major US delivery company hit in data breach with full names, SSNs and medical info of thousands exposed online">Tom’s Guide</a>)</p>
+<p>Between April 13–15, 2025, OnTrac had sensitive data from over 40,000 individuals exposed, including full names, birth dates, Social Security numbers, driver’s license or state ID numbers, and even medical or health insurance details. (<a class="reference external" href="https://www.tomsguide.com/computing/online-security/major-us-delivery-company-hit-in-data-breach-with-full-names-ssns-and-medical-info-of-thousands-exposed-online" title="Major US delivery company hit in data breach with full names, SSNs and medical info of thousands exposed online">Tom’s Guide</a>)</p>
 <p><strong>Mass Credential Leak</strong></p>
-<p>An enormous breach exposed 16 billion login credentials—usernames, passwords, and associated URLs—from platforms like Apple, Google, Facebook, and many government and corporate systems. This aggregation stems from multiple sources, frequently due to malware-based theft of credentials. (<a class="reference external" href="https://www.tomsguide.com/news/live/16-billion-passwords-data-breach?utm_source=chatgpt.com" title="16 billion password data breach hits Apple, Google, Facebook and more - LIVE updates and how to stay safe">Tom’s Guide</a>)</p>
+<p>An enormous breach exposed 16 billion login credentials—usernames, passwords, and associated URLs—from platforms like Apple, Google, Facebook, and many government and corporate systems. This aggregation stems from multiple sources, frequently due to malware-based theft of credentials. (<a class="reference external" href="https://www.tomsguide.com/news/live/16-billion-passwords-data-breach" title="16 billion password data breach hits Apple, Google, Facebook and more - LIVE updates and how to stay safe">Tom’s Guide</a>)</p>
 <hr class="docutils" />
 <p><strong>Medical &amp; Healthcare Industry Breaches</strong></p>
 <p><strong>Change Healthcare (UnitedHealth Group)</strong></p>
-<p>In February 2024, a ransomware attack (by ALPHV/BlackCat) on Change Healthcare—processing medical and billing data for around a third of Americans—resulted in the theft of sensitive personal and health data from over 100 million individuals. (<a class="reference external" href="https://techcrunch.com/2024/10/24/unitedhealth-change-healthcare-hacked-millions-health-records-ransomware/?utm_source=chatgpt.com" title="UnitedHealth says Change Healthcare hack affects over 100 million, the largest-ever US healthcare data breach | TechCrunch">TechCrunch</a>)</p>
+<p>In February 2024, a ransomware attack (by ALPHV/BlackCat) on Change Healthcare—processing medical and billing data for around a third of Americans—resulted in the theft of sensitive personal and health data from over 100 million individuals. (<a class="reference external" href="https://techcrunch.com/2024/10/24/unitedhealth-change-healthcare-hacked-millions-health-records-ransomware/" title="UnitedHealth says Change Healthcare hack affects over 100 million, the largest-ever US healthcare data breach | TechCrunch">TechCrunch</a>)</p>
 <p><strong>Frederick Health</strong></p>
-<p>A ransomware attack on January 27, 2025, exposed data of 934,326 individuals—including identifying data, insurance info, clinical records, and more. (<a class="reference external" href="https://www.techtarget.com/healthtechsecurity/feature/Biggest-healthcare-data-breaches-reported-in-2025-so-far?utm_source=chatgpt.com" title="Biggest healthcare data breaches reported in 2025, so far | TechTarget">TechTarget</a>, <a class="reference external" href="https://www.healthcaredive.com/news/tracking-healthcare-data-breaches-cybersecurity-hacking-hospitals/696184/?utm_source=chatgpt.com" title="Tracking healthcare data breaches | Healthcare Dive">Healthcare Dive</a>)</p>
+<p>A ransomware attack on January 27, 2025, exposed data of 934,326 individuals—including identifying data, insurance info, clinical records, and more. (<a class="reference external" href="https://www.techtarget.com/healthtechsecurity/feature/Biggest-healthcare-data-breaches-reported-in-2025-so-far" title="Biggest healthcare data breaches reported in 2025, so far | TechTarget">TechTarget</a>, <a class="reference external" href="https://www.healthcaredive.com/news/tracking-healthcare-data-breaches-cybersecurity-hacking-hospitals/696184/" title="Tracking healthcare data breaches | Healthcare Dive">Healthcare Dive</a>)</p>
 <p><strong>Medusind (Medical Billing Vendor)</strong></p>
-<p>Discovered in December 2023 and disclosed in early 2025, this breach affected 701,475 individuals, exposing health insurance details, medical histories, prescription data, Social Security numbers, and contact information. (<a class="reference external" href="https://www.techtarget.com/healthtechsecurity/feature/Biggest-healthcare-data-breaches-reported-in-2025-so-far?utm_source=chatgpt.com" title="Biggest healthcare data breaches reported in 2025, so far | TechTarget">TechTarget</a>, <a class="reference external" href="https://www.healthcaredive.com/news/tracking-healthcare-data-breaches-cybersecurity-hacking-hospitals/696184/?utm_source=chatgpt.com" title="Tracking healthcare data breaches | Healthcare Dive">Healthcare Dive</a>)</p>
+<p>Discovered in December 2023 and disclosed in early 2025, this breach affected 701,475 individuals, exposing health insurance details, medical histories, prescription data, Social Security numbers, and contact information. (<a class="reference external" href="https://www.techtarget.com/healthtechsecurity/feature/Biggest-healthcare-data-breaches-reported-in-2025-so-far" title="Biggest healthcare data breaches reported in 2025, so far | TechTarget">TechTarget</a>, <a class="reference external" href="https://www.healthcaredive.com/news/tracking-healthcare-data-breaches-cybersecurity-hacking-hospitals/696184/" title="Tracking healthcare data breaches | Healthcare Dive">Healthcare Dive</a>)</p>
 <p><strong>Kelly &amp; Associates Insurance Group</strong></p>
-<p>The December 2024 breach affected 553,332+ individuals, planting exposure of names, SSNs, tax IDs, medical/insurance info, and financial account data. (<a class="reference external" href="https://www.techtarget.com/healthtechsecurity/feature/Biggest-healthcare-data-breaches-reported-in-2025-so-far?utm_source=chatgpt.com" title="Biggest healthcare data breaches reported in 2025, so far | TechTarget">TechTarget</a>)</p>
+<p>The December 2024 breach affected 553,332+ individuals, planting exposure of names, SSNs, tax IDs, medical/insurance info, and financial account data. (<a class="reference external" href="https://www.techtarget.com/healthtechsecurity/feature/Biggest-healthcare-data-breaches-reported-in-2025-so-far" title="Biggest healthcare data breaches reported in 2025, so far | TechTarget">TechTarget</a>)</p>
 <p><strong>Community Health Systems, UCLA Health, Premera, Excellus, Labcorp, etc.</strong></p>
-<p>Historically, massive breaches have affected millions in the healthcare sector—for instance, Community Health Systems (4.5 million), UCLA Health (~4.5 million), Premera (~11 million), Excellus (~10 million), and Labcorp (~10 million) via earlier events. (<a class="reference external" href="https://www.breachsense.com/blog/largest-healthcare-data-breaches/?utm_source=chatgpt.com" title="15 Biggest Healthcare Data Breaches Today">Breachsense</a>, <a class="reference external" href="https://www.digitalguardian.com/resources/knowledge-base/top-10-biggest-healthcare-data-breaches-all-time?utm_source=chatgpt.com" title="Top 10 Biggest Healthcare Data Breaches of All Time | Fortra's Digital Guardian">Digital Guardian</a>)</p>
+<p>Historically, massive breaches have affected millions in the healthcare sector—for instance, Community Health Systems (4.5 million), UCLA Health (~4.5 million), Premera (~11 million), Excellus (~10 million), and Labcorp (~10 million) via earlier events. (<a class="reference external" href="https://www.breachsense.com/blog/largest-healthcare-data-breaches/" title="15 Biggest Healthcare Data Breaches Today">Breachsense</a>, <a class="reference external" href="https://www.digitalguardian.com/resources/knowledge-base/top-10-biggest-healthcare-data-breaches-all-time" title="Top 10 Biggest Healthcare Data Breaches of All Time | Fortra's Digital Guardian">Digital Guardian</a>)</p>
 <hr class="docutils" />
 <p><strong>Government-Related Breaches</strong></p>
 <p><strong>Office of Personnel Management (OPM), 2015</strong></p>
-<p>State-sponsored hackers (allegedly from China’s MSS) stole 22.1 million records of federal employees and others undergoing background checks—including Social Security numbers, birth data, and addresses—making it one of the largest U.S. government data breaches ever. (<a class="reference external" href="https://en.wikipedia.org/wiki/Office_of_Personnel_Management_data_breach?utm_source=chatgpt.com" title="Office of Personnel Management data breach">Wikipedia</a>)</p>
+<p>State-sponsored hackers (allegedly from China’s MSS) stole 22.1 million records of federal employees and others undergoing background checks—including Social Security numbers, birth data, and addresses—making it one of the largest U.S. government data breaches ever. (<a class="reference external" href="https://en.wikipedia.org/wiki/Office_of_Personnel_Management_data_breach" title="Office of Personnel Management data breach">Wikipedia</a>)</p>
 <p><strong>Texas Department of Transportation (TxDOT)</strong></p>
-<p>In May 2025, hackers downloaded crash report records affecting data for 423,391 individuals, including sensitive personal data (names, addresses, driver’s license numbers, insurance details). (<a class="reference external" href="https://www.expressnews.com/business/article/texas-data-breaches-txdot-iheartmedia-cps-energy-20351758.php?utm_source=chatgpt.com" title="Hackers target TxDOT, download thousands of crash records">San Antonio Express-News</a>)</p>
+<p>In May 2025, hackers downloaded crash report records affecting data for 423,391 individuals, including sensitive personal data (names, addresses, driver’s license numbers, insurance details). (<a class="reference external" href="https://www.expressnews.com/business/article/texas-data-breaches-txdot-iheartmedia-cps-energy-20351758.php" title="Hackers target TxDOT, download thousands of crash records">San Antonio Express-News</a>)</p>
 <p><strong>Social Security Administration (SSA) Cloud Warning</strong></p>
-<p>Not a breach per se, but in late August 2025, the SSA Chief Data Officer resigned, triggering alarm after whistleblower allegations that data on over 300 million Americans had been uploaded to an insecure cloud environment improperly. Though no breach was confirmed, the potential risk was enormous. (<a class="reference external" href="https://www.washingtonpost.com/politics/2025/08/29/social-security-data-doge/?utm_source=chatgpt.com" title="Social Security whistleblower quits after saying Americans' data was compromised">The Washington Post</a>, <a class="reference external" href="https://timesofindia.indiatimes.com/technology/tech-news/ssa-data-chief-charles-borges-resigns-involuntarily-days-after-claims-doge-putting-citizen-info-at-risk-it-is-never-wrong-to-be-/articleshow/123599695.cms?utm_source=chatgpt.com" title="SSA data chief Charles Borges resigns 'involuntarily' days after claims DOGE putting citizen info at risk: 'It is never wrong to be....'">The Times of India</a>)</p>
+<p>Not a breach per se, but in late August 2025, the SSA Chief Data Officer resigned, triggering alarm after whistleblower allegations that data on over 300 million Americans had been uploaded to an insecure cloud environment improperly. Though no breach was confirmed, the potential risk was enormous. (<a class="reference external" href="https://www.washingtonpost.com/politics/2025/08/29/social-security-data-doge/" title="Social Security whistleblower quits after saying Americans' data was compromised">The Washington Post</a>, <a class="reference external" href="https://timesofindia.indiatimes.com/technology/tech-news/ssa-data-chief-charles-borges-resigns-involuntarily-days-after-claims-doge-putting-citizen-info-at-risk-it-is-never-wrong-to-be-/articleshow/123599695.cms" title="SSA data chief Charles Borges resigns 'involuntarily' days after claims DOGE putting citizen info at risk: 'It is never wrong to be....'">The Times of India</a>)</p>
 <hr class="docutils" />
 <p>Summary Table</p>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -2148,10 +2874,10 @@ Example: <code class="docutils literal notranslate"><span class="pre">5</span></
 </table>
 </div>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.techradar.com/pro/security/transunion-data-breach-may-have-affected-4-4-million-users-heres-what-we-know-and-how-to-stay-safe?utm_source=chatgpt.com">TechRadar</a></p></li>
-<li><p><a class="reference external" href="https://www.tomsguide.com/computing/online-security/major-us-delivery-company-hit-in-data-breach-with-full-names-ssns-and-medical-info-of-thousands-exposed-online?utm_source=chatgpt.com">Tom’s Guide</a></p></li>
-<li><p><a class="reference external" href="https://www.reuters.com/legal/government/hack-allianz-life-impacts-11-million-customers-breach-notification-site-says-2025-08-18/?utm_source=chatgpt.com">Reuters</a></p></li>
-<li><p><a class="reference external" href="https://www.washingtonpost.com/politics/2025/08/29/social-security-data-doge/?utm_source=chatgpt.com">The Washington Post</a></p></li>
+<li><p><a class="reference external" href="https://www.techradar.com/pro/security/transunion-data-breach-may-have-affected-4-4-million-users-heres-what-we-know-and-how-to-stay-safe">TechRadar</a></p></li>
+<li><p><a class="reference external" href="https://www.tomsguide.com/computing/online-security/major-us-delivery-company-hit-in-data-breach-with-full-names-ssns-and-medical-info-of-thousands-exposed-online">Tom’s Guide</a></p></li>
+<li><p><a class="reference external" href="https://www.reuters.com/legal/government/hack-allianz-life-impacts-11-million-customers-breach-notification-site-says-2025-08-18/">Reuters</a></p></li>
+<li><p><a class="reference external" href="https://www.washingtonpost.com/politics/2025/08/29/social-security-data-doge/">The Washington Post</a></p></li>
 </ul>
 </details>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -2193,7 +2919,7 @@ Example: <code class="docutils literal notranslate"><span class="pre">5</span></
 <li><p><strong>Rootkits</strong> – Hide malicious activities from detection.</p></li>
 </ul>
 <p><strong>How It Spreads:</strong>
-How does it affect your computer.  Click on the link to learn more about <a class="reference external" href="https://www.youtube.com/watch?v=N1qdvQVke0s">Malware</a>.</p>
+How does malware spread, and how does it affect your computer? Click on the link to learn more about <a class="reference external" href="https://www.youtube.com/watch?v=N1qdvQVke0s">Malware</a>.</p>
 <p><strong>Protection Measures</strong></p>
 <p><strong>Instructions</strong>: In your own words, list and explain <strong>at least 5 protection measures</strong> from the list below:</p>
 <ol class="arabic simple">
@@ -2827,8 +3553,8 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <p><strong>Asymmetric Encryption</strong></p>
 <p>RSA uses <strong>two keys</strong>:</p>
 <ul class="simple">
-<li><p>A <strong>private key</strong> for <strong>encryption</strong></p></li>
-<li><p>A <strong>public key</strong> for <strong>decryption</strong></p></li>
+<li><p>A <strong>public key</strong> for <strong>encryption</strong> (shared with everyone)</p></li>
+<li><p>A <strong>private key</strong> for <strong>decryption</strong> (kept secret)</p></li>
 </ul>
 <p>These keys are mathematically related, but knowing the public key does not make it feasible to compute the private key (assuming large enough primes).</p>
 <hr class="docutils" />
@@ -2843,7 +3569,7 @@ How does it affect your computer.  Click on the link to learn more about <a clas
 <p>This n is a core part of the public and private keys.
 It defines the arithmetic space in which all encryption, decryption, and key generation operations occur.
 All RSA operations are performed modulo n — that is, within the set range of integers {0, 1, …, n−1}.
-So RSA, is a number used to define a finite mathematical field for secure computation.</p>
+So in RSA, the modulus sets the range of numbers that all of the math stays inside.</p>
 <p><strong>b. Compute Euler’s totient function:</strong></p>
 <p>$$
 \phi(n) = (p - 1) x (q - 1)
@@ -2862,9 +3588,9 @@ $$</p>
 </ul>
 <p><strong>The keys:</strong></p>
 <ul class="simple">
-<li><p><strong>Public key</strong>: <code class="docutils literal notranslate"><span class="pre">(d)</span></code></p></li>
-<li><p><strong>Private key</strong>: <code class="docutils literal notranslate"><span class="pre">(e)</span></code></p></li>
-<li><p><strong>Modulus key</strong>: <code class="docutils literal notranslate"><span class="pre">(n)</span></code></p></li>
+<li><p><strong>Public key</strong>: <code class="docutils literal notranslate"><span class="pre">(e,</span> <span class="pre">n)</span></code> (shared)</p></li>
+<li><p><strong>Private key</strong>: <code class="docutils literal notranslate"><span class="pre">(d,</span> <span class="pre">n)</span></code> (kept secret)</p></li>
+<li><p><strong>Modulus</strong>: <code class="docutils literal notranslate"><span class="pre">n</span></code> (part of both keys)</p></li>
 </ul>
 <hr class="docutils" />
 <p><strong>2. Encryption</strong></p>
@@ -2894,7 +3620,10 @@ $$</p>
 <p>If someone could factor <code class="docutils literal notranslate"><span class="pre">n</span></code>, they could compute <code class="docutils literal notranslate"><span class="pre">φ(n)</span></code>, and then <code class="docutils literal notranslate"><span class="pre">d</span></code>, breaking RSA.</p>
 <hr class="docutils" />
 <p>RSA is <strong>foundational</strong> to modern cryptography but often used in practice to encrypt <strong>symmetric keys</strong>, not large data directly, due to performance and padding limitations.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ast</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">while</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
     <span class="k">return</span> <span class="n">a</span>
@@ -2938,9 +3667,9 @@ $$</p>
 
     <span class="n">d</span> <span class="o">=</span> <span class="n">modinv</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> Private Key: (</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> Public Key (share this): e = </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">" Modulus: (</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">" Public Key: </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">" Private Key (keep secret): d = </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">e</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span>
 
 
@@ -2969,7 +3698,7 @@ $$</p>
 
         <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"2"</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your message: "</span><span class="p">)</span>
-            <span class="n">e</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter recipient's private key: "</span><span class="p">))</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter recipient's public key (e): "</span><span class="p">))</span>
             <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter recipient's modulus key: "</span><span class="p">))</span>
             <span class="n">encrypted_msg</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"Encrypted message:"</span><span class="p">,</span> <span class="n">encrypted_msg</span><span class="p">)</span>
@@ -2977,8 +3706,8 @@ $$</p>
         <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"3"</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">cipher_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Paste the encrypted message list (e.g. [123, 456]): "</span><span class="p">)</span>
-                <span class="n">cipher</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">cipher_input</span><span class="p">)</span>
-                <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your public key: "</span><span class="p">))</span>
+                <span class="n">cipher</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">cipher_input</span><span class="p">)</span>  <span class="c1"># safely reads a list like [123, 456]</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your private key (d): "</span><span class="p">))</span>
                 <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your modulus: "</span><span class="p">))</span>
                 <span class="n">decrypted_msg</span> <span class="o">=</span> <span class="n">decrypt</span><span class="p">(</span><span class="n">cipher</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">"Decrypted message:"</span><span class="p">,</span> <span class="n">decrypted_msg</span><span class="p">)</span>
@@ -3053,7 +3782,7 @@ $$</p>
 <span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">string</span>
 
-<span class="c1"># Simulated dictionary of 10,000 words (for example purposes)</span>
+<span class="c1"># Simulated dictionary of 1,000 words (for example purposes)</span>
 <span class="n">word_list</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">"word</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">brute_force_simulation</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">candidates</span><span class="p">):</span>
@@ -3112,22 +3841,23 @@ $$</p>
 </pre></div>
 </div>
 <hr class="docutils" />
-<p><strong>Example Output (depending on system performance):</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">One</span><span class="o">-</span><span class="n">word</span> <span class="n">password</span><span class="p">:</span>
-  <span class="n">Average</span> <span class="n">Time</span><span class="p">:</span> <span class="mf">0.0023</span> <span class="n">seconds</span>
-  <span class="n">Average</span> <span class="n">Attempts</span><span class="p">:</span> <span class="mi">4521</span>
+<p><strong>Example Output (one run; results change every time):</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">One</span><span class="o">-</span><span class="n">word</span> <span class="n">password</span><span class="p">:</span>
+  <span class="n">Average</span> <span class="n">Time</span><span class="p">:</span> <span class="mf">0.0000</span> <span class="n">seconds</span>
+  <span class="n">Average</span> <span class="n">Attempts</span><span class="p">:</span> <span class="mi">691</span>
 
 <span class="n">Two</span><span class="o">-</span><span class="n">word</span> <span class="n">password</span><span class="p">:</span>
-  <span class="n">Average</span> <span class="n">Time</span><span class="p">:</span> <span class="mf">0.3876</span> <span class="n">seconds</span>
-  <span class="n">Average</span> <span class="n">Attempts</span><span class="p">:</span> <span class="mi">49230221</span>
+  <span class="n">Average</span> <span class="n">Time</span><span class="p">:</span> <span class="mf">0.0230</span> <span class="n">seconds</span>
+  <span class="n">Average</span> <span class="n">Attempts</span><span class="p">:</span> <span class="mi">108519</span>
 
 <span class="n">Two</span><span class="o">-</span><span class="n">word</span> <span class="k">with</span> <span class="n">digit</span> <span class="n">password</span><span class="p">:</span>
-  <span class="n">Average</span> <span class="n">Time</span><span class="p">:</span> <span class="mf">1.0542</span> <span class="n">seconds</span>
-  <span class="n">Average</span> <span class="n">Attempts</span><span class="p">:</span> <span class="mi">69811022</span>
+  <span class="n">Average</span> <span class="n">Time</span><span class="p">:</span> <span class="mf">2.0039</span> <span class="n">seconds</span>
+  <span class="n">Average</span> <span class="n">Attempts</span><span class="p">:</span> <span class="mi">5805155</span>
 </pre></div>
 </div>
-<hr class="docutils" />
-<p>Great question — and an important one. Let’s go deep into <strong>Two-Factor Authentication (2FA)</strong> in a way that’s clear and practical.</p>
+<blockquote>
+<div><p><strong>Note:</strong> The two-word-with-digit test builds a list of 10 million guesses and uses about 700 MB of memory. On a Chromebook or an online Python editor, run only the first two tests, or shrink <code class="docutils literal notranslate"><span class="pre">word_list</span></code> to 300 words.</p>
+</div></blockquote>
 <hr class="docutils" />
 <details><summary>2FA Click Here</summary>
 <p><strong>What is 2FA?</strong></p>
@@ -3495,7 +4225,7 @@ Biometric data (like fingerprints) can’t be “changed” if compromised, thou
 <div><p>They stated, “A few days ago, we updated our fish tank monitoring system using the updates that were
 provided in our email. Yesterday, one of our fish died unexpectedly. The monitoring system reports
 everything is okay, but we suspect it might not be working properly. We reset the monitoring
-system and now more fish are not be doing well.  Can you please check our monitoring system and
+system and now more fish are not doing well.  Can you please check our monitoring system and
 check that the software is running properly? We are worried about our fish!”</p>
 </div></blockquote>
 <p>After a recent software update, the fish tank’s health reports seem inaccurate, and several fish are dying. Your task is to:</p>
@@ -3703,14 +4433,16 @@ check that the software is running properly? We are worried about our fish!”</
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Data</a><ul>
+<li><a class="reference internal" href="#ap-csp-standards-for-this-unit">AP CSP Standards for this Unit</a></li>
 <li><a class="reference internal" href="#unit-2-vocabulary">Unit 2 Vocabulary</a></li>
 <li><a class="reference internal" href="#data-project-1-data-communication-and-compression">Data Project 1 - Data Communication and Compression:</a><ul>
-<li><a class="reference internal" href="#part-1-binary-number-system">Part 1: Binary Number System</a></li>
-<li><a class="reference internal" href="#part-2-how-text-becomes-binary">Part 2: How Text Becomes Binary</a></li>
-<li><a class="reference internal" href="#part-3-programming-convert-text-to-binary">Part 3: Programming - Convert Text to Binary</a></li>
-<li><a class="reference internal" href="#part-4-programming-convert-binary-to-text">Part 4: Programming - Convert Binary to Text</a></li>
-<li><a class="reference internal" href="#part-5-bitmaps-binary">Part 5: Bitmaps &amp; Binary</a></li>
-<li><a class="reference internal" href="#part-6-hexidecimal">Part 6: Hexidecimal</a><ul>
+<li><a class="reference internal" href="#part-1-morse-code-and-color-codes">Part 1: Morse Code and Color Codes</a></li>
+<li><a class="reference internal" href="#part-2-binary-number-system">Part 2: Binary Number System</a></li>
+<li><a class="reference internal" href="#part-3-how-text-becomes-binary">Part 3: How Text Becomes Binary</a></li>
+<li><a class="reference internal" href="#part-4-programming-convert-text-to-binary">Part 4: Programming - Convert Text to Binary</a></li>
+<li><a class="reference internal" href="#part-5-programming-convert-binary-to-text">Part 5: Programming - Convert Binary to Text</a></li>
+<li><a class="reference internal" href="#part-6-bitmaps-binary">Part 6: Bitmaps &amp; Binary</a></li>
+<li><a class="reference internal" href="#part-7-hexadecimal">Part 7: Hexadecimal</a><ul>
 <li><a class="reference internal" href="#hexadecimal-combinations-chart">Hexadecimal Combinations Chart</a></li>
 </ul>
 </li>
